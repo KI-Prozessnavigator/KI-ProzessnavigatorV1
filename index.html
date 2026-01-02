@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KI-Prozessautomatisierung für KMUs – DSGVO-konforme Chat-Modelle. Automatisieren Sie 70% Ihrer Routineaufgaben ohne Datenschutzrisiko.">
+    <meta name="keywords" content="KI, Prozessautomatisierung, DSGVO, KMU, Chatbot, Automatisierung, Datenschutz">
+    <meta name="author" content="KI-Prozessnavigator">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="KI-Prozessnavigator | DSGVO-konforme Prozessautomatisierung">
+    <meta property="og:description" content="Automatisieren Sie 70% Ihrer Routineaufgaben – ohne Datenschutzrisiko.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    
+    <title>KI-Prozessnavigator | DSGVO-konforme Prozessautomatisierung für KMUs</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ki-prozessnavigator.de/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    
+    <!-- Schema.org Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "KI-Prozessnavigator",
+        "url": "https://ki-prozessnavigator.de",
+        "logo": "https://ki-prozessnavigator.de/assets/icons/logo.svg",
+        "description": "DSGVO-konforme KI-Prozessautomatisierung für den deutschen Mittelstand",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "DE"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/ki-prozessnavigator",
+            "https://twitter.com/kiprozess"
+        ]
+    }
+    </script>
+    
+    <!-- Schema.org Structured Data - Product/Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "KI-Prozessnavigator",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "EUR",
+            "lowPrice": "299",
+            "highPrice": "799",
+            "offerCount": "3"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        }
+    }
+    </script>
+    
+    <!-- Schema.org Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Ist KI für unser kleines Team überhaupt rentabel?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja – oft sogar besonders. Ein Kunde mit 8 Mitarbeitern spart 40 Stunden pro Monat. Bei einem Stundenlohn von 50€ sind das 2.000€ – unser Starter-Paket kostet 299€. ROI: 6,7x im ersten Monat."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wie lange dauert es, bis wir produktiv sind?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Durchschnittlich 2 Wochen bis zum Go-Live. Keine IT-Ressourcen nötig – wir machen 90% der Arbeit. Onboarding-Call dauert eine Stunde."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was passiert mit unseren Daten? (DSGVO)",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ihre Daten gehören Ihnen – Punkt. Sie werden ausschließlich für IHRE Prozesse verwendet. Kein Training von KI-Modellen mit Ihren Daten. Hosting in Frankfurt. Geprüft von Datenschutz-Anwälten."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Funktioniert das mit unserem CRM/ERP?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja. Fertige Integrationen für Salesforce, HubSpot, SAP, Microsoft Dynamics, Personio und 50+ weitere Systeme. Individuelle Anbindungen über API auf Anfrage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was kostet die Potenzialanalyse wirklich?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nichts. Wirklich. 30 Minuten, unverbindlich. Sie bekommen einen konkreten ROI-Rechner für Ihr Unternehmen – ohne Verkaufsdruck. Keine Kreditkarte. Kein Kleingedrucktes."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts (Selbst-gehostet, DSGVO-konform) -->
+    <link rel="preload" href="assets/fonts/PlusJakartaSans-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Critical CSS Inline (Above the fold) -->
+    <style>
+        /* Critical inline styles for faster FCP */
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; }
+        .hero { min-height: 100vh; display: flex; align-items: center; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+    </style>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/hero-3d.css">
+    <link rel="stylesheet" href="css/cookie-banner.css">
+    <link rel="stylesheet" href="css/contact-modal.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Three.js (CDN with fallback) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+</head>
+<body>
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#hero" class="nav__logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 32 32" width="32" height="32">
+                        <rect width="32" height="32" rx="6" fill="currentColor"/>
+                        <path d="M8 12 L16 8 L24 12 L24 20 L16 24 L8 20 Z" fill="none" stroke="#fff" stroke-width="1.5"/>
+                        <circle cx="16" cy="16" r="3" fill="#e85a4f"/>
+                    </svg>
+                </div>
+                <span class="logo-text">KI-Prozessnavigator</span>
+            </a>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item"><a href="#hero" class="nav__link">Start</a></li>
+                <li class="nav__item"><a href="#problems" class="nav__link">Vorteile</a></li>
+                <li class="nav__item"><a href="#usecases" class="nav__link">Use Cases</a></li>
+                <li class="nav__item"><a href="#dsgvo" class="nav__link">DSGVO</a></li>
+                <li class="nav__item"><a href="#pricing" class="nav__link">Pakete</a></li>
+                <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
+                <li class="nav__item"><a href="#contact" class="nav__link nav__link--cta">Beratung anfragen</a></li>
+            </ul>
+            
+            <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Skip to main content for accessibility -->
+        <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+        
+        <!-- ==================== HERO SECTION ==================== -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="hero__container container" id="main-content">
+                <div class="hero__content">
+                    <span class="hero__tag" role="text">
+                        <span class="tag-icon" aria-hidden="true">🔒</span>
+                        <span>Geprüft & DSGVO-konform</span>
+                    </span>
+                    
+                    <!-- A/B Test: Variante A (Emotional/Zeit-Fokus) -->
+                    <h1 class="hero__title" id="hero-title">
+                        <span class="typewriter" aria-label="Stellen Sie sich vor: 10 Stunden mehr Zeit – jede Woche">
+                            Stellen Sie sich vor: <em>10 Stunden mehr Zeit</em> – jede Woche
+                        </span>
+                    </h1>
+                    <!-- 
+                    A/B Variante B (DSGVO-Fokus):
+                    KI, die mitdenkt – <em>100% DSGVO-sicher</em>
+                    
+                    A/B Variante C (Ergebnis-orientiert):
+                    70% weniger Routinearbeit. <em>Null</em> Datenschutz-Risiko.
+                    -->
+                    
+                    <p class="hero__description">
+                        Unsere KI automatisiert Ihre Routineaufgaben – DSGVO-konform und ohne IT-Aufwand. 
+                        <strong>Die einzige Lösung, die deutsches Datenschutzrecht versteht.</strong>
+                    </p>
+                    
+                    <div class="hero__actions" role="group" aria-label="Handlungsoptionen">
+                        <a href="#contact" class="btn btn--neon btn--glow" role="button">
+                            <span>Kostenlose Potenzialanalyse starten</span>
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#demo" class="btn btn--glass" role="button">
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <polygon points="5,3 19,12 5,21"/>
+                            </svg>
+                            <span>Demo in 2 Min. ansehen</span>
+                        </a>
+                    </div>
+                    
+                    <div class="hero__stats" role="list" aria-label="Unsere Erfolgszahlen">
+                        <div class="stat" role="listitem">
+                            <span class="stat__number">150+</span>
+                            <span class="stat__label">KMUs vertrauen uns</span>
+                        </div>
+                        <div class="stat" role="listitem">
+                            <span class="stat__number">70%</span>
+                            <span class="stat__label">weniger Routinearbeit</span>
+                        </div>
+                        <div class="stat" role="listitem">
+                            <span class="stat__number">0</span>
+                            <span class="stat__label">DSGVO-Abmahnungen</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero__visual" aria-hidden="true">
+                    <!-- Three.js 3D Container -->
+                    <div class="hero-3d-wrapper">
+                        <div id="hero-3d-container" class="hero-3d-container">
+                            <!-- Three.js canvas will be injected here -->
+                            <!-- CSS Fallback for non-WebGL browsers -->
+                            <noscript>
+                                <div class="hero-3d-fallback">
+                                    <div class="fallback-orb"></div>
+                                    <div class="fallback-ring fallback-ring--1"></div>
+                                    <div class="fallback-ring fallback-ring--2"></div>
+                                    <div class="fallback-ring fallback-ring--3"></div>
+                                </div>
+                            </noscript>
+                        </div>
+                        <!-- Floating Data Streams -->
+                        <div class="data-streams">
+                            <div class="data-stream data-stream--1"></div>
+                            <div class="data-stream data-stream--2"></div>
+                            <div class="data-stream data-stream--3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero__scroll-indicator" role="presentation">
+                <span>Mehr erfahren</span>
+                <div class="scroll-arrow" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <!-- ==================== TRUST BAR ==================== -->
+        <section class="trust-bar" aria-label="Referenzen">
+            <div class="container">
+                <p class="trust-bar__text">
+                    Über <strong>150 mittelständische Unternehmen</strong> vertrauen uns – 
+                    <em>ohne eine einzige DSGVO-Abmahnung.</em>
+                </p>
+                <div class="trust-bar__logos" role="list" aria-label="Kundenlogos">
+                    <div class="logo-placeholder" role="listitem">TechCorp</div>
+                    <div class="logo-placeholder" role="listitem">InnoGmbH</div>
+                    <div class="logo-placeholder" role="listitem">DataFlow</div>
+                    <div class="logo-placeholder" role="listitem">SmartSys</div>
+                    <div class="logo-placeholder" role="listitem">FutureTech</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROBLEM-LÖSUNG BLOCK ==================== -->
+        <section class="problems" id="problems" aria-labelledby="problems-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__tag">Kein Tech-Blabla</span>
+                    <h2 class="section__title" id="problems-title">Diese Probleme kosten Sie täglich Geld</h2>
+                    <p class="section__description">Erkennen Sie sich wieder?</p>
+                </header>
+                
+                <div class="problems__grid">
+                    <!-- Problem Cards -->
+                    <div class="problem-card" data-animate="fade-up">
+                        <div class="problem-card__icon" aria-hidden="true">⏰</div>
+                        <h3 class="problem-card__title">Ihre besten Leute verschwenden Zeit</h3>
+                        <p class="problem-card__text">
+                            Talentierte Mitarbeiter verbringen Stunden mit Copy-Paste-Aufgaben – 
+                            statt Kunden zu begeistern und Ihr Unternehmen voranzubringen.
+                        </p>
+                    </div>
+                    
+                    <div class="problem-card" data-animate="fade-up" data-delay="1">
+                        <div class="problem-card__icon" aria-hidden="true">😰</div>
+                        <h3 class="problem-card__title">DSGVO-Angst blockiert Innovation</h3>
+                        <p class="problem-card__text">
+                            Sie wollen KI nutzen, aber die Rechtsabteilung sagt "zu riskant". 
+                            Ihre Wettbewerber ziehen vorbei. <em>Kennen wir.</em>
+                        </p>
+                    </div>
+                    
+                    <div class="problem-card" data-animate="fade-up" data-delay="2">
+                        <div class="problem-card__icon" aria-hidden="true">🤯</div>
+                        <h3 class="problem-card__title">Das letzte KI-Tool? Nutzt keiner mehr.</h3>
+                        <p class="problem-card__text">
+                            Komplexe Oberflächen, wochenlange Schulungen, frustrierte Teams. 
+                            Nach 3 Monaten liegt die "Revolution" in der Schublade.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Before/After Comparison -->
+                <div class="before-after-showcase" data-animate="fade-up">
+                    <div class="before-after-card">
+                        <div class="before-after-header">
+                            <span class="before-after-badge before-after-badge--before">Ohne KI</span>
+                            <span class="before-after-vs">vs.</span>
+                            <span class="before-after-badge before-after-badge--after">Mit KI-Prozessnavigator</span>
+                        </div>
+                        <div class="before-after-items">
+                            <div class="before-after-item">
+                                <div class="before-after-metric">
+                                    <span class="metric-label">Routineaufgaben pro Woche</span>
+                                    <div class="metric-values">
+                                        <span class="metric-before">40 Stunden</span>
+                                        <span class="metric-arrow">→</span>
+                                        <span class="metric-after">12 Stunden</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="before-after-item">
+                                <div class="before-after-metric">
+                                    <span class="metric-label">Zeit für Kundenbetreuung</span>
+                                    <div class="metric-values">
+                                        <span class="metric-before">20%</span>
+                                        <span class="metric-arrow">→</span>
+                                        <span class="metric-after">65%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="before-after-item">
+                                <div class="before-after-metric">
+                                    <span class="metric-label">DSGVO-Verstöße / Jahr</span>
+                                    <div class="metric-values">
+                                        <span class="metric-before">Risiko ⚠️</span>
+                                        <span class="metric-arrow">→</span>
+                                        <span class="metric-after">0 ✅</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solutions-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-text">Das ändern wir</div>
+                    <div class="connector-line"></div>
+                </div>
+                
+                <div class="solutions__grid">
+                    <!-- Solution Cards -->
+                    <div class="solution-card" data-animate="fade-up">
+                        <div class="solution-card__icon" aria-hidden="true">⚡</div>
+                        <h3 class="solution-card__title">70% weniger Routinearbeit</h3>
+                        <p class="solution-card__text">
+                            Ihre Teams fokussieren sich endlich auf das, was Menschen besser können als Maschinen. 
+                            <strong>Durchschnittswert unserer Kunden.</strong>
+                        </p>
+                    </div>
+                    
+                    <div class="solution-card" data-animate="fade-up" data-delay="1">
+                        <div class="solution-card__icon" aria-hidden="true">🔒</div>
+                        <h3 class="solution-card__title">100% DSGVO-sicher</h3>
+                        <p class="solution-card__text">
+                            Geprüft von Datenschutz-Anwälten. ISO 27001 zertifiziert. 
+                            <strong>Hosting in Frankfurt – Ihre Daten bleiben in Deutschland.</strong>
+                        </p>
+                    </div>
+                    
+                    <div class="solution-card" data-animate="fade-up" data-delay="2">
+                        <div class="solution-card__icon" aria-hidden="true">🚀</div>
+                        <h3 class="solution-card__title">In 2 Wochen produktiv</h3>
+                        <p class="solution-card__text">
+                            Keine 6-monatigen Projekte. Kein IT-Team nötig. 
+                            <strong>Onboarding in einer Stunde – wir machen 90% der Arbeit.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== USE CASES ==================== -->
+        <section class="usecases" id="usecases" aria-labelledby="usecases-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__tag">Der Autopilot für Ihr Business</span>
+                    <h2 class="section__title" id="usecases-title">KI-Lösungen für Handwerk & KMU</h2>
+                    <p class="section__description">Wir verwandeln Ihre Zeitfresser in automatisierte Gewinne. Sparen Sie täglich Zeit bei Terminen, Rechnungen und Kundenanfragen.</p>
+                </header>
+                
+                <!-- Slider Navigation -->
+                <div class="usecases__nav">
+                    <button class="usecases__nav-btn usecases__nav-btn--prev" id="usecases-prev" aria-label="Vorherige Use Cases">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <button class="usecases__nav-btn usecases__nav-btn--next" id="usecases-next" aria-label="Nächste Use Cases">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="usecases__slider-wrapper">
+                <div class="usecases__grid" id="usecases-slider">
+                    <!-- Use Case 1: Vertrieb -->
+                    <div class="usecase-card" data-animate="fade-up">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">🎯</span>
+                            <span class="usecase-card__category">Vertrieb</span>
+                        </div>
+                        <h3 class="usecase-card__title">Leads qualifizieren, während Sie schlafen</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">+40%</span>
+                            <span class="result-text">Abschlussquote</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Unser Chatbot führt Erstgespräche, qualifiziert Anfragen und bucht Termine – 24/7, DSGVO-konform.
+                        </p>
+                        <div class="usecase-card__flow" aria-label="Prozessablauf">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true">👤</div>
+                                <span class="flow-step__label">Website-Besucher</span>
+                            </div>
+                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true">🤖</div>
+                                <span class="flow-step__label">KI-Chatbot</span>
+                            </div>
+                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true">📅</div>
+                                <span class="flow-step__label">Gebuchter Termin</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Use Case 2: HR -->
+                    <div class="usecase-card" data-animate="fade-up" data-delay="1">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">👥</span>
+                            <span class="usecase-card__category">HR</span>
+                        </div>
+                        <h3 class="usecase-card__title">Die besten Talente finden – in Minuten</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">⏱️ 8h</span>
+                            <span class="result-text">pro Woche gespart</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Bewerbungen werden automatisch analysiert, gerankt und mit Begründung präsentiert.
+                        </p>
+                        <div class="usecase-card__flow" aria-label="Prozessablauf">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true">📄</div>
+                                <span class="flow-step__label">100 Bewerbungen</span>
+                            </div>
+                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true">🤖</div>
+                                <span class="flow-step__label">KI-Matching</span>
+                            </div>
+                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true">⭐</div>
+                                <span class="flow-step__label">Top 10 Shortlist</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Use Case 3: Finanzen -->
+                    <div class="usecase-card" data-animate="fade-up" data-delay="2">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">💰</span>
+                            <span class="usecase-card__category">Finanzen</span>
+                        </div>
+                        <h3 class="usecase-card__title">Rechnungen prüfen ohne Augenringe</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">0%</span>
+                            <span class="result-text">Fehlerquote</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            OCR-Erkennung, Abgleich mit Bestellungen, Freigabe-Workflows – alles automatisch.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon">📧</div>
+                                <span class="flow-step__label">Rechnungseingang</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon">🤖</div>
+                                <span class="flow-step__label">KI-Prüfung</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon">✓</div>
+                                <span class="flow-step__label">Validiert & gebucht</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Use Case 4: Terminbuchung -->
+                    <div class="usecase-card" data-animate="fade-up">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">📅</span>
+                            <span class="usecase-card__category">Terminbuchung</span>
+                        </div>
+                        <h3 class="usecase-card__title">Online-Terminbuchung & Ausfallschutz</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">0</span>
+                            <span class="result-text">No-Shows</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Nie wieder leere Slots oder nerviges Telefon-Ping-Pong. Sync mit Google Kalender/Outlook gegen Doppelbuchungen.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon">👤</div>
+                                <span class="flow-step__label">Kunde bucht</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon">🤖</div>
+                                <span class="flow-step__label">Kalender-Sync</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon">📱</div>
+                                <span class="flow-step__label">SMS-Erinnerung</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Use Case 5: Automatische Antworten -->
+                    <div class="usecase-card" data-animate="fade-up" data-delay="1">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">💬</span>
+                            <span class="usecase-card__category">Kundenkommunikation</span>
+                        </div>
+                        <h3 class="usecase-card__title">Automatische Antworten & Google-Bewertungen</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">5⭐</span>
+                            <span class="result-text">mehr Bewertungen</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Erreichbar sein, auch wenn Sie auf der Baustelle stehen. KI klärt Standardfragen direkt.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon">❓</div>
+                                <span class="flow-step__label">Kundenanfrage</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon">🤖</div>
+                                <span class="flow-step__label">Sofort-Antwort</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon">⭐</div>
+                                <span class="flow-step__label">Bewertung holen</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Use Case 6: Lead-Erfassung -->
+                    <div class="usecase-card" data-animate="fade-up" data-delay="2">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">🎯</span>
+                            <span class="usecase-card__category">Lead-Management</span>
+                        </div>
+                        <h3 class="usecase-card__title">Lead-Erfassung & CRM-Automatisierung</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">+30%</span>
+                            <span class="result-text">Auftragsquote</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Vom Interessenten zum Auftrag – ohne manuelles Abtippen. KI fasst Angebote nach 3 Tagen nach.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon">📧</div>
+                                <span class="flow-step__label">Anfrage</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon">🤖</div>
+                                <span class="flow-step__label">CRM-Eintrag</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon">📞</div>
+                                <span class="flow-step__label">Auto-Follow-up</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Use Case 7: Firmen-Chatbot -->
+                    <div class="usecase-card" data-animate="fade-up">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">🤖</span>
+                            <span class="usecase-card__category">Intern</span>
+                        </div>
+                        <h3 class="usecase-card__title">Interner Firmen-Chatbot (DSGVO-konform)</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">24/7</span>
+                            <span class="result-text">Wissen verfügbar</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Ihr komplettes Firmenwissen – jederzeit für Mitarbeiter verfügbar. Server in Deutschland.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon">👷</div>
+                                <span class="flow-step__label">Mitarbeiter fragt</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon">🤖</div>
+                                <span class="flow-step__label">Chatbot antwortet</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon">✓</div>
+                                <span class="flow-step__label">Problem gelöst</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Use Case 8: Rechnungsstellung -->
+                    <div class="usecase-card" data-animate="fade-up" data-delay="1">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">📄</span>
+                            <span class="usecase-card__category">Buchhaltung</span>
+                        </div>
+                        <h3 class="usecase-card__title">Rechnungsstellung & Mahnwesen</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">-50%</span>
+                            <span class="result-text">offene Posten</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Vorbereitende Buchhaltung auf Knopfdruck. KI liest Rechnungen aus Mails & mahnt freundlich.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon">📧</div>
+                                <span class="flow-step__label">Rechnung kommt</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon">🤖</div>
+                                <span class="flow-step__label">OCR & Sortierung</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon">💶</div>
+                                <span class="flow-step__label">Auto-Mahnung</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Use Case 9: Projekt-Start -->
+                    <div class="usecase-card" data-animate="fade-up" data-delay="2">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">📋</span>
+                            <span class="usecase-card__category">Projektmanagement</span>
+                        </div>
+                        <h3 class="usecase-card__title">Auftrags-Anlage & Projekt-Start</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">0</span>
+                            <span class="result-text">vergessene Deadlines</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Strukturierte Projekte ab Sekunde 1. Erinnert Mitarbeiter und weist Aufgaben digital zu.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon">✅</div>
+                                <span class="flow-step__label">Auftrag kommt</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon">🤖</div>
+                                <span class="flow-step__label">Projekt-Setup</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon">🔔</div>
+                                <span class="flow-step__label">Team-Briefing</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Use Case 10: Onboarding -->
+                    <div class="usecase-card" data-animate="fade-up">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">👥</span>
+                            <span class="usecase-card__category">Personal</span>
+                        </div>
+                        <h3 class="usecase-card__title">Mitarbeiter-Onboarding & Prozesse</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">-70%</span>
+                            <span class="result-text">Einarbeitungszeit</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Neue Fachkräfte in Rekordzeit einarbeiten. Auto-Versand von Handbuch, Logins & Videos.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon">👤</div>
+                                <span class="flow-step__label">Neuer Mitarbeiter</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon">🤖</div>
+                                <span class="flow-step__label">Auto-Onboarding</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon">🎓</div>
+                                <span class="flow-step__label">Prüfung bestanden</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Slider Dots -->
+                <div class="usecases__dots" id="usecases-dots" aria-label="Use Case Navigation"></div>
+            </div>
+        </section>
+
+        <!-- ==================== DSGVO SICHERHEITSBLOCK ==================== -->
+        <section class="dsgvo" id="dsgvo">
+            <div class="container">
+                <div class="dsgvo__wrapper">
+                    <div class="dsgvo__content">
+                        <span class="section__tag section__tag--light">Datenschutz</span>
+                        <h2 class="dsgvo__title">KI ohne rechtliche Risiken</h2>
+                        <p class="dsgvo__description">
+                            Unsere KI-Modelle werden ausschließlich auf europäischen Servern betrieben. 
+                            Ihre Daten verlassen niemals die EU – garantiert.
+                        </p>
+                        
+                        <ul class="dsgvo__checklist">
+                            <li class="checklist-item" data-animate="check">
+                                <span class="checklist-icon">✅</span>
+                                <span class="checklist-text">Daten bleiben in der EU</span>
+                            </li>
+                            <li class="checklist-item" data-animate="check" data-delay="1">
+                                <span class="checklist-icon">✅</span>
+                                <span class="checklist-text">Löschfristen automatisiert</span>
+                            </li>
+                            <li class="checklist-item" data-animate="check" data-delay="2">
+                                <span class="checklist-icon">✅</span>
+                                <span class="checklist-text">Keine Datenweitergabe an US-Server</span>
+                            </li>
+                            <li class="checklist-item" data-animate="check" data-delay="3">
+                                <span class="checklist-icon">✅</span>
+                                <span class="checklist-text">Audit-Protokolle für Compliance</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dsgvo__badges">
+                        <div class="trust-badge" data-animate="fade-up">
+                            <div class="trust-badge__icon">🏆</div>
+                            <div class="trust-badge__content">
+                                <span class="trust-badge__title">ISO 27001</span>
+                                <span class="trust-badge__subtitle">Zertifiziert</span>
+                            </div>
+                        </div>
+                        <div class="trust-badge" data-animate="fade-up" data-delay="1">
+                            <div class="trust-badge__icon">✓</div>
+                            <div class="trust-badge__content">
+                                <span class="trust-badge__title">TÜV geprüft</span>
+                                <span class="trust-badge__subtitle">Datensicherheit</span>
+                            </div>
+                        </div>
+                        <div class="trust-badge" data-animate="fade-up" data-delay="2">
+                            <div class="trust-badge__icon">⚖️</div>
+                            <div class="trust-badge__content">
+                                <span class="trust-badge__title">Anwalt geprüft</span>
+                                <span class="trust-badge__subtitle">DSGVO-konform</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PRICING ==================== -->
+        <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__tag">Transparent & fair</span>
+                    <h2 class="section__title" id="pricing-title">Investieren Sie in Ergebnisse, nicht in Lizenzen</h2>
+                    <p class="section__description">
+                        <strong>Pay-as-you-grow</strong> – Starten Sie klein, skalieren Sie ohne Risiko. 
+                        <em>Monatlich kündbar. Keine versteckten Kosten.</em>
+                    </p>
+                </header>
+                
+                <div class="pricing__grid">
+                    <!-- Starter -->
+                    <div class="pricing-card" data-animate="fade-up" tabindex="0" role="article">
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__name">Starter</h3>
+                            <p class="pricing-card__tagline">Testen Sie, ob KI zu Ihnen passt</p>
+                        </div>
+                        <div class="pricing-card__price">
+                            <span class="price-currency">€</span>
+                            <span class="price-amount">299</span>
+                            <span class="price-period">/Monat</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li><span class="feature-check" aria-hidden="true">✓</span> 1 KI-Bot für einen Prozess</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> 500 Anfragen/Monat</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> In 24 Stunden einsatzbereit</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> E-Mail Support (24h Antwortzeit)</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> DSGVO-konform ab Tag 1</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--secondary btn--full">14 Tage kostenlos testen</a>
+                    </div>
+                    
+                    <!-- Pro (Popular) -->
+                    <div class="pricing-card pricing-card--popular" data-animate="fade-up" data-delay="1" tabindex="0" role="article">
+                        <div class="pricing-card__badge">★ Meist gewählt</div>
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__name">Pro</h3>
+                            <p class="pricing-card__tagline">Skalieren Sie ohne IT-Aufwand</p>
+                        </div>
+                        <div class="pricing-card__price">
+                            <span class="price-currency">€</span>
+                            <span class="price-amount">799</span>
+                            <span class="price-period">/Monat</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li><span class="feature-check" aria-hidden="true">✓</span> 5 KI-Bots für verschiedene Prozesse</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> 5.000 Anfragen/Monat</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> Antworten in 2h, nicht 2 Tagen</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> Verbinden Sie jedes System – ohne Entwickler</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> Ihre Prozesse, nicht unsere Templates</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--neon btn--full">Jetzt durchstarten</a>
+                    </div>
+                    
+                    <!-- Enterprise -->
+                    <div class="pricing-card" data-animate="fade-up" data-delay="2" tabindex="0" role="article">
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__name">Enterprise</h3>
+                            <p class="pricing-card__tagline">Wir kümmern uns um alles</p>
+                        </div>
+                        <div class="pricing-card__price">
+                            <span class="price-amount price-amount--text">Individuell</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li><span class="feature-check" aria-hidden="true">✓</span> Unbegrenzte Bots & Anfragen</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> Dedicated Success Manager</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> 99.9% Verfügbarkeit – vertraglich garantiert</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> On-Premise Option für maximale Kontrolle</li>
+                            <li><span class="feature-check" aria-hidden="true">✓</span> Individuelle Integrationen & Schulungen</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--secondary btn--full">Persönliches Angebot erhalten</a>
+                    </div>
+                </div>
+                
+                <p class="pricing__guarantee">
+                    💡 <strong>Noch unsicher?</strong> Starten Sie mit einer kostenlosen Potenzialanalyse. 
+                    Wir zeigen Ihnen genau, welches Paket zu Ihren Anforderungen passt.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== SOCIAL PROOF ==================== -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__tag">Kundenstimmen</span>
+                    <h2 class="section__title">Was unsere Kunden sagen</h2>
+                </header>
+                
+                <div class="testimonials__grid">
+                    <div class="testimonial-card" data-animate="fade-up">
+                        <div class="testimonial-card__video">
+                            <img src="assets/images/video-thumb-1.svg" 
+                                 alt="Video-Thumbnail: Max Müller, CEO von TechGmbH" 
+                                 class="video-thumbnail"
+                                 loading="lazy"
+                                 width="400" height="225">
+                            <button class="play-button" aria-label="Video von Max Müller abspielen">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            "Ich war skeptisch, ob KI für unser kleines Team rentabel ist. Nach 3 Monaten: 
+                            <strong>12 Stunden pro Woche gespart.</strong> Der ROI war nach 6 Wochen erreicht."
+                        </blockquote>
+                        <div class="testimonial-card__author">
+                            <div class="author-avatar">MM</div>
+                            <div class="author-info">
+                                <span class="author-name">Max Müller</span>
+                                <span class="author-role">CEO, TechGmbH (12 Mitarbeiter)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card" data-animate="fade-up" data-delay="1">
+                        <div class="testimonial-card__video">
+                            <img src="assets/images/video-thumb-2.svg" 
+                                 alt="Video-Thumbnail: Anna Schmidt, IT-Leiterin bei DataFlow" 
+                                 class="video-thumbnail"
+                                 loading="lazy"
+                                 width="400" height="225">
+                            <button class="play-button" aria-label="Video von Anna Schmidt abspielen">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            "Die DSGVO-Konformität war für mich der Gamechanger. Endlich kann ich der 
+                            Geschäftsführung sagen: <strong>'Ja, das ist sicher.'</strong> – ohne Bauchschmerzen."
+                        </blockquote>
+                        <div class="testimonial-card__author">
+                            <div class="author-avatar">AS</div>
+                            <div class="author-info">
+                                <span class="author-name">Anna Schmidt</span>
+                                <span class="author-role">IT-Leiterin, DataFlow</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card" data-animate="fade-up" data-delay="2">
+                        <div class="testimonial-card__video">
+                            <img src="assets/images/video-thumb-3.svg" 
+                                 alt="Video-Thumbnail: Tom Krause, HR-Manager bei InnoGmbH" 
+                                 class="video-thumbnail"
+                                 loading="lazy"
+                                 width="400" height="225">
+                            <button class="play-button" aria-label="Video von Tom Krause abspielen">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            "Früher habe ich 3 Tage mit Bewerbungen verbracht. Jetzt bekomme ich eine 
+                            Shortlist mit Begründung – <strong>in 10 Minuten.</strong> Mein Team liebt es."
+                        </blockquote>
+                        <div class="testimonial-card__author">
+                            <div class="author-avatar">TK</div>
+                            <div class="author-info">
+                                <span class="author-name">Tom Krause</span>
+                                <span class="author-role">HR-Manager, InnoGmbH</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="client-logos" role="list" aria-label="Unsere Kunden">
+                    <div class="logo-item" role="listitem">
+                        <img src="assets/images/logos/logo-techcorp.svg" alt="TechCorp Logo" loading="lazy" width="140" height="40">
+                    </div>
+                    <div class="logo-item" role="listitem">
+                        <img src="assets/images/logos/logo-innogmbh.svg" alt="InnoGmbH Logo" loading="lazy" width="140" height="40">
+                    </div>
+                    <div class="logo-item" role="listitem">
+                        <img src="assets/images/logos/logo-dataflow.svg" alt="DataFlow Logo" loading="lazy" width="140" height="40">
+                    </div>
+                    <div class="logo-item" role="listitem">
+                        <img src="assets/images/logos/logo-smartsys.svg" alt="SmartSys Logo" loading="lazy" width="140" height="40">
+                    </div>
+                    <div class="logo-item" role="listitem">
+                        <img src="assets/images/logos/logo-futuretech.svg" alt="FutureTech Logo" loading="lazy" width="150" height="40">
+                    </div>
+                    <div class="logo-item" role="listitem">
+                        <img src="assets/images/logos/logo-cloudwerk.svg" alt="CloudWerk Logo" loading="lazy" width="150" height="40">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== FAQ + LEAD MAGNET ==================== -->
+        <section class="faq-section" id="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="faq-section__wrapper">
+                    <!-- FAQ -->
+                    <div class="faq">
+                        <header class="faq__header">
+                            <span class="section__tag">Ihre Fragen, ehrlich beantwortet</span>
+                            <h2 class="section__title section__title--left" id="faq-title">Das werden wir oft gefragt</h2>
+                        </header>
+                        
+                        <div class="faq__list" role="list">
+                            <div class="faq-item" role="listitem">
+                                <button class="faq-item__question" aria-expanded="false">
+                                    <span>Ist KI für unser kleines Team überhaupt rentabel?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer">
+                                    <p>
+                                        <strong>Ja – oft sogar besonders.</strong> Ein Kunde mit 8 Mitarbeitern spart 40 Stunden pro Monat. 
+                                        Bei einem Stundenlohn von 50€ sind das 2.000€ – unser Starter-Paket kostet 299€. 
+                                        <em>ROI: 6,7x im ersten Monat.</em>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" role="listitem">
+                                <button class="faq-item__question" aria-expanded="false">
+                                    <span>Wie lange dauert es, bis wir produktiv sind?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer">
+                                    <p>
+                                        <strong>Durchschnittlich 2 Wochen bis zum Go-Live.</strong> Keine IT-Ressourcen nötig – 
+                                        wir machen 90% der Arbeit. Onboarding-Call dauert eine Stunde, danach begleiten wir Sie 
+                                        bis zum ersten Erfolg.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" role="listitem">
+                                <button class="faq-item__question" aria-expanded="false">
+                                    <span>Was passiert mit unseren Daten? (DSGVO)</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer">
+                                    <p>
+                                        <strong>Ihre Daten gehören Ihnen – Punkt.</strong> Sie werden ausschließlich für IHRE Prozesse verwendet. 
+                                        Kein Training von KI-Modellen mit Ihren Daten. Hosting in Frankfurt. 
+                                        Löschung auf Knopfdruck. <em>Geprüft von Datenschutz-Anwälten.</em>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" role="listitem">
+                                <button class="faq-item__question" aria-expanded="false">
+                                    <span>Funktioniert das mit unserem CRM/ERP?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer">
+                                    <p>
+                                        <strong>Ja.</strong> Fertige Integrationen für Salesforce, HubSpot, SAP, Microsoft Dynamics, 
+                                        Personio und 50+ weitere Systeme. Individuelle Anbindungen über API auf Anfrage – 
+                                        <em>ohne Extra-Kosten im Pro- und Enterprise-Paket.</em>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" role="listitem">
+                                <button class="faq-item__question" aria-expanded="false">
+                                    <span>Was kostet die Potenzialanalyse wirklich?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer">
+                                    <p>
+                                        <strong>Nichts. Wirklich.</strong> 30 Minuten, unverbindlich. Sie bekommen einen konkreten 
+                                        ROI-Rechner für Ihr Unternehmen – ohne Verkaufsdruck. 
+                                        <em>Keine Kreditkarte. Kein Kleingedrucktes.</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lead Magnet -->
+                    <div class="lead-magnet">
+                        <div class="lead-magnet__content">
+                            <span class="lead-magnet__icon" aria-hidden="true">📥</span>
+                            <h3 class="lead-magnet__title">Kostenlose Checkliste</h3>
+                            <p class="lead-magnet__description">
+                                <strong>10 Prozesse, die Sie JETZT automatisieren sollten</strong> – 
+                                mit konkreten ROI-Schätzungen für jede Branche. PDF, 3 Seiten, keine Floskeln.
+                            </p>
+                            
+                            <form class="lead-magnet__form" id="lead-form" aria-label="Checkliste anfordern">
+                                <div class="form__group">
+                                    <label for="lead-email" class="visually-hidden">Geschäftliche E-Mail-Adresse</label>
+                                    <input type="email" id="lead-email" name="email" class="form__input" placeholder="Ihre geschäftliche E-Mail" required autocomplete="email">
+                                </div>
+                                <div class="form__group form__group--checkbox">
+                                    <input type="checkbox" id="privacy-consent" name="privacy" required aria-describedby="privacy-hint">
+                                    <label for="privacy-consent">
+                                        Ich stimme der <a href="#datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> zu und willige in die Verarbeitung meiner Daten ein.<span class="required" aria-hidden="true">*</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full">
+                                    Checkliste herunterladen
+                                </button>
+                            </form>
+                            
+                            <div class="lead-magnet__trust">
+                                <span>✓ DSGVO-konform</span>
+                                <span>✓ Kein Spam</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== FINAL CTA ==================== -->
+        <section class="final-cta" id="contact" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="final-cta__content">
+                    <span class="final-cta__icon" aria-hidden="true">🚀</span>
+                    
+                    <!-- Urgency Badge -->
+                    <div class="final-cta__urgency">
+                        <span class="urgency-badge" aria-label="Limitiert">
+                            <span class="urgency-pulse"></span>
+                            <span>⏰ Nur noch 5 Beratungsplätze diese Woche</span>
+                        </span>
+                    </div>
+                    
+                    <h2 class="final-cta__title" id="cta-title">30 Minuten, die Ihnen Monate Arbeit sparen können</h2>
+                    <p class="final-cta__description">
+                        In einer kostenlosen Potenzialanalyse zeigen wir Ihnen genau, welche Prozesse 
+                        Sie automatisieren können – und was das für Ihr Unternehmen bedeutet.
+                        <strong>Keine Verpflichtung. Kein Verkaufsdruck. Nur Klarheit.</strong>
+                    </p>
+                    
+                    <!-- Social Proof Counter -->
+                    <div class="final-cta__social-proof">
+                        <span class="social-proof-item">
+                            <span class="social-proof-number" data-count="847">847</span>
+                            <span class="social-proof-label">Beratungen durchgeführt</span>
+                        </span>
+                        <span class="social-proof-divider">•</span>
+                        <span class="social-proof-item">
+                            <span class="social-proof-number">97%</span>
+                            <span class="social-proof-label">Weiterempfehlungsrate</span>
+                        </span>
+                    </div>
+                    
+                    <a href="mailto:kontakt@ki-prozessnavigator.de" class="btn btn--neon btn--large btn--glow" role="button">
+                        <span>Jetzt kostenlosen Beratungstermin sichern</span>
+                        <svg class="btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <p class="final-cta__trust">
+                        <span class="trust-item">✓ Keine Kreditkarte</span>
+                        <span class="trust-item">✓ Kein Kleingedrucktes</span>
+                        <span class="trust-item">✓ Nur ein ehrliches Gespräch</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="#hero" class="footer__logo">
+                        <span class="logo-text">KI-Prozessnavigator</span>
+                    </a>
+                    <p class="footer__tagline">Intelligente Automatisierung für den Mittelstand.</p>
+                    <div class="footer__social">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                
+                <div class="footer__links-group">
+                    <h4 class="footer__heading">Produkt</h4>
+                    <ul class="footer__links">
+                        <li><a href="#usecases">Use Cases</a></li>
+                        <li><a href="#pricing">Preise</a></li>
+                        <li><a href="#">API Dokumentation</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__links-group">
+                    <h4 class="footer__heading">Kontakt</h4>
+                    <address class="footer__address">
+                        Breslauer Straße 11<br>
+                        86690 Mertingen
+                    </address>
+                    <ul class="footer__links">
+                        <li><a href="mailto:d.buchele@ki-prozessnavigator.de">d.buchele@ki-prozessnavigator.de</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__links-group">
+                    <h4 class="footer__heading">Rechtliches</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">AGB</a></li>
+                        <li><a href="#" onclick="openCookieSettings(); return false;">Cookie-Einstellungen</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 KI-Prozessnavigator, Inh. Buchele Dominik. Alle Rechte vorbehalten.</p>
+                <button class="scroll-to-top" id="scroll-to-top" aria-label="Nach oben scrollen">
+                    <span class="scroll-to-top__icon">🤖</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== CONTACT MODAL ==================== -->
+    <div id="contact-modal" class="contact-modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+        <div class="contact-modal__backdrop"></div>
+        <div class="contact-modal__container">
+            <!-- Close Button -->
+            <button class="contact-modal__close" aria-label="Schließen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <!-- Header -->
+            <div class="contact-modal__header">
+                <div class="contact-modal__icon">🚀</div>
+                <h2 class="contact-modal__title" id="modal-title">Lassen Sie uns starten!</h2>
+                <p class="contact-modal__subtitle">Wählen Sie, wie wir Ihnen am besten helfen können</p>
+            </div>
+
+            <!-- Scrollable Content Area -->
+            <div class="contact-modal__scroll-area">
+            
+            <!-- Path Selection -->
+            <div class="contact-modal__paths">
+                <div class="path-selection">
+                    <!-- Quick Inquiry Path -->
+                    <div class="path-card path-card--inquiry" id="path-inquiry">
+                        <div class="path-card__icon">⚡</div>
+                        <div class="path-card__content">
+                            <h3 class="path-card__title">Jetzt anfragen</h3>
+                            <p class="path-card__description">
+                                Sie wissen bereits, was Sie brauchen? Lassen Sie uns direkt loslegen.
+                            </p>
+                            <span class="path-card__time">⏱️ Ca. 2 Minuten</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Potential Analysis Path -->
+                    <div class="path-card path-card--analysis" id="path-analysis">
+                        <div class="path-card__icon">🔍</div>
+                        <div class="path-card__content">
+                            <h3 class="path-card__title">Potenzialanalyse starten</h3>
+                            <p class="path-card__description">
+                                Finden Sie heraus, wo KI in Ihrem Unternehmen den größten Mehrwert bringt.
+                            </p>
+                            <span class="path-card__time">⏱️ Ca. 5 Minuten</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== QUICK INQUIRY FORM ===== -->
+            <div class="contact-modal__content" id="inquiry-content">
+                <button class="form-back-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Zurück zur Auswahl
+                </button>
+
+                <!-- Progress -->
+                <div class="form-progress">
+                    <div class="progress-step active"></div>
+                    <div class="progress-step"></div>
+                    <div class="progress-step"></div>
+                </div>
+
+                <!-- Step 1: Company Size -->
+                <div class="form-step active" data-step="1">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Wie groß ist Ihr Unternehmen?</h3>
+                        <p class="form-step__subtitle">Dies hilft uns, die passende Lösung zu empfehlen</p>
+                    </div>
+
+                    <div class="option-grid" data-required="true">
+                        <div class="option-card">
+                            <input type="radio" name="company-size" value="1-10">
+                            <span class="option-card__icon">🏠</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">1-10 Mitarbeiter</span>
+                                <span class="option-card__desc">Kleines Team, große Wirkung</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="radio" name="company-size" value="11-50">
+                            <span class="option-card__icon">🏢</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">11-50 Mitarbeiter</span>
+                                <span class="option-card__desc">Wachsendes Unternehmen</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="radio" name="company-size" value="51-200">
+                            <span class="option-card__icon">🏬</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">51-200 Mitarbeiter</span>
+                                <span class="option-card__desc">Mittelstand</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="radio" name="company-size" value="200+">
+                            <span class="option-card__icon">🏛️</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">200+ Mitarbeiter</span>
+                                <span class="option-card__desc">Enterprise</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-primary" data-next="2">
+                            Weiter
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: What to Automate -->
+                <div class="form-step" data-step="2">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Was möchten Sie automatisieren?</h3>
+                        <p class="form-step__subtitle">Wählen Sie alle zutreffenden Bereiche</p>
+                    </div>
+
+                    <div class="option-grid" data-required="true">
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="vertrieb">
+                            <span class="option-card__icon">🎯</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Vertrieb & Leads</span>
+                                <span class="option-card__desc">Anfragen qualifizieren, Termine buchen</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="kundenservice">
+                            <span class="option-card__icon">💬</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Kundenservice</span>
+                                <span class="option-card__desc">Anfragen beantworten, 24/7 Support</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="hr">
+                            <span class="option-card__icon">👥</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">HR & Recruiting</span>
+                                <span class="option-card__desc">Bewerbungen sichten, Onboarding</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="finanzen">
+                            <span class="option-card__icon">💰</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Finanzen & Buchhaltung</span>
+                                <span class="option-card__desc">Rechnungen, Mahnungen, Belege</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="intern">
+                            <span class="option-card__icon">🤖</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Interner Chatbot</span>
+                                <span class="option-card__desc">Firmenwissen für Mitarbeiter</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="sonstiges">
+                            <span class="option-card__icon">✨</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Sonstiges</span>
+                                <span class="option-card__desc">Individuelle Anforderungen</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-secondary" data-prev="1">Zurück</button>
+                        <button type="button" class="btn--modal-primary" data-next="3">
+                            Weiter
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Contact Information -->
+                <div class="form-step" data-step="3">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Fast geschafft!</h3>
+                        <p class="form-step__subtitle">Wie können wir Sie erreichen?</p>
+                    </div>
+
+                    <form id="inquiry-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="inquiry-firstName">Vorname <span class="required">*</span></label>
+                                <input type="text" id="inquiry-firstName" name="firstName" class="form-input" placeholder="Max" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="inquiry-lastName">Nachname <span class="required">*</span></label>
+                                <input type="text" id="inquiry-lastName" name="lastName" class="form-input" placeholder="Mustermann" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="inquiry-email">E-Mail-Adresse <span class="required">*</span></label>
+                            <input type="email" id="inquiry-email" name="email" class="form-input" placeholder="max@unternehmen.de" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="inquiry-phone">Telefon</label>
+                                <input type="tel" id="inquiry-phone" name="phone" class="form-input" placeholder="+49 123 456789">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="inquiry-company">Unternehmen</label>
+                                <input type="text" id="inquiry-company" name="company" class="form-input" placeholder="Muster GmbH">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="inquiry-message">Ihre Nachricht (optional)</label>
+                            <textarea id="inquiry-message" name="message" class="form-textarea" placeholder="Was sollten wir noch wissen?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="privacy-checkbox">
+                                <input type="checkbox" name="privacy" required>
+                                <span class="privacy-checkbox__text">
+                                    Ich stimme der <a href="#datenschutz" target="_blank">Datenschutzerklärung</a> zu 
+                                    und willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. <span class="required">*</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn--modal-secondary" data-prev="2">Zurück</button>
+                            <button type="submit" class="btn--modal-primary">
+                                Anfrage absenden
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ===== POTENTIAL ANALYSIS FORM ===== -->
+            <div class="contact-modal__content" id="analysis-content">
+                <button class="form-back-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Zurück zur Auswahl
+                </button>
+
+                <!-- Progress -->
+                <div class="form-progress">
+                    <div class="progress-step active"></div>
+                    <div class="progress-step"></div>
+                    <div class="progress-step"></div>
+                    <div class="progress-step"></div>
+                    <div class="progress-step"></div>
+                </div>
+
+                <!-- Step 1: Company Profile -->
+                <div class="form-step active" data-step="1">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Erzählen Sie uns von Ihrem Unternehmen</h3>
+                        <p class="form-step__subtitle">Diese Angaben helfen uns, Ihr Potenzial zu berechnen</p>
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span class="slider-label__text">Wie viele Mitarbeiter hat Ihr Unternehmen?</span>
+                            <span class="slider-label__value" id="employee-count-value">10 Mitarbeiter</span>
+                        </div>
+                        <input type="range" id="employee-count" class="form-slider" min="1" max="100" value="10">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span class="slider-label__text">Geschätzte Stunden für Routineaufgaben pro Woche?</span>
+                            <span class="slider-label__value" id="weekly-hours-value">20 Stunden/Woche</span>
+                        </div>
+                        <input type="range" id="weekly-hours" class="form-slider" min="5" max="60" value="20">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="industry">Ihre Branche</label>
+                        <select id="industry" name="industry" class="form-select">
+                            <option value="">Bitte wählen...</option>
+                            <option value="handwerk">Handwerk</option>
+                            <option value="dienstleistung">Dienstleistung</option>
+                            <option value="handel">Handel & E-Commerce</option>
+                            <option value="produktion">Produktion & Fertigung</option>
+                            <option value="it">IT & Software</option>
+                            <option value="beratung">Beratung & Consulting</option>
+                            <option value="gesundheit">Gesundheit & Pflege</option>
+                            <option value="immobilien">Immobilien</option>
+                            <option value="sonstiges">Sonstiges</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-primary" data-next="2">
+                            Weiter
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Current Processes -->
+                <div class="form-step" data-step="2">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Welche Prozesse belasten Sie am meisten?</h3>
+                        <p class="form-step__subtitle">Wählen Sie alle zutreffenden Bereiche</p>
+                    </div>
+
+                    <div class="option-grid" data-required="true">
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="vertrieb">
+                            <span class="option-card__icon">🎯</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Vertrieb & Leads</span>
+                                <span class="option-card__desc">Anfragen, Follow-ups, Terminbuchung</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="kundenservice">
+                            <span class="option-card__icon">💬</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Kundenkommunikation</span>
+                                <span class="option-card__desc">Anfragen, Beschwerden, Feedback</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="hr">
+                            <span class="option-card__icon">👥</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">HR & Personal</span>
+                                <span class="option-card__desc">Bewerbungen, Onboarding, Anfragen</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="buchhaltung">
+                            <span class="option-card__icon">📄</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Buchhaltung</span>
+                                <span class="option-card__desc">Rechnungen, Belege, Mahnungen</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="terminbuchung">
+                            <span class="option-card__icon">📅</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Terminbuchung</span>
+                                <span class="option-card__desc">Koordination, Erinnerungen, No-Shows</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="projektmanagement">
+                            <span class="option-card__icon">📋</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Projektmanagement</span>
+                                <span class="option-card__desc">Aufgaben, Deadlines, Statusupdates</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="onboarding">
+                            <span class="option-card__icon">🎓</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Mitarbeiter-Onboarding</span>
+                                <span class="option-card__desc">Einarbeitung, Schulungen, Dokumentation</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="finanzen">
+                            <span class="option-card__icon">💰</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Finanzprozesse</span>
+                                <span class="option-card__desc">Prüfung, Freigaben, Reporting</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-secondary" data-prev="1">Zurück</button>
+                        <button type="button" class="btn--modal-primary" data-next="3">
+                            Weiter
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Challenges -->
+                <div class="form-step" data-step="3">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Was sind Ihre größten Herausforderungen?</h3>
+                        <p class="form-step__subtitle">Diese Informationen helfen uns, passende Lösungen zu finden</p>
+                    </div>
+
+                    <div class="option-grid option-grid--single" data-required="true">
+                        <div class="option-card">
+                            <input type="checkbox" name="challenge" value="zeit">
+                            <span class="option-card__icon">⏰</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Zeitmangel</span>
+                                <span class="option-card__desc">Wir haben zu wenig Zeit für strategische Aufgaben</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="challenge" value="fehler">
+                            <span class="option-card__icon">⚠️</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Fehleranfälligkeit</span>
+                                <span class="option-card__desc">Manuelle Prozesse führen zu Fehlern</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="challenge" value="skalierung">
+                            <span class="option-card__icon">📈</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Skalierungsprobleme</span>
+                                <span class="option-card__desc">Wachstum wird durch Prozesse gebremst</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="challenge" value="kosten">
+                            <span class="option-card__icon">💸</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Hohe Personalkosten</span>
+                                <span class="option-card__desc">Routineaufgaben binden teure Ressourcen</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="challenge" value="verfuegbarkeit">
+                            <span class="option-card__icon">🌙</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Eingeschränkte Erreichbarkeit</span>
+                                <span class="option-card__desc">Wir können nicht rund um die Uhr reagieren</span>
+                            </span>
+                            <span class="option-card__check">✓</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-secondary" data-prev="2">Zurück</button>
+                        <button type="button" class="btn--modal-primary" data-next="4">
+                            Potenzial berechnen
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Results & Recommendations -->
+                <div class="form-step" data-step="4">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Ihre Potenzialanalyse</h3>
+                        <p class="form-step__subtitle">Basierend auf Ihren Angaben haben wir folgendes ermittelt:</p>
+                    </div>
+
+                    <div class="potential-results">
+                        <div class="potential-results__header">
+                            <div class="potential-results__icon">📊</div>
+                            <div>
+                                <span class="potential-results__title">Ihr Automatisierungspotenzial</span>
+                                <span class="potential-results__subtitle">Geschätzte Werte auf Basis Ihrer Angaben</span>
+                            </div>
+                        </div>
+
+                        <div class="potential-results__content">
+                            <div class="result-card">
+                                <span class="result-card__value" id="result-hours">14h/Woche</span>
+                                <span class="result-card__label">Zeitersparnis</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-card__value" id="result-savings">2.800€/Monat</span>
+                                <span class="result-card__label">Kosteneinsparung</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-card__value" id="result-roi">+250%</span>
+                                <span class="result-card__label">ROI</span>
+                            </div>
+                        </div>
+
+                        <div class="potential-recommendations" id="potential-recommendations">
+                            <div class="recommendation-item">
+                                <span class="recommendation-item__icon">✅</span>
+                                <span>Basierend auf Ihrer Unternehmensgröße empfehlen wir einen schrittweisen Start</span>
+                            </div>
+                            <div class="recommendation-item">
+                                <span class="recommendation-item__icon">✅</span>
+                                <span>Die größten Einsparungen sind oft in der Kundenkommunikation zu finden</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-secondary" data-prev="3">Zurück</button>
+                        <button type="button" class="btn--modal-primary" data-next="5">
+                            Persönliche Beratung anfordern
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Contact Information -->
+                <div class="form-step" data-step="5">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Lassen Sie uns in Kontakt treten</h3>
+                        <p class="form-step__subtitle">Wir senden Ihnen Ihre detaillierte Analyse per E-Mail</p>
+                    </div>
+
+                    <form id="analysis-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="analysis-firstName">Vorname <span class="required">*</span></label>
+                                <input type="text" id="analysis-firstName" name="firstName" class="form-input" placeholder="Max" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="analysis-lastName">Nachname <span class="required">*</span></label>
+                                <input type="text" id="analysis-lastName" name="lastName" class="form-input" placeholder="Mustermann" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="analysis-email">E-Mail-Adresse <span class="required">*</span></label>
+                            <input type="email" id="analysis-email" name="email" class="form-input" placeholder="max@unternehmen.de" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="analysis-phone">Telefon</label>
+                                <input type="tel" id="analysis-phone" name="phone" class="form-input" placeholder="+49 123 456789">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="analysis-company">Unternehmen <span class="required">*</span></label>
+                                <input type="text" id="analysis-company" name="company" class="form-input" placeholder="Muster GmbH" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="privacy-checkbox">
+                                <input type="checkbox" name="privacy" required>
+                                <span class="privacy-checkbox__text">
+                                    Ich stimme der <a href="#datenschutz" target="_blank">Datenschutzerklärung</a> zu 
+                                    und willige in die Verarbeitung meiner Daten zur Zusendung der Analyse und Kontaktaufnahme ein. <span class="required">*</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn--modal-secondary" data-prev="4">Zurück</button>
+                            <button type="submit" class="btn--modal-primary">
+                                Analyse & Beratungstermin anfordern
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ===== SUCCESS STATE ===== -->
+            <div class="form-success">
+                <div class="success-icon">✓</div>
+                <h3 class="success-title">Vielen Dank!</h3>
+                <p class="success-message">
+                    Ihre Anfrage wurde erfolgreich übermittelt. Wir melden uns innerhalb von 24 Stunden 
+                    bei Ihnen – versprochen!
+                </p>
+                <button type="button" class="success-cta">
+                    Fenster schließen
+                </button>
+            </div>
+
+            </div><!-- End scroll-area -->
+
+            <!-- Trust Footer -->
+            <div class="modal-trust">
+                <span class="modal-trust__item">
+                    <span class="modal-trust__icon">🔒</span>
+                    <span>DSGVO-konform</span>
+                </span>
+                <span class="modal-trust__item">
+                    <span class="modal-trust__icon">✓</span>
+                    <span>Keine Spam-Mails</span>
+                </span>
+                <span class="modal-trust__item">
+                    <span class="modal-trust__icon">⚡</span>
+                    <span>Antwort in 24h</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== COOKIE BANNER (DSGVO-konform) ==================== -->
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc" aria-modal="true">
+        <div class="cookie-banner__container">
+            <div class="cookie-banner__content">
+                <p class="cookie-banner__title" id="cookie-title">
+                    <span aria-hidden="true">🍪</span> Wir respektieren Ihre Privatsphäre
+                </p>
+                <p class="cookie-banner__text" id="cookie-desc">
+                    Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. 
+                    Sie können wählen, welche Cookie-Kategorien Sie zulassen möchten.
+                    <a href="#datenschutz">Datenschutzerklärung</a>
+                </p>
+            </div>
+            <div class="cookie-banner__actions">
+                <button class="cookie-banner__btn cookie-banner__btn--accept-all" id="cookie-accept-all">
+                    Alle akzeptieren
+                </button>
+                <button class="cookie-banner__btn cookie-banner__btn--essential" id="cookie-essential-only">
+                    Nur notwendige
+                </button>
+                <button class="cookie-banner__btn cookie-banner__btn--settings" id="cookie-settings">
+                    Einstellungen anpassen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== COOKIE SETTINGS MODAL ==================== -->
+    <div id="cookie-modal" class="cookie-modal" role="dialog" aria-labelledby="cookie-modal-title" aria-modal="true" hidden>
+        <div class="cookie-modal__backdrop" id="cookie-modal-backdrop"></div>
+        <div class="cookie-modal__dialog">
+            <div class="cookie-modal__header">
+                <h2 class="cookie-modal__title" id="cookie-modal-title">
+                    <span aria-hidden="true">⚙️</span> Cookie-Einstellungen
+                </h2>
+                <button class="cookie-modal__close" id="cookie-modal-close" aria-label="Schließen">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="cookie-modal__body">
+                <p class="cookie-modal__intro">
+                    Hier können Sie Ihre Cookie-Präferenzen verwalten. Technisch notwendige Cookies 
+                    können nicht deaktiviert werden, da sie für die Grundfunktionen der Website erforderlich sind.
+                </p>
+                
+                <!-- Notwendige Cookies (immer aktiv) -->
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true">🔒</span>
+                                Technisch notwendig
+                            </h3>
+                            <span class="cookie-category__badge cookie-category__badge--required">Erforderlich</span>
+                        </div>
+                        <label class="cookie-toggle cookie-toggle--disabled">
+                            <input type="checkbox" checked disabled aria-label="Technisch notwendige Cookies (immer aktiv)">
+                            <span class="cookie-toggle__slider"></span>
+                        </div>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Diese Cookies sind für die Grundfunktionen der Website unbedingt erforderlich. 
+                        Dazu gehören z.B. Sicherheitsfunktionen und die Speicherung Ihrer Cookie-Einstellungen.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cookie_consent</td>
+                                    <td>Speichert Ihre Cookie-Einstellungen</td>
+                                    <td>1 Jahr</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+                
+                <!-- Statistik Cookies -->
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true">📊</span>
+                                Statistik & Analyse
+                            </h3>
+                        </div>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-analytics" name="analytics" aria-label="Statistik-Cookies erlauben">
+                            <span class="cookie-toggle__slider"></span>
+                        </div>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren. 
+                        Alle Daten werden anonymisiert erfasst und nicht an Dritte weitergegeben.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_ga</td>
+                                    <td>Google Analytics (anonymisiert)</td>
+                                    <td>2 Jahre</td>
+                                </tr>
+                                <tr>
+                                    <td>_gid</td>
+                                    <td>Unterscheidung von Nutzern</td>
+                                    <td>24 Stunden</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+                
+                <!-- Marketing Cookies -->
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true">📢</span>
+                                Marketing & Werbung
+                            </h3>
+                        </div>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-marketing" name="marketing" aria-label="Marketing-Cookies erlauben">
+                            <span class="cookie-toggle__slider"></span>
+                        </div>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Diese Cookies werden verwendet, um Ihnen relevante Werbung basierend auf Ihren 
+                        Interessen anzuzeigen. Sie werden auch genutzt, um die Anzahl der Werbeeinblendungen zu begrenzen.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_fbp</td>
+                                    <td>Facebook Pixel</td>
+                                    <td>3 Monate</td>
+                                </tr>
+                                <tr>
+                                    <td>_gcl_au</td>
+                                    <td>Google Ads Conversion-Tracking</td>
+                                    <td>3 Monate</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+                
+                <!-- Externe Medien -->
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true">🎬</span>
+                                Externe Medien
+                            </h3>
+                        </div>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-external" name="external" aria-label="Externe Medien erlauben">
+                            <span class="cookie-toggle__slider"></span>
+                        </div>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Ermöglicht die Einbindung externer Inhalte wie YouTube-Videos, Google Maps 
+                        oder Social-Media-Einbettungen. Ohne diese Cookies werden Platzhalter angezeigt.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>YSC</td>
+                                    <td>YouTube Session-Cookie</td>
+                                    <td>Session</td>
+                                </tr>
+                                <tr>
+                                    <td>VISITOR_INFO1_LIVE</td>
+                                    <td>YouTube Bandbreiten-Schätzung</td>
+                                    <td>6 Monate</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+            </div>
+            
+            <div class="cookie-modal__footer">
+                <div class="cookie-modal__info">
+                    <a href="#datenschutz" class="cookie-modal__link">Datenschutzerklärung</a>
+                    <span class="cookie-modal__separator">|</span>
+                    <a href="#impressum" class="cookie-modal__link">Impressum</a>
+                </div>
+                <div class="cookie-modal__buttons">
+                    <button class="cookie-modal__btn cookie-modal__btn--save" id="cookie-save-selection">
+                        Auswahl speichern
+                    </button>
+                    <button class="cookie-modal__btn cookie-modal__btn--accept-all" id="cookie-modal-accept-all">
+                        Alle akzeptieren
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/hero-3d.js" defer></script>
+    <script src="js/cookie-banner.js" defer></script>
+    <script src="js/contact-modal.js" defer></script>
+</body>
+</html>
+

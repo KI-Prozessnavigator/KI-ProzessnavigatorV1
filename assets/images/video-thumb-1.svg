@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" fill="none">
+  <defs>
+    <linearGradient id="vidGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d7377"/>
+      <stop offset="100%" style="stop-color:#094b4d"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#00FFA3;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00FFA3;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="225" fill="url(#vidGrad1)"/>
+  
+  <!-- Abstract office pattern -->
+  <g opacity="0.1">
+    <rect x="20" y="40" width="60" height="80" rx="4" fill="#fff"/>
+    <rect x="90" y="60" width="40" height="60" rx="4" fill="#fff"/>
+    <rect x="320" y="50" width="50" height="70" rx="4" fill="#fff"/>
+    <rect x="280" y="80" width="30" height="50" rx="4" fill="#fff"/>
+  </g>
+  
+  <!-- Person silhouette -->
+  <g transform="translate(170, 50)">
+    <circle cx="30" cy="25" r="25" fill="#fff" opacity="0.9"/>
+    <text x="30" y="30" text-anchor="middle" fill="#0d7377" font-size="20">MM</text>
+    <ellipse cx="30" cy="90" rx="35" ry="25" fill="#fff" opacity="0.9"/>
+  </g>
+  
+  <!-- Quote indicator -->
+  <text x="50" y="180" fill="#00FFA3" font-size="60" font-family="Georgia" opacity="0.5">"</text>
+  
+  <!-- Name bar -->
+  <rect x="0" y="195" width="400" height="30" fill="#000" opacity="0.5"/>
+  <text x="20" y="215" fill="#fff" font-size="12" font-weight="600" font-family="system-ui">Max Müller</text>
+  <text x="120" y="215" fill="#00FFA3" font-size="11" font-family="system-ui">CEO, TechGmbH</text>
+  
+  <!-- Duration badge -->
+  <rect x="350" y="200" width="40" height="20" rx="4" fill="#000" opacity="0.7"/>
+  <text x="370" y="214" text-anchor="middle" fill="#fff" font-size="10" font-family="system-ui">2:34</text>
+  
+  <!-- Subtle glow -->
+  <ellipse cx="200" cy="112" rx="80" ry="60" fill="url(#glowGrad)"/>
+</svg>
+

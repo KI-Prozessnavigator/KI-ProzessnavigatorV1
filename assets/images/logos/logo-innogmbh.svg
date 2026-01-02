@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="none">
+  <circle cx="15" cy="20" r="12" fill="none" stroke="#0d7377" stroke-width="2"/>
+  <circle cx="15" cy="20" r="6" fill="#00FFA3"/>
+  <path d="M15 8 L15 3" stroke="#0d7377" stroke-width="2"/>
+  <path d="M15 32 L15 37" stroke="#0d7377" stroke-width="2"/>
+  <text x="32" y="25" fill="#44403c" font-size="14" font-weight="600" font-family="system-ui">InnoGmbH</text>
+</svg>
+

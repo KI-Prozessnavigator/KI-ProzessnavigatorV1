@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="none">
+  <path d="M5 25 Q 10 15 15 20 Q 20 25 25 15" stroke="#0d7377" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <circle cx="25" cy="15" r="4" fill="#00FFA3"/>
+  <text x="35" y="25" fill="#44403c" font-size="14" font-weight="600" font-family="system-ui">DataFlow</text>
+</svg>
+
