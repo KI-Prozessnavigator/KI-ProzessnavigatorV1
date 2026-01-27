@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
   <defs>
     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00FFA3;stop-opacity:0.2"/>
-      <stop offset="100%" style="stop-color:#0d7377;stop-opacity:0.1"/>
+      <stop offset="0%" style="stop-color:#0077FF;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#0066CC;stop-opacity:0.1"/>
     </linearGradient>
     <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00FFA3"/>
-      <stop offset="100%" style="stop-color:#00B894"/>
+      <stop offset="0%" style="stop-color:#0077FF"/>
+      <stop offset="100%" style="stop-color:#00D4FF"/>
     </linearGradient>
   </defs>
   
@@ -38,10 +38,10 @@
   <!-- Stats indicator -->
   <g transform="translate(280, 80)">
     <rect width="90" height="100" rx="12" fill="#fff" filter="drop-shadow(0 4px 12px rgba(0,0,0,0.1))"/>
-    <text x="45" y="35" text-anchor="middle" fill="#00FFA3" font-size="28" font-weight="700" font-family="system-ui">+40%</text>
+    <text x="45" y="35" text-anchor="middle" fill="#0077FF" font-size="28" font-weight="700" font-family="system-ui">+40%</text>
     <text x="45" y="55" text-anchor="middle" fill="#44403c" font-size="10" font-family="system-ui">Abschluss-</text>
     <text x="45" y="68" text-anchor="middle" fill="#44403c" font-size="10" font-family="system-ui">quote</text>
-    <path d="M25 85 L35 78 L50 82 L65 72" stroke="#00FFA3" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M25 85 L35 78 L50 82 L65 72" stroke="#0077FF" stroke-width="2" fill="none" stroke-linecap="round"/>
   </g>
   
   <!-- Connection lines -->
