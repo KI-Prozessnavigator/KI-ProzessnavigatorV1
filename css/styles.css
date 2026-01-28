@@ -67,34 +67,70 @@ h1 em, h2 em {
 .nav__logo {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-3);
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon img {
+    display: block;
 }
 
 .logo-text {
     font-family: var(--font-heading);
-    font-size: var(--text-xl);
-    color: var(--color-primary);
+    font-size: var(--text-2xl);
+    color: #ffffff;
     letter-spacing: var(--tracking-tight);
+    font-weight: var(--font-semibold);
 }
 
 .nav__menu {
     display: flex;
     align-items: center;
     gap: var(--space-8);
+    margin-left: auto;
 }
 
 .nav__actions {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
+    display: none;
+}
+
+/* Entferne alle Hover-Effekte von den List Items */
+.nav__item {
+    background: none !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.nav__item:hover,
+.nav__item:focus,
+.nav__item:active {
+    background: none !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 .nav__link {
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
     color: var(--color-neutral-600);
-    transition: color var(--transition-fast);
+    transition: color 0.2s ease;
     position: relative;
+    display: inline-block;
+    background: none !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .nav__link::after {
@@ -102,15 +138,22 @@ h1 em, h2 em {
     position: absolute;
     bottom: -4px;
     left: 0;
+    right: 0;
     width: 0;
     height: 2px;
     background: var(--color-primary);
-    transition: width var(--transition-base);
+    transition: width 0.3s ease;
 }
 
 .nav__link:hover,
+.nav__link:focus,
+.nav__link:active,
 .nav__link.active {
     color: var(--color-primary);
+    background: none !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 .nav__link:hover::after,
@@ -119,14 +162,17 @@ h1 em, h2 em {
 }
 
 .nav__link--cta {
-    padding: var(--space-2) var(--space-5);
-    background: var(--gradient-neon-1);
+    padding: var(--space-2) var(--space-5) !important;
+    background: var(--gradient-neon-1) !important;
+    background-color: transparent !important;
     color: white !important;
     border-radius: var(--radius-full);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
     box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
     position: relative;
     overflow: hidden;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 .nav__link--cta::before {
@@ -148,10 +194,16 @@ h1 em, h2 em {
     display: none;
 }
 
-.nav__link--cta:hover {
+.nav__link--cta:hover,
+.nav__link--cta:focus,
+.nav__link--cta:active {
     transform: translateY(-2px);
     box-shadow: 0 0 25px rgba(0, 119, 255, 0.5);
     filter: brightness(1.1);
+    background: var(--gradient-neon-1) !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 .nav__toggle {

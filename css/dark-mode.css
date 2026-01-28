@@ -4,25 +4,77 @@
 
 /* ===== Header & Navigation ===== */
 [data-theme="dark"] .header {
-    background: rgba(10, 14, 26, 0.95);
+    /* Vollflächiger dunkler Hintergrund, damit keine helleren Bereiche der Hero-Section durchscheinen */
+    background: #0a0e1a;
     border-bottom-color: rgba(0, 212, 255, 0.2);
 }
 
 [data-theme="dark"] .header.scrolled {
     border-bottom-color: rgba(0, 212, 255, 0.3);
-    box-shadow: 0 2px 20px rgba(0, 212, 255, 0.15), 0 1px 2px rgba(0, 0, 0, 0.3);
-    background: rgba(10, 14, 26, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 212, 255, 0.15), 0 1px 2px rgba(0, 0, 0, 0.6);
+    background: #0a0e1a;
+}
+
+/* Entferne alle Hover-Effekte von den List Items im Dark Mode */
+[data-theme="dark"] .nav__item {
+    background: none !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+[data-theme="dark"] .nav__item:hover,
+[data-theme="dark"] .nav__item:focus,
+[data-theme="dark"] .nav__item:active {
+    background: none !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 [data-theme="dark"] .nav__link {
     color: var(--color-text-muted);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    background: none !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 [data-theme="dark"] .nav__link:hover,
+[data-theme="dark"] .nav__link:focus,
+[data-theme="dark"] .nav__link:active,
 [data-theme="dark"] .nav__link.active {
     color: var(--color-neon-cyan);
     text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+    background: none !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Unterstreichung mit stabiler Transition */
+[data-theme="dark"] .nav__link::after {
+    background: var(--color-neon-cyan);
+    transition: width 0.3s ease;
+}
+
+
+/* CTA Button bleibt hellblau - ohne grauen Schleier */
+[data-theme="dark"] .nav__link--cta {
+    background: var(--gradient-neon-1) !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+[data-theme="dark"] .nav__link--cta:hover,
+[data-theme="dark"] .nav__link--cta:focus,
+[data-theme="dark"] .nav__link--cta:active {
+    background: var(--gradient-neon-1) !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
     
 /* ===== Hero Section ===== */
@@ -159,8 +211,9 @@
 
 /* ===== Footer ===== */
 [data-theme="dark"] .footer {
-    background: var(--color-neutral-900);
-    border-top: 1px solid var(--color-border);
+    background: #0a0e1a;
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    color: var(--color-text-muted);
 }
 
 [data-theme="dark"] .footer__link {
@@ -171,6 +224,40 @@
 [data-theme="dark"] .footer__link:hover {
     color: var(--color-neon-cyan);
     text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+}
+
+[data-theme="dark"] .footer__tagline {
+    color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .footer__bottom {
+    color: var(--color-text-muted);
+    border-top-color: rgba(0, 212, 255, 0.2);
+}
+
+[data-theme="dark"] .footer__heading {
+    color: var(--color-text-muted);
+}
+
+/* Social Media Icons mit echten Markenfarben für besseren Kontrast */
+[data-theme="dark"] .social-link[aria-label="Instagram"] {
+    background: linear-gradient(45deg, #E4405F 0%, #FCAF45 50%, #833AB4 100%);
+    color: white;
+}
+
+[data-theme="dark"] .social-link[aria-label="TikTok"] {
+    background: #000000;
+    color: white;
+}
+
+[data-theme="dark"] .social-link[aria-label="Facebook"] {
+    background: #1877F2;
+    color: white;
+}
+
+[data-theme="dark"] .social-link[aria-label="LinkedIn"] {
+    background: #0A66C2;
+    color: white;
 }
 
 /* ===== Scroll to Top ===== */

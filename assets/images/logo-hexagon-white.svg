@@ -1,0 +1,64 @@
+<svg width="140" height="48" viewBox="0 0 140 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left Hexagon with data flowing OUT -->
+  <g>
+    <!-- Hexagon outline -->
+    <path d="M10 24 L17 12 L31 12 L38 24 L31 36 L17 36 Z" stroke="white" stroke-width="2" fill="none"/>
+    
+    <!-- Data flow lines going right with dots -->
+    <line x1="15" y1="18" x2="8" y2="18" stroke="white" stroke-width="1.5"/>
+    <circle cx="8" cy="18" r="1.5" fill="white"/>
+    <line x1="17" y1="21" x2="10" y2="21" stroke="white" stroke-width="1.5"/>
+    <circle cx="10" cy="21" r="1.5" fill="white"/>
+    <line x1="15" y1="24" x2="8" y2="24" stroke="white" stroke-width="1.5"/>
+    <circle cx="8" cy="24" r="1.5" fill="white"/>
+    <line x1="17" y1="27" x2="10" y2="27" stroke="white" stroke-width="1.5"/>
+    <circle cx="10" cy="27" r="1.5" fill="white"/>
+    <line x1="15" y1="30" x2="8" y2="30" stroke="white" stroke-width="1.5"/>
+    <circle cx="8" cy="30" r="1.5" fill="white"/>
+    
+    <!-- Connection line to center -->
+    <line x1="38" y1="24" x2="48" y2="24" stroke="white" stroke-width="2"/>
+    <circle cx="43" cy="24" r="2" fill="white"/>
+  </g>
+  
+  <!-- Center Hexagon with Processor/Chip -->
+  <g>
+    <!-- Hexagon outline -->
+    <path d="M54 24 L61 12 L75 12 L82 24 L75 36 L61 36 Z" stroke="white" stroke-width="2" fill="none"/>
+    
+    <!-- Central processor/chip symbol -->
+    <rect x="63" y="19" width="10" height="10" stroke="white" stroke-width="2" fill="none"/>
+    <circle cx="68" cy="24" r="2" fill="white"/>
+    
+    <!-- Processor pins/connections -->
+    <line x1="63" y1="21" x2="60" y2="21" stroke="white" stroke-width="1.5"/>
+    <line x1="63" y1="24" x2="60" y2="24" stroke="white" stroke-width="1.5"/>
+    <line x1="63" y1="27" x2="60" y2="27" stroke="white" stroke-width="1.5"/>
+    
+    <line x1="73" y1="21" x2="76" y2="21" stroke="white" stroke-width="1.5"/>
+    <line x1="73" y1="24" x2="76" y2="24" stroke="white" stroke-width="1.5"/>
+    <line x1="73" y1="27" x2="76" y2="27" stroke="white" stroke-width="1.5"/>
+    
+    <!-- Connection line to right hexagon -->
+    <line x1="82" y1="24" x2="92" y2="24" stroke="white" stroke-width="2"/>
+    <circle cx="87" cy="24" r="2" fill="white"/>
+  </g>
+  
+  <!-- Right Hexagon with data flowing IN -->
+  <g>
+    <!-- Hexagon outline -->
+    <path d="M98 24 L105 12 L119 12 L126 24 L119 36 L105 36 Z" stroke="white" stroke-width="2" fill="none"/>
+    
+    <!-- Data flow lines coming in from left with dots -->
+    <line x1="121" y1="18" x2="128" y2="18" stroke="white" stroke-width="1.5"/>
+    <circle cx="128" cy="18" r="1.5" fill="white"/>
+    <line x1="119" y1="21" x2="126" y2="21" stroke="white" stroke-width="1.5"/>
+    <circle cx="126" cy="21" r="1.5" fill="white"/>
+    <line x1="121" y1="24" x2="128" y2="24" stroke="white" stroke-width="1.5"/>
+    <circle cx="128" cy="24" r="1.5" fill="white"/>
+    <line x1="119" y1="27" x2="126" y2="27" stroke="white" stroke-width="1.5"/>
+    <circle cx="126" cy="27" r="1.5" fill="white"/>
+    <line x1="121" y1="30" x2="128" y2="30" stroke="white" stroke-width="1.5"/>
+    <circle cx="128" cy="30" r="1.5" fill="white"/>
+  </g>
+</svg>
