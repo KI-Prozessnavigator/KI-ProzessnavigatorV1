@@ -140,6 +140,7 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/hero-3d.css">
+    <link rel="stylesheet" href="css/ki-process-navigator.css">
     <link rel="stylesheet" href="css/cookie-banner.css">
     <link rel="stylesheet" href="css/contact-modal.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -260,26 +261,9 @@
                 </div>
                 
                 <div class="hero__visual" aria-hidden="true">
-                    <!-- Three.js 3D Container -->
-                    <div class="hero-3d-wrapper">
-                        <div id="hero-3d-container" class="hero-3d-container">
-                            <!-- Three.js canvas will be injected here -->
-                            <!-- CSS Fallback for non-WebGL browsers -->
-                            <noscript>
-                                <div class="hero-3d-fallback">
-                                    <div class="fallback-orb"></div>
-                                    <div class="fallback-ring fallback-ring--1"></div>
-                                    <div class="fallback-ring fallback-ring--2"></div>
-                                    <div class="fallback-ring fallback-ring--3"></div>
-                                </div>
-                            </noscript>
-                        </div>
-                        <!-- Floating Data Streams -->
-                        <div class="data-streams">
-                            <div class="data-stream data-stream--1"></div>
-                            <div class="data-stream data-stream--2"></div>
-                            <div class="data-stream data-stream--3"></div>
-                        </div>
+                    <!-- KI-Prozess Navigator Grafik -->
+                    <div class="ki-process-navigator-container" id="ki-process-navigator-container">
+                        <!-- SVG wird via JavaScript geladen -->
                     </div>
                 </div>
             </div>
@@ -2141,7 +2125,7 @@
 
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
-    <script src="js/hero-3d.js" defer></script>
+    <script src="js/ki-process-navigator.js" defer></script>
     <script src="js/cookie-banner.js" defer></script>
     <script src="js/contact-modal.js" defer></script>
 </body>
