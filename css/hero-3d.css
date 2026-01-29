@@ -102,7 +102,7 @@
 .hero-3d-wrapper {
     position: relative;
     width: 100%;
-    max-width: 550px;
+    max-width: 700px; /* Vergrößert von 550px */
     aspect-ratio: 1;
 }
 
@@ -110,7 +110,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    overflow: hidden;
+    overflow: visible; /* Geändert von hidden zu visible, damit Ringe nicht abgeschnitten werden */
     position: relative;
     background: radial-gradient(
         ellipse at center,
@@ -563,7 +563,7 @@
 /* ===== Responsive Adjustments ===== */
 @media (max-width: 992px) {
     .hero-3d-wrapper {
-        max-width: 350px;
+        max-width: 500px; /* Vergrößert von 350px */
         margin-inline: auto;
     }
     
@@ -574,7 +574,7 @@
 
 @media (max-width: 768px) {
     .hero-3d-wrapper {
-        max-width: 280px;
+        max-width: 400px; /* Vergrößert von 280px */
     }
     
     /* Simplify hero background on tablet */
@@ -586,7 +586,7 @@
 @media (max-width: 576px) {
     /* Show 3D visual on mobile - compact version */
     .hero-3d-wrapper {
-        max-width: 180px !important;
+        max-width: 300px !important; /* Vergrößert von 180px */
         margin-inline: auto;
     }
     
