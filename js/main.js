@@ -280,18 +280,62 @@ function handleFormSubmit(e) {
     submitBtn.textContent = 'Wird gesendet...';
     submitBtn.disabled = true;
     
-    // Simulate API call
-    setTimeout(() => {
-        if (formType === 'lead-form') {
-            showNotification('🎉 Vielen Dank! Die Checkliste wird an Ihre E-Mail gesendet.', 'success');
-        } else {
+    // Nur Lead-Form verwendet EmailJS für Checkliste
+    if (formType === 'lead-form') {
+        sendChecklisteEmail(email, submitBtn, originalText, e.target);
+    } else {
+        // Kontaktformular - simuliert (oder später auch mit EmailJS)
+        setTimeout(() => {
             showNotification('✅ Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.', 'success');
-        }
-        
-        e.target.reset();
+            e.target.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 1500);
+    }
+}
+
+// EmailJS Integration für Checkliste
+function sendChecklisteEmail(email, submitBtn, originalText, form) {
+    // Prüfe ob EmailJS konfiguriert ist
+    if (!window.EMAILJS_CONFIG || 
+        window.EMAILJS_CONFIG.PUBLIC_KEY === 'IHR_PUBLIC_KEY_HIER' ||
+        !window.emailjs) {
+        console.warn('⚠️ EmailJS ist nicht konfiguriert. Bitte tragen Sie Ihre Zugangsdaten in index.html ein.');
+        showNotification('⚠️ E-Mail-Service ist noch nicht konfiguriert. Bitte kontaktieren Sie den Administrator.', 'error');
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-    }, 1500);
+        return;
+    }
+    
+    // Initialisiere EmailJS mit Public Key
+    emailjs.init(window.EMAILJS_CONFIG.PUBLIC_KEY);
+    
+    // Template-Parameter
+    const templateParams = {
+        user_email: email,
+        to_email: email, // E-Mail des Empfängers (Kunde)
+        reply_to: email
+    };
+    
+    // Sende E-Mail über EmailJS
+    emailjs.send(
+        window.EMAILJS_CONFIG.SERVICE_ID,
+        window.EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams
+    )
+    .then(function(response) {
+        console.log('✅ E-Mail erfolgreich gesendet!', response.status, response.text);
+        showNotification('🎉 Vielen Dank! Die Checkliste wurde an Ihre E-Mail gesendet.', 'success');
+        form.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    })
+    .catch(function(error) {
+        console.error('❌ Fehler beim E-Mail-Versand:', error);
+        showNotification('❌ Fehler beim Versenden. Bitte versuchen Sie es später erneut.', 'error');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
 }
 
 function showNotification(message, type = 'info') {
