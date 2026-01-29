@@ -140,8 +140,7 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/hero-3d.css">
-    <link rel="stylesheet" href="css/ki-process-navigator.css">
-    <link rel="stylesheet" href="css/solar-system.css">
+    <link rel="stylesheet" href="css/live-impact-dashboard.css">
     <link rel="stylesheet" href="css/value-calculator.css">
     <link rel="stylesheet" href="css/cookie-banner.css">
     <link rel="stylesheet" href="css/contact-modal.css">
@@ -190,6 +189,79 @@
         }
     </style>
     
+    <!-- FORCE: Button keine Bewegung, Text WEIẞ -->
+    <style>
+        /* BUTTON: Absolut KEINE Bewegung mehr! */
+        .btn--neon,
+        .btn--neon:hover,
+        .btn--neon:active,
+        .btn--neon:focus {
+            transform: none !important;
+        }
+        
+        .btn--neon::before {
+            display: none !important;
+        }
+        
+        /* TEXT: "10 Stunden mehr Zeit" WEIẞ mit Glow */
+        .hero__title em {
+            color: #ffffff !important;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 119, 255, 0.4) !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: unset !important;
+            background-clip: unset !important;
+        }
+        
+        /* TEXT: "Ersparnis" GRÜN wie "Mit KI-Prozessnavigator" */
+        #calculator-title em {
+            color: #00D98F !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: unset !important;
+            background-clip: unset !important;
+        }
+        
+        /* COOKIE-CONTAINER: ALLE TEXTE SCHWARZ #000000 */
+        .cookie-category__title,
+        .cookie-category__title *,
+        .cookie-category__desc,
+        .cookie-category__desc *,
+        .cookie-table th,
+        .cookie-table td,
+        .cookie-category__badge,
+        .cookie-icon {
+            color: #000000 !important;
+            text-shadow: none !important;
+        }
+        
+        /* COOKIE-DETAILS: SCHWARZ #000000 (keine Unschärfe) */
+        .cookie-category__details summary {
+            color: #000000 !important;
+            text-shadow: none !important;
+            filter: none !important;
+        }
+        
+        /* COOKIE-TOGGLE: GRÜN wenn aktiviert */
+        .cookie-toggle input:checked + .cookie-toggle__slider {
+            background: #00D98F !important;
+        }
+        
+        /* BLINKENDER CURSOR in Hero-Überschrift */
+        @keyframes blink {
+            0%, 49% {
+                opacity: 1;
+            }
+            50%, 100% {
+                opacity: 0;
+            }
+        }
+        
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+    </style>
+    
     <!-- Three.js (CDN with fallback) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 </head>
@@ -197,11 +269,8 @@
     <!-- ==================== HEADER ==================== -->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#hero" class="nav__logo">
-                <div class="logo-icon">
-                    <img src="assets/images/logo.svg" alt="KI-Prozessnavigator Logo" height="40">
-                </div>
-                <span class="logo-text">KI-Prozessnavigator</span>
+            <a href="#hero" class="nav__logo" style="padding-left: 0;">
+                <span class="logo-text" style="font-size: 1.4rem; margin-left: 0;">KI-Prozessnavigator</span>
             </a>
             
             <ul class="nav__menu" id="nav-menu">
@@ -229,11 +298,11 @@
         <!-- ==================== HERO SECTION ==================== -->
         <section class="hero" id="hero" aria-labelledby="hero-title">
             <div class="hero__container container" id="main-content">
-                <div class="hero__content">
+                <div class="hero__content" style="padding-top: 110px;">
                     <!-- A/B Test: Variante A (Emotional/Zeit-Fokus) -->
                     <h1 class="hero__title" id="hero-title">
-                        <span class="typewriter" aria-label="Stellen Sie sich vor: 10 Stunden mehr Zeit – jede Woche">
-                            Stellen Sie sich vor: <em>10 Stunden mehr Zeit</em> – jede Woche
+                        <span aria-label="Stellen Sie sich vor: 10 Stunden mehr Zeit – jede Woche">
+                            Stellen Sie sich vor: <em style="color: #ffffff !important; text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 119, 255, 0.4) !important; background: none !important; -webkit-background-clip: unset !important; -webkit-text-fill-color: unset !important;">10 Stunden mehr Zeit</em> – jede Woche<span class="cursor-blink" style="display: inline-block; width: 3px; height: 1.2em; background: #00D4FF; margin-left: 12px; animation: blink 1s step-end infinite; vertical-align: text-bottom;"></span>
                         </span>
                     </h1>
                     <!-- 
@@ -250,7 +319,7 @@
                     </p>
                     
                     <div class="hero__actions" role="group" aria-label="Handlungsoptionen">
-                        <a href="#contact" class="btn btn--neon btn--glow" role="button">
+                        <a href="#contact" class="btn btn--neon btn--glow" role="button" style="transition: box-shadow 0.3s ease, background 0.3s ease !important;">
                             <span>Kostenlose Potenzialanalyse starten</span>
                             <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -266,7 +335,7 @@
                     
                     <div class="hero__stats" role="list" aria-label="Unsere Erfolgszahlen">
                         <div class="stat" role="listitem">
-                            <span class="stat__number">150+</span>
+                            <span class="stat__number">37+</span>
                             <span class="stat__label">KMUs vertrauen uns</span>
                         </div>
                         <div class="stat" role="listitem">
@@ -280,10 +349,78 @@
                     </div>
                 </div>
                 
-                <div class="hero__visual" aria-hidden="true">
-                    <!-- KI-Prozess Navigator Grafik -->
-                    <div class="ki-process-navigator-container" id="ki-process-navigator-container">
-                        <!-- SVG wird via JavaScript geladen -->
+                <div class="hero__visual" aria-hidden="true" style="padding-top: 110px;">
+                    <!-- Live Impact Dashboard -->
+                    <div class="live-impact-dashboard">
+                        <div class="dashboard-header">
+                            <div class="dashboard-icon">📊</div>
+                            <h3 class="dashboard-title">Live Impact</h3>
+                            <div class="dashboard-pulse"></div>
+                        </div>
+                        
+                        <div class="dashboard-content">
+                            <!-- Stat 1: Zeit gespart -->
+                            <div class="impact-stat" data-animate="counter">
+                                <div class="stat-main">
+                                    <div class="stat-icon">⏱️</div>
+                                    <div class="stat-value">
+                                        <span class="stat-number" data-target="1247">0</span>
+                                        <span class="stat-unit">Stunden</span>
+                                    </div>
+                                </div>
+                                <div class="stat-label">heute gespart</div>
+                                <div class="stat-feature">
+                                    <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"/>
+                                        <circle cx="12" cy="12" r="10"/>
+                                    </svg>
+                                    <span>100% DSGVO-konform</span>
+                                </div>
+                            </div>
+
+                            <!-- Stat 2: Geld gespart -->
+                            <div class="impact-stat" data-animate="counter" data-delay="200">
+                                <div class="stat-main">
+                                    <div class="stat-icon">💰</div>
+                                    <div class="stat-value">
+                                        <span class="stat-number" data-target="62350">0</span>
+                                        <span class="stat-unit">€</span>
+                                    </div>
+                                </div>
+                                <div class="stat-label">Ersparnis heute</div>
+                                <div class="stat-feature">
+                                    <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                    </svg>
+                                    <span>Setup in 48h</span>
+                                </div>
+                            </div>
+
+                            <!-- Stat 3: Prozesse erledigt -->
+                            <div class="impact-stat" data-animate="counter" data-delay="400">
+                                <div class="stat-main">
+                                    <div class="stat-icon">✅</div>
+                                    <div class="stat-value">
+                                        <span class="stat-number" data-target="89">0</span>
+                                        <span class="stat-unit">Prozesse</span>
+                                    </div>
+                                </div>
+                                <div class="stat-label">automatisch erledigt</div>
+                                <div class="stat-feature">
+                                    <svg class="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    </svg>
+                                    <span>24/7 Support</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-footer">
+                            <div class="live-indicator">
+                                <span class="pulse-dot"></span>
+                                <span class="live-text">Live-Daten</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -297,16 +434,16 @@
         <!-- ==================== TRUST BAR ==================== -->
         <section class="trust-bar" aria-label="Referenzen">
             <div class="container">
-                <p class="trust-bar__text">
-                    Über <strong>150 mittelständische Unternehmen</strong> vertrauen uns – 
-                    <em>ohne eine einzige DSGVO-Abmahnung.</em>
+                <p class="trust-bar__text" style="color: #ffffff !important;">
+                    Über <strong style="color: #ffffff !important;">150 mittelständische Unternehmen</strong> vertrauen uns – 
+                    <em style="color: #ffffff !important;">ohne eine einzige DSGVO-Abmahnung.</em>
                 </p>
                 <div class="trust-bar__logos" role="list" aria-label="Kundenlogos">
-                    <div class="logo-placeholder" role="listitem">TechCorp</div>
-                    <div class="logo-placeholder" role="listitem">InnoGmbH</div>
-                    <div class="logo-placeholder" role="listitem">DataFlow</div>
-                    <div class="logo-placeholder" role="listitem">SmartSys</div>
-                    <div class="logo-placeholder" role="listitem">FutureTech</div>
+                    <div class="logo-placeholder" role="listitem" style="color: #ffffff !important;">TechCorp</div>
+                    <div class="logo-placeholder" role="listitem" style="color: #ffffff !important;">InnoGmbH</div>
+                    <div class="logo-placeholder" role="listitem" style="color: #ffffff !important;">DataFlow</div>
+                    <div class="logo-placeholder" role="listitem" style="color: #ffffff !important;">SmartSys</div>
+                    <div class="logo-placeholder" role="listitem" style="color: #ffffff !important;">FutureTech</div>
                 </div>
             </div>
         </section>
@@ -354,9 +491,9 @@
                 <div class="before-after-showcase" data-animate="fade-up">
                     <div class="before-after-card">
                         <div class="before-after-header">
-                            <span class="before-after-badge before-after-badge--before">Ohne KI</span>
+                            <span class="before-after-badge before-after-badge--before">Ohne KI-Prozessnavigator</span>
                             <span class="before-after-vs">vs.</span>
-                            <span class="before-after-badge before-after-badge--after">Mit KI-Prozessnavigator</span>
+                            <span class="before-after-badge before-after-badge--after" style="color: #00D98F !important; border-color: #00D98F !important;">Mit KI-Prozessnavigator</span>
                         </div>
                         <div class="before-after-items">
                             <div class="before-after-item">
@@ -364,8 +501,8 @@
                                     <span class="metric-label">Routineaufgaben pro Woche</span>
                                     <div class="metric-values">
                                         <span class="metric-before">40 Stunden</span>
-                                        <span class="metric-arrow">→</span>
-                                        <span class="metric-after">12 Stunden</span>
+                                        <span class="metric-arrow" style="color: #ffffff !important;">→</span>
+                                        <span class="metric-after" style="color: #00D98F !important;">12 Stunden</span>
                                     </div>
                                 </div>
                             </div>
@@ -374,8 +511,8 @@
                                     <span class="metric-label">Zeit für Kundenbetreuung</span>
                                     <div class="metric-values">
                                         <span class="metric-before">20%</span>
-                                        <span class="metric-arrow">→</span>
-                                        <span class="metric-after">65%</span>
+                                        <span class="metric-arrow" style="color: #ffffff !important;">→</span>
+                                        <span class="metric-after" style="color: #00D98F !important;">65%</span>
                                     </div>
                                 </div>
                             </div>
@@ -384,8 +521,8 @@
                                     <span class="metric-label">DSGVO-Verstöße / Jahr</span>
                                     <div class="metric-values">
                                         <span class="metric-before">Risiko ⚠️</span>
-                                        <span class="metric-arrow">→</span>
-                                        <span class="metric-after">0 ✅</span>
+                                        <span class="metric-arrow" style="color: #ffffff !important;">→</span>
+                                        <span class="metric-after" style="color: #00D98F !important;">0 ✅</span>
                                     </div>
                                 </div>
                             </div>
@@ -847,7 +984,7 @@
             <div class="container" style="margin-top: 90px;">
                 <header class="section__header">
                     <span class="section__tag">Value-Based Selling</span>
-                    <h2 class="section__title" id="calculator-title">Berechnen Sie Ihren <em>ROI</em> in 60 Sekunden</h2>
+                    <h2 class="section__title" id="calculator-title">Berechnen Sie Ihre <em style="color: #00D98F !important;">Ersparnis</em> in 60 Sekunden</h2>
                     <p class="section__description">
                         Finden Sie heraus, wie viel Zeit und Geld Sie mit Automatisierung sparen können.
                     </p>
@@ -1197,7 +1334,7 @@
                         </div>
                         <blockquote class="testimonial-card__quote">
                             "Ich war skeptisch, ob KI für unser kleines Team rentabel ist. Nach 3 Monaten: 
-                            <strong>12 Stunden pro Woche gespart.</strong> Der ROI war nach 6 Wochen erreicht."
+                            <strong>12 Stunden pro Woche gespart.</strong> Die Investition hatte sich nach 6 Wochen amortisiert."
                         </blockquote>
                         <div class="testimonial-card__author">
                             <div class="author-avatar">MM</div>
@@ -1365,7 +1502,7 @@
                                 <div class="faq-item__answer">
                                     <p>
                                         <strong>Nichts. Wirklich.</strong> 30 Minuten, unverbindlich. Sie bekommen einen konkreten 
-                                        ROI-Rechner für Ihr Unternehmen – ohne Verkaufsdruck. 
+                                        Einsparpotenzial-Rechner für Ihr Unternehmen – ohne Verkaufsdruck. 
                                         <em>Keine Kreditkarte. Kein Kleingedrucktes.</em>
                                     </p>
                                 </div>
@@ -1380,7 +1517,7 @@
                             <h3 class="lead-magnet__title">Kostenlose Checkliste</h3>
                             <p class="lead-magnet__description">
                                 <strong>10 Prozesse, die Sie JETZT automatisieren sollten</strong> – 
-                                mit konkreten ROI-Schätzungen für jede Branche. PDF, 3 Seiten, keine Floskeln.
+                                mit konkreten Einsparpotenzialen für jede Branche. PDF, 3 Seiten, keine Floskeln.
                             </p>
                             
                             <form class="lead-magnet__form" id="lead-form" aria-label="Checkliste anfordern">
@@ -2055,7 +2192,7 @@
                             </div>
                             <div class="result-card">
                                 <span class="result-card__value" id="result-roi">+250%</span>
-                                <span class="result-card__label">ROI</span>
+                                <span class="result-card__label">Ersparnis</span>
                             </div>
                         </div>
 
@@ -2398,7 +2535,7 @@
 
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
-    <script src="js/solar-system-navigator.js" defer></script>
+    <script src="js/live-impact-dashboard.js" defer></script>
     <script src="js/value-calculator.js" defer></script>
     <script src="js/cookie-banner.js" defer></script>
     <script src="js/contact-modal.js" defer></script>

@@ -67,7 +67,8 @@ h1 em, h2 em {
 .nav__logo {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: 0;
+    padding-left: 0;
 }
 
 .logo-icon {
@@ -82,10 +83,11 @@ h1 em, h2 em {
 
 .logo-text {
     font-family: var(--font-heading);
-    font-size: var(--text-2xl);
+    font-size: 1.4rem;
     color: #ffffff;
     letter-spacing: var(--tracking-tight);
     font-weight: var(--font-semibold);
+    margin-left: 0;
 }
 
 .nav__menu {
@@ -390,7 +392,7 @@ section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 40px;
     background: 
         radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 119, 255, 0.12), transparent),
         radial-gradient(ellipse 60% 40% at 90% 80%, rgba(0, 212, 255, 0.1), transparent),
