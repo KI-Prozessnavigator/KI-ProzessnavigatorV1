@@ -286,6 +286,7 @@
     transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .problem-card::before,
@@ -318,6 +319,11 @@
 .solution-card__icon {
     font-size: 2.5rem;
     margin-bottom: var(--space-4);
+    text-align: center;
+    height: 2.5rem; /* Fixe Höhe für Icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .problem-card__title,
@@ -328,6 +334,11 @@
     margin-bottom: var(--space-3);
     color: var(--color-neutral-800);
     transition: color var(--transition-base);
+    text-align: center;
+    min-height: 3.5rem; /* Sorgt für gleiche Höhe aller Überschriften */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .problem-card__text,
@@ -335,6 +346,8 @@
     font-size: var(--text-sm);
     color: var(--color-text-muted);
     line-height: var(--leading-relaxed);
+    text-align: center;
+    min-height: 5.5rem; /* Sorgt für gleiche Höhe aller Texte */
 }
 
 .solution-card {
@@ -761,11 +774,11 @@
 .usecase-card__flow {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: var(--space-4);
     background: var(--color-neutral-50);
     border-radius: var(--radius-lg);
-    gap: var(--space-2);
+    gap: var(--space-3);
     margin-top: auto; /* Drückt den Flow nach unten */
 }
 
@@ -774,8 +787,9 @@
     flex-direction: column;
     align-items: center;
     gap: var(--space-1);
-    flex: 1;
+    flex: 0 0 auto;
     text-align: center;
+    min-width: 80px;
 }
 
 .flow-step__icon {
@@ -1995,6 +2009,198 @@
     
     .final-cta__trust .trust-item {
         font-size: 0.7rem;
+    }
+}
+
+/* ===== Software-Logos (Trust Bar Integrations) ===== */
+.trust-bar__logos--software {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.software-logo {
+    padding: var(--space-2) var(--space-4);
+    background: rgba(0, 119, 255, 0.05);
+    border: 1px solid rgba(0, 119, 255, 0.2);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    color: #ffffff !important;
+    transition: all var(--transition-fast);
+}
+
+.software-logo:hover {
+    background: rgba(0, 119, 255, 0.1);
+    border-color: rgba(0, 119, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.software-logo span {
+    color: #ffffff !important;
+}
+
+/* ===== Expert Quote Cards ===== */
+.expert-quotes__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.expert-quote-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    transition: all var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+}
+
+.expert-quote-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-neon-blue);
+    border-color: rgba(0, 119, 255, 0.3);
+}
+
+.expert-quote-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.expert-icon {
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 119, 255, 0.1);
+    border-radius: var(--radius-lg);
+}
+
+.expert-source {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.expert-name {
+    font-weight: var(--font-semibold);
+    font-size: var(--text-base);
+    color: var(--color-neutral-800);
+}
+
+.expert-meta {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.expert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: var(--space-3);
+    transition: color var(--transition-fast);
+}
+
+.expert-link:hover {
+    color: var(--color-neon);
+}
+
+/* ===== Coming Soon Box ===== */
+.coming-soon-box {
+    background: linear-gradient(135deg, rgba(0, 119, 255, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
+    border: 2px solid rgba(0, 119, 255, 0.2);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    text-align: center;
+    margin-top: var(--space-8);
+    position: relative;
+    overflow: hidden;
+}
+
+.coming-soon-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-neon-1);
+}
+
+.coming-soon__content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.coming-soon__icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+}
+
+.coming-soon__title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-neutral-800);
+    margin-bottom: var(--space-3);
+}
+
+.coming-soon__text {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+}
+
+.coming-soon__benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-6) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.coming-soon__benefits li {
+    font-size: var(--text-base);
+    color: var(--color-neutral-700);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+}
+
+.coming-soon__note {
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+    font-weight: var(--font-semibold);
+    margin-top: var(--space-4);
+}
+
+@media (max-width: 768px) {
+    .expert-quotes__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .coming-soon-box {
+        padding: var(--space-6);
+    }
+    
+    .coming-soon__title {
+        font-size: var(--text-xl);
     }
 }
 
