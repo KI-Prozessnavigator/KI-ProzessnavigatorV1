@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Allgemeine Geschäftsbedingungen (AGB) - KI-Prozessnavigator. Vertragsbedingungen für IT-Beratung, Automatisierung und KI-Lösungen.">
+    <meta name="robots" content="noindex, follow">
+    
+    <title>AGB | KI-Prozessnavigator</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ki-prozessnavigator.de/agb.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts (Selbst-gehostet, DSGVO-konform) -->
+    <link rel="preload" href="assets/fonts/PlusJakartaSans-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/cookie-banner.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        /* Spezifische Styles für AGB-Seite */
+        .agb-hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+            position: relative;
+        }
+        
+        .agb-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(94, 234, 212, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .agb-hero__content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .agb-hero__back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        
+        .agb-hero__back:hover {
+            background: rgba(94, 234, 212, 0.1);
+            transform: translateX(-4px);
+        }
+        
+        .agb-hero__title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--color-neon) 0%, var(--color-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .agb-hero__subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        
+        .agb-content {
+            padding: 4rem 0;
+        }
+        
+        .agb-section {
+            margin-bottom: 4rem;
+            background: var(--color-bg-secondary);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
+        }
+        
+        .agb-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-primary);
+        }
+        
+        .agb-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .agb-section p {
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .agb-section ul,
+        .agb-section ol {
+            margin: 1rem 0 1rem 1.5rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .agb-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+        
+        .agb-section strong {
+            color: var(--color-text-primary);
+            font-weight: 600;
+        }
+        
+        .agb-section a {
+            color: var(--color-primary);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .agb-section a:hover {
+            color: var(--color-neon);
+        }
+        
+        .important-notice {
+            background: linear-gradient(135deg, rgba(94, 234, 212, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        .important-notice strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .agb-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .agb-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        .update-date {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .agb-footer-note {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            background: rgba(94, 234, 212, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(94, 234, 212, 0.2);
+        }
+        
+        .agb-footer-note p {
+            font-size: 0.95rem;
+        }
+        
+        hr {
+            margin: 3rem 0;
+            border: none;
+            border-top: 1px solid rgba(94, 234, 212, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <div class="logo-icon">
+                    <img src="assets/images/logo.svg" alt="KI-Prozessnavigator Logo" height="40">
+                </div>
+                <span class="logo-text">KI-Prozessnavigator</span>
+            </a>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item"><a href="index.html#hero" class="nav__link">Start</a></li>
+                <li class="nav__item"><a href="index.html#problems" class="nav__link">Vorteile</a></li>
+                <li class="nav__item"><a href="index.html#usecases" class="nav__link">Use Cases</a></li>
+                <li class="nav__item"><a href="index.html#dsgvo" class="nav__link">DSGVO</a></li>
+                <li class="nav__item"><a href="index.html#pricing" class="nav__link">Pakete</a></li>
+                <li class="nav__item"><a href="index.html#faq" class="nav__link">FAQ</a></li>
+                <li class="nav__item"><a href="index.html#contact" class="nav__link nav__link--cta">Beratung anfragen</a></li>
+            </ul>
+            
+            <div class="nav__actions">
+                <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="agb-hero">
+        <div class="container">
+            <div class="agb-hero__content">
+                <a href="index.html" class="agb-hero__back">
+                    ← Zurück zur Startseite
+                </a>
+                <h1 class="agb-hero__title">Allgemeine Geschäftsbedingungen</h1>
+                <p class="agb-hero__subtitle">
+                    Vertragsbedingungen für IT-Beratung, Automatisierung und KI-Lösungen
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGB Content -->
+    <section class="agb-content">
+        <div class="container">
+            <p class="update-date">Stand: Januar 2026</p>
+
+            <div class="important-notice">
+                <strong>Wichtiger Hinweis:</strong>
+                <p style="margin: 0;">Diese AGBs gelten für alle Verträge zwischen KI-Prozessnavigator und seinen Kunden. Bitte lesen Sie diese sorgfältig durch, bevor Sie unsere Dienstleistungen in Anspruch nehmen.</p>
+            </div>
+
+        <article class="agb-section">
+        <h2>§ 1 Geltungsbereich und Vertragspartner</h2>
+        
+        <h3>1.1 Anbieter</h3>
+        <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen:</p>
+        <p><strong>KI-Prozessnavigator, Inh. Dominik Buchele</strong><br>
+        Breslauer Straße 11<br>
+        86690 Mertingen<br>
+        E-Mail: d.buchele@ki-prozessnavigator.de</p>
+        <p>(nachfolgend „Auftragnehmer" oder „wir" genannt)</p>
+
+        <h3>1.2 Geltungsbereich</h3>
+        <p>Diese AGB gelten für alle unsere Geschäftsbeziehungen mit unseren Kunden (nachfolgend „Auftraggeber" oder „Kunde" genannt). Die AGB gelten ausschließlich; entgegenstehende oder von unseren AGB abweichende Bedingungen des Auftraggebers erkennen wir nicht an, es sei denn, wir hätten ausdrücklich schriftlich ihrer Geltung zugestimmt.</p>
+        
+        <h3>1.3 B2B und B2C</h3>
+        <p>Unsere Dienstleistungen richten sich primär an Unternehmen, Gewerbetreibende und Selbstständige (B2B). In Ausnahmefällen können auch Verbraucher (B2C) unsere Dienstleistungen in Anspruch nehmen. Für Verträge mit Verbrauchern gelten die gesetzlichen Verbraucherschutzvorschriften vorrangig.</p>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 2 Leistungsumfang</h2>
+        
+        <h3>2.1 Dienstleistungen</h3>
+        <p>Der Auftragnehmer bietet folgende Dienstleistungen an:</p>
+        <ul>
+            <li>IT-Beratung und Prozessanalyse</li>
+            <li>Kostenlose Potenzialanalyse</li>
+            <li>Entwicklung und Implementierung von Automatisierungslösungen</li>
+            <li>Implementierung von KI-gestützten Lösungen</li>
+            <li>Integration von Prozessautomatisierungen (z.B. mit n8n)</li>
+            <li>Schulungen und Einweisungen</li>
+            <li>Support und Wartung</li>
+            <li>Individuelle Softwareentwicklung (nach Vereinbarung)</li>
+        </ul>
+
+        <h3>2.2 Vertragsgegenstand</h3>
+        <p>Der konkrete Leistungsumfang ergibt sich aus dem jeweiligen individuellen Angebot bzw. der Auftragsbestätigung. Bei Projekten zur Softwareentwicklung oder Prozessautomatisierung wird der Vertragsgegenstand in einem separaten Pflichtenheft oder Statement of Work (SOW) detailliert beschrieben.</p>
+
+        <h3>2.3 Mitwirkungspflichten</h3>
+        <p>Der Auftraggeber verpflichtet sich, die für die Leistungserbringung erforderlichen Informationen, Zugänge und Ressourcen rechtzeitig zur Verfügung zu stellen. Verzögerungen, die durch mangelnde Mitwirkung des Auftraggebers entstehen, gehen nicht zu Lasten des Auftragnehmers und können zu Terminverschiebungen und Mehrkosten führen.</p>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 3 Vertragsschluss</h2>
+        
+        <h3>3.1 Angebot und Annahme</h3>
+        <p>Unsere Angebote sind freibleibend und unverbindlich, sofern nicht ausdrücklich als verbindlich gekennzeichnet. Der Vertrag kommt durch unsere schriftliche Auftragsbestätigung oder durch Beginn der Leistungserbringung zustande.</p>
+
+        <h3>3.2 Änderungen des Leistungsumfangs</h3>
+        <p>Änderungen oder Ergänzungen des vereinbarten Leistungsumfangs bedürfen der Schriftform (auch per E-Mail). Der Auftraggeber kann Änderungen verlangen, wenn sie zur Erreichung des Vertragszwecks erforderlich sind. Für darüber hinausgehende Änderungen (Moving Target) wird ein angepasstes Angebot erstellt.</p>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 4 Preise und Zahlungsbedingungen</h2>
+        
+        <h3>4.1 Preisgestaltung</h3>
+        <p>Die Preise ergeben sich aus dem jeweiligen Angebot. Es gelten folgende Preismodelle:</p>
+        <ul>
+            <li><strong>Stundensätze:</strong> Für Beratung, Entwicklung und Implementierung</li>
+            <li><strong>Festpreise:</strong> Für definierte Projekte oder laufende Support-Verträge</li>
+            <li><strong>Monatliche Pauschalen:</strong> Für Wartung, Support und laufende Betreuung</li>
+        </ul>
+
+        <h3>4.2 Umsatzsteuer</h3>
+        <p>Als Kleinunternehmer im Sinne von § 19 Abs. 1 Umsatzsteuergesetz (UStG) wird keine Umsatzsteuer berechnet und ausgewiesen. Alle Preise sind Bruttopreise. Ein Vorsteuerabzug ist nicht möglich.</p>
+
+        <h3>4.3 Preisanpassungen</h3>
+        <p>Bei erheblichen Änderungen des Leistungsumfangs oder bei Verzögerungen durch den Auftraggeber behalten wir uns das Recht vor, die Preise anzupassen. Bei laufenden Verträgen können Preise mit einer Ankündigungsfrist von 2 Monaten angepasst werden.</p>
+
+        <h3>4.4 Zahlungsbedingungen</h3>
+        <ul>
+            <li><strong>Einmalige Projekte:</strong> Nach Abnahme oder in vereinbarten Teilzahlungen</li>
+            <li><strong>Laufende Verträge:</strong> Monatlich im Voraus, fällig zum 1. des Monats</li>
+            <li><strong>Zahlungsziel:</strong> 14 Tage nach Rechnungsdatum</li>
+            <li><strong>Verzug:</strong> Bei Zahlungsverzug werden gesetzliche Verzugszinsen (9 Prozentpunkte über dem Basiszinssatz bei Unternehmen, 5 Prozentpunkte bei Verbrauchern) berechnet</li>
+        </ul>
+
+        <h3>4.5 Drittanbieter-Kosten</h3>
+        <p>Kosten für Drittanbieter-Software, Cloud-Services (z.B. n8n, DSGVO-konforme Server, API-Token) werden gesondert berechnet und dem Auftraggeber in Rechnung gestellt oder direkt vom Auftraggeber bezahlt.</p>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 5 Vertragslaufzeit und Kündigung</h2>
+        
+        <h3>5.1 Einmalige Projekte</h3>
+        <p>Verträge über einmalige Projekte (z.B. Beratung, Implementierung) enden mit vollständiger Leistungserbringung und Abnahme.</p>
+
+        <h3>5.2 Laufende Verträge</h3>
+        <p>Für laufende Betreuungs-, Support- und Wartungsverträge gilt:</p>
+        <ul>
+            <li><strong>Mindestlaufzeit:</strong> 3 Monate ab Vertragsbeginn</li>
+            <li><strong>Verlängerung:</strong> Automatische Verlängerung um jeweils 1 Monat, wenn nicht gekündigt wird</li>
+            <li><strong>Kündigungsfrist:</strong> 1 Monat zum Monatsende</li>
+            <li><strong>Form:</strong> Kündigung in Textform (E-Mail ausreichend)</li>
+        </ul>
+
+        <h3>5.3 Außerordentliche Kündigung</h3>
+        <p>Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt insbesondere vor bei:</p>
+        <ul>
+            <li>Zahlungsverzug von mehr als 2 Monaten</li>
+            <li>Schwerwiegenden Verstößen gegen diese AGB</li>
+            <li>Insolvenz einer Vertragspartei</li>
+        </ul>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 6 Abnahme und Gewährleistung</h2>
+        
+        <h3>6.1 Abnahme</h3>
+        <p>Nach Fertigstellung der vereinbarten Leistung (insbesondere bei Software-Entwicklung) ist eine Abnahme durch den Auftraggeber erforderlich. Die Abnahme erfolgt schriftlich oder durch konkludentes Handeln (z.B. produktiver Einsatz). Kleinere Mängel, die die Funktionsfähigkeit nicht wesentlich beeinträchtigen, berechtigen nicht zur Verweigerung der Abnahme.</p>
+
+        <h3>6.2 Mängelansprüche und Rügepflicht</h3>
+        <p><strong>Bei B2B-Kunden:</strong> Der Auftraggeber ist verpflichtet, erkennbare Mängel unverzüglich, spätestens innerhalb von 7 Werktagen nach Abnahme oder Leistungserbringung, schriftlich zu rügen. Versteckte Mängel sind unverzüglich nach Entdeckung zu rügen. Bei nicht rechtzeitiger Rüge gilt die Leistung als genehmigt.</p>
+        
+        <p><strong>Bei B2C-Kunden:</strong> Die gesetzlichen Regelungen bleiben unberührt.</p>
+
+        <h3>6.3 Gewährleistung</h3>
+        <p>Die Gewährleistungsfrist beträgt <strong>1 Jahr</strong> ab Abnahme bzw. Leistungserbringung. Bei Mängeln steht dem Auftraggeber zunächst ein Anspruch auf Nacherfüllung (Nachbesserung oder Ersatzlieferung) zu. Schlägt die Nacherfüllung fehl, kann der Auftraggeber nach seiner Wahl Minderung verlangen oder vom Vertrag zurücktreten.</p>
+
+        <h3>6.4 Ausschluss der Gewährleistung</h3>
+        <p>Die Gewährleistung entfällt bei:</p>
+        <ul>
+            <li>Unsachgemäßer Nutzung oder Änderung durch den Auftraggeber oder Dritte</li>
+            <li>Nicht autorisierter Nutzung oder Zugriff</li>
+            <li>Mängeln, die auf Anweisungen oder Vorgaben des Auftraggebers zurückzuführen sind</li>
+            <li>Fehlern in Drittanbieter-Software oder -Schnittstellen</li>
+        </ul>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 7 Haftung</h2>
+        
+        <h3>7.1 Haftung bei Vorsatz und grober Fahrlässigkeit</h3>
+        <p>Wir haften unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für Schäden, die auf Vorsatz oder grober Fahrlässigkeit beruhen.</p>
+
+        <h3>7.2 Haftung bei leichter Fahrlässigkeit</h3>
+        <p>Bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) ist die Haftung auf den vorhersehbaren, vertragstypischen Schaden begrenzt, maximal jedoch auf die Höhe des jeweiligen Auftragswerts.</p>
+
+        <h3>7.3 Ausschluss von Folgeschäden</h3>
+        <p>Die Haftung für indirekte Schäden und Folgeschäden wie entgangenen Gewinn, Betriebsunterbrechung, Datenverlust oder Schäden durch Dritte ist ausgeschlossen, sofern nicht Vorsatz oder grobe Fahrlässigkeit vorliegt.</p>
+
+        <h3>7.4 Haftung für Drittanbieter</h3>
+        <p>Für Schäden, die durch die Nichtverfügbarkeit, Fehlfunktion oder Sicherheitslücken von Schnittstellen Dritter (APIs), Drittanbieter-Software oder Cloud-Diensten entstehen, die außerhalb unseres Einflussbereichs liegen, übernehmen wir keine Haftung.</p>
+
+        <h3>7.5 Datensicherung</h3>
+        <p>Der Auftraggeber ist selbst für regelmäßige Datensicherungen verantwortlich. Wir übernehmen keine Haftung für Datenverluste, die durch fehlende oder unzureichende Backups entstehen.</p>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 8 Nutzungsrechte und Urheberrecht</h2>
+        
+        <h3>8.1 Einräumung von Nutzungsrechten</h3>
+        <p>Nach vollständiger Bezahlung der Vergütung räumen wir dem Auftraggeber ein <strong>einfaches, nicht ausschließliches, unbefristetes</strong> Nutzungsrecht an der erstellten Software, den Workflows und anderen Arbeitsergebnissen ein.</p>
+
+        <h3>8.2 Umfang der Nutzungsrechte</h3>
+        <p>Das Nutzungsrecht umfasst:</p>
+        <ul>
+            <li>Die Nutzung der Software/Workflows für interne Geschäftszwecke</li>
+            <li>Die Vervielfältigung zu Sicherungszwecken</li>
+            <li>Die Anpassung an geänderte IT-Umgebungen (soweit technisch möglich)</li>
+        </ul>
+
+        <h3>8.3 Einschränkungen</h3>
+        <p>Nicht gestattet sind ohne unsere ausdrückliche schriftliche Zustimmung:</p>
+        <ul>
+            <li>Die Weitergabe, Vermietung oder Lizenzierung an Dritte</li>
+            <li>Die Dekompilierung oder Reverse Engineering</li>
+            <li>Die Veränderung des Quellcodes (außer nach Vereinbarung)</li>
+            <li>Die kommerzielle Nutzung außerhalb des eigenen Unternehmens</li>
+        </ul>
+
+        <h3>8.4 Vorlagenrecht des Auftragnehmers</h3>
+        <p>Wir behalten uns das Recht vor, entwickelte Lösungen, Workflows und Code-Komponenten als Grundlage (Template) für ähnliche Projekte mit anderen Kunden zu verwenden, sofern keine kundenspezifischen Daten oder Geschäftsgeheimnisse enthalten sind.</p>
+
+        <h3>8.5 Quellcode</h3>
+        <p>Der Quellcode verbleibt in unserem Eigentum. Bei Bedarf stellen wir den Quellcode gegen gesondertes Entgelt zur Verfügung.</p>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 9 Geheimhaltung und Datenschutz</h2>
+        
+        <h3>9.1 Vertraulichkeit</h3>
+        <p>Beide Vertragsparteien verpflichten sich, alle im Rahmen der Geschäftsbeziehung bekannt gewordenen Geschäfts- und Betriebsgeheimnisse, technischen Informationen und sonstigen vertraulichen Daten streng vertraulich zu behandeln und nicht an Dritte weiterzugeben.</p>
+
+        <h3>9.2 Datenschutz (DSGVO)</h3>
+        <p>Wir verarbeiten personenbezogene Daten ausschließlich im Einklang mit der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG). Alle Daten werden auf DSGVO-konformen Servern in Deutschland gespeichert. Eine Übermittlung von Daten außerhalb der EU erfolgt nur mit ausdrücklicher Zustimmung des Auftraggebers.</p>
+
+        <h3>9.3 Auftragsverarbeitung</h3>
+        <p>Sofern wir im Rahmen der Leistungserbringung personenbezogene Daten des Auftraggebers verarbeiten, wird ein separater Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO geschlossen.</p>
+
+        <h3>9.4 Dauer der Geheimhaltung</h3>
+        <p>Die Geheimhaltungsverpflichtung gilt während der Vertragslaufzeit und für 3 Jahre nach Vertragsende.</p>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 10 Wartung und Support</h2>
+        
+        <h3>10.1 Support-Leistungen</h3>
+        <p>Support-Leistungen werden nach Vereinbarung erbracht. Der Umfang (z.B. Reaktionszeiten, Verfügbarkeit, Support-Kanäle) wird im jeweiligen Support-Vertrag festgelegt.</p>
+
+        <h3>10.2 Wartung</h3>
+        <p>Wartungsarbeiten umfassen:</p>
+        <ul>
+            <li>Regelmäßige Updates und Patches</li>
+            <li>Überwachung der Systemfunktionalität</li>
+            <li>Fehlerbehebung im Rahmen des vereinbarten Service Levels</li>
+            <li>Anpassungen an geänderte Schnittstellen oder Systeme</li>
+        </ul>
+
+        <h3>10.3 Ausschluss</h3>
+        <p>Von der Wartung ausgeschlossen sind Anpassungen aufgrund von Änderungswünschen des Auftraggebers oder Schäden durch unsachgemäße Nutzung.</p>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 11 Schutzrechte Dritter</h2>
+        
+        <h3>11.1 Freistellung</h3>
+        <p>Soweit Dritte Ansprüche wegen der Verletzung von Schutzrechten (z.B. Urheberrechte, Patente) durch die von uns erstellten Lösungen geltend machen, stellen wir den Auftraggeber auf unsere Kosten frei und verschaffen ihm das Recht zur weiteren Nutzung oder gestalten die Lösung schutzrechtsfrei.</p>
+
+        <h3>11.2 Voraussetzungen</h3>
+        <p>Die Freistellung setzt voraus, dass:</p>
+        <ul>
+            <li>Der Auftraggeber uns unverzüglich über die Schutzrechtsverletzung informiert</li>
+            <li>Uns die alleinige Verhandlungs- und Verteidigungsbefugnis eingeräumt wird</li>
+            <li>Der Auftraggeber uns bei der Abwehr unterstützt</li>
+        </ul>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 12 Höhere Gewalt</h2>
+        
+        <p>Ereignisse höherer Gewalt (z.B. Naturkatastrophen, Krieg, Pandemien, Streik, behördliche Anordnungen) befreien beide Vertragsparteien für die Dauer der Störung von ihren Leistungspflichten. Bei einer Verzögerung von mehr als 3 Monaten kann jede Partei vom Vertrag zurücktreten.</p>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 13 Verbraucherschlichtungsstelle</h2>
+        
+        <p>Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder bereit noch verpflichtet.</p>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 14 Schlussbestimmungen</h2>
+        
+        <h3>14.1 Schriftform</h3>
+        <p>Änderungen und Ergänzungen dieser AGB und aller darauf basierenden Vereinbarungen bedürfen zu ihrer Wirksamkeit der Schriftform. Dies gilt auch für die Änderung dieser Schriftformklausel. E-Mail ist ausreichend.</p>
+
+        <h3>14.2 Salvatorische Klausel</h3>
+        <p>Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Gültigkeit der übrigen Bestimmungen hiervon unberührt. An die Stelle der unwirksamen Bestimmung tritt eine wirksame Regelung, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am nächsten kommt.</p>
+
+        <h3>14.3 Abtretungsverbot</h3>
+        <p>Die Abtretung von Rechten und Pflichten aus diesem Vertrag an Dritte bedarf unserer vorherigen schriftlichen Zustimmung.</p>
+
+        <h3>14.4 Anwendbares Recht</h3>
+        <p>Auf alle Rechtsbeziehungen zwischen uns und dem Auftraggeber findet ausschließlich deutsches Recht unter Ausschluss des UN-Kaufrechts (CISG) Anwendung.</p>
+
+        <h3>14.5 Gerichtsstand</h3>
+        <p><strong>Bei B2B-Kunden:</strong> Ausschließlicher Gerichtsstand für alle Streitigkeiten ist unser Geschäftssitz in Mertingen bzw. das zuständige Gericht am Sitz des Auftragnehmers, sofern der Auftraggeber Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.</p>
+        
+        <p><strong>Bei B2C-Kunden:</strong> Es gelten die gesetzlichen Gerichtsstände.</p>
+        </article>
+
+        <article class="agb-section">
+        <h2>§ 15 Besondere Bestimmungen für Verbraucher (B2C)</h2>
+        
+        <h3>15.1 Widerrufsrecht</h3>
+        <p>Verbrauchern steht bei Fernabsatzverträgen (z.B. per E-Mail oder Telefon abgeschlossene Verträge) ein gesetzliches Widerrufsrecht gemäß § 355 BGB zu. Die Widerrufsfrist beträgt 14 Tage.</p>
+
+        <div class="important-notice">
+            <strong>Widerrufsbelehrung für Verbraucher:</strong><br><br>
+            Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.<br><br>
+            Um Ihr Widerrufsrecht auszuüben, müssen Sie uns:<br>
+            KI-Prozessnavigator, Inh. Dominik Buchele<br>
+            Breslauer Straße 11, 86690 Mertingen<br>
+            E-Mail: d.buchele@ki-prozessnavigator.de<br><br>
+            mittels einer eindeutigen Erklärung (z.B. per Post oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren.<br><br>
+            Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.
+        </div>
+
+        <h3>15.2 Folgen des Widerrufs</h3>
+        <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf bei uns eingegangen ist.</p>
+
+        <h3>15.3 Erlöschen des Widerrufsrechts</h3>
+        <p>Das Widerrufsrecht erlischt bei Dienstleistungsverträgen, wenn wir die Dienstleistung vollständig erbracht haben und mit der Ausführung erst begonnen haben, nachdem Sie dazu Ihre ausdrückliche Zustimmung gegeben und gleichzeitig Ihre Kenntnis davon bestätigt haben, dass Sie Ihr Widerrufsrecht bei vollständiger Vertragserfüllung verlieren.</p>
+
+        <h3>15.4 Vorrang gesetzlicher Vorschriften</h3>
+        <p>Im Übrigen gehen bei Verträgen mit Verbrauchern die gesetzlichen Verbraucherschutzvorschriften diesen AGB vor.</p>
+        </article>
+
+        <hr>
+
+        <div class="agb-footer-note">
+            <p>
+                <strong>KI-Prozessnavigator, Inh. Dominik Buchele</strong><br>
+                Breslauer Straße 11 | 86690 Mertingen<br>
+                E-Mail: <a href="mailto:d.buchele@ki-prozessnavigator.de">d.buchele@ki-prozessnavigator.de</a><br>
+                Stand: Januar 2026
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="index.html#hero" class="footer__logo">
+                        <span class="logo-text">KI-Prozessnavigator</span>
+                    </a>
+                    <p class="footer__tagline">Intelligente Automatisierung für den Mittelstand.</p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/kiprozessnavigator/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@kiprozessnavigator" class="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61584576234002&locale=de_DE" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/dominik-buchele-ki-prozessnavigator/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .771 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__links-group">
+                    <h4 class="footer__heading">Produkt</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html#usecases">Use Cases</a></li>
+                        <li><a href="index.html#pricing">Preise</a></li>
+                        <li><a href="#">API Dokumentation</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__links-group">
+                    <h4 class="footer__heading">Rechtliches</h4>
+                    <ul class="footer__links">
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                        <li><a href="#" onclick="openCookieSettings(); return false;">Cookie-Einstellungen</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__links-group footer__links-group--contact">
+                    <h4 class="footer__heading">Kontakt</h4>
+                    <ul class="footer__links footer__contact">
+                        <li class="footer__contact-item">Breslauer Straße 11<br>86690 Mertingen</li>
+                        <li class="footer__contact-item">Tel: +49 175 5526398</li>
+                        <li><a href="mailto:d.buchele@ki-prozessnavigator.de">d.buchele@ki-prozessnavigator.de</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 KI-Prozessnavigator, Inh. Buchele Dominik. Alle Rechte vorbehalten.</p>
+                <button class="scroll-to-top" id="scroll-to-top" aria-label="Nach oben scrollen">
+                    <span class="scroll-to-top__icon">🤖</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

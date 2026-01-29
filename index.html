@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -138,10 +138,57 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/hero-3d.css">
+    <link rel="stylesheet" href="css/ki-process-navigator.css">
+    <link rel="stylesheet" href="css/solar-system.css">
+    <link rel="stylesheet" href="css/value-calculator.css">
     <link rel="stylesheet" href="css/cookie-banner.css">
     <link rel="stylesheet" href="css/contact-modal.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/value-calculator-override.css">
+    <link rel="stylesheet" href="css/value-calculator-white-text.css">
+    
+    <!-- ULTIMATIVE FARB-ÜBERSCHREIBUNG - MAXIMALE PRIORITÄT -->
+    <style>
+        /* ERZWINGE WEIẞE FARBE für alle Value Calculator Zahlen */
+        #timeSaved span,
+        #moneySaved span,
+        #capacityBoost span,
+        .result-card span,
+        .result-card__value span,
+        div[id="timeSaved"] > span,
+        div[id="moneySaved"] > span,
+        div[id="capacityBoost"] > span {
+            color: #ffffff !important;
+            text-shadow: none !important;
+            background: transparent !important;
+        }
+        
+        /* Stelle sicher, dass ALLE Elemente in Result Cards weiß sind */
+        .result-card,
+        .result-card *,
+        .result-card__label,
+        .result-card__detail {
+            color: #ffffff !important;
+        }
+        
+        /* Spezifische Überschreibung für jede einzelne Zahl */
+        #timeSaved > span:first-child,
+        #moneySaved > span:first-child,
+        #capacityBoost > span:first-child {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+        
+        /* HOVER-EFFEKT für Result Cards - gleich wie linke Karten */
+        .result-card--time:hover,
+        .result-card--money:hover {
+            border-color: rgba(0, 212, 255, 0.4) !important;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.2) !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
     
     <!-- Three.js (CDN with fallback) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
@@ -152,11 +199,7 @@
         <nav class="nav container">
             <a href="#hero" class="nav__logo">
                 <div class="logo-icon">
-                    <svg viewBox="0 0 32 32" width="32" height="32">
-                        <rect width="32" height="32" rx="6" fill="currentColor"/>
-                        <path d="M8 12 L16 8 L24 12 L24 20 L16 24 L8 20 Z" fill="none" stroke="#fff" stroke-width="1.5"/>
-                        <circle cx="16" cy="16" r="3" fill="#e85a4f"/>
-                    </svg>
+                    <img src="assets/images/logo.svg" alt="KI-Prozessnavigator Logo" height="40">
                 </div>
                 <span class="logo-text">KI-Prozessnavigator</span>
             </a>
@@ -166,14 +209,16 @@
                 <li class="nav__item"><a href="#problems" class="nav__link">Vorteile</a></li>
                 <li class="nav__item"><a href="#usecases" class="nav__link">Use Cases</a></li>
                 <li class="nav__item"><a href="#dsgvo" class="nav__link">DSGVO</a></li>
-                <li class="nav__item"><a href="#pricing" class="nav__link">Pakete</a></li>
+                <li class="nav__item"><a href="#pricing" class="nav__link">Ersparnis</a></li>
                 <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
                 <li class="nav__item"><a href="#contact" class="nav__link nav__link--cta">Beratung anfragen</a></li>
             </ul>
             
-            <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
-                <span class="hamburger"></span>
-            </button>
+            <div class="nav__actions">
+                <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </nav>
     </header>
 
@@ -185,11 +230,6 @@
         <section class="hero" id="hero" aria-labelledby="hero-title">
             <div class="hero__container container" id="main-content">
                 <div class="hero__content">
-                    <span class="hero__tag" role="text">
-                        <span class="tag-icon" aria-hidden="true">🔒</span>
-                        <span>Geprüft & DSGVO-konform</span>
-                    </span>
-                    
                     <!-- A/B Test: Variante A (Emotional/Zeit-Fokus) -->
                     <h1 class="hero__title" id="hero-title">
                         <span class="typewriter" aria-label="Stellen Sie sich vor: 10 Stunden mehr Zeit – jede Woche">
@@ -220,7 +260,7 @@
                             <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <polygon points="5,3 19,12 5,21"/>
                             </svg>
-                            <span>Demo in 2 Min. ansehen</span>
+                            <span>🔒 Geprüft & DSGVO-konform</span>
                         </a>
                     </div>
                     
@@ -241,26 +281,9 @@
                 </div>
                 
                 <div class="hero__visual" aria-hidden="true">
-                    <!-- Three.js 3D Container -->
-                    <div class="hero-3d-wrapper">
-                        <div id="hero-3d-container" class="hero-3d-container">
-                            <!-- Three.js canvas will be injected here -->
-                            <!-- CSS Fallback for non-WebGL browsers -->
-                            <noscript>
-                                <div class="hero-3d-fallback">
-                                    <div class="fallback-orb"></div>
-                                    <div class="fallback-ring fallback-ring--1"></div>
-                                    <div class="fallback-ring fallback-ring--2"></div>
-                                    <div class="fallback-ring fallback-ring--3"></div>
-                                </div>
-                            </noscript>
-                        </div>
-                        <!-- Floating Data Streams -->
-                        <div class="data-streams">
-                            <div class="data-stream data-stream--1"></div>
-                            <div class="data-stream data-stream--2"></div>
-                            <div class="data-stream data-stream--3"></div>
-                        </div>
+                    <!-- KI-Prozess Navigator Grafik -->
+                    <div class="ki-process-navigator-container" id="ki-process-navigator-container">
+                        <!-- SVG wird via JavaScript geladen -->
                     </div>
                 </div>
             </div>
@@ -416,20 +439,6 @@
                     <h2 class="section__title" id="usecases-title">KI-Lösungen für Handwerk & KMU</h2>
                     <p class="section__description">Wir verwandeln Ihre Zeitfresser in automatisierte Gewinne. Sparen Sie täglich Zeit bei Terminen, Rechnungen und Kundenanfragen.</p>
                 </header>
-                
-                <!-- Slider Navigation -->
-                <div class="usecases__nav">
-                    <button class="usecases__nav-btn usecases__nav-btn--prev" id="usecases-prev" aria-label="Vorherige Use Cases">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M15 18l-6-6 6-6"/>
-                        </svg>
-                    </button>
-                    <button class="usecases__nav-btn usecases__nav-btn--next" id="usecases-next" aria-label="Nächste Use Cases">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 18l6-6-6-6"/>
-                        </svg>
-                    </button>
-                </div>
                 
                 <div class="usecases__slider-wrapper">
                 <div class="usecases__grid" id="usecases-slider">
@@ -757,6 +766,20 @@
                 
                 <!-- Slider Dots -->
                 <div class="usecases__dots" id="usecases-dots" aria-label="Use Case Navigation"></div>
+                
+                <!-- Slider Navigation -->
+                <div class="usecases__nav">
+                    <button class="usecases__nav-btn usecases__nav-btn--prev" id="usecases-prev" aria-label="Vorherige Use Cases">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <button class="usecases__nav-btn usecases__nav-btn--next" id="usecases-next" aria-label="Nächste Use Cases">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -819,86 +842,262 @@
             </div>
         </section>
 
-        <!-- ==================== PRICING ==================== -->
-        <section class="pricing" id="pricing" aria-labelledby="pricing-title">
-            <div class="container">
+        <!-- ==================== VALUE CALCULATOR ==================== -->
+        <section class="value-calculator" id="pricing" aria-labelledby="calculator-title">
+            <div class="container" style="margin-top: 90px;">
                 <header class="section__header">
-                    <span class="section__tag">Transparent & fair</span>
-                    <h2 class="section__title" id="pricing-title">Investieren Sie in Ergebnisse, nicht in Lizenzen</h2>
+                    <span class="section__tag">Value-Based Selling</span>
+                    <h2 class="section__title" id="calculator-title">Berechnen Sie Ihren <em>ROI</em> in 60 Sekunden</h2>
                     <p class="section__description">
-                        <strong>Pay-as-you-grow</strong> – Starten Sie klein, skalieren Sie ohne Risiko. 
-                        <em>Monatlich kündbar. Keine versteckten Kosten.</em>
+                        Finden Sie heraus, wie viel Zeit und Geld Sie mit Automatisierung sparen können.
                     </p>
                 </header>
                 
-                <div class="pricing__grid">
-                    <!-- Starter -->
-                    <div class="pricing-card" data-animate="fade-up" tabindex="0" role="article">
-                        <div class="pricing-card__header">
-                            <h3 class="pricing-card__name">Starter</h3>
-                            <p class="pricing-card__tagline">Testen Sie, ob KI zu Ihnen passt</p>
+                <div class="calculator__wrapper">
+                    <!-- Linke Seite: Eingaben -->
+                    <div class="calculator__inputs">
+                        <div class="calculator__card">
+                            <h3 class="calculator__card-title">
+                                <span class="step-number">1</span>
+                                Wer sind Sie?
+                            </h3>
+                            
+                            <div class="form__group">
+                                <label for="employeeCount" class="form__label">
+                                    Anzahl Mitarbeiter
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="employeeCount" 
+                                    class="form__input calculator__input"
+                                    value="10"
+                                    min="1"
+                                    max="10000"
+                                    placeholder="z.B. 10">
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="hourlyRate" class="form__label">
+                                    Durchschnittlicher Stundenlohn (€)
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="hourlyRate" 
+                                    class="form__input calculator__input"
+                                    value="50"
+                                    min="1"
+                                    max="500"
+                                    placeholder="z.B. 50">
+                            </div>
                         </div>
-                        <div class="pricing-card__price">
-                            <span class="price-currency">€</span>
-                            <span class="price-amount">299</span>
-                            <span class="price-period">/Monat</span>
+                        
+                        <div class="calculator__card">
+                            <h3 class="calculator__card-title">
+                                <span class="step-number">2</span>
+                                Was möchten Sie automatisieren?
+                            </h3>
+                            
+                            <div class="form__group">
+                                <label for="processType" class="form__label">
+                                    Prozess auswählen
+                                </label>
+                                <select 
+                                    id="processType" 
+                                    class="form__input calculator__select">
+                                    <option value="email">E-Mail-Sortierung & Beantwortung</option>
+                                    <option value="leads">Lead-Erfassung & CRM-Pflege</option>
+                                    <option value="invoices">Rechnungs-Workflow</option>
+                                    <option value="calendar">Terminplanung & Kalender</option>
+                                    <option value="documents">Dokumenten-Verwaltung</option>
+                                    <option value="custom">Eigener Prozess</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="minutesPerDay" class="form__label">
+                                    Aktueller Zeitaufwand (Minuten pro Tag pro Mitarbeiter)
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="minutesPerDay" 
+                                    class="form__input calculator__input"
+                                    value="30"
+                                    min="15"
+                                    max="480"
+                                    step="15"
+                                    placeholder="z.B. 30 oder 60">
+                            </div>
                         </div>
-                        <ul class="pricing-card__features">
-                            <li><span class="feature-check" aria-hidden="true">✓</span> 1 KI-Bot für einen Prozess</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> 500 Anfragen/Monat</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> In 24 Stunden einsatzbereit</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> E-Mail Support (24h Antwortzeit)</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> DSGVO-konform ab Tag 1</li>
-                        </ul>
-                        <a href="#contact" class="btn btn--secondary btn--full">14 Tage kostenlos testen</a>
+                        
+                        <div class="calculator__card">
+                            <h3 class="calculator__card-title">
+                                <span class="step-number">3</span>
+                                Betroffene Mitarbeiter
+                            </h3>
+                            
+                            <div class="form__group">
+                                <label for="affectedEmployees" class="form__label">
+                                    Wie viele Mitarbeiter führen diesen Prozess aus? <span id="affectedEmployeesValue" class="value-display">3</span>
+                                </label>
+                                <input 
+                                    type="range" 
+                                    id="affectedEmployees" 
+                                    class="calculator__slider"
+                                    value="3"
+                                    min="1"
+                                    max="50"
+                                    step="1">
+                            </div>
+                        </div>
                     </div>
                     
-                    <!-- Pro (Popular) -->
-                    <div class="pricing-card pricing-card--popular" data-animate="fade-up" data-delay="1" tabindex="0" role="article">
-                        <div class="pricing-card__badge">★ Meist gewählt</div>
-                        <div class="pricing-card__header">
-                            <h3 class="pricing-card__name">Pro</h3>
-                            <p class="pricing-card__tagline">Skalieren Sie ohne IT-Aufwand</p>
+                    <!-- Rechte Seite: Ergebnisse -->
+                    <div class="calculator__results">
+                        <div class="results__header">
+                            <h3>Ihr Einsparpotenzial</h3>
+                            <p>Live-Berechnung basierend auf Ihren Angaben</p>
                         </div>
-                        <div class="pricing-card__price">
-                            <span class="price-currency">€</span>
-                            <span class="price-amount">799</span>
-                            <span class="price-period">/Monat</span>
+                        
+                        <!-- Dashboard Metrics - Professionelle Visualisierungen -->
+                        <div style="display: flex; flex-direction: column; gap: 20px;">
+                            
+                            <!-- Metric 1: Zeitgewinn mit Donut Chart -->
+                            <div class="result-card result-card--time" style="background: linear-gradient(135deg, #0077FF 0%, #0088FF 50%, #0077FF 100%); border: 2px solid rgba(0, 119, 255, 0.8); border-radius: 12px; padding: 20px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3);">
+                                <div style="display: flex; gap: 20px; align-items: center;">
+                                    <!-- Linke Seite: Info -->
+                                    <div style="flex: 1;">
+                                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                                            <div style="font-size: 36px; line-height: 1;">⏱️</div>
+                                            <div>
+                                                <div style="font-size: 11px; color: rgba(255, 255, 255, 0.8); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 500;">Zeitgewinn pro Jahr</div>
+                                                <div id="timeSaved" style="display: flex; align-items: baseline; gap: 6px;">
+                                                    <span style="font-size: 36px; font-weight: 700; color: #ffffff; line-height: 1;">480</span>
+                                                    <span style="font-size: 16px; color: #ffffff; font-weight: 500;">Stunden</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="timeSavedWeeks" style="font-size: 13px; color: rgba(255, 255, 255, 0.9); font-weight: 600; background: rgba(0, 212, 255, 0.2); padding: 10px 16px; border-radius: 8px; border-left: 3px solid #00D4FF;">
+                                            ≈ 12 Arbeitswochen gespart
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Rechte Seite: Donut Chart -->
+                                    <div style="position: relative; width: 140px; height: 140px; flex-shrink: 0;">
+                                        <svg width="140" height="140" viewBox="0 0 140 140" style="transform: rotate(-90deg);">
+                                            <!-- Background Circle -->
+                                            <circle cx="70" cy="70" r="55" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="20"/>
+                                            <!-- Progress Circle -->
+                                            <circle id="timeCircle" cx="70" cy="70" r="55" fill="none" stroke="url(#gradientTime)" stroke-width="20" stroke-dasharray="345" stroke-dashoffset="121" stroke-linecap="round" style="transition: stroke-dashoffset 0.5s ease;"/>
+                                            <defs>
+                                                <linearGradient id="gradientTime" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#00FF88;stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                        <!-- Center Text -->
+                                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                            <div id="timePercent" style="font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1;">65%</div>
+                                            <div style="font-size: 9px; color: rgba(255, 255, 255, 0.7); margin-top: 2px; text-transform: uppercase;">Gespart</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Metric 2: Monetärer Wert mit Akkumulations-Diagramm -->
+                            <div class="result-card result-card--money" style="background: linear-gradient(135deg, #0077FF 0%, #0088FF 50%, #0077FF 100%); border: 2px solid rgba(0, 119, 255, 0.8); border-radius: 12px; padding: 20px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3);">
+                                <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+                                    <div style="font-size: 36px; line-height: 1; flex-shrink: 0;">💰</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-size: 11px; color: rgba(255, 255, 255, 0.8); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 500;">Einsparpotenzial</div>
+                                        <div style="display: flex; align-items: baseline; gap: 8px;">
+                                            <div id="moneySaved" style="display: flex; align-items: baseline; gap: 6px;">
+                                                <span style="font-size: 36px; font-weight: 700; color: #ffffff; line-height: 1;">24.000</span>
+                                                <span style="font-size: 16px; color: #ffffff; font-weight: 500;">€</span>
+                                            </div>
+                                            <div style="font-size: 12px; color: rgba(255, 255, 255, 0.8); font-weight: 500;">pro Jahr</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Monatliche Akkumulation -->
+                                <div style="margin-top: 20px;">
+                                    <div style="font-size: 11px; color: rgba(255, 255, 255, 0.8); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500;">Monatliche Akkumulation der Ersparnis</div>
+                                    <div style="display: flex; gap: 4px; align-items: flex-end; height: 80px;">
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month1" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 8%;"></div>
+                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">1</div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month2" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 16%;"></div>
+                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">2</div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month3" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 25%;"></div>
+                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">3</div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month4" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 33%;"></div>
+                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">4</div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month5" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 42%;"></div>
+                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">5</div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month6" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 50%;"></div>
+                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.7); font-weight: 600;">6</div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month7" style="background: linear-gradient(180deg, #00E0FF 0%, #0088FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 58%;"></div>
+                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">7</div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month8" style="background: linear-gradient(180deg, #00E0FF 0%, #0088FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 67%;"></div>
+                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">8</div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month9" style="background: linear-gradient(180deg, #00EEFF 0%, #00AAFF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 75%;"></div>
+                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">9</div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month10" style="background: linear-gradient(180deg, #00FFDD 0%, #00D4FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 83%;"></div>
+                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">10</div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month11" style="background: linear-gradient(180deg, #00FFAA 0%, #00D4FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 92%;"></div>
+                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">11</div>
+                                        </div>
+                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                                            <div id="month12" style="background: linear-gradient(180deg, #00FF88 0%, #00D4FF 100%); width: 100%; border-radius: 4px 4px 0 0; box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); transition: height 0.5s ease; height: 100%;"></div>
+                                            <div style="font-size: 8px; color: #00FF88; font-weight: 600;">12</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Monatliche Ersparnis Info -->
+                                    <div style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between; background: rgba(0, 255, 136, 0.1); padding: 8px 12px; border-radius: 8px; border-left: 3px solid #00FF88;">
+                                        <div style="font-size: 10px; color: rgba(255, 255, 255, 0.8);">Monatlich:</div>
+                                        <div id="monthlyAmount" style="font-size: 14px; color: #00FF88; font-weight: 700;">2.000€</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
                         </div>
-                        <ul class="pricing-card__features">
-                            <li><span class="feature-check" aria-hidden="true">✓</span> 5 KI-Bots für verschiedene Prozesse</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> 5.000 Anfragen/Monat</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> Antworten in 2h, nicht 2 Tagen</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> Verbinden Sie jedes System – ohne Entwickler</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> Ihre Prozesse, nicht unsere Templates</li>
-                        </ul>
-                        <a href="#contact" class="btn btn--neon btn--full">Jetzt durchstarten</a>
-                    </div>
-                    
-                    <!-- Enterprise -->
-                    <div class="pricing-card" data-animate="fade-up" data-delay="2" tabindex="0" role="article">
-                        <div class="pricing-card__header">
-                            <h3 class="pricing-card__name">Enterprise</h3>
-                            <p class="pricing-card__tagline">Wir kümmern uns um alles</p>
-                        </div>
-                        <div class="pricing-card__price">
-                            <span class="price-amount price-amount--text">Individuell</span>
-                        </div>
-                        <ul class="pricing-card__features">
-                            <li><span class="feature-check" aria-hidden="true">✓</span> Unbegrenzte Bots & Anfragen</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> Dedicated Success Manager</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> 99.9% Verfügbarkeit – vertraglich garantiert</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> On-Premise Option für maximale Kontrolle</li>
-                            <li><span class="feature-check" aria-hidden="true">✓</span> Individuelle Integrationen & Schulungen</li>
-                        </ul>
-                        <a href="#contact" class="btn btn--secondary btn--full">Persönliches Angebot erhalten</a>
                     </div>
                 </div>
                 
-                <p class="pricing__guarantee">
-                    💡 <strong>Noch unsicher?</strong> Starten Sie mit einer kostenlosen Potenzialanalyse. 
-                    Wir zeigen Ihnen genau, welches Paket zu Ihren Anforderungen passt.
-                </p>
+                <!-- CTA Button unter beiden Blöcken -->
+                <div style="max-width: 1200px; margin: 0 auto; padding: 0 var(--space-4); margin-top: var(--space-6);">
+                    <div style="text-align: center; position: relative; z-index: 1;">
+                        <a href="#contact" class="btn btn--calculator" style="display: inline-block; width: auto; min-width: 400px;">
+                            Jetzt kostenloses Erstgespräch vereinbaren
+                        </a>
+                        <p style="margin-top: var(--space-3); font-size: 0.875rem; color: rgba(255, 255, 255, 0.8);">
+                            💡 Wir berechnen Ihr individuelles Angebot – basierend auf diesem Potenzial
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1064,6 +1263,11 @@
                                         Kein Training von KI-Modellen mit Ihren Daten. Hosting in Frankfurt. 
                                         Löschung auf Knopfdruck. <em>Geprüft von Datenschutz-Anwälten.</em>
                                     </p>
+                                    <p>
+                                        <a href="datenschutz.html" style="color: var(--color-primary); text-decoration: underline;">
+                                            → Vollständige Datenschutzerklärung lesen
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                             
@@ -1115,7 +1319,7 @@
                                 <div class="form__group form__group--checkbox">
                                     <input type="checkbox" id="privacy-consent" name="privacy" required aria-describedby="privacy-hint">
                                     <label for="privacy-consent">
-                                        Ich stimme der <a href="#datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> zu und willige in die Verarbeitung meiner Daten ein.<span class="required" aria-hidden="true">*</span>
+                                        Ich stimme der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> zu und willige in die Verarbeitung meiner Daten ein.<span class="required" aria-hidden="true">*</span>
                                     </label>
                                 </div>
                                 <button type="submit" class="btn btn--primary btn--full">
@@ -1194,15 +1398,17 @@
                     <p class="footer__tagline">Intelligente Automatisierung für den Mittelstand.</p>
                     <div class="footer__social">
                         <a href="#" class="social-link" aria-label="Instagram">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         </a>
                         <a href="#" class="social-link" aria-label="TikTok">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
                         </a>
                         <a href="#" class="social-link" aria-label="Facebook">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .771 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
                     </div>
                 </div>
                 
@@ -1210,30 +1416,28 @@
                     <h4 class="footer__heading">Produkt</h4>
                     <ul class="footer__links">
                         <li><a href="#usecases">Use Cases</a></li>
-                        <li><a href="#pricing">Preise</a></li>
+                        <li><a href="#pricing">Ersparnis</a></li>
                         <li><a href="#">API Dokumentation</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer__links-group">
-                    <h4 class="footer__heading">Kontakt</h4>
-                    <address class="footer__address">
-                        Breslauer Straße 11<br>
-                        86690 Mertingen
-                    </address>
+                    <h4 class="footer__heading">Rechtliches</h4>
                     <ul class="footer__links">
-                        <li><a href="mailto:d.buchele@ki-prozessnavigator.de">d.buchele@ki-prozessnavigator.de</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                        <li><a href="#" onclick="openCookieSettings(); return false;">Cookie-Einstellungen</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer__links-group">
-                    <h4 class="footer__heading">Rechtliches</h4>
-                    <ul class="footer__links">
-                        <li><a href="#">Datenschutz</a></li>
-                        <li><a href="#">Impressum</a></li>
-                        <li><a href="#">AGB</a></li>
-                        <li><a href="#" onclick="openCookieSettings(); return false;">Cookie-Einstellungen</a></li>
+                <div class="footer__links-group footer__links-group--contact">
+                    <h4 class="footer__heading">Kontakt</h4>
+                    <ul class="footer__links footer__contact">
+                        <li class="footer__contact-item">Breslauer Straße 11<br>86690 Mertingen</li>
+                        <li class="footer__contact-item">Tel: +49 175 5526398</li>
+                        <li><a href="mailto:d.buchele@ki-prozessnavigator.de">d.buchele@ki-prozessnavigator.de</a></li>
                     </ul>
                 </div>
             </div>
@@ -1496,7 +1700,7 @@
                             <label class="privacy-checkbox">
                                 <input type="checkbox" name="privacy" required>
                                 <span class="privacy-checkbox__text">
-                                    Ich stimme der <a href="#datenschutz" target="_blank">Datenschutzerklärung</a> zu 
+                                    Ich stimme der <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> zu 
                                     und willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. <span class="required">*</span>
                                 </span>
                             </label>
@@ -1845,7 +2049,7 @@
                             <label class="privacy-checkbox">
                                 <input type="checkbox" name="privacy" required>
                                 <span class="privacy-checkbox__text">
-                                    Ich stimme der <a href="#datenschutz" target="_blank">Datenschutzerklärung</a> zu 
+                                    Ich stimme der <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> zu 
                                     und willige in die Verarbeitung meiner Daten zur Zusendung der Analyse und Kontaktaufnahme ein. <span class="required">*</span>
                                 </span>
                             </label>
@@ -1907,7 +2111,7 @@
                 <p class="cookie-banner__text" id="cookie-desc">
                     Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. 
                     Sie können wählen, welche Cookie-Kategorien Sie zulassen möchten.
-                    <a href="#datenschutz">Datenschutzerklärung</a>
+                    <a href="datenschutz.html">Datenschutzerklärung</a>
                 </p>
             </div>
             <div class="cookie-banner__actions">
@@ -1958,7 +2162,7 @@
                         <label class="cookie-toggle cookie-toggle--disabled">
                             <input type="checkbox" checked disabled aria-label="Technisch notwendige Cookies (immer aktiv)">
                             <span class="cookie-toggle__slider"></span>
-                        </div>
+                        </label>
                     </div>
                     <p class="cookie-category__desc">
                         Diese Cookies sind für die Grundfunktionen der Website unbedingt erforderlich. 
@@ -1993,7 +2197,7 @@
                         <label class="cookie-toggle">
                             <input type="checkbox" id="cookie-analytics" name="analytics" aria-label="Statistik-Cookies erlauben">
                             <span class="cookie-toggle__slider"></span>
-                        </div>
+                        </label>
                     </div>
                     <p class="cookie-category__desc">
                         Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren. 
@@ -2033,7 +2237,7 @@
                         <label class="cookie-toggle">
                             <input type="checkbox" id="cookie-marketing" name="marketing" aria-label="Marketing-Cookies erlauben">
                             <span class="cookie-toggle__slider"></span>
-                        </div>
+                        </label>
                     </div>
                     <p class="cookie-category__desc">
                         Diese Cookies werden verwendet, um Ihnen relevante Werbung basierend auf Ihren 
@@ -2073,7 +2277,7 @@
                         <label class="cookie-toggle">
                             <input type="checkbox" id="cookie-external" name="external" aria-label="Externe Medien erlauben">
                             <span class="cookie-toggle__slider"></span>
-                        </div>
+                        </label>
                     </div>
                     <p class="cookie-category__desc">
                         Ermöglicht die Einbindung externer Inhalte wie YouTube-Videos, Google Maps 
@@ -2104,9 +2308,9 @@
             
             <div class="cookie-modal__footer">
                 <div class="cookie-modal__info">
-                    <a href="#datenschutz" class="cookie-modal__link">Datenschutzerklärung</a>
+                    <a href="datenschutz.html" class="cookie-modal__link">Datenschutzerklärung</a>
                     <span class="cookie-modal__separator">|</span>
-                    <a href="#impressum" class="cookie-modal__link">Impressum</a>
+                    <a href="impressum.html" class="cookie-modal__link">Impressum</a>
                 </div>
                 <div class="cookie-modal__buttons">
                     <button class="cookie-modal__btn cookie-modal__btn--save" id="cookie-save-selection">
@@ -2122,7 +2326,8 @@
 
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
-    <script src="js/hero-3d.js" defer></script>
+    <script src="js/ki-process-navigator.js" defer></script>
+    <script src="js/value-calculator.js" defer></script>
     <script src="js/cookie-banner.js" defer></script>
     <script src="js/contact-modal.js" defer></script>
 </body>

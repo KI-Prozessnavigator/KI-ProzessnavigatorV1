@@ -1,0 +1,37 @@
+/* FORCE Override alle Farben in den Result-Cards auf Weiß */
+.value-calculator .calculator__results .results__grid .result-card * {
+    color: #ffffff !important;
+}
+
+.value-calculator .calculator__results .results__grid .result-card .result-card__label,
+.value-calculator .calculator__results .results__grid .result-card .result-card__value,
+.value-calculator .calculator__results .results__grid .result-card .result-card__detail,
+.value-calculator .calculator__results .results__grid .result-card .value-number,
+.value-calculator .calculator__results .results__grid .result-card .value-unit,
+.value-calculator .calculator__results .results__grid .result-card span.value-number,
+.value-calculator .calculator__results .results__grid .result-card span.value-unit {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* Spezifische Überschreibung für jede einzelne Karte */
+.result-card--time .value-number,
+.result-card--time .value-unit,
+.result-card--money .value-number,
+.result-card--money .value-unit,
+.result-card--capacity .value-number,
+.result-card--capacity .value-unit {
+    color: #ffffff !important;
+}
+
+/* Stelle sicher, dass alle drei Karten #0077FF Hintergrund haben */
+.value-calculator .calculator__results .results__grid .result-card,
+.value-calculator .calculator__results .results__grid .result-card--time,
+.value-calculator .calculator__results .results__grid .result-card--money,
+.value-calculator .calculator__results .results__grid .result-card--capacity {
+    background: #0077FF !important;
+}
+
+.value-calculator .calculator__results .results__grid .result-card .result-card__detail {
+    background: #0077FF !important;
+}

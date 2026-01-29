@@ -17,14 +17,15 @@ const DOM = {
     sections: document.querySelectorAll('section[id]'),
     faqItems: document.querySelectorAll('.faq-item'),
     scrollToTop: document.getElementById('scroll-to-top'),
-    heroTitle: document.querySelector('.typewriter')
+    heroTitle: document.querySelector('.typewriter'),
 };
 
 // ===== State =====
 const state = {
     isMenuOpen: false,
     lastScrollY: 0,
-    hasTyped: false
+    hasTyped: false,
+    theme: 'dark'
 };
 
 // ===== Utility Functions =====
@@ -50,6 +51,14 @@ function throttle(func, limit = 100) {
             setTimeout(() => inThrottle = false, limit);
         }
     };
+}
+
+// ===== Theme Functions =====
+
+function initTheme() {
+    // Set theme to dark permanently
+    state.theme = 'dark';
+    document.documentElement.setAttribute('data-theme', 'dark');
 }
 
 // ===== Navigation Functions =====
@@ -571,7 +580,8 @@ function initScrollProgress() {
 function initCardTiltEffect() {
     if (prefersReducedMotion()) return;
     
-    const tiltCards = document.querySelectorAll('.pricing-card, .usecase-card');
+    // Nur Pricing Cards haben den Tilt-Effekt, Use Cases nicht
+    const tiltCards = document.querySelectorAll('.pricing-card');
     
     tiltCards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -830,11 +840,36 @@ function initUseCasesSlider() {
     
     if (!slider || !prevBtn || !nextBtn) return;
     
-    const cards = slider.querySelectorAll('.usecase-card');
-    const totalCards = cards.length;
-    let currentIndex = 0;
+    // Original-Karten
+    const originalCards = Array.from(slider.querySelectorAll('.usecase-card'));
+    const totalCards = originalCards.length;
+    
+    // Klone für Endlos-Loop erstellen (3 Karten am Anfang und Ende)
+    const cloneCount = 3;
+    
+    // Klone am Ende hinzufügen (erste 3 Karten)
+    for (let i = 0; i < cloneCount; i++) {
+        const clone = originalCards[i].cloneNode(true);
+        clone.classList.add('usecase-card--clone');
+        clone.setAttribute('data-clone-of', i);
+        slider.appendChild(clone);
+    }
+    
+    // Klone am Anfang hinzufügen (letzte 3 Karten)
+    for (let i = totalCards - 1; i >= totalCards - cloneCount; i--) {
+        const clone = originalCards[i].cloneNode(true);
+        clone.classList.add('usecase-card--clone');
+        clone.setAttribute('data-clone-of', i);
+        slider.insertBefore(clone, slider.firstChild);
+    }
+    
+    // Alle Karten (inkl. Klone)
+    const allCards = Array.from(slider.querySelectorAll('.usecase-card'));
+    
+    // Start-Index: Überspringe die Klone am Anfang
+    let currentIndex = cloneCount;
+    let isTransitioning = false;
     let cardsPerView = getCardsPerView();
-    const totalPages = Math.ceil(totalCards / cardsPerView);
     
     function getCardsPerView() {
         if (window.innerWidth <= 640) return 1;
@@ -842,35 +877,130 @@ function initUseCasesSlider() {
         return 3;
     }
     
-    function updateSlider() {
-        const cardWidth = cards[0].offsetWidth;
-        const gap = 24; // var(--space-6)
+    // Event Listener für Transition-Ende
+    let pendingTransitionCallback = null;
+    
+    slider.addEventListener('transitionend', (e) => {
+        if (e.propertyName === 'transform' && pendingTransitionCallback) {
+            console.log('🎯 TransitionEnd Event gefeuert!');
+            const callback = pendingTransitionCallback;
+            pendingTransitionCallback = null;
+            callback();
+        }
+    });
+    
+    function updateSlider(smooth = true, onComplete = null) {
+        if (!allCards[0]) return;
+        
+        const cardWidth = allCards[0].offsetWidth;
+        const gap = 24; // var(--space-6) = 1.5rem = 24px
+        
+        // EINFACHE Berechnung: Verschiebe um currentIndex Karten nach links
         const offset = currentIndex * (cardWidth + gap);
+        
+        // Langsame, sanfte Transition
+        slider.style.transition = smooth ? 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
         slider.style.transform = `translateX(-${offset}px)`;
         
-        // Update button states
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= totalCards - cardsPerView;
+        console.log(`📍 UpdateSlider: Index=${currentIndex} (real: ${currentIndex - cloneCount}), Offset=${offset}px, Smooth=${smooth}`);
+        
+        // Buttons nie deaktivieren
+        prevBtn.disabled = false;
+        nextBtn.disabled = false;
         
         // Update dots
         updateDots();
+        
+        // Nach Transition: Callback aufrufen (mit transitionend event)
+        if (smooth && onComplete) {
+            pendingTransitionCallback = onComplete;
+            // Fallback falls transitionend nicht feuert
+            setTimeout(() => {
+                if (pendingTransitionCallback === onComplete) {
+                    console.log('⚠️ Fallback timeout - transitionend nicht gefeuert');
+                    pendingTransitionCallback = null;
+                    onComplete();
+                }
+            }, 1000);
+        } else if (!smooth && onComplete) {
+            // Kein smooth = sofort callback
+            onComplete();
+        }
+    }
+    
+    function handleInfiniteLoopJump() {
+        console.log(`🔍 Prüfe Loop: currentIndex=${currentIndex}, Grenze=${cloneCount + totalCards} (${cloneCount}+${totalCards})`);
+        
+        // Wenn wir bei den Klonen am Ende sind (nach Karte 10)
+        if (currentIndex >= cloneCount + totalCards) {
+            console.log(`🔄🔄🔄 ENDLOS-LOOP AKTIV! ${currentIndex} >= ${cloneCount + totalCards}`);
+            console.log(`🔄 Springe von Index ${currentIndex} zu Index ${cloneCount}`);
+            
+            // Springe instant zurück zur echten ersten Karte
+            currentIndex = cloneCount;
+            
+            const cardWidth = allCards[0].offsetWidth;
+            const gap = 24;
+            const offset = currentIndex * (cardWidth + gap);
+            
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(-${offset}px)`;
+            updateDots();
+            
+            // Force reflow
+            void slider.offsetHeight;
+            
+            console.log(`✅ Loop abgeschlossen! Neue Position: ${currentIndex}`);
+            return true;
+        }
+        // Wenn wir bei den Klonen am Anfang sind (vor Karte 1)
+        else if (currentIndex < cloneCount) {
+            console.log(`🔄🔄🔄 ENDLOS-LOOP AKTIV! ${currentIndex} < ${cloneCount}`);
+            console.log(`🔄 Springe von Index ${currentIndex} zu Index ${cloneCount + totalCards - 1}`);
+            
+            // Springe instant zur echten letzten Karte
+            currentIndex = cloneCount + totalCards - 1;
+            
+            const cardWidth = allCards[0].offsetWidth;
+            const gap = 24;
+            const offset = currentIndex * (cardWidth + gap);
+            
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(-${offset}px)`;
+            updateDots();
+            
+            // Force reflow
+            void slider.offsetHeight;
+            
+            console.log(`✅ Loop abgeschlossen! Neue Position: ${currentIndex}`);
+            return true;
+        }
+        
+        console.log(`➖ Kein Loop nötig`);
+        return false;
     }
     
     function createDots() {
         if (!dotsContainer) return;
         dotsContainer.innerHTML = '';
-        const numDots = Math.ceil(totalCards / cardsPerView);
         
-        for (let i = 0; i < numDots; i++) {
+        for (let i = 0; i < totalCards; i++) {
             const dot = document.createElement('button');
             dot.className = 'usecases__dot' + (i === 0 ? ' active' : '');
-            dot.setAttribute('aria-label', `Gehe zu Seite ${i + 1}`);
+            dot.setAttribute('aria-label', `Gehe zu Karte ${i + 1}`);
             dot.addEventListener('click', () => {
-                currentIndex = i * cardsPerView;
-                if (currentIndex > totalCards - cardsPerView) {
-                    currentIndex = totalCards - cardsPerView;
-                }
-                updateSlider();
+                if (isTransitioning) return;
+                isTransitioning = true;
+                stopAutoScroll();
+                
+                // Setze auf echte Karte (nicht Klon)
+                currentIndex = cloneCount + i;
+                updateSlider(true);
+                
+                setTimeout(() => {
+                    isTransitioning = false;
+                    resetAutoScroll();
+                }, 1000);
             });
             dotsContainer.appendChild(dot);
         }
@@ -879,36 +1009,38 @@ function initUseCasesSlider() {
     function updateDots() {
         if (!dotsContainer) return;
         const dots = dotsContainer.querySelectorAll('.usecases__dot');
-        const activeDotIndex = Math.floor(currentIndex / cardsPerView);
+        
+        // Berechne echten Index (ohne Klone): 0-9 für 10 Karten
+        let realIndex = currentIndex - cloneCount;
+        
+        // Normalisiere für Klone
+        if (realIndex < 0) {
+            realIndex = totalCards + realIndex;
+        } else if (realIndex >= totalCards) {
+            realIndex = realIndex - totalCards;
+        }
         
         dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === activeDotIndex);
+            dot.classList.toggle('active', i === realIndex);
         });
     }
     
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateSlider();
-        }
-    });
-    
-    nextBtn.addEventListener('click', () => {
-        if (currentIndex < totalCards - cardsPerView) {
-            currentIndex++;
-            updateSlider();
-        }
-    });
-    
     // Handle resize
-    window.addEventListener('resize', debounce(() => {
-        cardsPerView = getCardsPerView();
-        if (currentIndex > totalCards - cardsPerView) {
-            currentIndex = Math.max(0, totalCards - cardsPerView);
-        }
-        createDots();
-        updateSlider();
-    }, 250));
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const oldCardsPerView = cardsPerView;
+            cardsPerView = getCardsPerView();
+            
+            if (oldCardsPerView !== cardsPerView) {
+                console.log(`📱 Resize: cardsPerView changed from ${oldCardsPerView} to ${cardsPerView}`);
+            }
+            
+            applyCentering();
+            updateSlider(false);
+        }, 250);
+    });
     
     // Touch/Swipe support
     let touchStartX = 0;
@@ -924,26 +1056,184 @@ function initUseCasesSlider() {
     }, { passive: true });
     
     function handleSwipe() {
+        if (isTransitioning) return;
+        
         const swipeThreshold = 50;
         const diff = touchStartX - touchEndX;
         
         if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0 && currentIndex < totalCards - cardsPerView) {
-                // Swipe left - next
+            isTransitioning = true;
+            stopAutoScroll();
+            
+            if (diff > 0) {
                 currentIndex++;
-                updateSlider();
-            } else if (diff < 0 && currentIndex > 0) {
-                // Swipe right - prev
+            } else {
                 currentIndex--;
-                updateSlider();
             }
+            
+            updateSlider(true, () => {
+                handleInfiniteLoopJump();
+                isTransitioning = false;
+                resetAutoScroll();
+            });
         }
     }
     
+    // Auto-scroll feature - eine Karte alle 6 Sekunden
+    let autoScrollInterval;
+    let isAutoScrollActive = true;
+    
+    function startAutoScroll() {
+        if (!isAutoScrollActive || autoScrollInterval) return;
+        
+        console.log('✅ Auto-Scroll gestartet (alle 6 Sekunden)');
+        
+        autoScrollInterval = setInterval(() => {
+            if (isTransitioning) {
+                console.log('⏸️ Auto-Scroll übersprungen (isTransitioning=true)');
+                return;
+            }
+            
+            isTransitioning = true;
+            
+            // Eine Karte vorwärts
+            const oldIndex = currentIndex;
+            currentIndex++;
+            console.log(`➡️ Auto-Scroll: ${oldIndex} → ${currentIndex} (Soll bei ${cloneCount + totalCards} zurückspringen)`);
+            
+            // Animiere und dann prüfe Loop
+            updateSlider(true, () => {
+                // Nach Animation: Prüfe ob wir bei Klonen sind
+                const looped = handleInfiniteLoopJump();
+                if (looped) {
+                    console.log(`✅ Loop ausgeführt, neue Position: ${currentIndex}`);
+                }
+                isTransitioning = false;
+            });
+            
+        }, 6000); // Alle 6 Sekunden
+    }
+    
+    function stopAutoScroll() {
+        if (autoScrollInterval) {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = null;
+        }
+    }
+    
+    function resetAutoScroll() {
+        stopAutoScroll();
+        if (isAutoScrollActive) {
+            // Längere Pause nach manueller Interaktion
+            setTimeout(() => {
+                if (isAutoScrollActive) {
+                    startAutoScroll();
+                }
+            }, 8000); // Restart nach 8 Sekunden Pause
+        }
+    }
+    
+    // Pausiere Auto-Scroll bei Hover über Slider oder Karten
+    slider.addEventListener('mouseenter', () => {
+        stopAutoScroll();
+    });
+    
+    slider.addEventListener('mouseleave', () => {
+        if (isAutoScrollActive) {
+            startAutoScroll();
+        }
+    });
+    
+    // Pausiere bei Hover über alle Karten (inkl. Klone)
+    allCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            stopAutoScroll();
+        });
+        card.addEventListener('mouseleave', () => {
+            if (isAutoScrollActive && !autoScrollInterval) {
+                setTimeout(() => {
+                    if (isAutoScrollActive && !autoScrollInterval) {
+                        startAutoScroll();
+                    }
+                }, 2000);
+            }
+        });
+    });
+    
+    // Pausiere Auto-Scroll bei manueller Interaktion
+    // Manuelle Navigation mit Pfeilen
+    prevBtn.addEventListener('click', () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        stopAutoScroll();
+        
+        currentIndex--;
+        updateSlider(true, () => {
+            handleInfiniteLoopJump();
+            isTransitioning = false;
+            resetAutoScroll();
+        });
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        stopAutoScroll();
+        
+        currentIndex++;
+        updateSlider(true, () => {
+            handleInfiniteLoopJump();
+            isTransitioning = false;
+            resetAutoScroll();
+        });
+    });
+    
+    // Funktion um Zentrierung zu berechnen und anzuwenden
+    function applyCentering() {
+        if (!allCards[0]) return;
+        
+        const cardWidth = allCards[0].offsetWidth;
+        const gap = 24;
+        // Wrapper hat padding, also innere Breite verwenden
+        const wrapperElement = slider.parentElement;
+        const wrapperStyle = window.getComputedStyle(wrapperElement);
+        const wrapperPadding = parseFloat(wrapperStyle.paddingLeft) + parseFloat(wrapperStyle.paddingRight);
+        const containerWidth = wrapperElement.offsetWidth - wrapperPadding;
+        
+        const totalVisibleWidth = (cardWidth * cardsPerView) + (gap * (cardsPerView - 1));
+        const sidePadding = Math.max(0, (containerWidth - totalVisibleWidth) / 2);
+        
+        // Setze Padding auf den Grid für Zentrierung
+        slider.style.paddingLeft = `${sidePadding}px`;
+        slider.style.paddingRight = `${sidePadding}px`;
+        
+        console.log(`📐 Zentrierung: Container=${containerWidth}px (ohne wrapper padding), Visible=${totalVisibleWidth}px, Padding=${sidePadding}px`);
+    }
+    
     // Initialize
+    console.log(`\n${'='.repeat(60)}`);
+    console.log(`🚀 UseCase Slider Initialisierung`);
+    console.log(`${'='.repeat(60)}`);
+    console.log(`📊 Total Cards (original): ${totalCards}`);
+    console.log(`📊 Clone Count: ${cloneCount}`);
+    console.log(`📊 Alle Karten (inkl. Klone): ${allCards.length}`);
+    console.log(`📊 Cards Per View: ${cardsPerView}`);
+    console.log(`📊 Start Index: ${currentIndex} (sollte ${cloneCount} sein für erste echte Karte)`);
+    console.log(`📊 Loop-Grenze: Index >= ${cloneCount + totalCards} (${cloneCount} + ${totalCards})`);
+    console.log(`${'='.repeat(60)}\n`);
+    
+    applyCentering();
     createDots();
-    updateSlider();
+    updateSlider(false); // Initial ohne Animation
+    
+    // Kleine Verzögerung vor Auto-Scroll Start
+    setTimeout(() => {
+        startAutoScroll();
+    }, 1000);
 }
+
+// ===== Initialize Theme =====
+initTheme();
 
 // Run when DOM is ready
 if (document.readyState === 'loading') {

@@ -26,14 +26,14 @@
 /* ===== Neon CTA Button ===== */
 .btn--neon {
     background: var(--color-neon);
-    color: #0a1628;
+    color: #ffffff;
     font-weight: var(--font-bold);
     border: none;
     position: relative;
     overflow: hidden;
     box-shadow: 
         0 0 20px var(--color-neon-glow),
-        0 0 40px rgba(0, 255, 163, 0.2),
+        0 0 40px rgba(0, 119, 255, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -59,8 +59,8 @@
     transform: translateY(-3px) scale(1.02);
     box-shadow: 
         0 0 30px var(--color-neon-glow),
-        0 0 60px rgba(0, 255, 163, 0.3),
-        0 10px 40px rgba(0, 255, 163, 0.25);
+        0 0 60px rgba(0, 119, 255, 0.3),
+        0 10px 40px rgba(0, 119, 255, 0.25);
 }
 
 .btn--neon:hover::before {
@@ -90,7 +90,7 @@
     background: rgba(255, 255, 255, 0.15);
     border-color: var(--color-neon);
     color: var(--color-neon);
-    box-shadow: 0 0 20px rgba(0, 255, 163, 0.15);
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.15);
 }
 
 .btn--glass:focus {
@@ -102,7 +102,7 @@
 .hero-3d-wrapper {
     position: relative;
     width: 100%;
-    max-width: 550px;
+    max-width: 700px; /* Vergrößert von 550px */
     aspect-ratio: 1;
 }
 
@@ -110,12 +110,12 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    overflow: hidden;
+    overflow: visible; /* Geändert von hidden zu visible, damit Ringe nicht abgeschnitten werden */
     position: relative;
     background: radial-gradient(
         ellipse at center,
-        rgba(0, 255, 163, 0.1) 0%,
-        rgba(13, 115, 119, 0.05) 40%,
+        rgba(0, 119, 255, 0.1) 0%,
+        rgba(0, 102, 204, 0.05) 40%,
         transparent 70%
     );
 }
@@ -208,7 +208,7 @@
     border-radius: 50%;
     box-shadow: 
         0 0 60px var(--color-neon-glow),
-        0 0 120px rgba(0, 255, 163, 0.3),
+        0 0 120px rgba(0, 119, 255, 0.3),
         inset 0 0 40px rgba(255, 255, 255, 0.2);
     animation: orbPulse 4s ease-in-out infinite;
 }
@@ -247,13 +247,13 @@
         transform: scale(1);
         box-shadow: 
             0 0 60px var(--color-neon-glow),
-            0 0 120px rgba(0, 255, 163, 0.3);
+            0 0 120px rgba(0, 119, 255, 0.3);
     }
     50% {
         transform: scale(1.05);
         box-shadow: 
             0 0 80px var(--color-neon-glow),
-            0 0 160px rgba(0, 255, 163, 0.4);
+            0 0 160px rgba(0, 119, 255, 0.4);
     }
 }
 
@@ -265,9 +265,9 @@
 /* ===== Hero Background Enhancement ===== */
 .hero {
     background: 
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 255, 163, 0.08), transparent),
-        radial-gradient(ellipse 60% 40% at 90% 80%, rgba(13, 115, 119, 0.1), transparent),
-        radial-gradient(ellipse 50% 30% at 10% 60%, rgba(0, 255, 163, 0.05), transparent),
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 119, 255, 0.08), transparent),
+        radial-gradient(ellipse 60% 40% at 90% 80%, rgba(0, 102, 204, 0.1), transparent),
+        radial-gradient(ellipse 50% 30% at 10% 60%, rgba(0, 119, 255, 0.05), transparent),
         var(--color-background);
     position: relative;
     overflow: hidden;
@@ -281,8 +281,8 @@
     right: 0;
     bottom: 0;
     background-image: 
-        linear-gradient(to right, rgba(0, 255, 163, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 255, 163, 0.03) 1px, transparent 1px);
+        linear-gradient(to right, rgba(0, 119, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 119, 255, 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
     -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
@@ -330,8 +330,8 @@
     letter-spacing: var(--tracking-wider);
     color: var(--color-neon);
     padding: var(--space-2) var(--space-4);
-    background: rgba(0, 255, 163, 0.1);
-    border: 1px solid rgba(0, 255, 163, 0.2);
+    background: rgba(0, 119, 255, 0.1);
+    border: 1px solid rgba(0, 119, 255, 0.2);
     border-radius: var(--radius-full);
     margin-bottom: var(--space-6);
     backdrop-filter: blur(10px);
@@ -513,8 +513,8 @@
     position: absolute;
     inset: 0;
     background-image: 
-        linear-gradient(rgba(0, 255, 163, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 163, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(0, 119, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 119, 255, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
     mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent);
     -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent);
@@ -563,7 +563,7 @@
 /* ===== Responsive Adjustments ===== */
 @media (max-width: 992px) {
     .hero-3d-wrapper {
-        max-width: 350px;
+        max-width: 500px; /* Vergrößert von 350px */
         margin-inline: auto;
     }
     
@@ -574,7 +574,7 @@
 
 @media (max-width: 768px) {
     .hero-3d-wrapper {
-        max-width: 280px;
+        max-width: 400px; /* Vergrößert von 280px */
     }
     
     /* Simplify hero background on tablet */
@@ -586,7 +586,7 @@
 @media (max-width: 576px) {
     /* Show 3D visual on mobile - compact version */
     .hero-3d-wrapper {
-        max-width: 180px !important;
+        max-width: 300px !important; /* Vergrößert von 180px */
         margin-inline: auto;
     }
     
@@ -598,8 +598,8 @@
     .hero-3d-container {
         background: radial-gradient(
             circle at center,
-            rgba(0, 255, 163, 0.2) 0%,
-            rgba(13, 115, 119, 0.1) 40%,
+            rgba(0, 119, 255, 0.2) 0%,
+            rgba(0, 102, 204, 0.1) 40%,
             transparent 70%
         );
     }
@@ -615,7 +615,7 @@
         height: 50%;
         box-shadow: 
             0 0 40px var(--color-neon-glow),
-            0 0 80px rgba(0, 255, 163, 0.2);
+            0 0 80px rgba(0, 119, 255, 0.2);
     }
     
     .fallback-ring {

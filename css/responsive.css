@@ -43,6 +43,10 @@
         border-bottom: none;
     }
 
+    .nav__actions {
+        display: flex;
+    }
+
     .nav__toggle {
         display: flex;
         align-items: center;
