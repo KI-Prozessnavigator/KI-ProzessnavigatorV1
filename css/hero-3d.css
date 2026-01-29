@@ -51,20 +51,21 @@
         rgba(255, 255, 255, 0.3),
         transparent
     );
-    transition: left 0.5s ease;
+    /* Transition entfernt - Button bewegt sich nicht mehr */
 }
 
 .btn--neon:hover {
     background: linear-gradient(135deg, var(--color-neon) 0%, var(--color-neon-hover) 100%);
-    transform: translateY(-3px) scale(1.02);
+    transform: scale(1.02);
     box-shadow: 
         0 0 30px var(--color-neon-glow),
         0 0 60px rgba(0, 119, 255, 0.3),
         0 10px 40px rgba(0, 119, 255, 0.25);
 }
 
+/* Shine-Effekt beim Hover deaktiviert */
 .btn--neon:hover::before {
-    left: 100%;
+    /* left: 100%; - entfernt, damit sich nichts bewegt */
 }
 
 .btn--neon:focus {
@@ -73,7 +74,7 @@
 }
 
 .btn--neon:active {
-    transform: translateY(-1px) scale(0.98);
+    transform: scale(0.98);
 }
 
 /* ===== Glass Button ===== */
