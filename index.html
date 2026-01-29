@@ -904,12 +904,84 @@
                                 <select 
                                     id="processType" 
                                     class="form__input calculator__select">
-                                    <option value="email">E-Mail-Sortierung & Beantwortung</option>
-                                    <option value="leads">Lead-Erfassung & CRM-Pflege</option>
-                                    <option value="invoices">Rechnungs-Workflow</option>
-                                    <option value="calendar">Terminplanung & Kalender</option>
-                                    <option value="documents">Dokumenten-Verwaltung</option>
-                                    <option value="custom">Eigener Prozess</option>
+                                    
+                                    <!-- 👥 Human Resources -->
+                                    <optgroup label="👥 Human Resources">
+                                        <option value="urlaubsantraege">Urlaubsanträge & Genehmigungen</option>
+                                        <option value="onboarding">Onboarding neuer Mitarbeiter</option>
+                                        <option value="offboarding">Exit-Interviews & Offboarding</option>
+                                        <option value="zeiterfassung">Zeiterfassung & Überstunden-Tracking</option>
+                                        <option value="schulungen">Schulungsmanagement & Zertifikate</option>
+                                        <option value="arbeitsvertraege">Arbeitsverträge & Vertragsänderungen</option>
+                                    </optgroup>
+                                    
+                                    <!-- 💰 Verwaltung / Buchhaltung -->
+                                    <optgroup label="💰 Verwaltung / Buchhaltung / Finanzen">
+                                        <option value="zahlungserinnerungen">Zahlungserinnerungen versenden</option>
+                                        <option value="belegerfassung">Belegerfassung aus E-Mails/Scans</option>
+                                        <option value="kassenbuch">Kassenbuch führen</option>
+                                        <option value="mahnwesen">Mahnwesen automatisieren</option>
+                                        <option value="reisekosten">Reisekostenabrechnungen erstellen</option>
+                                        <option value="vertragsmanagement">Vertragsmanagement & Kündigungsfristen</option>
+                                        <option value="rechnungsprüfung">Rechnungseingang prüfen & kontieren</option>
+                                    </optgroup>
+                                    
+                                    <!-- 📊 Vertrieb / Sales / Marketing -->
+                                    <optgroup label="📊 Vertrieb / Sales / Marketing">
+                                        <option value="followup">Follow-up E-Mails nach X Tagen</option>
+                                        <option value="socialmedia">Social Media Beiträge planen</option>
+                                        <option value="newsletter">Newsletter-Versand segmentieren</option>
+                                        <option value="kundenanfragen">Kundenanfragen vorfiltern & beantworten</option>
+                                        <option value="angebote">Angebotserstellung aus Vorlagen</option>
+                                        <option value="angebotsnachverfolgung">Angebots-Nachverfolgung</option>
+                                        <option value="verkaufsberichte">Verkaufsberichte automatisch erstellen</option>
+                                        <option value="kundensegmentierung">Kundensegmentierung & Scoring</option>
+                                    </optgroup>
+                                    
+                                    <!-- 🏗️ Auftrags- & Projektabwicklung -->
+                                    <optgroup label="🏗️ Auftrags- & Projektabwicklung">
+                                        <option value="auftragsbestätigungen">Auftragsbestätigungen versenden</option>
+                                        <option value="wartungserinnerungen">Wartungserinnerungen an Kunden</option>
+                                        <option value="fotodokumentation">Foto-Dokumentation von Baustellen</option>
+                                        <option value="lieferschein">Lieferschein-Prüfung</option>
+                                        <option value="materialbestellungen">Material-Bestellungen auslösen</option>
+                                        <option value="abnahmeprotokolle">Abnahmeprotokolle erstellen</option>
+                                        <option value="bautagebuch">Bautagebuch digital führen</option>
+                                        <option value="einsatzplanung">Werkstatt-/Einsatzplanung</option>
+                                        <option value="maschinenwartung">Werkzeug- & Maschinen-Wartung</option>
+                                        <option value="sicherheitsdoku">Sicherheitsdokumentationen</option>
+                                        <option value="nachunternehmer">Nachunternehmer-Koordination</option>
+                                    </optgroup>
+                                    
+                                    <!-- 🎧 Kundensupport / Service -->
+                                    <optgroup label="🎧 Kundensupport / Service">
+                                        <option value="rückrufservice">Rückrufservice organisieren</option>
+                                        <option value="umfragen">Kundenzufriedenheits-Umfragen</option>
+                                        <option value="servicetermine">Service-Terminplanung</option>
+                                        <option value="faq">FAQ-Beantwortung automatisiert</option>
+                                        <option value="ticketrouting">Ticket-Routing nach Priorität</option>
+                                        <option value="beschwerde">Beschwerde-Management</option>
+                                    </optgroup>
+                                    
+                                    <!-- 🛒 Einkauf / Beschaffung / Lager -->
+                                    <optgroup label="🛒 Einkauf / Beschaffung / Lager">
+                                        <option value="lieferantenanfragen">Lieferanten-Anfragen versenden</option>
+                                        <option value="bestandswarnung">Bestandsüberwachung & Warnung</option>
+                                        <option value="lieferscheinabgleich">Lieferschein-Abgleich mit Bestellung</option>
+                                        <option value="preisvergleich">Preisvergleiche automatisiert</option>
+                                        <option value="lieferantenbewertung">Lieferanten-Bewertung</option>
+                                    </optgroup>
+                                    
+                                    <!-- 📁 Projektmanagement -->
+                                    <optgroup label="📁 Projektmanagement">
+                                        <option value="taskreminder">Task-Reminder an Teammitglieder</option>
+                                        <option value="meetingprotokolle">Meeting-Protokolle erstellen & verteilen</option>
+                                        <option value="projektzeiterfassung">Projektzeiterfassung</option>
+                                        <option value="statusberichte">Projekt-Statusberichte wöchentlich</option>
+                                        <option value="ressourcenplanung">Ressourcenplanung & Auslastung</option>
+                                    </optgroup>
+                                    
+                                    <option value="custom">✨ Eigener Prozess</option>
                                 </select>
                             </div>
                             
@@ -2326,7 +2398,7 @@
 
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
-    <script src="js/ki-process-navigator.js" defer></script>
+    <script src="js/solar-system-navigator.js" defer></script>
     <script src="js/value-calculator.js" defer></script>
     <script src="js/cookie-banner.js" defer></script>
     <script src="js/contact-modal.js" defer></script>
