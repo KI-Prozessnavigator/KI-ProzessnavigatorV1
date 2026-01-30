@@ -15,8 +15,8 @@
     <title>KI-Prozessnavigator | DSGVO-konforme Prozessautomatisierung für KMUs</title>
     <link rel="canonical" href="https://ki-prozessnavigator.de/">
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg?v=3">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon.svg?v=3">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon.svg?v=3">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/icons/favicon.svg?v=3">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/icons/favicon.svg?v=3">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     <script type="application/ld+json">
     {
@@ -105,8 +105,6 @@
         ]
     }
     </script>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preload" href="assets/fonts/PlusJakartaSans-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <style>
@@ -114,19 +112,7 @@
         .hero { min-height: 100vh; display: flex; align-items: center; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
     </style>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/dark-mode.css">
-    <link rel="stylesheet" href="css/hero-3d.css">
-    <link rel="stylesheet" href="css/value-calculator.css">
-    <link rel="stylesheet" href="css/cookie-banner.css">
-    <link rel="stylesheet" href="css/contact-modal.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/value-calculator-override.css">
-    <link rel="stylesheet" href="css/value-calculator-white-text.css">
+    <link rel="stylesheet" href="css/main.css">
     <style>
         /* ERZWINGE WEIẞE FARBE für alle Value Calculator Zahlen */
         #timeSaved span,
@@ -238,14 +224,12 @@
         }
     </style>
     
-    <!-- Three.js (CDN with fallback) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 </head>
 <body>
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#hero" class="nav__logo" style="padding-left: 0; margin-left: 0;">
-                <img src="assets/images/logo.svg?v=2" alt="KI-Prozessnavigator Logo" height="80" style="display: block;">
+            <a href="#hero" class="nav__logo u-nav-logo-reset">
+                <img src="assets/images/logo.svg?v=2" alt="KI-Prozessnavigator Logo" height="80" class="u-block">
             </a>
             
             <ul class="nav__menu" id="nav-menu">
@@ -271,27 +255,19 @@
         
         <section class="hero" id="hero" aria-labelledby="hero-title">
             <div class="hero__container container" id="main-content">
-                <div class="hero__content" style="padding-top: 110px;">
+                <div class="hero__content u-pt-110">
                     <h1 class="hero__title" id="hero-title">
                         <span aria-label="Stellen Sie sich vor: 10 Stunden mehr Zeit – jede Woche">
-                            Stellen Sie sich vor: <em style="color: #ffffff !important; text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 119, 255, 0.4) !important; background: none !important; -webkit-background-clip: unset !important; -webkit-text-fill-color: unset !important;">10 Stunden mehr Zeit</em> – jede Woche<span class="cursor-blink" style="display: inline-block; width: 3px; height: 1.2em; background: #00D4FF; margin-left: 12px; animation: blink 1s step-end infinite; vertical-align: text-bottom;"></span>
+                            Stellen Sie sich vor: <em class="hero__title-em">10 Stunden mehr Zeit</em> – jede Woche<span class="cursor-blink"></span>
                         </span>
                     </h1>
-                    <!-- 
-                    A/B Variante B (DSGVO-Fokus):
-                    KI, die mitdenkt – <em>100% DSGVO-sicher</em>
-                    
-                    A/B Variante C (Ergebnis-orientiert):
-                    70% weniger Routinearbeit. <em>Null</em> Datenschutz-Risiko.
-                    -->
-                    
                     <p class="hero__description">
                         Unsere KI automatisiert Ihre Routineaufgaben – DSGVO-konform und ohne IT-Aufwand. 
                         <strong>Die einzige Lösung, die deutsches Datenschutzrecht versteht.</strong>
                     </p>
                     
                     <div class="hero__actions" role="group" aria-label="Handlungsoptionen">
-                        <a href="#contact" class="btn btn--neon btn--glow" role="button" style="transition: box-shadow 0.3s ease, background 0.3s ease !important;">
+                        <a href="#contact" class="btn btn--neon btn--glow u-btn-transition" role="button">
                             <span>Kostenlose Potenzialanalyse starten</span>
                             <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -329,65 +305,48 @@
             </div>
         </section>
 
-        <!-- TEMPORÄR AUSGEBLENDET - Fake-Firmen für später aufbewahrt
-        <section class="trust-bar" aria-label="Referenzen">
-            <div class="container">
-                <p class="trust-bar__text" style="color: #ffffff !important;">
-                    Über <strong style="color: #ffffff !important;">150 mittelständische Unternehmen</strong> vertrauen uns – 
-                    <em style="color: #ffffff !important;">ohne eine einzige DSGVO-Abmahnung.</em>
-                </p>
-                <div class="trust-bar__logos" role="list" aria-label="Kundenlogos">
-                    <div class="logo-placeholder" role="listitem" style="color: #ffffff !important;">TechCorp</div>
-                    <div class="logo-placeholder" role="listitem" style="color: #ffffff !important;">InnoGmbH</div>
-                    <div class="logo-placeholder" role="listitem" style="color: #ffffff !important;">DataFlow</div>
-                    <div class="logo-placeholder" role="listitem" style="color: #ffffff !important;">SmartSys</div>
-                    <div class="logo-placeholder" role="listitem" style="color: #ffffff !important;">FutureTech</div>
-                </div>
-            </div>
-        </section>
-        -->
         <section class="trust-bar trust-bar--integrations" aria-label="Unterstützte Integrationen">
             <div class="container">
-                <p class="trust-bar__text" style="color: #ffffff !important;">
-                    <strong style="color: #ffffff !important;">Nahtlose Integration</strong> mit Ihren bestehenden Tools – 
-                    <em style="color: #ffffff !important;">über 200+ Apps & Systeme automatisierbar</em>
+                <p class="trust-bar__text u-text-white">
+                    <strong class="u-text-white">Nahtlose Integration</strong> mit Ihren bestehenden Tools – 
+                    <em class="u-text-white">über 200+ Apps & Systeme automatisierbar</em>
                 </p>
                 <div class="trust-bar__logos trust-bar__logos--software" role="list" aria-label="Unterstützte Software">
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">Gmail</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Gmail</span>
                     </div>
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">Google Calendar</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Google Calendar</span>
                     </div>
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">Microsoft 365</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Microsoft 365</span>
                     </div>
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">Outlook</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Outlook</span>
                     </div>
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">Teams</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Teams</span>
                     </div>
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">Salesforce</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Salesforce</span>
                     </div>
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">HubSpot</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">HubSpot</span>
                     </div>
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">SAP</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">SAP</span>
                     </div>
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">Lexware</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Lexware</span>
                     </div>
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">DATEV</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">DATEV</span>
                     </div>
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">Slack</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Slack</span>
                     </div>
-                    <div class="software-logo" role="listitem" style="color: #ffffff !important;">
-                        <span style="font-weight: 600;">+200 mehr</span>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">+200 mehr</span>
                     </div>
                 </div>
             </div>
@@ -436,7 +395,7 @@
                         <div class="before-after-header">
                             <span class="before-after-badge before-after-badge--before">Ohne KI-Prozessnavigator</span>
                             <span class="before-after-vs">vs.</span>
-                            <span class="before-after-badge before-after-badge--after" style="color: #00D98F !important; border-color: #00D98F !important;">Mit KI-Prozessnavigator</span>
+                            <span class="before-after-badge before-after-badge--after u-text-success u-border-success">Mit KI-Prozessnavigator</span>
                         </div>
                         <div class="before-after-items">
                             <div class="before-after-item">
@@ -444,8 +403,8 @@
                                     <span class="metric-label">Routineaufgaben pro Woche</span>
                                     <div class="metric-values">
                                         <span class="metric-before">40 Stunden</span>
-                                        <span class="metric-arrow" style="color: #ffffff !important;">→</span>
-                                        <span class="metric-after" style="color: #00D98F !important;">12 Stunden</span>
+                                        <span class="metric-arrow u-text-white">→</span>
+                                        <span class="metric-after u-text-success">12 Stunden</span>
                                     </div>
                                 </div>
                             </div>
@@ -454,8 +413,8 @@
                                     <span class="metric-label">Zeit für Kundenbetreuung</span>
                                     <div class="metric-values">
                                         <span class="metric-before">20%</span>
-                                        <span class="metric-arrow" style="color: #ffffff !important;">→</span>
-                                        <span class="metric-after" style="color: #00D98F !important;">65%</span>
+                                        <span class="metric-arrow u-text-white">→</span>
+                                        <span class="metric-after u-text-success">65%</span>
                                     </div>
                                 </div>
                             </div>
@@ -464,8 +423,8 @@
                                     <span class="metric-label">DSGVO-Verstöße / Jahr</span>
                                     <div class="metric-values">
                                         <span class="metric-before">Risiko ⚠️</span>
-                                        <span class="metric-arrow" style="color: #ffffff !important;">→</span>
-                                        <span class="metric-after" style="color: #00D98F !important;">0 ✅</span>
+                                        <span class="metric-arrow u-text-white">→</span>
+                                        <span class="metric-after u-text-success">0 ✅</span>
                                     </div>
                                 </div>
                             </div>
@@ -909,10 +868,10 @@
         </section>
 
         <section class="value-calculator" id="pricing" aria-labelledby="calculator-title">
-            <div class="container" style="margin-top: 90px;">
+            <div class="container u-mt-90">
                 <header class="section__header">
                     <span class="section__tag">Value-Based Selling</span>
-                    <h2 class="section__title" id="calculator-title">Berechnen Sie Ihre <em style="color: #00D98F !important;">Ersparnis</em> in 60 Sekunden</h2>
+                    <h2 class="section__title" id="calculator-title">Berechnen Sie Ihre <em class="u-text-success">Ersparnis</em> in 60 Sekunden</h2>
                     <p class="section__description">
                         Finden Sie heraus, wie viel Zeit und Geld Sie mit Automatisierung sparen können.
                     </p>
@@ -1086,28 +1045,28 @@
                             <p>Live-Berechnung basierend auf Ihren Angaben</p>
                         </div>
                         
-                        <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="u-flex-col">
                             
-                            <div class="result-card result-card--time" style="background: linear-gradient(135deg, #0077FF 0%, #0088FF 50%, #0077FF 100%); border: 2px solid rgba(0, 119, 255, 0.8); border-radius: 12px; padding: 20px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3);">
-                                <div style="display: flex; gap: 20px; align-items: center;">
-                                    <div style="flex: 1;">
-                                        <div style="display: flex; gap: 12px; margin-bottom: 16px;">
-                                            <div style="font-size: 36px; line-height: 1; width: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">⏱️</div>
+                            <div class="result-card result-card--time">
+                                <div class="result-card__row">
+                                    <div class="u-flex-1">
+                                        <div class="result-card__row--tight">
+                                            <div class="result-card__icon-box">⏱️</div>
                                             <div>
-                                                <div style="font-size: 11px; color: rgba(255, 255, 255, 0.8); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 500;">Zeitgewinn pro Jahr</div>
-                                                <div id="timeSaved" style="display: flex; align-items: baseline; gap: 6px;">
-                                                    <span style="font-size: 36px; font-weight: 700; color: #ffffff; line-height: 1;">480</span>
-                                                    <span style="font-size: 16px; color: #ffffff; font-weight: 500;">Stunden</span>
+                                                <div class="result-card__label">Zeitgewinn pro Jahr</div>
+                                                <div id="timeSaved" class="result-card__value-row">
+                                                    <span class="result-card__value-num">480</span>
+                                                    <span class="result-card__value-unit">Stunden</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="timeSavedWeeks" style="font-size: 13px; color: rgba(255, 255, 255, 0.9); font-weight: 600; background: rgba(0, 212, 255, 0.2); padding: 10px 16px; border-radius: 8px; border-left: 3px solid #00D4FF;">
+                                        <div id="timeSavedWeeks" class="result-card__weeks">
                                             ≈ 12 Arbeitswochen gespart
                                         </div>
                                     </div>
                                     
-                                    <div style="position: relative; width: 140px; height: 140px; flex-shrink: 0;">
-                                        <svg width="140" height="140" viewBox="0 0 140 140" style="transform: rotate(-90deg);">
+                                    <div class="result-card__circle-wrap">
+                                        <svg width="140" height="140" viewBox="0 0 140 140">
                                             <circle cx="70" cy="70" r="55" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="20"/>
                                             <circle id="timeCircle" cx="70" cy="70" r="55" fill="none" stroke="url(#gradientTime)" stroke-width="20" stroke-dasharray="345" stroke-dashoffset="121" stroke-linecap="round" style="transition: stroke-dashoffset 0.5s ease;"/>
                                             <defs>
@@ -1117,83 +1076,83 @@
                                                 </linearGradient>
                                             </defs>
                                         </svg>
-                                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-                                            <div id="timePercent" style="font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1;">65%</div>
-                                            <div style="font-size: 9px; color: rgba(255, 255, 255, 0.7); margin-top: 2px; text-transform: uppercase;">Gespart</div>
+                                        <div class="result-card__center">
+                                            <div id="timePercent" class="result-card__percent">65%</div>
+                                            <div class="result-card__percent-label">Gespart</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="result-card result-card--money" style="background: linear-gradient(135deg, #0077FF 0%, #0088FF 50%, #0077FF 100%); border: 2px solid rgba(0, 119, 255, 0.8); border-radius: 12px; padding: 20px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3);">
-                                <div style="display: flex; gap: 12px; margin-bottom: 16px;">
-                                    <div style="font-size: 36px; line-height: 1; width: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">💰</div>
-                                    <div style="margin-left: -8px;">
-                                        <div style="font-size: 11px; color: rgba(255, 255, 255, 0.8); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 500;">Einsparpotenzial</div>
-                                        <div id="moneySaved" style="display: flex; align-items: baseline; gap: 6px;">
-                                            <span style="font-size: 36px; font-weight: 700; color: #ffffff; line-height: 1;">24.000</span>
-                                            <span style="font-size: 16px; color: #ffffff; font-weight: 500;">€</span>
-                                            <span style="font-size: 12px; color: rgba(255, 255, 255, 0.8); font-weight: 500; margin-left: 2px;">pro Jahr</span>
+                            <div class="result-card result-card--money">
+                                <div class="result-card__capacity-row">
+                                    <div class="result-card__icon-box">💰</div>
+                                    <div class="u-ml-neg8">
+                                        <div class="result-card__label">Einsparpotenzial</div>
+                                        <div id="moneySaved" class="result-card__value-row">
+                                            <span class="result-card__value-num">24.000</span>
+                                            <span class="result-card__value-unit">€</span>
+                                            <span class="result-card__meta">pro Jahr</span>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <div style="margin-top: 20px;">
-                                    <div style="font-size: 11px; color: rgba(255, 255, 255, 0.8); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500;">Monatliche Akkumulation der Ersparnis</div>
-                                    <div style="display: flex; gap: 4px; align-items: flex-end; height: 80px;">
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month1" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 8%;"></div>
-                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">1</div>
+                                <div class="result-card__mt20">
+                                    <div class="result-card__section-label">Monatliche Akkumulation der Ersparnis</div>
+                                    <div class="result-card__months-row">
+                                        <div class="result-card__month-col">
+                                            <div id="month1" class="result-card__month-bar" style="height: 8%;"></div>
+                                            <div class="result-card__month-num">1</div>
                                         </div>
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month2" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 16%;"></div>
-                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">2</div>
+                                        <div class="result-card__month-col">
+                                            <div id="month2" class="result-card__month-bar" style="height: 16%;"></div>
+                                            <div class="result-card__month-num">2</div>
                                         </div>
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month3" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 25%;"></div>
-                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">3</div>
+                                        <div class="result-card__month-col">
+                                            <div id="month3" class="result-card__month-bar" style="height: 25%;"></div>
+                                            <div class="result-card__month-num">3</div>
                                         </div>
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month4" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 33%;"></div>
-                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">4</div>
+                                        <div class="result-card__month-col">
+                                            <div id="month4" class="result-card__month-bar" style="height: 33%;"></div>
+                                            <div class="result-card__month-num">4</div>
                                         </div>
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month5" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 42%;"></div>
-                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">5</div>
+                                        <div class="result-card__month-col">
+                                            <div id="month5" class="result-card__month-bar" style="height: 42%;"></div>
+                                            <div class="result-card__month-num">5</div>
                                         </div>
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month6" style="background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 50%;"></div>
-                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.7); font-weight: 600;">6</div>
+                                        <div class="result-card__month-col">
+                                            <div id="month6" class="result-card__month-bar" style="height: 50%;"></div>
+                                            <div class="result-card__month-num result-card__month-num--em">6</div>
                                         </div>
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month7" style="background: linear-gradient(180deg, #00E0FF 0%, #0088FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 58%;"></div>
-                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">7</div>
+                                        <div class="result-card__month-col">
+                                            <div id="month7" class="result-card__month-bar result-card__month-bar--alt1" style="height: 58%;"></div>
+                                            <div class="result-card__month-num">7</div>
                                         </div>
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month8" style="background: linear-gradient(180deg, #00E0FF 0%, #0088FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 67%;"></div>
-                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">8</div>
+                                        <div class="result-card__month-col">
+                                            <div id="month8" class="result-card__month-bar result-card__month-bar--alt1" style="height: 67%;"></div>
+                                            <div class="result-card__month-num">8</div>
                                         </div>
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month9" style="background: linear-gradient(180deg, #00EEFF 0%, #00AAFF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 75%;"></div>
-                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">9</div>
+                                        <div class="result-card__month-col">
+                                            <div id="month9" class="result-card__month-bar result-card__month-bar--alt2" style="height: 75%;"></div>
+                                            <div class="result-card__month-num">9</div>
                                         </div>
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month10" style="background: linear-gradient(180deg, #00FFDD 0%, #00D4FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 83%;"></div>
-                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">10</div>
+                                        <div class="result-card__month-col">
+                                            <div id="month10" class="result-card__month-bar result-card__month-bar--alt3" style="height: 83%;"></div>
+                                            <div class="result-card__month-num">10</div>
                                         </div>
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month11" style="background: linear-gradient(180deg, #00FFAA 0%, #00D4FF 100%); width: 100%; border-radius: 4px 4px 0 0; transition: height 0.5s ease; height: 92%;"></div>
-                                            <div style="font-size: 8px; color: rgba(255, 255, 255, 0.6);">11</div>
+                                        <div class="result-card__month-col">
+                                            <div id="month11" class="result-card__month-bar result-card__month-bar--alt4" style="height: 92%;"></div>
+                                            <div class="result-card__month-num">11</div>
                                         </div>
-                                        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                                            <div id="month12" style="background: linear-gradient(180deg, #00FF88 0%, #00D4FF 100%); width: 100%; border-radius: 4px 4px 0 0; box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); transition: height 0.5s ease; height: 100%;"></div>
-                                            <div style="font-size: 8px; color: #00FF88; font-weight: 600;">12</div>
+                                        <div class="result-card__month-col">
+                                            <div id="month12" class="result-card__month-bar result-card__month-bar--alt5" style="height: 100%; box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);"></div>
+                                            <div class="result-card__month-num result-card__month-num--12">12</div>
                                         </div>
                                     </div>
                                     
-                                    <div style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between; background: rgba(0, 255, 136, 0.1); padding: 8px 12px; border-radius: 8px; border-left: 3px solid #00FF88;">
-                                        <div style="font-size: 10px; color: rgba(255, 255, 255, 0.8);">Monatlich:</div>
-                                        <div id="monthlyAmount" style="font-size: 14px; color: #00FF88; font-weight: 700;">2.000€</div>
+                                    <div class="result-card__monthly-row">
+                                        <div class="result-card__monthly-label">Monatlich:</div>
+                                        <div id="monthlyAmount" class="result-card__monthly-value">2.000€</div>
                                     </div>
                                 </div>
                                 
@@ -1215,118 +1174,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- TEMPORÄR AUSGEBLENDET - Testimonials für später aufbewahrt
-        <section class="testimonials" id="testimonials-old" style="display: none;">
-            <div class="container">
-                <header class="section__header">
-                    <span class="section__tag">Kundenstimmen</span>
-                    <h2 class="section__title">Was unsere Kunden sagen</h2>
-                </header>
-                
-                <div class="testimonials__grid">
-                    <div class="testimonial-card" data-animate="fade-up">
-                        <div class="testimonial-card__video">
-                            <img src="assets/images/video-thumb-1.svg" 
-                                 alt="Video-Thumbnail: Max Müller, CEO von TechGmbH" 
-                                 class="video-thumbnail"
-                                 loading="lazy"
-                                 width="400" height="225">
-                            <button class="play-button" aria-label="Video von Max Müller abspielen">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <polygon points="5,3 19,12 5,21"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <blockquote class="testimonial-card__quote">
-                            "Ich war skeptisch, ob KI für unser kleines Team rentabel ist. Nach 3 Monaten: 
-                            <strong>12 Stunden pro Woche gespart.</strong> Die Investition hatte sich nach 6 Wochen amortisiert."
-                        </blockquote>
-                        <div class="testimonial-card__author">
-                            <div class="author-avatar">MM</div>
-                            <div class="author-info">
-                                <span class="author-name">Max Müller</span>
-                                <span class="author-role">CEO, TechGmbH (12 Mitarbeiter)</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card" data-animate="fade-up" data-delay="1">
-                        <div class="testimonial-card__video">
-                            <img src="assets/images/video-thumb-2.svg" 
-                                 alt="Video-Thumbnail: Anna Schmidt, IT-Leiterin bei DataFlow" 
-                                 class="video-thumbnail"
-                                 loading="lazy"
-                                 width="400" height="225">
-                            <button class="play-button" aria-label="Video von Anna Schmidt abspielen">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <polygon points="5,3 19,12 5,21"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <blockquote class="testimonial-card__quote">
-                            "Die DSGVO-Konformität war für mich der Gamechanger. Endlich kann ich der 
-                            Geschäftsführung sagen: <strong>'Ja, das ist sicher.'</strong> – ohne Bauchschmerzen."
-                        </blockquote>
-                        <div class="testimonial-card__author">
-                            <div class="author-avatar">AS</div>
-                            <div class="author-info">
-                                <span class="author-name">Anna Schmidt</span>
-                                <span class="author-role">IT-Leiterin, DataFlow</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card" data-animate="fade-up" data-delay="2">
-                        <div class="testimonial-card__video">
-                            <img src="assets/images/video-thumb-3.svg" 
-                                 alt="Video-Thumbnail: Tom Krause, HR-Manager bei InnoGmbH" 
-                                 class="video-thumbnail"
-                                 loading="lazy"
-                                 width="400" height="225">
-                            <button class="play-button" aria-label="Video von Tom Krause abspielen">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <polygon points="5,3 19,12 5,21"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <blockquote class="testimonial-card__quote">
-                            "Früher habe ich 3 Tage mit Bewerbungen verbracht. Jetzt bekomme ich eine 
-                            Shortlist mit Begründung – <strong>in 10 Minuten.</strong> Mein Team liebt es."
-                        </blockquote>
-                        <div class="testimonial-card__author">
-                            <div class="author-avatar">TK</div>
-                            <div class="author-info">
-                                <span class="author-name">Tom Krause</span>
-                                <span class="author-role">HR-Manager, InnoGmbH</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="client-logos" role="list" aria-label="Unsere Kunden">
-                    <div class="logo-item" role="listitem">
-                        <img src="assets/images/logos/logo-techcorp.svg" alt="TechCorp Logo" loading="lazy" width="140" height="40">
-                    </div>
-                    <div class="logo-item" role="listitem">
-                        <img src="assets/images/logos/logo-innogmbh.svg" alt="InnoGmbH Logo" loading="lazy" width="140" height="40">
-                    </div>
-                    <div class="logo-item" role="listitem">
-                        <img src="assets/images/logos/logo-dataflow.svg" alt="DataFlow Logo" loading="lazy" width="140" height="40">
-                    </div>
-                    <div class="logo-item" role="listitem">
-                        <img src="assets/images/logos/logo-smartsys.svg" alt="SmartSys Logo" loading="lazy" width="140" height="40">
-                    </div>
-                    <div class="logo-item" role="listitem">
-                        <img src="assets/images/logos/logo-futuretech.svg" alt="FutureTech Logo" loading="lazy" width="150" height="40">
-                    </div>
-                    <div class="logo-item" role="listitem">
-                        <img src="assets/images/logos/logo-cloudwerk.svg" alt="CloudWerk Logo" loading="lazy" width="150" height="40">
-                    </div>
-                </div>
-            </div>
-        </section>
-        -->
 
         <section class="testimonials expert-quotes" id="testimonials">
             <div class="container">
@@ -1527,7 +1374,7 @@
                                 <div class="form__group form__group--checkbox">
                                     <input type="checkbox" id="privacy-consent" name="privacy" required aria-describedby="privacy-hint">
                                     <label for="privacy-consent">
-                                        Ich stimme der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> zu und willige in die Verarbeitung meiner Daten ein.<span class="required" aria-hidden="true">*</span>
+                                        Ich stimme der <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu und willige in die Verarbeitung meiner Daten ein.<span class="required" aria-hidden="true">*</span>
                                     </label>
                                 </div>
                                 <button type="submit" class="btn btn--primary btn--full">
@@ -1655,19 +1502,19 @@
         </div>
     </footer>
 
-    <div id="contact-modal" class="contact-modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+    <div id="contact-modal" class="contact-modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-desc" aria-modal="true">
         <div class="contact-modal__backdrop"></div>
         <div class="contact-modal__container">
-            <button class="contact-modal__close" aria-label="Schließen">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <button class="contact-modal__close" aria-label="Modal schließen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M18 6L6 18M6 6l12 12"/>
                 </svg>
             </button>
 
             <div class="contact-modal__header">
-                <div class="contact-modal__icon">🚀</div>
+                <div class="contact-modal__icon" aria-hidden="true">🚀</div>
                 <h2 class="contact-modal__title" id="modal-title">Lassen Sie uns starten!</h2>
-                <p class="contact-modal__subtitle">Wählen Sie, wie wir Ihnen am besten helfen können</p>
+                <p class="contact-modal__subtitle" id="modal-desc">Wählen Sie, wie wir Ihnen am besten helfen können</p>
             </div>
 
             <div class="contact-modal__scroll-area">
@@ -1916,7 +1763,7 @@
                             <label class="privacy-checkbox">
                                 <input type="checkbox" name="privacy" required>
                                 <span class="privacy-checkbox__text">
-                                    Ich stimme der <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> zu 
+                                    Ich stimme der <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu 
                                     und willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. <span class="required">*</span>
                                 </span>
                             </label>
@@ -2255,7 +2102,7 @@
                             <label class="privacy-checkbox">
                                 <input type="checkbox" name="privacy" required>
                                 <span class="privacy-checkbox__text">
-                                    Ich stimme der <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> zu 
+                                    Ich stimme der <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu 
                                     und willige in die Verarbeitung meiner Daten zur Zusendung der Analyse und Kontaktaufnahme ein. <span class="required">*</span>
                                 </span>
                             </label>
@@ -2318,13 +2165,13 @@
                 </p>
             </div>
             <div class="cookie-banner__actions">
-                <button class="cookie-banner__btn cookie-banner__btn--accept-all" id="cookie-accept-all">
+                <button class="cookie-banner__btn cookie-banner__btn--accept-all" id="cookie-accept-all" aria-label="Alle Cookies akzeptieren">
                     Alle akzeptieren
                 </button>
-                <button class="cookie-banner__btn cookie-banner__btn--essential" id="cookie-essential-only">
+                <button class="cookie-banner__btn cookie-banner__btn--essential" id="cookie-essential-only" aria-label="Nur notwendige Cookies zulassen">
                     Nur notwendige
                 </button>
-                <button class="cookie-banner__btn cookie-banner__btn--settings" id="cookie-settings">
+                <button class="cookie-banner__btn cookie-banner__btn--settings" id="cookie-settings" aria-label="Cookie-Einstellungen öffnen">
                     Einstellungen anpassen
                 </button>
             </div>
@@ -2527,16 +2374,6 @@
     </div>
 
     <!-- Scripts -->
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        // EmailJS Konfiguration - BITTE IHRE WERTE HIER EINTRAGEN!
-        window.EMAILJS_CONFIG = {
-            PUBLIC_KEY: 'IHR_PUBLIC_KEY_HIER',  // Ersetzen Sie mit Ihrem Public Key
-            SERVICE_ID: 'IHR_SERVICE_ID_HIER',  // Ersetzen Sie mit Ihrer Service ID
-            TEMPLATE_ID: 'IHR_TEMPLATE_ID_HIER' // Ersetzen Sie mit Ihrer Template ID
-        };
-    </script>
     <script src="js/main.js" defer></script>
     <script src="js/value-calculator.js" defer></script>
     <script src="js/cookie-banner.js" defer></script>
