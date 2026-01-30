@@ -461,18 +461,21 @@
 
         // ===== FORM SUBMISSION =====
         modal.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
+            form.addEventListener('submit', async function(e) {
                 e.preventDefault();
 
                 // Collect contact data
                 const formElements = this.elements;
-                state.formData.contact = {
+                const contactData = {
                     firstName: formElements['firstName']?.value || '',
                     lastName: formElements['lastName']?.value || '',
                     email: formElements['email']?.value || '',
                     phone: formElements['phone']?.value || '',
                     company: formElements['company']?.value || '',
-                    message: formElements['message']?.value || ''
+                    message: formElements['message']?.value || '',
+                    companySize: state.formData.companySize || '',
+                    interest: state.formData.interest || '',
+                    website: '' // Honeypot field (empty for humans)
                 };
 
                 // Check privacy consent
@@ -486,11 +489,40 @@
                     return;
                 }
 
-                // Log data (in production, send to server)
-                console.log('Form submitted:', state.formData);
+                // Disable submit button
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span>Wird gesendet...</span>';
 
-                // Show success
-                showSuccess();
+                try {
+                    // Send to PHP backend
+                    const response = await fetch('php/send-email.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(contactData)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        // Show success
+                        state.formData.contact = contactData;
+                        showSuccess();
+                    } else {
+                        // Show error
+                        alert(result.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt per E-Mail.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                }
             });
         });
 

@@ -86,14 +86,14 @@
   <!-- Checkmarks -->
   <g transform="translate(320, 80)">
     <rect width="60" height="40" rx="6" fill="#0077FF" opacity="0.15"/>
-    <text x="30" y="22" text-anchor="middle" fill="#0077FF" font-size="16">✓</text>
-    <text x="30" y="35" text-anchor="middle" fill="#0077FF" font-size="7" font-family="system-ui">ISO 27001</text>
+    <text x="30" y="22" text-anchor="middle" fill="#0077FF" font-size="16">🇪🇺</text>
+    <text x="30" y="35" text-anchor="middle" fill="#0077FF" font-size="7" font-family="system-ui">EU-Hosting</text>
   </g>
   
   <g transform="translate(320, 170)">
     <rect width="60" height="40" rx="6" fill="#0077FF" opacity="0.15"/>
-    <text x="30" y="22" text-anchor="middle" fill="#0077FF" font-size="16">✓</text>
-    <text x="30" y="35" text-anchor="middle" fill="#0077FF" font-size="7" font-family="system-ui">TÜV geprüft</text>
+    <text x="30" y="22" text-anchor="middle" fill="#0077FF" font-size="16">🔒</text>
+    <text x="30" y="35" text-anchor="middle" fill="#0077FF" font-size="6" font-family="system-ui">AES-256</text>
   </g>
   
   <!-- DSGVO Text -->

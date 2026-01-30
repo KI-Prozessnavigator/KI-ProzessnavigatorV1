@@ -61,7 +61,7 @@ h1 em, h2 em {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 100px;
 }
 
 .nav__logo {
@@ -69,6 +69,15 @@ h1 em, h2 em {
     align-items: center;
     gap: 0;
     padding-left: 0;
+    margin-left: 0;
+}
+
+.nav__logo img {
+    display: block;
+    height: 80px;
+    width: auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .logo-icon {
