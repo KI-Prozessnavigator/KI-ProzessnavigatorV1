@@ -280,9 +280,9 @@ function handleFormSubmit(e) {
     submitBtn.textContent = 'Wird gesendet...';
     submitBtn.disabled = true;
     
-    // Nur Lead-Form verwendet EmailJS für Checkliste
+    // Lead-Form: Checkliste per PHP (E-Mail an Kunde + Einladung zum Termin)
     if (formType === 'lead-form') {
-        sendChecklisteEmail(email, submitBtn, originalText, e.target);
+        sendChecklisteViaPHP(data, submitBtn, originalText, e.target);
     } else {
         // Kontaktformular - simuliert (oder später auch mit EmailJS)
         setTimeout(() => {
@@ -294,48 +294,39 @@ function handleFormSubmit(e) {
     }
 }
 
-// EmailJS Integration für Checkliste
-function sendChecklisteEmail(email, submitBtn, originalText, form) {
-    // Prüfe ob EmailJS konfiguriert ist
-    if (!window.EMAILJS_CONFIG || 
-        window.EMAILJS_CONFIG.PUBLIC_KEY === 'IHR_PUBLIC_KEY_HIER' ||
-        !window.emailjs) {
-        console.warn('⚠️ EmailJS ist nicht konfiguriert. Bitte tragen Sie Ihre Zugangsdaten in index.html ein.');
-        showNotification('⚠️ E-Mail-Service ist noch nicht konfiguriert. Bitte kontaktieren Sie den Administrator.', 'error');
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        return;
-    }
-    
-    // Initialisiere EmailJS mit Public Key
-    emailjs.init(window.EMAILJS_CONFIG.PUBLIC_KEY);
-    
-    // Template-Parameter
-    const templateParams = {
-        user_email: email,
-        to_email: email, // E-Mail des Empfängers (Kunde)
-        reply_to: email
+// Checkliste per PHP (E-Mail an Kunde mit Checkliste + Calendly-Einladung)
+function sendChecklisteViaPHP(data, submitBtn, originalText, form) {
+    const payload = {
+        email: (data.email || '').trim(),
+        website: (data.website || '')  // Honeypot
     };
-    
-    // Sende E-Mail über EmailJS
-    emailjs.send(
-        window.EMAILJS_CONFIG.SERVICE_ID,
-        window.EMAILJS_CONFIG.TEMPLATE_ID,
-        templateParams
-    )
-    .then(function(response) {
-        console.log('✅ E-Mail erfolgreich gesendet!', response.status, response.text);
-        showNotification('🎉 Vielen Dank! Die Checkliste wurde an Ihre E-Mail gesendet.', 'success');
-        form.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
+
+    fetch('php/send-checklist.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
     })
-    .catch(function(error) {
-        console.error('❌ Fehler beim E-Mail-Versand:', error);
-        showNotification('❌ Fehler beim Versenden. Bitte versuchen Sie es später erneut.', 'error');
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    });
+        .then(function (response) {
+            return response.json().then(function (result) {
+                return { ok: response.ok, result };
+            });
+        })
+        .then(function ({ ok, result }) {
+            if (ok && result.success) {
+                showNotification(result.message || '🎉 Vielen Dank! Die Checkliste wurde an Ihre E-Mail gesendet – inkl. Einladung zum kostenlosen Termin.', 'success');
+                form.reset();
+            } else {
+                showNotification(result.message || 'Fehler beim Versenden. Bitte versuchen Sie es später erneut.', 'error');
+            }
+        })
+        .catch(function (err) {
+            console.error('Checklist send error:', err);
+            showNotification('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.', 'error');
+        })
+        .finally(function () {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
 }
 
 function showNotification(message, type = 'info') {
