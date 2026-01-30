@@ -1,0 +1,145 @@
+/**
+ * Utility classes – aus Inline-Styles extrahiert
+ * Keine visuellen Änderungen, nur strukturelle Auslagerung
+ */
+
+/* === Layout / Spacing === */
+.u-block { display: block; }
+.u-pt-110 { padding-top: 110px; }
+.u-mt-90 { margin-top: 90px; }
+.u-nav-logo-reset { padding-left: 0; margin-left: 0; }
+.u-flex-col { display: flex; flex-direction: column; gap: 20px; }
+.u-flex-row { display: flex; gap: 20px; align-items: center; }
+.u-flex-1 { flex: 1; }
+.u-ml-neg8 { margin-left: -8px; }
+
+/* === Typography / Color (Trust-Bar, Metrics, etc.) === */
+.u-text-white { color: #ffffff !important; }
+.u-text-success { color: #00D98F !important; }
+.u-fw600 { font-weight: 600; }
+.u-fw500 { font-weight: 500; }
+.u-fw700 { font-weight: 700; }
+.u-border-success { border-color: #00D98F !important; }
+
+/* === Hero === */
+.hero__title-em {
+    color: #ffffff !important;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 119, 255, 0.4) !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+}
+.u-btn-transition { transition: box-shadow 0.3s ease, background 0.3s ease !important; }
+.cursor-blink {
+    display: inline-block;
+    width: 3px;
+    height: 1.2em;
+    background: #00D4FF;
+    margin-left: 12px;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+}
+
+/* === Result cards (Value Calculator) – Basis === */
+.result-card--time,
+.result-card--money,
+.result-card--capacity {
+    background: linear-gradient(135deg, #0077FF 0%, #0088FF 50%, #0077FF 100%);
+    border: 2px solid rgba(0, 119, 255, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3);
+}
+.result-card__row { display: flex; gap: 20px; align-items: center; }
+.result-card__row--tight { display: flex; gap: 12px; margin-bottom: 16px; }
+.result-card__icon-box {
+    font-size: 36px;
+    line-height: 1;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.result-card__label {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+.result-card__value-row { display: flex; align-items: baseline; gap: 6px; }
+.result-card__value-num { font-size: 36px; font-weight: 700; color: #ffffff; line-height: 1; }
+.result-card__value-unit { font-size: 16px; color: #ffffff; font-weight: 500; }
+.result-card__weeks {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    background: rgba(0, 212, 255, 0.2);
+    padding: 10px 16px;
+    border-radius: 8px;
+    border-left: 3px solid #00D4FF;
+}
+.result-card__circle-wrap {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+}
+.result-card__circle-wrap svg { transform: rotate(-90deg); }
+.result-card__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.result-card__percent { font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1; }
+.result-card__percent-label { font-size: 9px; color: rgba(255, 255, 255, 0.7); margin-top: 2px; text-transform: uppercase; }
+.result-card__meta { font-size: 12px; color: rgba(255, 255, 255, 0.8); font-weight: 500; margin-left: 2px; }
+.result-card__section-label {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+.result-card__months-row { display: flex; gap: 4px; align-items: flex-end; height: 80px; }
+.result-card__month-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+.result-card__month-bar {
+    background: linear-gradient(180deg, #00D4FF 0%, #0077FF 100%);
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s ease;
+}
+.result-card__month-bar--alt1 { background: linear-gradient(180deg, #00E0FF 0%, #0088FF 100%); }
+.result-card__month-bar--alt2 { background: linear-gradient(180deg, #00EEFF 0%, #00AAFF 100%); }
+.result-card__month-bar--alt3 { background: linear-gradient(180deg, #00FFDD 0%, #00D4FF 100%); }
+.result-card__month-bar--alt4 { background: linear-gradient(180deg, #00FFAA 0%, #00D4FF 100%); }
+.result-card__month-bar--alt5 { background: linear-gradient(180deg, #00FF88 0%, #00D4FF 100%); }
+.result-card__month-num { font-size: 8px; color: rgba(255, 255, 255, 0.6); }
+.result-card__month-num--em { font-size: 8px; color: rgba(255, 255, 255, 0.7); font-weight: 600; }
+.result-card__month-num--12 { font-size: 8px; color: #00FF88; font-weight: 600; }
+.result-card__monthly-row {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-left: 3px solid #00FF88;
+}
+.result-card__monthly-label { font-size: 10px; color: rgba(255, 255, 255, 0.8); }
+.result-card__monthly-value { font-size: 14px; color: #00FF88; font-weight: 700; }
+.result-card__mt20 { margin-top: 20px; }
+.result-card__capacity-row { display: flex; gap: 12px; margin-bottom: 16px; }

@@ -158,7 +158,7 @@ function typeWriter(element, text, speed = 50) {
     if (!element || state.hasTyped) return;
     
     state.hasTyped = true;
-    element.innerHTML = '';
+    element.textContent = '';
     element.style.opacity = '1';
     
     let i = 0;
@@ -179,10 +179,10 @@ function typeWriter(element, text, speed = 50) {
                 tagBuffer += char;
                 if (char === '>') {
                     isTag = false;
-                    element.innerHTML += tagBuffer;
+                    element.insertAdjacentHTML('beforeend', tagBuffer);
                 }
             } else {
-                element.innerHTML += char;
+                element.insertAdjacentText('beforeend', char);
             }
             
             i++;
@@ -284,7 +284,7 @@ function handleFormSubmit(e) {
     if (formType === 'lead-form') {
         sendChecklisteViaPHP(data, submitBtn, originalText, e.target);
     } else {
-        // Kontaktformular - simuliert (oder später auch mit EmailJS)
+        // Kontaktformular - Benachrichtigung (Versand ggf. über PHP-Backend)
         setTimeout(() => {
             showNotification('✅ Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.', 'success');
             e.target.reset();
@@ -337,10 +337,11 @@ function showNotification(message, type = 'info') {
     
     const notification = document.createElement('div');
     notification.className = `notification notification--${type}`;
-    notification.innerHTML = `
-        <span class="notification__message">${message}</span>
+    notification.insertAdjacentHTML('beforeend', `
+        <span class="notification__message"></span>
         <button class="notification__close" aria-label="Schließen">&times;</button>
-    `;
+    `);
+    notification.querySelector('.notification__message').textContent = message;
     
     const colors = {
         success: 'var(--color-primary)',
@@ -819,6 +820,76 @@ function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
+// ===== Contact Modal Focus Trap (A11y) =====
+
+function initContactModalFocusTrap() {
+    const modal = document.getElementById('contact-modal');
+    if (!modal) return;
+
+    const FOCUSABLE = 'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    function getFocusables() {
+        return Array.from(modal.querySelectorAll(FOCUSABLE)).filter(function (el) {
+            return el.offsetParent !== null && !el.hasAttribute('hidden');
+        });
+    }
+
+    let previousActiveElement = null;
+    let trapKeydown = null;
+
+    function attachTrap() {
+        const focusables = getFocusables();
+        if (focusables.length === 0) return;
+        previousActiveElement = document.activeElement;
+        focusables[0].focus();
+
+        trapKeydown = function (e) {
+            if (e.key !== 'Tab') return;
+            const focusables = getFocusables();
+            if (focusables.length === 0) return;
+            const current = focusables.indexOf(document.activeElement);
+            if (current === -1) {
+                focusables[0].focus();
+                e.preventDefault();
+                return;
+            }
+            if (e.shiftKey) {
+                if (current === 0) {
+                    e.preventDefault();
+                    focusables[focusables.length - 1].focus();
+                }
+            } else {
+                if (current === focusables.length - 1) {
+                    e.preventDefault();
+                    focusables[0].focus();
+                }
+            }
+        };
+        document.addEventListener('keydown', trapKeydown);
+    }
+
+    function detachTrap() {
+        if (trapKeydown) {
+            document.removeEventListener('keydown', trapKeydown);
+            trapKeydown = null;
+        }
+        if (previousActiveElement && typeof previousActiveElement.focus === 'function' && document.contains(previousActiveElement)) {
+            previousActiveElement.focus();
+        }
+        previousActiveElement = null;
+    }
+
+    const observer = new MutationObserver(function (mutations) {
+        const hasActive = modal.classList.contains('active');
+        if (hasActive) {
+            setTimeout(attachTrap, 50);
+        } else {
+            detachTrap();
+        }
+    });
+    observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+}
+
 // ===== Initialization =====
 
 function init() {
@@ -838,6 +909,7 @@ function init() {
     initSmoothAnchors();
     initLazyLoading();
     initAccessibility();
+    initContactModalFocusTrap();
     
     // Initialize enhanced features
     initAnimatedCounters();
@@ -1017,7 +1089,7 @@ function initUseCasesSlider() {
     
     function createDots() {
         if (!dotsContainer) return;
-        dotsContainer.innerHTML = '';
+        dotsContainer.replaceChildren();
         
         for (let i = 0; i < totalCards; i++) {
             const dot = document.createElement('button');
