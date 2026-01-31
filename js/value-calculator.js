@@ -18,6 +18,8 @@ class ValueCalculator {
         
         // Value Display-Elemente (für Slider-Werte)
         this.affectedEmployeesValue = document.getElementById('affectedEmployeesValue');
+        this.minutesPerDayValue = document.getElementById('minutesPerDayValue');
+        this.hourlyRateValue = document.getElementById('hourlyRateValue');
         
         // Ergebnis-Elemente
         this.timeSaved = document.getElementById('timeSaved');
@@ -25,32 +27,65 @@ class ValueCalculator {
         this.moneySaved = document.getElementById('moneySaved');
         
         this.setupEventListeners();
-        this.calculate(); // Initiale Berechnung
+        this.updateSliderDisplay(); // Slider-Werte anzeigen + Initiale Berechnung
     }
 
     setupEventListeners() {
-        // Event Listener für alle Input-Elemente
-        this.employeeCount.addEventListener('input', () => this.calculate());
-        this.hourlyRate.addEventListener('input', () => this.calculate());
+        if (this.employeeCount) this.employeeCount.addEventListener('input', () => this.calculate());
+        this.hourlyRate.addEventListener('input', () => this.updateSliderDisplay());
         this.processType.addEventListener('change', () => this.calculate());
-        this.minutesPerDay.addEventListener('input', () => this.calculate());
+        this.minutesPerDay.addEventListener('input', () => this.updateSliderDisplay());
         this.affectedEmployees.addEventListener('input', () => this.updateSliderDisplay());
+        
+        // Eingabefelder: Nutzer kann Wert tippen, Slider wird synchronisiert
+        if (this.minutesPerDayValue && this.minutesPerDayValue.nodeName === 'INPUT') {
+            this.minutesPerDayValue.addEventListener('change', () => this.syncFromInput('minutesPerDay', 15, 1440));
+        }
+        if (this.affectedEmployeesValue && this.affectedEmployeesValue.nodeName === 'INPUT') {
+            this.affectedEmployeesValue.addEventListener('change', () => this.syncFromInput('affectedEmployees', 1, 3000));
+        }
+        if (this.hourlyRateValue && this.hourlyRateValue.nodeName === 'INPUT') {
+            this.hourlyRateValue.addEventListener('change', () => this.syncFromInput('hourlyRate', 20, 400));
+        }
+    }
+
+    syncFromInput(sliderId, min, max) {
+        const slider = document.getElementById(sliderId);
+        const input = sliderId === 'affectedEmployees' ? this.affectedEmployeesValue
+            : sliderId === 'minutesPerDay' ? this.minutesPerDayValue : this.hourlyRateValue;
+        if (!slider || !input || input.nodeName !== 'INPUT') return;
+        let val = parseFloat(input.value) || min;
+        val = Math.max(min, Math.min(max, val));
+        input.value = Math.round(val);
+        // Slider nur aktualisieren wenn innerhalb seines Bereichs (affectedEmployees-Slider max=200)
+        const sliderMax = parseFloat(slider.max) || max;
+        slider.value = Math.min(val, sliderMax);
+        this.calculate();
     }
 
     updateSliderDisplay() {
-        // Update der angezeigten Werte
-        this.affectedEmployeesValue.textContent = this.affectedEmployees.value;
-        
-        // Trigger Berechnung
+        if (this.affectedEmployeesValue) {
+            this.affectedEmployeesValue[this.affectedEmployeesValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.affectedEmployees.value;
+        }
+        if (this.minutesPerDayValue) {
+            this.minutesPerDayValue[this.minutesPerDayValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.minutesPerDay.value;
+        }
+        if (this.hourlyRateValue) {
+            this.hourlyRateValue[this.hourlyRateValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.hourlyRate.value;
+        }
         this.calculate();
     }
 
     calculate() {
-        // Hole Werte
+        // Hole Werte (bei Eingabefeldern: Wert aus Input lesen, falls > Slider-max möglich)
         const totalEmployees = parseFloat(this.employeeCount.value) || 10;
         const hourlyRate = parseFloat(this.hourlyRate.value) || 50;
-        const minutesPerDay = parseFloat(this.minutesPerDay.value) || 30;
-        const affectedEmployees = parseFloat(this.affectedEmployees.value) || 3;
+        const minutesPerDay = this.minutesPerDayValue?.nodeName === 'INPUT'
+            ? (parseFloat(this.minutesPerDayValue.value) || parseFloat(this.minutesPerDay.value) || 30)
+            : (parseFloat(this.minutesPerDay.value) || 30);
+        const affectedEmployees = this.affectedEmployeesValue?.nodeName === 'INPUT'
+            ? (parseFloat(this.affectedEmployeesValue.value) || parseFloat(this.affectedEmployees.value) || 3)
+            : (parseFloat(this.affectedEmployees.value) || 3);
 
         // Berechnungen - Basierend auf Minuten pro Tag!
         // 1. Zeitersparnis pro Jahr (in Stunden)
@@ -90,8 +125,12 @@ class ValueCalculator {
             this.animateNumber(moneyElement, data.money, '');
         }
         
-        // Update Arbeitswochen-Text
-        if (this.timeSavedWeeks) {
+        // Update Arbeitswochen-Text (Zahl fett wie bei Ersparnis pro Monat)
+        const timeSavedWeeksNum = document.getElementById('timeSavedWeeksNum');
+        if (timeSavedWeeksNum) {
+            timeSavedWeeksNum.textContent = `≈ ${data.weeks}`;
+            timeSavedWeeksNum.style.color = '#ffffff';
+        } else if (this.timeSavedWeeks) {
             this.timeSavedWeeks.textContent = `≈ ${data.weeks} Arbeitswochen gespart`;
             this.timeSavedWeeks.style.color = '#ffffff';
         }
