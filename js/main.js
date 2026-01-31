@@ -145,6 +145,12 @@ function scrollToSection(e) {
                 // Zentriere die Sektion: Sektion-Mitte = Viewport-Mitte (mit 60px mehr Abstand OBEN)
                 targetPosition = section.offsetTop - (viewportHeight / 2) + (sectionHeight / 2) - 60;
             }
+            // Ersparnis-Sektion mittig: alles (Rechner + CTA) auf einen Blick
+            if (href === '#pricing') {
+                const viewportHeight = window.innerHeight;
+                const sectionHeight = section.offsetHeight;
+                targetPosition = section.offsetTop - (viewportHeight / 2) + (sectionHeight / 2) + 20;
+            }
             
             window.scrollTo({
                 top: targetPosition,

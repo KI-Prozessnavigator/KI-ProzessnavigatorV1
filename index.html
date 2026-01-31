@@ -114,6 +114,7 @@
     </style>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/calculator-redesign.css">
+    <link rel="stylesheet" href="css/contact-modal.css">
     <style>
         /* ERZWINGE WEIẞE FARBE für alle Value Calculator Zahlen */
         #timeSaved span,
@@ -198,11 +199,6 @@
             text-shadow: none !important;
         }
         
-        /* Value-Based Selling: section__tag cyan wie "Kein Tech-Blabla" */
-        .value-calculator .section__tag {
-            color: #00D4FF !important;
-            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
-        }
         /* Glühbirne + CTA-Text in einer Zeile */
         .calculator-cta-note {
             display: flex !important;
@@ -1660,7 +1656,7 @@
                     <div class="option-grid" data-required="true">
                         <div class="option-card">
                             <input type="radio" name="company-size" value="1-10">
-                            <span class="option-card__icon">🏠</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">1-10 Mitarbeiter</span>
                                 <span class="option-card__desc">Kleines<br>Team, große Wirkung</span>
@@ -1670,7 +1666,7 @@
                         
                         <div class="option-card">
                             <input type="radio" name="company-size" value="11-50">
-                            <span class="option-card__icon">🏢</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4v16h-4V6Z"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">11-50 Mitarbeiter</span>
                                 <span class="option-card__desc">Wachsendes Unternehmen</span>
@@ -1680,7 +1676,7 @@
                         
                         <div class="option-card">
                             <input type="radio" name="company-size" value="51-200">
-                            <span class="option-card__icon">🏬</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4v16h-4V6Z"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">51-200 Mitarbeiter</span>
                                 <span class="option-card__desc">Mittelstand</span>
@@ -1690,7 +1686,7 @@
                         
                         <div class="option-card">
                             <input type="radio" name="company-size" value="200+">
-                            <span class="option-card__icon">🏛️</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><path d="M12 2L2 7h20L12 2z"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">200+ Mitarbeiter</span>
                                 <span class="option-card__desc">Enterprise</span>
@@ -1718,7 +1714,7 @@
                     <div class="option-grid" data-required="true">
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="hr">
-                            <span class="option-card__icon">👥</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Human Resources</span>
                                 <span class="option-card__desc">Urlaubsanträge, Onboarding, Zeiterfassung</span>
@@ -1728,7 +1724,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="verwaltung">
-                            <span class="option-card__icon">💰</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Verwaltung / Buchhaltung / Finanzen</span>
                                 <span class="option-card__desc">Rechnungen, Mahnwesen, Belegerfassung</span>
@@ -1738,7 +1734,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="vertrieb">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:20px;height:20px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Vertrieb / Sales / Marketing</span>
                                 <span class="option-card__desc">Follow-ups, Angebote, Newsletter</span>
@@ -1748,7 +1744,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="projekt">
-                            <span class="option-card__icon">🏗️</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Auftrags- & Projektabwicklung</span>
                                 <span class="option-card__desc">Auftragsbestätigungen, Bautagebuch, Wartung</span>
@@ -1758,7 +1754,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="support">
-                            <span class="option-card__icon">🎧</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Kundensupport / Service</span>
                                 <span class="option-card__desc">Ticket-Routing, FAQ, Service-Termine</span>
@@ -1768,7 +1764,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="einkauf">
-                            <span class="option-card__icon">🛒</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Einkauf / Beschaffung / Lager</span>
                                 <span class="option-card__desc">Lieferantenanfragen, Bestandswarnung</span>
@@ -1778,7 +1774,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="projektmanagement">
-                            <span class="option-card__icon">📁</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Projektmanagement</span>
                                 <span class="option-card__desc">Meeting-Protokolle, Statusberichte</span>
@@ -1788,7 +1784,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="sonstiges">
-                            <span class="option-card__icon">✨</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Eigener Prozess</span>
                                 <span class="option-card__desc">Individuelle Anforderungen</span>
@@ -1912,15 +1908,52 @@
 
                     <div class="form-group">
                         <label class="form-label" for="industry">Ihre Branche (optional)</label>
-                        <select id="industry" name="industry" class="form-select">
-                            <option value="">Bitte wählen...</option>
-                            <option value="handwerk">🔨 Handwerk & Bau</option>
-                            <option value="gastronomie">🍴 Gastronomie & Lebensmittel</option>
-                            <option value="dienstleistungen">💼 Dienstleistungen & Beratung</option>
-                            <option value="gesundheit">🏥 Gesundheit & Pflege</option>
-                            <option value="handel">🛒 Handel & E-Commerce</option>
-                            <option value="sonstiges">✨ Sonstiges</option>
-                        </select>
+                        <div class="industry-select-wrap" id="industrySelectWrap">
+                            <select id="industry" name="industry" class="form-select" aria-hidden="true">
+                                <option value="">Bitte wählen...</option>
+                                <option value="handwerk">Handwerk & Bau</option>
+                                <option value="gastronomie">Gastronomie & Lebensmittel</option>
+                                <option value="dienstleistungen">Dienstleistungen & Beratung</option>
+                                <option value="gesundheit">Gesundheit & Pflege</option>
+                                <option value="handel">Handel & E-Commerce</option>
+                                <option value="sonstiges">Sonstiges</option>
+                            </select>
+                            <button type="button" class="industry-select-trigger" aria-haspopup="listbox" aria-expanded="false" id="industrySelectTrigger">
+                                <span class="industry-select-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+                                <span class="industry-select-label">Bitte wählen...</span>
+                                <span class="industry-select-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><polyline points="6 9 12 15 18 9"/></svg></span>
+                            </button>
+                            <div class="industry-select-panel" role="listbox" id="industrySelectPanel">
+                                <div class="industry-select-option" data-value="">
+                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+                                    Bitte wählen...
+                                </div>
+                                <div class="industry-select-option" data-value="handwerk">
+                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+                                    Handwerk & Bau
+                                </div>
+                                <div class="industry-select-option" data-value="gastronomie">
+                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>
+                                    Gastronomie & Lebensmittel
+                                </div>
+                                <div class="industry-select-option" data-value="dienstleistungen">
+                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect x="4" y="20" width="16" height="2"/></svg></span>
+                                    Dienstleistungen & Beratung
+                                </div>
+                                <div class="industry-select-option" data-value="gesundheit">
+                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>
+                                    Gesundheit & Pflege
+                                </div>
+                                <div class="industry-select-option" data-value="handel">
+                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                                    Handel & E-Commerce
+                                </div>
+                                <div class="industry-select-option" data-value="sonstiges">
+                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                                    Sonstiges
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-actions">
@@ -1942,7 +1975,7 @@
                     <div class="option-grid" data-required="true">
                         <div class="option-card">
                             <input type="checkbox" name="process" value="vertrieb">
-                            <span class="option-card__icon">🎯</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Vertrieb & Leads</span>
                                 <span class="option-card__desc">Anfragen, Follow-ups, Terminbuchung</span>
@@ -1952,7 +1985,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="kundenservice">
-                            <span class="option-card__icon">💬</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Kundenkommunikation</span>
                                 <span class="option-card__desc">Anfragen, Beschwerden, Feedback</span>
@@ -1962,7 +1995,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="hr">
-                            <span class="option-card__icon">👥</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">HR & Personal</span>
                                 <span class="option-card__desc">Bewerbungen, Onboarding, Anfragen</span>
@@ -1972,7 +2005,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="buchhaltung">
-                            <span class="option-card__icon">📄</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Buchhaltung</span>
                                 <span class="option-card__desc">Rechnungen, Belege, Mahnungen</span>
@@ -1982,7 +2015,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="terminbuchung">
-                            <span class="option-card__icon">📅</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Terminbuchung</span>
                                 <span class="option-card__desc">Koordination, Erinnerungen, No-Shows</span>
@@ -2002,7 +2035,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="onboarding">
-                            <span class="option-card__icon">🎓</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Mitarbeiter-Onboarding</span>
                                 <span class="option-card__desc">Einarbeitung, Schulungen, Dokumentation</span>
@@ -2012,7 +2045,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="finanzen">
-                            <span class="option-card__icon">💰</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Finanzprozesse</span>
                                 <span class="option-card__desc">Prüfung, Freigaben, Reporting</span>
@@ -2051,7 +2084,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="challenge" value="fehler">
-                            <span class="option-card__icon">⚠️</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Fehleranfälligkeit</span>
                                 <span class="option-card__desc">Manuelle Prozesse führen zu Fehlern</span>
@@ -2071,7 +2104,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="challenge" value="kosten">
-                            <span class="option-card__icon">💸</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Hohe Personalkosten</span>
                                 <span class="option-card__desc">Routineaufgaben binden teure Ressourcen</span>
@@ -2081,7 +2114,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="challenge" value="verfuegbarkeit">
-                            <span class="option-card__icon">🌙</span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Eingeschränkte Erreichbarkeit</span>
                                 <span class="option-card__desc">Wir können nicht rund um die Uhr reagieren</span>
@@ -2517,6 +2550,51 @@
     <script src="js/value-calculator.js" defer></script>
     <script src="js/cookie-banner.js" defer></script>
     <script src="js/contact-modal.js" defer></script>
+    <script>
+    (function() {
+        function initIndustrySelect() {
+            const wrap = document.getElementById('industrySelectWrap');
+            const select = document.getElementById('industry');
+            const trigger = document.getElementById('industrySelectTrigger');
+            const panel = document.getElementById('industrySelectPanel');
+            const labelEl = trigger?.querySelector('.industry-select-label');
+            const iconEl = trigger?.querySelector('.industry-select-icon');
+            if (!wrap || !select || !trigger) return;
+            const iconByValue = {};
+            panel?.querySelectorAll('.industry-select-option').forEach(function(opt) {
+                const icon = opt.querySelector('.industry-select-option__icon');
+                if (icon) iconByValue[opt.dataset.value || ''] = icon.innerHTML;
+            });
+            function updateTrigger() {
+                var opt = select.options[select.selectedIndex];
+                if (labelEl) labelEl.textContent = opt ? opt.textContent : 'Bitte wählen...';
+                if (iconEl && iconByValue[select.value] !== undefined) iconEl.innerHTML = iconByValue[select.value];
+                document.querySelectorAll('.industry-select-option.selected').forEach(function(o) { o.classList.remove('selected'); });
+                var sel = panel?.querySelector('.industry-select-option[data-value="' + (select.value || '') + '"]');
+                if (sel) sel.classList.add('selected');
+            }
+            function close() { wrap.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }
+            trigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var isOpen = wrap.classList.toggle('open');
+                trigger.setAttribute('aria-expanded', isOpen);
+            });
+            panel?.querySelectorAll('.industry-select-option').forEach(function(opt) {
+                opt.addEventListener('click', function() {
+                    select.value = this.dataset.value || '';
+                    updateTrigger();
+                    close();
+                    select.dispatchEvent(new Event('change', { bubbles: true }));
+                });
+            });
+            document.addEventListener('click', function() { close(); });
+            wrap.addEventListener('click', function(e) { e.stopPropagation(); });
+            updateTrigger();
+        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initIndustrySelect);
+        else initIndustrySelect();
+    })();
+    </script>
 </body>
 </html>
 

@@ -8,6 +8,19 @@
 }
 #pricing .container { max-width: 1180px !important; }
 #pricing .section__header { margin-bottom: 32px !important; }
+/* Value-Based Selling: 1:1 identisch mit "Kein Tech-Blabla" und "Der Autopilot für Ihr Business" */
+[data-theme="dark"] #pricing .section__tag,
+#pricing .section__tag {
+    color: var(--color-neon-cyan) !important;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: var(--text-xs) !important;
+    font-weight: var(--font-semibold) !important;
+    text-transform: uppercase !important;
+    letter-spacing: var(--tracking-wider) !important;
+}
 #pricing .section__title { font-size: 1.75rem !important; }
 #pricing .section__description { font-size: 1rem !important; }
 
