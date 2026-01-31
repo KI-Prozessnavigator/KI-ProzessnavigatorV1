@@ -107,13 +107,16 @@ function handleScroll() {
 
 function highlightActiveSection() {
     const scrollY = window.scrollY;
+    const viewportMiddle = scrollY + (window.innerHeight / 2);
     
     DOM.sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + sectionHeight;
         const sectionId = section.getAttribute('id');
         
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        // Prüfe ob die Mitte des Viewports in der Sektion ist
+        if (viewportMiddle >= sectionTop && viewportMiddle < sectionBottom) {
             DOM.navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${sectionId}`) {
@@ -133,7 +136,15 @@ function scrollToSection(e) {
         
         if (section) {
             const headerHeight = DOM.header.offsetHeight;
-            const targetPosition = section.offsetTop - headerHeight;
+            let targetPosition = section.offsetTop - headerHeight;
+            
+            // DSGVO Sektion mittig positionieren
+            if (href === '#dsgvo') {
+                const viewportHeight = window.innerHeight;
+                const sectionHeight = section.offsetHeight;
+                // Zentriere die Sektion: Sektion-Mitte = Viewport-Mitte (mit 60px mehr Abstand OBEN)
+                targetPosition = section.offsetTop - (viewportHeight / 2) + (sectionHeight / 2) - 60;
+            }
             
             window.scrollTo({
                 top: targetPosition,
