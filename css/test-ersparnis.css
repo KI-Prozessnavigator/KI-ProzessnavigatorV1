@@ -1,0 +1,68 @@
+/**
+ * TEST-Ersparnis – Stile nur für die lokale Testseite
+ * Hier kannst du den Rechner umdesignen und verkleinern, ohne die Live-Seite zu beeinflussen.
+ * Datei: test-ersparnis-rechner.html
+ */
+
+/* ===== TEST-Banner ===== */
+.test-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: linear-gradient(90deg, #ff6b35, #f7931e);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+}
+
+/* Platz für den Banner */
+.value-calculator {
+    padding-top: 48px !important;
+}
+
+/* ===== Container (ohne main.css) ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 3rem);
+}
+
+/* ===== CTA-Bereich unter dem Rechner ===== */
+.calculator__cta-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 3rem);
+    margin-top: var(--space-6);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.calculator__cta-wrap .btn--calculator {
+    display: inline-block;
+    width: auto;
+    min-width: 320px;
+}
+
+.calculator__cta-note {
+    margin-top: var(--space-3);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/*
+   REDESIGN-BEREICH – Hier experimentieren
+   
+   Beispiele zum Verkleinern (auskommentieren zum Testen):
+   
+   - Kompakterer Wrapper: grid-template-columns: 1fr 1fr;
+   - Kleinere Karten: padding: var(--space-4);
+   - Kleinere Zahlen: .result-card__value-num { font-size: 28px; }
+   - Kleinere Donut-Charts: .result-card__circle-wrap { width: 100px; height: 100px; }
+   - Max-Breite: .calculator__wrapper { max-width: 900px; margin: 0 auto; }
+*/

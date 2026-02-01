@@ -39,6 +39,25 @@
     animation: blink 1s step-end infinite;
     vertical-align: text-bottom;
 }
+.hero .cursor-blink--hero {
+    margin-left: 0;
+}
+.hero__title-space {
+    display: inline-block !important;
+    width: 0.5em !important;
+    min-width: 0.5em !important;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+.hero__title-space::before {
+    content: "\00a0";
+}
+/* Ausrufezeichen in Zeile 1 steht im HTML (markierbar) */
+.hero .cursor-blink--hero {
+    display: inline-block !important;
+    background: #00D4FF !important;
+    margin-left: 0 !important;
+}
 
 /* === Result cards (Value Calculator) – Basis === */
 .result-card--time,

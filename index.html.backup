@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_DE">
     
-    <title>KI-Prozessnavigator | Automatisierung für KMU – DSGVO-konform & Made in Germany</title>
+    <title>🧪 TEST: Neue Hintergründe | KI-Prozessnavigator</title>
     <link rel="canonical" href="https://ki-prozessnavigator.de/">
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg?v=3">
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/icons/favicon.svg?v=3">
@@ -113,8 +113,8 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
     </style>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/calculator-redesign.css">
-    <link rel="stylesheet" href="css/contact-modal.css">
+    <!-- TEST: Neue Hintergrund-Struktur -->
+    <link rel="stylesheet" href="css/test-backgrounds.css">
     <style>
         /* ERZWINGE WEIẞE FARBE für alle Value Calculator Zahlen */
         #timeSaved span,
@@ -199,15 +199,6 @@
             text-shadow: none !important;
         }
         
-        /* Glühbirne + CTA-Text in einer Zeile */
-        .calculator-cta-note {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            gap: 8px !important;
-        }
-        .calculator-cta-note__icon { width: 18px; height: 18px; flex-shrink: 0; }
-        
         /* COOKIE-DETAILS: SCHWARZ #000000 (keine Unschärfe) */
         .cookie-category__details summary {
             color: #000000 !important;
@@ -268,12 +259,13 @@
             <div class="hero__container container" id="main-content">
                 <div class="hero__content u-pt-110">
                     <h1 class="hero__title" id="hero-title">
-                        <span aria-label="10h Zeitgewinn pro Woche! – DSGVO-konforme KI-Automatisierung">
-                            <em class="hero__title-em"><span class="hero__title-line1" style="white-space: nowrap">10h Zeitgewinn pro Woche!</span></em><br>DSGVO-konforme<br><span class="hero__title-line3" style="white-space: nowrap"><span style="white-space: nowrap">KI-Automatisierung</span><span class="hero__title-space" aria-hidden="true"> </span><span class="cursor-blink cursor-blink--hero"></span></span>
+                        <span aria-label="Stellen Sie sich vor: 10 Stunden mehr Zeit – jede Woche">
+                            Stellen Sie sich vor: <em class="hero__title-em">10 Stunden mehr Zeit</em> – jede Woche<span class="cursor-blink"></span>
                         </span>
                     </h1>
                     <p class="hero__description">
-                        Routineaufgaben wie Dokumentenablage, E-Mail-Sortierung und Datenpflege laufen automatisiert. <span class="hero__description-accent" style="white-space: nowrap">DSGVO-konform, auf deutschen Servern, ohne IT-Projekt.</span>
+                        Unsere KI automatisiert Ihre Routineaufgaben – DSGVO-konform und ohne IT-Aufwand. 
+                        <strong>Die einzige Lösung, die deutsches Datenschutzrecht versteht.</strong>
                     </p>
                     
                     <div class="hero__actions" role="group" aria-label="Handlungsoptionen">
@@ -297,48 +289,34 @@
                     
                     <div class="hero__stats" role="list" aria-label="Unsere Erfolgszahlen">
                         <div class="stat" role="listitem">
-                            <div class="stat__inner">
-                                <span class="stat__number">10h+</span>
-                                <span class="stat__label">Zeitersparnis</span>
-                            </div>
+                            <span class="stat__number">7 von 10</span>
+                            <span class="stat__label">Early-Bird Plätze verfügbar</span>
                         </div>
                         <div class="stat" role="listitem">
-                            <div class="stat__inner">
-                                <span class="stat__number">–70 %</span>
-                                <span class="stat__label">Routinearbeit</span>
-                            </div>
+                            <span class="stat__number">70%</span>
+                            <span class="stat__label">weniger Routinearbeit</span>
                         </div>
                         <div class="stat" role="listitem">
-                            <div class="stat__inner">
-                                <span class="stat__number">0</span>
-                                <span class="stat__label">DSGVO-Vorfälle</span>
-                            </div>
-                        </div>
-                        <div class="stat" role="listitem">
-                            <div class="stat__inner">
-                                <span class="stat__number">3</span>
-                                <span class="stat__label">Plätze Verfügbar</span>
-                            </div>
+                            <span class="stat__number">0</span>
+                            <span class="stat__label">DSGVO-Abmahnungen</span>
                         </div>
                     </div>
                 </div>
                 
             </div>
             
-            <a href="#trust-bar" class="hero__scroll-indicator" role="button" aria-label="Mehr erfahren - Nach unten scrollen">
+            <div class="hero__scroll-indicator" role="presentation">
                 <span>Mehr erfahren</span>
                 <div class="scroll-arrow" aria-hidden="true"></div>
-            </a>
+            </div>
         </section>
 
-        <section class="trust-bar trust-bar--integrations" id="trust-bar" aria-label="Unterstützte Integrationen">
+        <section class="trust-bar trust-bar--integrations" aria-label="Unterstützte Integrationen">
             <div class="container">
-                <div class="trust-bar__headings">
-                    <p class="trust-bar__text u-text-white">
-                        <strong class="u-text-white">Verbindet sich mit Ihrer bestehenden Software</strong> <strong class="u-text-white">– 200+ Integrationen.</strong>
-                    </p>
-                    <p class="trust-bar__subline u-text-white">Keine Systemwechsel. Die Automatisierung dockt an vorhandene Tools an und synchronisiert Daten bidirektional.</p>
-                </div>
+                <p class="trust-bar__text u-text-white">
+                    <strong class="u-text-white">Nahtlose Integration</strong> mit Ihren bestehenden Tools – 
+                    <em class="u-text-white">über 200+ Apps & Systeme automatisierbar</em>
+                </p>
                 <div class="trust-bar__logos trust-bar__logos--software" role="list" aria-label="Unterstützte Software">
                     <div class="software-logo u-text-white" role="listitem">
                         <span class="u-fw600">Gmail</span>
@@ -383,9 +361,9 @@
         <section class="problems" id="problems" aria-labelledby="problems-title">
             <div class="container">
                 <header class="section__header">
-                    <span class="section__tag">KI-Implementierung ohne Tech-Blabla</span>
-                    <h2 class="section__title" id="problems-title">Drei Kostenfaktoren, die Unternehmen unterschätzen</h2>
-                    <p class="section__description">Erkennen Sie Ihr Unternehmen hier wieder?</p>
+                    <span class="section__tag">Kein Tech-Blabla</span>
+                    <h2 class="section__title" id="problems-title">Diese Probleme kosten Sie täglich Geld</h2>
+                    <p class="section__description">Erkennen Sie sich wieder?</p>
                 </header>
                 
                 <div class="problems__grid">
@@ -397,11 +375,11 @@
                                 <polyline points="12 6 12 12 16 14"/>
                             </svg>
                         </div>
-                        <h3 class="problem-card__title">Fachkräfte in Administrationsschleifen</h3>
+                        <h3 class="problem-card__title">Ihre besten Leute verschwenden Zeit</h3>
                         <p class="problem-card__text">
-                            Vertriebsmitarbeiter pflegen CRM-Felder&#160;manuell. Buchhalter kopieren Rechnungsdaten zwischen Systemen. Controller erstellen Reports aus fünf Excel-Dateien.
+                            Talentierte Mitarbeiter verbringen Stunden mit Copy-Paste-Aufgaben – 
+                            statt Kunden zu begeistern und Ihr Unternehmen voranzubringen.
                         </p>
-                        <p class="problem-card__footnote">Messbarer Verlust: 8–12 Stunden pro Mitarbeiter und Woche für Aufgaben ohne Wertschöpfung.</p>
                     </div>
                     
                     <div class="problem-card" data-animate="fade-up" data-delay="1">
@@ -412,11 +390,11 @@
                                 <line x1="9" y1="9" x2="15" y2="15"/>
                             </svg>
                         </div>
-                        <h3 class="problem-card__title">Datenschutzbedenken als Innovationsbremse</h3>
+                        <h3 class="problem-card__title">DSGVO-Angst blockiert Innovation</h3>
                         <p class="problem-card__text">
-                            Die Rechtsabteilung blockiert KI-Projekte mit Verweis auf DSGVO-Risiken. Verständlich – 73 % der deutschen Unternehmen nennen Compliance als Haupthürde für KI-Adoption (Bitkom, 2024).
+                            Sie wollen KI nutzen, aber die Rechtsabteilung sagt "zu riskant". 
+                            Ihre Wettbewerber ziehen vorbei. <em>Kennen wir.</em>
                         </p>
-                        <p class="problem-card__footnote">Konsequenz: Wettbewerber mit gelöster Datenschutzfrage automatisieren bereits.</p>
                     </div>
                     
                     <div class="problem-card" data-animate="fade-up" data-delay="2">
@@ -425,11 +403,11 @@
                                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
                             </svg>
                         </div>
-                        <h3 class="problem-card__title">KI-Tools ohne Systemanbindung</h3>
+                        <h3 class="problem-card__title">KI-Tools gekauft – Mitarbeiter nutzen sie falsch</h3>
                         <p class="problem-card__text">
-                            Lizenzen für ChatGPT, Copilot oder spezialisierte Tools sind vorhanden. Aber: keine API-Verbindung zu CRM, ERP oder Buchhaltung. Mitarbeiter exportieren, kopieren, importieren – manuell.
+                            Ihre Teams kopieren Daten manuell hin und her. Keine Anbindung an CRM oder ERP. 
+                            Kein automatischer Workflow. <em>Das Potenzial bleibt ungenutzt.</em>
                         </p>
-                        <p class="problem-card__footnote">Ergebnis: Technologie-Investition ohne Prozesseffekt.</p>
                     </div>
                 </div>
                 
@@ -1009,187 +987,162 @@
                 
                 <div class="calculator__wrapper">
                     <div class="calculator__inputs">
-                        <input type="hidden" id="employeeCount" value="10">
-                        
                         <div class="calculator__card">
                             <h3 class="calculator__card-title">
                                 <span class="step-number">1</span>
-                                Ihre Angaben
+                                Wer sind Sie?
                             </h3>
                             
                             <div class="form__group">
-                                <label for="processType" class="form__label">Prozess zur Automatisierung</label>
-                                <div class="process-select-wrap" id="processSelectWrap">
-                                    <select id="processType" class="form__input calculator__select" aria-hidden="true">
-                                        <optgroup label="Human Resources">
-                                            <option value="urlaubsantraege" selected>Urlaubsanträge & Genehmigungen</option>
-                                            <option value="onboarding">Onboarding neuer Mitarbeiter</option>
-                                            <option value="offboarding">Exit-Interviews & Offboarding</option>
-                                            <option value="zeiterfassung">Zeiterfassung & Überstunden-Tracking</option>
-                                            <option value="schulungen">Schulungsmanagement & Zertifikate</option>
-                                            <option value="arbeitsvertraege">Arbeitsverträge & Vertragsänderungen</option>
-                                        </optgroup>
-                                        <optgroup label="Verwaltung / Buchhaltung / Finanzen">
-                                            <option value="zahlungserinnerungen">Zahlungserinnerungen versenden</option>
-                                            <option value="belegerfassung">Belegerfassung aus E-Mails/Scans</option>
-                                            <option value="kassenbuch">Kassenbuch führen</option>
-                                            <option value="mahnwesen">Mahnwesen automatisieren</option>
-                                            <option value="reisekosten">Reisekostenabrechnungen erstellen</option>
-                                            <option value="vertragsmanagement">Vertragsmanagement & Kündigungsfristen</option>
-                                            <option value="rechnungsprüfung">Rechnungseingang prüfen & kontieren</option>
-                                        </optgroup>
-                                        <optgroup label="Vertrieb / Sales / Marketing">
-                                            <option value="followup">Follow-up E-Mails nach X Tagen</option>
-                                            <option value="socialmedia">Social Media Beiträge planen</option>
-                                            <option value="newsletter">Newsletter-Versand segmentieren</option>
-                                            <option value="kundenanfragen">Kundenanfragen vorfiltern & beantworten</option>
-                                            <option value="angebote">Angebotserstellung aus Vorlagen</option>
-                                            <option value="angebotsnachverfolgung">Angebots-Nachverfolgung</option>
-                                            <option value="verkaufsberichte">Verkaufsberichte automatisch erstellen</option>
-                                            <option value="kundensegmentierung">Kundensegmentierung & Scoring</option>
-                                        </optgroup>
-                                        <optgroup label="Auftrags- & Projektabwicklung">
-                                            <option value="auftragsbestätigungen">Auftragsbestätigungen versenden</option>
-                                            <option value="wartungserinnerungen">Wartungserinnerungen an Kunden</option>
-                                            <option value="fotodokumentation">Foto-Dokumentation von Baustellen</option>
-                                            <option value="lieferschein">Lieferschein-Prüfung</option>
-                                            <option value="materialbestellungen">Material-Bestellungen auslösen</option>
-                                            <option value="abnahmeprotokolle">Abnahmeprotokolle erstellen</option>
-                                            <option value="bautagebuch">Bautagebuch digital führen</option>
-                                            <option value="einsatzplanung">Werkstatt-/Einsatzplanung</option>
-                                            <option value="maschinenwartung">Werkzeug- & Maschinen-Wartung</option>
-                                            <option value="sicherheitsdoku">Sicherheitsdokumentationen</option>
-                                            <option value="nachunternehmer">Nachunternehmer-Koordination</option>
-                                        </optgroup>
-                                        <optgroup label="Kundensupport / Service">
-                                            <option value="rückrufservice">Rückrufservice organisieren</option>
-                                            <option value="umfragen">Kundenzufriedenheits-Umfragen</option>
-                                            <option value="servicetermine">Service-Terminplanung</option>
-                                            <option value="faq">FAQ-Beantwortung automatisiert</option>
-                                            <option value="ticketrouting">Ticket-Routing nach Priorität</option>
-                                            <option value="beschwerde">Beschwerde-Management</option>
-                                        </optgroup>
-                                        <optgroup label="Einkauf / Beschaffung / Lager">
-                                            <option value="lieferantenanfragen">Lieferanten-Anfragen versenden</option>
-                                            <option value="bestandswarnung">Bestandsüberwachung & Warnung</option>
-                                            <option value="lieferscheinabgleich">Lieferschein-Abgleich mit Bestellung</option>
-                                            <option value="preisvergleich">Preisvergleiche automatisiert</option>
-                                            <option value="lieferantenbewertung">Lieferanten-Bewertung</option>
-                                        </optgroup>
-                                        <optgroup label="Projektmanagement">
-                                            <option value="taskreminder">Task-Reminder an Teammitglieder</option>
-                                            <option value="meetingprotokolle">Meeting-Protokolle erstellen & verteilen</option>
-                                            <option value="projektzeiterfassung">Projektzeiterfassung</option>
-                                            <option value="statusberichte">Projekt-Statusberichte wöchentlich</option>
-                                            <option value="ressourcenplanung">Ressourcenplanung & Auslastung</option>
-                                        </optgroup>
-                                        <option value="custom">Eigener Prozess</option>
-                                    </select>
-                                    <button type="button" class="process-select-trigger" aria-haspopup="listbox" aria-expanded="false" id="processSelectTrigger">
-                                        <span class="process-select-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-                                        <span class="process-select-label">Urlaubsanträge & Genehmigungen</span>
-                                        <span class="process-select-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><polyline points="6 9 12 15 18 9"/></svg></span>
-                                    </button>
-                                    <div class="process-select-panel" role="listbox" id="processSelectPanel">
-                                        <div class="process-select-group">
-                                            <div class="process-select-group-label"><span class="process-select-group-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Human Resources</div>
-                                            <div class="process-select-option" data-value="urlaubsantraege">Urlaubsanträge & Genehmigungen</div>
-                                            <div class="process-select-option" data-value="onboarding">Onboarding neuer Mitarbeiter</div>
-                                            <div class="process-select-option" data-value="offboarding">Exit-Interviews & Offboarding</div>
-                                            <div class="process-select-option" data-value="zeiterfassung">Zeiterfassung & Überstunden-Tracking</div>
-                                            <div class="process-select-option" data-value="schulungen">Schulungsmanagement & Zertifikate</div>
-                                            <div class="process-select-option" data-value="arbeitsvertraege">Arbeitsverträge & Vertragsänderungen</div>
-                                        </div>
-                                        <div class="process-select-group">
-                                            <div class="process-select-group-label"><span class="process-select-group-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Verwaltung / Buchhaltung / Finanzen</div>
-                                            <div class="process-select-option" data-value="zahlungserinnerungen">Zahlungserinnerungen versenden</div>
-                                            <div class="process-select-option" data-value="belegerfassung">Belegerfassung aus E-Mails/Scans</div>
-                                            <div class="process-select-option" data-value="kassenbuch">Kassenbuch führen</div>
-                                            <div class="process-select-option" data-value="mahnwesen">Mahnwesen automatisieren</div>
-                                            <div class="process-select-option" data-value="reisekosten">Reisekostenabrechnungen erstellen</div>
-                                            <div class="process-select-option" data-value="vertragsmanagement">Vertragsmanagement & Kündigungsfristen</div>
-                                            <div class="process-select-option" data-value="rechnungsprüfung">Rechnungseingang prüfen & kontieren</div>
-                                        </div>
-                                        <div class="process-select-group">
-                                            <div class="process-select-group-label"><span class="process-select-group-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>Vertrieb / Sales / Marketing</div>
-                                            <div class="process-select-option" data-value="followup">Follow-up E-Mails nach X Tagen</div>
-                                            <div class="process-select-option" data-value="socialmedia">Social Media Beiträge planen</div>
-                                            <div class="process-select-option" data-value="newsletter">Newsletter-Versand segmentieren</div>
-                                            <div class="process-select-option" data-value="kundenanfragen">Kundenanfragen vorfiltern & beantworten</div>
-                                            <div class="process-select-option" data-value="angebote">Angebotserstellung aus Vorlagen</div>
-                                            <div class="process-select-option" data-value="angebotsnachverfolgung">Angebots-Nachverfolgung</div>
-                                            <div class="process-select-option" data-value="verkaufsberichte">Verkaufsberichte automatisch erstellen</div>
-                                            <div class="process-select-option" data-value="kundensegmentierung">Kundensegmentierung & Scoring</div>
-                                        </div>
-                                        <div class="process-select-group">
-                                            <div class="process-select-group-label"><span class="process-select-group-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>Auftrags- & Projektabwicklung</div>
-                                            <div class="process-select-option" data-value="auftragsbestätigungen">Auftragsbestätigungen versenden</div>
-                                            <div class="process-select-option" data-value="wartungserinnerungen">Wartungserinnerungen an Kunden</div>
-                                            <div class="process-select-option" data-value="fotodokumentation">Foto-Dokumentation von Baustellen</div>
-                                            <div class="process-select-option" data-value="lieferschein">Lieferschein-Prüfung</div>
-                                            <div class="process-select-option" data-value="materialbestellungen">Material-Bestellungen auslösen</div>
-                                            <div class="process-select-option" data-value="abnahmeprotokolle">Abnahmeprotokolle erstellen</div>
-                                            <div class="process-select-option" data-value="bautagebuch">Bautagebuch digital führen</div>
-                                            <div class="process-select-option" data-value="einsatzplanung">Werkstatt-/Einsatzplanung</div>
-                                            <div class="process-select-option" data-value="maschinenwartung">Werkzeug- & Maschinen-Wartung</div>
-                                            <div class="process-select-option" data-value="sicherheitsdoku">Sicherheitsdokumentationen</div>
-                                            <div class="process-select-option" data-value="nachunternehmer">Nachunternehmer-Koordination</div>
-                                        </div>
-                                        <div class="process-select-group">
-                                            <div class="process-select-group-label"><span class="process-select-group-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>Kundensupport / Service</div>
-                                            <div class="process-select-option" data-value="rückrufservice">Rückrufservice organisieren</div>
-                                            <div class="process-select-option" data-value="umfragen">Kundenzufriedenheits-Umfragen</div>
-                                            <div class="process-select-option" data-value="servicetermine">Service-Terminplanung</div>
-                                            <div class="process-select-option" data-value="faq">FAQ-Beantwortung automatisiert</div>
-                                            <div class="process-select-option" data-value="ticketrouting">Ticket-Routing nach Priorität</div>
-                                            <div class="process-select-option" data-value="beschwerde">Beschwerde-Management</div>
-                                        </div>
-                                        <div class="process-select-group">
-                                            <div class="process-select-group-label"><span class="process-select-group-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>Einkauf / Beschaffung / Lager</div>
-                                            <div class="process-select-option" data-value="lieferantenanfragen">Lieferanten-Anfragen versenden</div>
-                                            <div class="process-select-option" data-value="bestandswarnung">Bestandsüberwachung & Warnung</div>
-                                            <div class="process-select-option" data-value="lieferscheinabgleich">Lieferschein-Abgleich mit Bestellung</div>
-                                            <div class="process-select-option" data-value="preisvergleich">Preisvergleiche automatisiert</div>
-                                            <div class="process-select-option" data-value="lieferantenbewertung">Lieferanten-Bewertung</div>
-                                        </div>
-                                        <div class="process-select-group">
-                                            <div class="process-select-group-label"><span class="process-select-group-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg></span>Projektmanagement</div>
-                                            <div class="process-select-option" data-value="taskreminder">Task-Reminder an Teammitglieder</div>
-                                            <div class="process-select-option" data-value="meetingprotokolle">Meeting-Protokolle erstellen & verteilen</div>
-                                            <div class="process-select-option" data-value="projektzeiterfassung">Projektzeiterfassung</div>
-                                            <div class="process-select-option" data-value="statusberichte">Projekt-Statusberichte wöchentlich</div>
-                                            <div class="process-select-option" data-value="ressourcenplanung">Ressourcenplanung & Auslastung</div>
-                                        </div>
-                                        <div class="process-select-group">
-                                            <div class="process-select-group-label"><span class="process-select-group-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>Eigener Prozess</div>
-                                            <div class="process-select-option" data-value="custom">Eigener Prozess</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <label for="employeeCount" class="form__label">
+                                    Anzahl Mitarbeiter
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="employeeCount" 
+                                    class="form__input calculator__input"
+                                    value="10"
+                                    min="1"
+                                    max="10000"
+                                    placeholder="z.B. 10">
                             </div>
                             
                             <div class="form__group">
-                                <label for="minutesPerDay" class="form__label">Aktueller Zeitaufwand<br>(Minuten pro Tag pro Mitarbeiter)</label>
-                                <div class="slider-value-row">
-                                    <input type="range" id="minutesPerDay" class="calculator__slider" value="30" min="15" max="480" step="15">
-                                    <input type="number" id="minutesPerDayValue" class="value-display value-display--input" value="30" min="15" max="1440" step="15" aria-label="Minuten pro Tag">
-                                </div>
+                                <label for="hourlyRate" class="form__label">
+                                    Durchschnittlicher Stundenlohn (€)
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="hourlyRate" 
+                                    class="form__input calculator__input"
+                                    value="50"
+                                    min="1"
+                                    max="500"
+                                    placeholder="z.B. 50">
+                            </div>
+                        </div>
+                        
+                        <div class="calculator__card">
+                            <h3 class="calculator__card-title">
+                                <span class="step-number">2</span>
+                                Was möchten Sie automatisieren?
+                            </h3>
+                            
+                            <div class="form__group">
+                                <label for="processType" class="form__label">
+                                    Prozess auswählen
+                                </label>
+                                <select 
+                                    id="processType" 
+                                    class="form__input calculator__select">
+                                    
+                                    <optgroup label="👥 Human Resources">
+                                        <option value="urlaubsantraege">Urlaubsanträge & Genehmigungen</option>
+                                        <option value="onboarding">Onboarding neuer Mitarbeiter</option>
+                                        <option value="offboarding">Exit-Interviews & Offboarding</option>
+                                        <option value="zeiterfassung">Zeiterfassung & Überstunden-Tracking</option>
+                                        <option value="schulungen">Schulungsmanagement & Zertifikate</option>
+                                        <option value="arbeitsvertraege">Arbeitsverträge & Vertragsänderungen</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="💰 Verwaltung / Buchhaltung / Finanzen">
+                                        <option value="zahlungserinnerungen">Zahlungserinnerungen versenden</option>
+                                        <option value="belegerfassung">Belegerfassung aus E-Mails/Scans</option>
+                                        <option value="kassenbuch">Kassenbuch führen</option>
+                                        <option value="mahnwesen">Mahnwesen automatisieren</option>
+                                        <option value="reisekosten">Reisekostenabrechnungen erstellen</option>
+                                        <option value="vertragsmanagement">Vertragsmanagement & Kündigungsfristen</option>
+                                        <option value="rechnungsprüfung">Rechnungseingang prüfen & kontieren</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="📊 Vertrieb / Sales / Marketing">
+                                        <option value="followup">Follow-up E-Mails nach X Tagen</option>
+                                        <option value="socialmedia">Social Media Beiträge planen</option>
+                                        <option value="newsletter">Newsletter-Versand segmentieren</option>
+                                        <option value="kundenanfragen">Kundenanfragen vorfiltern & beantworten</option>
+                                        <option value="angebote">Angebotserstellung aus Vorlagen</option>
+                                        <option value="angebotsnachverfolgung">Angebots-Nachverfolgung</option>
+                                        <option value="verkaufsberichte">Verkaufsberichte automatisch erstellen</option>
+                                        <option value="kundensegmentierung">Kundensegmentierung & Scoring</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="🏗️ Auftrags- & Projektabwicklung">
+                                        <option value="auftragsbestätigungen">Auftragsbestätigungen versenden</option>
+                                        <option value="wartungserinnerungen">Wartungserinnerungen an Kunden</option>
+                                        <option value="fotodokumentation">Foto-Dokumentation von Baustellen</option>
+                                        <option value="lieferschein">Lieferschein-Prüfung</option>
+                                        <option value="materialbestellungen">Material-Bestellungen auslösen</option>
+                                        <option value="abnahmeprotokolle">Abnahmeprotokolle erstellen</option>
+                                        <option value="bautagebuch">Bautagebuch digital führen</option>
+                                        <option value="einsatzplanung">Werkstatt-/Einsatzplanung</option>
+                                        <option value="maschinenwartung">Werkzeug- & Maschinen-Wartung</option>
+                                        <option value="sicherheitsdoku">Sicherheitsdokumentationen</option>
+                                        <option value="nachunternehmer">Nachunternehmer-Koordination</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="🎧 Kundensupport / Service">
+                                        <option value="rückrufservice">Rückrufservice organisieren</option>
+                                        <option value="umfragen">Kundenzufriedenheits-Umfragen</option>
+                                        <option value="servicetermine">Service-Terminplanung</option>
+                                        <option value="faq">FAQ-Beantwortung automatisiert</option>
+                                        <option value="ticketrouting">Ticket-Routing nach Priorität</option>
+                                        <option value="beschwerde">Beschwerde-Management</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="🛒 Einkauf / Beschaffung / Lager">
+                                        <option value="lieferantenanfragen">Lieferanten-Anfragen versenden</option>
+                                        <option value="bestandswarnung">Bestandsüberwachung & Warnung</option>
+                                        <option value="lieferscheinabgleich">Lieferschein-Abgleich mit Bestellung</option>
+                                        <option value="preisvergleich">Preisvergleiche automatisiert</option>
+                                        <option value="lieferantenbewertung">Lieferanten-Bewertung</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="📁 Projektmanagement">
+                                        <option value="taskreminder">Task-Reminder an Teammitglieder</option>
+                                        <option value="meetingprotokolle">Meeting-Protokolle erstellen & verteilen</option>
+                                        <option value="projektzeiterfassung">Projektzeiterfassung</option>
+                                        <option value="statusberichte">Projekt-Statusberichte wöchentlich</option>
+                                        <option value="ressourcenplanung">Ressourcenplanung & Auslastung</option>
+                                    </optgroup>
+                                    
+                                    <option value="custom">✨ Eigener Prozess</option>
+                                </select>
                             </div>
                             
                             <div class="form__group">
-                                <label for="affectedEmployees" class="form__label">Betroffene Mitarbeiter</label>
-                                <div class="slider-value-row">
-                                    <input type="range" id="affectedEmployees" class="calculator__slider" value="3" min="1" max="200" step="1">
-                                    <input type="number" id="affectedEmployeesValue" class="value-display value-display--input" value="3" min="1" max="3000" step="1" aria-label="Anzahl Mitarbeiter">
-                                </div>
+                                <label for="minutesPerDay" class="form__label">
+                                    Aktueller Zeitaufwand (Minuten pro Tag pro Mitarbeiter)
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="minutesPerDay" 
+                                    class="form__input calculator__input"
+                                    value="30"
+                                    min="15"
+                                    max="480"
+                                    step="15"
+                                    placeholder="z.B. 30 oder 60">
                             </div>
+                        </div>
+                        
+                        <div class="calculator__card">
+                            <h3 class="calculator__card-title">
+                                <span class="step-number">3</span>
+                                Betroffene Mitarbeiter
+                            </h3>
                             
                             <div class="form__group">
-                                <label for="hourlyRate" class="form__label">Durchschnittlicher Stundenlohn (€)</label>
-                                <div class="slider-value-row">
-                                    <input type="range" id="hourlyRate" class="calculator__slider" value="50" min="20" max="400" step="5">
-                                    <input type="number" id="hourlyRateValue" class="value-display value-display--input" value="50" min="20" max="400" step="5" aria-label="Stundenlohn in Euro">
-                                </div>
+                                <label for="affectedEmployees" class="form__label">
+                                    Wie viele Mitarbeiter führen diesen Prozess aus? <span id="affectedEmployeesValue" class="value-display">3</span>
+                                </label>
+                                <input 
+                                    type="range" 
+                                    id="affectedEmployees" 
+                                    class="calculator__slider"
+                                    value="3"
+                                    min="1"
+                                    max="50"
+                                    step="1">
                             </div>
                         </div>
                     </div>
@@ -1201,51 +1154,131 @@
                         </div>
                         
                         <div class="u-flex-col">
+                            
                             <div class="result-card result-card--time">
-                                <div class="result-card__header-row">
-                                    <div class="result-card__icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#0077FF" stroke-width="1.5" style="width:24px;height:24px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                                    <div class="result-card__label">Zeitgewinn pro Jahr</div>
+                                <div class="result-card__row">
+                                    <div class="u-flex-1">
+                                        <div class="result-card__row--tight">
+                                            <div class="result-card__icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#0077FF" stroke-width="1.5" style="width:24px;height:24px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                                            <div>
+                                                <div class="result-card__label">Zeitgewinn pro Jahr</div>
+                                                <div id="timeSaved" class="result-card__value-row">
+                                                    <span class="result-card__value-num">480</span>
+                                                    <span class="result-card__value-unit">Stunden</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="timeSavedWeeks" class="result-card__weeks">
+                                            ≈ 12 Arbeitswochen gespart
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="result-card__circle-wrap">
+                                        <svg width="140" height="140" viewBox="0 0 140 140">
+                                            <circle cx="70" cy="70" r="55" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="20"/>
+                                            <circle id="timeCircle" cx="70" cy="70" r="55" fill="none" stroke="url(#gradientTime)" stroke-width="20" stroke-dasharray="345" stroke-dashoffset="121" stroke-linecap="round" style="transition: stroke-dashoffset 0.5s ease;"/>
+                                            <defs>
+                                                <linearGradient id="gradientTime" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#00FF88;stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                        <div class="result-card__center">
+                                            <div id="timePercent" class="result-card__percent">65%</div>
+                                            <div class="result-card__percent-label">Gespart</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div id="timeSaved" class="result-card__value-row result-card__value-main">
-                                    <span class="result-card__value-num">480</span>
-                                    <span class="result-card__value-unit">Stunden</span>
-                                </div>
-                                <div id="timeSavedWeeks" class="result-card__detail-box result-card__detail-box--time">
-                                    <span id="timeSavedWeeksNum" class="result-card__detail-value">≈ 12</span>
-                                    <span class="result-card__detail-label">Arbeitswochen gespart</span>
-                                </div>
-                                <div class="result-card__circle-wrap" aria-hidden="true" style="display:none"><svg width="140" height="140" viewBox="0 0 140 140"><circle cx="70" cy="70" r="55" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="20"/><circle id="timeCircle" cx="70" cy="70" r="55" fill="none" stroke="url(#gradientTime)" stroke-width="20" stroke-dasharray="345" stroke-dashoffset="121" stroke-linecap="round" style="transition: stroke-dashoffset 0.5s ease;"/><defs><linearGradient id="gradientTime" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1"/><stop offset="100%" style="stop-color:#00FF88;stop-opacity:1"/></linearGradient></defs></svg><div class="result-card__center"><div id="timePercent" class="result-card__percent">65%</div><div class="result-card__percent-label">Gespart</div></div></div>
                             </div>
                             
                             <div class="result-card result-card--money">
-                                <div class="result-card__header-row">
+                                <div class="result-card__capacity-row">
                                     <div class="result-card__icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#0077FF" stroke-width="1.5" style="width:24px;height:24px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                                    <div class="result-card__label">Einsparpotenzial</div>
+                                    <div class="u-ml-neg8">
+                                        <div class="result-card__label">Einsparpotenzial</div>
+                                        <div id="moneySaved" class="result-card__value-row">
+                                            <span class="result-card__value-num">24.000</span>
+                                            <span class="result-card__value-unit">€</span>
+                                            <span class="result-card__meta">pro Jahr</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div id="moneySaved" class="result-card__value-row result-card__value-main">
-                                    <span class="result-card__value-num">24.000</span>
-                                    <span class="result-card__value-unit">€</span>
-                                    <span class="result-card__meta">pro Jahr</span>
+                                
+                                <div class="result-card__mt20">
+                                    <div class="result-card__section-label">Monatliche Akkumulation der Ersparnis</div>
+                                    <div class="result-card__months-row">
+                                        <div class="result-card__month-col">
+                                            <div id="month1" class="result-card__month-bar" style="height: 8%;"></div>
+                                            <div class="result-card__month-num">1</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month2" class="result-card__month-bar" style="height: 16%;"></div>
+                                            <div class="result-card__month-num">2</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month3" class="result-card__month-bar" style="height: 25%;"></div>
+                                            <div class="result-card__month-num">3</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month4" class="result-card__month-bar" style="height: 33%;"></div>
+                                            <div class="result-card__month-num">4</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month5" class="result-card__month-bar" style="height: 42%;"></div>
+                                            <div class="result-card__month-num">5</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month6" class="result-card__month-bar" style="height: 50%;"></div>
+                                            <div class="result-card__month-num result-card__month-num--em">6</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month7" class="result-card__month-bar result-card__month-bar--alt1" style="height: 58%;"></div>
+                                            <div class="result-card__month-num">7</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month8" class="result-card__month-bar result-card__month-bar--alt1" style="height: 67%;"></div>
+                                            <div class="result-card__month-num">8</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month9" class="result-card__month-bar result-card__month-bar--alt2" style="height: 75%;"></div>
+                                            <div class="result-card__month-num">9</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month10" class="result-card__month-bar result-card__month-bar--alt3" style="height: 83%;"></div>
+                                            <div class="result-card__month-num">10</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month11" class="result-card__month-bar result-card__month-bar--alt4" style="height: 92%;"></div>
+                                            <div class="result-card__month-num">11</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month12" class="result-card__month-bar result-card__month-bar--alt5" style="height: 100%; box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);"></div>
+                                            <div class="result-card__month-num result-card__month-num--12">12</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="result-card__monthly-row">
+                                        <div class="result-card__monthly-label">Monatlich:</div>
+                                        <div id="monthlyAmount" class="result-card__monthly-value">2.000€</div>
+                                    </div>
                                 </div>
-                                <div class="result-card__detail-box result-card__detail-box--money">
-                                    <span class="result-card__detail-label">Ersparnis pro Monat</span>
-                                    <span id="monthlyAmount" class="result-card__detail-value">2.000€</span>
-                                </div>
-                                <div class="result-card__mt20" style="display:none" aria-hidden="true"><div class="result-card__section-label">Monatliche Akkumulation der Ersparnis</div><div class="result-card__months-row"><div id="month1" class="result-card__month-bar"></div><div id="month2" class="result-card__month-bar"></div><div id="month3" class="result-card__month-bar"></div><div id="month4" class="result-card__month-bar"></div><div id="month5" class="result-card__month-bar"></div><div id="month6" class="result-card__month-bar"></div><div id="month7" class="result-card__month-bar"></div><div id="month8" class="result-card__month-bar"></div><div id="month9" class="result-card__month-bar"></div><div id="month10" class="result-card__month-bar"></div><div id="month11" class="result-card__month-bar"></div><div id="month12" class="result-card__month-bar"></div></div></div>
+                                
                             </div>
+                            
                         </div>
                     </div>
                 </div>
                 
-                <div class="calculator__cta-block">
-                    <a href="#contact" class="btn btn--calculator">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        Jetzt kostenloses Erstgespräch vereinbaren
-                    </a>
-                    <p class="calculator-cta-note">
-                        <svg class="calculator-cta-note__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2v1"/><path d="M12 22v-5"/><circle cx="12" cy="11" r="4"/></svg>
-                        <span>Wir berechnen Ihr individuelles Angebot – basierend auf diesem Potenzial</span>
-                    </p>
+                <div style="max-width: 1200px; margin: 0 auto; padding: 0 var(--space-4); margin-top: var(--space-6);">
+                    <div style="text-align: center; position: relative; z-index: 1;">
+                        <a href="#contact" class="btn btn--calculator" style="display: inline-block; width: auto; min-width: 400px;">
+                            Jetzt kostenloses Erstgespräch vereinbaren
+                        </a>
+                        <p style="margin-top: var(--space-3); font-size: 0.875rem; color: rgba(255, 255, 255, 0.8);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2v1"/><path d="M12 22v-5"/><circle cx="12" cy="11" r="4"/></svg>Wir berechnen Ihr individuelles Angebot – basierend auf diesem Potenzial
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1335,7 +1368,7 @@
                             Jetzt Beta-Partner werden
                         </a>
                         <p class="coming-soon__note">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><strong>Noch 7 von 10 Plätzen verfügbar</strong> – Launch Q1/2026
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><strong>Noch 7 von 10 Plätzen verfügbar</strong> – Launch Q1/2026
                         </p>
                     </div>
                 </div>
@@ -1487,7 +1520,8 @@
                     
                     <div class="final-cta__urgency">
                         <span class="urgency-badge" aria-label="Limitiert">
-                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nur noch 7 Beratungsplätze diese Woche</span>
+                            <span class="urgency-pulse"></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nur noch 7 Beratungsplätze diese Woche</span>
                         </span>
                     </div>
                     
@@ -1669,7 +1703,7 @@
                     <div class="option-grid" data-required="true">
                         <div class="option-card">
                             <input type="radio" name="company-size" value="1-10">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                            <span class="option-card__icon">🏠</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">1-10 Mitarbeiter</span>
                                 <span class="option-card__desc">Kleines<br>Team, große Wirkung</span>
@@ -1679,7 +1713,7 @@
                         
                         <div class="option-card">
                             <input type="radio" name="company-size" value="11-50">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4v16h-4V6Z"/></svg></span>
+                            <span class="option-card__icon">🏢</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">11-50 Mitarbeiter</span>
                                 <span class="option-card__desc">Wachsendes Unternehmen</span>
@@ -1689,7 +1723,7 @@
                         
                         <div class="option-card">
                             <input type="radio" name="company-size" value="51-200">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4v16h-4V6Z"/></svg></span>
+                            <span class="option-card__icon">🏬</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">51-200 Mitarbeiter</span>
                                 <span class="option-card__desc">Mittelstand</span>
@@ -1699,7 +1733,7 @@
                         
                         <div class="option-card">
                             <input type="radio" name="company-size" value="200+">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><path d="M12 2L2 7h20L12 2z"/></svg></span>
+                            <span class="option-card__icon">🏛️</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">200+ Mitarbeiter</span>
                                 <span class="option-card__desc">Enterprise</span>
@@ -1727,7 +1761,7 @@
                     <div class="option-grid" data-required="true">
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="hr">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                            <span class="option-card__icon">👥</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Human Resources</span>
                                 <span class="option-card__desc">Urlaubsanträge, Onboarding, Zeiterfassung</span>
@@ -1737,7 +1771,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="verwaltung">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                            <span class="option-card__icon">💰</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Verwaltung / Buchhaltung / Finanzen</span>
                                 <span class="option-card__desc">Rechnungen, Mahnwesen, Belegerfassung</span>
@@ -1747,7 +1781,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="vertrieb">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:20px;height:20px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Vertrieb / Sales / Marketing</span>
                                 <span class="option-card__desc">Follow-ups, Angebote, Newsletter</span>
@@ -1757,7 +1791,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="projekt">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
+                            <span class="option-card__icon">🏗️</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Auftrags- & Projektabwicklung</span>
                                 <span class="option-card__desc">Auftragsbestätigungen, Bautagebuch, Wartung</span>
@@ -1767,7 +1801,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="support">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
+                            <span class="option-card__icon">🎧</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Kundensupport / Service</span>
                                 <span class="option-card__desc">Ticket-Routing, FAQ, Service-Termine</span>
@@ -1777,7 +1811,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="einkauf">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+                            <span class="option-card__icon">🛒</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Einkauf / Beschaffung / Lager</span>
                                 <span class="option-card__desc">Lieferantenanfragen, Bestandswarnung</span>
@@ -1787,7 +1821,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="projektmanagement">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg></span>
+                            <span class="option-card__icon">📁</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Projektmanagement</span>
                                 <span class="option-card__desc">Meeting-Protokolle, Statusberichte</span>
@@ -1797,7 +1831,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="automation-area" value="sonstiges">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                            <span class="option-card__icon">✨</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Eigener Prozess</span>
                                 <span class="option-card__desc">Individuelle Anforderungen</span>
@@ -1921,52 +1955,15 @@
 
                     <div class="form-group">
                         <label class="form-label" for="industry">Ihre Branche (optional)</label>
-                        <div class="industry-select-wrap" id="industrySelectWrap">
-                            <select id="industry" name="industry" class="form-select" aria-hidden="true">
-                                <option value="">Bitte wählen...</option>
-                                <option value="handwerk">Handwerk & Bau</option>
-                                <option value="gastronomie">Gastronomie & Lebensmittel</option>
-                                <option value="dienstleistungen">Dienstleistungen & Beratung</option>
-                                <option value="gesundheit">Gesundheit & Pflege</option>
-                                <option value="handel">Handel & E-Commerce</option>
-                                <option value="sonstiges">Sonstiges</option>
-                            </select>
-                            <button type="button" class="industry-select-trigger" aria-haspopup="listbox" aria-expanded="false" id="industrySelectTrigger">
-                                <span class="industry-select-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
-                                <span class="industry-select-label">Bitte wählen...</span>
-                                <span class="industry-select-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><polyline points="6 9 12 15 18 9"/></svg></span>
-                            </button>
-                            <div class="industry-select-panel" role="listbox" id="industrySelectPanel">
-                                <div class="industry-select-option" data-value="">
-                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
-                                    Bitte wählen...
-                                </div>
-                                <div class="industry-select-option" data-value="handwerk">
-                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-                                    Handwerk & Bau
-                                </div>
-                                <div class="industry-select-option" data-value="gastronomie">
-                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>
-                                    Gastronomie & Lebensmittel
-                                </div>
-                                <div class="industry-select-option" data-value="dienstleistungen">
-                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect x="4" y="20" width="16" height="2"/></svg></span>
-                                    Dienstleistungen & Beratung
-                                </div>
-                                <div class="industry-select-option" data-value="gesundheit">
-                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>
-                                    Gesundheit & Pflege
-                                </div>
-                                <div class="industry-select-option" data-value="handel">
-                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
-                                    Handel & E-Commerce
-                                </div>
-                                <div class="industry-select-option" data-value="sonstiges">
-                                    <span class="industry-select-option__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-                                    Sonstiges
-                                </div>
-                            </div>
-                        </div>
+                        <select id="industry" name="industry" class="form-select">
+                            <option value="">Bitte wählen...</option>
+                            <option value="handwerk">🔨 Handwerk & Bau</option>
+                            <option value="gastronomie">🍴 Gastronomie & Lebensmittel</option>
+                            <option value="dienstleistungen">💼 Dienstleistungen & Beratung</option>
+                            <option value="gesundheit">🏥 Gesundheit & Pflege</option>
+                            <option value="handel">🛒 Handel & E-Commerce</option>
+                            <option value="sonstiges">✨ Sonstiges</option>
+                        </select>
                     </div>
 
                     <div class="form-actions">
@@ -1988,7 +1985,7 @@
                     <div class="option-grid" data-required="true">
                         <div class="option-card">
                             <input type="checkbox" name="process" value="vertrieb">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+                            <span class="option-card__icon">🎯</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Vertrieb & Leads</span>
                                 <span class="option-card__desc">Anfragen, Follow-ups, Terminbuchung</span>
@@ -1998,7 +1995,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="kundenservice">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                            <span class="option-card__icon">💬</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Kundenkommunikation</span>
                                 <span class="option-card__desc">Anfragen, Beschwerden, Feedback</span>
@@ -2008,7 +2005,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="hr">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                            <span class="option-card__icon">👥</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">HR & Personal</span>
                                 <span class="option-card__desc">Bewerbungen, Onboarding, Anfragen</span>
@@ -2018,7 +2015,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="buchhaltung">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
+                            <span class="option-card__icon">📄</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Buchhaltung</span>
                                 <span class="option-card__desc">Rechnungen, Belege, Mahnungen</span>
@@ -2028,7 +2025,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="terminbuchung">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+                            <span class="option-card__icon">📅</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Terminbuchung</span>
                                 <span class="option-card__desc">Koordination, Erinnerungen, No-Shows</span>
@@ -2048,7 +2045,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="onboarding">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+                            <span class="option-card__icon">🎓</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Mitarbeiter-Onboarding</span>
                                 <span class="option-card__desc">Einarbeitung, Schulungen, Dokumentation</span>
@@ -2058,7 +2055,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="process" value="finanzen">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                            <span class="option-card__icon">💰</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Finanzprozesse</span>
                                 <span class="option-card__desc">Prüfung, Freigaben, Reporting</span>
@@ -2097,7 +2094,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="challenge" value="fehler">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                            <span class="option-card__icon">⚠️</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Fehleranfälligkeit</span>
                                 <span class="option-card__desc">Manuelle Prozesse führen zu Fehlern</span>
@@ -2117,7 +2114,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="challenge" value="kosten">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                            <span class="option-card__icon">💸</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Hohe Personalkosten</span>
                                 <span class="option-card__desc">Routineaufgaben binden teure Ressourcen</span>
@@ -2127,7 +2124,7 @@
                         
                         <div class="option-card">
                             <input type="checkbox" name="challenge" value="verfuegbarkeit">
-                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+                            <span class="option-card__icon">🌙</span>
                             <span class="option-card__content">
                                 <span class="option-card__title">Eingeschränkte Erreichbarkeit</span>
                                 <span class="option-card__desc">Wir können nicht rund um die Uhr reagieren</span>
@@ -2511,103 +2508,9 @@
 
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
-    <script>
-    (function() {
-        function initProcessSelect() {
-            const wrap = document.getElementById('processSelectWrap');
-            const select = document.getElementById('processType');
-            const trigger = document.getElementById('processSelectTrigger');
-            const panel = document.getElementById('processSelectPanel');
-            const labelEl = trigger?.querySelector('.process-select-label');
-            const iconEl = trigger?.querySelector('.process-select-icon');
-            if (!wrap || !select || !trigger) return;
-            const iconByValue = {};
-            document.querySelectorAll('.process-select-group').forEach(function(group) {
-                const icon = group.querySelector('.process-select-group-icon')?.innerHTML;
-                if (icon) {
-                    group.querySelectorAll('.process-select-option').forEach(function(opt) {
-                        iconByValue[opt.dataset.value] = icon;
-                    });
-                }
-            });
-            function updateTrigger() {
-                var opt = select.options[select.selectedIndex];
-                if (opt && labelEl) labelEl.textContent = opt.textContent;
-                if (opt && iconEl && iconByValue[opt.value]) iconEl.innerHTML = iconByValue[opt.value];
-                document.querySelectorAll('.process-select-option.selected').forEach(function(o) { o.classList.remove('selected'); });
-                var sel = panel?.querySelector('.process-select-option[data-value="' + select.value + '"]');
-                if (sel) sel.classList.add('selected');
-            }
-            function close() { wrap.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }
-            trigger.addEventListener('click', function(e) {
-                e.stopPropagation();
-                var isOpen = wrap.classList.toggle('open');
-                trigger.setAttribute('aria-expanded', isOpen);
-            });
-            panel?.querySelectorAll('.process-select-option').forEach(function(opt) {
-                opt.addEventListener('click', function() {
-                    select.value = this.dataset.value;
-                    updateTrigger();
-                    close();
-                    select.dispatchEvent(new Event('change', { bubbles: true }));
-                });
-            });
-            document.addEventListener('click', function() { close(); });
-            wrap.addEventListener('click', function(e) { e.stopPropagation(); });
-            updateTrigger();
-        }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initProcessSelect);
-        else initProcessSelect();
-    })();
-    </script>
     <script src="js/value-calculator.js" defer></script>
     <script src="js/cookie-banner.js" defer></script>
     <script src="js/contact-modal.js" defer></script>
-    <script>
-    (function() {
-        function initIndustrySelect() {
-            const wrap = document.getElementById('industrySelectWrap');
-            const select = document.getElementById('industry');
-            const trigger = document.getElementById('industrySelectTrigger');
-            const panel = document.getElementById('industrySelectPanel');
-            const labelEl = trigger?.querySelector('.industry-select-label');
-            const iconEl = trigger?.querySelector('.industry-select-icon');
-            if (!wrap || !select || !trigger) return;
-            const iconByValue = {};
-            panel?.querySelectorAll('.industry-select-option').forEach(function(opt) {
-                const icon = opt.querySelector('.industry-select-option__icon');
-                if (icon) iconByValue[opt.dataset.value || ''] = icon.innerHTML;
-            });
-            function updateTrigger() {
-                var opt = select.options[select.selectedIndex];
-                if (labelEl) labelEl.textContent = opt ? opt.textContent : 'Bitte wählen...';
-                if (iconEl && iconByValue[select.value] !== undefined) iconEl.innerHTML = iconByValue[select.value];
-                document.querySelectorAll('.industry-select-option.selected').forEach(function(o) { o.classList.remove('selected'); });
-                var sel = panel?.querySelector('.industry-select-option[data-value="' + (select.value || '') + '"]');
-                if (sel) sel.classList.add('selected');
-            }
-            function close() { wrap.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }
-            trigger.addEventListener('click', function(e) {
-                e.stopPropagation();
-                var isOpen = wrap.classList.toggle('open');
-                trigger.setAttribute('aria-expanded', isOpen);
-            });
-            panel?.querySelectorAll('.industry-select-option').forEach(function(opt) {
-                opt.addEventListener('click', function() {
-                    select.value = this.dataset.value || '';
-                    updateTrigger();
-                    close();
-                    select.dispatchEvent(new Event('change', { bubbles: true }));
-                });
-            });
-            document.addEventListener('click', function() { close(); });
-            wrap.addEventListener('click', function(e) { e.stopPropagation(); });
-            updateTrigger();
-        }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initIndustrySelect);
-        else initIndustrySelect();
-    })();
-    </script>
 </body>
 </html>
 
