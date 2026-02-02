@@ -317,7 +317,7 @@
                         <div class="stat" role="listitem">
                             <div class="stat__inner">
                                 <span class="stat__number">3</span>
-                                <span class="stat__label">Plätze Verfügbar</span>
+                                <span class="stat__label">Plätze<br>Verfügbar</span>
                             </div>
                         </div>
                     </div>
@@ -388,9 +388,8 @@
                     <p class="section__description">Erkennen Sie Ihr Unternehmen hier wieder?</p>
                 </header>
                 
-                <div class="problems__grid">
-                    <!-- Problem Cards -->
-                    <div class="problem-card" data-animate="fade-up">
+                <div class="problems__grid problems__grid--popup">
+                    <div class="problem-card problem-card--clickable" data-animate="fade-up" data-popup-text="Vertriebsmitarbeiter pflegen CRM-Felder manuell. Buchhalter kopieren Rechnungsdaten zwischen Systemen. Controller erstellen Reports aus fünf Excel-Dateien.">
                         <div class="problem-card__icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"/>
@@ -402,9 +401,13 @@
                             Vertriebsmitarbeiter pflegen CRM-Felder&#160;manuell. Buchhalter kopieren Rechnungsdaten zwischen Systemen. Controller erstellen Reports aus fünf Excel-Dateien.
                         </p>
                         <p class="problem-card__footnote">Messbarer Verlust: 8–12 Stunden pro Mitarbeiter und Woche für Aufgaben ohne Wertschöpfung.</p>
+                        <div class="problem-card__separator" aria-hidden="true"></div>
+                        <div class="problem-card__more-area">
+                            <button type="button" class="problem-card__more" aria-label="Mitteltext im Pop-up anzeigen">Mehr lesen</button>
+                        </div>
                     </div>
-                    
-                    <div class="problem-card" data-animate="fade-up" data-delay="1">
+
+                    <div class="problem-card problem-card--clickable" data-animate="fade-up" data-delay="1" data-popup-text="Die Rechtsabteilung blockiert KI-Projekte mit Verweis auf DSGVO-Risiken. Verständlich – 73 % der deutschen Unternehmen nennen Compliance als Haupthürde für KI-Adoption (Bitkom, 2024).">
                         <div class="problem-card__icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -417,9 +420,13 @@
                             Die Rechtsabteilung blockiert KI-Projekte mit Verweis auf DSGVO-Risiken. Verständlich – 73 % der deutschen Unternehmen nennen Compliance als Haupthürde für KI-Adoption (Bitkom, 2024).
                         </p>
                         <p class="problem-card__footnote">Konsequenz: Wettbewerber mit gelöster Datenschutzfrage automatisieren bereits.</p>
+                        <div class="problem-card__separator" aria-hidden="true"></div>
+                        <div class="problem-card__more-area">
+                            <button type="button" class="problem-card__more" aria-label="Mitteltext im Pop-up anzeigen">Mehr lesen</button>
+                        </div>
                     </div>
-                    
-                    <div class="problem-card" data-animate="fade-up" data-delay="2">
+
+                    <div class="problem-card problem-card--clickable" data-animate="fade-up" data-delay="2" data-popup-text="Lizenzen für ChatGPT, Copilot oder spezialisierte Tools sind vorhanden. Aber: keine API-Verbindung zu CRM, ERP oder Buchhaltung. Mitarbeiter exportieren, kopieren, importieren – manuell.">
                         <div class="problem-card__icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -430,6 +437,10 @@
                             Lizenzen für ChatGPT, Copilot oder spezialisierte Tools sind vorhanden. Aber: keine API-Verbindung zu CRM, ERP oder Buchhaltung. Mitarbeiter exportieren, kopieren, importieren – manuell.
                         </p>
                         <p class="problem-card__footnote">Ergebnis: Technologie-Investition ohne Prozesseffekt.</p>
+                        <div class="problem-card__separator" aria-hidden="true"></div>
+                        <div class="problem-card__more-area">
+                            <button type="button" class="problem-card__more" aria-label="Mitteltext im Pop-up anzeigen">Mehr lesen</button>
+                        </div>
                     </div>
                 </div>
                 
@@ -482,7 +493,6 @@
                 </div>
                 
                 <div class="solutions__grid">
-                    <!-- Solution Cards -->
                     <div class="solution-card" data-animate="fade-up">
                         <div class="solution-card__icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -533,8 +543,8 @@
             <div class="container">
                 <header class="section__header">
                     <span class="section__tag">Der Autopilot für Ihr Business</span>
-                    <h2 class="section__title" id="usecases-title">KI-Lösungen für Handwerk & KMU</h2>
-                    <p class="section__description">Wir verwandeln Ihre Zeitfresser in automatisierte Gewinne. Sparen Sie täglich Zeit bei Terminen, Rechnungen und Kundenanfragen.</p>
+                    <h2 class="section__title" id="usecases-title">KI-Automatisierung für Handwerk und Mittelstand</h2>
+                    <p class="section__description"><span style="white-space: nowrap">Terminplanung, Rechnungsstellung und Anfragenbearbeitung laufen ohne manuellen Aufwand.</span><br>Durchschnittlich 8 Stunden Zeitgewinn pro Woche.</p>
                 </header>
                 
                 <div class="usecases__slider-wrapper">
@@ -1260,7 +1270,6 @@
                     </p>
                 </header>
                 
-                <!-- Experten-Zitate Grid -->
                 <div class="testimonials__grid expert-quotes__grid">
                     
                     <div class="testimonial-card expert-quote-card" data-animate="fade-up">
@@ -1487,39 +1496,24 @@
                     
                     <div class="final-cta__urgency">
                         <span class="urgency-badge" aria-label="Limitiert">
-                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nur noch 7 Beratungsplätze diese Woche</span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nur noch<span id="beratungsplaetze-count" aria-live="polite">&#160;7&#160;</span>Beratungsplätze diese Woche</span>
                         </span>
                     </div>
                     
-                    <h2 class="final-cta__title" id="cta-title">30 Minuten, die Ihnen Monate Arbeit sparen können</h2>
+                    <h2 class="final-cta__title" id="cta-title">Potenzialanalyse: 30 Minuten für einen dokumentierten Automatisierungsplan</h2>
                     <p class="final-cta__description">
-                        In einer kostenlosen Potenzialanalyse zeigen wir Ihnen genau, welche Prozesse 
-                        Sie automatisieren können – und was das für Ihr Unternehmen bedeutet.
-                        <strong>Keine Verpflichtung. Kein Verkaufsdruck. Nur Klarheit.</strong>
+                        Wir analysieren Ihre bestehenden Prozesse und identifizieren konkret, welche Aufgaben automatisierbar sind – mit geschätztem Zeitgewinn pro Woche.
                     </p>
                     
-                    <div class="final-cta__social-proof">
-                        <span class="social-proof-item">
-                            <span class="social-proof-number" data-count="847">847</span>
-                            <span class="social-proof-label">Beratungen durchgeführt</span>
-                        </span>
-                        <span class="social-proof-divider">•</span>
-                        <span class="social-proof-item">
-                            <span class="social-proof-number">97%</span>
-                            <span class="social-proof-label">Weiterempfehlungsrate</span>
-                        </span>
-                    </div>
-                    
                     <a href="mailto:kontakt@ki-prozessnavigator.de" class="btn btn--neon btn--large btn--glow" role="button">
-                        <span>Jetzt kostenlosen Beratungstermin sichern</span>
+                        <span>Kostenlosen Beratungstermin vereinbaren</span>
                         <svg class="btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
                     <p class="final-cta__trust">
-                        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:#00D26A"><polyline points="20 6 9 17 4 12"/></svg>Keine Kreditkarte</span>
-                        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:#00D26A"><polyline points="20 6 9 17 4 12"/></svg>Kein Kleingedrucktes</span>
-                        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:#00D26A"><polyline points="20 6 9 17 4 12"/></svg>Nur ein ehrliches Gespräch</span>
+                        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:#00D26A"><polyline points="20 6 9 17 4 12"/></svg>Terminbuchung in 2 Minuten</span>
+                        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:#00D26A"><polyline points="20 6 9 17 4 12"/></svg>Keine Zahlungsdaten erforderlich</span>
                     </p>
                 </div>
             </div>
@@ -1620,7 +1614,6 @@
             
             <div class="contact-modal__paths">
                 <div class="path-selection">
-                    <!-- Quick Inquiry Path -->
                     <div class="path-card path-card--inquiry" id="path-inquiry">
                         <div class="path-card__icon">⚡</div>
                         <div class="path-card__content">
@@ -1632,7 +1625,6 @@
                         </div>
                     </div>
                     
-                    <!-- Potential Analysis Path -->
                     <div class="path-card path-card--analysis" id="path-analysis">
                         <div class="path-card__icon">🔍</div>
                         <div class="path-card__content">
@@ -2269,7 +2261,7 @@
                 </button>
             </div>
 
-            </div><!-- End scroll-area -->
+            </div>
 
             <div class="modal-trust">
                 <span class="modal-trust__item">
@@ -2334,7 +2326,6 @@
                     können nicht deaktiviert werden, da sie für die Grundfunktionen der Website erforderlich sind.
                 </p>
                 
-                <!-- Notwendige Cookies (immer aktiv) -->
                 <div class="cookie-category">
                     <div class="cookie-category__header">
                         <div class="cookie-category__info">
@@ -2370,7 +2361,6 @@
                     </details>
                 </div>
                 
-                <!-- Statistik Cookies -->
                 <div class="cookie-category">
                     <div class="cookie-category__header">
                         <div class="cookie-category__info">
@@ -2410,7 +2400,6 @@
                     </details>
                 </div>
                 
-                <!-- Marketing Cookies -->
                 <div class="cookie-category">
                     <div class="cookie-category__header">
                         <div class="cookie-category__info">
@@ -2450,7 +2439,6 @@
                     </details>
                 </div>
                 
-                <!-- Externe Medien -->
                 <div class="cookie-category">
                     <div class="cookie-category__header">
                         <div class="cookie-category__info">
@@ -2509,7 +2497,6 @@
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="js/main.js" defer></script>
     <script>
     (function() {
@@ -2607,6 +2594,76 @@
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initIndustrySelect);
         else initIndustrySelect();
     })();
+    </script>
+
+    <div class="popup-overlay" id="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-hidden="true">
+        <div class="popup-box">
+            <div class="popup-box__icon" id="popup-icon" aria-hidden="true"></div>
+            <h3 class="popup-box__title" id="popup-title"></h3>
+            <div class="popup-box__body">
+                <p class="popup-box__text" id="popup-text"></p>
+                <div class="popup-box__footer">
+                    <div class="problem-card__more-area">
+                        <button type="button" class="popup-box__close" id="popup-close" aria-label="Schließen">Schließen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var overlay = document.getElementById('popup-overlay');
+            var iconEl = document.getElementById('popup-icon');
+            var titleEl = document.getElementById('popup-title');
+            var textEl = document.getElementById('popup-text');
+            var closeBtn = document.getElementById('popup-close');
+            var cards = document.querySelectorAll('.problem-card--clickable[data-popup-text]');
+
+            function openPopup(card) {
+                var text = card.getAttribute('data-popup-text');
+                var titleNode = card.querySelector('.problem-card__title');
+                var iconNode = card.querySelector('.problem-card__icon');
+                titleEl.textContent = titleNode ? titleNode.textContent : '';
+                textEl.textContent = text || '';
+                iconEl.innerHTML = '';
+                if (iconNode) {
+                    var iconClone = iconNode.cloneNode(true);
+                    iconEl.appendChild(iconClone);
+                }
+                overlay.classList.add('is-open');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                closeBtn.focus();
+            }
+
+            function closePopup() {
+                overlay.classList.remove('is-open');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            cards.forEach(function (card) {
+                var btn = card.querySelector('.problem-card__more');
+                if (!card.getAttribute('data-popup-text')) return;
+                function handleOpen() { openPopup(card); }
+                if (btn) {
+                    btn.addEventListener('click', handleOpen);
+                }
+                card.addEventListener('click', function (e) {
+                    if (e.target === btn || btn.contains(e.target)) return;
+                    handleOpen();
+                });
+            });
+
+            closeBtn.addEventListener('click', closePopup);
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closePopup();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && overlay.classList.contains('is-open')) closePopup();
+            });
+        })();
     </script>
 </body>
 </html>

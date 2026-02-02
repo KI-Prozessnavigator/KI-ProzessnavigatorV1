@@ -1395,3 +1395,18 @@
         transform: scale(1);
     }
 }
+
+/* Glow-Karten: Wird zuletzt geladen – verhindert, dass Hover-Glow abgeschnitten wird */
+html,
+body,
+main {
+    overflow-x: visible !important;
+}
+section.problems,
+section.solutions,
+section.problems .container,
+section.solutions .container,
+.problems__grid,
+.solutions__grid {
+    overflow: visible !important;
+}

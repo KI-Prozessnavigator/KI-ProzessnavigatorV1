@@ -13,8 +13,6 @@ html {
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    overflow-x: hidden;
-    max-width: 100vw;
 }
 
 body {
@@ -23,8 +21,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden;
-    max-width: 100vw;
 }
 
 img, picture, video, canvas, svg {
@@ -1392,12 +1388,13 @@ section {
 
 /* ===== Hero Stats - Enhanced with Gradients ===== */
 .hero__stats {
-    display: flex;
-    align-items: center;   /* Angaben + Trennstriche vertikal mittig zwischen oberem und unterem Rahmen */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 0;
+    align-items: center;
     margin-top: var(--space-12);
     padding: var(--space-6) var(--space-8);
-    height: 9rem !important;    /* Geringere Gesamthöhe des Kastens */
+    height: 9rem !important;
     min-height: 9rem !important;
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.08) 0%, rgba(0, 212, 255, 0.05) 50%, rgba(0, 85, 204, 0.03) 100%);
     border-radius: var(--radius-xl);
@@ -1431,21 +1428,18 @@ section {
     }
 }
 
-/* Eine Spalte – Inhalt zentriert, Höhe durch Inhalt (damit Block + Trennstriche mittig in der Box) */
+/* Eine Spalte – gleiche Breite/Höhe wie die anderen (Grid 1fr), Inhalt mittig */
 .hero__stats .stat {
-    flex: 1;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    align-self: center !important;     /* Spalte nicht strecken → Block bleibt mittig */
     min-height: 0 !important;
     position: relative;
     padding: var(--space-2) var(--space-3);
-    min-width: 0;
     text-align: center;
 }
 
-/* Innerer Block: 15px nach links, schmal, vertikal mittig durch Parent-Flex */
+/* Innerer Block: 15px nach links, vertikal mittig */
 .hero__stats .stat__inner {
     display: flex;
     flex-direction: column;
@@ -1453,7 +1447,23 @@ section {
     gap: 0;
     width: max-content;
     margin: 0 auto;
-    transform: translateX(-15px);  /* Angaben 15px nach links, wie gewünscht */
+    transform: translateX(-15px);
+}
+
+/* Vierte Spalte: „Plätze“ + „Verfügbar“ in zwei Zeilen (HTML <br>), minimal nach links = perfekt mittig */
+.hero__stats .stat:last-child .stat__inner {
+    max-width: 100%;
+    min-width: 0;
+    transform: translateX(-10px);
+    align-self: center;
+}
+.hero__stats .stat:last-child .stat__label {
+    display: block;
+    width: 100%;
+    min-height: 2.75rem;
+    height: 2.75rem;
+    text-align: center;
+    line-height: 1.35;
 }
 
 /* Trennlinien: volle Höhe der Spalte (= Inhalt), liegen mit Block mittig in der Box */
@@ -1635,22 +1645,38 @@ section {
 }
 
 /* ===== Problem & Solution Cards ===== */
+/* Glow sichtbar: Section + Container + Grid overflow: visible, großzügiges Padding damit Glow nicht von body overflow-x: hidden abgeschnitten wird */
+.problems,
+.solutions {
+    overflow: visible;
+    padding-inline: clamp(2rem, 5vw, 3rem);
+}
+
 .problems {
     background: var(--color-background);
     transition: background var(--transition-slow);
     scroll-margin-top: 100px;
     padding-block: var(--space-16);
+    padding-inline: clamp(2rem, 5vw, 3rem);
 }
 
 .problems .section__header {
     margin-bottom: var(--space-8);
 }
 
+.problems > .container,
+.solutions > .container {
+    overflow: visible;
+}
+
+/* Rahmen um die Karten: ausreichend Abstand (min. 4rem), damit der Hover-Glow sichtbar ist */
 .problems__grid,
 .solutions__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--space-4);
+    padding-inline: clamp(4rem, 6vw, 5rem);
+    overflow: visible;
 }
 
 .problem-card,
@@ -1661,12 +1687,14 @@ section {
     background: var(--color-surface);
     border-radius: var(--radius-xl);
     border: 1px solid var(--color-border);
+    box-shadow: none;
     transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     text-align: center;
 }
 
+/* Obere Linie bei Hover */
 .problem-card::before,
 .solution-card::before {
     content: '';
@@ -1686,6 +1714,7 @@ section {
     transform: scaleX(1);
 }
 
+/* Glow direkt auf der Karte (kein ::after), damit er zuverlässig sichtbar ist; Padding oben sorgt dafür, dass er nicht von body overflow-x: hidden abgeschnitten wird */
 .problem-card:hover,
 .solution-card:hover {
     transform: translateY(-4px);
@@ -1734,6 +1763,157 @@ section {
     line-height: 1.4;
     margin-top: var(--space-3);
     margin-bottom: 0;
+}
+
+/* ===== Problem Cards mit Pop-up (Mitteltext ausblenden, "Mehr lesen" → Pop-up) ===== */
+.problems__grid--popup .problem-card__text {
+    display: none;
+}
+.problems__grid--popup .problem-card__footnote {
+    margin-bottom: 0;
+}
+.problems__grid--popup .problem-card {
+    display: flex;
+    flex-direction: column;
+}
+.problem-card__separator {
+    margin-top: 3rem;
+    padding-top: 0.5rem;
+    border-top: 2px solid var(--color-neon-cyan, #00d4ff);
+    background: none !important;
+}
+.problem-card__more-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: calc(var(--space-6) / 2);
+    padding-bottom: calc(var(--space-6) / 2);
+    margin-bottom: calc(-1 * var(--space-6));
+}
+.problem-card__more {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none !important;
+    font-size: var(--text-sm);
+    color: var(--color-neon-cyan, #00d4ff);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    display: inline-block;
+}
+.problem-card__more:hover {
+    opacity: 0.85;
+}
+.problem-card--clickable {
+    cursor: pointer;
+}
+
+/* Pop-up: Overlay und Box */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.popup-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+.popup-box {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    max-width: 420px;
+    width: 100%;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transform: scale(0.98);
+    transition: transform 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.popup-overlay.is-open .popup-box {
+    transform: scale(1);
+}
+.popup-box__icon {
+    margin-bottom: var(--space-4);
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.popup-box__icon svg {
+    width: 4rem;
+    height: 4rem;
+    stroke: var(--color-neon-cyan, #00d4ff);
+    flex-shrink: 0;
+}
+.popup-box__title {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin: 0 0 var(--space-4);
+}
+[data-theme="dark"] .popup-box__title {
+    color: #fff;
+}
+.popup-box__body {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.popup-box__text {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text, #e2e8f0);
+    margin: 0 0 var(--space-8);
+}
+.popup-box__footer {
+    width: 100%;
+    border-top: 2px solid var(--color-neon-cyan, #00d4ff);
+    text-align: center;
+}
+.popup-box .problem-card__more-area {
+    width: 100%;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    margin-bottom: -24px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.popup-box__close {
+    display: inline-block;
+    margin-top: 0;
+    padding: 0;
+    font-size: var(--text-sm);
+    color: var(--color-neon-cyan, #00d4ff);
+    background: none !important;
+    border: none;
+    border-bottom: 1px solid currentColor;
+    border-radius: 0;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+.popup-box__close:hover {
+    opacity: 0.85;
 }
 
 .solution-card {
@@ -1944,17 +2124,27 @@ section {
 }
 
 /* ===== Use Cases ===== */
+/* Zentrale Maße: alle 9 Karten starr, gleiche Breite/Höhe; grauer Flow starr */
 .usecases {
+    --usecase-card-w: 384px;
+    --usecase-card-h: 460px;
+    --usecase-flow-h: 88px;
+    --usecase-gap: 24px;
     background: linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-background) 100%);
     position: relative;
     transition: background var(--transition-slow);
     padding-top: var(--space-12);
     padding-bottom: var(--space-8);
-    overflow: visible; /* Wichtig für Hover-Effekt */
+    overflow: visible;
 }
 
 .usecases .section__header {
     margin-bottom: 48px;
+    text-align: center;
+}
+
+.usecases .section__description {
+    text-align: center;
 }
 
 /* Slider Navigation Buttons */
@@ -1993,30 +2183,37 @@ section {
     cursor: not-allowed;
 }
 
-/* Slider Wrapper mit extra Platz für Hover-Effekt */
+/* Slider Wrapper: Breite = genau 3 Karten + Abstände, mittig, nie abgeschnitten */
 .usecases__slider-wrapper {
     position: relative;
-    padding: var(--space-4) var(--space-20);
-    margin: 0 calc(-1 * var(--space-20));
-    /* CLIP-PATH für sauberen Horizontal-Cut ohne overflow */
-    clip-path: inset(-100px 0px -100px 0px);
+    padding: var(--space-4) 0;
+    margin: 0;
+    width: calc(3 * var(--usecase-card-w) + 2 * var(--usecase-gap)) !important;
+    max-width: 100%;
+    margin-inline: auto;
+    overflow-x: clip;
+    box-sizing: border-box;
 }
 
 .usecases__grid {
-    display: flex;
-    gap: var(--space-6);
-    /* Transition wird jetzt per JS gesteuert für smootheren Effekt */
+    display: flex !important;
+    flex-direction: row !important;
+    grid-template-columns: unset !important;
+    gap: var(--usecase-gap) !important;
     transition: none;
     scroll-behavior: smooth;
     will-change: transform;
-    /* Kein Padding hier - wird in JS berechnet */
 }
 
+/* Karten starr: feste Breite + Höhe, alle 9 gleich */
 .usecases__grid .usecase-card {
-    flex: 0 0 calc((100% - (var(--space-6) * 2)) / 3);
-    width: calc((100% - (var(--space-6) * 2)) / 3);
-    min-width: calc((100% - (var(--space-6) * 2)) / 3);
-    max-width: calc((100% - (var(--space-6) * 2)) / 3);
+    flex: 0 0 var(--usecase-card-w) !important;
+    width: var(--usecase-card-w) !important;
+    min-width: var(--usecase-card-w) !important;
+    max-width: var(--usecase-card-w) !important;
+    height: var(--usecase-card-h) !important;
+    min-height: var(--usecase-card-h) !important;
+    max-height: var(--usecase-card-h) !important;
     box-sizing: border-box;
 }
 
@@ -2046,21 +2243,113 @@ section {
     box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
+/* Tablet: genau 2 Karten sichtbar, mittig, starr, nicht abgeschnitten */
 @media (max-width: 1024px) {
+    .usecases__slider-wrapper {
+        width: calc(2 * var(--usecase-card-w) + var(--usecase-gap));
+        max-width: 100%;
+        margin-inline: auto;
+        overflow-x: clip;
+        clip-path: none;
+    }
+
     .usecases__grid .usecase-card {
-        flex: 0 0 calc((100% - var(--space-6)) / 2);
-        width: calc((100% - var(--space-6)) / 2);
+        flex: 0 0 var(--usecase-card-w) !important;
+        width: var(--usecase-card-w) !important;
+        min-width: var(--usecase-card-w) !important;
+        max-width: var(--usecase-card-w) !important;
+        height: var(--usecase-card-h) !important;
+        min-height: var(--usecase-card-h) !important;
+        max-height: var(--usecase-card-h) !important;
+        box-sizing: border-box;
+    }
+
+    .usecases__grid {
+        gap: var(--usecase-gap) !important;
+    }
+
+    .usecase-card__flow {
+        min-width: 0;
+        min-height: var(--usecase-flow-h);
+        padding: var(--space-2);
+        gap: var(--space-2);
+    }
+
+    .usecase-card__flow .flow-step {
+        min-width: 0;
+        flex: 1 1 0;
+    }
+
+    .usecase-card__flow .flow-step__icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .usecase-card__flow .flow-step__label {
+        font-size: 0.55rem;
+    }
+
+    .usecase-card__flow .flow-arrow {
+        flex-shrink: 0;
+        font-size: 0.75rem;
     }
 }
 
-@media (max-width: 640px) {
-    .usecases__grid .usecase-card {
-        flex: 0 0 100%;
-        width: 100%;
+/* Handy: genau 1 Karte sichtbar, mittig, starr (unter 384px schmaler = nicht abgeschnitten) */
+@media (max-width: 768px) {
+    .usecases__slider-wrapper {
+        width: min(var(--usecase-card-w), calc(100vw - 2 * var(--space-3)));
+        max-width: 100%;
+        margin-inline: auto;
+        overflow-x: clip;
+        clip-path: none;
     }
-    
+
+    .usecases__grid {
+        align-items: flex-start !important;
+        gap: var(--usecase-gap) !important;
+    }
+
+    .usecases__grid .usecase-card {
+        flex: 0 0 min(var(--usecase-card-w), calc(100vw - 2 * var(--space-3))) !important;
+        width: min(var(--usecase-card-w), calc(100vw - 2 * var(--space-3))) !important;
+        min-width: 0 !important;
+        max-width: min(var(--usecase-card-w), calc(100vw - 2 * var(--space-3))) !important;
+        height: auto !important;
+        min-height: var(--usecase-card-h) !important;
+        max-height: none !important;
+        overflow: visible !important;
+        box-sizing: border-box;
+    }
+
     .usecases__nav {
         justify-content: center;
+    }
+
+    .usecase-card__flow {
+        min-width: 0;
+        min-height: var(--usecase-flow-h);
+        padding: var(--space-2);
+        gap: var(--space-2);
+    }
+
+    .usecase-card__flow .flow-step {
+        min-width: 0;
+        flex: 1 1 0;
+    }
+
+    .usecase-card__flow .flow-step__icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .usecase-card__flow .flow-step__label {
+        font-size: 0.55rem;
+    }
+
+    .usecase-card__flow .flow-arrow {
+        flex-shrink: 0;
+        font-size: 0.75rem;
     }
 }
 
@@ -2072,10 +2361,9 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
     overflow: hidden;
-    /* Flexbox für einheitliche Höhen */
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 0;
 }
 
 /* Verstecke visuelle Effekte auf Klonen (nur für Scroll-Logik) */
@@ -2156,7 +2444,7 @@ section {
     color: var(--color-text-muted);
 }
 
-/* Process Flow - immer am unteren Rand */
+/* Grauer Flow-Container: starr (feste Mindesthöhe), bleibt in der Karte */
 .usecase-card__flow {
     display: flex;
     align-items: center;
@@ -2165,7 +2453,12 @@ section {
     background: var(--color-neutral-50);
     border-radius: var(--radius-lg);
     gap: var(--space-3);
-    margin-top: auto; /* Drückt den Flow nach unten */
+    margin-top: auto;
+    min-width: 0;
+    min-height: var(--usecase-flow-h);
+    overflow: hidden;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .flow-step {
@@ -2173,9 +2466,10 @@ section {
     flex-direction: column;
     align-items: center;
     gap: var(--space-1);
-    flex: 0 0 auto;
+    flex: 0 1 auto;
     text-align: center;
-    min-width: 80px;
+    min-width: 0;
+    max-width: 100px;
 }
 
 .flow-step__icon {
@@ -3021,14 +3315,15 @@ section {
 .final-cta__title {
     font-family: var(--font-heading);
     font-size: var(--text-3xl);
-    margin-bottom: var(--space-4);
+    margin-bottom: calc(var(--space-4) + 20px);
     color: white;
 }
 
 .final-cta__description {
     font-size: var(--text-lg);
     color: rgba(255, 255, 255, 0.85);
-    margin-bottom: var(--space-8);
+    margin-top: 20px;
+    margin-bottom: calc(var(--space-8) + 20px);
 }
 
 .btn--large {
@@ -3201,6 +3496,32 @@ section {
 
 .scroll-to-top__icon {
     font-size: 1.5rem;
+}
+
+/* ===== Zurück zur Startseite (Unterseiten) ===== */
+.back-to-start {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+.back-to-start:hover {
+    background: rgba(94, 234, 212, 0.1);
+    transform: translateX(-4px);
+}
+.back-to-start-wrap {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+.back-to-start-wrap .back-to-start {
+    margin-bottom: 0;
 }
 
 /* ===== Button with Icon ===== */
@@ -4468,6 +4789,14 @@ section {
 [data-theme="dark"] .section__tag {
     color: var(--color-neon-cyan);
     text-shadow: 0 0 8px rgba(0, 212, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Datenschutz-Tag wie "Der Autopilot" / "KI-Implementierung ohne Tech-Blabla": Neon-Cyan + Leuchteffekt */
+[data-theme="dark"] .dsgvo .section__tag,
+[data-theme="dark"] .dsgvo .section__tag--light {
+    color: var(--color-neon-cyan) !important;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    background: none !important;
 }
 
 [data-theme="dark"] .section__description {
@@ -7142,12 +7471,6 @@ section {
 
 /* ===== Mobile Styles - REDESIGNED VERSION ===== */
 @media (max-width: 576px) {
-    /* Overflow-Check: horizontales Überlaufen bei schmaler Ansicht verhindern */
-    html, body {
-        overflow-x: hidden;
-        max-width: 100vw;
-    }
-
     /* ===== Global Mobile Settings ===== */
     :root {
         --section-padding: clamp(2rem, 6vw, 3rem);
@@ -7319,6 +7642,20 @@ section {
         transform: translateX(-15px);
     }
 
+    .hero__stats .stat:last-child .stat__inner {
+        max-width: 100%;
+        min-width: 0;
+        transform: translateX(-10px);
+    }
+    .hero__stats .stat:last-child .stat__label {
+        display: block;
+        width: 100%;
+        min-height: 2.75rem;
+        height: 2.75rem;
+        text-align: center;
+        line-height: 1.35;
+    }
+
     /* Trennlinien vertikal mittig */
     .stat:not(:last-child)::after {
         content: '';
@@ -7486,12 +7823,7 @@ section {
         font-size: 0.7rem;
     }
 
-    /* ===== Use Cases - Compact ===== */
-    .usecases__grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-4);
-    }
-
+    /* ===== Use Cases - Compact (nur Typo/Padding; Slider-Layout kommt aus Use-Case-Block oben) ===== */
     .usecase-card {
         padding: var(--space-4);
     }
@@ -7848,7 +8180,7 @@ section {
 
     .final-cta__title {
         font-size: var(--text-xl);
-        margin-bottom: var(--space-3);
+        margin-bottom: calc(var(--space-3) + 20px);
         line-height: 1.25;
     }
 
@@ -8482,8 +8814,9 @@ section {
 
 /* FORCE WHITE TEXT für Value Calculator Result Cards */
 
-/* Überschreibe CSS-Variablen nur für Value Calculator */
-.value-calculator {
+/* Überschreibe CSS-Variablen nur im Result-Bereich (nicht im Section-Header), damit "Value-Based Selling" Neon-Cyan behält */
+.value-calculator .calculator__results,
+.value-calculator .result-card {
     --color-neon-cyan: #ffffff;
 }
 
@@ -8770,7 +9103,7 @@ section {
 }
 
 [data-theme="dark"] .usecases__grid {
-    gap: 32px !important;
+    gap: 24px !important; /* wie Slider-JS (24px), sonst Verschiebung falsch */
 }
 
 [data-theme="dark"] .pricing__grid {
@@ -9621,3 +9954,19 @@ section {
 }
 
 /* Debug-Indikator entfernt */
+
+/* Glow-Karten: Verhindern, dass der Hover-Glow abgeschnitten wird – alle übergeordneten Ebenen explizit overflow: visible (steht am Ende, überschreibt andere Regeln) */
+html,
+body,
+main {
+    overflow-x: visible !important;
+}
+
+section.problems,
+section.solutions,
+section.problems .container,
+section.solutions .container,
+.problems__grid,
+.solutions__grid {
+    overflow: visible !important;
+}

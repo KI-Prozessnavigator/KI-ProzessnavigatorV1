@@ -208,11 +208,8 @@
 <body>
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="index.html" class="nav__logo">
-                <div class="logo-icon">
-                    <img src="assets/images/logo.svg" alt="KI-Prozessnavigator Logo" height="40">
-                </div>
-                <span class="logo-text">KI-Prozessnavigator</span>
+            <a href="index.html" class="nav__logo u-nav-logo-reset">
+                <img src="assets/images/logo.svg?v=2" alt="KI-Prozessnavigator Logo" height="80" class="u-block">
             </a>
             
             <ul class="nav__menu" id="nav-menu">
@@ -220,7 +217,7 @@
                 <li class="nav__item"><a href="index.html#problems" class="nav__link">Vorteile</a></li>
                 <li class="nav__item"><a href="index.html#usecases" class="nav__link">Use Cases</a></li>
                 <li class="nav__item"><a href="index.html#dsgvo" class="nav__link">DSGVO</a></li>
-                <li class="nav__item"><a href="index.html#pricing" class="nav__link">Pakete</a></li>
+                <li class="nav__item"><a href="index.html#pricing" class="nav__link">Ersparnis</a></li>
                 <li class="nav__item"><a href="index.html#faq" class="nav__link">FAQ</a></li>
                 <li class="nav__item"><a href="index.html#contact" class="nav__link nav__link--cta">Beratung anfragen</a></li>
             </ul>
@@ -237,7 +234,7 @@
         <section class="agb-hero">
         <div class="container">
             <div class="agb-hero__content">
-                <a href="index.html" class="agb-hero__back">
+                <a href="index.html" class="back-to-start">
                     ← Zurück zur Startseite
                 </a>
                 <h1 class="agb-hero__title">Allgemeine Geschäftsbedingungen</h1>
@@ -554,14 +551,18 @@
                 Stand: Januar 2026
             </p>
         </div>
+
+        <div class="back-to-start-wrap">
+            <a href="index.html" class="back-to-start">← Zurück zur Startseite</a>
+        </div>
     </section>
 
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
-                    <a href="index.html#hero" class="footer__logo">
-                        <span class="logo-text">KI-Prozessnavigator</span>
+                    <a href="index.html" class="footer__logo">
+                        <img src="assets/images/logo.svg?v=2" alt="KI-Prozessnavigator Logo" height="50">
                     </a>
                     <p class="footer__tagline">Intelligente Automatisierung für den Mittelstand.</p>
                     <div class="footer__social">
@@ -584,7 +585,7 @@
                     <h4 class="footer__heading">Produkt</h4>
                     <ul class="footer__links">
                         <li><a href="index.html#usecases">Use Cases</a></li>
-                        <li><a href="index.html#pricing">Preise</a></li>
+                        <li><a href="index.html#pricing">Ersparnis</a></li>
                         <li><a href="#">API Dokumentation</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>
@@ -613,7 +614,12 @@
             <div class="footer__bottom">
                 <p>&copy; 2026 KI-Prozessnavigator, Inh. Buchele Dominik. Alle Rechte vorbehalten.</p>
                 <button class="scroll-to-top" id="scroll-to-top" aria-label="Nach oben scrollen">
-                    <span class="scroll-to-top__icon">🤖</span>
+                    <span class="scroll-to-top__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px">
+                            <line x1="12" y1="19" x2="12" y2="5"/>
+                            <polyline points="5 12 12 5 19 12"/>
+                        </svg>
+                    </span>
                 </button>
             </div>
         </div>

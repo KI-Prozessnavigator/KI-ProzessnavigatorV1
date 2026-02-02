@@ -907,6 +907,15 @@ function initContactModalFocusTrap() {
     observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
 }
 
+// ===== Beratungsplätze-Countdown (Montag 7 → Samstag 2, Montag Reset) =====
+function initBeratungsplaetzeCount() {
+    const el = document.getElementById('beratungsplaetze-count');
+    if (!el) return;
+    const day = new Date().getDay(); // 0=Sonntag, 1=Montag, …, 6=Samstag
+    const slots = day === 0 ? 2 : Math.max(2, 8 - day); // Mo=7, Di=6, …, Sa=2, So=2
+    el.textContent = '\u00A0' + String(slots) + '\u00A0';
+}
+
 // ===== Initialization =====
 
 function init() {
@@ -931,6 +940,7 @@ function init() {
     // Initialize enhanced features
     initAnimatedCounters();
     initScrollProgress();
+    initBeratungsplaetzeCount(); // Beratungsplätze: Mo 7 → Sa 2, Mo Reset
     initUseCasesSlider(); // Use Cases Slider
     
     // Initialize motion effects (respects reduced motion)
@@ -996,7 +1006,7 @@ function initUseCasesSlider() {
     let cardsPerView = getCardsPerView();
     
     function getCardsPerView() {
-        if (window.innerWidth <= 640) return 1;
+        if (window.innerWidth <= 768) return 1;  /* 1 Karte, wenn sonst Flow/Text ragen würden */
         if (window.innerWidth <= 1024) return 2;
         return 3;
     }

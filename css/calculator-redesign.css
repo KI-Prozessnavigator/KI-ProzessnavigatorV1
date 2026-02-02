@@ -8,10 +8,11 @@
 }
 #pricing .container { max-width: 1180px !important; }
 #pricing .section__header { margin-bottom: 32px !important; }
-/* Value-Based Selling: 1:1 identisch mit "Kein Tech-Blabla" und "Der Autopilot für Ihr Business" */
+/* Value-Based Selling: 1:1 identisch mit "Kein Tech-Blabla" und "Der Autopilot für Ihr Business".
+   Feste Farbe #00d4ff, da .value-calculator in main.css --color-neon-cyan auf #fff setzt (nur für Result-Cards). */
 [data-theme="dark"] #pricing .section__tag,
 #pricing .section__tag {
-    color: var(--color-neon-cyan) !important;
+    color: #00d4ff !important;
     text-shadow: 0 0 8px rgba(0, 212, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5) !important;
     background: none !important;
     border: none !important;
