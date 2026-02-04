@@ -1,3 +1,32 @@
+# IONOS / Apache: Startseite (HTML zuerst)
+DirectoryIndex index.html index.php
+
+# Verzeichnislisting ausschalten (Sicherheit)
+Options -Indexes
+
+# Sensible Dateien nicht per HTTP ausliefern
+<FilesMatch "^(\.env|\.env\.deploy|\.gitignore|config\.php)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+
+# HTTP → HTTPS Weiterleitung (Fallback, falls Apache-VHost es nicht macht)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteRule ^php/config\.php$ - [F,L]
+</IfModule>
+
+# HSTS: Browser nur über HTTPS verbinden (nach erstem HTTPS-Besuch)
+<IfModule mod_setenvif.c>
+    SetEnvIf HTTPS "on" HTTPS_ON
+</IfModule>
+<IfModule mod_headers.c>
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS_ON
+</IfModule>
+
 # Apache: Security-Header (optional, wenn Hosting Apache nutzt)
 <IfModule mod_headers.c>
     Header set X-Frame-Options "DENY"

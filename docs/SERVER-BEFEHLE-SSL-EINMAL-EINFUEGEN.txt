@@ -1,0 +1,25 @@
+# ============================================================
+# SSL (HTTPS) auf dem Server – Befehle zum Einfügen
+# ============================================================
+# Alternative: Skript ausführen (Passwort nur einmal eingeben):
+#   .\scripts\ssl-einrichten-remote.ps1
+# ============================================================
+# Voraussetzung: Per SSH eingeloggt (ssh root@213.165.76.107)
+# Domain ki-prozessnavigator.de zeigt bereits auf 213.165.76.107
+# ============================================================
+# Befehl 1: Certbot installieren (kopieren, in SSH einfügen, Enter)
+# ============================================================
+
+apt update && apt install -y certbot python3-certbot-apache
+
+# ============================================================
+# Befehl 2: Zertifikat anfordern – IHRE@EMAIL.DE ersetzen!
+# (E-Mail für Ablauf-Benachrichtigungen von Let's Encrypt)
+# Dann kopieren, in SSH einfügen, Enter
+# ============================================================
+
+certbot --apache -d ki-prozessnavigator.de -d www.ki-prozessnavigator.de --non-interactive --agree-tos -m IHRE@EMAIL.DE
+
+# ============================================================
+# Danach im Browser: https://ki-prozessnavigator.de aufrufen
+# ============================================================

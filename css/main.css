@@ -1,4 +1,41 @@
 /* ==========================================
+   Globaler Overflow-Schutz
+   ========================================== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+/* Verhindere horizontales Scrollen bei allen Containern */
+section,
+.container,
+.wrapper,
+main,
+header,
+footer {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Text-Umbruch für lange Wörter/URLs */
+p, h1, h2, h3, h4, h5, h6, span, div, a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* ==========================================
    CSS Reset - Modern Normalize
    ========================================== */
 
@@ -492,12 +529,17 @@ h1 em, h2 em {
     gap: 0;
     padding-left: 0;
     margin-left: 0;
+    height: 100%;
+    min-height: 0;
 }
 
+/* Logo bleibt innerhalb des Headers: max 95 % der Nav-Höhe */
 .nav__logo img {
     display: block;
-    height: 80px;
+    height: auto;
+    max-height: 95%;
     width: auto;
+    object-fit: contain;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
 }
@@ -2607,6 +2649,64 @@ section {
     50% {
         opacity: 0.7;
     }
+}
+
+/* -------------------------------------------------
+   2️⃣ DSGVO‑Sektion – Scrollbalken entfernen (LAYOUT BEIBEHALTEN)
+   ------------------------------------------------- */
+
+/* 1. Haupt-Sektion: Hier verstecken wir den Scrollbalken. */
+#dsgvo-section,
+#dsgvo {
+    overflow-x: hidden !important;
+    width: 100%;
+    position: relative;
+}
+
+/* 2. Container / Wrapper: overflow + box-sizing, keine Breiten-Befehle (Theme-Design bleibt). */
+#dsgvo-section .dsgvo-container,
+#dsgvo-section .content-wrapper,
+#dsgvo .container,
+#dsgvo .dsgvo__wrapper,
+#dsgvo .dsgvo__content {
+    overflow: visible !important;
+    box-sizing: border-box !important;
+}
+
+/* 3. Inhalte: Textumbruch erzwingen. */
+#dsgvo-section p,
+#dsgvo-section li,
+#dsgvo-section ul,
+#dsgvo-section ol,
+#dsgvo-section h1,
+#dsgvo-section h2,
+#dsgvo-section h3,
+#dsgvo-section h4,
+#dsgvo-section h5,
+#dsgvo-section h6,
+#dsgvo p,
+#dsgvo li,
+#dsgvo ul,
+#dsgvo ol,
+#dsgvo h1,
+#dsgvo h2,
+#dsgvo h3,
+#dsgvo h4,
+#dsgvo h5,
+#dsgvo h6 {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    max-width: 100%;
+}
+
+/* Tabellen responsive halten */
+#dsgvo-section table,
+#dsgvo table {
+    width: 100% !important;
+    table-layout: fixed !important;
+    display: block;
+    overflow-x: auto;
 }
 
 .dsgvo__wrapper {
@@ -5042,6 +5142,46 @@ section {
     margin-bottom: 0;
 }
 
+/* -------------------------------------------------
+   1️⃣ Kalkulator‑Container in der Ersparnis‑Sektion
+   ------------------------------------------------- */
+
+/* Basis‑Anpassungen – verhindern Abschneiden */
+#ersparnis .calculator-container,
+#ersparnis .value-calculator,
+#ersparnis .calculator-wrapper,
+#pricing .container,
+#pricing.value-calculator,
+#pricing .calculator__wrapper {
+    overflow: visible !important;
+    max-width: 100vw !important;
+    width: auto !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Mobile‑Spezifisch – volle Breite mit Innen‑Padding */
+@media (max-width: 767px) {
+    #ersparnis .calculator-container,
+    #ersparnis .value-calculator,
+    #pricing .container,
+    #pricing.value-calculator {
+        width: 100% !important;
+        padding: 0 16px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Falls ein Element absolut positioniert ist */
+#ersparnis .calculator-wrapper,
+#pricing .calculator__wrapper {
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+}
+
 /* ===== Calculator Wrapper ===== */
 .calculator__wrapper {
     display: grid;
@@ -7300,7 +7440,30 @@ section {
    Responsive Styles - Mobile First Approach
    ========================================== */
 
-/* ===== Mobile Navigation ===== */
+/* ===== Tablet: Logo und Header (768px–1024px) ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .nav {
+        height: 72px;
+        padding-inline: var(--space-4);
+    }
+
+    .nav__logo img {
+        max-height: 50px;
+    }
+}
+
+/* ===== Mobile Navigation & Header (<768px) ===== */
+@media (max-width: 767px) {
+    .nav {
+        height: 56px;
+        padding-inline: var(--space-3);
+    }
+
+    .nav__logo img {
+        max-height: 40px;
+    }
+}
+
 @media (max-width: 768px) {
     .nav__menu {
         position: fixed;
@@ -7309,7 +7472,7 @@ section {
         width: 85%;
         max-width: 400px;
         height: 100vh;
-        padding: 100px var(--space-8) var(--space-8);
+        padding: 72px var(--space-6) var(--space-6);
         background: var(--color-surface);
         box-shadow: var(--shadow-xl);
         flex-direction: column;

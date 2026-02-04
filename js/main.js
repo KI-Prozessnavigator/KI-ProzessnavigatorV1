@@ -942,6 +942,14 @@ function init() {
     initScrollProgress();
     initBeratungsplaetzeCount(); // Beratungsplätze: Mo 7 → Sa 2, Mo Reset
     initUseCasesSlider(); // Use Cases Slider
+
+    // Mobile Viewport Fix (nur bei innerWidth < 1024)
+    if (window.innerWidth < 1024) {
+        setTimeout(mobileViewportFix, 100);
+        window.addEventListener('resize', debounce(() => {
+            if (window.innerWidth < 1024) mobileViewportFix();
+        }, 250));
+    }
     
     // Initialize motion effects (respects reduced motion)
     if (!prefersReducedMotion()) {
@@ -1366,6 +1374,25 @@ function initUseCasesSlider() {
     }, 1000);
 }
 
+// ===== Mobile Viewport Fixer (nur bei innerWidth < 1024) =====
+function mobileViewportFix() {
+    if (window.innerWidth >= 1024) return;
+    const vw = window.innerWidth;
+    const all = document.querySelectorAll('body *');
+    all.forEach((el) => {
+        if (el === document.documentElement || el === document.body) return;
+        if (el.offsetWidth > vw) {
+            el.style.width = '100%';
+            el.style.boxSizing = 'border-box';
+            const fs = window.getComputedStyle(el).fontSize;
+            const px = parseFloat(fs);
+            if (!Number.isNaN(px) && px > 30) {
+                el.style.fontSize = 'clamp(20px, 5vw, 30px)';
+            }
+        }
+    });
+}
+
 // ===== Initialize Theme =====
 initTheme();
 
@@ -1375,3 +1402,4 @@ if (document.readyState === 'loading') {
 } else {
     init();
 }
+
