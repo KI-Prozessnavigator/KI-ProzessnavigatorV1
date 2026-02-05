@@ -1,0 +1,178 @@
+/* ==========================================
+   KI-Prozess Navigator Grafik Styles
+   ========================================== */
+
+.ki-process-navigator-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 4/3;
+    margin: 0 auto;
+}
+
+.ki-process-navigator {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ===== Input Modules Animation ===== */
+.input-module {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.input-module:hover {
+    transform: translateX(5px);
+}
+
+.input-module:hover rect:first-of-type {
+    stroke: rgba(0, 212, 255, 1);
+    filter: url(#glow-strong);
+}
+
+/* ===== Output Modules Animation ===== */
+.output-module {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.output-module:hover {
+    transform: translateX(-5px);
+}
+
+.output-module:hover rect:first-of-type {
+    stroke: rgba(0, 255, 163, 1);
+    filter: url(#glow-strong);
+}
+
+/* ===== Central Navigator Animation ===== */
+.central-navigator {
+    animation: navigatorPulse 3s ease-in-out infinite;
+}
+
+@keyframes navigatorPulse {
+    0%, 100% {
+        filter: url(#glow-strong);
+        opacity: 1;
+    }
+    50% {
+        filter: url(#glow-strong);
+        opacity: 0.95;
+    }
+}
+
+.central-navigator rect:first-of-type {
+    animation: navigatorGlow 2s ease-in-out infinite;
+}
+
+@keyframes navigatorGlow {
+    0%, 100% {
+        stroke: rgba(0, 212, 255, 0.8);
+        stroke-width: 3;
+    }
+    50% {
+        stroke: rgba(0, 212, 255, 1);
+        stroke-width: 4;
+    }
+}
+
+/* ===== Connection Lines Animation ===== */
+.input-connections line,
+.output-connections line {
+    stroke-dasharray: 10 5;
+    animation: dataFlow 3s linear infinite;
+}
+
+@keyframes dataFlow {
+    0% {
+        stroke-dashoffset: 0;
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        stroke-dashoffset: -30;
+        opacity: 0.6;
+    }
+}
+
+/* ===== Data Particles ===== */
+.data-particle {
+    fill: #00D4FF;
+    opacity: 0.8;
+    animation: particleMove 2s linear infinite;
+}
+
+.data-particle--output {
+    fill: #00FFA3;
+}
+
+@keyframes particleMove {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    10% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* ===== Module Highlight on Hover ===== */
+.input-module:hover .input-connections line,
+.output-module:hover .output-connections line {
+    stroke-width: 5;
+    opacity: 1;
+    animation-duration: 1s;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 992px) {
+    .ki-process-navigator-container {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ki-process-navigator-container {
+        max-width: 400px;
+    }
+    
+    .input-module:hover,
+    .output-module:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .ki-process-navigator-container {
+        max-width: 300px;
+    }
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    .input-module,
+    .output-module,
+    .central-navigator,
+    .input-connections line,
+    .output-connections line,
+    .data-particle {
+        animation: none;
+    }
+    
+    .input-module:hover,
+    .output-module:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,2516 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KI-Prozessautomatisierung für KMUs – DSGVO-konforme Chat-Modelle. Automatisieren Sie 70% Ihrer Routineaufgaben ohne Datenschutzrisiko.">
+    <meta name="keywords" content="KI, Prozessautomatisierung, DSGVO, KMU, Chatbot, Automatisierung, Datenschutz">
+    <meta name="author" content="KI-Prozessnavigator">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="KI-Prozessnavigator | DSGVO-konforme Prozessautomatisierung">
+    <meta property="og:description" content="Automatisieren Sie 70% Ihrer Routineaufgaben – ohne Datenschutzrisiko.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    
+    <title>🧪 TEST: Neue Hintergründe | KI-Prozessnavigator</title>
+    <link rel="canonical" href="https://ki-prozessnavigator.de/">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg?v=3">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/icons/favicon.svg?v=3">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/icons/favicon.svg?v=3">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "KI-Prozessnavigator",
+        "url": "https://ki-prozessnavigator.de",
+        "logo": "https://ki-prozessnavigator.de/assets/icons/logo.svg",
+        "description": "DSGVO-konforme KI-Prozessautomatisierung für den deutschen Mittelstand",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "DE"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/ki-prozessnavigator",
+            "https://twitter.com/kiprozess"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "KI-Prozessnavigator",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "EUR",
+            "lowPrice": "299",
+            "highPrice": "799",
+            "offerCount": "3"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Ist KI für unser kleines Team überhaupt rentabel?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja – oft sogar besonders. Ein Kunde mit 8 Mitarbeitern spart 40 Stunden pro Monat. Bei einem Stundenlohn von 50€ sind das 2.000€ – unser Starter-Paket kostet 299€. ROI: 6,7x im ersten Monat."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wie lange dauert es, bis wir produktiv sind?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Durchschnittlich 2 Wochen bis zum Go-Live. Keine IT-Ressourcen nötig – wir machen 90% der Arbeit. Onboarding-Call dauert eine Stunde."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was passiert mit unseren Daten? (DSGVO)",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ihre Daten gehören Ihnen – Punkt. Sie werden ausschließlich für IHRE Prozesse verwendet. Kein Training von KI-Modellen mit Ihren Daten. Hosting in Frankfurt. Geprüft von Datenschutz-Anwälten."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Funktioniert das mit unserem CRM/ERP?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja. Fertige Integrationen für Salesforce, HubSpot, SAP, Microsoft Dynamics, Personio und 50+ weitere Systeme. Individuelle Anbindungen über API auf Anfrage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was kostet die Potenzialanalyse wirklich?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nichts. Wirklich. 30 Minuten, unverbindlich. Sie bekommen einen konkreten ROI-Rechner für Ihr Unternehmen – ohne Verkaufsdruck. Keine Kreditkarte. Kein Kleingedrucktes."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preload" href="assets/fonts/PlusJakartaSans-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; }
+        .hero { min-height: 100vh; display: flex; align-items: center; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+    </style>
+    <link rel="stylesheet" href="css/main.css">
+    <!-- TEST: Neue Hintergrund-Struktur -->
+    <link rel="stylesheet" href="css/test-backgrounds.css">
+    <style>
+        /* ERZWINGE WEIẞE FARBE für alle Value Calculator Zahlen */
+        #timeSaved span,
+        #moneySaved span,
+        #capacityBoost span,
+        .result-card span,
+        .result-card__value span,
+        div[id="timeSaved"] > span,
+        div[id="moneySaved"] > span,
+        div[id="capacityBoost"] > span {
+            color: #ffffff !important;
+            text-shadow: none !important;
+            background: transparent !important;
+        }
+        
+        /* Stelle sicher, dass ALLE Elemente in Result Cards weiß sind */
+        .result-card,
+        .result-card *,
+        .result-card__label,
+        .result-card__detail {
+            color: #ffffff !important;
+        }
+        
+        /* Spezifische Überschreibung für jede einzelne Zahl */
+        #timeSaved > span:first-child,
+        #moneySaved > span:first-child,
+        #capacityBoost > span:first-child {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+        
+        /* HOVER-EFFEKT für Result Cards - gleich wie linke Karten */
+        .result-card--time:hover,
+        .result-card--money:hover {
+            border-color: rgba(0, 212, 255, 0.4) !important;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.2) !important;
+            transform: translateY(-2px) !important;
+        }
+    </style>
+    <style>
+        /* BUTTON: Absolut KEINE Bewegung mehr! */
+        .btn--neon,
+        .btn--neon:hover,
+        .btn--neon:active,
+        .btn--neon:focus {
+            transform: none !important;
+        }
+        
+        .btn--neon::before {
+            display: none !important;
+        }
+        
+        /* TEXT: "10 Stunden mehr Zeit" WEIẞ mit Glow */
+        .hero__title em {
+            color: #ffffff !important;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 119, 255, 0.4) !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: unset !important;
+            background-clip: unset !important;
+        }
+        
+        /* TEXT: "Ersparnis" GRÜN wie "Mit KI-Prozessnavigator" */
+        #calculator-title em {
+            color: #00D98F !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: unset !important;
+            background-clip: unset !important;
+        }
+        
+        /* COOKIE-CONTAINER: ALLE TEXTE SCHWARZ #000000 */
+        .cookie-category__title,
+        .cookie-category__title *,
+        .cookie-category__desc,
+        .cookie-category__desc *,
+        .cookie-table th,
+        .cookie-table td,
+        .cookie-category__badge,
+        .cookie-icon {
+            color: #000000 !important;
+            text-shadow: none !important;
+        }
+        
+        /* COOKIE-DETAILS: SCHWARZ #000000 (keine Unschärfe) */
+        .cookie-category__details summary {
+            color: #000000 !important;
+            text-shadow: none !important;
+            filter: none !important;
+        }
+        
+        /* COOKIE-TOGGLE: GRÜN wenn aktiviert */
+        .cookie-toggle input:checked + .cookie-toggle__slider {
+            background: #00D98F !important;
+        }
+        
+        /* BLINKENDER CURSOR in Hero-Überschrift */
+        @keyframes blink {
+            0%, 49% {
+                opacity: 1;
+            }
+            50%, 100% {
+                opacity: 0;
+            }
+        }
+        
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#hero" class="nav__logo u-nav-logo-reset">
+                <img src="assets/images/logo.svg?v=2" alt="KI-Prozessnavigator Logo" height="80" class="u-block">
+            </a>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item"><a href="#hero" class="nav__link">Start</a></li>
+                <li class="nav__item"><a href="#problems" class="nav__link">Vorteile</a></li>
+                <li class="nav__item"><a href="#usecases" class="nav__link">Use Cases</a></li>
+                <li class="nav__item"><a href="#dsgvo" class="nav__link">DSGVO</a></li>
+                <li class="nav__item"><a href="#pricing" class="nav__link">Ersparnis</a></li>
+                <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
+                <li class="nav__item"><a href="#contact" class="nav__link nav__link--cta">Beratung anfragen</a></li>
+            </ul>
+            
+            <div class="nav__actions">
+                <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+        
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="hero__container container" id="main-content">
+                <div class="hero__content u-pt-110">
+                    <h1 class="hero__title" id="hero-title">
+                        <span aria-label="Stellen Sie sich vor: 10 Stunden mehr Zeit – jede Woche">
+                            Stellen Sie sich vor: <em class="hero__title-em">10 Stunden mehr Zeit</em> – jede Woche<span class="cursor-blink"></span>
+                        </span>
+                    </h1>
+                    <p class="hero__description">
+                        Unsere KI automatisiert Ihre Routineaufgaben – DSGVO-konform und ohne IT-Aufwand. 
+                        <strong>Die einzige Lösung, die deutsches Datenschutzrecht versteht.</strong>
+                    </p>
+                    
+                    <div class="hero__actions" role="group" aria-label="Handlungsoptionen">
+                        <a href="#contact" class="btn btn--neon btn--glow u-btn-transition" role="button">
+                            <span>Kostenlose Potenzialanalyse starten</span>
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#demo" class="btn btn--glass btn--hero-trust" role="button">
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <polygon points="5,3 19,12 5,21"/>
+                            </svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="hero-lock-icon">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <span class="hero-trust-text">Geprüft & DSGVO-konform</span>
+                        </a>
+                    </div>
+                    
+                    <div class="hero__stats" role="list" aria-label="Unsere Erfolgszahlen">
+                        <div class="stat" role="listitem">
+                            <span class="stat__number">7 von 10</span>
+                            <span class="stat__label">Early-Bird Plätze verfügbar</span>
+                        </div>
+                        <div class="stat" role="listitem">
+                            <span class="stat__number">70%</span>
+                            <span class="stat__label">weniger Routinearbeit</span>
+                        </div>
+                        <div class="stat" role="listitem">
+                            <span class="stat__number">0</span>
+                            <span class="stat__label">DSGVO-Abmahnungen</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="hero__scroll-indicator" role="presentation">
+                <span>Mehr erfahren</span>
+                <div class="scroll-arrow" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <section class="trust-bar trust-bar--integrations" aria-label="Unterstützte Integrationen">
+            <div class="container">
+                <p class="trust-bar__text u-text-white">
+                    <strong class="u-text-white">Nahtlose Integration</strong> mit Ihren bestehenden Tools – 
+                    <em class="u-text-white">über 200+ Apps & Systeme automatisierbar</em>
+                </p>
+                <div class="trust-bar__logos trust-bar__logos--software" role="list" aria-label="Unterstützte Software">
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Gmail</span>
+                    </div>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Google Calendar</span>
+                    </div>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Microsoft 365</span>
+                    </div>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Outlook</span>
+                    </div>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Teams</span>
+                    </div>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Salesforce</span>
+                    </div>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">HubSpot</span>
+                    </div>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">SAP</span>
+                    </div>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Lexware</span>
+                    </div>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">DATEV</span>
+                    </div>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">Slack</span>
+                    </div>
+                    <div class="software-logo u-text-white" role="listitem">
+                        <span class="u-fw600">+200 mehr</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="problems" id="problems" aria-labelledby="problems-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__tag">Kein Tech-Blabla</span>
+                    <h2 class="section__title" id="problems-title">Diese Probleme kosten Sie täglich Geld</h2>
+                    <p class="section__description">Erkennen Sie sich wieder?</p>
+                </header>
+                
+                <div class="problems__grid">
+                    <!-- Problem Cards -->
+                    <div class="problem-card" data-animate="fade-up">
+                        <div class="problem-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <h3 class="problem-card__title">Ihre besten Leute verschwenden Zeit</h3>
+                        <p class="problem-card__text">
+                            Talentierte Mitarbeiter verbringen Stunden mit Copy-Paste-Aufgaben – 
+                            statt Kunden zu begeistern und Ihr Unternehmen voranzubringen.
+                        </p>
+                    </div>
+                    
+                    <div class="problem-card" data-animate="fade-up" data-delay="1">
+                        <div class="problem-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <line x1="15" y1="9" x2="9" y2="15"/>
+                                <line x1="9" y1="9" x2="15" y2="15"/>
+                            </svg>
+                        </div>
+                        <h3 class="problem-card__title">DSGVO-Angst blockiert Innovation</h3>
+                        <p class="problem-card__text">
+                            Sie wollen KI nutzen, aber die Rechtsabteilung sagt "zu riskant". 
+                            Ihre Wettbewerber ziehen vorbei. <em>Kennen wir.</em>
+                        </p>
+                    </div>
+                    
+                    <div class="problem-card" data-animate="fade-up" data-delay="2">
+                        <div class="problem-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h3 class="problem-card__title">KI-Tools gekauft – Mitarbeiter nutzen sie falsch</h3>
+                        <p class="problem-card__text">
+                            Ihre Teams kopieren Daten manuell hin und her. Keine Anbindung an CRM oder ERP. 
+                            Kein automatischer Workflow. <em>Das Potenzial bleibt ungenutzt.</em>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="before-after-showcase" data-animate="fade-up">
+                    <div class="before-after-card">
+                        <div class="before-after-header">
+                            <span class="before-after-badge before-after-badge--before">Ohne KI-Prozessnavigator</span>
+                            <span class="before-after-vs">vs.</span>
+                            <span class="before-after-badge before-after-badge--after u-text-success u-border-success">Mit KI-Prozessnavigator</span>
+                        </div>
+                        <div class="before-after-items">
+                            <div class="before-after-item">
+                                <div class="before-after-metric">
+                                    <span class="metric-label">Routineaufgaben pro Woche</span>
+                                    <div class="metric-values">
+                                        <span class="metric-before">40 Stunden</span>
+                                        <span class="metric-arrow u-text-white">→</span>
+                                        <span class="metric-after u-text-success">12 Stunden</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="before-after-item">
+                                <div class="before-after-metric">
+                                    <span class="metric-label">Zeit für Kundenbetreuung</span>
+                                    <div class="metric-values">
+                                        <span class="metric-before">20%</span>
+                                        <span class="metric-arrow u-text-white">→</span>
+                                        <span class="metric-after u-text-success">65%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="before-after-item">
+                                <div class="before-after-metric">
+                                    <span class="metric-label">DSGVO-Verstöße / Jahr</span>
+                                    <div class="metric-values">
+                                        <span class="metric-before">Risiko ⚠️</span>
+                                        <span class="metric-arrow u-text-white">→</span>
+                                        <span class="metric-after u-text-success">0</span><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2" class="metric-check-icon"><polyline points="20 6 9 17 4 12"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solutions-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-text">Das ändern wir</div>
+                    <div class="connector-line"></div>
+                </div>
+                
+                <div class="solutions__grid">
+                    <!-- Solution Cards -->
+                    <div class="solution-card" data-animate="fade-up">
+                        <div class="solution-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="solution-card__title">70% weniger Routinearbeit</h3>
+                        <p class="solution-card__text">
+                            Ihre Teams fokussieren sich endlich auf das, was Menschen besser können als Maschinen. 
+                            <strong>Durchschnittswert unserer Kunden.</strong>
+                        </p>
+                    </div>
+                    
+                    <div class="solution-card" data-animate="fade-up" data-delay="1">
+                        <div class="solution-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <polyline points="9 12 11 14 15 10"/>
+                            </svg>
+                        </div>
+                        <h3 class="solution-card__title">100% DSGVO-sicher</h3>
+                        <p class="solution-card__text">
+                            Ende-zu-Ende-Verschlüsselung. ISO 27001 in Zertifizierung. 
+                            <strong>Hosting in Frankfurt – Ihre Daten bleiben in Deutschland.</strong>
+                        </p>
+                    </div>
+                    
+                    <div class="solution-card" data-animate="fade-up" data-delay="2">
+                        <div class="solution-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                                <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+                            </svg>
+                        </div>
+                        <h3 class="solution-card__title">In 2 Wochen produktiv</h3>
+                        <p class="solution-card__text">
+                            Keine 6-monatigen Projekte. Kein IT-Team nötig. 
+                            <strong>Onboarding in einer Stunde – wir machen 90% der Arbeit.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="usecases" id="usecases" aria-labelledby="usecases-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__tag">Der Autopilot für Ihr Business</span>
+                    <h2 class="section__title" id="usecases-title">KI-Lösungen für Handwerk & KMU</h2>
+                    <p class="section__description">Wir verwandeln Ihre Zeitfresser in automatisierte Gewinne. Sparen Sie täglich Zeit bei Terminen, Rechnungen und Kundenanfragen.</p>
+                </header>
+                
+                <div class="usecases__slider-wrapper">
+                <div class="usecases__grid" id="usecases-slider">
+                    <div class="usecase-card" data-animate="fade-up">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <circle cx="12" cy="12" r="6"/>
+                                    <circle cx="12" cy="12" r="2"/>
+                                </svg>
+                            </span>
+                            <span class="usecase-card__category">Vertrieb</span>
+                        </div>
+                        <h3 class="usecase-card__title">Leads qualifizieren, während Sie schlafen</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">+40%</span>
+                            <span class="result-text">Abschlussquote</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Unser Chatbot führt Erstgespräche, qualifiziert Anfragen und bucht Termine – 24/7, DSGVO-konform.
+                        </p>
+                        <div class="usecase-card__flow" aria-label="Prozessablauf">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                                <span class="flow-step__label">Website-Besucher</span>
+                            </div>
+                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
+                                <span class="flow-step__label">KI-Chatbot</span>
+                            </div>
+                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                                <span class="flow-step__label">Gebuchter Termin</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="usecase-card" data-animate="fade-up" data-delay="1">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </span>
+                            <span class="usecase-card__category">HR</span>
+                        </div>
+                        <h3 class="usecase-card__title">Die besten Talente finden – in Minuten</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">8h</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="result-icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span class="result-text">pro Woche gespart</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Bewerbungen werden automatisch analysiert, gerankt und mit Begründung präsentiert.
+                        </p>
+                        <div class="usecase-card__flow" aria-label="Prozessablauf">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                                <span class="flow-step__label">100 Bewerbungen</span>
+                            </div>
+                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
+                                <span class="flow-step__label">KI-Matching</span>
+                            </div>
+                            <div class="flow-arrow" aria-hidden="true">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                                <span class="flow-step__label">Top 10 Shortlist</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="usecase-card" data-animate="fade-up" data-delay="2">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="1" x2="12" y2="23"/>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                            </span>
+                            <span class="usecase-card__category">Finanzen</span>
+                        </div>
+                        <h3 class="usecase-card__title">Rechnungen prüfen ohne Augenringe</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">0%</span>
+                            <span class="result-text">Fehlerquote</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            OCR-Erkennung, Abgleich mit Bestellungen, Freigabe-Workflows – alles automatisch.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                                <span class="flow-step__label">Rechnungseingang</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
+                                <span class="flow-step__label">KI-Prüfung</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                                <span class="flow-step__label">Validiert & gebucht</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="usecase-card" data-animate="fade-up">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                    <path d="M8 14h.01"/>
+                                    <path d="M12 14h.01"/>
+                                    <path d="M16 14h.01"/>
+                                    <path d="M8 18h.01"/>
+                                    <path d="M12 18h.01"/>
+                                    <path d="M16 18h.01"/>
+                                </svg>
+                            </span>
+                            <span class="usecase-card__category">Terminbuchung</span>
+                        </div>
+                        <h3 class="usecase-card__title">Online-Terminbuchung & Ausfallschutz</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">0</span>
+                            <span class="result-text">No-Shows</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Nie wieder leere Slots oder nerviges Telefon-Ping-Pong. Sync mit Google Kalender/Outlook gegen Doppelbuchungen.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                                <span class="flow-step__label">Kunde bucht</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
+                                <span class="flow-step__label">Kalender-Sync</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+                                <span class="flow-step__label">SMS-Erinnerung</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="usecase-card" data-animate="fade-up" data-delay="1">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </span>
+                            <span class="usecase-card__category">Kundenkommunikation</span>
+                        </div>
+                        <h3 class="usecase-card__title">Automatische Antworten & Google-Bewertungen</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">5</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="result-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <span class="result-text">mehr Bewertungen</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Erreichbar sein, auch wenn Sie auf der Baustelle stehen. KI klärt Standardfragen direkt.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                                <span class="flow-step__label">Kundenanfrage</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
+                                <span class="flow-step__label">Sofort-Antwort</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                                <span class="flow-step__label">Bewertung holen</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="usecase-card" data-animate="fade-up" data-delay="2">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <circle cx="12" cy="12" r="6"/>
+                                    <circle cx="12" cy="12" r="2"/>
+                                </svg>
+                            </span>
+                            <span class="usecase-card__category">Lead-Management</span>
+                        </div>
+                        <h3 class="usecase-card__title">Lead-Erfassung & CRM-Automatisierung</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">+30%</span>
+                            <span class="result-text">Auftragsquote</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Vom Interessenten zum Auftrag – ohne manuelles Abtippen. KI fasst Angebote nach 3 Tagen nach.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                                <span class="flow-step__label">Anfrage</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
+                                <span class="flow-step__label">CRM-Eintrag</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                                <span class="flow-step__label">Auto-Follow-up</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="usecase-card" data-animate="fade-up">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="10" rx="2"/>
+                                    <circle cx="12" cy="5" r="2"/>
+                                    <path d="M12 7v4"/>
+                                    <line x1="8" y1="16" x2="8" y2="16"/>
+                                    <line x1="16" y1="16" x2="16" y2="16"/>
+                                </svg>
+                            </span>
+                            <span class="usecase-card__category">Intern</span>
+                        </div>
+                        <h3 class="usecase-card__title">Interner Firmen-Chatbot (DSGVO-konform)</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">24/7</span>
+                            <span class="result-text">Wissen verfügbar</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Ihr komplettes Firmenwissen – jederzeit für Mitarbeiter verfügbar. Server in Deutschland.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M12 3v1"/></svg></div>
+                                <span class="flow-step__label">Mitarbeiter fragt</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
+                                <span class="flow-step__label">Chatbot antwortet</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                                <span class="flow-step__label">Problem gelöst</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="usecase-card" data-animate="fade-up" data-delay="1">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                            </span>
+                            <span class="usecase-card__category">Buchhaltung</span>
+                        </div>
+                        <h3 class="usecase-card__title">Rechnungsstellung & Mahnwesen</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">-50%</span>
+                            <span class="result-text">offene Posten</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Vorbereitende Buchhaltung auf Knopfdruck. KI liest Rechnungen aus Mails & mahnt freundlich.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                                <span class="flow-step__label">Rechnung kommt</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
+                                <span class="flow-step__label">OCR & Sortierung</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+                                <span class="flow-step__label">Auto-Mahnung</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="usecase-card" data-animate="fade-up" data-delay="2">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                                    <path d="M9 14l2 2 4-4"/>
+                                </svg>
+                            </span>
+                            <span class="usecase-card__category">Projektmanagement</span>
+                        </div>
+                        <h3 class="usecase-card__title">Auftrags-Anlage & Projekt-Start</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">0</span>
+                            <span class="result-text">vergessene Deadlines</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Strukturierte Projekte ab Sekunde 1. Erinnert Mitarbeiter und weist Aufgaben digital zu.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                                <span class="flow-step__label">Auftrag kommt</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
+                                <span class="flow-step__label">Projekt-Setup</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+                                <span class="flow-step__label">Team-Briefing</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="usecase-card" data-animate="fade-up">
+                        <div class="usecase-card__header">
+                            <span class="usecase-card__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </span>
+                            <span class="usecase-card__category">Personal</span>
+                        </div>
+                        <h3 class="usecase-card__title">Mitarbeiter-Onboarding & Prozesse</h3>
+                        <p class="usecase-card__result">
+                            <span class="result-number">-70%</span>
+                            <span class="result-text">Einarbeitungszeit</span>
+                        </p>
+                        <p class="usecase-card__description">
+                            Neue Fachkräfte in Rekordzeit einarbeiten. Auto-Versand von Handbuch, Logins & Videos.
+                        </p>
+                        <div class="usecase-card__flow">
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                                <span class="flow-step__label">Neuer Mitarbeiter</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step flow-step--ai">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
+                                <span class="flow-step__label">Auto-Onboarding</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">
+                                <div class="flow-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                                <span class="flow-step__label">Prüfung bestanden</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="usecases__dots" id="usecases-dots" aria-label="Use Case Navigation"></div>
+                
+                <div class="usecases__nav">
+                    <button class="usecases__nav-btn usecases__nav-btn--prev" id="usecases-prev" aria-label="Vorherige Use Cases">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <button class="usecases__nav-btn usecases__nav-btn--next" id="usecases-next" aria-label="Nächste Use Cases">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="dsgvo" id="dsgvo">
+            <div class="container">
+                <div class="dsgvo__wrapper">
+                    <div class="dsgvo__content">
+                        <span class="section__tag section__tag--light">Datenschutz</span>
+                        <h2 class="dsgvo__title">KI ohne rechtliche Risiken</h2>
+                        <p class="dsgvo__description">
+                            Unsere KI-Modelle werden ausschließlich auf europäischen Servern betrieben. 
+                            Ihre Daten verlassen niemals die EU – garantiert.
+                        </p>
+                        
+                        <ul class="dsgvo__checklist">
+                            <li class="checklist-item" data-animate="check">
+                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span class="checklist-text">Ende-zu-Ende-Verschlüsselung (AES-256)</span>
+                            </li>
+                            <li class="checklist-item" data-animate="check" data-delay="1">
+                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span class="checklist-text">Löschfristen automatisiert (DSGVO Art. 17)</span>
+                            </li>
+                            <li class="checklist-item" data-animate="check" data-delay="2">
+                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span class="checklist-text">Revisionssichere Protokollierung</span>
+                            </li>
+                            <li class="checklist-item" data-animate="check" data-delay="3">
+                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span class="checklist-text">Rollenbasierte Zugriffskontrolle (RBAC)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dsgvo__badges">
+                        <div class="trust-badge" data-animate="fade-up">
+                            <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+                            <div class="trust-badge__content">
+                                <span class="trust-badge__title">EU-Hosting</span>
+                                <span class="trust-badge__subtitle">Server in Frankfurt</span>
+                            </div>
+                        </div>
+                        <div class="trust-badge" data-animate="fade-up" data-delay="1">
+                            <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
+                            <div class="trust-badge__content">
+                                <span class="trust-badge__title">ISO 27001</span>
+                                <span class="trust-badge__subtitle">In Zertifizierung</span>
+                            </div>
+                        </div>
+                        <div class="trust-badge" data-animate="fade-up" data-delay="2">
+                            <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                            <div class="trust-badge__content">
+                                <span class="trust-badge__title">AVV inklusive</span>
+                                <span class="trust-badge__subtitle">DSGVO-konform</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="value-calculator" id="pricing" aria-labelledby="calculator-title">
+            <div class="container u-mt-90">
+                <header class="section__header">
+                    <span class="section__tag">Value-Based Selling</span>
+                    <h2 class="section__title" id="calculator-title">Berechnen Sie Ihre <em class="u-text-success">Ersparnis</em> in 60 Sekunden</h2>
+                    <p class="section__description">
+                        Finden Sie heraus, wie viel Zeit und Geld Sie mit Automatisierung sparen können.
+                    </p>
+                </header>
+                
+                <div class="calculator__wrapper">
+                    <div class="calculator__inputs">
+                        <div class="calculator__card">
+                            <h3 class="calculator__card-title">
+                                <span class="step-number">1</span>
+                                Wer sind Sie?
+                            </h3>
+                            
+                            <div class="form__group">
+                                <label for="employeeCount" class="form__label">
+                                    Anzahl Mitarbeiter
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="employeeCount" 
+                                    class="form__input calculator__input"
+                                    value="10"
+                                    min="1"
+                                    max="10000"
+                                    placeholder="z.B. 10">
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="hourlyRate" class="form__label">
+                                    Durchschnittlicher Stundenlohn (€)
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="hourlyRate" 
+                                    class="form__input calculator__input"
+                                    value="50"
+                                    min="1"
+                                    max="500"
+                                    placeholder="z.B. 50">
+                            </div>
+                        </div>
+                        
+                        <div class="calculator__card">
+                            <h3 class="calculator__card-title">
+                                <span class="step-number">2</span>
+                                Was möchten Sie automatisieren?
+                            </h3>
+                            
+                            <div class="form__group">
+                                <label for="processType" class="form__label">
+                                    Prozess auswählen
+                                </label>
+                                <select 
+                                    id="processType" 
+                                    class="form__input calculator__select">
+                                    
+                                    <optgroup label="👥 Human Resources">
+                                        <option value="urlaubsantraege">Urlaubsanträge & Genehmigungen</option>
+                                        <option value="onboarding">Onboarding neuer Mitarbeiter</option>
+                                        <option value="offboarding">Exit-Interviews & Offboarding</option>
+                                        <option value="zeiterfassung">Zeiterfassung & Überstunden-Tracking</option>
+                                        <option value="schulungen">Schulungsmanagement & Zertifikate</option>
+                                        <option value="arbeitsvertraege">Arbeitsverträge & Vertragsänderungen</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="💰 Verwaltung / Buchhaltung / Finanzen">
+                                        <option value="zahlungserinnerungen">Zahlungserinnerungen versenden</option>
+                                        <option value="belegerfassung">Belegerfassung aus E-Mails/Scans</option>
+                                        <option value="kassenbuch">Kassenbuch führen</option>
+                                        <option value="mahnwesen">Mahnwesen automatisieren</option>
+                                        <option value="reisekosten">Reisekostenabrechnungen erstellen</option>
+                                        <option value="vertragsmanagement">Vertragsmanagement & Kündigungsfristen</option>
+                                        <option value="rechnungsprüfung">Rechnungseingang prüfen & kontieren</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="📊 Vertrieb / Sales / Marketing">
+                                        <option value="followup">Follow-up E-Mails nach X Tagen</option>
+                                        <option value="socialmedia">Social Media Beiträge planen</option>
+                                        <option value="newsletter">Newsletter-Versand segmentieren</option>
+                                        <option value="kundenanfragen">Kundenanfragen vorfiltern & beantworten</option>
+                                        <option value="angebote">Angebotserstellung aus Vorlagen</option>
+                                        <option value="angebotsnachverfolgung">Angebots-Nachverfolgung</option>
+                                        <option value="verkaufsberichte">Verkaufsberichte automatisch erstellen</option>
+                                        <option value="kundensegmentierung">Kundensegmentierung & Scoring</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="🏗️ Auftrags- & Projektabwicklung">
+                                        <option value="auftragsbestätigungen">Auftragsbestätigungen versenden</option>
+                                        <option value="wartungserinnerungen">Wartungserinnerungen an Kunden</option>
+                                        <option value="fotodokumentation">Foto-Dokumentation von Baustellen</option>
+                                        <option value="lieferschein">Lieferschein-Prüfung</option>
+                                        <option value="materialbestellungen">Material-Bestellungen auslösen</option>
+                                        <option value="abnahmeprotokolle">Abnahmeprotokolle erstellen</option>
+                                        <option value="bautagebuch">Bautagebuch digital führen</option>
+                                        <option value="einsatzplanung">Werkstatt-/Einsatzplanung</option>
+                                        <option value="maschinenwartung">Werkzeug- & Maschinen-Wartung</option>
+                                        <option value="sicherheitsdoku">Sicherheitsdokumentationen</option>
+                                        <option value="nachunternehmer">Nachunternehmer-Koordination</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="🎧 Kundensupport / Service">
+                                        <option value="rückrufservice">Rückrufservice organisieren</option>
+                                        <option value="umfragen">Kundenzufriedenheits-Umfragen</option>
+                                        <option value="servicetermine">Service-Terminplanung</option>
+                                        <option value="faq">FAQ-Beantwortung automatisiert</option>
+                                        <option value="ticketrouting">Ticket-Routing nach Priorität</option>
+                                        <option value="beschwerde">Beschwerde-Management</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="🛒 Einkauf / Beschaffung / Lager">
+                                        <option value="lieferantenanfragen">Lieferanten-Anfragen versenden</option>
+                                        <option value="bestandswarnung">Bestandsüberwachung & Warnung</option>
+                                        <option value="lieferscheinabgleich">Lieferschein-Abgleich mit Bestellung</option>
+                                        <option value="preisvergleich">Preisvergleiche automatisiert</option>
+                                        <option value="lieferantenbewertung">Lieferanten-Bewertung</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="📁 Projektmanagement">
+                                        <option value="taskreminder">Task-Reminder an Teammitglieder</option>
+                                        <option value="meetingprotokolle">Meeting-Protokolle erstellen & verteilen</option>
+                                        <option value="projektzeiterfassung">Projektzeiterfassung</option>
+                                        <option value="statusberichte">Projekt-Statusberichte wöchentlich</option>
+                                        <option value="ressourcenplanung">Ressourcenplanung & Auslastung</option>
+                                    </optgroup>
+                                    
+                                    <option value="custom">✨ Eigener Prozess</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="minutesPerDay" class="form__label">
+                                    Aktueller Zeitaufwand (Minuten pro Tag pro Mitarbeiter)
+                                </label>
+                                <input 
+                                    type="number" 
+                                    id="minutesPerDay" 
+                                    class="form__input calculator__input"
+                                    value="30"
+                                    min="15"
+                                    max="480"
+                                    step="15"
+                                    placeholder="z.B. 30 oder 60">
+                            </div>
+                        </div>
+                        
+                        <div class="calculator__card">
+                            <h3 class="calculator__card-title">
+                                <span class="step-number">3</span>
+                                Betroffene Mitarbeiter
+                            </h3>
+                            
+                            <div class="form__group">
+                                <label for="affectedEmployees" class="form__label">
+                                    Wie viele Mitarbeiter führen diesen Prozess aus? <span id="affectedEmployeesValue" class="value-display">3</span>
+                                </label>
+                                <input 
+                                    type="range" 
+                                    id="affectedEmployees" 
+                                    class="calculator__slider"
+                                    value="3"
+                                    min="1"
+                                    max="50"
+                                    step="1">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator__results">
+                        <div class="results__header">
+                            <h3>Ihr Einsparpotenzial</h3>
+                            <p>Live-Berechnung basierend auf Ihren Angaben</p>
+                        </div>
+                        
+                        <div class="u-flex-col">
+                            
+                            <div class="result-card result-card--time">
+                                <div class="result-card__row">
+                                    <div class="u-flex-1">
+                                        <div class="result-card__row--tight">
+                                            <div class="result-card__icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#0077FF" stroke-width="1.5" style="width:24px;height:24px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                                            <div>
+                                                <div class="result-card__label">Zeitgewinn pro Jahr</div>
+                                                <div id="timeSaved" class="result-card__value-row">
+                                                    <span class="result-card__value-num">480</span>
+                                                    <span class="result-card__value-unit">Stunden</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="timeSavedWeeks" class="result-card__weeks">
+                                            ≈ 12 Arbeitswochen gespart
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="result-card__circle-wrap">
+                                        <svg width="140" height="140" viewBox="0 0 140 140">
+                                            <circle cx="70" cy="70" r="55" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="20"/>
+                                            <circle id="timeCircle" cx="70" cy="70" r="55" fill="none" stroke="url(#gradientTime)" stroke-width="20" stroke-dasharray="345" stroke-dashoffset="121" stroke-linecap="round" style="transition: stroke-dashoffset 0.5s ease;"/>
+                                            <defs>
+                                                <linearGradient id="gradientTime" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#00FF88;stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                        <div class="result-card__center">
+                                            <div id="timePercent" class="result-card__percent">65%</div>
+                                            <div class="result-card__percent-label">Gespart</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="result-card result-card--money">
+                                <div class="result-card__capacity-row">
+                                    <div class="result-card__icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#0077FF" stroke-width="1.5" style="width:24px;height:24px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                                    <div class="u-ml-neg8">
+                                        <div class="result-card__label">Einsparpotenzial</div>
+                                        <div id="moneySaved" class="result-card__value-row">
+                                            <span class="result-card__value-num">24.000</span>
+                                            <span class="result-card__value-unit">€</span>
+                                            <span class="result-card__meta">pro Jahr</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="result-card__mt20">
+                                    <div class="result-card__section-label">Monatliche Akkumulation der Ersparnis</div>
+                                    <div class="result-card__months-row">
+                                        <div class="result-card__month-col">
+                                            <div id="month1" class="result-card__month-bar" style="height: 8%;"></div>
+                                            <div class="result-card__month-num">1</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month2" class="result-card__month-bar" style="height: 16%;"></div>
+                                            <div class="result-card__month-num">2</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month3" class="result-card__month-bar" style="height: 25%;"></div>
+                                            <div class="result-card__month-num">3</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month4" class="result-card__month-bar" style="height: 33%;"></div>
+                                            <div class="result-card__month-num">4</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month5" class="result-card__month-bar" style="height: 42%;"></div>
+                                            <div class="result-card__month-num">5</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month6" class="result-card__month-bar" style="height: 50%;"></div>
+                                            <div class="result-card__month-num result-card__month-num--em">6</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month7" class="result-card__month-bar result-card__month-bar--alt1" style="height: 58%;"></div>
+                                            <div class="result-card__month-num">7</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month8" class="result-card__month-bar result-card__month-bar--alt1" style="height: 67%;"></div>
+                                            <div class="result-card__month-num">8</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month9" class="result-card__month-bar result-card__month-bar--alt2" style="height: 75%;"></div>
+                                            <div class="result-card__month-num">9</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month10" class="result-card__month-bar result-card__month-bar--alt3" style="height: 83%;"></div>
+                                            <div class="result-card__month-num">10</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month11" class="result-card__month-bar result-card__month-bar--alt4" style="height: 92%;"></div>
+                                            <div class="result-card__month-num">11</div>
+                                        </div>
+                                        <div class="result-card__month-col">
+                                            <div id="month12" class="result-card__month-bar result-card__month-bar--alt5" style="height: 100%; box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);"></div>
+                                            <div class="result-card__month-num result-card__month-num--12">12</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="result-card__monthly-row">
+                                        <div class="result-card__monthly-label">Monatlich:</div>
+                                        <div id="monthlyAmount" class="result-card__monthly-value">2.000€</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="max-width: 1200px; margin: 0 auto; padding: 0 var(--space-4); margin-top: var(--space-6);">
+                    <div style="text-align: center; position: relative; z-index: 1;">
+                        <a href="#contact" class="btn btn--calculator" style="display: inline-block; width: auto; min-width: 400px;">
+                            Jetzt kostenloses Erstgespräch vereinbaren
+                        </a>
+                        <p style="margin-top: var(--space-3); font-size: 0.875rem; color: rgba(255, 255, 255, 0.8);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2v1"/><path d="M12 22v-5"/><circle cx="12" cy="11" r="4"/></svg>Wir berechnen Ihr individuelles Angebot – basierend auf diesem Potenzial
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials expert-quotes" id="testimonials">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__tag">Erfolgsgeschichten folgen</span>
+                    <h2 class="section__title">Was Experten über KI-Automatisierung sagen</h2>
+                    <p class="section__description">
+                        Unsere Beta-Tester berichten ab April 2026. Bis dahin: Stimmen aus der Branche.
+                    </p>
+                </header>
+                
+                <!-- Experten-Zitate Grid -->
+                <div class="testimonials__grid expert-quotes__grid">
+                    
+                    <div class="testimonial-card expert-quote-card" data-animate="fade-up">
+                        <div class="expert-quote-card__header">
+                            <div class="expert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                            <div class="expert-source">
+                                <span class="expert-name">Bitkom e.V.</span>
+                                <span class="expert-meta">Digital Office Index 2025</span>
+                            </div>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            "KI-gestützte Prozessautomatisierung kann deutschen KMU jährlich bis zu 
+                            <strong>50 Milliarden Euro einsparen</strong>. Unternehmen, die jetzt investieren, 
+                            sichern sich einen langfristigen Wettbewerbsvorteil."
+                        </blockquote>
+                        <a href="https://www.bitkom.org" target="_blank" rel="noopener noreferrer" class="expert-link">
+                            Studie lesen →
+                        </a>
+                    </div>
+                    
+                    <div class="testimonial-card expert-quote-card" data-animate="fade-up" data-delay="1">
+                        <div class="expert-quote-card__header">
+                            <div class="expert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+                            <div class="expert-source">
+                                <span class="expert-name">McKinsey & Company</span>
+                                <span class="expert-meta">The State of AI 2025</span>
+                            </div>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            "Unternehmen, die DSGVO-konforme KI-Lösungen einsetzen, steigern ihre Produktivität 
+                            um durchschnittlich <strong>40% bei gleichzeitig höherer Compliance</strong>."
+                        </blockquote>
+                        <a href="https://www.mckinsey.com" target="_blank" rel="noopener noreferrer" class="expert-link">
+                            Report ansehen →
+                        </a>
+                    </div>
+                    
+                    <div class="testimonial-card expert-quote-card" data-animate="fade-up" data-delay="2">
+                        <div class="expert-quote-card__header">
+                            <div class="expert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div>
+                            <div class="expert-source">
+                                <span class="expert-name">Gartner Research</span>
+                                <span class="expert-meta">Future of Work 2026</span>
+                            </div>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            "Bis 2026 werden <strong>80% der Routineaufgaben in KMU automatisierbar</strong> sein. 
+                            Early Adopters profitieren von niedrigeren Implementierungskosten und schnellerer ROI."
+                        </blockquote>
+                        <a href="https://www.gartner.com" target="_blank" rel="noopener noreferrer" class="expert-link">
+                            Prognose lesen →
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                <div class="coming-soon-box" data-animate="fade-up">
+                    <div class="coming-soon__content">
+                        <div class="coming-soon__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11l18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+                        <h3 class="coming-soon__title">Ihre Erfolgsgeschichte könnte hier stehen!</h3>
+                        <p class="coming-soon__text">
+                            Werden Sie einer unserer ersten Beta-Partner und profitieren Sie von exklusiven Vorteilen:
+                        </p>
+                        <ul class="coming-soon__benefits">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px;vertical-align:middle;margin-right:12px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>40% Lifetime-Rabatt</strong> – für immer</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px;vertical-align:middle;margin-right:12px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Kostenlose Potenzialanalyse</strong> im Wert von 500€</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px;vertical-align:middle;margin-right:12px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Ihr Logo & Testimonial</strong> auf unserer Website</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px;vertical-align:middle;margin-right:12px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Exklusive Case Study</strong> Ihrer Erfolgsgeschichte</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px;vertical-align:middle;margin-right:12px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Persönlicher Support</strong> – garantiert, kein Callcenter</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--neon" style="margin-top: var(--space-4);">
+                            Jetzt Beta-Partner werden
+                        </a>
+                        <p class="coming-soon__note">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><strong>Noch 7 von 10 Plätzen verfügbar</strong> – Launch Q1/2026
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="faq-section" id="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="faq-section__wrapper">
+                    <div class="faq">
+                        <header class="faq__header">
+                            <span class="section__tag">Ihre Fragen, ehrlich beantwortet</span>
+                            <h2 class="section__title section__title--left" id="faq-title">Das werden wir oft gefragt</h2>
+                        </header>
+                        
+                        <div class="faq__list" role="list">
+                            <div class="faq-item" role="listitem">
+                                <button class="faq-item__question" aria-expanded="false">
+                                    <span>Ist KI für unser kleines Team überhaupt rentabel?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer">
+                                    <p>
+                                        <strong>Ja – oft sogar besonders.</strong> Ein Kunde mit 8 Mitarbeitern spart 40 Stunden pro Monat. 
+                                        Bei einem Stundenlohn von 50€ sind das 2.000€ – unser Starter-Paket kostet 299€. 
+                                        <em>ROI: 6,7x im ersten Monat.</em>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" role="listitem">
+                                <button class="faq-item__question" aria-expanded="false">
+                                    <span>Wie lange dauert es, bis wir produktiv sind?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer">
+                                    <p>
+                                        <strong>Durchschnittlich 2 Wochen bis zum Go-Live.</strong> Keine IT-Ressourcen nötig – 
+                                        wir machen 90% der Arbeit. Onboarding-Call dauert eine Stunde, danach begleiten wir Sie 
+                                        bis zum ersten Erfolg.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" role="listitem">
+                                <button class="faq-item__question" aria-expanded="false">
+                                    <span>Was passiert mit unseren Daten? (DSGVO)</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer">
+                                    <p>
+                                        <strong>Ihre Daten gehören Ihnen – Punkt.</strong> Sie werden ausschließlich für IHRE Prozesse verwendet. 
+                                        Kein Training von KI-Modellen mit Ihren Daten. Hosting in Frankfurt. 
+                                        Löschung auf Knopfdruck. <em>Geprüft von Datenschutz-Anwälten.</em>
+                                    </p>
+                                    <p>
+                                        <a href="datenschutz.html" style="color: var(--color-primary); text-decoration: underline;">
+                                            → Vollständige Datenschutzerklärung lesen
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" role="listitem">
+                                <button class="faq-item__question" aria-expanded="false">
+                                    <span>Funktioniert das mit unserem CRM/ERP?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer">
+                                    <p>
+                                        <strong>Ja.</strong> Fertige Integrationen für Salesforce, HubSpot, SAP, Microsoft Dynamics, 
+                                        Personio und 50+ weitere Systeme. Individuelle Anbindungen über API auf Anfrage – 
+                                        <em>ohne Extra-Kosten im Pro- und Enterprise-Paket.</em>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item" role="listitem">
+                                <button class="faq-item__question" aria-expanded="false">
+                                    <span>Was kostet die Potenzialanalyse wirklich?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer">
+                                    <p>
+                                        <strong>Nichts. Wirklich.</strong> 30 Minuten, unverbindlich. Sie bekommen einen konkreten 
+                                        Einsparpotenzial-Rechner für Ihr Unternehmen – ohne Verkaufsdruck. 
+                                        <em>Keine Kreditkarte. Kein Kleingedrucktes.</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lead-magnet">
+                        <div class="lead-magnet__content">
+                            <span class="lead-magnet__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;stroke:#0077FF;filter:drop-shadow(0 0 8px rgba(0,119,255,0.5))">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                            </span>
+                            <h3 class="lead-magnet__title">Kostenlose Checkliste</h3>
+                            <p class="lead-magnet__description">
+                                <strong>10 Prozesse, die Sie JETZT automatisieren sollten</strong> – 
+                                mit konkreten Einsparpotenzialen. Plus: <strong>Einladung zu Ihrem kostenlosen Beratungstermin</strong> – 
+                                unverbindlich, 30 Minuten.
+                            </p>
+                            
+                            <form class="lead-magnet__form" id="lead-form" aria-label="Checkliste anfordern">
+                                <input type="text" name="website" class="lead-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                                <div class="form__group">
+                                    <label for="lead-email" class="visually-hidden">Geschäftliche E-Mail-Adresse</label>
+                                    <input type="email" id="lead-email" name="email" class="form__input" placeholder="Ihre geschäftliche E-Mail" required autocomplete="email">
+                                </div>
+                                <div class="form__group form__group--checkbox">
+                                    <input type="checkbox" id="privacy-consent" name="privacy" required aria-describedby="privacy-hint">
+                                    <label for="privacy-consent">
+                                        Ich stimme der <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu und willige in die Verarbeitung meiner Daten ein.<span class="required" aria-hidden="true">*</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full">
+                                    Checkliste herunterladen
+                                </button>
+                            </form>
+                            
+                            <div class="lead-magnet__trust">
+                                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;vertical-align:middle;margin-right:4px;stroke:#00D26A"><polyline points="20 6 9 17 4 12"/></svg>DSGVO-konform</span>
+                                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;vertical-align:middle;margin-right:4px;stroke:#00D26A"><polyline points="20 6 9 17 4 12"/></svg>Kein Spam</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta" id="contact" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="final-cta__content">
+                    <span class="final-cta__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#0077FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:48px;height:48px;filter:drop-shadow(0 0 15px rgba(0,119,255,0.6))">
+                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                            <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+                        </svg>
+                    </span>
+                    
+                    <div class="final-cta__urgency">
+                        <span class="urgency-badge" aria-label="Limitiert">
+                            <span class="urgency-pulse"></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nur noch 7 Beratungsplätze diese Woche</span>
+                        </span>
+                    </div>
+                    
+                    <h2 class="final-cta__title" id="cta-title">30 Minuten, die Ihnen Monate Arbeit sparen können</h2>
+                    <p class="final-cta__description">
+                        In einer kostenlosen Potenzialanalyse zeigen wir Ihnen genau, welche Prozesse 
+                        Sie automatisieren können – und was das für Ihr Unternehmen bedeutet.
+                        <strong>Keine Verpflichtung. Kein Verkaufsdruck. Nur Klarheit.</strong>
+                    </p>
+                    
+                    <div class="final-cta__social-proof">
+                        <span class="social-proof-item">
+                            <span class="social-proof-number" data-count="847">847</span>
+                            <span class="social-proof-label">Beratungen durchgeführt</span>
+                        </span>
+                        <span class="social-proof-divider">•</span>
+                        <span class="social-proof-item">
+                            <span class="social-proof-number">97%</span>
+                            <span class="social-proof-label">Weiterempfehlungsrate</span>
+                        </span>
+                    </div>
+                    
+                    <a href="mailto:kontakt@ki-prozessnavigator.de" class="btn btn--neon btn--large btn--glow" role="button">
+                        <span>Jetzt kostenlosen Beratungstermin sichern</span>
+                        <svg class="btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <p class="final-cta__trust">
+                        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:#00D26A"><polyline points="20 6 9 17 4 12"/></svg>Keine Kreditkarte</span>
+                        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:#00D26A"><polyline points="20 6 9 17 4 12"/></svg>Kein Kleingedrucktes</span>
+                        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;stroke:#00D26A"><polyline points="20 6 9 17 4 12"/></svg>Nur ein ehrliches Gespräch</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="#hero" class="footer__logo">
+                        <img src="assets/images/logo.svg?v=2" alt="KI-Prozessnavigator Logo" height="50">
+                    </a>
+                    <p class="footer__tagline">Intelligente Automatisierung für den Mittelstand.</p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/kiprozessnavigator/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@kiprozessnavigator" class="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61584576234002&locale=de_DE" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/dominik-buchele-ki-prozessnavigator/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .771 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__links-group">
+                    <h4 class="footer__heading">Produkt</h4>
+                    <ul class="footer__links">
+                        <li><a href="#usecases">Use Cases</a></li>
+                        <li><a href="#pricing">Ersparnis</a></li>
+                        <li><a href="#">API Dokumentation</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__links-group">
+                    <h4 class="footer__heading">Rechtliches</h4>
+                    <ul class="footer__links">
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                        <li><a href="#" onclick="openCookieSettings(); return false;">Cookie-Einstellungen</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__links-group footer__links-group--contact">
+                    <h4 class="footer__heading">Kontakt</h4>
+                    <ul class="footer__links footer__contact">
+                        <li class="footer__contact-item">Breslauer Straße 11<br>86690 Mertingen</li>
+                        <li class="footer__contact-item">Tel: +49 175 5526398</li>
+                        <li><a href="mailto:d.buchele@ki-prozessnavigator.de">d.buchele@ki-prozessnavigator.de</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 KI-Prozessnavigator, Inh. Buchele Dominik. Alle Rechte vorbehalten.</p>
+                <button class="scroll-to-top" id="scroll-to-top" aria-label="Nach oben scrollen">
+                    <span class="scroll-to-top__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px">
+                            <line x1="12" y1="19" x2="12" y2="5"/>
+                            <polyline points="5 12 12 5 19 12"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <div id="contact-modal" class="contact-modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-desc" aria-modal="true">
+        <div class="contact-modal__backdrop"></div>
+        <div class="contact-modal__container">
+            <button class="contact-modal__close" aria-label="Modal schließen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <div class="contact-modal__header">
+                <div class="contact-modal__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#0077FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:40px;height:40px;filter:drop-shadow(0 0 10px rgba(0,119,255,0.5))">
+                        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                        <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+                    </svg>
+                </div>
+                <h2 class="contact-modal__title" id="modal-title">Lassen Sie uns starten!</h2>
+                <p class="contact-modal__subtitle" id="modal-desc">Wählen Sie, wie wir Ihnen am besten helfen können</p>
+            </div>
+
+            <div class="contact-modal__scroll-area">
+            
+            <div class="contact-modal__paths">
+                <div class="path-selection">
+                    <!-- Quick Inquiry Path -->
+                    <div class="path-card path-card--inquiry" id="path-inquiry">
+                        <div class="path-card__icon">⚡</div>
+                        <div class="path-card__content">
+                            <h3 class="path-card__title">Termin buchen</h3>
+                            <p class="path-card__description">
+                                Sie wissen bereits, was Sie brauchen? Buchen Sie jetzt Ihr kostenloses Erstgespräch.
+                            </p>
+                            <span class="path-card__time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Ca. 2 Minuten</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Potential Analysis Path -->
+                    <div class="path-card path-card--analysis" id="path-analysis">
+                        <div class="path-card__icon">🔍</div>
+                        <div class="path-card__content">
+                            <h3 class="path-card__title">Potenzialanalyse starten</h3>
+                            <p class="path-card__description">
+                                Finden Sie heraus, wo KI in Ihrem Unternehmen den größten Mehrwert bringt.
+                            </p>
+                            <span class="path-card__time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Ca. 5 Minuten</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-modal__content" id="inquiry-content">
+                <button class="form-back-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Zurück zur Auswahl
+                </button>
+
+                <div class="form-progress">
+                    <div class="progress-step active"></div>
+                    <div class="progress-step"></div>
+                    <div class="progress-step"></div>
+                </div>
+
+                <div class="form-step active" data-step="1">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Wie groß ist Ihr Unternehmen?</h3>
+                        <p class="form-step__subtitle">Dies hilft uns, die passende Lösung zu empfehlen</p>
+                    </div>
+
+                    <div class="option-grid" data-required="true">
+                        <div class="option-card">
+                            <input type="radio" name="company-size" value="1-10">
+                            <span class="option-card__icon">🏠</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">1-10 Mitarbeiter</span>
+                                <span class="option-card__desc">Kleines<br>Team, große Wirkung</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="radio" name="company-size" value="11-50">
+                            <span class="option-card__icon">🏢</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">11-50 Mitarbeiter</span>
+                                <span class="option-card__desc">Wachsendes Unternehmen</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="radio" name="company-size" value="51-200">
+                            <span class="option-card__icon">🏬</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">51-200 Mitarbeiter</span>
+                                <span class="option-card__desc">Mittelstand</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="radio" name="company-size" value="200+">
+                            <span class="option-card__icon">🏛️</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">200+ Mitarbeiter</span>
+                                <span class="option-card__desc">Enterprise</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-primary" data-next="2">
+                            Weiter
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="2">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Was möchten Sie automatisieren?</h3>
+                        <p class="form-step__subtitle">Wählen Sie alle zutreffenden Bereiche</p>
+                    </div>
+
+                    <div class="option-grid" data-required="true">
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="hr">
+                            <span class="option-card__icon">👥</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Human Resources</span>
+                                <span class="option-card__desc">Urlaubsanträge, Onboarding, Zeiterfassung</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="verwaltung">
+                            <span class="option-card__icon">💰</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Verwaltung / Buchhaltung / Finanzen</span>
+                                <span class="option-card__desc">Rechnungen, Mahnwesen, Belegerfassung</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="vertrieb">
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:20px;height:20px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Vertrieb / Sales / Marketing</span>
+                                <span class="option-card__desc">Follow-ups, Angebote, Newsletter</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="projekt">
+                            <span class="option-card__icon">🏗️</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Auftrags- & Projektabwicklung</span>
+                                <span class="option-card__desc">Auftragsbestätigungen, Bautagebuch, Wartung</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="support">
+                            <span class="option-card__icon">🎧</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Kundensupport / Service</span>
+                                <span class="option-card__desc">Ticket-Routing, FAQ, Service-Termine</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="einkauf">
+                            <span class="option-card__icon">🛒</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Einkauf / Beschaffung / Lager</span>
+                                <span class="option-card__desc">Lieferantenanfragen, Bestandswarnung</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="projektmanagement">
+                            <span class="option-card__icon">📁</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Projektmanagement</span>
+                                <span class="option-card__desc">Meeting-Protokolle, Statusberichte</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="automation-area" value="sonstiges">
+                            <span class="option-card__icon">✨</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Eigener Prozess</span>
+                                <span class="option-card__desc">Individuelle Anforderungen</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-secondary" data-prev="1">Zurück</button>
+                        <button type="button" class="btn--modal-primary" data-next="3">
+                            Weiter
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="3">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Fast geschafft!</h3>
+                        <p class="form-step__subtitle">Wie können wir Sie erreichen?</p>
+                    </div>
+
+                    <form id="inquiry-form">
+                        <input type="text" name="website" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" autocomplete="off">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="inquiry-firstName">Vorname <span class="required">*</span></label>
+                                <input type="text" id="inquiry-firstName" name="firstName" class="form-input" placeholder="Max" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="inquiry-lastName">Nachname <span class="required">*</span></label>
+                                <input type="text" id="inquiry-lastName" name="lastName" class="form-input" placeholder="Mustermann" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="inquiry-email">E-Mail-Adresse <span class="required">*</span></label>
+                            <input type="email" id="inquiry-email" name="email" class="form-input" placeholder="max@unternehmen.de" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="inquiry-phone">Telefon</label>
+                                <input type="tel" id="inquiry-phone" name="phone" class="form-input" placeholder="+49 123 456789">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="inquiry-company">Unternehmen</label>
+                                <input type="text" id="inquiry-company" name="company" class="form-input" placeholder="Muster GmbH">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="inquiry-message">Ihre Nachricht (optional)</label>
+                            <textarea id="inquiry-message" name="message" class="form-textarea" placeholder="Was sollten wir noch wissen?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="privacy-checkbox">
+                                <input type="checkbox" name="privacy" required>
+                                <span class="privacy-checkbox__text">
+                                    Ich stimme der <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu 
+                                    und willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. <span class="required">*</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn--modal-secondary" data-prev="2">Zurück</button>
+                            <button type="submit" class="btn--modal-primary">
+                                Anfrage absenden
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="contact-modal__content" id="analysis-content">
+                <button class="form-back-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Zurück zur Auswahl
+                </button>
+
+                <div class="form-progress">
+                    <div class="progress-step active"></div>
+                    <div class="progress-step"></div>
+                    <div class="progress-step"></div>
+                    <div class="progress-step"></div>
+                    <div class="progress-step"></div>
+                </div>
+
+                <div class="form-step active" data-step="1">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Erzählen Sie uns von Ihrem Unternehmen</h3>
+                        <p class="form-step__subtitle">Diese Angaben helfen uns, Ihr Potenzial zu berechnen</p>
+                    </div>
+
+                    <div class="slider-group" data-required="true">
+                        <div class="slider-label">
+                            <span class="slider-label__text">Wie viele Mitarbeiter hat Ihr Unternehmen? *</span>
+                            <span class="slider-label__value" id="employee-count-value">10 Mitarbeiter</span>
+                        </div>
+                        <input type="range" id="employee-count" class="form-slider" min="1" max="100" value="10" required>
+                    </div>
+
+                    <div class="slider-group" data-required="true">
+                        <div class="slider-label">
+                            <span class="slider-label__text">Geschätzte Stunden für Routineaufgaben pro Woche? *</span>
+                            <span class="slider-label__value" id="weekly-hours-value">20 Stunden/Woche</span>
+                        </div>
+                        <input type="range" id="weekly-hours" class="form-slider" min="5" max="60" value="20" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="industry">Ihre Branche (optional)</label>
+                        <select id="industry" name="industry" class="form-select">
+                            <option value="">Bitte wählen...</option>
+                            <option value="handwerk">🔨 Handwerk & Bau</option>
+                            <option value="gastronomie">🍴 Gastronomie & Lebensmittel</option>
+                            <option value="dienstleistungen">💼 Dienstleistungen & Beratung</option>
+                            <option value="gesundheit">🏥 Gesundheit & Pflege</option>
+                            <option value="handel">🛒 Handel & E-Commerce</option>
+                            <option value="sonstiges">✨ Sonstiges</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-primary" data-next="2">
+                            Weiter
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="2">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Welche Prozesse belasten Sie am meisten?</h3>
+                        <p class="form-step__subtitle">Wählen Sie alle zutreffenden Bereiche</p>
+                    </div>
+
+                    <div class="option-grid" data-required="true">
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="vertrieb">
+                            <span class="option-card__icon">🎯</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Vertrieb & Leads</span>
+                                <span class="option-card__desc">Anfragen, Follow-ups, Terminbuchung</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="kundenservice">
+                            <span class="option-card__icon">💬</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Kundenkommunikation</span>
+                                <span class="option-card__desc">Anfragen, Beschwerden, Feedback</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="hr">
+                            <span class="option-card__icon">👥</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">HR & Personal</span>
+                                <span class="option-card__desc">Bewerbungen, Onboarding, Anfragen</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="buchhaltung">
+                            <span class="option-card__icon">📄</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Buchhaltung</span>
+                                <span class="option-card__desc">Rechnungen, Belege, Mahnungen</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="terminbuchung">
+                            <span class="option-card__icon">📅</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Terminbuchung</span>
+                                <span class="option-card__desc">Koordination, Erinnerungen, No-Shows</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="projektmanagement">
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:20px;height:20px"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg></span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Projektmanagement</span>
+                                <span class="option-card__desc">Aufgaben, Deadlines, Statusupdates</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="onboarding">
+                            <span class="option-card__icon">🎓</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Mitarbeiter-Onboarding</span>
+                                <span class="option-card__desc">Einarbeitung, Schulungen, Dokumentation</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="process" value="finanzen">
+                            <span class="option-card__icon">💰</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Finanzprozesse</span>
+                                <span class="option-card__desc">Prüfung, Freigaben, Reporting</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-secondary" data-prev="1">Zurück</button>
+                        <button type="button" class="btn--modal-primary" data-next="3">
+                            Weiter
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="3">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Was sind Ihre größten Herausforderungen?</h3>
+                        <p class="form-step__subtitle">Diese Informationen helfen uns, passende Lösungen zu finden</p>
+                    </div>
+
+                    <div class="option-grid option-grid--single" data-required="true">
+                        <div class="option-card">
+                            <input type="checkbox" name="challenge" value="zeit">
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Zeitmangel</span>
+                                <span class="option-card__desc">Wir haben zu wenig Zeit für strategische Aufgaben</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="challenge" value="fehler">
+                            <span class="option-card__icon">⚠️</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Fehleranfälligkeit</span>
+                                <span class="option-card__desc">Manuelle Prozesse führen zu Fehlern</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="challenge" value="skalierung">
+                            <span class="option-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:20px;height:20px"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Skalierungsprobleme</span>
+                                <span class="option-card__desc">Wachstum wird durch Prozesse gebremst</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="challenge" value="kosten">
+                            <span class="option-card__icon">💸</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Hohe Personalkosten</span>
+                                <span class="option-card__desc">Routineaufgaben binden teure Ressourcen</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                        
+                        <div class="option-card">
+                            <input type="checkbox" name="challenge" value="verfuegbarkeit">
+                            <span class="option-card__icon">🌙</span>
+                            <span class="option-card__content">
+                                <span class="option-card__title">Eingeschränkte Erreichbarkeit</span>
+                                <span class="option-card__desc">Wir können nicht rund um die Uhr reagieren</span>
+                            </span>
+                            <span class="option-card__check"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-secondary" data-prev="2">Zurück</button>
+                        <button type="button" class="btn--modal-primary" data-next="4">
+                            Potenzial berechnen
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="4">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Ihre Potenzialanalyse</h3>
+                        <p class="form-step__subtitle">Basierend auf Ihren Angaben haben wir folgendes ermittelt:</p>
+                    </div>
+
+                    <div class="potential-results">
+                        <div class="potential-results__header">
+                            <div class="potential-results__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:24px;height:24px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                            <div>
+                                <span class="potential-results__title">Ihr Automatisierungspotenzial</span>
+                                <span class="potential-results__subtitle">Geschätzte Werte auf Basis Ihrer Angaben</span>
+                            </div>
+                        </div>
+
+                        <div class="potential-results__content">
+                            <div class="result-card">
+                                <span class="result-card__value" id="result-hours">14h/Woche</span>
+                                <span class="result-card__label">Zeitersparnis</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-card__value" id="result-savings">2.800€/Monat</span>
+                                <span class="result-card__label">Kosteneinsparung</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-card__value" id="result-roi">+250%</span>
+                                <span class="result-card__label">Ersparnis</span>
+                            </div>
+                        </div>
+
+                        <div class="potential-recommendations" id="potential-recommendations">
+                            <div class="recommendation-item">
+                                <span class="recommendation-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                                <span>Basierend auf Ihrer Unternehmensgröße empfehlen wir einen schrittweisen Start</span>
+                            </div>
+                            <div class="recommendation-item">
+                                <span class="recommendation-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                                <span>Die größten Einsparungen sind oft in der Kundenkommunikation zu finden</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn--modal-secondary" data-prev="3">Zurück</button>
+                        <button type="button" class="btn--modal-primary" data-next="5">
+                            Persönliche Beratung anfordern
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="5">
+                    <div class="form-step__header">
+                        <h3 class="form-step__title">Lassen Sie uns in Kontakt treten</h3>
+                        <p class="form-step__subtitle">Wir senden Ihnen Ihre detaillierte Analyse per E-Mail</p>
+                    </div>
+
+                    <form id="analysis-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="analysis-firstName">Vorname <span class="required">*</span></label>
+                                <input type="text" id="analysis-firstName" name="firstName" class="form-input" placeholder="Max" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="analysis-lastName">Nachname <span class="required">*</span></label>
+                                <input type="text" id="analysis-lastName" name="lastName" class="form-input" placeholder="Mustermann" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="analysis-email">E-Mail-Adresse <span class="required">*</span></label>
+                            <input type="email" id="analysis-email" name="email" class="form-input" placeholder="max@unternehmen.de" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="analysis-phone">Telefon</label>
+                                <input type="tel" id="analysis-phone" name="phone" class="form-input" placeholder="+49 123 456789">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="analysis-company">Unternehmen <span class="required">*</span></label>
+                                <input type="text" id="analysis-company" name="company" class="form-input" placeholder="Muster GmbH" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="privacy-checkbox">
+                                <input type="checkbox" name="privacy" required>
+                                <span class="privacy-checkbox__text">
+                                    Ich stimme der <a href="datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu 
+                                    und willige in die Verarbeitung meiner Daten zur Zusendung der Analyse und Kontaktaufnahme ein. <span class="required">*</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn--modal-secondary" data-prev="4">Zurück</button>
+                            <button type="submit" class="btn--modal-primary">
+                                Analyse & Beratungstermin anfordern
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="form-success">
+                <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2.5" style="width:32px;height:32px"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <h3 class="success-title">Vielen Dank!</h3>
+                <p class="success-message">
+                    Ihre Anfrage wurde erfolgreich übermittelt. Wir melden uns innerhalb von 24 Stunden 
+                    bei Ihnen – versprochen!
+                </p>
+                <button type="button" class="success-cta">
+                    Fenster schließen
+                </button>
+            </div>
+
+            </div><!-- End scroll-area -->
+
+            <div class="modal-trust">
+                <span class="modal-trust__item">
+                    <span class="modal-trust__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                    <span>DSGVO-konform</span>
+                </span>
+                <span class="modal-trust__item">
+                    <span class="modal-trust__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2" style="width:14px;height:14px"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    <span>Keine Spam-Mails</span>
+                </span>
+                <span class="modal-trust__item">
+                    <span class="modal-trust__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:16px;height:16px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                    <span>Antwort in 24h</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc" aria-modal="true">
+        <div class="cookie-banner__container">
+            <div class="cookie-banner__content">
+                <p class="cookie-banner__title" id="cookie-title">
+                    <span aria-hidden="true">🍪</span> Wir respektieren Ihre Privatsphäre
+                </p>
+                <p class="cookie-banner__text" id="cookie-desc">
+                    Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. 
+                    Sie können wählen, welche Cookie-Kategorien Sie zulassen möchten.
+                    <a href="datenschutz.html">Datenschutzerklärung</a>
+                </p>
+            </div>
+            <div class="cookie-banner__actions">
+                <button class="cookie-banner__btn cookie-banner__btn--accept-all" id="cookie-accept-all" aria-label="Alle Cookies akzeptieren">
+                    Alle akzeptieren
+                </button>
+                <button class="cookie-banner__btn cookie-banner__btn--essential" id="cookie-essential-only" aria-label="Nur notwendige Cookies zulassen">
+                    Nur notwendige
+                </button>
+                <button class="cookie-banner__btn cookie-banner__btn--settings" id="cookie-settings" aria-label="Cookie-Einstellungen öffnen">
+                    Einstellungen anpassen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-modal" class="cookie-modal" role="dialog" aria-labelledby="cookie-modal-title" aria-modal="true" hidden>
+        <div class="cookie-modal__backdrop" id="cookie-modal-backdrop"></div>
+        <div class="cookie-modal__dialog">
+            <div class="cookie-modal__header">
+                <h2 class="cookie-modal__title" id="cookie-modal-title">
+                    <span aria-hidden="true">⚙️</span> Cookie-Einstellungen
+                </h2>
+                <button class="cookie-modal__close" id="cookie-modal-close" aria-label="Schließen">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="cookie-modal__body">
+                <p class="cookie-modal__intro">
+                    Hier können Sie Ihre Cookie-Präferenzen verwalten. Technisch notwendige Cookies 
+                    können nicht deaktiviert werden, da sie für die Grundfunktionen der Website erforderlich sind.
+                </p>
+                
+                <!-- Notwendige Cookies (immer aktiv) -->
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px;vertical-align:middle"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                                Technisch notwendig
+                            </h3>
+                            <span class="cookie-category__badge cookie-category__badge--required">Erforderlich</span>
+                        </div>
+                        <label class="cookie-toggle cookie-toggle--disabled">
+                            <input type="checkbox" checked disabled aria-label="Technisch notwendige Cookies (immer aktiv)">
+                            <span class="cookie-toggle__slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Diese Cookies sind für die Grundfunktionen der Website unbedingt erforderlich. 
+                        Dazu gehören z.B. Sicherheitsfunktionen und die Speicherung Ihrer Cookie-Einstellungen.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cookie_consent</td>
+                                    <td>Speichert Ihre Cookie-Einstellungen</td>
+                                    <td>1 Jahr</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+                
+                <!-- Statistik Cookies -->
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px;vertical-align:middle"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                                Statistik & Analyse
+                            </h3>
+                        </div>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-analytics" name="analytics" aria-label="Statistik-Cookies erlauben">
+                            <span class="cookie-toggle__slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren. 
+                        Alle Daten werden anonymisiert erfasst und nicht an Dritte weitergegeben.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_ga</td>
+                                    <td>Google Analytics (anonymisiert)</td>
+                                    <td>2 Jahre</td>
+                                </tr>
+                                <tr>
+                                    <td>_gid</td>
+                                    <td>Unterscheidung von Nutzern</td>
+                                    <td>24 Stunden</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+                
+                <!-- Marketing Cookies -->
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true">📢</span>
+                                Marketing & Werbung
+                            </h3>
+                        </div>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-marketing" name="marketing" aria-label="Marketing-Cookies erlauben">
+                            <span class="cookie-toggle__slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Diese Cookies werden verwendet, um Ihnen relevante Werbung basierend auf Ihren 
+                        Interessen anzuzeigen. Sie werden auch genutzt, um die Anzahl der Werbeeinblendungen zu begrenzen.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_fbp</td>
+                                    <td>Facebook Pixel</td>
+                                    <td>3 Monate</td>
+                                </tr>
+                                <tr>
+                                    <td>_gcl_au</td>
+                                    <td>Google Ads Conversion-Tracking</td>
+                                    <td>3 Monate</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+                
+                <!-- Externe Medien -->
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true">🎬</span>
+                                Externe Medien
+                            </h3>
+                        </div>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-external" name="external" aria-label="Externe Medien erlauben">
+                            <span class="cookie-toggle__slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Ermöglicht die Einbindung externer Inhalte wie YouTube-Videos, Google Maps 
+                        oder Social-Media-Einbettungen. Ohne diese Cookies werden Platzhalter angezeigt.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>YSC</td>
+                                    <td>YouTube Session-Cookie</td>
+                                    <td>Session</td>
+                                </tr>
+                                <tr>
+                                    <td>VISITOR_INFO1_LIVE</td>
+                                    <td>YouTube Bandbreiten-Schätzung</td>
+                                    <td>6 Monate</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+            </div>
+            
+            <div class="cookie-modal__footer">
+                <div class="cookie-modal__info">
+                    <a href="datenschutz.html" class="cookie-modal__link">Datenschutzerklärung</a>
+                    <span class="cookie-modal__separator">|</span>
+                    <a href="impressum.html" class="cookie-modal__link">Impressum</a>
+                </div>
+                <div class="cookie-modal__buttons">
+                    <button class="cookie-modal__btn cookie-modal__btn--save" id="cookie-save-selection">
+                        Auswahl speichern
+                    </button>
+                    <button class="cookie-modal__btn cookie-modal__btn--accept-all" id="cookie-modal-accept-all">
+                        Alle akzeptieren
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/value-calculator.js" defer></script>
+    <script src="js/cookie-banner.js" defer></script>
+    <script src="js/contact-modal.js" defer></script>
+</body>
+</html>
+

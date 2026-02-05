@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="none">
+  <rect x="2" y="10" width="20" height="20" rx="4" fill="#0d7377"/>
+  <rect x="6" y="14" width="5" height="5" rx="1" fill="#00FFA3"/>
+  <rect x="13" y="14" width="5" height="5" rx="1" fill="#fff" opacity="0.5"/>
+  <rect x="6" y="21" width="5" height="5" rx="1" fill="#fff" opacity="0.5"/>
+  <rect x="13" y="21" width="5" height="5" rx="1" fill="#00FFA3"/>
+  <text x="28" y="25" fill="#44403c" font-size="14" font-weight="600" font-family="system-ui">TechCorp</text>
+</svg>
+
