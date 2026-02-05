@@ -1,0 +1,10 @@
+# Deploy-Zugangsdaten (niemals committen)
+.env.deploy
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backups / Tests (optional)
+*.backup
+*.backup-*

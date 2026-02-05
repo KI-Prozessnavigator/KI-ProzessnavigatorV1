@@ -1,0 +1,326 @@
+/**
+ * Process Automation Neural Network Styles
+ * =======================================
+ */
+
+/* Container */
+.ki-process-navigator-container {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+/* SVG */
+.neural-network-svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(0, 119, 255, 0.15));
+    transition: all var(--transition-base);
+}
+
+/* Background Grid Animation */
+.neural-background line {
+    animation: neural-grid-pulse 8s ease-in-out infinite;
+}
+
+@keyframes neural-grid-pulse {
+    0%, 100% {
+        opacity: 0.05;
+    }
+    50% {
+        opacity: 0.15;
+    }
+}
+
+/* Connections */
+.neural-connection {
+    transition: all 0.3s ease;
+}
+
+.neural-connection:hover {
+    opacity: 0.8 !important;
+    stroke-width: 2.5;
+}
+
+/* Nodes */
+.neural-node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.neural-node:hover {
+    transform: scale(1.1) !important;
+}
+
+.neural-node:hover .node-hexagon {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+.neural-node:hover .node-icon {
+    transform: scale(1.1);
+}
+
+.neural-node:hover .node-label {
+    opacity: 1 !important;
+    font-weight: 600;
+}
+
+/* Node Components */
+.node-hexagon {
+    transition: all 0.3s ease;
+}
+
+.node-icon {
+    pointer-events: none;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.node-label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.node-glow {
+    transition: opacity 0.3s ease;
+}
+
+.node-pulse {
+    animation: neural-pulse 2s ease-out infinite;
+}
+
+/* Pulse Animation */
+@keyframes neural-pulse {
+    0% {
+        r: 18;
+        opacity: 0.8;
+    }
+    100% {
+        r: 30;
+        opacity: 0;
+    }
+}
+
+/* Particles */
+.neural-particle {
+    transition: all 0.1s linear;
+}
+
+/* Node Types */
+.neural-node--input .node-hexagon {
+    stroke-dasharray: 4 4;
+    animation: neural-dash 20s linear infinite;
+}
+
+.neural-node--processing .node-hexagon {
+    stroke-dasharray: 2 2;
+    animation: neural-dash 15s linear infinite reverse;
+}
+
+.neural-node--output .node-hexagon {
+    stroke-dasharray: 6 2;
+    animation: neural-dash 10s linear infinite;
+}
+
+@keyframes neural-dash {
+    to {
+        stroke-dashoffset: 200;
+    }
+}
+
+/* Processing Nodes Extra Effects */
+.neural-node--processing .node-glow {
+    animation: neural-processing-glow 3s ease-in-out infinite;
+}
+
+@keyframes neural-processing-glow {
+    0%, 100% {
+        opacity: 0.2;
+        r: 22;
+    }
+    50% {
+        opacity: 0.4;
+        r: 26;
+    }
+}
+
+/* Scanline Effect */
+.neural-network-svg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 212, 255, 0.5),
+        transparent
+    );
+    animation: neural-scanline 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes neural-scanline {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(500px);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .ki-process-navigator-container {
+        max-width: 700px;
+        min-height: 400px;
+    }
+    
+    .neural-network-svg {
+        max-height: 400px;
+    }
+    
+    .node-label {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ki-process-navigator-container {
+        max-width: 100%;
+        min-height: 350px;
+        padding: var(--space-6) var(--space-2);
+    }
+    
+    .neural-network-svg {
+        max-height: 350px;
+    }
+    
+    .node-label {
+        font-size: 9px;
+        opacity: 0.6 !important;
+    }
+    
+    .node-icon {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ki-process-navigator-container {
+        min-height: 300px;
+        padding: var(--space-4) var(--space-2);
+    }
+    
+    .neural-network-svg {
+        max-height: 300px;
+    }
+    
+    .node-label {
+        display: none; /* Hide labels on very small screens */
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .neural-network-svg,
+    .neural-node,
+    .neural-connection,
+    .neural-particle,
+    .node-glow,
+    .node-hexagon,
+    .node-pulse {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .neural-network-svg::before {
+        display: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .node-hexagon {
+        stroke-width: 3;
+    }
+    
+    .node-label {
+        opacity: 1 !important;
+        font-weight: 700;
+    }
+    
+    .neural-connection {
+        opacity: 0.6 !important;
+        stroke-width: 2;
+    }
+}
+
+/* Dark Mode Optimization */
+@media (prefers-color-scheme: dark) {
+    .neural-network-svg {
+        filter: drop-shadow(0 0 25px rgba(0, 119, 255, 0.2));
+    }
+}
+
+/* Loading State */
+.ki-process-navigator-container.loading {
+    opacity: 0;
+    animation: neural-fade-in 1s ease-out forwards;
+}
+
+@keyframes neural-fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Focus Styles for Keyboard Navigation */
+.neural-node:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+    border-radius: 50%;
+}
+
+/* Hover Highlight for Connected Paths */
+.neural-node.highlight-source .node-hexagon,
+.neural-node.highlight-target .node-hexagon {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 12px currentColor);
+}
+
+.neural-connection.highlight {
+    opacity: 1 !important;
+    stroke-width: 3;
+    animation: neural-connection-highlight 1.5s ease-in-out infinite;
+}
+
+@keyframes neural-connection-highlight {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}

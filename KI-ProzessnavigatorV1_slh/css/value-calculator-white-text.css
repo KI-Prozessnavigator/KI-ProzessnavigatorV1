@@ -1,0 +1,31 @@
+/* FORCE WHITE TEXT für Value Calculator Result Cards */
+
+/* Überschreibe CSS-Variablen nur für Value Calculator */
+.value-calculator {
+    --color-neon-cyan: #ffffff;
+}
+
+/* Erzwinge weiße Farbe für ALLE Texte in Result Cards */
+.value-calculator .result-card,
+.value-calculator .result-card *,
+.value-calculator .result-card .value-number,
+.value-calculator .result-card .value-unit,
+.value-calculator .result-card .result-card__label,
+.value-calculator .result-card .result-card__detail {
+    color: #ffffff !important;
+}
+
+/* Spezifische Überschreibung für Spans */
+.value-calculator .result-card span {
+    color: #ffffff !important;
+}
+
+/* Entferne alle möglichen CSS-Variable-Referenzen */
+.value-calculator .result-card .value-number {
+    color: #ffffff !important;
+    /* Überschreibe auch wenn var(--color-neon-cyan) verwendet wird */
+}
+
+.value-calculator .result-card .value-unit {
+    color: #ffffff !important;
+}

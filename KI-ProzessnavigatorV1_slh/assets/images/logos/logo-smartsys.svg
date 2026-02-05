@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="none">
+  <rect x="3" y="12" width="24" height="16" rx="3" fill="#0d7377"/>
+  <circle cx="10" cy="20" r="3" fill="#00FFA3"/>
+  <rect x="16" y="17" width="8" height="2" rx="1" fill="#fff" opacity="0.6"/>
+  <rect x="16" y="21" width="6" height="2" rx="1" fill="#fff" opacity="0.4"/>
+  <text x="32" y="25" fill="#44403c" font-size="14" font-weight="600" font-family="system-ui">SmartSys</text>
+</svg>
+
