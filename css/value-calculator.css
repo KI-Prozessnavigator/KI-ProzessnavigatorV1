@@ -66,12 +66,15 @@
 /* ===== Calculator Wrapper ===== */
 .calculator__wrapper {
     display: grid;
-    grid-template-columns: 40% 58%;
-    gap: 2%;
-    margin-top: 0;
+    grid-template-columns: 400px 400px;
+    /* Alle drei Kontainer 400px breit - FEST */
+    gap: 28px;
+    margin: 0 auto;
+    /* Wrapper horizontal zentrieren */
     position: relative;
     z-index: 1;
-    margin-bottom: var(--space-6);
+    width: fit-content;
+    /* Nur so breit wie die Karten */
 }
 
 /* Die zwei Result Cards sollen übereinander stehen und die volle Breite einnehmen */
@@ -313,9 +316,8 @@
     border: 1px solid rgba(0, 212, 255, 0.2) !important;
     border-radius: 14px !important;
     padding: 24px !important;
-    /* Normales Padding für mehr Höhe */
-    width: calc(100% - 250px) !important;
-    /* 250px schmaler = noch kompakter in der Breite */
+    width: 400px !important;
+    /* FESTE Breite: 400px */
     flex: 1 !important;
     /* Beide Karten gleich hoch, teilen sich die verfügbare Höhe */
     min-height: 0 !important;

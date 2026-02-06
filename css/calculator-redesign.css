@@ -31,11 +31,20 @@
 
 #pricing .calculator__wrapper {
     gap: 28px !important;
-    margin-bottom: 0 !important;
-    grid-template-columns: 380px 1fr !important;
-    /* ORIGINAL WIEDERHERGESTELLT */
+    margin: 0 auto !important;
+    /* Wrapper horizontal zentrieren */
+    grid-template-columns: 400px 400px !important;
+    /* Alle drei Kontainer 400px breit - FEST */
+    width: fit-content !important;
+    /* Nur so breit wie die Karten */
 }
-#pricing .calculator__card { padding: 24px 28px !important; }
+#pricing .calculator__card { 
+    padding: 24px 28px !important;
+    width: 400px !important;
+    /* FESTE Breite: 400px */
+    box-sizing: border-box !important;
+    /* Padding einbeziehen in Breite */
+}
 #pricing .calculator__inputs { gap: 20px !important; }
 #pricing .form__group { margin-bottom: 14px !important; }
 
@@ -202,8 +211,8 @@
 }
 #pricing .result-card--time,
 #pricing .result-card--money { 
-    width: calc(100% - 250px) !important;
-    /* 250px schmaler = noch kompakter in der Breite */
+    width: 400px !important;
+    /* FESTE Breite: 400px - wie linker Kontainer */
     flex: 1 !important;
     /* Beide Karten gleich hoch, teilen sich die verfügbare Höhe */
     min-height: 0 !important;
@@ -213,8 +222,10 @@
 #pricing .result-card__detail-box--money { white-space: nowrap !important; }
 
 #pricing .calculator__cta-block {
-    margin-top: 36px !important;
-    padding-top: 32px !important;
+    margin-top: 32px !important;
+    /* Etwas mehr Abstand zu den Kontainern */
+    padding-top: 0 !important;
+    /* Kein zusätzliches Padding */
     text-align: center !important;
 }
 #pricing .calculator__cta-block .btn--calculator {
@@ -222,14 +233,28 @@
     align-items: center !important;
     justify-content: center !important;
     gap: 12px !important;
-    min-width: 360px !important;
-    padding: 18px 36px !important;
-    font-size: 1.05rem !important;
+    max-width: 380px !important;
+    /* Maximal 380px - kleiner als die 400px Kontainer */
+    width: 100% !important;
+    padding: 16px 32px !important;
+    /* Etwas kompakter */
+    font-size: 1rem !important;
+    /* Etwas kleinere Schrift */
 }
 #pricing .calculator-cta-note {
-    margin-top: 14px !important;
-    font-size: 0.9rem !important;
+    margin-top: 12px !important;
+    font-size: 0.85rem !important;
     justify-content: center !important;
+    max-width: 600px !important;
+    /* Breiter für einzeilige Darstellung */
+    margin-inline: auto !important;
+    white-space: nowrap !important;
+    /* Text in einer Zeile */
+}
+
+#pricing .calculator-cta-note svg {
+    display: none !important;
+    /* Symbol entfernen */
 }
 
 @media (max-width: 900px) {

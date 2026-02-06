@@ -71,9 +71,9 @@
     border: 1px solid rgba(0, 212, 255, 0.2) !important;
     border-radius: 14px !important;
     padding: 24px !important;
-    /* Normales Padding für mehr Höhe */
-    width: calc(100% - 250px) !important;
-    /* 250px schmaler = noch kompakter in der Breite */
+    /* Normales Padding - KEINE HÖHENANPASSUNG */
+    width: 400px !important;
+    /* FESTE Breite: 400px */
     flex: 1 !important;
     /* Beide Karten gleich hoch, teilen sich die verfügbare Höhe */
     min-height: 0 !important;
