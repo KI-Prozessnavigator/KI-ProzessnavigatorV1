@@ -538,11 +538,11 @@ h1 em, h2 em {
     min-height: 0;
 }
 
-/* Logo bleibt innerhalb des Headers: max 95 % der Nav-Höhe */
+/* Logo bleibt innerhalb des Headers: max 82 % der Nav-Höhe */
 .nav__logo img {
     display: block;
     height: auto;
-    max-height: 95%;
+    max-height: 82%;
     width: auto;
     object-fit: contain;
     image-rendering: -webkit-optimize-contrast;
@@ -1818,24 +1818,24 @@ section {
 }
 .problems__grid--popup .problem-card__footnote {
     margin-bottom: 0;
-    min-height: 2.5rem;
+}
+/* Grid: eine Zeile, gleiche Höhe für alle drei Karten (damit Unterkanten-Ausrichtung greift) */
+.problems__grid--popup {
+    align-items: stretch;
 }
 .problems__grid--popup .problem-card {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    min-height: 0;
 }
-/* Feste Mindesthöhen: Trennstrich und "Mehr lesen" auf gleicher horizontaler Höhe wie in der ersten Karte */
-.problems__grid--popup .problem-card__title {
-    min-height: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/* Trennstrich und "Mehr lesen" an Unterkante des Containers */
 .problems__grid--popup .problem-card__separator {
-    margin-top: 1rem;
+    margin-top: auto !important;
     padding-top: 0.5rem;
     border-top: 2px solid var(--color-neon-cyan, #00d4ff);
     background: none !important;
+    flex-shrink: 0;
 }
 .problem-card__separator {
     margin-top: 3rem;
@@ -1843,16 +1843,30 @@ section {
     border-top: 2px solid var(--color-neon-cyan, #00d4ff);
     background: none !important;
 }
+/* "Mehr lesen" mittig zwischen Trennstrich und Unterkante, Abstände gleich und reduziert */
 .problem-card__more-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-top: calc(var(--space-6) / 2);
-    padding-bottom: calc(var(--space-6) / 2);
-    margin-bottom: calc(-1 * var(--space-6));
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
+.problems__grid--popup .problem-card__more-area {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+/* Ab 900px: drei Spalten, eine Zeile → gleiche Kartenhöhe → Trennstrich/Mehr lesen an Unterkante */
+@media (min-width: 900px) {
+    .problems__grid--popup {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .problem-card__more {
     margin: 0;
     padding: 0;
@@ -3951,6 +3965,31 @@ section.testimonials.expert-quotes,
 
 .expert-link:hover {
     color: var(--color-neon);
+}
+
+/* Expert Quote Cards - Icon und CTA bündig mit Text */
+.expert-quote-card__header {
+    margin-left: var(--space-4) !important;
+    /* Header nach rechts - bündig mit Text */
+    margin-bottom: var(--space-2) !important;
+    /* Weniger Abstand nach unten */
+}
+
+.expert-quote-card .expert-link {
+    margin-left: var(--space-4) !important;
+    /* CTA nach rechts - bündig mit Text */
+    padding-top: var(--space-2) !important;
+    /* Weniger Abstand nach oben */
+}
+
+.expert-quote-card {
+    padding: var(--space-4) var(--space-6) !important;
+    /* Vertikales Padding reduziert, horizontales bleibt */
+}
+
+.expert-quote-card .testimonial-card__quote {
+    padding-block: var(--space-3) !important;
+    /* Vertikales Padding vom Text reduziert */
 }
 
 /* ===== Coming Soon Box ===== */
@@ -7487,7 +7526,7 @@ section.testimonials.expert-quotes,
     }
 
     .nav__logo img {
-        max-height: 50px;
+        max-height: 42px;
     }
 }
 
@@ -7499,7 +7538,7 @@ section.testimonials.expert-quotes,
     }
 
     .nav__logo img {
-        max-height: 40px;
+        max-height: 34px;
     }
 }
 
@@ -9296,6 +9335,30 @@ section.testimonials.expert-quotes,
 
 [data-theme="dark"] .testimonial-card__quote {
     padding: 32px !important;
+}
+
+[data-theme="dark"] .expert-quote-card__header {
+    margin-left: 32px !important;
+    /* Im Dark-Mode: Text hat padding:32px, also Header auch um 32px verschieben */
+    margin-bottom: var(--space-2) !important;
+    /* Weniger Abstand nach unten */
+}
+
+[data-theme="dark"] .expert-quote-card .expert-link {
+    margin-left: 32px !important;
+    /* Im Dark-Mode: CTA auch um 32px verschieben */
+    padding-top: var(--space-2) !important;
+    /* Weniger Abstand nach oben */
+}
+
+[data-theme="dark"] .expert-quote-card {
+    padding: var(--space-4) var(--space-6) !important;
+    /* Vertikales Padding reduziert im Dark-Mode */
+}
+
+[data-theme="dark"] .expert-quote-card .testimonial-card__quote {
+    padding: var(--space-3) 32px !important;
+    /* Vertikales Padding reduziert, horizontales bleibt bei 32px */
 }
 
 /* Grid Gaps erhöhen */

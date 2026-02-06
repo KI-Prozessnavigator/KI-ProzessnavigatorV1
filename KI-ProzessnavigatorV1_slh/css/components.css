@@ -2131,6 +2131,31 @@ section.testimonials.expert-quotes,
     color: var(--color-neon);
 }
 
+/* Expert Quote Cards - Icon und CTA bündig mit Text */
+.expert-quote-card__header {
+    margin-left: var(--space-4) !important;
+    /* Header nach rechts - bündig mit Text */
+    margin-bottom: var(--space-2) !important;
+    /* Weniger Abstand nach unten */
+}
+
+.expert-quote-card .expert-link {
+    margin-left: var(--space-4) !important;
+    /* CTA nach rechts - bündig mit Text */
+    padding-top: var(--space-2) !important;
+    /* Weniger Abstand nach oben */
+}
+
+.expert-quote-card {
+    padding: var(--space-4) var(--space-6) !important;
+    /* Vertikales Padding reduziert, horizontales bleibt */
+}
+
+.expert-quote-card .testimonial-card__quote {
+    padding-block: var(--space-3) !important;
+    /* Vertikales Padding vom Text reduziert */
+}
+
 /* ===== Coming Soon Box ===== */
 .coming-soon-box {
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);

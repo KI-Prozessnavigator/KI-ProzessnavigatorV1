@@ -533,11 +533,11 @@ h1 em, h2 em {
     min-height: 0;
 }
 
-/* Logo bleibt innerhalb des Headers: max 95 % der Nav-Höhe */
+/* Logo bleibt innerhalb des Headers: max 82 % der Nav-Höhe */
 .nav__logo img {
     display: block;
     height: auto;
-    max-height: 95%;
+    max-height: 82%;
     width: auto;
     object-fit: contain;
     image-rendering: -webkit-optimize-contrast;
@@ -3940,6 +3940,31 @@ section {
 
 .expert-link:hover {
     color: var(--color-neon);
+}
+
+/* Expert Quote Cards - Icon und CTA bündig mit Text */
+.expert-quote-card__header {
+    margin-left: var(--space-4) !important;
+    /* Header nach rechts - bündig mit Text */
+    margin-bottom: var(--space-2) !important;
+    /* Weniger Abstand nach unten */
+}
+
+.expert-quote-card .expert-link {
+    margin-left: var(--space-4) !important;
+    /* CTA nach rechts - bündig mit Text */
+    padding-top: var(--space-2) !important;
+    /* Weniger Abstand nach oben */
+}
+
+.expert-quote-card {
+    padding: var(--space-4) var(--space-6) !important;
+    /* Vertikales Padding reduziert, horizontales bleibt */
+}
+
+.expert-quote-card .testimonial-card__quote {
+    padding-block: var(--space-3) !important;
+    /* Vertikales Padding vom Text reduziert */
 }
 
 /* ===== Coming Soon Box ===== */
@@ -7476,7 +7501,7 @@ section {
     }
 
     .nav__logo img {
-        max-height: 50px;
+        max-height: 42px;
     }
 }
 
@@ -7488,7 +7513,7 @@ section {
     }
 
     .nav__logo img {
-        max-height: 40px;
+        max-height: 34px;
     }
 }
 
@@ -9285,6 +9310,30 @@ section {
 
 [data-theme="dark"] .testimonial-card__quote {
     padding: 32px !important;
+}
+
+[data-theme="dark"] .expert-quote-card__header {
+    margin-left: 32px !important;
+    /* Im Dark-Mode: Text hat padding:32px, also Header auch um 32px verschieben */
+    margin-bottom: var(--space-2) !important;
+    /* Weniger Abstand nach unten */
+}
+
+[data-theme="dark"] .expert-quote-card .expert-link {
+    margin-left: 32px !important;
+    /* Im Dark-Mode: CTA auch um 32px verschieben */
+    padding-top: var(--space-2) !important;
+    /* Weniger Abstand nach oben */
+}
+
+[data-theme="dark"] .expert-quote-card {
+    padding: var(--space-4) var(--space-6) !important;
+    /* Vertikales Padding reduziert im Dark-Mode */
+}
+
+[data-theme="dark"] .expert-quote-card .testimonial-card__quote {
+    padding: var(--space-3) 32px !important;
+    /* Vertikales Padding reduziert, horizontales bleibt bei 32px */
 }
 
 /* Grid Gaps erhöhen */
