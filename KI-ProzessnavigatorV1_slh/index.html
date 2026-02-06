@@ -2690,6 +2690,60 @@
             });
         })();
     </script>
+
+    <!-- Gleiche Kartenhöhe: Trennlinie + "Mehr lesen" exakt auf einer Linie (feste height, Messung nach Layout) -->
+    <script>
+        (function () {
+            var grid = document.querySelector('.problems__grid.problems__grid--popup');
+            if (!grid) return;
+            var cards = [].slice.call(grid.querySelectorAll('.problem-card'));
+            if (cards.length !== 3) return;
+
+            function applyCardLayout(card) {
+                card.style.display = 'flex';
+                card.style.flexDirection = 'column';
+                var sep = card.querySelector('.problem-card__separator');
+                if (sep) sep.style.marginTop = 'auto';
+            }
+            function clearCardLayout(card) {
+                card.style.display = '';
+                card.style.flexDirection = '';
+                card.style.height = '';
+                card.style.minHeight = '';
+                var sep = card.querySelector('.problem-card__separator');
+                if (sep) sep.style.marginTop = '';
+            }
+
+            function equalizeHeights() {
+                var isWide = window.matchMedia('(min-width: 900px)').matches;
+                if (!isWide) {
+                    cards.forEach(clearCardLayout);
+                    return;
+                }
+                cards.forEach(applyCardLayout);
+                cards.forEach(function (c) { c.style.height = ''; c.style.minHeight = ''; });
+                var maxH = 0;
+                cards.forEach(function (c) { var h = c.offsetHeight; if (h > maxH) maxH = h; });
+                if (maxH > 0) cards.forEach(function (c) { c.style.height = maxH + 'px'; c.style.minHeight = maxH + 'px'; });
+            }
+
+            function run() {
+                equalizeHeights();
+                setTimeout(equalizeHeights, 150);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', run);
+            } else {
+                run();
+            }
+            window.addEventListener('load', function () { setTimeout(equalizeHeights, 50); });
+            var resizeTimer;
+            window.addEventListener('resize', function () {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(equalizeHeights, 100);
+            });
+        })();
+    </script>
 </body>
 </html>
 
