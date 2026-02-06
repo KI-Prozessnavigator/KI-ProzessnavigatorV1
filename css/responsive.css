@@ -669,78 +669,8 @@
         font-size: 0.7rem;
     }
 
-    /* ===== Use Cases - Compact ===== */
-    .usecases__grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-4);
-    }
-
-    .usecase-card {
-        padding: var(--space-4);
-    }
-
-    .usecase-card__header {
-        margin-bottom: var(--space-2);
-    }
-
-    .usecase-card__icon {
-        font-size: 1.2rem;
-    }
-
-    .usecase-card__category {
-        font-size: 0.6rem;
-        padding: 2px var(--space-2);
-    }
-
-    .usecase-card__title {
-        font-size: var(--text-sm);
-        margin-bottom: var(--space-2);
-    }
-
-    .usecase-card__result {
-        margin-bottom: var(--space-3);
-    }
-
-    .result-number {
-        font-size: var(--text-lg);
-    }
-
-    .result-text {
-        font-size: 0.7rem;
-    }
-
-    .usecase-card__description {
-        font-size: 0.75rem;
-        line-height: 1.4;
-        margin-bottom: var(--space-3);
-    }
-
-    /* Simplified flow on mobile */
-    .usecase-card__flow {
-        flex-direction: row;
-        justify-content: center;
-        gap: var(--space-2);
-        padding: var(--space-2);
-    }
-
-    .flow-step {
-        flex-direction: column;
-        gap: 2px;
-    }
-
-    .flow-step__icon {
-        width: 28px;
-        height: 28px;
-        font-size: 0.8rem;
-    }
-
-    .flow-step__label {
-        font-size: 0.55rem;
-    }
-
-    .flow-arrow {
-        font-size: 0.8rem;
-    }
+    /* ===== Use Cases - AUSGELAGERT nach test-usecases-responsive.css ===== */
+    /* Karussell-Layout wird dort gesteuert */
 
     /* ===== DSGVO Section - Compact ===== */
     .dsgvo {

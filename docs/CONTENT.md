@@ -46,7 +46,7 @@
 | # | Lösung | Nutzenversprechen | Beweispunkt |
 |---|--------|-------------------|-------------|
 | 1 | **70% weniger Routinearbeit** | "Ihre Teams fokussieren sich endlich auf das, was Menschen besser können als Maschinen." | Durchschnittswert unserer Kunden |
-| 2 | **100% DSGVO-sicher** | "Geprüft von Datenschutz-Anwälten. Zertifiziert nach ISO 27001. Gehostet in Frankfurt." | Audit-Berichte verfügbar |
+| 2 | **100% DSGVO-sicher** | "Zertifiziert nach ISO 27001. Gehostet in Frankfurt." | Audit-Berichte verfügbar |
 | 3 | **In 2 Wochen produktiv** | "Keine 6-monatigen Projekte. Kein IT-Team nötig. Onboarding in einer Stunde." | Durchschnittliche Go-Live-Zeit |
 
 ---
@@ -131,7 +131,7 @@
 | **"Wie lange dauert die Implementierung?"** | "Klingt nach Mammutprojekt" | "Durchschnittlich 2 Wochen bis zum Go-Live. Keine IT-Ressourcen nötig. Wir machen 90% der Arbeit." |
 | **"Was passiert mit meinen Daten?"** | "Datenschutz-Bedenken" | "Ihre Daten werden ausschließlich für IHRE Prozesse verwendet. Kein Training von KI-Modellen. Hosting in Frankfurt. Löschung auf Knopfdruck." |
 | **"Kann ich das mit meinem CRM/ERP verbinden?"** | "Technische Hürden" | "Ja. Wir haben fertige Integrationen für Salesforce, HubSpot, SAP, Microsoft Dynamics, Personio und 50+ weitere. Individuelle APIs auf Anfrage." |
-| **"Was kostet eine Potenzialanalyse?"** | "Versteckte Kosten" | "Nichts. 30 Minuten, unverbindlich. Sie bekommen einen konkreten ROI-Rechner für Ihr Unternehmen – ohne Verkaufsdruck." |
+| **"Was kostet eine Potenzialanalyse?"** | "Versteckte Kosten" | "Nichts. In 30 Minuten analysieren wir unverbindlich Ihr Einsparpotenzial in einem persönlichen Audit – garantiert ohne Verkaufsdruck. Kein Kleingedrucktes, keine Verpflichtung." |
 
 ---
 

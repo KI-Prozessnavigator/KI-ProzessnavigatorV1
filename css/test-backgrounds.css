@@ -299,21 +299,23 @@
 [data-theme="dark"] .result-card--time,
 [data-theme="dark"] .result-card--money,
 [data-theme="dark"] .result-card--capacity {
-    background: #141b2d !important;
-    border: 1px solid rgba(0, 119, 255, 0.3) !important;
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        0 0 25px rgba(0, 119, 255, 0.08) !important;
+    /* Hintergrundfarbe #131c2e */
+    background: #131c2e !important;
+    background-color: #131c2e !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(0, 212, 255, 0.2) !important;
+    box-shadow: none !important;
+    background-image: none !important;
 }
 
 [data-theme="dark"] .result-card:hover,
 [data-theme="dark"] .result-card--time:hover,
 [data-theme="dark"] .result-card--money:hover {
-    border-color: rgba(0, 119, 255, 0.5) !important;
-    box-shadow: 
-        0 12px 48px rgba(0, 0, 0, 0.4),
-        0 0 40px rgba(0, 119, 255, 0.15) !important;
-    transform: translateY(-4px) !important;
+    background: rgba(20, 32, 56, 0.6) !important;
+    border-color: rgba(0, 212, 255, 0.4) !important;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.2) !important;
+    transform: translateY(-2px) !important;
 }
 
 /* Calculator Results Container */

@@ -1501,7 +1501,7 @@
 }
 
 .faq-item.active .faq-item__answer {
-    max-height: 200px;
+    max-height: 120px;
 }
 
 .faq-item__answer p {
@@ -1509,6 +1509,12 @@
     font-size: var(--text-sm);
     color: var(--color-text-muted);
     line-height: var(--leading-relaxed);
+    margin: 0;
+}
+
+.faq-item__answer p + p {
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-3);
 }
 
 /* Lead Magnet */
@@ -2039,6 +2045,17 @@
 }
 
 /* ===== Expert Quote Cards ===== */
+/* Vertikalen Scrollbalken in dieser Sektion entfernen */
+#testimonials.testimonials.expert-quotes,
+section.testimonials.expert-quotes,
+#testimonials .container,
+#testimonials .testimonials__grid,
+#testimonials .expert-quotes__grid {
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+    max-height: none !important;
+}
+
 .expert-quotes__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

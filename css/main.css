@@ -1970,13 +1970,16 @@ section {
 /* ===== Before/After Showcase ===== */
 .before-after-showcase {
     margin-block: var(--space-12);
+    padding-inline: clamp(4rem, 6vw, 5rem);
+    /* Gleiche Breite wie .problems__grid und .solutions__grid */
 }
 
 .before-after-card {
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.05) 0%, rgba(0, 212, 255, 0.03) 50%, rgba(0, 85, 204, 0.02) 100%);
     border: 2px solid rgba(0, 212, 255, 0.3);
     border-radius: var(--radius-2xl);
-    padding: var(--space-8);
+    padding: var(--space-6);
+    /* Reduziert von var(--space-8) auf var(--space-6) für kompaktere Darstellung */
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
@@ -2038,12 +2041,15 @@ section {
 
 .before-after-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    /* Reduziert von 250px auf 220px für kompaktere Darstellung */
+    gap: var(--space-5);
+    /* Reduziert von var(--space-6) auf var(--space-5) */
 }
 
 .before-after-item {
-    padding: var(--space-5);
+    padding: var(--space-4);
+    /* Reduziert von var(--space-5) auf var(--space-4) für kompaktere Darstellung */
     background: var(--color-surface);
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
@@ -2145,6 +2151,8 @@ section {
     align-items: center;
     gap: var(--space-6);
     margin-block: var(--space-8);
+    padding-inline: clamp(4rem, 6vw, 5rem);
+    /* Gleiche Breite wie .problems__grid und .solutions__grid */
     transition: all var(--transition-base);
 }
 
@@ -2286,28 +2294,32 @@ section {
 }
 
 /* Tablet: genau 2 Karten sichtbar, mittig, starr, nicht abgeschnitten */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 769px) {
     .usecases__slider-wrapper {
-        width: calc(2 * var(--usecase-card-w) + var(--usecase-gap));
-        max-width: 100%;
-        margin-inline: auto;
-        overflow-x: clip;
-        clip-path: none;
+        width: calc(2 * 340px + var(--usecase-gap)) !important;
+        max-width: calc(100vw - 32px) !important;
+        margin-inline: auto !important;
+        overflow: hidden !important;
+        clip-path: none !important;
+    }
+
+    /* KRITISCH: Flex-Layout für Karussell erzwingen! */
+    .usecases__grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: var(--usecase-gap) !important;
     }
 
     .usecases__grid .usecase-card {
-        flex: 0 0 var(--usecase-card-w) !important;
-        width: var(--usecase-card-w) !important;
-        min-width: var(--usecase-card-w) !important;
-        max-width: var(--usecase-card-w) !important;
-        height: var(--usecase-card-h) !important;
-        min-height: var(--usecase-card-h) !important;
-        max-height: var(--usecase-card-h) !important;
+        flex: 0 0 340px !important;
+        width: 340px !important;
+        min-width: 340px !important;
+        max-width: 340px !important;
+        height: auto !important;
+        min-height: 420px !important;
+        max-height: none !important;
         box-sizing: border-box;
-    }
-
-    .usecases__grid {
-        gap: var(--usecase-gap) !important;
     }
 
     .usecase-card__flow {
@@ -2340,32 +2352,37 @@ section {
 /* Handy: genau 1 Karte sichtbar, mittig, starr (unter 384px schmaler = nicht abgeschnitten) */
 @media (max-width: 768px) {
     .usecases__slider-wrapper {
-        width: min(var(--usecase-card-w), calc(100vw - 2 * var(--space-3)));
-        max-width: 100%;
-        margin-inline: auto;
-        overflow-x: clip;
-        clip-path: none;
+        width: min(320px, calc(100vw - 32px)) !important;
+        max-width: calc(100vw - 32px) !important;
+        margin-inline: auto !important;
+        overflow: hidden !important;
+        clip-path: none !important;
     }
 
+    /* KRITISCH: Flex-Layout für Karussell erzwingen! */
     .usecases__grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
         align-items: flex-start !important;
         gap: var(--usecase-gap) !important;
     }
 
     .usecases__grid .usecase-card {
-        flex: 0 0 min(var(--usecase-card-w), calc(100vw - 2 * var(--space-3))) !important;
-        width: min(var(--usecase-card-w), calc(100vw - 2 * var(--space-3))) !important;
-        min-width: 0 !important;
-        max-width: min(var(--usecase-card-w), calc(100vw - 2 * var(--space-3))) !important;
+        flex: 0 0 min(320px, calc(100vw - 48px)) !important;
+        width: min(320px, calc(100vw - 48px)) !important;
+        min-width: min(320px, calc(100vw - 48px)) !important;
+        max-width: min(320px, calc(100vw - 48px)) !important;
         height: auto !important;
-        min-height: var(--usecase-card-h) !important;
+        min-height: auto !important;
         max-height: none !important;
         overflow: visible !important;
         box-sizing: border-box;
     }
 
     .usecases__nav {
-        justify-content: center;
+        display: flex !important;
+        justify-content: center !important;
     }
 
     .usecase-card__flow {
@@ -3003,11 +3020,12 @@ section {
 .testimonials {
     background: linear-gradient(180deg, var(--color-background) 0%, var(--color-neutral-50) 100%);
     transition: background var(--transition-slow);
+    overflow-x: hidden;
 }
 
 .testimonials__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: var(--space-8);
     margin-bottom: var(--space-12);
 }
@@ -3274,7 +3292,7 @@ section {
 }
 
 .faq-item.active .faq-item__answer {
-    max-height: 200px;
+    max-height: 120px;
 }
 
 .faq-item__answer p {
@@ -3282,6 +3300,12 @@ section {
     font-size: var(--text-sm);
     color: var(--color-text-muted);
     line-height: var(--leading-relaxed);
+    margin: 0;
+}
+
+.faq-item__answer p + p {
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-3);
 }
 
 /* Lead Magnet */
@@ -3373,7 +3397,8 @@ section {
     text-align: center;
     padding-block: var(--space-24);
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    /* overflow-x verhindert horizontale Scrollbar, aber die Rakete kann vertikal sichtbar bleiben */
     /* Sanfter Übergang von der FAQ-Sektion */
     margin-top: -1px;
     padding-top: calc(var(--space-24) + 1px);
@@ -3404,12 +3429,15 @@ section {
     font-size: 4rem;
     display: block;
     margin-bottom: var(--space-6);
+    margin-top: calc(var(--space-6) + 20px);
+    /* Zusätzlicher Platz oben, damit die Rakete beim Hochschweben nicht abgeschnitten wird */
     animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-20px); }
+    /* Rakete schwebt 20px nach oben */
 }
 
 .final-cta__title {
@@ -3841,7 +3869,7 @@ section {
 /* ===== Expert Quote Cards ===== */
 .expert-quotes__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
     gap: var(--space-6);
     margin-bottom: var(--space-8);
 }
@@ -3923,7 +3951,7 @@ section {
     text-align: center;
     margin-top: var(--space-8);
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .coming-soon-box::before {
@@ -10122,7 +10150,7 @@ section {
 html,
 body,
 main {
-    overflow-x: visible !important;
+    overflow-x: hidden !important;
 }
 
 section.problems,

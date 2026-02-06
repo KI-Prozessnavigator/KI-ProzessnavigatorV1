@@ -63,12 +63,24 @@
 .result-card--time,
 .result-card--money,
 .result-card--capacity {
-    background: linear-gradient(135deg, #0077FF 0%, #0088FF 50%, #0077FF 100%);
-    border: 2px solid rgba(0, 119, 255, 0.8);
-    border-radius: 12px;
-    padding: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3);
+    /* Hintergrundfarbe #131c2e */
+    background: #131c2e !important;
+    background-color: #131c2e !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(0, 212, 255, 0.2) !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    /* Normales Padding für mehr Höhe */
+    width: calc(100% - 250px) !important;
+    /* 250px schmaler = noch kompakter in der Breite */
+    flex: 1 !important;
+    /* Beide Karten gleich hoch, teilen sich die verfügbare Höhe */
+    min-height: 0 !important;
+    /* Erlaubt flex-shrink */
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+    background-image: none !important;
 }
 .result-card__row { display: flex; gap: 20px; align-items: center; }
 .result-card__row--tight { display: flex; gap: 12px; margin-bottom: 16px; }

@@ -74,6 +74,17 @@
     margin-bottom: var(--space-6);
 }
 
+/* Die zwei Result Cards sollen übereinander stehen und die volle Breite einnehmen */
+.calculator__wrapper > .u-flex-col {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Gap zwischen den Karten - UNVERÄNDERT */
+    align-items: flex-start;
+    /* Linksbündig ausrichten für schmälere Karten */
+}
+
 /* ===== Left Side: Inputs ===== */
 .calculator__inputs {
     display: flex;
@@ -294,14 +305,30 @@
 }
 
 .result-card {
-    background: #0077FF !important;
-    border: 2px solid rgba(0, 119, 255, 0.8);
-    border-radius: var(--radius-lg);
-    padding: var(--space-4);
-    transition: none;
+    /* Hintergrundfarbe #131c2e */
+    background: #131c2e !important;
+    background-color: #131c2e !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(0, 212, 255, 0.2) !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    /* Normales Padding für mehr Höhe */
+    width: calc(100% - 250px) !important;
+    /* 250px schmaler = noch kompakter in der Breite */
+    flex: 1 !important;
+    /* Beide Karten gleich hoch, teilen sich die verfügbare Höhe */
+    min-height: 0 !important;
+    /* Erlaubt flex-shrink */
+    transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 119, 255, 0.4);
+    box-shadow: none;
+    background-image: none !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Inhalt gleichmäßig verteilen */
 }
 
 .result-card::before {
@@ -313,10 +340,10 @@
 }
 
 .result-card:hover {
-    background: #0077FF !important;
-    border: 2px solid rgba(0, 119, 255, 0.8);
-    box-shadow: 0 4px 20px rgba(0, 119, 255, 0.4);
-    transform: none;
+    background: rgba(20, 32, 56, 0.6) !important;
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 .result-card__icon {
@@ -434,7 +461,8 @@
         margin-bottom: 0;
     }
     
-    .calculator__results {
+    .calculator__wrapper > .u-flex-col {
+        grid-column: 1;
         order: 2;
     }
     

@@ -6,8 +6,12 @@
     display: block !important;
     align-items: unset !important;
 }
-#pricing .container { max-width: 1180px !important; }
-#pricing .section__header { margin-bottom: 32px !important; }
+#pricing .container { 
+    max-width: 1180px !important;
+}
+#pricing .section__header { 
+    margin-bottom: 32px !important;
+}
 /* Value-Based Selling: 1:1 identisch mit "Kein Tech-Blabla" und "Der Autopilot für Ihr Business".
    Feste Farbe #00d4ff, da .value-calculator in main.css --color-neon-cyan auf #fff setzt (nur für Result-Cards). */
 [data-theme="dark"] #pricing .section__tag,
@@ -29,6 +33,7 @@
     gap: 28px !important;
     margin-bottom: 0 !important;
     grid-template-columns: 380px 1fr !important;
+    /* ORIGINAL WIEDERHERGESTELLT */
 }
 #pricing .calculator__card { padding: 24px 28px !important; }
 #pricing .calculator__inputs { gap: 20px !important; }
@@ -82,26 +87,28 @@
 [data-theme="dark"] #pricing .result-card--money,
 #pricing .result-card--time,
 #pricing .result-card--money {
-    background-color: rgb(15, 23, 42) !important;
-    background-image: 
-        linear-gradient(to right, rgba(0, 119, 255, 0.12) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 212, 255, 0.12) 1px, transparent 1px),
-        linear-gradient(45deg, rgba(0, 153, 255, 0.06) 1px, transparent 1px),
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 119, 255, 0.15), transparent),
-        radial-gradient(ellipse 60% 40% at 90% 80%, rgba(0, 212, 255, 0.12), transparent),
-        radial-gradient(ellipse 40% 30% at 10% 60%, rgba(0, 153, 255, 0.1), transparent) !important;
-    background-size: 60px 60px, 60px 60px, 120px 120px, 100% 100%, 100% 100%, 100% 100% !important;
-    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0 !important;
+    /* Hintergrundfarbe #131c2e */
+    background: #131c2e !important;
+    background-color: #131c2e !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    background-image: none !important;
+    background-size: auto !important;
+    background-position: auto !important;
     border: 1px solid rgba(0, 212, 255, 0.2) !important;
     border-radius: 14px !important;
     padding: 24px !important;
+    /* Normales Padding für mehr Höhe */
     box-shadow: none !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 20px !important;
+    gap: 16px !important;
+    /* Gap innerhalb der Karte */
     position: relative !important;
     overflow: hidden !important;
     transition: all var(--transition-base) !important;
+    justify-content: space-between !important;
+    /* Inhalt gleichmäßig verteilen */
 }
 [data-theme="dark"] #pricing .result-card--time:hover,
 [data-theme="dark"] #pricing .result-card--money:hover,
@@ -155,9 +162,11 @@
 #pricing .result-card__detail-box,
 #pricing .result-card__detail-box--money {
     padding: 14px 18px !important;
+    /* Normales Padding zurück */
     background: rgba(0, 212, 255, 0.1) !important;
     border-radius: 10px !important;
     font-size: 0.9rem !important;
+    /* Normale Schrift zurück */
     color: rgba(255, 255, 255, 0.95) !important;
     margin-top: auto !important;
     border: 1px solid rgba(0, 212, 255, 0.25) !important;
@@ -174,8 +183,9 @@
 #pricing .result-card__detail-box--time {
     display: flex !important;
     align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 5px !important;
+    justify-content: space-between !important;
+    /* Genau wie bei Money-Box: Label links, Wert rechts */
+    gap: 12px !important;
 }
 #pricing .result-card__detail-label,
 #pricing .result-card__detail-value { color: rgba(255,255,255,0.95) !important; }
@@ -183,12 +193,22 @@
 #pricing .result-card__detail-value { font-size: 1.15rem !important; font-weight: 700 !important; font-variant-numeric: tabular-nums !important; }
 
 #pricing .u-flex-col {
-    display: grid !important;
-    grid-template-columns: minmax(340px, 1fr) minmax(340px, 1fr) !important;
-    gap: 18px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    /* Gap zwischen den Karten */
+    height: 100% !important;
+    /* Volle Höhe des Grid-Bereichs */
 }
 #pricing .result-card--time,
-#pricing .result-card--money { min-width: 340px !important; flex-shrink: 0 !important; }
+#pricing .result-card--money { 
+    width: calc(100% - 250px) !important;
+    /* 250px schmaler = noch kompakter in der Breite */
+    flex: 1 !important;
+    /* Beide Karten gleich hoch, teilen sich die verfügbare Höhe */
+    min-height: 0 !important;
+    /* Erlaubt flex-shrink */
+}
 #pricing .result-card__detail-box,
 #pricing .result-card__detail-box--money { white-space: nowrap !important; }
 

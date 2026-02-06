@@ -75,7 +75,7 @@
                 "name": "Wie lange dauert es, bis wir produktiv sind?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Durchschnittlich 2 Wochen bis zum Go-Live. Keine IT-Ressourcen nötig – wir machen 90% der Arbeit. Onboarding-Call dauert eine Stunde."
+                    "text": "Durchschnittlich 2 Wochen bis zum Go-Live. Keine IT-Ressourcen nötig – wir machen 90% der Arbeit. Onboarding-Call dauert eine Stunde, danach begleiten wir Sie bis zum ersten Erfolg."
                 }
             },
             {
@@ -83,7 +83,7 @@
                 "name": "Was passiert mit unseren Daten? (DSGVO)",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Ihre Daten gehören Ihnen – Punkt. Sie werden ausschließlich für IHRE Prozesse verwendet. Kein Training von KI-Modellen mit Ihren Daten. Hosting in Frankfurt. Geprüft von Datenschutz-Anwälten."
+                    "text": "Ihre Daten gehören Ihnen – Punkt. Sie werden ausschließlich für IHRE Prozesse verwendet. Kein Training von KI-Modellen mit Ihren Daten. Hosting in Frankfurt. Löschung auf Knopfdruck."
                 }
             },
             {
@@ -99,7 +99,7 @@
                 "name": "Was kostet die Potenzialanalyse wirklich?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Nichts. Wirklich. 30 Minuten, unverbindlich. Sie bekommen einen konkreten ROI-Rechner für Ihr Unternehmen – ohne Verkaufsdruck. Keine Kreditkarte. Kein Kleingedrucktes."
+                    "text": "Nichts. In 30 Minuten analysieren wir unverbindlich Ihr Einsparpotenzial in einem persönlichen Audit – garantiert ohne Verkaufsdruck. Kein Kleingedrucktes, keine Verpflichtung."
                 }
             }
         ]
@@ -112,13 +112,15 @@
         .hero { min-height: 100vh; display: flex; align-items: center; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
     </style>
-    <link rel="stylesheet" href="css/main.css?v=2.0">
+    <link rel="stylesheet" href="css/main.css?v=3.0">
     <link rel="stylesheet" href="css/calculator-redesign.css?v=2.0">
     <link rel="stylesheet" href="css/contact-modal.css?v=2.0">
     <link rel="stylesheet" href="css/responsive.css?v=1.0">
     <link rel="stylesheet" href="css/glow-fix-temp.css?v=1.0">
     <!-- BRUTAL OVERRIDE - LÄDT ALS LETZTES! -->
     <link rel="stylesheet" href="css/stats-brutal-override.css?v=1.0">
+    <!-- USE CASES CAROUSEL - HÖCHSTE PRIORITÄT FÜR MOBILE -->
+    <link rel="stylesheet" href="css/test-usecases-responsive.css?v=4.0">
     <style>
         /* ERZWINGE WEIẞE FARBE für alle Value Calculator Zahlen */
         #timeSaved span,
@@ -238,7 +240,7 @@
             animation: blink 1s step-end infinite;
         }
     </style>
-    
+
 </head>
 <body>
     <header class="header" id="header">
@@ -1208,14 +1210,8 @@
                         </div>
                     </div>
                     
-                    <div class="calculator__results">
-                        <div class="results__header">
-                            <h3>Ihr Einsparpotenzial</h3>
-                            <p>Live-Berechnung basierend auf Ihren Angaben</p>
-                        </div>
-                        
-                        <div class="u-flex-col">
-                            <div class="result-card result-card--time">
+                    <div class="u-flex-col">
+                        <div class="result-card result-card--time">
                                 <div class="result-card__header-row">
                                     <div class="result-card__icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#0077FF" stroke-width="1.5" style="width:24px;height:24px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
                                     <div class="result-card__label">Zeitgewinn pro Jahr</div>
@@ -1225,8 +1221,8 @@
                                     <span class="result-card__value-unit">Stunden</span>
                                 </div>
                                 <div id="timeSavedWeeks" class="result-card__detail-box result-card__detail-box--time">
-                                    <span id="timeSavedWeeksNum" class="result-card__detail-value">≈ 12</span>
                                     <span class="result-card__detail-label">Arbeitswochen gespart</span>
+                                    <span id="timeSavedWeeksNum" class="result-card__detail-value">≈ 12</span>
                                 </div>
                                 <div class="result-card__circle-wrap" aria-hidden="true" style="display:none"><svg width="140" height="140" viewBox="0 0 140 140"><circle cx="70" cy="70" r="55" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="20"/><circle id="timeCircle" cx="70" cy="70" r="55" fill="none" stroke="url(#gradientTime)" stroke-width="20" stroke-dasharray="345" stroke-dashoffset="121" stroke-linecap="round" style="transition: stroke-dashoffset 0.5s ease;"/><defs><linearGradient id="gradientTime" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1"/><stop offset="100%" style="stop-color:#00FF88;stop-opacity:1"/></linearGradient></defs></svg><div class="result-card__center"><div id="timePercent" class="result-card__percent">65%</div><div class="result-card__percent-label">Gespart</div></div></div>
                             </div>
@@ -1247,7 +1243,6 @@
                                 </div>
                                 <div class="result-card__mt20" style="display:none" aria-hidden="true"><div class="result-card__section-label">Monatliche Akkumulation der Ersparnis</div><div class="result-card__months-row"><div id="month1" class="result-card__month-bar"></div><div id="month2" class="result-card__month-bar"></div><div id="month3" class="result-card__month-bar"></div><div id="month4" class="result-card__month-bar"></div><div id="month5" class="result-card__month-bar"></div><div id="month6" class="result-card__month-bar"></div><div id="month7" class="result-card__month-bar"></div><div id="month8" class="result-card__month-bar"></div><div id="month9" class="result-card__month-bar"></div><div id="month10" class="result-card__month-bar"></div><div id="month11" class="result-card__month-bar"></div><div id="month12" class="result-card__month-bar"></div></div></div>
                             </div>
-                        </div>
                     </div>
                 </div>
                 
@@ -1373,9 +1368,8 @@
                                 </button>
                                 <div class="faq-item__answer">
                                     <p>
-                                        <strong>Ja – oft sogar besonders.</strong> Ein Kunde mit 8 Mitarbeitern spart 40 Stunden pro Monat. 
-                                        Bei einem Stundenlohn von 50€ sind das 2.000€ – unser Starter-Paket kostet 299€. 
-                                        <em>ROI: 6,7x im ersten Monat.</em>
+                                        <strong>Ja – oft sogar besonders.</strong> Ein Kunde mit 8 Mitarbeitern spart 40 Stunden pro Monat.<br>
+                                        Bei einem Stundenlohn von 50€ sind das 2.000€ – unser Starter-Paket kostet 299€. <em>ROI: 6,7x im ersten Monat.</em>
                                     </p>
                                 </div>
                             </div>
@@ -1387,9 +1381,8 @@
                                 </button>
                                 <div class="faq-item__answer">
                                     <p>
-                                        <strong>Durchschnittlich 2 Wochen bis zum Go-Live.</strong> Keine IT-Ressourcen nötig – 
-                                        wir machen 90% der Arbeit. Onboarding-Call dauert eine Stunde, danach begleiten wir Sie 
-                                        bis zum ersten Erfolg.
+                                        <strong>Durchschnittlich 2 Wochen bis zum Go-Live.</strong> Keine IT-Ressourcen nötig – wir machen 90% der Arbeit.<br>
+                                        Onboarding-Call dauert eine Stunde, danach begleiten wir Sie bis zum ersten Erfolg.
                                     </p>
                                 </div>
                             </div>
@@ -1401,9 +1394,8 @@
                                 </button>
                                 <div class="faq-item__answer">
                                     <p>
-                                        <strong>Ihre Daten gehören Ihnen – Punkt.</strong> Sie werden ausschließlich für IHRE Prozesse verwendet. 
-                                        Kein Training von KI-Modellen mit Ihren Daten. Hosting in Frankfurt. 
-                                        Löschung auf Knopfdruck. <em>Geprüft von Datenschutz-Anwälten.</em>
+                                        <strong>Ihre Daten gehören Ihnen – Punkt.</strong> Sie werden ausschließlich für IHRE Prozesse verwendet.<br>
+                                        Kein Training von KI-Modellen mit Ihren Daten. Hosting in Frankfurt. Löschung auf Knopfdruck.
                                     </p>
                                     <p>
                                         <a href="datenschutz.html" style="color: var(--color-primary); text-decoration: underline;">
@@ -1420,9 +1412,8 @@
                                 </button>
                                 <div class="faq-item__answer">
                                     <p>
-                                        <strong>Ja.</strong> Fertige Integrationen für Salesforce, HubSpot, SAP, Microsoft Dynamics, 
-                                        Personio und 50+ weitere Systeme. Individuelle Anbindungen über API auf Anfrage – 
-                                        <em>ohne Extra-Kosten im Pro- und Enterprise-Paket.</em>
+                                        <strong>Ja.</strong> Fertige Integrationen für Salesforce, HubSpot, SAP, Microsoft Dynamics, Personio und 50+ weitere Systeme.<br>
+                                        <em>Individuelle Anbindungen über API auf Anfrage.</em>
                                     </p>
                                 </div>
                             </div>
@@ -1434,9 +1425,8 @@
                                 </button>
                                 <div class="faq-item__answer">
                                     <p>
-                                        <strong>Nichts. Wirklich.</strong> 30 Minuten, unverbindlich. Sie bekommen einen konkreten 
-                                        Einsparpotenzial-Rechner für Ihr Unternehmen – ohne Verkaufsdruck. 
-                                        <em>Keine Kreditkarte. Kein Kleingedrucktes.</em>
+                                        <strong>Nichts.</strong> In 30 Minuten analysieren wir unverbindlich Ihr Einsparpotenzial in einem persönlichen Audit – 
+                                        garantiert ohne Verkaufsdruck. <em>Kein Kleingedrucktes, keine Verpflichtung.</em>
                                     </p>
                                 </div>
                             </div>
@@ -1498,13 +1488,7 @@
                         </svg>
                     </span>
                     
-                    <div class="final-cta__urgency">
-                        <span class="urgency-badge" aria-label="Limitiert">
-                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Nur noch<span id="beratungsplaetze-count" aria-live="polite">&#160;7&#160;</span>Beratungsplätze diese Woche</span>
-                        </span>
-                    </div>
-                    
-                    <h2 class="final-cta__title" id="cta-title">Potenzialanalyse: 30 Minuten für einen dokumentierten Automatisierungsplan</h2>
+                    <h2 class="final-cta__title" id="cta-title">Potenzialanalyse:<br>30 Minuten für einen<br>dokumentierten Automatisierungsplan</h2>
                     <p class="final-cta__description">
                         Wir analysieren Ihre bestehenden Prozesse und identifizieren konkret, welche Aufgaben automatisierbar sind – mit geschätztem Zeitgewinn pro Woche.
                     </p>
@@ -2668,6 +2652,59 @@
                 if (e.key === 'Escape' && overlay.classList.contains('is-open')) closePopup();
             });
         })();
+    </script>
+
+    <!-- BRUTAL FORCE: Karussell für Mobile erzwingen -->
+    <script>
+    (function() {
+        function forceCarouselLayout() {
+            const vw = window.innerWidth;
+            const wrapper = document.querySelector('.usecases__slider-wrapper');
+            const grid = document.querySelector('.usecases__grid, #usecases-slider');
+            const cards = document.querySelectorAll('.usecases__grid .usecase-card, #usecases-slider .usecase-card');
+
+            if (!wrapper || !grid || !cards.length) return;
+
+            // Desktop: Nichts ändern
+            if (vw > 1024) return;
+
+            // Tablet: 2 Karten
+            if (vw > 768 && vw <= 1024) {
+                wrapper.style.cssText = 'width: 664px !important; max-width: 95vw !important; margin: 0 auto !important; overflow: hidden !important;';
+                grid.style.cssText = 'display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 24px !important;';
+                cards.forEach(card => {
+                    card.style.cssText = 'flex: 0 0 320px !important; width: 320px !important; min-width: 320px !important; max-width: 320px !important;';
+                });
+            }
+            // Handy: 1 Karte
+            else if (vw <= 768) {
+                const cardWidth = Math.min(300, vw - 40);
+                wrapper.style.cssText = `width: ${cardWidth}px !important; max-width: calc(100vw - 32px) !important; margin: 0 auto !important; overflow: hidden !important;`;
+                grid.style.cssText = 'display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 24px !important;';
+                cards.forEach(card => {
+                    card.style.cssText = `flex: 0 0 ${cardWidth}px !important; width: ${cardWidth}px !important; min-width: ${cardWidth}px !important; max-width: ${cardWidth}px !important;`;
+                });
+            }
+
+            console.log('🎠 Karussell-Layout erzwungen für', vw <= 768 ? 'Handy' : 'Tablet', '- Viewport:', vw + 'px');
+        }
+
+        // Beim Laden ausführen
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(forceCarouselLayout, 200);
+            });
+        } else {
+            setTimeout(forceCarouselLayout, 200);
+        }
+
+        // Bei Resize ausführen
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(forceCarouselLayout, 100);
+        });
+    })();
     </script>
 </body>
 </html>

@@ -943,13 +943,13 @@ function init() {
     initBeratungsplaetzeCount(); // Beratungsplätze: Mo 7 → Sa 2, Mo Reset
     initUseCasesSlider(); // Use Cases Slider
 
-    // Mobile Viewport Fix (nur bei innerWidth < 1024)
-    if (window.innerWidth < 1024) {
-        setTimeout(mobileViewportFix, 100);
-        window.addEventListener('resize', debounce(() => {
-            if (window.innerWidth < 1024) mobileViewportFix();
-        }, 250));
-    }
+    // Mobile Viewport Fix - DEAKTIVIERT wegen Karussell-Konflikt
+    // if (window.innerWidth < 1024) {
+    //     setTimeout(mobileViewportFix, 100);
+    //     window.addEventListener('resize', debounce(() => {
+    //         if (window.innerWidth < 1024) mobileViewportFix();
+    //     }, 250));
+    // }
     
     // Initialize motion effects (respects reduced motion)
     if (!prefersReducedMotion()) {
@@ -1381,6 +1381,18 @@ function mobileViewportFix() {
     const all = document.querySelectorAll('body *');
     all.forEach((el) => {
         if (el === document.documentElement || el === document.body) return;
+
+        // WICHTIG: Use Cases Karussell NICHT anfassen!
+        // Diese Elemente brauchen ihre feste Breite für das Karussell
+        if (el.closest('.usecases__grid') ||
+            el.closest('.usecases__slider-wrapper') ||
+            el.closest('#usecases-slider') ||
+            el.classList.contains('usecase-card') ||
+            el.classList.contains('usecases__grid') ||
+            el.classList.contains('usecases__slider-wrapper')) {
+            return; // Überspringe Use Cases Elemente komplett
+        }
+
         if (el.offsetWidth > vw) {
             el.style.width = '100%';
             el.style.boxSizing = 'border-box';
