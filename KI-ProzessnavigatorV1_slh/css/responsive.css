@@ -2377,6 +2377,9 @@
         margin-top: var(--space-3) !important;
         padding-top: 0.25rem !important;
     }
+    .problems__grid--popup .problem-card__separator {
+        margin-top: 1rem !important;
+    }
 
     .problem-card__more-area {
         margin-bottom: 0 !important;

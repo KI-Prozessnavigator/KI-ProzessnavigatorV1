@@ -7,8 +7,8 @@
     background: linear-gradient(180deg, #0a1628 0%, #0d1b36 50%, #0a1628 100%);
     position: relative;
     overflow: hidden;
-    padding-block: calc(var(--space-16) - 80px) var(--space-16) !important;
-    scroll-margin-top: 120px;
+    padding-block: calc(var(--space-16) - 200px) var(--space-16) !important;
+    scroll-margin-top: 200px;
 }
 
 .value-calculator::before {
@@ -318,6 +318,8 @@
     padding: 24px !important;
     width: 400px !important;
     /* FESTE Breite: 400px */
+    box-sizing: border-box !important;
+    /* Padding in die 400px Breite einbeziehen - verhindert overflow */
     flex: 1 !important;
     /* Beide Karten gleich hoch, teilen sich die verfügbare Höhe */
     min-height: 0 !important;

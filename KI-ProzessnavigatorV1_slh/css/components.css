@@ -610,8 +610,8 @@
 /* Slider Wrapper mit extra Platz für Hover-Effekt */
 .usecases__slider-wrapper {
     position: relative;
-    padding: var(--space-4) var(--space-20);
-    margin: 0 calc(-1 * var(--space-20));
+    padding: var(--space-4) 0;
+    margin: 0;
     /* CLIP-PATH für sauberen Horizontal-Cut ohne overflow */
     clip-path: inset(-100px 0px -100px 0px);
 }

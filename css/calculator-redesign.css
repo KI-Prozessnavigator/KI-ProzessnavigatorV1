@@ -213,6 +213,8 @@
 #pricing .result-card--money { 
     width: 400px !important;
     /* FESTE Breite: 400px - wie linker Kontainer */
+    box-sizing: border-box !important;
+    /* Padding in die 400px Breite einbeziehen - verhindert overflow */
     flex: 1 !important;
     /* Beide Karten gleich hoch, teilen sich die verfügbare Höhe */
     min-height: 0 !important;
@@ -222,8 +224,8 @@
 #pricing .result-card__detail-box--money { white-space: nowrap !important; }
 
 #pricing .calculator__cta-block {
-    margin-top: 32px !important;
-    /* Etwas mehr Abstand zu den Kontainern */
+    margin-top: 40px !important;
+    /* Mehr Abstand zu den Kontainern */
     padding-top: 0 !important;
     /* Kein zusätzliches Padding */
     text-align: center !important;
@@ -250,6 +252,10 @@
     margin-inline: auto !important;
     white-space: nowrap !important;
     /* Text in einer Zeile */
+    overflow: hidden !important;
+    /* Verhindert Text-Overflow */
+    text-overflow: ellipsis !important;
+    /* Falls Text zu lang, mit ... abschneiden */
 }
 
 #pricing .calculator-cta-note svg {

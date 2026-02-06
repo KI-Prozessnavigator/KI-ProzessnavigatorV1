@@ -74,6 +74,8 @@
     /* Normales Padding - KEINE HÖHENANPASSUNG */
     width: 400px !important;
     /* FESTE Breite: 400px */
+    box-sizing: border-box !important;
+    /* Padding in die 400px Breite einbeziehen - verhindert overflow */
     flex: 1 !important;
     /* Beide Karten gleich hoch, teilen sich die verfügbare Höhe */
     min-height: 0 !important;
