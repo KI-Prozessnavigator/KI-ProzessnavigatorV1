@@ -249,6 +249,30 @@
             animation: blink 1s step-end infinite;
         }
     </style>
+    <!-- Problem-Karten: Trennlinie + Mehr lesen auf gleicher Höhe (höchste Priorität) -->
+    <style id="problem-cards-equal-height">
+        @media (min-width: 900px) {
+            section.problems .problems__grid.problems__grid--popup {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                align-items: stretch !important;
+            }
+            section.problems .problems__grid--popup .problem-card {
+                display: flex !important;
+                flex-direction: column !important;
+                align-self: stretch !important;
+                height: 100% !important;
+                min-height: 100% !important;
+            }
+            section.problems .problems__grid--popup .problem-card__separator {
+                margin-top: auto !important;
+                flex-shrink: 0 !important;
+            }
+            section.problems .problems__grid--popup .problem-card__more-area {
+                flex-shrink: 0 !important;
+            }
+        }
+    </style>
     
 </head>
 <body>
@@ -265,6 +289,7 @@
                 <li class="nav__item"><a href="#dsgvo" class="nav__link">DSGVO</a></li>
                 <li class="nav__item"><a href="#pricing" class="nav__link">Ersparnis</a></li>
                 <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
+                <li class="nav__item"><a href="../ueber-uns.html" class="nav__link">Über uns</a></li>
                 <li class="nav__item"><a href="#contact" class="nav__link nav__link--cta">Beratung anfragen</a></li>
             </ul>
             

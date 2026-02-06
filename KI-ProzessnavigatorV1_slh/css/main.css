@@ -1863,7 +1863,13 @@ section {
 /* Ab 900px: drei Spalten, eine Zeile → gleiche Kartenhöhe → Trennstrich/Mehr lesen an Unterkante */
 @media (min-width: 900px) {
     .problems__grid--popup {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+/* Unter 900px: Popup-Grid wieder 1 Spalte (Karten untereinander) */
+@media (max-width: 899px) {
+    .problems__grid--popup {
+        grid-template-columns: 1fr !important;
     }
 }
 
@@ -8022,7 +8028,8 @@ section.testimonials.expert-quotes,
     }
 
     /* ===== Problem/Solution Cards - Compact ===== */
-    .problems__grid,
+    /* Popup-Grid ausgenommen: behält 3 Spalten ab 900px für Unterkanten-Ausrichtung */
+    .problems__grid:not(.problems__grid--popup),
     .solutions__grid {
         grid-template-columns: 1fr;
         gap: var(--space-3);

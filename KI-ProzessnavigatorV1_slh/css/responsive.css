@@ -2627,8 +2627,8 @@
         box-sizing: border-box !important;
     }
 
-    /* ===== ALLE GRIDS: 1 Spalte, untereinander ===== */
-    .problems__grid,
+    /* ===== ALLE GRIDS: 1 Spalte, untereinander (Popup-Grid ausgenommen → bleibt Grid für gleiche Kartenhöhe) ===== */
+    .problems__grid:not(.problems__grid--popup),
     .usecases__grid,
     .pricing__grid,
     .testimonials__grid,
