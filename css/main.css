@@ -688,36 +688,7 @@ h1 em, h2 em {
     position: relative;
 }
 
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-    width: 24px;
-    height: 2px;
-    background: var(--color-neutral-800);
-    border-radius: 2px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: var(--transition-fast);
-}
-
-.hamburger {
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.hamburger::before,
-.hamburger::after {
-    content: '';
-}
-
-.hamburger::before {
-    top: -7px;
-}
-
-.hamburger::after {
-    top: 7px;
-}
+/* ALTE HAMBURGER DEFINITIONEN KOMPLETT ENTFERNT - WERDEN VON RESPONSIVE.CSS GESTEUERT */
 
 /* ===== Theme Toggle Button ===== */
 .theme-toggle {
@@ -7601,9 +7572,7 @@ section.testimonials.expert-quotes,
         border-bottom: 1px solid var(--color-border);
     }
 
-    .nav__link::after {
-        display: none;
-    }
+    /* UNTERSTREICHUNG WIRD VON RESPONSIVE.CSS GESTEUERT */
 
     .nav__link--cta {
         margin-top: var(--space-4);
@@ -7622,19 +7591,7 @@ section.testimonials.expert-quotes,
         z-index: calc(var(--z-fixed) + 1);
     }
 
-    .nav__toggle.active .hamburger {
-        background: transparent;
-    }
-
-    .nav__toggle.active .hamburger::before {
-        top: 0;
-        transform: translateX(-50%) rotate(45deg);
-    }
-
-    .nav__toggle.active .hamburger::after {
-        top: 0;
-        transform: translateX(-50%) rotate(-45deg);
-    }
+    /* ALTE HAMBURGER ANIMATION ENTFERNT - WIRD VON RESPONSIVE.CSS GESTEUERT */
 
     body.menu-open::before {
         content: '';

@@ -677,6 +677,13 @@ function initEventListeners() {
         DOM.navToggle.addEventListener('click', toggleMenu);
     }
     
+    // Close menu when nav link is clicked
+    DOM.navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMenu();
+        });
+    });
+    
     // Scroll events
     window.addEventListener('scroll', throttle(handleScroll, 50));
     window.addEventListener('scroll', throttle(highlightActiveSection, 100));
