@@ -942,14 +942,6 @@ function init() {
     initScrollProgress();
     initBeratungsplaetzeCount(); // Beratungsplätze: Mo 7 → Sa 2, Mo Reset
     initUseCasesSlider(); // Use Cases Slider
-
-    // Mobile Viewport Fix - DEAKTIVIERT wegen Karussell-Konflikt
-    // if (window.innerWidth < 1024) {
-    //     setTimeout(mobileViewportFix, 100);
-    //     window.addEventListener('resize', debounce(() => {
-    //         if (window.innerWidth < 1024) mobileViewportFix();
-    //     }, 250));
-    // }
     
     // Initialize motion effects (respects reduced motion)
     if (!prefersReducedMotion()) {
@@ -967,10 +959,6 @@ function init() {
         const originalText = DOM.heroTitle.innerHTML;
         typeWriter(DOM.heroTitle, originalText, 40);
     }
-    
-    console.log('🚀 KI-Prozessnavigator initialized');
-    console.log('♿ Accessibility features enabled');
-    console.log('✨ Enhanced animations enabled');
 }
 
 // ===== Use Cases Slider =====
@@ -1024,7 +1012,6 @@ function initUseCasesSlider() {
     
     slider.addEventListener('transitionend', (e) => {
         if (e.propertyName === 'transform' && pendingTransitionCallback) {
-            console.log('🎯 TransitionEnd Event gefeuert!');
             const callback = pendingTransitionCallback;
             pendingTransitionCallback = null;
             callback();
@@ -1044,8 +1031,6 @@ function initUseCasesSlider() {
         slider.style.transition = smooth ? 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
         slider.style.transform = `translateX(-${offset}px)`;
         
-        console.log(`📍 UpdateSlider: Index=${currentIndex} (real: ${currentIndex - cloneCount}), Offset=${offset}px, Smooth=${smooth}`);
-        
         // Buttons nie deaktivieren
         prevBtn.disabled = false;
         nextBtn.disabled = false;
@@ -1059,7 +1044,6 @@ function initUseCasesSlider() {
             // Fallback falls transitionend nicht feuert
             setTimeout(() => {
                 if (pendingTransitionCallback === onComplete) {
-                    console.log('⚠️ Fallback timeout - transitionend nicht gefeuert');
                     pendingTransitionCallback = null;
                     onComplete();
                 }
@@ -1071,13 +1055,8 @@ function initUseCasesSlider() {
     }
     
     function handleInfiniteLoopJump() {
-        console.log(`🔍 Prüfe Loop: currentIndex=${currentIndex}, Grenze=${cloneCount + totalCards} (${cloneCount}+${totalCards})`);
-        
         // Wenn wir bei den Klonen am Ende sind (nach Karte 10)
         if (currentIndex >= cloneCount + totalCards) {
-            console.log(`🔄🔄🔄 ENDLOS-LOOP AKTIV! ${currentIndex} >= ${cloneCount + totalCards}`);
-            console.log(`🔄 Springe von Index ${currentIndex} zu Index ${cloneCount}`);
-            
             // Springe instant zurück zur echten ersten Karte
             currentIndex = cloneCount;
             
@@ -1092,14 +1071,10 @@ function initUseCasesSlider() {
             // Force reflow
             void slider.offsetHeight;
             
-            console.log(`✅ Loop abgeschlossen! Neue Position: ${currentIndex}`);
             return true;
         }
         // Wenn wir bei den Klonen am Anfang sind (vor Karte 1)
         else if (currentIndex < cloneCount) {
-            console.log(`🔄🔄🔄 ENDLOS-LOOP AKTIV! ${currentIndex} < ${cloneCount}`);
-            console.log(`🔄 Springe von Index ${currentIndex} zu Index ${cloneCount + totalCards - 1}`);
-            
             // Springe instant zur echten letzten Karte
             currentIndex = cloneCount + totalCards - 1;
             
@@ -1114,11 +1089,9 @@ function initUseCasesSlider() {
             // Force reflow
             void slider.offsetHeight;
             
-            console.log(`✅ Loop abgeschlossen! Neue Position: ${currentIndex}`);
             return true;
         }
         
-        console.log(`➖ Kein Loop nötig`);
         return false;
     }
     
@@ -1172,13 +1145,7 @@ function initUseCasesSlider() {
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            const oldCardsPerView = cardsPerView;
             cardsPerView = getCardsPerView();
-            
-            if (oldCardsPerView !== cardsPerView) {
-                console.log(`📱 Resize: cardsPerView changed from ${oldCardsPerView} to ${cardsPerView}`);
-            }
-            
             applyCentering();
             updateSlider(false);
         }, 250);
@@ -1228,28 +1195,20 @@ function initUseCasesSlider() {
     function startAutoScroll() {
         if (!isAutoScrollActive || autoScrollInterval) return;
         
-        console.log('✅ Auto-Scroll gestartet (alle 6 Sekunden)');
-        
         autoScrollInterval = setInterval(() => {
             if (isTransitioning) {
-                console.log('⏸️ Auto-Scroll übersprungen (isTransitioning=true)');
                 return;
             }
             
             isTransitioning = true;
             
             // Eine Karte vorwärts
-            const oldIndex = currentIndex;
             currentIndex++;
-            console.log(`➡️ Auto-Scroll: ${oldIndex} → ${currentIndex} (Soll bei ${cloneCount + totalCards} zurückspringen)`);
             
             // Animiere und dann prüfe Loop
             updateSlider(true, () => {
                 // Nach Animation: Prüfe ob wir bei Klonen sind
-                const looped = handleInfiniteLoopJump();
-                if (looped) {
-                    console.log(`✅ Loop ausgeführt, neue Position: ${currentIndex}`);
-                }
+                handleInfiniteLoopJump();
                 isTransitioning = false;
             });
             
@@ -1348,22 +1307,9 @@ function initUseCasesSlider() {
         // Setze Padding auf den Grid für Zentrierung
         slider.style.paddingLeft = `${sidePadding}px`;
         slider.style.paddingRight = `${sidePadding}px`;
-        
-        console.log(`📐 Zentrierung: Container=${containerWidth}px (ohne wrapper padding), Visible=${totalVisibleWidth}px, Padding=${sidePadding}px`);
     }
     
     // Initialize
-    console.log(`\n${'='.repeat(60)}`);
-    console.log(`🚀 UseCase Slider Initialisierung`);
-    console.log(`${'='.repeat(60)}`);
-    console.log(`📊 Total Cards (original): ${totalCards}`);
-    console.log(`📊 Clone Count: ${cloneCount}`);
-    console.log(`📊 Alle Karten (inkl. Klone): ${allCards.length}`);
-    console.log(`📊 Cards Per View: ${cardsPerView}`);
-    console.log(`📊 Start Index: ${currentIndex} (sollte ${cloneCount} sein für erste echte Karte)`);
-    console.log(`📊 Loop-Grenze: Index >= ${cloneCount + totalCards} (${cloneCount} + ${totalCards})`);
-    console.log(`${'='.repeat(60)}\n`);
-    
     applyCentering();
     createDots();
     updateSlider(false); // Initial ohne Animation
@@ -1372,37 +1318,6 @@ function initUseCasesSlider() {
     setTimeout(() => {
         startAutoScroll();
     }, 1000);
-}
-
-// ===== Mobile Viewport Fixer (nur bei innerWidth < 1024) =====
-function mobileViewportFix() {
-    if (window.innerWidth >= 1024) return;
-    const vw = window.innerWidth;
-    const all = document.querySelectorAll('body *');
-    all.forEach((el) => {
-        if (el === document.documentElement || el === document.body) return;
-
-        // WICHTIG: Use Cases Karussell NICHT anfassen!
-        // Diese Elemente brauchen ihre feste Breite für das Karussell
-        if (el.closest('.usecases__grid') ||
-            el.closest('.usecases__slider-wrapper') ||
-            el.closest('#usecases-slider') ||
-            el.classList.contains('usecase-card') ||
-            el.classList.contains('usecases__grid') ||
-            el.classList.contains('usecases__slider-wrapper')) {
-            return; // Überspringe Use Cases Elemente komplett
-        }
-
-        if (el.offsetWidth > vw) {
-            el.style.width = '100%';
-            el.style.boxSizing = 'border-box';
-            const fs = window.getComputedStyle(el).fontSize;
-            const px = parseFloat(fs);
-            if (!Number.isNaN(px) && px > 30) {
-                el.style.fontSize = 'clamp(20px, 5vw, 30px)';
-            }
-        }
-    });
 }
 
 // ===== Initialize Theme =====

@@ -2662,58 +2662,17 @@
         })();
     </script>
 
-    <!-- BRUTAL FORCE: Karussell für Mobile erzwingen -->
+    <!-- ============================================
+         KARUSSELL INLINE-SCRIPT - DEAKTIVIERT
+         Funktionalität wurde in responsive.css integriert
+         ============================================ -->
+    <!-- 
     <script>
-    (function() {
-        function forceCarouselLayout() {
-            const vw = window.innerWidth;
-            const wrapper = document.querySelector('.usecases__slider-wrapper');
-            const grid = document.querySelector('.usecases__grid, #usecases-slider');
-            const cards = document.querySelectorAll('.usecases__grid .usecase-card, #usecases-slider .usecase-card');
-
-            if (!wrapper || !grid || !cards.length) return;
-
-            // Desktop: Nichts ändern
-            if (vw > 1024) return;
-
-            // Tablet: 2 Karten
-            if (vw > 768 && vw <= 1024) {
-                wrapper.style.cssText = 'width: 664px !important; max-width: 95vw !important; margin: 0 auto !important; overflow: hidden !important;';
-                grid.style.cssText = 'display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 24px !important;';
-                cards.forEach(card => {
-                    card.style.cssText = 'flex: 0 0 320px !important; width: 320px !important; min-width: 320px !important; max-width: 320px !important;';
-                });
-            }
-            // Handy: 1 Karte
-            else if (vw <= 768) {
-                const cardWidth = Math.min(300, vw - 40);
-                wrapper.style.cssText = `width: ${cardWidth}px !important; max-width: calc(100vw - 32px) !important; margin: 0 auto !important; overflow: hidden !important;`;
-                grid.style.cssText = 'display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 24px !important;';
-                cards.forEach(card => {
-                    card.style.cssText = `flex: 0 0 ${cardWidth}px !important; width: ${cardWidth}px !important; min-width: ${cardWidth}px !important; max-width: ${cardWidth}px !important;`;
-                });
-            }
-
-            console.log('🎠 Karussell-Layout erzwungen für', vw <= 768 ? 'Handy' : 'Tablet', '- Viewport:', vw + 'px');
-        }
-
-        // Beim Laden ausführen
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function() {
-                setTimeout(forceCarouselLayout, 200);
-            });
-        } else {
-            setTimeout(forceCarouselLayout, 200);
-        }
-
-        // Bei Resize ausführen
-        let resizeTimeout;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(forceCarouselLayout, 100);
-        });
-    })();
+    // Dieses Script wurde deaktiviert, da es mit der neuen
+    // responsive.css kollidiert. Karussell-Layout wird jetzt
+    // vollständig über CSS gesteuert.
     </script>
+    -->
 </body>
 </html>
 

@@ -150,8 +150,6 @@
         document.documentElement.setAttribute('data-consent-analytics', consent.analytics);
         document.documentElement.setAttribute('data-consent-marketing', consent.marketing);
         document.documentElement.setAttribute('data-consent-external', consent.external);
-        
-        console.log('🍪 Cookie consent applied:', consent);
     }
 
     // ==========================================
@@ -334,8 +332,6 @@
                 }
             }
         });
-        
-        console.log('🍪 Cookie consent manager initialized');
     }
 
     // ==========================================

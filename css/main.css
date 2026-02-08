@@ -10262,8 +10262,6 @@ section.testimonials.expert-quotes,
     margin-right: 4px !important;
 }
 
-/* Debug-Indikator entfernt */
-
 /* Glow-Karten: Verhindern, dass der Hover-Glow abgeschnitten wird – alle übergeordneten Ebenen explizit overflow: visible (steht am Ende, überschreibt andere Regeln) */
 html,
 body,

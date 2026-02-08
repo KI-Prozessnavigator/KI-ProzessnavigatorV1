@@ -1,24 +1,7 @@
 /* ==========================================
-   TEMPORARY GLOW FIX - BRUTAL FORCE
+   TEMPORARY GLOW FIX - DEAKTIVIERT
+   Funktionalität wurde in responsive.css integriert
    ========================================== */
 
-@media (max-width: 768px) {
-    /* ALLE HERO-CONTAINER: OVERFLOW VISIBLE! */
-    body,
-    html,
-    .hero,
-    section.hero,
-    .hero *,
-    .hero__container,
-    .hero__content,
-    .hero__actions,
-    .hero__actions .btn {
-        overflow: visible !important;
-    }
-    
-    /* NUR X-OVERFLOW HIDDEN FÜR BODY */
-    body {
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-    }
-}
+/* Diese Datei wird nicht mehr benötigt.
+   Alle Glow-Fixes wurden in responsive.css konsolidiert. */
