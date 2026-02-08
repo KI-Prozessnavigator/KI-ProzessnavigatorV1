@@ -2050,6 +2050,16 @@
 }
 
 /* ===== Expert Quote Cards ===== */
+#testimonials.testimonials.expert-quotes,
+section.testimonials.expert-quotes,
+#testimonials .container,
+#testimonials .testimonials__grid,
+#testimonials .expert-quotes__grid {
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+    max-height: none !important;
+}
+
 .expert-quotes__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));

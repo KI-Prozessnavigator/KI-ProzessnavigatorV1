@@ -656,6 +656,25 @@
         line-height: 1.4;
     }
 
+    .problem-card__separator {
+        margin-top: var(--space-3) !important;
+        padding-top: 0.25rem !important;
+    }
+    
+    .problems__grid--popup .problem-card__separator {
+        margin-top: auto !important;
+    }
+    
+    .problems__grid--popup .problem-card__more-area {
+        padding-top: var(--space-3) !important;
+        padding-bottom: var(--space-3) !important;
+    }
+
+    .problem-card__more-area {
+        margin-bottom: 0 !important;
+        padding-top: var(--space-2) !important;
+    }
+
     /* Hide Before/After on mobile - too complex */
     .before-after-showcase {
         display: none;

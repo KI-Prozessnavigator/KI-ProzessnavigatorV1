@@ -1813,16 +1813,62 @@ section {
 }
 .problems__grid--popup .problem-card__footnote {
     margin-bottom: 0;
+    margin-top: 30px;
 }
+/* Grid: eine Zeile, gleiche Höhe für alle drei Karten */
+.problems__grid--popup {
+    align-items: stretch;
+}
+/* NEUE STRUKTUR: Karte mit position relative, damit wir absolute Positionierung nutzen können */
 .problems__grid--popup .problem-card {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    display: block;
+    height: 100%;
+    min-height: 380px;
+    padding-bottom: 120px;
 }
-.problem-card__separator {
-    margin-top: 3rem;
-    padding-top: 0.5rem;
+
+/* Content-Bereich (Icon, Title, Footnote) - normal im Flow OBEN */
+.problems__grid--popup .problem-card__icon,
+.problems__grid--popup .problem-card__title,
+.problems__grid--popup .problem-card__footnote {
+    position: relative;
+}
+
+/* Trennstrich: ABSOLUT positioniert von UNTEN - NICHT volle Breite */
+.problems__grid--popup .problem-card__separator {
+    position: absolute;
+    bottom: 70px;
+    left: var(--space-6);
+    right: var(--space-6);
+    width: auto;
+    height: 0;
     border-top: 2px solid var(--color-neon-cyan, #00d4ff);
     background: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.problem-card__separator {
+    margin-top: 3rem;
+    border-top: 2px solid var(--color-neon-cyan, #00d4ff);
+    background: none !important;
+}
+
+/* Mehr lesen: ABSOLUT positioniert - 15px näher an der Unterkante */
+.problems__grid--popup .problem-card__more-area {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 .problem-card__more-area {
     display: flex;
@@ -1852,6 +1898,19 @@ section {
 }
 .problem-card--clickable {
     cursor: pointer;
+}
+
+/* Ab 900px: drei Spalten, eine Zeile → gleiche Kartenhöhe → Trennstrich/Mehr lesen an Unterkante */
+@media (min-width: 900px) {
+    .problems__grid--popup {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+/* Unter 900px: Popup-Grid wieder 1 Spalte (Karten untereinander) */
+@media (max-width: 899px) {
+    .problems__grid--popup {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 /* Pop-up: Overlay und Box */
@@ -3867,6 +3926,16 @@ section {
 }
 
 /* ===== Expert Quote Cards ===== */
+#testimonials.testimonials.expert-quotes,
+section.testimonials.expert-quotes,
+#testimonials .container,
+#testimonials .testimonials__grid,
+#testimonials .expert-quotes__grid {
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+    max-height: none !important;
+}
+
 .expert-quotes__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
