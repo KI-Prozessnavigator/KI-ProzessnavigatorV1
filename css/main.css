@@ -7587,26 +7587,11 @@ section.testimonials.expert-quotes,
 }
 
 @media (max-width: 768px) {
-    .nav__menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 85%;
-        max-width: 400px;
-        height: 100vh;
-        padding: 72px var(--space-6) var(--space-6);
-        background: var(--color-surface);
-        box-shadow: var(--shadow-xl);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-4);
-        transition: right var(--transition-slow);
-        z-index: var(--z-fixed);
-        overflow-y: auto;
-    }
-
-    .nav__menu.active {
-        right: 0;
+    /* ALTE DEFINITION ENTFERNT - WIRD VON RESPONSIVE.CSS ÜBERSCHRIEBEN */
+    /* .nav__menu Definition jetzt komplett in responsive.css */
+    
+    .nav__menu.active-old-removed {
+        /* Platzhalter damit Media Query nicht leer ist */
     }
 
     .nav__link {
