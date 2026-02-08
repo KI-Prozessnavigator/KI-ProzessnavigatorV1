@@ -101,7 +101,7 @@
     }
     
     .header .nav__logo img {
-        height: 50px;
+        height: 63px; /* 90% von 70px Header = 63px, mit 3.5px Platz oben/unten durch center */
         width: auto;
     }
     
@@ -1240,6 +1240,23 @@
         margin: 0 auto;
     }
     
+    /* Hero Text linksbündig auf Tablet wie auf Desktop */
+    .hero .hero__content,
+    .hero .hero__title,
+    .hero .hero__description,
+    section.hero .hero__content,
+    section.hero .hero__title,
+    section.hero .hero__description {
+        text-align: left !important;
+    }
+    
+    .hero__description {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
     /* Hero Stats - 4 Spalten horizontal */
     .hero__stats,
     .hero .hero__stats,
@@ -1327,11 +1344,42 @@
         min-height: 400px;
     }
     
-    /* Problem/Solution Cards - 2 Spalten */
+    /* Problem/Solution Cards - 3 Spalten wie Desktop auf Tablet */
     .problems__grid,
-    .solutions__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-5);
+    .solutions__grid,
+    section.problems .problems__grid,
+    section.solutions .solutions__grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: var(--space-4);
+    }
+    
+    /* Problem Cards auf Tablet - Texte auf exakt gleicher Höhe wie mittlerer Text */
+    .problems__grid--popup .problem-card {
+        min-height: 420px !important;
+        padding-bottom: 85px !important;
+    }
+    
+    /* Erstes und drittes Card: Text weiter nach unten (wegen kürzerer Überschrift) */
+    .problems__grid--popup .problem-card:nth-child(1) .problem-card__footnote,
+    .problems__grid--popup .problem-card:nth-child(3) .problem-card__footnote {
+        margin-top: 60px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    /* Mittleres Card: Text auf normaler Höhe (längere Überschrift) */
+    .problems__grid--popup .problem-card:nth-child(2) .problem-card__footnote {
+        margin-top: 30px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    /* Separator - weniger Abstand zum Text, mehr Abstand zu Mehr lesen */
+    .problems__grid--popup .problem-card__separator {
+        bottom: 60px !important;
+    }
+    
+    /* Mehr lesen Link - mehr Abstand zur Trennlinie */
+    .problems__grid--popup .problem-card__more-area {
+        bottom: 20px !important;
     }
     
     /* Pricing - 2 Spalten */
@@ -1549,73 +1597,99 @@
    ========================================== */
 
 @media (min-width: 768px) and (max-width: 1023px) {
-    /* DSGVO Section: 2-spaltig wie Desktop */
+    /* DSGVO Section: Grid mit 2 Zeilen x 2 Spalten */
     section.dsgvo .dsgvo__wrapper,
     .dsgvo .dsgvo__wrapper,
     .dsgvo__wrapper {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* 2 Spalten */
-        gap: var(--space-8) !important;
-        align-items: start !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto !important;
+        gap: var(--space-4) var(--space-8) !important;
         text-align: left !important;
     }
     
-    /* Checklist links ausrichten */
+    /* Überschrift + Text: Zeile 1, Spalte 1, volle Breite über beide Spalten */
+    section.dsgvo .dsgvo__title,
+    .dsgvo .dsgvo__title,
+    .dsgvo__title {
+        grid-column: 1 / -1 !important; /* Volle Breite */
+        margin-bottom: var(--space-2) !important;
+    }
+    
+    section.dsgvo .dsgvo__description,
+    .dsgvo .dsgvo__description,
+    .dsgvo__description {
+        grid-column: 1 / -1 !important; /* Volle Breite */
+        margin-bottom: var(--space-6) !important;
+    }
+    
+    /* Checklist: Zeile 2, Spalte 1 */
     section.dsgvo .dsgvo__checklist,
     .dsgvo .dsgvo__checklist,
     .dsgvo__checklist {
+        grid-column: 1 / 2 !important;
+        grid-row: 3 !important;
         align-items: flex-start !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
+        margin-top: 0 !important;
     }
     
-    /* Trust Badges: Kompakt & vertikal rechts */
+    /* Trust Badges: Zeile 2, Spalte 2 - EXAKT auf Höhe der Checklist */
     section.dsgvo .dsgvo__badges,
     .dsgvo .dsgvo__badges,
     .dsgvo__badges {
+        grid-column: 2 / 3 !important;
+        grid-row: 3 !important; /* Gleiche Zeile wie Checklist */
         display: flex !important;
         flex-direction: column !important;
-        gap: var(--space-3) !important; /* Kompakter Abstand */
+        gap: var(--space-4) !important;
         align-items: stretch !important;
+        align-self: start !important; /* Oben beginnen */
     }
     
-    /* Trust Badge Container: MINIMAL kompakt */
+    /* Trust Badge Container: Desktop-ähnliche Höhe */
     section.dsgvo .trust-badge,
     .dsgvo .trust-badge,
     .trust-badge {
         width: 100% !important;
         max-width: none !important;
         min-width: 0 !important;
-        padding: var(--space-3) var(--space-4) !important; /* Kompaktes Padding */
-        font-size: 0.85rem !important;
+        padding: var(--space-5) !important;
+        font-size: 0.95rem !important;
+        min-height: 85px !important;
+        display: flex !important;
+        align-items: center !important;
     }
     
     /* Trust Badge Titel */
     .trust-badge__title {
-        font-size: 0.9rem !important;
+        font-size: 1rem !important;
         font-weight: 600 !important;
+        line-height: 1.3 !important;
     }
     
     /* Trust Badge Text */
     .trust-badge__content {
-        gap: var(--space-1) !important;
+        gap: var(--space-2) !important;
     }
     
     .trust-badge__content span:last-child {
-        font-size: 0.75rem !important;
-        opacity: 0.8;
+        font-size: 0.85rem !important;
+        opacity: 0.85;
+        line-height: 1.4 !important;
     }
     
-    /* Trust Badge Icon kleiner */
+    /* Trust Badge Icon - Desktop-Größe */
     .trust-badge__icon {
-        width: 36px !important;
-        height: 36px !important;
+        width: 48px !important;
+        height: 48px !important;
         flex-shrink: 0 !important;
     }
     
     .trust-badge__icon svg {
-        width: 20px !important;
-        height: 20px !important;
+        width: 24px !important;
+        height: 24px !important;
     }
 }
 
