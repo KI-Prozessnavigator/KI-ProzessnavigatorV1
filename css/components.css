@@ -359,11 +359,12 @@
     background: var(--gradient-neon-2);
 }
 
-/* ===== Before/After Showcase ===== */
+/* ===== Before/After Showcase - Desktop ===== */
 .before-after-showcase {
     margin-block: var(--space-12);
-    padding-inline: clamp(4rem, 6vw, 5rem);
-    /* Gleiche Breite wie .problems__grid und .solutions__grid */
+    padding-inline: 0;
+    width: 100%;
+    max-width: 100%;
 }
 
 .before-after-card {
@@ -530,10 +531,22 @@
     }
 }
 
-/* Hide Before/After on Mobile for compactness */
+/* Before/After auf Mobile ANZEIGEN mit 90% Breite */
 @media (max-width: 576px) {
     .before-after-showcase {
-        display: none;
+        display: block;
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
+        margin-block: var(--space-6);
+    }
+    
+    .before-after-card {
+        width: 100%;
+        padding: var(--space-4);
+        box-sizing: border-box;
     }
 }
 
@@ -543,7 +556,7 @@
     align-items: center;
     gap: var(--space-6);
     margin-block: var(--space-8);
-    padding-inline: clamp(4rem, 6vw, 5rem);
+    padding-inline: 0;
     /* Gleiche Breite wie .problems__grid und .solutions__grid */
     transition: all var(--transition-base);
 }
@@ -974,6 +987,9 @@
     align-items: center;
     gap: var(--space-3);
     font-size: var(--text-base);
+    padding-left: 0;
+    margin-left: 0;
+    justify-content: flex-start;
 }
 
 .checklist-icon {

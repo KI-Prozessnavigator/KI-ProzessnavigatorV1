@@ -263,12 +263,62 @@
     /* Symbol entfernen */
 }
 
+/* Mobile & Tablet: Container auf Bildschirmbreite anpassen */
+@media (max-width: 1023px) {
+    /* Wrapper auf 1 Spalte */
+    #pricing .calculator__wrapper {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Alle drei Container: 90% Breite mit 5% Rand links & rechts */
+    #pricing .calculator__card,
+    #pricing .result-card--time,
+    #pricing .result-card--money {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Flex-Container für die beiden Result-Cards */
+    #pricing .u-flex-col {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+}
+
 @media (max-width: 900px) {
     #pricing .u-flex-col { grid-template-columns: 1fr !important; }
 }
+
 @media (max-width: 768px) {
     #pricing .calculator__wrapper { grid-template-columns: 1fr !important; }
     #pricing .calculator__cta-block .btn--calculator { min-width: 100% !important; }
+    
+    /* Container für kleine Handys: 90% Breite */
+    #pricing .calculator__card,
+    #pricing .result-card--time,
+    #pricing .result-card--money {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Noch kleinere Geräte: 90% Breite beibehalten */
+    #pricing .calculator__card,
+    #pricing .result-card--time,
+    #pricing .result-card--money {
+        width: 90% !important;
+        max-width: 90% !important;
+        padding: 18px !important;
+    }
 }
 
 #pricing .process-select-wrap { position: relative; }

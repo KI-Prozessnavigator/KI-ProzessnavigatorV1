@@ -41,11 +41,13 @@
         box-sizing: border-box;
     }
     
-    /* ===== CONTAINER RESET ===== */
-    .container {
-        width: 100%;
-        max-width: 100%;
-        padding-inline: clamp(1rem, 4vw, 2rem);
+    /* ===== CONTAINER RESET - 90% Breite mit 5% Rand ===== */
+    .container:not(.value-calculator .container):not(#pricing .container) {
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
         box-sizing: border-box;
     }
     
@@ -53,6 +55,15 @@
         width: 100%;
         max-width: 100vw;
         overflow-x: hidden;
+        padding-inline: 0;
+    }
+    
+    /* Alle section > .container bekommen 90% Breite (außer Calculator) */
+    section:not(.value-calculator):not(#pricing) > .container {
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     /* ===== HEADER & NAVIGATION - BURGER MENÜ ===== */
@@ -319,6 +330,13 @@
         overflow-x: hidden;
     }
     
+    .hero > .container {
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
     .hero__container {
         display: flex;
         flex-direction: column;
@@ -543,11 +561,19 @@
         50% { opacity: 1; }
     }
     
-    /* ===== TRUST BAR ===== */
+    /* ===== TRUST BAR - Container mit 90% Breite ===== */
     .trust-bar {
         padding-block: var(--space-5);
         width: 100%;
         overflow-x: hidden;
+    }
+    
+    .trust-bar .container {
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
     }
     
     .trust-bar__text {
@@ -598,12 +624,26 @@
         line-height: 1.5;
     }
     
-    /* ===== PROBLEM/SOLUTION CARDS ===== */
+    /* ===== PROBLEM/SOLUTION CARDS - Container mit 90% Breite ===== */
+    .problems .container,
+    .solutions .container,
+    section.problems .container,
+    section.solutions .container {
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
+    }
+    
     .problems__grid,
     .solutions__grid {
         grid-template-columns: 1fr;
         gap: var(--space-4);
         max-width: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
     
     .problem-card,
@@ -611,6 +651,7 @@
         padding: var(--space-5);
         max-width: 100%;
         width: 100%;
+        box-sizing: border-box;
     }
     
     .problem-card__icon,
@@ -631,19 +672,63 @@
         line-height: 1.5;
     }
     
-    /* Before/After Showcase - Vereinfachen */
+    /* Before/After Showcase - ANZEIGEN mit 90% Breite */
     .before-after-showcase {
-        display: none;
+        display: block;
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
+        margin-block: var(--space-8);
+    }
+    
+    .before-after-card {
+        width: 100%;
+        max-width: 100%;
+        padding: var(--space-5);
+        box-sizing: border-box;
+    }
+    
+    .before-after-header {
+        flex-direction: column;
+        gap: var(--space-3);
+        align-items: center;
+    }
+    
+    .before-after-badge {
+        font-size: 0.75rem;
+        padding: var(--space-2) var(--space-3);
+    }
+    
+    .before-after-vs {
+        font-size: 0.875rem;
+        margin: 0;
+    }
+    
+    .before-after-items {
+        gap: var(--space-4);
+    }
+    
+    .metric-label {
+        font-size: 0.7rem;
+    }
+    
+    .metric-before,
+    .metric-after {
+        font-size: 0.875rem;
     }
     
     /* ===== USE CASES KARUSSELL ===== */
-    /* Container */
+    /* Container - GLEICHER Abstand wie alle anderen Sektionen */
     section.usecases .container,
     .usecases .container,
     #usecases .container {
-        width: 100%;
-        max-width: 100%;
-        padding-inline: var(--space-4);
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
         overflow: visible;
     }
     
@@ -778,7 +863,16 @@
         font-size: 0.55rem;
     }
     
-    /* ===== DSGVO SECTION ===== */
+    /* ===== DSGVO SECTION - Container mit 90% Breite ===== */
+    .dsgvo .container,
+    section.dsgvo .container {
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
+    }
+    
     .dsgvo__wrapper {
         grid-template-columns: 1fr;
         gap: var(--space-8);
@@ -786,7 +880,29 @@
     }
     
     .dsgvo__checklist {
-        align-items: center;
+        align-items: flex-start;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    
+    .checklist-item {
+        width: 100%;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+        justify-content: flex-start !important;
+        white-space: nowrap !important;
+        overflow: visible;
+        font-size: 0.8rem !important;
+    }
+    
+    .checklist-text {
+        white-space: nowrap !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+    }
+    
+    .checklist-icon {
+        flex-shrink: 0;
     }
     
     .dsgvo__badges {
@@ -818,15 +934,19 @@
         margin-right: auto;
     }
     
-    /* ===== PRICING CARDS ===== */
+    /* ===== PRICING CARDS - Volle Breite ===== */
     .pricing__grid {
         grid-template-columns: 1fr;
         gap: var(--space-5);
+        width: 100%;
+        padding: 0;
     }
     
     .pricing-card {
         padding: var(--space-6);
         max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .pricing-card__badge {
@@ -846,10 +966,21 @@
         font-size: var(--text-sm);
     }
     
-    /* ===== TESTIMONIALS ===== */
+    /* ===== TESTIMONIALS - Container mit 90% Breite ===== */
+    .testimonials .container,
+    section.testimonials .container {
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
+    }
+    
     .testimonials__grid {
         grid-template-columns: 1fr;
         gap: var(--space-5);
+        width: 100%;
+        padding: 0;
     }
     
     /* Nur 1 Testimonial auf Mobile */
@@ -884,7 +1015,16 @@
         flex-shrink: 0;
     }
     
-    /* ===== FAQ ===== */
+    /* ===== FAQ - Container mit 90% Breite ===== */
+    .faq-section .container,
+    section.faq-section .container {
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
+    }
+    
     .faq-section__wrapper {
         grid-template-columns: 1fr;
         gap: var(--space-8);
@@ -922,7 +1062,16 @@
         font-size: var(--text-sm);
     }
     
-    /* ===== FINAL CTA ===== */
+    /* ===== FINAL CTA - Container mit 90% Breite ===== */
+    .final-cta .container,
+    section.final-cta .container {
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
+    }
+    
     .final-cta__icon {
         font-size: 2rem;
         margin-bottom: var(--space-3);
@@ -1001,6 +1150,25 @@
    ========================================== */
 
 @media (min-width: 577px) and (max-width: 1023px) {
+    /* Container auch auf Tablet 90% Breite - ALLE Sektionen (AUSSER Calculator) */
+    .container:not(.value-calculator .container):not(#pricing .container),
+    section:not(.value-calculator):not(#pricing) > .container,
+    .hero .container,
+    .problems .container,
+    .solutions .container,
+    .usecases .container,
+    .testimonials .container,
+    .dsgvo .container,
+    .faq-section .container,
+    .final-cta .container,
+    .trust-bar .container {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-inline: 0 !important;
+    }
+    
     /* Hero Visual wieder anzeigen */
     .hero__visual {
         display: block;
@@ -1124,8 +1292,23 @@
         padding-block: var(--space-10);
     }
     
-    .container {
-        padding-inline: var(--space-4);
+    /* ALLE Container auf kleine Handys: 90% Breite (AUSSER Calculator) */
+    .container:not(.value-calculator .container):not(#pricing .container),
+    section:not(.value-calculator):not(#pricing) > .container,
+    .hero .container,
+    .problems .container,
+    .solutions .container,
+    .usecases .container,
+    .testimonials .container,
+    .dsgvo .container,
+    .faq-section .container,
+    .final-cta .container,
+    .trust-bar .container {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-inline: 0 !important;
     }
     
     /* Hero noch kompakter */
@@ -1189,6 +1372,25 @@
    ========================================== */
 
 @media (max-width: 375px) {
+    /* ALLE Container auch auf ultra-kleinen Geräten: 90% Breite (AUSSER Calculator) */
+    .container:not(.value-calculator .container):not(#pricing .container),
+    section:not(.value-calculator):not(#pricing) > .container,
+    .hero .container,
+    .problems .container,
+    .solutions .container,
+    .usecases .container,
+    .testimonials .container,
+    .dsgvo .container,
+    .faq-section .container,
+    .final-cta .container,
+    .trust-bar .container {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-inline: 0 !important;
+    }
+    
     .hero__title {
         font-size: 1.5rem;
     }

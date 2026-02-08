@@ -1662,7 +1662,7 @@ section {
 .problems,
 .solutions {
     overflow: visible;
-    padding-inline: clamp(2rem, 5vw, 3rem);
+    padding-inline: 0;
 }
 
 .problems {
@@ -1670,7 +1670,7 @@ section {
     transition: background var(--transition-slow);
     scroll-margin-top: 100px;
     padding-block: var(--space-16);
-    padding-inline: clamp(2rem, 5vw, 3rem);
+    padding-inline: 0;
 }
 
 .problems .section__header {
@@ -1688,7 +1688,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--space-4);
-    padding-inline: clamp(4rem, 6vw, 5rem);
+    padding-inline: 0;
     overflow: visible;
 }
 
@@ -1997,11 +1997,12 @@ section {
     background: var(--gradient-neon-2);
 }
 
-/* ===== Before/After Showcase ===== */
+/* ===== Before/After Showcase - Desktop ===== */
 .before-after-showcase {
     margin-block: var(--space-12);
-    padding-inline: clamp(4rem, 6vw, 5rem);
-    /* Gleiche Breite wie .problems__grid und .solutions__grid */
+    padding-inline: clamp(1rem, 6vw, 5rem);
+    width: 100%;
+    max-width: 100%;
 }
 
 .before-after-card {
@@ -2168,10 +2169,22 @@ section {
     }
 }
 
-/* Hide Before/After on Mobile for compactness */
+/* Before/After auf Mobile ANZEIGEN mit 90% Breite */
 @media (max-width: 576px) {
     .before-after-showcase {
-        display: none;
+        display: block;
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
+        margin-block: var(--space-6);
+    }
+    
+    .before-after-card {
+        width: 100%;
+        padding: var(--space-4);
+        box-sizing: border-box;
     }
 }
 
@@ -2181,7 +2194,7 @@ section {
     align-items: center;
     gap: var(--space-6);
     margin-block: var(--space-8);
-    padding-inline: clamp(4rem, 6vw, 5rem);
+    padding-inline: 0;
     /* Gleiche Breite wie .problems__grid und .solutions__grid */
     transition: all var(--transition-base);
 }
@@ -2794,6 +2807,9 @@ section {
     align-items: center;
     gap: var(--space-3);
     font-size: var(--text-base);
+    padding-left: 0;
+    margin-left: 0;
+    justify-content: flex-start;
 }
 
 .checklist-icon {
@@ -7654,7 +7670,29 @@ section.testimonials.expert-quotes,
     }
 
     .dsgvo__checklist {
-        align-items: center;
+        align-items: flex-start;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    
+    .checklist-item {
+        width: 100%;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+        justify-content: flex-start !important;
+        white-space: nowrap !important;
+        overflow: visible;
+        font-size: 0.8rem !important;
+    }
+    
+    .checklist-text {
+        white-space: nowrap !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+    }
+    
+    .checklist-icon {
+        flex-shrink: 0;
     }
 
     .dsgvo__badges {
@@ -7707,9 +7745,22 @@ section.testimonials.expert-quotes,
         padding-block: var(--space-10);
     }
 
-    .container {
-        padding-inline: var(--space-4);
-        max-width: 100%;
+    /* ALLE Container: 90% Breite (AUSSER Calculator) */
+    .container:not(.value-calculator .container):not(#pricing .container),
+    section:not(.value-calculator):not(#pricing) > .container,
+    .hero .container,
+    .problems .container,
+    .solutions .container,
+    .testimonials .container,
+    .dsgvo .container,
+    .faq-section .container,
+    .final-cta .container,
+    .trust-bar .container {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-inline: 0 !important;
         box-sizing: border-box;
     }
 
@@ -8037,9 +8088,21 @@ section.testimonials.expert-quotes,
         line-height: 1.4;
     }
 
-    /* Hide Before/After on mobile - too complex */
+    /* Before/After auf mobile ANZEIGEN mit 90% Breite */
     .before-after-showcase {
-        display: none;
+        display: block;
+        width: 90%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-inline: 0;
+        margin-block: var(--space-6);
+    }
+    
+    .before-after-card {
+        width: 100%;
+        padding: var(--space-4);
+        box-sizing: border-box;
     }
 
     .solutions-connector {
@@ -8526,6 +8589,24 @@ section.testimonials.expert-quotes,
 @media (max-width: 375px) {
     :root {
         --container-padding: 0.75rem;
+    }
+
+    /* ALLE Container: 90% Breite auch auf ultra-kleinen Geräten (AUSSER Calculator) */
+    .container:not(.value-calculator .container):not(#pricing .container),
+    section:not(.value-calculator):not(#pricing) > .container,
+    .hero .container,
+    .problems .container,
+    .solutions .container,
+    .testimonials .container,
+    .dsgvo .container,
+    .faq-section .container,
+    .final-cta .container,
+    .trust-bar .container {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-inline: 0 !important;
     }
 
     section {
