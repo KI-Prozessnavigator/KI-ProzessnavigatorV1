@@ -672,7 +672,7 @@
         line-height: 1.5;
     }
     
-    /* Before/After Showcase - ANZEIGEN mit 90% Breite */
+    /* Before/After Showcase - ANZEIGEN mit 90% Breite wie andere Sektionen */
     .before-after-showcase {
         display: block;
         width: 90%;
@@ -686,8 +686,25 @@
     .before-after-card {
         width: 100%;
         max-width: 100%;
-        padding: var(--space-5);
+        padding: var(--space-4);
         box-sizing: border-box;
+    }
+    
+    .before-after-items {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+    
+    .before-after-item {
+        width: 100%;
+        padding: var(--space-3);
+        box-sizing: border-box;
+    }
+    
+    .metric-values {
+        padding: var(--space-2) 0;
     }
     
     .before-after-header {
@@ -905,17 +922,25 @@
         flex-shrink: 0;
     }
     
+    /* Trust Badges - VERTIKAL wie Desktop - HÖCHSTE SPEZIFITÄT */
+    section.dsgvo .dsgvo__badges,
+    .dsgvo .dsgvo__badges,
     .dsgvo__badges {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: var(--space-3);
+        display: flex !important;
+        flex-direction: column !important; /* Untereinander wie Desktop */
+        flex-wrap: nowrap !important;
+        gap: var(--space-4) !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
     }
     
+    section.dsgvo .trust-badge,
+    .dsgvo .trust-badge,
     .trust-badge {
-        flex: 1;
-        min-width: 140px;
-        max-width: 160px;
+        width: 100% !important;
+        max-width: 600px !important;
+        min-width: auto !important;
+        flex: 0 0 auto !important;
     }
     
     /* ===== VALUE CALCULATOR - SKALIEREN ===== */
@@ -986,6 +1011,18 @@
     /* Nur 1 Testimonial auf Mobile */
     .testimonial-card:nth-child(n+2) {
         display: none;
+    }
+    
+    /* Expert Quotes auf Mobile: ALLE ANZEIGEN, untereinander */
+    .expert-quotes__grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: var(--space-4) !important;
+    }
+    
+    .expert-quotes__grid .expert-quote-card {
+        display: block !important;
+        width: 100% !important;
     }
     
     .testimonial-card__video {
@@ -1076,6 +1113,7 @@
         font-size: 2rem;
         margin-bottom: var(--space-3);
     }
+    
     
     .final-cta__title {
         font-size: var(--text-2xl);
@@ -1169,6 +1207,24 @@
         padding-inline: 0 !important;
     }
     
+    /* COMING SOON BOX auf Tablet - NORMAL (keine neue Zeile) */
+    .benefit-result {
+        display: inline !important;
+    }
+    
+    .coming-soon__benefits li {
+        display: flex !important;
+        align-items: flex-start !important;
+        padding-left: 0 !important;
+    }
+    
+    .coming-soon__benefits li svg {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        margin-right: 12px !important;
+    }
+    
     /* Hero Visual wieder anzeigen */
     .hero__visual {
         display: block;
@@ -1236,6 +1292,18 @@
     
     .testimonial-card:nth-child(n+3) {
         display: none;
+    }
+    
+    /* Expert Quotes auf Tablet: ALLE ANZEIGEN, untereinander */
+    .expert-quotes__grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: var(--space-4) !important;
+    }
+    
+    .expert-quotes__grid .expert-quote-card {
+        display: block !important;
+        width: 100% !important;
     }
     
     /* Use Cases Karussell - 2 Karten auf Tablet */
@@ -1357,6 +1425,28 @@
     .usecase-card,
     .pricing-card {
         padding: var(--space-4);
+    }
+    
+    /* ===== COMING SOON BOX - Ergebnisse in neue Zeile NUR auf Handy ===== */
+    .coming-soon__benefits li {
+        display: block !important;
+        font-size: 0.85rem !important;
+        line-height: 1.6 !important;
+        padding-left: 32px !important;
+        position: relative !important;
+    }
+    
+    .coming-soon__benefits li svg {
+        position: absolute !important;
+        left: 0 !important;
+        top: 2px !important;
+        margin-right: 0 !important;
+    }
+    
+    .benefit-result {
+        display: block !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
     }
     
     /* Calculator noch stärker skalieren */
