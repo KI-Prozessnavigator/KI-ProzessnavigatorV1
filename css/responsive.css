@@ -880,7 +880,7 @@
         font-size: 0.55rem;
     }
     
-    /* ===== DSGVO SECTION - Container mit 90% Breite ===== */
+    /* ===== DSGVO SECTION - Container mit 90% Breite (NUR MOBILE) ===== */
     .dsgvo .container,
     section.dsgvo .container {
         width: 90%;
@@ -890,8 +890,9 @@
         padding-inline: 0;
     }
     
+    /* MOBILE: 1-spaltig untereinander */
     .dsgvo__wrapper {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: var(--space-8);
         text-align: center;
     }
@@ -922,14 +923,14 @@
         flex-shrink: 0;
     }
     
-    /* Trust Badges - VERTIKAL wie Desktop - HÖCHSTE SPEZIFITÄT */
+    /* Trust Badges - MOBILE: vertikal untereinander */
     section.dsgvo .dsgvo__badges,
     .dsgvo .dsgvo__badges,
     .dsgvo__badges {
         display: flex !important;
-        flex-direction: column !important; /* Untereinander wie Desktop */
+        flex-direction: column !important;
         flex-wrap: nowrap !important;
-        gap: var(--space-4) !important;
+        gap: var(--space-3) !important;
         align-items: center !important;
         justify-content: flex-start !important;
     }
@@ -941,6 +942,7 @@
         max-width: 600px !important;
         min-width: auto !important;
         flex: 0 0 auto !important;
+        padding: var(--space-4) !important;
     }
     
     /* ===== VALUE CALCULATOR - SKALIEREN ===== */
@@ -1539,6 +1541,81 @@
 @media (min-width: 1600px) {
     :root {
         --container-max: 1440px;
+    }
+}
+
+/* ==========================================
+   TABLET SPECIFIC - 2-Spalten Layout (768px - 1023px)
+   ========================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* DSGVO Section: 2-spaltig wie Desktop */
+    section.dsgvo .dsgvo__wrapper,
+    .dsgvo .dsgvo__wrapper,
+    .dsgvo__wrapper {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* 2 Spalten */
+        gap: var(--space-8) !important;
+        align-items: start !important;
+        text-align: left !important;
+    }
+    
+    /* Checklist links ausrichten */
+    section.dsgvo .dsgvo__checklist,
+    .dsgvo .dsgvo__checklist,
+    .dsgvo__checklist {
+        align-items: flex-start !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Trust Badges: Kompakt & vertikal rechts */
+    section.dsgvo .dsgvo__badges,
+    .dsgvo .dsgvo__badges,
+    .dsgvo__badges {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: var(--space-3) !important; /* Kompakter Abstand */
+        align-items: stretch !important;
+    }
+    
+    /* Trust Badge Container: MINIMAL kompakt */
+    section.dsgvo .trust-badge,
+    .dsgvo .trust-badge,
+    .trust-badge {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        padding: var(--space-3) var(--space-4) !important; /* Kompaktes Padding */
+        font-size: 0.85rem !important;
+    }
+    
+    /* Trust Badge Titel */
+    .trust-badge__title {
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Trust Badge Text */
+    .trust-badge__content {
+        gap: var(--space-1) !important;
+    }
+    
+    .trust-badge__content span:last-child {
+        font-size: 0.75rem !important;
+        opacity: 0.8;
+    }
+    
+    /* Trust Badge Icon kleiner */
+    .trust-badge__icon {
+        width: 36px !important;
+        height: 36px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .trust-badge__icon svg {
+        width: 20px !important;
+        height: 20px !important;
     }
 }
 
