@@ -1102,6 +1102,12 @@
     }
     
     /* ===== FINAL CTA - Container mit 90% Breite ===== */
+    /* Final CTA Section - Overflow visible für Leuchteffekt */
+    .final-cta,
+    section.final-cta {
+        overflow: visible !important;
+    }
+    
     .final-cta .container,
     section.final-cta .container {
         width: 90%;
@@ -1109,6 +1115,11 @@
         margin-left: auto;
         margin-right: auto;
         padding-inline: 0;
+        overflow: visible !important; /* Leuchteffekt nicht abschneiden */
+    }
+    
+    .final-cta__content {
+        overflow: visible !important; /* Leuchteffekt nicht abschneiden */
     }
     
     .final-cta__icon {
@@ -1127,6 +1138,13 @@
         margin-bottom: var(--space-5);
     }
     
+    /* CTA Button - Schrift um 2px verkleinern, overflow visible für Leuchteffekt */
+    .final-cta .btn--large,
+    .final-cta .btn--neon {
+        font-size: calc(var(--text-sm) - 0.125rem) !important; /* 2px kleiner */
+        overflow: visible !important; /* Leuchteffekt vollständig sichtbar */
+    }
+    
     .final-cta__social-proof {
         flex-direction: column;
         gap: var(--space-3);
@@ -1139,13 +1157,13 @@
     
     /* ===== FOOTER ===== */
     .footer__grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--space-6);
         text-align: center;
     }
     
     .footer__brand {
-        grid-column: 1;
+        grid-column: 1 / -1;
     }
     
     .footer__social {
@@ -1156,8 +1174,8 @@
         align-items: center;
     }
     
-    /* Einige Footer-Sektionen ausblenden */
-    .footer__links-group:nth-child(n+4) {
+    /* Nur Produkt und Rechtliches anzeigen auf Handy */
+    .footer__links-group:nth-child(n+3) {
         display: none;
     }
     
@@ -1410,6 +1428,12 @@
         padding-block: var(--space-10);
     }
     
+    /* Final CTA - Overflow visible für Leuchteffekt */
+    .final-cta,
+    section.final-cta {
+        overflow: visible !important;
+    }
+    
     /* ALLE Container auf kleine Handys: 90% Breite (AUSSER Calculator) */
     .container:not(.value-calculator .container):not(#pricing .container),
     section:not(.value-calculator):not(#pricing) > .container,
@@ -1427,6 +1451,13 @@
         margin-left: auto !important;
         margin-right: auto !important;
         padding-inline: 0 !important;
+        overflow: visible !important; /* Leuchteffekt nicht abschneiden */
+    }
+    
+    /* CTA Button - Schrift um 2px verkleinern */
+    .final-cta .btn--large,
+    .final-cta .btn--neon {
+        font-size: calc(0.8rem - 0.125rem) !important; /* 2px kleiner als 0.8rem */
     }
     
     /* Hero noch kompakter */
@@ -1512,6 +1543,12 @@
    ========================================== */
 
 @media (max-width: 375px) {
+    /* Final CTA - Overflow visible für Leuchteffekt */
+    .final-cta,
+    section.final-cta {
+        overflow: visible !important;
+    }
+    
     /* ALLE Container auch auf ultra-kleinen Geräten: 90% Breite (AUSSER Calculator) */
     .container:not(.value-calculator .container):not(#pricing .container),
     section:not(.value-calculator):not(#pricing) > .container,
@@ -1529,6 +1566,13 @@
         margin-left: auto !important;
         margin-right: auto !important;
         padding-inline: 0 !important;
+        overflow: visible !important; /* Leuchteffekt nicht abschneiden */
+    }
+    
+    /* CTA Button - Schrift um 2px verkleinern */
+    .final-cta .btn--large,
+    .final-cta .btn--neon {
+        font-size: calc(0.75rem - 0.125rem) !important; /* 2px kleiner als kleinster Wert */
     }
     
     .hero__title {
