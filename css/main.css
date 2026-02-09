@@ -7573,7 +7573,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     /* ALTE DEFINITION ENTFERNT - WIRD VON RESPONSIVE.CSS ÜBERSCHRIEBEN */
     /* .nav__menu Definition jetzt komplett in responsive.css */
     
@@ -7775,7 +7775,7 @@ section.testimonials.expert-quotes,
 
     /* ===== Hero Section - Mobile Redesign ===== */
     .hero {
-        padding-top: 60px;
+        padding-top: 90px;
         min-height: auto;
         padding-bottom: var(--space-10);
         background: 
@@ -7785,6 +7785,8 @@ section.testimonials.expert-quotes,
         position: relative;
         overflow: hidden;
     }
+    
+    /* +30px Verschiebung NUR für Handy */
 
     /* Decorative gradient orb */
     .hero::before {
@@ -8624,9 +8626,11 @@ section.testimonials.expert-quotes,
 
     /* ===== Hero ===== */
     .hero {
-        padding-top: 56px;
+        padding-top: 86px;
         padding-bottom: var(--space-6);
     }
+    
+    /* +30px Verschiebung NUR für kleine Handys */
 
     .hero__tag {
         font-size: 0.6rem;
