@@ -129,6 +129,12 @@ function validateAndSanitize($data) {
  * E-Mail senden via SMTP
  */
 function sendEmail($data) {
+    // Autoloader laden (falls vorhanden)
+    $autoloadPath = __DIR__ . '/../vendor/autoload.php';
+    if (file_exists($autoloadPath)) {
+        require_once $autoloadPath;
+    }
+    
     // PHPMailer verwenden (wenn verfügbar)
     if (class_exists('PHPMailer\PHPMailer\PHPMailer')) {
         return sendEmailWithPHPMailer($data);
@@ -142,8 +148,6 @@ function sendEmail($data) {
  * E-Mail mit PHPMailer senden (empfohlen)
  */
 function sendEmailWithPHPMailer($data) {
-    require_once __DIR__ . '/../vendor/autoload.php';
-    
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
     
     try {

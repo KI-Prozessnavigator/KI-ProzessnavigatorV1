@@ -897,6 +897,14 @@
         overflow-x: hidden;
     }
     
+    /* Graue Schleier/Glow-Effekte ausblenden auf Handy */
+    .dsgvo::before,
+    .dsgvo::after,
+    section.dsgvo::before,
+    section.dsgvo::after {
+        display: none !important;
+    }
+    
     .dsgvo,
     section.dsgvo {
         overflow-x: hidden;
@@ -1197,9 +1205,15 @@
         align-items: center;
     }
     
-    /* Nur Produkt und Rechtliches anzeigen auf Handy */
-    .footer__links-group:nth-child(n+3) {
-        display: none;
+    /* Produkt und Rechtliches EXPLIZIT einblenden */
+    .footer__links-group:nth-child(2),
+    .footer__links-group:nth-child(3) {
+        display: block !important;
+    }
+    
+    /* Kontakt und weitere ausblenden */
+    .footer__links-group:nth-child(n+4) {
+        display: none !important;
     }
     
     .footer__bottom {
