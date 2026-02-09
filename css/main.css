@@ -2000,7 +2000,7 @@ section {
 /* ===== Before/After Showcase - Desktop ===== */
 .before-after-showcase {
     margin-block: var(--space-12);
-    padding-inline: clamp(1rem, 6vw, 5rem);
+    padding-inline: 0;
     width: 100%;
     max-width: 100%;
 }
