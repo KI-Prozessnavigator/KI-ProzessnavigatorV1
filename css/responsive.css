@@ -328,6 +328,7 @@
         width: 100%;
         max-width: 100vw;
         overflow-x: hidden;
+        margin-top: 30px;
     }
     
     .hero > .container {
@@ -365,26 +366,29 @@
     }
     
     .hero__description {
-        font-size: clamp(0.875rem, 3.5vw, 1.125rem);
+        font-size: clamp(0.75rem, 3.5vw, 1rem);
         line-height: 1.6;
         text-align: left;
         margin-bottom: var(--space-6);
         word-wrap: break-word;
+        padding-left: 0;
+        padding-right: 0;
     }
     
-    /* Hero Actions - Full Width Buttons */
+    /* Hero Actions - Desktop-Style, nur kleiner und untereinander */
     .hero__actions {
         display: flex;
         flex-direction: column;
-        gap: var(--space-3);
-        width: 100%;
+        align-items: flex-start;
+        gap: var(--space-4);
+        width: auto;
     }
     
     .hero__actions .btn {
-        width: 100%;
-        padding: var(--space-4);
-        font-size: clamp(0.875rem, 3.5vw, 1rem);
-        min-height: 52px;
+        width: auto;
+        padding: var(--space-3) var(--space-5);
+        font-size: 0.9rem;
+        min-height: 48px;
         border-radius: var(--radius-xl);
         justify-content: center;
     }
@@ -403,6 +407,7 @@
         min-height: 240px !important;
         padding: 0 !important;
         margin-top: var(--space-6) !important;
+        margin-bottom: 40px !important;
         box-sizing: border-box !important;
         
         /* DESKTOP DESIGN - Blauer Gradient */
@@ -512,7 +517,7 @@
         align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
-        gap: var(--space-2) !important;
+        gap: 3px !important;
         margin: 0 !important;
         padding: 0 !important;
     }
@@ -533,6 +538,7 @@
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
         background-clip: text !important;
+        transform: translateY(15px) !important;
     }
     
     /* Labels */
@@ -888,6 +894,12 @@
         margin-left: auto;
         margin-right: auto;
         padding-inline: 0;
+        overflow-x: hidden;
+    }
+    
+    .dsgvo,
+    section.dsgvo {
+        overflow-x: hidden;
     }
     
     /* MOBILE: 1-spaltig untereinander */
@@ -895,12 +907,18 @@
         grid-template-columns: 1fr !important;
         gap: var(--space-8);
         text-align: center;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
     
     .dsgvo__checklist {
         align-items: flex-start;
         padding-left: 2%;
         padding-right: 2%;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
     
     .checklist-item {
@@ -908,15 +926,15 @@
         padding-left: 0 !important;
         margin-left: 0 !important;
         justify-content: flex-start !important;
-        white-space: nowrap !important;
+        white-space: normal !important;
         overflow: visible;
         font-size: 0.8rem !important;
     }
     
     .checklist-text {
-        white-space: nowrap !important;
-        word-break: keep-all !important;
-        overflow-wrap: normal !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
     }
     
     .checklist-icon {
@@ -933,16 +951,21 @@
         gap: var(--space-3) !important;
         align-items: center !important;
         justify-content: flex-start !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
     }
     
     section.dsgvo .trust-badge,
     .dsgvo .trust-badge,
     .trust-badge {
         width: 100% !important;
-        max-width: 600px !important;
+        max-width: 100% !important;
         min-width: auto !important;
         flex: 0 0 auto !important;
         padding: var(--space-4) !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
     }
     
     /* ===== VALUE CALCULATOR - SKALIEREN ===== */
@@ -1284,6 +1307,7 @@
         height: 120px !important;
         min-height: 120px !important;
         max-height: 120px !important;
+        margin-bottom: var(--space-6) !important;
     }
     
     /* Stats: vertikale Trenner zwischen allen */
@@ -1320,6 +1344,23 @@
     .hero .hero__stats .stat:nth-child(2)::before,
     .hero .hero__stats .stat:nth-child(4)::before {
         display: none !important;
+    }
+    
+    /* Stat Inner Container - Tablet zentriert zurücksetzen */
+    .hero__stats .stat__inner,
+    .hero .hero__stats .stat__inner,
+    section.hero .hero__stats .stat__inner {
+        justify-content: center !important;
+        gap: var(--space-2) !important;
+        padding: 0 !important;
+    }
+    
+    /* Zahlen - Transform zurücksetzen auf Tablet */
+    .hero__stats .stat__number,
+    .hero .hero__stats .stat__number,
+    section.hero .hero__stats .stat__number {
+        margin: 0 !important;
+        transform: none !important;
     }
     
     /* 2 Testimonials auf Tablet */
@@ -1462,23 +1503,61 @@
     
     /* Hero noch kompakter */
     .hero {
-        padding-top: 80px;
+        padding-top: 110px;
     }
     
-    .hero__title {
-        font-size: clamp(1.5rem, 7vw, 2rem);
+    /* +30px Verschiebung NUR für Handy */
+    
+    .hero__title,
+    [data-theme="dark"] .hero__title,
+    .hero .hero__title,
+    section.hero .hero__title {
+        font-size: clamp(1.75rem, 8vw, 2.25rem) !important;
         margin-bottom: var(--space-4);
     }
     
+    .hero__title *,
+    .hero__title span,
+    .hero__title em,
+    [data-theme="dark"] .hero__title *,
+    [data-theme="dark"] .hero__title span,
+    [data-theme="dark"] .hero__title em {
+        font-size: clamp(1.75rem, 8vw, 2.25rem) !important;
+    }
+    
+    .hero__title-em,
+    .hero__title-line1,
+    .hero__title-line3,
+    [data-theme="dark"] .hero__title-em,
+    [data-theme="dark"] .hero__title-line1,
+    [data-theme="dark"] .hero__title-line3 {
+        font-size: clamp(1.75rem, 8vw, 2.25rem) !important;
+    }
+    
     .hero__description {
-        font-size: clamp(0.875rem, 3vw, 1rem);
+        font-size: clamp(0.75rem, 3vw, 0.875rem);
         margin-bottom: var(--space-5);
+        padding-left: 0;
+        padding-right: 0;
     }
     
     .hero__actions .btn {
-        padding: var(--space-3);
-        font-size: 0.875rem;
+        width: auto;
+        padding: var(--space-3) var(--space-5);
+        font-size: 0.9rem;
         min-height: 48px;
+        transform: scale(0.7) !important;
+        transform-origin: left center !important;
+    }
+    
+    .hero__actions .btn--neon,
+    .hero__actions .btn--glass {
+        transform: scale(0.7) !important;
+        transform-origin: left center !important;
+    }
+    
+    .hero__actions .btn--glass {
+        margin-top: -20px !important;
     }
     
     /* Stats kompakter */
@@ -1575,18 +1654,54 @@
         font-size: calc(0.75rem - 0.125rem) !important; /* 2px kleiner als kleinster Wert */
     }
     
-    .hero__title {
-        font-size: 1.5rem;
+    .hero__title,
+    [data-theme="dark"] .hero__title,
+    .hero .hero__title,
+    section.hero .hero__title {
+        font-size: 1.65rem !important;
+    }
+    
+    .hero__title *,
+    .hero__title span,
+    .hero__title em,
+    [data-theme="dark"] .hero__title *,
+    [data-theme="dark"] .hero__title span,
+    [data-theme="dark"] .hero__title em {
+        font-size: 1.65rem !important;
+    }
+    
+    .hero__title-em,
+    .hero__title-line1,
+    .hero__title-line3,
+    [data-theme="dark"] .hero__title-em,
+    [data-theme="dark"] .hero__title-line1,
+    [data-theme="dark"] .hero__title-line3 {
+        font-size: 1.65rem !important;
     }
     
     .hero__description {
-        font-size: 0.875rem;
+        font-size: 0.75rem;
+        padding-left: 0;
+        padding-right: 0;
     }
     
     .hero__actions .btn {
-        padding: var(--space-3);
-        font-size: 0.8rem;
-        min-height: 44px;
+        width: auto;
+        padding: var(--space-3) var(--space-5);
+        font-size: 0.9rem;
+        min-height: 48px;
+        transform: scale(0.7) !important;
+        transform-origin: left center !important;
+    }
+    
+    .hero__actions .btn--neon,
+    .hero__actions .btn--glass {
+        transform: scale(0.7) !important;
+        transform-origin: left center !important;
+    }
+    
+    .hero__actions .btn--glass {
+        margin-top: -20px !important;
     }
     
     .hero__stats .stat__number {
@@ -1667,7 +1782,7 @@
         margin-bottom: var(--space-6) !important;
     }
     
-    /* Checklist: Zeile 2, Spalte 1 */
+    /* Checklist: Zeile 2, Spalte 1 - nach oben verschoben wie Desktop */
     section.dsgvo .dsgvo__checklist,
     .dsgvo .dsgvo__checklist,
     .dsgvo__checklist {
@@ -1676,10 +1791,10 @@
         align-items: flex-start !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
-        margin-top: 0 !important;
+        margin-top: -80px !important; /* Nach oben verschieben wie Desktop */
     }
     
-    /* Trust Badges: Zeile 2, Spalte 2 - EXAKT auf Höhe der Checklist */
+    /* Trust Badges: Zeile 2, Spalte 2 - nach oben verschoben wie Desktop */
     section.dsgvo .dsgvo__badges,
     .dsgvo .dsgvo__badges,
     .dsgvo__badges {
@@ -1690,6 +1805,7 @@
         gap: var(--space-4) !important;
         align-items: stretch !important;
         align-self: start !important; /* Oben beginnen */
+        margin-top: -80px !important; /* Nach oben verschieben wie Desktop */
     }
     
     /* Trust Badge Container: Desktop-ähnliche Höhe */
