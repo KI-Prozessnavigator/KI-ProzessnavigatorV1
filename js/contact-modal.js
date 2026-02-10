@@ -49,6 +49,7 @@
                 analysis: {
                     employees: 10,
                     weeklyHours: 20,
+                    hourlyCost: 50,
                     processes: [],
                     challenges: [],
                     industry: null
@@ -86,6 +87,7 @@
                     // Reset sliders to default
                     if (input.id === 'employee-count') input.value = 10;
                     else if (input.id === 'weekly-hours') input.value = 20;
+                    else if (input.id === 'hourly-cost') input.value = 50;
                 } else {
                     input.value = '';
                 }
@@ -107,6 +109,7 @@
             // Reset slider displays
             updateSliderDisplay('employee-count', 10);
             updateSliderDisplay('weekly-hours', 20);
+            updateSliderDisplay('hourly-cost', 50);
         }
 
         // ===== INIT TRIGGERS =====
@@ -227,6 +230,7 @@
         // ===== SLIDERS =====
         const employeeSlider = document.getElementById('employee-count');
         const hoursSlider = document.getElementById('weekly-hours');
+        const hourlyCostSlider = document.getElementById('hourly-cost');
 
         if (employeeSlider) {
             employeeSlider.addEventListener('input', function() {
@@ -242,6 +246,13 @@
             });
         }
 
+        if (hourlyCostSlider) {
+            hourlyCostSlider.addEventListener('input', function() {
+                updateSliderDisplay('hourly-cost', this.value);
+                state.formData.analysis.hourlyCost = parseInt(this.value);
+            });
+        }
+
         function updateSliderDisplay(sliderId, value) {
             const display = document.getElementById(sliderId + '-value');
             if (!display) return;
@@ -249,7 +260,9 @@
             if (sliderId === 'employee-count') {
                 display.textContent = value + (parseInt(value) >= 100 ? '+' : '') + ' Mitarbeiter';
             } else if (sliderId === 'weekly-hours') {
-                display.textContent = value + ' Stunden/Woche';
+                display.textContent = value + ' Std./Woche';
+            } else if (sliderId === 'hourly-cost') {
+                display.textContent = value + ' €/Stunde';
             }
         }
 
@@ -383,29 +396,42 @@
 
         // ===== POTENTIAL CALCULATION =====
         function updatePotentialResults() {
-            const { employees, weeklyHours, processes } = state.formData.analysis;
+            const { employees, weeklyHours, hourlyCost, processes } = state.formData.analysis;
 
-            // Calculate potential savings (70% automation rate)
-            const automationRate = 0.70;
-            const hoursSaved = Math.round(weeklyHours * automationRate);
-            const monthlySavings = hoursSaved * 4;
+            // Automationsraten pro Prozesstyp
+            // Einfache Aufgaben (regelbasiert, hohe Automatisierbarkeit): 90%
+            // Komplexe Aufgaben (Entscheidungslogik nötig): 65%
+            var simpleProcesses = ['terminbuchung', 'buchhaltung', 'onboarding', 'finanzen'];
+            var complexProcesses = ['vertrieb', 'kundenservice', 'hr', 'projektmanagement'];
 
-            // Cost calculation (50€/hour average)
-            const hourlyCost = 50;
-            const monthlyEuroSaved = monthlySavings * hourlyCost;
+            var simpleCount = 0;
+            var complexCount = 0;
+            processes.forEach(function(p) {
+                if (simpleProcesses.indexOf(p) !== -1) simpleCount++;
+                if (complexProcesses.indexOf(p) !== -1) complexCount++;
+            });
 
-            // ROI (based on Pro package at 799€/month)
-            const monthlyCost = 799;
-            const roi = Math.round((monthlyEuroSaved - monthlyCost) / monthlyCost * 100);
+            // Gewichtete Automationsrate (Durchschnitt der ausgewählten Prozesse)
+            var automationRate = 0.65; // Standard wenn nichts gewählt
+            var totalSelected = simpleCount + complexCount;
+            if (totalSelected > 0) {
+                automationRate = ((simpleCount * 0.90) + (complexCount * 0.65)) / totalSelected;
+            }
+
+            // Zeitersparnis: Stunden pro Mitarbeiter × Anzahl Mitarbeiter × Automationsrate
+            var totalWeeklyHours = weeklyHours * employees;
+            var hoursSaved = Math.round(totalWeeklyHours * automationRate);
+
+            // Kosteneinsparung: Stunden pro Monat × Stundenlohn (4,33 Wochen/Monat)
+            var monthlyHoursSaved = hoursSaved * 4.33;
+            var monthlyEuroSaved = Math.round(monthlyHoursSaved * hourlyCost);
 
             // Update displays
-            const hoursSavedEl = document.getElementById('result-hours');
-            const euroSavedEl = document.getElementById('result-savings');
-            const roiEl = document.getElementById('result-roi');
+            var hoursSavedEl = document.getElementById('result-hours');
+            var euroSavedEl = document.getElementById('result-savings');
 
             if (hoursSavedEl) hoursSavedEl.textContent = hoursSaved + 'h/Woche';
             if (euroSavedEl) euroSavedEl.textContent = formatCurrency(monthlyEuroSaved) + '€/Monat';
-            if (roiEl) roiEl.textContent = roi > 0 ? '+' + roi + '%' : roi + '%';
 
             updateRecommendations();
         }
@@ -415,14 +441,14 @@
             if (!recommendationsEl) return;
 
             const processRecommendations = {
-                'vertrieb': '🎯 Lead-Qualifizierung und automatische Terminbuchung können Ihre Abschlussquote um 40% steigern',
-                'hr': '👥 KI-gestütztes Bewerber-Matching spart durchschnittlich 8 Stunden pro Woche',
-                'finanzen': '💰 Automatische Rechnungsprüfung reduziert Fehler auf nahezu 0%',
-                'kundenservice': '💬 24/7 Chatbot-Support erhöht die Kundenzufriedenheit um 35%',
-                'projektmanagement': '📋 Automatisierte Projekt-Setups verhindern vergessene Deadlines',
-                'buchhaltung': '📄 OCR-basierte Rechnungserfassung beschleunigt die Buchhaltung um 60%',
-                'onboarding': '🎓 Digitales Onboarding reduziert die Einarbeitungszeit um 70%',
-                'terminbuchung': '📅 Online-Buchung mit SMS-Erinnerung eliminiert No-Shows'
+                'vertrieb': { icon: '🎯', text: 'Lead-Qualifizierung und automatische Terminbuchung können Ihre Abschlussquote um 40% steigern' },
+                'hr': { icon: '👥', text: 'KI-gestütztes Bewerber-Matching spart durchschnittlich 8 Stunden pro Woche' },
+                'finanzen': { icon: '💰', text: 'Automatische Rechnungsprüfung reduziert Fehler auf nahezu 0%' },
+                'kundenservice': { icon: '💬', text: '24/7 Chatbot-Support erhöht die Kundenzufriedenheit um 35%' },
+                'projektmanagement': { icon: '📋', text: 'Automatisierte Projekt-Setups verhindern vergessene Deadlines' },
+                'buchhaltung': { icon: '📄', text: 'OCR-basierte Rechnungserfassung beschleunigt die Buchhaltung um 60%' },
+                'onboarding': { icon: '🎓', text: 'Digitales Onboarding reduziert die Einarbeitungszeit um 70%' },
+                'terminbuchung': { icon: '📅', text: 'Online-Buchung mit SMS-Erinnerung eliminiert No-Shows' }
             };
 
             const selectedProcesses = state.formData.analysis.processes.slice(0, 3);
@@ -441,11 +467,12 @@
                 `;
             } else {
                 selectedProcesses.forEach(process => {
-                    if (processRecommendations[process]) {
+                    const rec = processRecommendations[process];
+                    if (rec) {
                         html += `
                             <div class="recommendation-item">
-                                <span class="recommendation-item__icon">✅</span>
-                                <span>${processRecommendations[process]}</span>
+                                <span class="recommendation-item__icon">${rec.icon}</span>
+                                <span>${rec.text}</span>
                             </div>
                         `;
                     }

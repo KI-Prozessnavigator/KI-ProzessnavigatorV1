@@ -47,7 +47,7 @@ try {
     Write-Host "Deploy vorbereiten..." -ForegroundColor Cyan
 
     # Root-Dateien
-    @('index.html', 'agb.html', 'datenschutz.html', 'impressum.html', '.htaccess', 'robots.txt', 'sitemap.xml') | ForEach-Object {
+    @('index.html', 'agb.html', 'datenschutz.html', 'impressum.html', 'ueber-uns.html', '.htaccess', 'robots.txt', 'sitemap.xml') | ForEach-Object {
         $src = Join-Path $scriptRoot $_
         if (Test-Path $src) { Copy-Item $src $deployTemp -Force }
     }

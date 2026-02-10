@@ -107,17 +107,16 @@
     box-shadow: 0 4px 12px var(--color-neon-glow);
 }
 
-/* Nur notwendige Button (Sekundär) */
+/* Ablehnen Button (gleicher Stil wie Alle akzeptieren) */
 .cookie-banner__btn--essential {
-    background: transparent;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: var(--color-neon);
+    color: var(--color-neutral-900);
 }
 
 .cookie-banner__btn--essential:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
-    color: #ffffff;
+    background: var(--color-neon-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--color-neon-glow);
 }
 
 /* Einstellungen Button (Ghost) */

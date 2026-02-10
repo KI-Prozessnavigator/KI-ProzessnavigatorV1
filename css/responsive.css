@@ -567,7 +567,7 @@
         50% { opacity: 1; }
     }
     
-    /* ===== TRUST BAR - Container mit 90% Breite ===== */
+    /* ===== TRUST BAR (Legacy) ===== */
     .trust-bar {
         padding-block: var(--space-5);
         width: 100%;
@@ -606,6 +606,37 @@
         padding: var(--space-2) var(--space-4);
         font-size: clamp(0.65rem, 2.5vw, 0.75rem);
         white-space: nowrap;
+    }
+
+    /* ===== LOGO CAROUSEL - Mobile Anpassungen ===== */
+    .logo-carousel {
+        padding-block: 1.25rem 1.5rem;
+    }
+
+    .logo-carousel__heading {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+        padding-inline: 1rem;
+    }
+
+    .logo-carousel__track {
+        gap: 1.5rem;
+        animation-duration: 35s;
+    }
+
+    .logo-carousel__item {
+        min-width: 72px;
+        padding: 0.5rem 0.75rem;
+        border-radius: 10px;
+    }
+
+    .logo-carousel__item svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .logo-carousel__item span {
+        font-size: 0.6rem;
     }
     
     /* ===== SECTION HEADERS ===== */
@@ -895,14 +926,6 @@
         margin-right: auto;
         padding-inline: 0;
         overflow-x: hidden;
-    }
-    
-    /* Graue Schleier/Glow-Effekte ausblenden auf Handy */
-    .dsgvo::before,
-    .dsgvo::after,
-    section.dsgvo::before,
-    section.dsgvo::after {
-        display: none !important;
     }
     
     .dsgvo,
@@ -1256,7 +1279,8 @@
     .dsgvo .container,
     .faq-section .container,
     .final-cta .container,
-    .trust-bar .container {
+    .trust-bar .container,
+    .logo-carousel .container {
         width: 90% !important;
         max-width: 90% !important;
         margin-left: auto !important;
@@ -1500,7 +1524,8 @@
     .dsgvo .container,
     .faq-section .container,
     .final-cta .container,
-    .trust-bar .container {
+    .trust-bar .container,
+    .logo-carousel .container {
         width: 90% !important;
         max-width: 90% !important;
         margin-left: auto !important;
@@ -1653,7 +1678,8 @@
     .dsgvo .container,
     .faq-section .container,
     .final-cta .container,
-    .trust-bar .container {
+    .trust-bar .container,
+    .logo-carousel .container {
         width: 90% !important;
         max-width: 90% !important;
         margin-left: auto !important;
@@ -1900,6 +1926,7 @@
     .nav__toggle,
     .hero__visual,
     .trust-bar,
+    .logo-carousel,
     .testimonials__grid .video-placeholder,
     .play-button,
     .final-cta,

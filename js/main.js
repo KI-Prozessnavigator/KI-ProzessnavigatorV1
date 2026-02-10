@@ -970,256 +970,254 @@ function init() {
 
 // ===== Use Cases Slider =====
 function initUseCasesSlider() {
-    const slider = document.getElementById('usecases-slider');
-    const prevBtn = document.getElementById('usecases-prev');
-    const nextBtn = document.getElementById('usecases-next');
-    const dotsContainer = document.getElementById('usecases-dots');
+    var slider = document.getElementById('usecases-slider');
+    var prevBtn = document.getElementById('usecases-prev');
+    var nextBtn = document.getElementById('usecases-next');
+    var dotsContainer = document.getElementById('usecases-dots');
     
     if (!slider || !prevBtn || !nextBtn) return;
     
     // Original-Karten
-    const originalCards = Array.from(slider.querySelectorAll('.usecase-card'));
-    const totalCards = originalCards.length;
+    var originalCards = Array.from(slider.querySelectorAll('.usecase-card'));
+    var totalCards = originalCards.length;
     
-    // Klone für Endlos-Loop erstellen (3 Karten am Anfang und Ende)
-    const cloneCount = 3;
-    
-    // Klone am Ende hinzufügen (erste 3 Karten)
-    for (let i = 0; i < cloneCount; i++) {
-        const clone = originalCards[i].cloneNode(true);
-        clone.classList.add('usecase-card--clone');
-        clone.setAttribute('data-clone-of', i);
-        slider.appendChild(clone);
-    }
-    
-    // Klone am Anfang hinzufügen (letzte 3 Karten)
-    for (let i = totalCards - 1; i >= totalCards - cloneCount; i--) {
-        const clone = originalCards[i].cloneNode(true);
-        clone.classList.add('usecase-card--clone');
-        clone.setAttribute('data-clone-of', i);
-        slider.insertBefore(clone, slider.firstChild);
-    }
-    
-    // Alle Karten (inkl. Klone)
-    const allCards = Array.from(slider.querySelectorAll('.usecase-card'));
-    
-    // Start-Index: Überspringe die Klone am Anfang
-    let currentIndex = cloneCount;
-    let isTransitioning = false;
-    let cardsPerView = getCardsPerView();
+    // Klone für Endlos-Loop (3 Karten am Anfang und Ende)
+    var cloneCount = 3;
     
     function getCardsPerView() {
-        if (window.innerWidth <= 768) return 1;  /* 1 Karte, wenn sonst Flow/Text ragen würden */
+        if (window.innerWidth <= 768) return 1;
         if (window.innerWidth <= 1024) return 2;
         return 3;
     }
     
-    // Event Listener für Transition-Ende
-    let pendingTransitionCallback = null;
+    // Klone am Ende hinzufügen (erste 3 Karten)
+    for (var i = 0; i < cloneCount; i++) {
+        var clone = originalCards[i].cloneNode(true);
+        clone.classList.add('usecase-card--clone');
+        clone.setAttribute('aria-hidden', 'true');
+        slider.appendChild(clone);
+    }
     
-    slider.addEventListener('transitionend', (e) => {
-        if (e.propertyName === 'transform' && pendingTransitionCallback) {
-            const callback = pendingTransitionCallback;
-            pendingTransitionCallback = null;
-            callback();
+    // Klone am Anfang hinzufügen (letzte 3 Karten)
+    for (var i = totalCards - 1; i >= totalCards - cloneCount; i--) {
+        var clone = originalCards[i].cloneNode(true);
+        clone.classList.add('usecase-card--clone');
+        clone.setAttribute('aria-hidden', 'true');
+        slider.insertBefore(clone, slider.firstChild);
+    }
+    
+    // Alle Karten (inkl. Klone)
+    var allCards = Array.from(slider.querySelectorAll('.usecase-card'));
+    
+    // Konstanten
+    var ANIM_MS = 800;
+    var ANIM_CSS = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+    var GAP = 24;
+    
+    // State
+    var currentIndex = cloneCount; // Starte bei erster echten Karte
+    var isTransitioning = false;
+    var cardsPerView = getCardsPerView();
+    var safetyTimer = null;
+    
+    // ---- Hilfsfunktionen ----
+    
+    function getOffset(idx) {
+        if (!allCards[0]) return 0;
+        return idx * (allCards[0].offsetWidth + GAP);
+    }
+    
+    function setPosition(idx, animate) {
+        var offset = getOffset(idx);
+        slider.style.transition = animate ? ANIM_CSS : 'none';
+        slider.style.transform = 'translateX(-' + offset + 'px)';
+    }
+    
+    function getRealIndex() {
+        return ((currentIndex - cloneCount) % totalCards + totalCards) % totalCards;
+    }
+    
+    function updateDots() {
+        if (!dotsContainer) return;
+        var realIdx = getRealIndex();
+        var dots = dotsContainer.querySelectorAll('.usecases__dot');
+        dots.forEach(function(dot, i) {
+            dot.classList.toggle('active', i === realIdx);
+        });
+    }
+    
+    // ---- Sicherheits-Reset: Wenn isTransitioning >2s hängt, force-reset ----
+    function startSafetyTimer() {
+        clearSafetyTimer();
+        safetyTimer = setTimeout(function() {
+            isTransitioning = false;
+        }, ANIM_MS + 1200);
+    }
+    
+    function clearSafetyTimer() {
+        if (safetyTimer) {
+            clearTimeout(safetyTimer);
+            safetyTimer = null;
         }
-    });
+    }
     
-    function updateSlider(smooth = true, onComplete = null) {
-        if (!allCards[0]) return;
-        
-        const cardWidth = allCards[0].offsetWidth;
-        const gap = 24; // var(--space-6) = 1.5rem = 24px
-        
-        // EINFACHE Berechnung: Verschiebe um currentIndex Karten nach links
-        const offset = currentIndex * (cardWidth + gap);
-        
-        // Langsame, sanfte Transition
-        slider.style.transition = smooth ? 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
-        slider.style.transform = `translateX(-${offset}px)`;
-        
-        // Buttons nie deaktivieren
-        prevBtn.disabled = false;
-        nextBtn.disabled = false;
-        
-        // Update dots
+    // ---- Slider bewegen ----
+    
+    function moveToIndex(idx, animate, callback) {
+        currentIndex = idx;
+        setPosition(currentIndex, animate);
         updateDots();
         
-        // Nach Transition: Callback aufrufen (mit transitionend event)
-        if (smooth && onComplete) {
-            pendingTransitionCallback = onComplete;
-            // Fallback falls transitionend nicht feuert
-            setTimeout(() => {
-                if (pendingTransitionCallback === onComplete) {
-                    pendingTransitionCallback = null;
-                    onComplete();
-                }
-            }, 1000);
-        } else if (!smooth && onComplete) {
-            // Kein smooth = sofort callback
-            onComplete();
+        if (animate && callback) {
+            // setTimeout mit grossem Margin -- Animation ist 800ms,
+            // wir warten 920ms um sicher zu sein dass sie visuell fertig ist
+            setTimeout(callback, ANIM_MS + 120);
+        } else if (callback) {
+            callback();
         }
     }
     
-    function handleInfiniteLoopJump() {
-        // Wenn wir bei den Klonen am Ende sind (nach Karte 10)
+    // ---- Nahtloser Endlos-Sprung ----
+    
+    function checkAndJump(callback) {
+        var needsJump = false;
+        var newIndex = currentIndex;
+        
+        // Vorwärts: Bei Klonen am Ende
         if (currentIndex >= cloneCount + totalCards) {
-            // Springe instant zurück zur echten ersten Karte
-            currentIndex = cloneCount;
-            
-            const cardWidth = allCards[0].offsetWidth;
-            const gap = 24;
-            const offset = currentIndex * (cardWidth + gap);
-            
-            slider.style.transition = 'none';
-            slider.style.transform = `translateX(-${offset}px)`;
-            updateDots();
-            
-            // Force reflow
-            void slider.offsetHeight;
-            
-            return true;
+            newIndex = cloneCount + (currentIndex - cloneCount - totalCards);
+            needsJump = true;
         }
-        // Wenn wir bei den Klonen am Anfang sind (vor Karte 1)
+        // Rückwärts: Bei Klonen am Anfang
         else if (currentIndex < cloneCount) {
-            // Springe instant zur echten letzten Karte
-            currentIndex = cloneCount + totalCards - 1;
-            
-            const cardWidth = allCards[0].offsetWidth;
-            const gap = 24;
-            const offset = currentIndex * (cardWidth + gap);
-            
-            slider.style.transition = 'none';
-            slider.style.transform = `translateX(-${offset}px)`;
-            updateDots();
-            
-            // Force reflow
-            void slider.offsetHeight;
-            
-            return true;
+            newIndex = cloneCount + totalCards - (cloneCount - currentIndex);
+            needsJump = true;
         }
         
-        return false;
+        if (needsJump) {
+            currentIndex = newIndex;
+            
+            // 1) CSS-Klasse mit !important erzwingt transition:none
+            slider.classList.add('usecases__grid--no-transition');
+            slider.style.transition = 'none';
+            slider.style.transform = 'translateX(-' + getOffset(currentIndex) + 'px)';
+            
+            // 2) Force Reflow (synchron)
+            slider.getBoundingClientRect();
+            
+            // 3) Double-rAF: Warte 2 volle Paint-Zyklen
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    // Jetzt ist der Sprung garantiert gerendert
+                    slider.classList.remove('usecases__grid--no-transition');
+                    updateDots();
+                    if (callback) callback();
+                });
+            });
+        } else {
+            updateDots();
+            if (callback) callback();
+        }
     }
+    
+    // ---- Zentrale Slide-Funktion für alle Aktionen ----
+    
+    function slideBy(delta, afterDone) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        startSafetyTimer();
+        
+        currentIndex += delta;
+        
+        moveToIndex(currentIndex, true, function() {
+            // Nach Animation: Prüfe ob Sprung nötig
+            checkAndJump(function() {
+                clearSafetyTimer();
+                isTransitioning = false;
+                if (afterDone) afterDone();
+            });
+        });
+    }
+    
+    function slideTo(targetRealIndex, afterDone) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        startSafetyTimer();
+        
+        currentIndex = cloneCount + targetRealIndex;
+        
+        moveToIndex(currentIndex, true, function() {
+            clearSafetyTimer();
+            isTransitioning = false;
+            if (afterDone) afterDone();
+        });
+    }
+    
+    // ---- Dots ----
     
     function createDots() {
         if (!dotsContainer) return;
         dotsContainer.replaceChildren();
         
-        for (let i = 0; i < totalCards; i++) {
-            const dot = document.createElement('button');
+        for (var i = 0; i < totalCards; i++) {
+            var dot = document.createElement('button');
             dot.className = 'usecases__dot' + (i === 0 ? ' active' : '');
-            dot.setAttribute('aria-label', `Gehe zu Karte ${i + 1}`);
-            dot.addEventListener('click', () => {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                stopAutoScroll();
-                
-                // Setze auf echte Karte (nicht Klon)
-                currentIndex = cloneCount + i;
-                updateSlider(true);
-                
-                setTimeout(() => {
-                    isTransitioning = false;
-                    resetAutoScroll();
-                }, 1000);
-            });
+            dot.setAttribute('aria-label', 'Gehe zu Karte ' + (i + 1));
+            dot.addEventListener('click', (function(idx) {
+                return function() {
+                    stopAutoScroll();
+                    slideTo(idx, function() {
+                        resetAutoScroll();
+                    });
+                };
+            })(i));
             dotsContainer.appendChild(dot);
         }
     }
     
-    function updateDots() {
-        if (!dotsContainer) return;
-        const dots = dotsContainer.querySelectorAll('.usecases__dot');
-        
-        // Berechne echten Index (ohne Klone): 0-9 für 10 Karten
-        let realIndex = currentIndex - cloneCount;
-        
-        // Normalisiere für Klone
-        if (realIndex < 0) {
-            realIndex = totalCards + realIndex;
-        } else if (realIndex >= totalCards) {
-            realIndex = realIndex - totalCards;
-        }
-        
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === realIndex);
-        });
-    }
+    // ---- Resize ----
     
-    // Handle resize
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
+    var resizeTimeout;
+    window.addEventListener('resize', function() {
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
+        resizeTimeout = setTimeout(function() {
             cardsPerView = getCardsPerView();
             applyCentering();
-            updateSlider(false);
+            setPosition(currentIndex, false);
+            updateDots();
         }, 250);
     });
     
-    // Touch/Swipe support
-    let touchStartX = 0;
-    let touchEndX = 0;
+    // ---- Touch/Swipe ----
     
-    slider.addEventListener('touchstart', (e) => {
+    var touchStartX = 0;
+    
+    slider.addEventListener('touchstart', function(e) {
         touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
     
-    slider.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, { passive: true });
-    
-    function handleSwipe() {
-        if (isTransitioning) return;
-        
-        const swipeThreshold = 50;
-        const diff = touchStartX - touchEndX;
-        
-        if (Math.abs(diff) > swipeThreshold) {
-            isTransitioning = true;
+    slider.addEventListener('touchend', function(e) {
+        var diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
             stopAutoScroll();
-            
-            if (diff > 0) {
-                currentIndex++;
-            } else {
-                currentIndex--;
-            }
-            
-            updateSlider(true, () => {
-                handleInfiniteLoopJump();
-                isTransitioning = false;
+            slideBy(diff > 0 ? 1 : -1, function() {
                 resetAutoScroll();
             });
         }
-    }
+    }, { passive: true });
     
-    // Auto-scroll feature - eine Karte alle 6 Sekunden
-    let autoScrollInterval;
-    let isAutoScrollActive = true;
+    // ---- Auto-Scroll ----
+    
+    var autoScrollInterval = null;
+    var autoScrollEnabled = true;
     
     function startAutoScroll() {
-        if (!isAutoScrollActive || autoScrollInterval) return;
+        if (!autoScrollEnabled || autoScrollInterval) return;
         
-        autoScrollInterval = setInterval(() => {
-            if (isTransitioning) {
-                return;
-            }
-            
-            isTransitioning = true;
-            
-            // Eine Karte vorwärts
-            currentIndex++;
-            
-            // Animiere und dann prüfe Loop
-            updateSlider(true, () => {
-                // Nach Animation: Prüfe ob wir bei Klonen sind
-                handleInfiniteLoopJump();
-                isTransitioning = false;
-            });
-            
-        }, 6000); // Alle 6 Sekunden
+        autoScrollInterval = setInterval(function() {
+            if (isTransitioning) return;
+            slideBy(1);
+        }, 6000);
     }
     
     function stopAutoScroll() {
@@ -1231,98 +1229,69 @@ function initUseCasesSlider() {
     
     function resetAutoScroll() {
         stopAutoScroll();
-        if (isAutoScrollActive) {
-            // Längere Pause nach manueller Interaktion
-            setTimeout(() => {
-                if (isAutoScrollActive) {
-                    startAutoScroll();
-                }
-            }, 8000); // Restart nach 8 Sekunden Pause
+        if (autoScrollEnabled) {
+            setTimeout(function() {
+                if (autoScrollEnabled) startAutoScroll();
+            }, 8000);
         }
     }
     
-    // Pausiere Auto-Scroll bei Hover über Slider oder Karten
-    slider.addEventListener('mouseenter', () => {
-        stopAutoScroll();
+    // Hover pausiert Auto-Scroll
+    slider.addEventListener('mouseenter', stopAutoScroll);
+    slider.addEventListener('mouseleave', function() {
+        if (autoScrollEnabled && !autoScrollInterval) startAutoScroll();
     });
     
-    slider.addEventListener('mouseleave', () => {
-        if (isAutoScrollActive) {
-            startAutoScroll();
-        }
-    });
-    
-    // Pausiere bei Hover über alle Karten (inkl. Klone)
-    allCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            stopAutoScroll();
-        });
-        card.addEventListener('mouseleave', () => {
-            if (isAutoScrollActive && !autoScrollInterval) {
-                setTimeout(() => {
-                    if (isAutoScrollActive && !autoScrollInterval) {
-                        startAutoScroll();
-                    }
+    allCards.forEach(function(card) {
+        card.addEventListener('mouseenter', stopAutoScroll);
+        card.addEventListener('mouseleave', function() {
+            if (autoScrollEnabled && !autoScrollInterval) {
+                setTimeout(function() {
+                    if (autoScrollEnabled && !autoScrollInterval) startAutoScroll();
                 }, 2000);
             }
         });
     });
     
-    // Pausiere Auto-Scroll bei manueller Interaktion
-    // Manuelle Navigation mit Pfeilen
-    prevBtn.addEventListener('click', () => {
-        if (isTransitioning) return;
-        isTransitioning = true;
+    // ---- Navigation Buttons ----
+    
+    prevBtn.addEventListener('click', function() {
         stopAutoScroll();
-        
-        currentIndex--;
-        updateSlider(true, () => {
-            handleInfiniteLoopJump();
-            isTransitioning = false;
+        slideBy(-1, function() {
             resetAutoScroll();
         });
     });
     
-    nextBtn.addEventListener('click', () => {
-        if (isTransitioning) return;
-        isTransitioning = true;
+    nextBtn.addEventListener('click', function() {
         stopAutoScroll();
-        
-        currentIndex++;
-        updateSlider(true, () => {
-            handleInfiniteLoopJump();
-            isTransitioning = false;
+        slideBy(1, function() {
             resetAutoScroll();
         });
     });
     
-    // Funktion um Zentrierung zu berechnen und anzuwenden
+    // ---- Zentrierung ----
+    
     function applyCentering() {
         if (!allCards[0]) return;
-        
-        const cardWidth = allCards[0].offsetWidth;
-        const gap = 24;
-        // Wrapper hat padding, also innere Breite verwenden
-        const wrapperElement = slider.parentElement;
-        const wrapperStyle = window.getComputedStyle(wrapperElement);
-        const wrapperPadding = parseFloat(wrapperStyle.paddingLeft) + parseFloat(wrapperStyle.paddingRight);
-        const containerWidth = wrapperElement.offsetWidth - wrapperPadding;
-        
-        const totalVisibleWidth = (cardWidth * cardsPerView) + (gap * (cardsPerView - 1));
-        const sidePadding = Math.max(0, (containerWidth - totalVisibleWidth) / 2);
-        
-        // Setze Padding auf den Grid für Zentrierung
-        slider.style.paddingLeft = `${sidePadding}px`;
-        slider.style.paddingRight = `${sidePadding}px`;
+        var cardWidth = allCards[0].offsetWidth;
+        var wrapperElement = slider.parentElement;
+        var wrapperStyle = window.getComputedStyle(wrapperElement);
+        var wrapperPadding = parseFloat(wrapperStyle.paddingLeft) + parseFloat(wrapperStyle.paddingRight);
+        var containerWidth = wrapperElement.offsetWidth - wrapperPadding;
+        var totalVisibleWidth = (cardWidth * cardsPerView) + (GAP * (cardsPerView - 1));
+        var sidePadding = Math.max(0, (containerWidth - totalVisibleWidth) / 2);
+        slider.style.paddingLeft = sidePadding + 'px';
+        slider.style.paddingRight = sidePadding + 'px';
     }
     
-    // Initialize
+    // ---- Init ----
+    
     applyCentering();
     createDots();
-    updateSlider(false); // Initial ohne Animation
+    setPosition(currentIndex, false);
+    updateDots();
     
-    // Kleine Verzögerung vor Auto-Scroll Start
-    setTimeout(() => {
+    setTimeout(function() {
         startAutoScroll();
     }, 1000);
 }

@@ -26,7 +26,7 @@ require_once __DIR__ . '/config.php';
 define('CALENDLY_URL', 'https://calendly.com/d-buchele-ki-prozessnavigator/30min');
 
 // Rate Limiting für Checkliste (separater Zähler)
-define('MAX_CHECKLIST_REQUESTS_PER_HOUR', 5);
+define('MAX_CHECKLIST_REQUESTS_PER_HOUR', 20);
 
 function checkChecklistRateLimit() {
     $ip = $_SERVER['REMOTE_ADDR'];
@@ -62,21 +62,59 @@ function validateEmail($email) {
  * E-Mail an Kunden senden (Checkliste + Calendly-Link)
  */
 function sendChecklistToCustomer($email) {
+    // Autoloader laden (falls vorhanden)
+    $autoloadPath = __DIR__ . '/../vendor/autoload.php';
+    if (file_exists($autoloadPath)) {
+        require_once $autoloadPath;
+    }
+    
     $to = filter_var($email, FILTER_SANITIZE_EMAIL);
     $subject = '📥 Ihre Checkliste: 10 Prozesse, die Sie JETZT automatisieren sollten';
     
     $body = buildChecklistEmailHTML($to);
     $plain = buildChecklistEmailPlain();
     
-    $headers = [
-        'From: KI-Prozessnavigator <' . SMTP_USERNAME . '>',
-        'Reply-To: d.buchele@ki-prozessnavigator.de',
-        'X-Mailer: PHP/' . phpversion(),
-        'MIME-Version: 1.0',
-        'Content-Type: text/html; charset=UTF-8'
-    ];
-    
-    return mail($to, $subject, $body, implode("\r\n", $headers));
+    // PHPMailer nutzen, falls verfügbar
+    if (class_exists('PHPMailer\PHPMailer\PHPMailer')) {
+        try {
+            $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+            
+            $mail->isSMTP();
+            $mail->Host = SMTP_HOST;
+            $mail->SMTPAuth = true;
+            $mail->Username = SMTP_USERNAME;
+            $mail->Password = SMTP_PASSWORD;
+            $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = SMTP_PORT;
+            $mail->CharSet = 'UTF-8';
+            
+            $mail->setFrom(SMTP_USERNAME, 'KI-Prozessnavigator');
+            $mail->addAddress($to);
+            $mail->addReplyTo('d.buchele@ki-prozessnavigator.de', 'KI-Prozessnavigator');
+            
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body = $body;
+            $mail->AltBody = $plain;
+            
+            $mail->send();
+            return true;
+        } catch (Exception $e) {
+            error_log('PHPMailer Error (Checklist): ' . $mail->ErrorInfo);
+            return false;
+        }
+    } else {
+        // Fallback: Native mail()
+        $headers = [
+            'From: KI-Prozessnavigator <' . SMTP_USERNAME . '>',
+            'Reply-To: d.buchele@ki-prozessnavigator.de',
+            'X-Mailer: PHP/' . phpversion(),
+            'MIME-Version: 1.0',
+            'Content-Type: text/html; charset=UTF-8'
+        ];
+        
+        return mail($to, $subject, $body, implode("\r\n", $headers));
+    }
 }
 
 /**
@@ -94,12 +132,42 @@ function notifyOwner($customerEmail) {
     <p><a href=\"" . CALENDLY_URL . "\">→ Calendly öffnen</a></p>
     ";
     
-    $headers = [
-        'From: KI-Prozessnavigator <' . SMTP_USERNAME . '>',
-        'Content-Type: text/html; charset=UTF-8'
-    ];
-    
-    return mail(RECIPIENT_EMAIL, $subject, $body, implode("\r\n", $headers));
+    // PHPMailer nutzen, falls verfügbar
+    if (class_exists('PHPMailer\PHPMailer\PHPMailer')) {
+        try {
+            $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+            
+            $mail->isSMTP();
+            $mail->Host = SMTP_HOST;
+            $mail->SMTPAuth = true;
+            $mail->Username = SMTP_USERNAME;
+            $mail->Password = SMTP_PASSWORD;
+            $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = SMTP_PORT;
+            $mail->CharSet = 'UTF-8';
+            
+            $mail->setFrom(SMTP_USERNAME, 'KI-Prozessnavigator');
+            $mail->addAddress(RECIPIENT_EMAIL);
+            
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body = $body;
+            
+            $mail->send();
+            return true;
+        } catch (Exception $e) {
+            error_log('PHPMailer Error (Notify): ' . $mail->ErrorInfo);
+            return false;
+        }
+    } else {
+        // Fallback: Native mail()
+        $headers = [
+            'From: KI-Prozessnavigator <' . SMTP_USERNAME . '>',
+            'Content-Type: text/html; charset=UTF-8'
+        ];
+        
+        return mail(RECIPIENT_EMAIL, $subject, $body, implode("\r\n", $headers));
+    }
 }
 
 /**
