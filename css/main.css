@@ -2139,10 +2139,15 @@ section {
     font-weight: var(--font-bold);
 }
 
-/* Responsive Before/After */
+/* Responsive Before/After -- Mobile: horizontal + kompakt */
 @media (max-width: 768px) {
+    .before-after-showcase {
+        width: 100%;
+        max-width: 100%;
+    }
+    
     .before-after-card {
-        padding: var(--space-5);
+        padding: var(--space-3) var(--space-4);
     }
     
     .before-after-header {
@@ -2152,29 +2157,35 @@ section {
     
     .before-after-items {
         grid-template-columns: 1fr;
-    }
-    
-    .metric-values {
-        flex-direction: column;
         gap: var(--space-2);
     }
     
+    /* Metriken horizontal nebeneinander (wie Desktop) */
+    .metric-values {
+        flex-direction: row;
+        gap: var(--space-3);
+    }
+    
     .metric-arrow {
-        transform: rotate(90deg);
+        transform: none;
+    }
+    
+    .metric-label {
+        margin-bottom: var(--space-1);
     }
     
     @keyframes arrowBounce {
-        0%, 100% { transform: rotate(90deg) translateX(0); }
-        50% { transform: rotate(90deg) translateX(5px); }
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(5px); }
     }
 }
 
-/* Before/After auf Mobile ANZEIGEN mit 90% Breite */
+/* Before/After auf Mobile -- volle Breite */
 @media (max-width: 576px) {
     .before-after-showcase {
         display: block;
-        width: 90%;
-        max-width: 90%;
+        width: 100%;
+        max-width: 100%;
         margin-left: auto;
         margin-right: auto;
         padding-inline: 0;
@@ -2183,7 +2194,7 @@ section {
     
     .before-after-card {
         width: 100%;
-        padding: var(--space-4);
+        padding: var(--space-3) var(--space-4);
         box-sizing: border-box;
     }
 }
@@ -2247,6 +2258,8 @@ section {
     gap: var(--space-3);
     margin-top: 0;
     margin-bottom: var(--space-4);
+    padding: 20px 0;
+    overflow: visible;
 }
 
 .usecases__nav-btn {
@@ -2268,7 +2281,7 @@ section {
     border-color: transparent;
     color: white;
     transform: scale(1.05);
-    box-shadow: var(--shadow-neon-cyan);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.4), 0 0 20px rgba(0, 212, 255, 0.15);
 }
 
 .usecases__nav-btn:disabled {
@@ -2284,7 +2297,7 @@ section {
     width: calc(3 * var(--usecase-card-w) + 2 * var(--usecase-gap)) !important;
     max-width: 100%;
     margin-inline: auto;
-    overflow-x: clip;
+    /* overflow-x entfernt: clip-path übernimmt die Begrenzung und lässt Glow durch */
     box-sizing: border-box;
 }
 
@@ -2342,8 +2355,9 @@ section {
         width: calc(2 * 340px + var(--usecase-gap)) !important;
         max-width: calc(100vw - 32px) !important;
         margin-inline: auto !important;
-        overflow: hidden !important;
-        clip-path: none !important;
+        overflow: visible !important;
+        /* clip-path statt overflow: erlaubt Glow-Schatten (-30px horizontal) */
+        clip-path: inset(-100px -30px -100px -30px) !important;
     }
 
     /* KRITISCH: Flex-Layout für Karussell erzwingen! */
@@ -2398,8 +2412,9 @@ section {
         width: min(320px, calc(100vw - 32px)) !important;
         max-width: calc(100vw - 32px) !important;
         margin-inline: auto !important;
-        overflow: hidden !important;
-        clip-path: none !important;
+        overflow: visible !important;
+        /* clip-path statt overflow: erlaubt Glow-Schatten (-30px horizontal) */
+        clip-path: inset(-100px -30px -100px -30px) !important;
     }
 
     /* KRITISCH: Flex-Layout für Karussell erzwingen! */
@@ -2473,9 +2488,13 @@ section {
     pointer-events: none;
 }
 
-/* Instant-Jump Klasse: erzwingt keine Transition (auch bei Konflikten) */
+/* Instant-Jump Klasse: erzwingt KEINE Transition (maximale Spezifität) */
 .usecases__grid--no-transition {
     transition: none !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    transition-property: none !important;
+    animation: none !important;
 }
 
 .usecase-card::after {
@@ -8244,11 +8263,11 @@ section.testimonials.expert-quotes,
         line-height: 1.4;
     }
 
-    /* Before/After auf mobile ANZEIGEN mit 90% Breite */
+    /* Before/After auf mobile -- volle Breite, kompakt */
     .before-after-showcase {
         display: block;
-        width: 90%;
-        max-width: 90%;
+        width: 100%;
+        max-width: 100%;
         margin-left: auto;
         margin-right: auto;
         padding-inline: 0;
@@ -8257,7 +8276,7 @@ section.testimonials.expert-quotes,
     
     .before-after-card {
         width: 100%;
-        padding: var(--space-4);
+        padding: var(--space-3) var(--space-4);
         box-sizing: border-box;
     }
 

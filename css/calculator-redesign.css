@@ -263,6 +263,20 @@
     /* Symbol entfernen */
 }
 
+/* Tablet (577–1023px): Weißen Schleier links vom CTA entfernen – ::before-Gradient deaktivieren */
+@media (min-width: 577px) and (max-width: 1023px) {
+    #pricing .calculator__cta-block .btn--calculator {
+        box-shadow: 0 4px 16px rgba(0, 119, 255, 0.3) !important;
+        overflow: hidden !important;
+    }
+    #pricing .calculator__cta-block .btn--calculator::before {
+        display: none !important;
+    }
+    #pricing .calculator__cta-block .btn--calculator:hover {
+        box-shadow: 0 0 25px rgba(0, 212, 255, 0.5) !important;
+    }
+}
+
 /* Mobile & Tablet: Container auf Bildschirmbreite anpassen */
 @media (max-width: 1023px) {
     /* Wrapper auf 1 Spalte */

@@ -709,21 +709,21 @@
         line-height: 1.5;
     }
     
-    /* Before/After Showcase - ANZEIGEN mit 90% Breite wie andere Sektionen */
+    /* Before/After Showcase - volle Breite wie umliegende Sektionen */
     .before-after-showcase {
         display: block;
-        width: 90%;
-        max-width: 90%;
+        width: 100%;
+        max-width: 100%;
         margin-left: auto;
         margin-right: auto;
         padding-inline: 0;
-        margin-block: var(--space-8);
+        margin-block: var(--space-6);
     }
     
     .before-after-card {
         width: 100%;
         max-width: 100%;
-        padding: var(--space-4);
+        padding: var(--space-3) var(--space-4);
         box-sizing: border-box;
     }
     
@@ -731,46 +731,55 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: var(--space-3);
+        gap: var(--space-2);
     }
     
     .before-after-item {
         width: 100%;
-        padding: var(--space-3);
+        padding: var(--space-2) var(--space-3);
         box-sizing: border-box;
     }
     
+    /* Metriken HORIZONTAL: Rot → Grün nebeneinander (wie Desktop) */
     .metric-values {
-        padding: var(--space-2) 0;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: var(--space-3) !important;
+        padding: var(--space-1) 0;
+    }
+    
+    /* Pfeil horizontal (nicht nach unten rotiert) */
+    .metric-arrow {
+        transform: none !important;
+        font-size: 1rem;
     }
     
     .before-after-header {
         flex-direction: column;
-        gap: var(--space-3);
+        gap: var(--space-2);
         align-items: center;
     }
     
     .before-after-badge {
         font-size: 0.75rem;
-        padding: var(--space-2) var(--space-3);
+        padding: var(--space-1) var(--space-3);
     }
     
     .before-after-vs {
-        font-size: 0.875rem;
+        font-size: 0.8rem;
         margin: 0;
-    }
-    
-    .before-after-items {
-        gap: var(--space-4);
     }
     
     .metric-label {
         font-size: 0.7rem;
+        margin-bottom: var(--space-1) !important;
     }
     
     .metric-before,
     .metric-after {
-        font-size: 0.875rem;
+        font-size: 1.1rem;
     }
     
     /* ===== USE CASES KARUSSELL ===== */
@@ -1545,6 +1554,30 @@
         padding-top: 110px;
     }
     
+    /* 2x2 Grid: Zahl+Label als Einheit mittig in jeder Box */
+    .hero__stats .stat__inner,
+    .hero .hero__stats .stat__inner,
+    section.hero .hero__stats .stat__inner {
+        transform: none !important;
+        gap: 3px !important;
+    }
+    
+    .hero__stats .stat__number,
+    .hero .hero__stats .stat__number,
+    section.hero .hero__stats .stat__number {
+        transform: none !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+    
+    .hero__stats .stat__label,
+    .hero .hero__stats .stat__label,
+    section.hero .hero__stats .stat__label {
+        height: auto !important;
+        min-height: 0 !important;
+        margin-top: 5px !important;
+    }
+    
     /* +30px Verschiebung NUR für Handy */
     
     .hero__title,
@@ -1796,100 +1829,91 @@
    ========================================== */
 
 @media (min-width: 768px) and (max-width: 1023px) {
-    /* DSGVO Section: Grid mit 2 Zeilen x 2 Spalten */
+
+    /* ===== DSGVO TABLET: Mobile-Overrides aufheben, Desktop-Layout ===== */
+
+    /* 1. Container-Breite zuruecksetzen (Mobile setzt 90%) */
+    section.dsgvo .container,
+    .dsgvo .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-inline: var(--space-6) !important;
+    }
+
+    /* 2. Grid: 2 Spalten wie Desktop (Text links breit, Badges rechts schmal) */
     section.dsgvo .dsgvo__wrapper,
     .dsgvo .dsgvo__wrapper,
     .dsgvo__wrapper {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        grid-template-rows: auto auto !important;
-        gap: var(--space-4) var(--space-8) !important;
+        grid-template-columns: 1.3fr 0.7fr !important;
+        grid-template-rows: auto !important;
+        gap: var(--space-6) !important;
         text-align: left !important;
     }
-    
-    /* Überschrift + Text: Zeile 1, Spalte 1, volle Breite über beide Spalten */
-    section.dsgvo .dsgvo__title,
-    .dsgvo .dsgvo__title,
-    .dsgvo__title {
-        grid-column: 1 / -1 !important; /* Volle Breite */
-        margin-bottom: var(--space-2) !important;
+
+    /* 3. Checklist-Schrift zuruecksetzen (Mobile setzt 0.8rem) */
+    section.dsgvo .checklist-item,
+    .dsgvo .checklist-item {
+        font-size: 0.95rem !important;
     }
-    
-    section.dsgvo .dsgvo__description,
-    .dsgvo .dsgvo__description,
-    .dsgvo__description {
-        grid-column: 1 / -1 !important; /* Volle Breite */
-        margin-bottom: var(--space-6) !important;
-    }
-    
-    /* Checklist: Zeile 2, Spalte 1 - nach oben verschoben wie Desktop */
-    section.dsgvo .dsgvo__checklist,
-    .dsgvo .dsgvo__checklist,
-    .dsgvo__checklist {
-        grid-column: 1 / 2 !important;
-        grid-row: 3 !important;
-        align-items: flex-start !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        margin-top: -80px !important; /* Nach oben verschieben wie Desktop */
-    }
-    
-    /* Trust Badges: Zeile 2, Spalte 2 - nach oben verschoben wie Desktop */
+
+    /* 4. Badges: schmal, oben ausgerichtet, rechts in der Spalte */
     section.dsgvo .dsgvo__badges,
     .dsgvo .dsgvo__badges,
     .dsgvo__badges {
-        grid-column: 2 / 3 !important;
-        grid-row: 3 !important; /* Gleiche Zeile wie Checklist */
         display: flex !important;
         flex-direction: column !important;
-        gap: var(--space-4) !important;
+        gap: var(--space-3) !important;
+        align-self: start !important;
         align-items: stretch !important;
-        align-self: start !important; /* Oben beginnen */
-        margin-top: -80px !important; /* Nach oben verschieben wie Desktop */
+        max-width: 240px !important;
+        margin-left: auto !important;
+        width: auto !important;
+        margin-top: 0 !important;
     }
-    
-    /* Trust Badge Container: Desktop-ähnliche Höhe */
+
+    /* 5. Trust Badge Container: kompakter */
     section.dsgvo .trust-badge,
     .dsgvo .trust-badge,
     .trust-badge {
-        width: 100% !important;
-        max-width: none !important;
+        padding: var(--space-3) var(--space-4) !important;
+        min-height: auto !important;
         min-width: 0 !important;
-        padding: var(--space-5) !important;
-        font-size: 0.95rem !important;
-        min-height: 85px !important;
         display: flex !important;
         align-items: center !important;
+        gap: var(--space-3) !important;
     }
-    
-    /* Trust Badge Titel */
+
+    /* 6. Icon: feste Groesse, nicht schrumpfen (alle 3 sauber untereinander) */
+    section.dsgvo .trust-badge__icon,
+    .dsgvo .trust-badge__icon,
+    .trust-badge__icon {
+        width: 48px !important;
+        min-width: 48px !important;
+        height: 48px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .trust-badge__icon svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    /* 7. Trust Badge Text */
     .trust-badge__title {
         font-size: 1rem !important;
         font-weight: 600 !important;
         line-height: 1.3 !important;
     }
-    
-    /* Trust Badge Text */
+
     .trust-badge__content {
-        gap: var(--space-2) !important;
+        gap: var(--space-1) !important;
     }
-    
+
     .trust-badge__content span:last-child {
         font-size: 0.85rem !important;
         opacity: 0.85;
         line-height: 1.4 !important;
-    }
-    
-    /* Trust Badge Icon - Desktop-Größe */
-    .trust-badge__icon {
-        width: 48px !important;
-        height: 48px !important;
-        flex-shrink: 0 !important;
-    }
-    
-    .trust-badge__icon svg {
-        width: 24px !important;
-        height: 24px !important;
     }
 }
 
@@ -1970,4 +1994,15 @@
     .solution-card {
         border-width: 2px;
     }
+}
+
+/* ===== Bedingte Zeilenumbrüche: Desktop vs. Mobile ===== */
+/* Desktop/Tablet: .br-mobile ausblenden */
+.br-mobile { display: none; }
+.br-desktop { display: inline; }
+
+@media (max-width: 768px) {
+    /* Mobile: .br-desktop ausblenden, .br-mobile einblenden */
+    .br-mobile { display: inline; }
+    .br-desktop { display: none; }
 }

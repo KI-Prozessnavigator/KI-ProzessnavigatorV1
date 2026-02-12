@@ -990,20 +990,28 @@ function initUseCasesSlider() {
         return 3;
     }
     
+    // Hilfsfunktion: Klon erstellen und Animations-Attribute/Klassen entfernen
+    // (sonst bleiben Klone durch animate-hidden unsichtbar, da der IntersectionObserver
+    //  sie nie beobachtet)
+    function createClone(card) {
+        var clone = card.cloneNode(true);
+        clone.classList.add('usecase-card--clone');
+        clone.classList.remove('animate-hidden');
+        clone.classList.add('animate-visible');
+        clone.removeAttribute('data-animate');
+        clone.removeAttribute('data-delay');
+        clone.setAttribute('aria-hidden', 'true');
+        return clone;
+    }
+    
     // Klone am Ende hinzufügen (erste 3 Karten)
     for (var i = 0; i < cloneCount; i++) {
-        var clone = originalCards[i].cloneNode(true);
-        clone.classList.add('usecase-card--clone');
-        clone.setAttribute('aria-hidden', 'true');
-        slider.appendChild(clone);
+        slider.appendChild(createClone(originalCards[i]));
     }
     
     // Klone am Anfang hinzufügen (letzte 3 Karten)
     for (var i = totalCards - 1; i >= totalCards - cloneCount; i--) {
-        var clone = originalCards[i].cloneNode(true);
-        clone.classList.add('usecase-card--clone');
-        clone.setAttribute('aria-hidden', 'true');
-        slider.insertBefore(clone, slider.firstChild);
+        slider.insertBefore(createClone(originalCards[i]), slider.firstChild);
     }
     
     // Alle Karten (inkl. Klone)
@@ -1061,82 +1069,45 @@ function initUseCasesSlider() {
         }
     }
     
-    // ---- Slider bewegen ----
-    
-    function moveToIndex(idx, animate, callback) {
-        currentIndex = idx;
-        setPosition(currentIndex, animate);
-        updateDots();
-        
-        if (animate && callback) {
-            // setTimeout mit grossem Margin -- Animation ist 800ms,
-            // wir warten 920ms um sicher zu sein dass sie visuell fertig ist
-            setTimeout(callback, ANIM_MS + 120);
-        } else if (callback) {
-            callback();
-        }
-    }
-    
-    // ---- Nahtloser Endlos-Sprung ----
-    
-    function checkAndJump(callback) {
-        var needsJump = false;
-        var newIndex = currentIndex;
-        
-        // Vorwärts: Bei Klonen am Ende
-        if (currentIndex >= cloneCount + totalCards) {
-            newIndex = cloneCount + (currentIndex - cloneCount - totalCards);
-            needsJump = true;
-        }
-        // Rückwärts: Bei Klonen am Anfang
-        else if (currentIndex < cloneCount) {
-            newIndex = cloneCount + totalCards - (cloneCount - currentIndex);
-            needsJump = true;
-        }
-        
-        if (needsJump) {
-            currentIndex = newIndex;
-            
-            // 1) CSS-Klasse mit !important erzwingt transition:none
-            slider.classList.add('usecases__grid--no-transition');
-            slider.style.transition = 'none';
-            slider.style.transform = 'translateX(-' + getOffset(currentIndex) + 'px)';
-            
-            // 2) Force Reflow (synchron)
-            slider.getBoundingClientRect();
-            
-            // 3) Double-rAF: Warte 2 volle Paint-Zyklen
-            requestAnimationFrame(function() {
-                requestAnimationFrame(function() {
-                    // Jetzt ist der Sprung garantiert gerendert
-                    slider.classList.remove('usecases__grid--no-transition');
-                    updateDots();
-                    if (callback) callback();
-                });
-            });
-        } else {
-            updateDots();
-            if (callback) callback();
-        }
-    }
-    
-    // ---- Zentrale Slide-Funktion für alle Aktionen ----
+    // ---- Zentrale Slide-Funktion: "Jump BEFORE Animate" ----
     
     function slideBy(delta, afterDone) {
         if (isTransitioning) return;
         isTransitioning = true;
         startSafetyTimer();
         
-        currentIndex += delta;
+        var nextIndex = currentIndex + delta;
         
-        moveToIndex(currentIndex, true, function() {
-            // Nach Animation: Prüfe ob Sprung nötig
-            checkAndJump(function() {
-                clearSafetyTimer();
-                isTransitioning = false;
-                if (afterDone) afterDone();
-            });
-        });
+        // PRE-CHECK: Würde nextIndex in den Klon-Bereich landen?
+        if (nextIndex >= cloneCount + totalCards) {
+            // Vorwärts-Grenze erreicht: Repositioniere zum äquivalenten Klon am ANFANG
+            // z.B. Index 16 (echte Karte 13) → Index 2 (Klon von Karte 13)
+            currentIndex = currentIndex - totalCards;
+            slider.classList.add('usecases__grid--no-transition');
+            setPosition(currentIndex, false);
+            void slider.offsetWidth; // Force Reflow
+            slider.classList.remove('usecases__grid--no-transition');
+        } else if (nextIndex < cloneCount) {
+            // Rückwärts-Grenze erreicht: Repositioniere zum äquivalenten Klon am ENDE
+            // z.B. Index 3 (echte Karte 0) → Index 17 (Klon von Karte 0)
+            currentIndex = currentIndex + totalCards;
+            slider.classList.add('usecases__grid--no-transition');
+            setPosition(currentIndex, false);
+            void slider.offsetWidth; // Force Reflow
+            slider.classList.remove('usecases__grid--no-transition');
+        }
+        
+        // JETZT normal animieren (1 Karte vorwärts/rückwärts)
+        currentIndex += delta;
+        setPosition(currentIndex, true);
+        updateDots();
+        
+        // Nach Animation: Transition fertig
+        setTimeout(function() {
+            clearSafetyTimer();
+            isTransitioning = false;
+            if (afterDone) afterDone();
+        }, ANIM_MS + 100);
     }
     
     function slideTo(targetRealIndex, afterDone) {
@@ -1145,12 +1116,14 @@ function initUseCasesSlider() {
         startSafetyTimer();
         
         currentIndex = cloneCount + targetRealIndex;
+        setPosition(currentIndex, true);
+        updateDots();
         
-        moveToIndex(currentIndex, true, function() {
+        setTimeout(function() {
             clearSafetyTimer();
             isTransitioning = false;
             if (afterDone) afterDone();
-        });
+        }, ANIM_MS + 100);
     }
     
     // ---- Dots ----

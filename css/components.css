@@ -620,7 +620,7 @@
     border-color: transparent;
     color: white;
     transform: scale(1.05);
-    box-shadow: var(--shadow-neon-cyan);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.4), 0 0 20px rgba(0, 212, 255, 0.15);
 }
 
 .usecases__nav-btn:disabled {
@@ -633,8 +633,8 @@
     position: relative;
     padding: var(--space-4) 0;
     margin: 0;
-    /* CLIP-PATH für sauberen Horizontal-Cut ohne overflow */
-    clip-path: inset(-100px 0px -100px 0px);
+    /* CLIP-PATH: -100px vertikal für translateY-Hover, -30px horizontal für Glow-Schatten */
+    clip-path: inset(-100px -30px -100px -30px);
 }
 
 .usecases__grid {
