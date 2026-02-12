@@ -38,7 +38,12 @@ Da Sie Gmail verwenden, benötigen Sie ein **App-spezifisches Passwort** (nicht 
 
 ### **Schritt 2: Konfiguration anpassen**
 
-Öffnen Sie die Datei: **`php/config.php`**
+**Neue Installation:** Kopieren Sie `php/config.php.example` nach `php/config.php`:
+```bash
+cp php/config.php.example php/config.php
+```
+
+Öffnen Sie die Datei: **`php/config.php`** (wird von Git ignoriert – niemals Passwörter committen!)
 
 Ersetzen Sie diese Zeile:
 

@@ -1,6 +1,9 @@
 # Deploy-Zugangsdaten (niemals committen)
 .env.deploy
 
+# PHP-Konfiguration mit sensiblen Daten (SMTP-Passwort etc.)
+php/config.php
+
 # OS
 .DS_Store
 Thumbs.db

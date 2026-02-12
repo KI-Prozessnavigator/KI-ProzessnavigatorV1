@@ -2408,6 +2408,11 @@ section {
 
 /* Handy: genau 1 Karte sichtbar, mittig, starr (unter 384px schmaler = nicht abgeschnitten) */
 @media (max-width: 768px) {
+    /* Mobile: einheitliche, kompaktere Kartenhoehe (Desktop nutzt 460px) */
+    .usecases {
+        --usecase-card-h: 380px;
+    }
+
     .usecases__slider-wrapper {
         width: min(320px, calc(100vw - 32px)) !important;
         max-width: calc(100vw - 32px) !important;
@@ -2431,9 +2436,9 @@ section {
         width: min(320px, calc(100vw - 48px)) !important;
         min-width: min(320px, calc(100vw - 48px)) !important;
         max-width: min(320px, calc(100vw - 48px)) !important;
-        height: auto !important;
-        min-height: auto !important;
-        max-height: none !important;
+        height: var(--usecase-card-h) !important;
+        min-height: var(--usecase-card-h) !important;
+        max-height: var(--usecase-card-h) !important;
         overflow: visible !important;
         box-sizing: border-box;
     }
@@ -2443,11 +2448,17 @@ section {
         justify-content: center !important;
     }
 
+    /* Abstand Text -> Workflow stark reduzieren (nur Handy) */
+    .usecase-card__description {
+        margin-bottom: 12px !important;
+    }
+
     .usecase-card__flow {
         min-width: 0;
         min-height: var(--usecase-flow-h);
         padding: var(--space-2);
         gap: var(--space-2);
+        margin-top: auto !important; /* Workflow bleibt auf gleicher Hoehe (unten) */
     }
 
     .usecase-card__flow .flow-step {
@@ -2549,6 +2560,9 @@ section {
     font-family: var(--font-body);
     font-size: var(--text-lg);
     font-weight: var(--font-semibold);
+    line-height: 1.2;
+    /* Immer 2 Zeilen Platz reservieren -> gleiche Start-Hoehe fuer die Vorteils-Zeile */
+    min-height: calc(2 * 1.2em);
     margin-bottom: var(--space-3);
 }
 
@@ -2556,6 +2570,9 @@ section {
     display: flex;
     align-items: baseline;
     gap: var(--space-2);
+    flex-wrap: nowrap;
+    /* Einheitliche Blockhoehe, damit Beschreibung immer auf gleicher Ebene startet */
+    min-height: 2.2em;
     margin-bottom: var(--space-6);
 }
 
@@ -2568,6 +2585,7 @@ section {
 .result-text {
     font-size: var(--text-sm);
     color: var(--color-text-muted);
+    white-space: nowrap;
 }
 
 /* Grauer Flow-Container: starr (feste Mindesthöhe), bleibt in der Karte */
@@ -5337,6 +5355,232 @@ section.testimonials.expert-quotes,
     border-color: var(--color-neon-cyan);
 }
 
+
+/* ==========================================
+   ABLAUF / TIMELINE SECTION
+   Horizontale Timeline mit 3 Schritten
+   ========================================== */
+
+.ablauf {
+    padding-block: var(--section-padding);
+    position: relative;
+    overflow: hidden;
+}
+
+.ablauf .section__header {
+    margin-bottom: var(--space-16);
+}
+
+/* Timeline Container */
+.ablauf__timeline {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Horizontale Verbindungslinie */
+.ablauf__line {
+    position: absolute;
+    top: 32px;
+    left: 15%;
+    right: 15%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 119, 255, 0.6) 15%, 
+        rgba(0, 212, 255, 0.8) 50%, 
+        rgba(0, 119, 255, 0.6) 85%, 
+        transparent 100%
+    );
+    z-index: 0;
+}
+
+.ablauf__line::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 212, 255, 0.2) 50%, 
+        transparent 100%
+    );
+    filter: blur(4px);
+}
+
+/* Desktop: Linie nicht durch Kreise laufen lassen (Segmente pro Step) */
+@media (min-width: 1024px) {
+    .ablauf__line,
+    .ablauf__line::after {
+        display: none !important;
+    }
+
+    .ablauf__step {
+        position: relative;
+    }
+
+    /* Kreis immer über den Segmenten */
+    .ablauf__step-number {
+        z-index: 2;
+    }
+
+    .ablauf__step:not(:first-child)::before,
+    .ablauf__step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 32px;
+        height: 2px;
+        pointer-events: none;
+        z-index: 1;
+        background: linear-gradient(90deg,
+            rgba(0, 119, 255, 0.6),
+            rgba(0, 212, 255, 0.85),
+            rgba(0, 119, 255, 0.6)
+        );
+        box-shadow: 0 0 12px rgba(0, 212, 255, 0.25);
+    }
+
+    /* Linkes Segment bis an den Kreisrand (Radius = 32px) */
+    .ablauf__step:not(:first-child)::before {
+        left: 0;
+        right: calc(50% + 32px);
+    }
+
+    /* Rechtes Segment ab Kreisrand */
+    .ablauf__step:not(:last-child)::after {
+        left: calc(50% + 32px);
+        right: 0;
+    }
+}
+
+/* Einzelner Schritt */
+.ablauf__step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 var(--space-4);
+}
+
+/* Schrittnummer - leuchtender Kreis */
+.ablauf__step-number {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Opake Basis verhindert, dass die Timeline-Linie durchscheint */
+    background-color: var(--color-background);
+    background-image: linear-gradient(135deg, rgba(0, 119, 255, 0.15) 0%, rgba(0, 212, 255, 0.1) 100%);
+    border: 2px solid rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2), 0 0 40px rgba(0, 119, 255, 0.1);
+    margin-bottom: var(--space-6);
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.ablauf__step-number span {
+    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+    background: linear-gradient(135deg, var(--color-neon-cyan) 0%, var(--color-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ablauf__step:hover .ablauf__step-number {
+    border-color: rgba(0, 212, 255, 0.8);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 119, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Step Content */
+.ablauf__step-content {
+    max-width: 300px;
+}
+
+/* Step Icon */
+.ablauf__step-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    margin: 0 auto var(--space-3);
+    color: var(--color-neon-cyan);
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ablauf__step-icon svg {
+    width: 40px;
+    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+/* Step Title */
+.ablauf__step-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+    line-height: 1.3;
+}
+
+/* Step Text */
+.ablauf__step-text {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* Hellblauer Trenner oben (wie DSGVO) */
+[data-theme="dark"] .ablauf {
+    border-top: 2px solid rgba(0, 119, 255, 0.4);
+    position: relative;
+}
+
+[data-theme="dark"] .ablauf::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 119, 255, 0.8), 
+        rgba(0, 119, 255, 0.8), 
+        transparent
+    );
+    filter: blur(1px);
+    z-index: 1;
+}
+
+/* Dark Mode Optimierung */
+[data-theme="dark"] .ablauf__step-title {
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .ablauf__step-text {
+    color: rgba(255, 255, 255, 0.75);
+}
 
 /* ==========================================
    Value Calculator Styles
@@ -10058,6 +10302,24 @@ section.testimonials.expert-quotes,
         transparent
     );
     filter: blur(1px);
+}
+
+/* Ersparnis (Value Calculator) - fehlender Glow-Trenner unten */
+[data-theme="dark"] .value-calculator {
+    border-bottom: 1px solid rgba(0, 119, 255, 0.25) !important;
+}
+
+[data-theme="dark"] .value-calculator::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 119, 255, 0.6), transparent);
+    filter: blur(1px);
+    pointer-events: none;
 }
 
 /* Pricing Trennbalken */

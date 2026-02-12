@@ -1,0 +1,33 @@
+<?php
+// ==================== E-MAIL KONFIGURATION ====================
+// Kopieren Sie diese Datei nach config.php und tragen Sie Ihre Werte ein.
+// config.php wird von Git ignoriert und darf NIEMALS echte Passwörter enthalten!
+
+// Empfänger E-Mail (Ihre E-Mail)
+define('RECIPIENT_EMAIL', 'ihre-email@ihre-domain.de');
+
+// SMTP Konfiguration für Gmail
+define('SMTP_HOST', 'smtp.gmail.com');
+define('SMTP_PORT', 587);
+define('SMTP_USERNAME', 'ihre-email@gmail.com');
+
+// Google App-Passwort: https://support.google.com/accounts/answer/185833
+define('SMTP_PASSWORD', 'IHR_GOOGLE_APP_PASSWORT_HIER_EINTRAGEN');
+
+// ==================== SPAM-SCHUTZ EINSTELLUNGEN ====================
+
+define('MAX_REQUESTS_PER_HOUR', 3);
+define('SESSION_TIMEOUT', 3600);
+
+define('ALLOWED_ORIGINS', [
+    'https://ihre-domain.de',
+    'https://www.ihre-domain.de',
+    'http://localhost'
+]);
+
+// ==================== SICHERHEIT ====================
+
+define('CSRF_SECRET', 'IhrFesterGeheimerStringMindestens32ZeichenLang123');
+define('HONEYPOT_FIELD', 'website');
+
+?>
