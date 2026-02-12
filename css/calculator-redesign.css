@@ -335,6 +335,18 @@
     }
 }
 
+/* Handy: Text unter CTA-Button umbrechen – gut lesbar */
+@media (max-width: 576px) {
+    #pricing .calculator-cta-note {
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        padding-inline: 0.5rem !important;
+    }
+}
+
 #pricing .process-select-wrap { position: relative; }
 #pricing .process-select-wrap select { position: absolute; opacity: 0; pointer-events: none; height: 0; overflow: hidden; }
 #pricing .process-select-trigger {

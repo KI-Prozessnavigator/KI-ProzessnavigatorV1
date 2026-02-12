@@ -68,7 +68,7 @@
                 "name": "Ist KI für unser kleines Team überhaupt rentabel?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Ja – oft sogar besonders. Ein Kunde mit 8 Mitarbeitern spart 40 Stunden pro Monat. Bei einem Stundenlohn von 50€ sind das 2.000€ – unser Starter-Paket kostet 299€. ROI: 6,7x im ersten Monat."
+                    "text": "Ja – oft sogar besonders. Ein Kunde mit 8 Mitarbeitern spart 40 Stunden pro Monat. Bei einem Stundenlohn von 50€ sind das 2.000€."
                 }
             },
             {
@@ -265,8 +265,9 @@
                 <li class="nav__item"><a href="#hero" class="nav__link">Start</a></li>
                 <li class="nav__item"><a href="#problems" class="nav__link">Vorteile</a></li>
                 <li class="nav__item"><a href="#usecases" class="nav__link">Use Cases</a></li>
-                <li class="nav__item"><a href="#dsgvo" class="nav__link">DSGVO</a></li>
+                <li class="nav__item"><a href="#ablauf" class="nav__link">Ablauf</a></li>
                 <li class="nav__item"><a href="#pricing" class="nav__link">Ersparnis</a></li>
+                <li class="nav__item"><a href="#dsgvo" class="nav__link">DSGVO</a></li>
                 <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
                 <li class="nav__item"><a href="ueber-uns.html" class="nav__link">Über uns</a></li>
                 <li class="nav__item"><a href="#contact" class="nav__link nav__link--cta">Beratung anfragen</a></li>
@@ -1323,58 +1324,66 @@
             </div>
         </section>
 
-        <section class="dsgvo" id="dsgvo">
+        <!-- ===== ABLAUF SECTION ===== -->
+        <section class="ablauf" id="ablauf" aria-labelledby="ablauf-title">
             <div class="container">
-                <div class="dsgvo__wrapper">
-                    <div class="dsgvo__content">
-                        <span class="section__tag section__tag--light">Datenschutz</span>
-                        <h2 class="dsgvo__title">KI ohne rechtliche Risiken</h2>
-                        <p class="dsgvo__description">
-                            Unsere KI-Modelle werden ausschließlich auf europäischen Servern betrieben. 
-                            Ihre Daten verlassen niemals die EU – garantiert.
-                        </p>
-                        
-                        <ul class="dsgvo__checklist">
-                            <li class="checklist-item" data-animate="check">
-                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span class="checklist-text">Ende-zu-Ende-Verschlüsselung (AES-256)</span>
-                            </li>
-                            <li class="checklist-item" data-animate="check" data-delay="1">
-                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span class="checklist-text">Löschfristen automatisiert (DSGVO Art. 17)</span>
-                            </li>
-                            <li class="checklist-item" data-animate="check" data-delay="2">
-                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span class="checklist-text">Revisionssichere Protokollierung</span>
-                            </li>
-                            <li class="checklist-item" data-animate="check" data-delay="3">
-                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span class="checklist-text">Rollenbasierte Zugriffskontrolle (RBAC)</span>
-                            </li>
-                        </ul>
+                <header class="section__header">
+                    <span class="section__tag">In 3 Schritten starten</span>
+                    <h2 class="section__title" id="ablauf-title">So läuft die Zusammenarbeit ab</h2>
+                    <p class="section__description">
+                        Von der ersten Analyse bis zum laufenden Betrieb – transparent, persönlich und ohne Risiko.
+                    </p>
+                </header>
+
+                <div class="ablauf__timeline">
+                    <!-- Verbindungslinie -->
+                    <div class="ablauf__line" aria-hidden="true"></div>
+
+                    <!-- Schritt 1 -->
+                    <div class="ablauf__step" data-animate="fade-up">
+                        <div class="ablauf__step-number">
+                            <span>1</span>
+                        </div>
+                        <div class="ablauf__step-content">
+                            <div class="ablauf__step-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                            </div>
+                            <h3 class="ablauf__step-title">Firmenaudit & Erstgespräch</h3>
+                            <p class="ablauf__step-text">
+                                Wir analysieren Ihre bestehenden Prozesse, identifizieren konkretes Automatisierungspotenzial und erstellen ein maßgeschneidertes Angebot – das Erstgespräch ist kostenlos und unverbindlich.
+                            </p>
+                        </div>
                     </div>
-                    
-                    <div class="dsgvo__badges">
-                        <div class="trust-badge" data-animate="fade-up">
-                            <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
-                            <div class="trust-badge__content">
-                                <span class="trust-badge__title">EU-Hosting</span>
-                                <span class="trust-badge__subtitle">Server in Frankfurt</span>
-                            </div>
+
+                    <!-- Schritt 2 -->
+                    <div class="ablauf__step" data-animate="fade-up" data-delay="1">
+                        <div class="ablauf__step-number">
+                            <span>2</span>
                         </div>
-                        <div class="trust-badge" data-animate="fade-up" data-delay="1">
-                            <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
-                            <div class="trust-badge__content">
-                                <span class="trust-badge__title">ISO 27001</span>
-                                <span class="trust-badge__subtitle">In Zertifizierung</span>
+                        <div class="ablauf__step-content">
+                            <div class="ablauf__step-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"/><path d="M8 6l4-3 4 3"/><rect x="2" y="9" width="7" height="12" rx="1"/><rect x="15" y="6" width="7" height="15" rx="1"/><path d="M2 15h7"/><path d="M15 12h7"/></svg>
                             </div>
+                            <h3 class="ablauf__step-title">Workflow-Entwicklung & Integration</h3>
+                            <p class="ablauf__step-text">
+                                Wir entwickeln Ihre individuellen KI-Workflows und integrieren sie nahtlos in Ihre bestehenden Systeme. Alles DSGVO-konform, auf deutschen Servern in Frankfurt.
+                            </p>
                         </div>
-                        <div class="trust-badge" data-animate="fade-up" data-delay="2">
-                            <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-                            <div class="trust-badge__content">
-                                <span class="trust-badge__title">AVV inklusive</span>
-                                <span class="trust-badge__subtitle">DSGVO-konform</span>
+                    </div>
+
+                    <!-- Schritt 3 -->
+                    <div class="ablauf__step" data-animate="fade-up" data-delay="2">
+                        <div class="ablauf__step-number">
+                            <span>3</span>
+                        </div>
+                        <div class="ablauf__step-content">
+                            <div class="ablauf__step-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                             </div>
+                            <h3 class="ablauf__step-title">Go-Live & persönlicher Support</h3>
+                            <p class="ablauf__step-text">
+                                Wir begleiten Sie beim Go-Live, schulen Ihr Team und überwachen die Systeme laufend. Bei Fragen oder Fehlermeldungen sind wir direkt für Sie da – durchgehend persönlicher Support, kein Callcenter.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1627,91 +1636,62 @@
             </div>
         </section>
 
-        <section class="testimonials expert-quotes" id="testimonials">
+        <!-- ===== DSGVO SECTION (verschoben: nach Ersparnis, vor FAQ) ===== -->
+        <section class="dsgvo" id="dsgvo">
             <div class="container">
-                <header class="section__header">
-                    <span class="section__tag">Erfolgsgeschichten folgen</span>
-                    <h2 class="section__title">Was Experten über<br>KI-Automatisierung sagen</h2>
-                    <p class="section__description">
-                        Unsere Beta-Tester berichten ab April 2026.<br>Bis dahin: Stimmen aus der Branche.
-                    </p>
-                </header>
-                
-                <div class="testimonials__grid expert-quotes__grid">
-                    
-                    <div class="testimonial-card expert-quote-card" data-animate="fade-up">
-                        <div class="expert-quote-card__header">
-                            <div class="expert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-                            <div class="expert-source">
-                                <span class="expert-name">Bitkom e.V.</span>
-                                <span class="expert-meta">Digital Office Index 2025</span>
-                            </div>
-                        </div>
-                        <blockquote class="testimonial-card__quote">
-                            "KI-gestützte Prozessautomatisierung kann deutschen KMU jährlich bis zu 
-                            <strong>50 Milliarden Euro einsparen</strong>. Unternehmen, die jetzt investieren, 
-                            sichern sich einen langfristigen Wettbewerbsvorteil."
-                        </blockquote>
-                        <a href="https://www.bitkom.org" target="_blank" rel="noopener noreferrer" class="expert-link">
-                            Studie lesen →
-                        </a>
-                    </div>
-                    
-                    <div class="testimonial-card expert-quote-card" data-animate="fade-up" data-delay="1">
-                        <div class="expert-quote-card__header">
-                            <div class="expert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-                            <div class="expert-source">
-                                <span class="expert-name">McKinsey & Company</span>
-                                <span class="expert-meta">The State of AI 2025</span>
-                            </div>
-                        </div>
-                        <blockquote class="testimonial-card__quote">
-                            "Unternehmen, die DSGVO-konforme KI-Lösungen einsetzen, steigern ihre Produktivität 
-                            um durchschnittlich <strong>40% bei gleichzeitig höherer Compliance</strong>."
-                        </blockquote>
-                        <a href="https://www.mckinsey.com" target="_blank" rel="noopener noreferrer" class="expert-link">
-                            Report ansehen →
-                        </a>
-                    </div>
-                    
-                    <div class="testimonial-card expert-quote-card" data-animate="fade-up" data-delay="2">
-                        <div class="expert-quote-card__header">
-                            <div class="expert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div>
-                            <div class="expert-source">
-                                <span class="expert-name">Gartner Research</span>
-                                <span class="expert-meta">Future of Work 2026</span>
-                            </div>
-                        </div>
-                        <blockquote class="testimonial-card__quote">
-                            "Bis 2026 werden <strong>80% der Routineaufgaben in KMU automatisierbar</strong> sein. 
-                            Early Adopters profitieren von niedrigeren Implementierungskosten und schnellerer ROI."
-                        </blockquote>
-                        <a href="https://www.gartner.com" target="_blank" rel="noopener noreferrer" class="expert-link">
-                            Prognose lesen →
-                        </a>
-                    </div>
-                    
-                </div>
-                
-                <div class="coming-soon-box" data-animate="fade-up">
-                    <div class="coming-soon__content">
-                        <div class="coming-soon__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11l18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
-                        <h3 class="coming-soon__title">Ihre Erfolgsgeschichte könnte hier stehen!</h3>
-                        <p class="coming-soon__text">
-                            Werden Sie einer unserer ersten Beta-Partner und profitieren Sie von exklusiven Vorteilen:
+                <div class="dsgvo__wrapper">
+                    <div class="dsgvo__content">
+                        <span class="section__tag section__tag--light">Datenschutz</span>
+                        <h2 class="dsgvo__title">KI ohne rechtliche Risiken</h2>
+                        <p class="dsgvo__description">
+                            Unsere KI-Modelle werden ausschließlich auf europäischen Servern betrieben. 
+                            Ihre Daten verlassen niemals die EU – garantiert.
                         </p>
-                        <ul class="coming-soon__benefits">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px;vertical-align:middle;margin-right:12px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Kostenlose Potenzialanalyse</strong> im Wert von 500€</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px;vertical-align:middle;margin-right:12px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Ihr Logo & Testimonial</strong> auf unserer Website</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px;vertical-align:middle;margin-right:12px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Exklusive Case Study</strong> Ihrer Erfolgsgeschichte</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px;vertical-align:middle;margin-right:12px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Persönlicher Support</strong> – garantiert, kein Callcenter</li>
+                        
+                        <ul class="dsgvo__checklist">
+                            <li class="checklist-item" data-animate="check">
+                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span class="checklist-text">Ende-zu-Ende-Verschlüsselung (AES-256)</span>
+                            </li>
+                            <li class="checklist-item" data-animate="check" data-delay="1">
+                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span class="checklist-text">Löschfristen automatisiert (DSGVO Art. 17)</span>
+                            </li>
+                            <li class="checklist-item" data-animate="check" data-delay="2">
+                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span class="checklist-text">Revisionssichere Protokollierung</span>
+                            </li>
+                            <li class="checklist-item" data-animate="check" data-delay="3">
+                                <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span class="checklist-text">Rollenbasierte Zugriffskontrolle (RBAC)</span>
+                            </li>
                         </ul>
-                        <a href="#contact" class="btn btn--neon" style="margin-top: var(--space-4);">
-                            Jetzt Partner werden
-                        </a>
+                    </div>
+                    
+                    <div class="dsgvo__badges">
+                        <div class="trust-badge" data-animate="fade-up">
+                            <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+                            <div class="trust-badge__content">
+                                <span class="trust-badge__title">EU-Hosting</span>
+                                <span class="trust-badge__subtitle">Server in Frankfurt</span>
+                            </div>
+                        </div>
+                        <div class="trust-badge" data-animate="fade-up" data-delay="1">
+                            <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
+                            <div class="trust-badge__content">
+                                <span class="trust-badge__title">ISO 27001</span>
+                                <span class="trust-badge__subtitle">In Zertifizierung</span>
+                            </div>
+                        </div>
+                        <div class="trust-badge" data-animate="fade-up" data-delay="2">
+                            <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                            <div class="trust-badge__content">
+                                <span class="trust-badge__title">AVV inklusive</span>
+                                <span class="trust-badge__subtitle">DSGVO-konform</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </section>
 
@@ -1733,7 +1713,7 @@
                                 <div class="faq-item__answer">
                                     <p>
                                         <strong>Ja – oft sogar besonders.</strong> Ein Kunde mit 8 Mitarbeitern spart 40 Stunden pro Monat.<br>
-                                        Bei einem Stundenlohn von 50€ sind das 2.000€ – unser Starter-Paket kostet 299€. <em>ROI: 6,7x im ersten Monat.</em>
+                                        Bei einem Stundenlohn von 50€ sind das 2.000€.
                                     </p>
                                 </div>
                             </div>

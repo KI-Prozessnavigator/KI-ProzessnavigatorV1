@@ -7868,16 +7868,18 @@ section.testimonials.expert-quotes,
     }
 
     .dsgvo__badges {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: var(--space-4);
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: var(--space-3);
+        overflow: visible;
     }
 
     .trust-badge {
-        flex: 1;
-        min-width: 200px;
-        justify-content: center;
+        flex: none;
+        min-width: auto;
+        width: 100%;
+        justify-content: flex-start;
     }
 
     /* FAQ Section */
@@ -8388,19 +8390,20 @@ section.testimonials.expert-quotes,
         font-size: 1rem;
     }
 
-    /* Horizontal scrollable badges on mobile */
+    /* Trust Badges: vertikal untereinander, kein Scrollbalken */
     .dsgvo__badges {
-        flex-direction: row;
-        overflow-x: auto;
+        flex-direction: column;
+        overflow: visible;
         gap: var(--space-3);
-        padding-bottom: var(--space-2);
-        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0;
+        width: 100%;
     }
 
     .trust-badge {
         min-width: auto;
         flex-shrink: 0;
         padding: var(--space-3);
+        width: 100%;
     }
 
     .trust-badge__icon {
