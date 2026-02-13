@@ -660,6 +660,29 @@
         font-size: var(--text-sm);
         line-height: 1.5;
     }
+
+    /* ===== HEADLINES/SUBHEADLINES: keine Silbentrennung (Mobile/Tablet) ===== */
+    .hero__title,
+    .hero__title *,
+    .hero__description,
+    .hero__description *,
+    .section__title,
+    .section__title *,
+    .section__description,
+    .problem-card__title,
+    .solution-card__title,
+    .usecase-card__title,
+    .pricing-card__title,
+    .pricing-card__tagline,
+    .trust-badge__subtitle,
+    .faq-item__question,
+    .contact-modal__subtitle,
+    .form-step__subtitle,
+    .potential-results__subtitle {
+        hyphens: none !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+    }
     
     /* ===== PROBLEM/SOLUTION CARDS - Container mit 90% Breite ===== */
     .problems .container,

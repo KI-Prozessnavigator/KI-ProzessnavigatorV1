@@ -7,7 +7,7 @@ class ValueCalculator {
         // Input-Elemente
         this.employeeCount = document.getElementById('employeeCount');
         this.hourlyRate = document.getElementById('hourlyRate');
-        this.processType = document.getElementById('processType');
+        this.processType = document.getElementById('processType'); // optional (kann entfernt sein)
         this.minutesPerDay = document.getElementById('minutesPerDay');
         this.affectedEmployees = document.getElementById('affectedEmployees');
         
@@ -27,10 +27,10 @@ class ValueCalculator {
 
     setupEventListeners() {
         if (this.employeeCount) this.employeeCount.addEventListener('input', () => this.calculate());
-        this.hourlyRate.addEventListener('input', () => this.updateSliderDisplay());
-        this.processType.addEventListener('change', () => this.calculate());
-        this.minutesPerDay.addEventListener('input', () => this.updateSliderDisplay());
-        this.affectedEmployees.addEventListener('input', () => this.updateSliderDisplay());
+        if (this.hourlyRate) this.hourlyRate.addEventListener('input', () => this.updateSliderDisplay());
+        if (this.processType) this.processType.addEventListener('change', () => this.calculate());
+        if (this.minutesPerDay) this.minutesPerDay.addEventListener('input', () => this.updateSliderDisplay());
+        if (this.affectedEmployees) this.affectedEmployees.addEventListener('input', () => this.updateSliderDisplay());
         
         // Eingabefelder: Nutzer kann Wert tippen, Slider wird synchronisiert
         if (this.minutesPerDayValue && this.minutesPerDayValue.nodeName === 'INPUT') {
@@ -60,18 +60,19 @@ class ValueCalculator {
 
     updateSliderDisplay() {
         if (this.affectedEmployeesValue) {
-            this.affectedEmployeesValue[this.affectedEmployeesValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.affectedEmployees.value;
+            this.affectedEmployeesValue[this.affectedEmployeesValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.affectedEmployees?.value ?? this.affectedEmployeesValue.value;
         }
         if (this.minutesPerDayValue) {
-            this.minutesPerDayValue[this.minutesPerDayValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.minutesPerDay.value;
+            this.minutesPerDayValue[this.minutesPerDayValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.minutesPerDay?.value ?? this.minutesPerDayValue.value;
         }
         if (this.hourlyRateValue) {
-            this.hourlyRateValue[this.hourlyRateValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.hourlyRate.value;
+            this.hourlyRateValue[this.hourlyRateValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.hourlyRate?.value ?? this.hourlyRateValue.value;
         }
         this.calculate();
     }
 
     calculate() {
+        if (!this.hourlyRate || !this.minutesPerDay || !this.affectedEmployees) return;
         // Hole Werte (bei Eingabefeldern: Wert aus Input lesen, falls > Slider-max möglich)
         const totalEmployees = parseFloat(this.employeeCount.value) || 10;
         const hourlyRate = parseFloat(this.hourlyRate.value) || 50;

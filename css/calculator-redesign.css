@@ -1,10 +1,11 @@
 /* Ersparnis-Sektion Redesign – wie Testseite */
 
 #pricing.value-calculator {
-    min-height: auto !important;
-    padding: 60px 0 48px !important;
-    display: block !important;
-    align-items: unset !important;
+    min-height: auto;
+    /* Sektion insgesamt kompakter, damit der Rechner höher sitzt */
+    padding: 40px 0 44px;
+    display: block;
+    align-items: unset;
 }
 
 /* Ersparnis: leuchtende Trennstriche oben/unten (wie DSGVO/Final-CTA) */
@@ -37,8 +38,9 @@
 #pricing .container { 
     max-width: 1180px !important;
 }
-#pricing .section__header { 
-    margin-bottom: 32px !important;
+#pricing.value-calculator .section__header { 
+    /* EXAKT: Abstand Subheadline → Container-Oberkante */
+    margin-bottom: 40px;
 }
 /* Value-Based Selling: 1:1 identisch mit "Kein Tech-Blabla" und "Der Autopilot für Ihr Business".
    Feste Farbe #00d4ff, da .value-calculator in main.css --color-neon-cyan auf #fff setzt (nur für Result-Cards). */

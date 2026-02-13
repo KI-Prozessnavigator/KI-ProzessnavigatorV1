@@ -2568,10 +2568,37 @@ section {
 .usecases .section__header {
     margin-bottom: 48px;
     text-align: center;
+    /* Mehr Breite, damit die Description in 2 Zeilen statt 3 passt */
+    max-width: 920px;
 }
 
 .usecases .section__description {
     text-align: center;
+    max-width: 920px;
+    margin-inline: auto;
+    /* Keine Silbentrennung / kein Wortbrechen in den Wörtern */
+    hyphens: none;
+    word-break: normal;
+    overflow-wrap: normal;
+    word-wrap: normal;
+    /* Schönerer Zeilenumbruch (falls unterstützt) */
+    text-wrap: balance;
+}
+
+/* Usecases-Subline: exakt 2 Zeilen (je Span eine Zeile), ohne Umbruch innerhalb der Zeile */
+.usecases__desc-line {
+    display: block;
+    white-space: nowrap;
+    hyphens: none;
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+/* Auf schmalen Viewports minimal verkleinern, damit beide Zeilen ohne Umbruch passen */
+@media (max-width: 768px) {
+    .usecases .section__description {
+        font-size: clamp(0.78rem, 2.6vw, var(--text-sm));
+    }
 }
 
 /* Slider Navigation Buttons */
@@ -2971,6 +2998,14 @@ section {
     font-size: 0.65rem;
     color: var(--color-text-muted);
     line-height: 1.2;
+    /* Einheitliche Label-Höhe (reserviert 2 Zeilen), damit der graue Flow-Container
+       auf allen Karten gleich hoch bleibt – unabhängig von Zeilenumbrüchen. */
+    min-height: calc(2 * 1.2em);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
 }
 
 .flow-arrow {
@@ -5686,12 +5721,27 @@ section.testimonials.expert-quotes,
 
 .ablauf {
     padding-block: var(--section-padding);
+    padding-bottom: calc(var(--section-padding) + var(--space-10));
     position: relative;
+    /* Glows bleiben innerhalb der Sektion (kein Schleier außen, kein Abschneiden unten durch mehr Padding) */
     overflow: hidden;
 }
 
 .ablauf .section__header {
     margin-bottom: var(--space-16);
+    /* Mehr Breite, damit die Description in 2 Zeilen statt 3 passt */
+    max-width: 920px;
+}
+
+.ablauf .section__description {
+    max-width: 920px;
+    margin-inline: auto;
+    /* Keine Silbentrennung / kein Wortbrechen in den Wörtern */
+    hyphens: none;
+    word-break: normal;
+    overflow-wrap: normal;
+    word-wrap: normal;
+    text-wrap: balance;
 }
 
 /* Timeline Container */
@@ -5937,6 +5987,32 @@ section.testimonials.expert-quotes,
     color: rgba(255, 255, 255, 0.75);
 }
 
+/* CTA unterhalb der Ablauf-Timeline (nur in dieser Sektion) */
+.ablauf .calculator__cta-block {
+    margin-top: var(--space-12);
+    display: flex;
+    justify-content: center;
+    padding-bottom: var(--space-12);
+}
+
+.ablauf .btn--calculator {
+    width: auto;
+    width: fit-content;
+    max-width: 100%;
+    white-space: nowrap;
+    /* Glow stärker nach unten, damit seitlich kein „Schleier“ entsteht */
+    box-shadow: 0 10px 22px rgba(0, 212, 255, 0.22);
+}
+
+.ablauf .btn--calculator::before {
+    display: none;
+}
+
+.ablauf .btn--calculator:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 212, 255, 0.3);
+}
+
 /* ==========================================
    Value Calculator Styles
    ========================================== */
@@ -5946,7 +6022,8 @@ section.testimonials.expert-quotes,
     background: linear-gradient(180deg, #0a1628 0%, #0d1b36 50%, #0a1628 100%);
     position: relative;
     overflow: hidden;
-    padding-block: calc(var(--space-16) - 200px) var(--space-16) !important;
+    /* Kein !important: #pricing kann gezielt feinjustiert werden */
+    padding-block: var(--space-8) var(--space-16);
     scroll-margin-top: 200px;
 }
 
@@ -10168,7 +10245,7 @@ section.testimonials.expert-quotes,
 
 /* Section Headers mehr Abstand */
 [data-theme="dark"] .section__header {
-    margin-bottom: 64px !important;
+    margin-bottom: 64px;
 }
 
 [data-theme="dark"] .section__title {
