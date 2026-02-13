@@ -1,9 +1,3 @@
-/* ==========================================
-   Contact Modal - Dynamic Form Logic
-   KI-Prozessnavigator
-   Optimized & Performance-focused
-   ========================================== */
-
 (function() {
     'use strict';
 

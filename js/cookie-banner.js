@@ -1,19 +1,6 @@
-/**
- * Cookie Banner & Settings Modal - DSGVO-konform
- * ================================================
- * Vollständiges Cookie-Consent-Management nach DSGVO/TTDSG
- * - Granulare Cookie-Kategorien (Notwendig, Statistik, Marketing, Externe Medien)
- * - Einstellungs-Modal mit Details zu jedem Cookie
- * - Speicherung der Präferenzen in localStorage
- */
-
 'use strict';
 
 (function() {
-    // ==========================================
-    // Configuration
-    // ==========================================
-    
     const CONFIG = {
         STORAGE_KEY: 'ki-navigator-cookie-consent',
         CONSENT_VERSION: '1.0', // Erhöhen bei Änderungen an Cookie-Kategorien
@@ -21,35 +8,24 @@
         CATEGORIES: ['essential', 'analytics', 'marketing', 'external']
     };
 
-    // ==========================================
-    // DOM Elements
-    // ==========================================
-    
     const elements = {
         banner: document.getElementById('cookie-banner'),
         modal: document.getElementById('cookie-modal'),
         modalBackdrop: document.getElementById('cookie-modal-backdrop'),
         modalClose: document.getElementById('cookie-modal-close'),
         
-        // Banner Buttons
         acceptAllBtn: document.getElementById('cookie-accept-all'),
         essentialOnlyBtn: document.getElementById('cookie-essential-only'),
         settingsBtn: document.getElementById('cookie-settings'),
         
-        // Modal Buttons
         saveSelectionBtn: document.getElementById('cookie-save-selection'),
         modalAcceptAllBtn: document.getElementById('cookie-modal-accept-all'),
         
-        // Toggles
         analyticsToggle: document.getElementById('cookie-analytics'),
         marketingToggle: document.getElementById('cookie-marketing'),
         externalToggle: document.getElementById('cookie-external')
     };
 
-    // ==========================================
-    // State Management
-    // ==========================================
-    
     let currentConsent = {
         essential: true, // Immer true
         analytics: false,

@@ -1,12 +1,5 @@
-/**
- * KI-Prozessnavigator - Main JavaScript
- * =====================================
- * Handles interactive functionality for the landing page
- */
-
 'use strict';
 
-// ===== DOM Elements =====
 const DOM = {
     header: document.getElementById('header'),
     navToggle: document.getElementById('nav-toggle'),
@@ -20,15 +13,12 @@ const DOM = {
     heroTitle: document.querySelector('.typewriter'),
 };
 
-// ===== State =====
 const state = {
     isMenuOpen: false,
     lastScrollY: 0,
     hasTyped: false,
     theme: 'dark'
 };
-
-// ===== Utility Functions =====
 
 function debounce(func, wait = 100) {
     let timeout;

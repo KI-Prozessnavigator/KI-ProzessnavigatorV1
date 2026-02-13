@@ -1,8 +1,3 @@
-/**
- * Value Calculator - ROI Calculation Logic
- * Berechnet Zeitersparnis, monetären Wert und Kapazitäts-Boost
- */
-
 class ValueCalculator {
     constructor() {
         this.init();
