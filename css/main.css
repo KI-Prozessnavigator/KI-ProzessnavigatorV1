@@ -1668,15 +1668,334 @@ section {
 }
 
 .problems {
-    background: var(--color-background);
+    background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 119, 255, 0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 90% 80%, rgba(0, 212, 255, 0.1), transparent),
+        radial-gradient(ellipse 40% 30% at 10% 60%, rgba(0, 153, 255, 0.08), transparent),
+        radial-gradient(ellipse 50% 35% at 50% 50%, rgba(0, 85, 204, 0.06), transparent),
+        var(--color-background);
     transition: background var(--transition-slow);
     scroll-margin-top: 100px;
     padding-block: var(--space-16);
     padding-inline: 0;
 }
 
+/* ===== Vorteile/Diagnose Stepper (Variante E) ===== */
+.problems .vE {
+    max-width: 100%;
+    margin-inline: 0;
+}
+
+.problems .vE__segmented {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    justify-content: center;
+}
+
+.problems .vSeg {
+    padding: 10px 12px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    background: linear-gradient(135deg, rgba(0, 119, 255, 0.22), rgba(0, 212, 255, 0.10));
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, filter 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.problems .vSeg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+    transform: translateX(-120%);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.2s ease;
+}
+
+.problems .vSeg:hover {
+    transform: translateY(-1px);
+    border-color: rgba(0, 212, 255, 0.38);
+    box-shadow: 0 0 22px rgba(0, 212, 255, 0.12);
+    filter: brightness(1.05);
+}
+
+.problems .vSeg:hover::before {
+    transform: translateX(120%);
+    opacity: 1;
+}
+
+.problems .vSeg.is-active {
+    border-color: rgba(0, 212, 255, 0.55);
+    background: linear-gradient(135deg, rgba(0, 119, 255, 0.75), rgba(0, 212, 255, 0.40));
+    box-shadow: 0 0 26px rgba(0, 212, 255, 0.22), 0 0 42px rgba(0, 119, 255, 0.12);
+    animation: vSegPulse 2.2s ease-in-out infinite;
+}
+
+.problems .vE__hint {
+    margin: 0 0 12px;
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 0.92rem;
+    text-align: center;
+}
+
+/* Fokus-Styling ohne „rechteckigen Kasten“ (Mobile/Touch) */
+.problems .vSeg:focus {
+    outline: none;
+}
+
+/* Nur für Tastatur-Navigation sichtbar hervorheben */
+.keyboard-navigation .problems .vSeg:focus {
+    box-shadow:
+        0 0 0 4px rgba(0, 212, 255, 0.22),
+        0 0 28px rgba(0, 212, 255, 0.14);
+}
+
+@keyframes vSegPulse {
+    0%, 100% {
+        box-shadow: 0 0 22px rgba(0, 212, 255, 0.16), 0 0 34px rgba(0, 119, 255, 0.10);
+    }
+    50% {
+        box-shadow: 0 0 34px rgba(0, 212, 255, 0.26), 0 0 52px rgba(0, 119, 255, 0.16);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .problems .vSeg.is-active {
+        animation: none;
+    }
+    .problems .vSeg::before {
+        transition: none;
+    }
+}
+
+.problems .vE__panel {
+    padding: 18px;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 24px rgba(0, 212, 255, 0.08);
+    margin-bottom: 18px;
+}
+
+.problems .vE__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 12px;
+}
+
+.problems .vE__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    background: rgba(0, 212, 255, 0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex: 0 0 auto;
+}
+
+.problems .vE__icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--color-neon-cyan, #00d4ff);
+}
+
+.problems .vE__title {
+    margin: 0 0 6px;
+    color: #fff;
+    font-size: 1.15rem;
+    line-height: 1.2;
+}
+
+.problems .vE__meta {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.problems .vE__cols {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.9fr;
+    gap: 14px;
+}
+
+.problems .vE__col {
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(0, 0, 0, 0.12);
+    padding: 14px;
+    text-align: left;
+}
+
+.problems .vE__label {
+    margin: 0 0 10px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0, 212, 255, 0.85);
+    font-weight: 900;
+}
+
+.problems .vE__text {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.75;
+}
+
+.problems .vE__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.7;
+    display: grid;
+    gap: 8px;
+}
+
+.problems .vE__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.problems .vE__list li::before {
+    content: "✓";
+    position: static;
+    margin-top: 0.18em;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    background: rgba(0, 212, 255, 0.08);
+    color: rgba(0, 212, 255, 0.95);
+    flex: 0 0 16px;
+}
+
+.problems .vBenefits {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.problems .vBenefit {
+    padding: 18px;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 24px rgba(0, 212, 255, 0.08);
+    text-align: left;
+}
+
+.problems .vBenefit__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 212, 255, 0.22);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 212, 255, 0.06);
+    margin-bottom: 12px;
+}
+
+.problems .vBenefit__icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: rgba(0, 212, 255, 0.95);
+}
+
+.problems .vBenefit__title {
+    margin: 0 0 10px;
+    color: #fff;
+    font-size: 1.05rem;
+}
+
+.problems .vBenefit__text {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+}
+
+.problems .vKpi {
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 210, 106, 0.28);
+    background: rgba(0, 210, 106, 0.08);
+    color: rgba(183, 255, 217, 1);
+    font-weight: 800;
+}
+
+.problems .vKpi__values {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 1.15rem;
+    font-weight: 900;
+}
+
+.problems .vKpi__before {
+    color: rgba(255, 178, 170, 0.95);
+    text-decoration: line-through;
+    opacity: 0.9;
+}
+
+.problems .vKpi__arrow {
+    color: rgba(0, 212, 255, 0.95);
+}
+
+.problems .vKpi__after {
+    color: rgba(183, 255, 217, 1);
+}
+
+.problems .vKpi small {
+    display: block;
+    margin-top: 6px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.70);
+}
+
+@media (max-width: 1024px) {
+    .problems .vE__cols {
+        grid-template-columns: 1fr;
+    }
+    .problems .vBenefits {
+        grid-template-columns: 1fr;
+    }
+}
+
 .problems .section__header {
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-5);
+    overflow: visible;
+    max-width: 980px;
+}
+
+/* Subheadline in einer Zeile (Desktop) */
+@media (min-width: 1024px) {
+    #problems .section__description {
+        white-space: nowrap;
+        overflow: visible;
+    }
 }
 
 .problems > .container,
@@ -9830,7 +10149,9 @@ section.testimonials.expert-quotes,
 
 /* Problems Section Header - Weniger Abstand zu Cards */
 [data-theme="dark"] .problems .section__header {
-    margin-bottom: 44px !important; /* 64px - 20px = 44px */
+    margin-bottom: 28px !important;
+    overflow: visible;
+    max-width: 980px;
 }
 
 /* Problem Cards - Etwas kompakter (5px weniger oben + 5px weniger unten) */

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vorteile-Sektion – Prototyp (Variante E)</title>
+
+  <!-- Basis-Styles (reuse) -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
+  <!-- Isolierte Demo-Styles -->
+  <link rel="stylesheet" href="../css/test-vorteile-varianten.css" />
+
+  <!-- Isolierte Demo-Interaktionen -->
+  <script src="../js/test-vorteile-varianten.js" defer></script>
+</head>
+<body>
+  <main class="variant-lab">
+    <header class="variant-lab__top">
+      <div class="container">
+        <p class="variant-lab__kicker">EXTERNE TESTSEITE (wird nach Entscheidung gelöscht)</p>
+        <h1 class="variant-lab__title">Vorteile-Sektion – Prototyp (Variante E)</h1>
+        <p class="variant-lab__subtitle">
+          Diese Seite ist isoliert von der Live-Website und dient nur zum Testen eines neuen Layouts.
+        </p>
+      </div>
+    </header>
+
+    <section class="variant-section" id="variante-e" aria-labelledby="variante-e-title">
+      <div class="container">
+        <header class="variant-section__header">
+          <span class="variant-pill">Variante E</span>
+          <h2 class="variant-section__title" id="variante-e-title">Diagnose-Card + Stepper</h2>
+        </header>
+
+        <div class="vE" data-stepper-root>
+          <div class="vE__segmented" role="tablist" aria-label="Blockaden wählen">
+            <button class="vSeg is-active" type="button" role="tab" aria-selected="true" data-step="a">01 Routine</button>
+            <button class="vSeg" type="button" role="tab" aria-selected="false" data-step="b">02 Integration</button>
+            <button class="vSeg" type="button" role="tab" aria-selected="false" data-step="c">03 DSGVO</button>
+          </div>
+          <p class="vE__hint">Klicke auf einen Reiter, um die Diagnose zu wechseln.</p>
+
+          <article class="vE__panel" aria-label="Diagnose Panel">
+            <div class="vE__head">
+              <div class="vE__icon" aria-hidden="true" data-stepper-icon></div>
+              <div class="vE__headText">
+                <h3 class="vE__title" data-stepper-title></h3>
+                <p class="vE__meta" data-stepper-meta></p>
+              </div>
+            </div>
+
+            <div class="vE__cols">
+              <div class="vE__col">
+                <h4 class="vE__label">Ist-Zustand</h4>
+                <p class="vE__text" data-stepper-problem></p>
+              </div>
+              <div class="vE__col">
+                <h4 class="vE__label">Lösung</h4>
+                <ul class="vE__list" data-stepper-fix></ul>
+              </div>
+              <div class="vE__col">
+                <h4 class="vE__label">Ergebnis</h4>
+                <div class="vE__kpi" data-stepper-kpi></div>
+              </div>
+            </div>
+          </article>
+
+          <div class="vBenefits" aria-label="Vorteile">
+            <article class="vBenefit">
+              <div class="vBenefit__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <h3 class="vBenefit__title">70% weniger Routinearbeit</h3>
+              <p class="vBenefit__text">Mehr Zeit für Umsatz statt Verwaltung.</p>
+            </article>
+            <article class="vBenefit">
+              <div class="vBenefit__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              </div>
+              <h3 class="vBenefit__title">100% DSGVO-sicher</h3>
+              <p class="vBenefit__text">Sicherheit als Enabler – nicht als Bremse.</p>
+            </article>
+            <article class="vBenefit">
+              <div class="vBenefit__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+              </div>
+              <h3 class="vBenefit__title">In 2 Wochen produktiv</h3>
+              <p class="vBenefit__text">Schnelle Aktivierung ohne Großprojekt.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="variant-lab__footer">
+      <div class="container">
+        <p class="variant-lab__footnote">
+          Hinweis: Diese Seite ist nur zum Vergleichen/Validieren gedacht und wird nach Entscheidung wieder entfernt.
+        </p>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

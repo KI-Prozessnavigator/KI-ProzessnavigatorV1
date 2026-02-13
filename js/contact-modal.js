@@ -18,6 +18,26 @@
         const modal = document.getElementById('contact-modal');
         if (!modal) return;
 
+        // ===== MOBILE VIEWPORT HEIGHT FIX (Fallback für problematisches 100vh) =====
+        // Setzt --vh (1% der innerHeight), genutzt in Mobile-CSS als Fallback.
+        function updateMobileVhVar() {
+            const isMobile =
+                (window.matchMedia && window.matchMedia('(max-width: 480px)').matches) ||
+                (!window.matchMedia && window.innerWidth <= 480);
+
+            if (!isMobile) {
+                document.documentElement.style.removeProperty('--vh');
+                return;
+            }
+
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        updateMobileVhVar();
+        window.addEventListener('resize', updateMobileVhVar, { passive: true });
+        window.addEventListener('orientationchange', updateMobileVhVar, { passive: true });
+
         // Cache DOM elements once
         const elements = {
             modal: modal,

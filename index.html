@@ -610,156 +610,92 @@
             <div class="container">
                 <header class="section__header">
                     <span class="section__tag">KI-Implementierung ohne Tech-Blabla</span>
-                    <h2 class="section__title" id="problems-title">Drei Kostenfaktoren,<br class="br-mobile"> die<br class="br-desktop"> Unternehmen<br class="br-mobile"> unterschätzen</h2>
-                    <p class="section__description">Erkennen Sie Ihr Unternehmen hier wieder?</p>
+                    <h2 class="section__title" id="problems-title">KI‑Implementierung, die sich<br class="br-desktop"> in 2 Wochen rechnet</h2>
+                    <p class="section__description">Drei Blockaden bei der KI‑Implementierung, die Unternehmen unterschätzen</p>
                 </header>
-                
-                <div class="problems__grid problems__grid--popup">
-                    <div class="problem-card problem-card--clickable" data-animate="fade-up" data-popup-text="Vertriebsmitarbeiter pflegen CRM-Felder manuell. Buchhalter kopieren Rechnungsdaten zwischen Systemen. Controller erstellen Reports aus fünf Excel-Dateien.">
-                        <div class="problem-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                        </div>
-                        <h3 class="problem-card__title">Fachkräfte in Administrationsschleifen</h3>
-                        <p class="problem-card__text">
-                            Vertriebsmitarbeiter pflegen CRM-Felder&#160;manuell. Buchhalter kopieren Rechnungsdaten zwischen Systemen. Controller erstellen Reports aus fünf Excel-Dateien.
-                        </p>
-                        <p class="problem-card__footnote">Messbarer Verlust: 8–12 Stunden pro Mitarbeiter und Woche für Aufgaben ohne Wertschöpfung.</p>
-                        <div class="problem-card__separator" aria-hidden="true"></div>
-                        <div class="problem-card__more-area">
-                            <button type="button" class="problem-card__more" aria-label="Mitteltext im Pop-up anzeigen">Mehr lesen</button>
-                        </div>
+                <div class="vE" id="vorteile-stepper" data-stepper-root>
+                    <div class="vE__segmented" role="tablist" aria-label="Diagnose wählen">
+                        <button class="vSeg is-active" type="button" role="tab" aria-selected="true" data-step="a">01 Routine</button>
+                        <button class="vSeg" type="button" role="tab" aria-selected="false" data-step="b">02 Integration</button>
+                        <button class="vSeg" type="button" role="tab" aria-selected="false" data-step="c">03 DSGVO</button>
                     </div>
+                    <p class="vE__hint">Klicke auf einen Reiter, um die Diagnose zu wechseln.</p>
 
-                    <div class="problem-card problem-card--clickable" data-animate="fade-up" data-delay="1" data-popup-text="Die Rechtsabteilung blockiert KI-Projekte mit Verweis auf DSGVO-Risiken. Verständlich – 73 % der deutschen Unternehmen nennen Compliance als Haupthürde für KI-Adoption (Bitkom, 2024).">
-                        <div class="problem-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                <line x1="15" y1="9" x2="9" y2="15"/>
-                                <line x1="9" y1="9" x2="15" y2="15"/>
-                            </svg>
+                    <article class="vE__panel" aria-label="Diagnose">
+                        <div class="vE__head">
+                            <div class="vE__icon" aria-hidden="true" data-stepper-icon>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div class="vE__headText">
+                                <h3 class="vE__title" data-stepper-title>Fachkräfte in Administrationsschleifen</h3>
+                                <p class="vE__meta" data-stepper-meta>Messbarer Verlust: ca. 15h Routinearbeit pro Mitarbeiter/Woche.</p>
+                            </div>
                         </div>
-                        <h3 class="problem-card__title">Datenschutzbedenken als Innovationsbremse</h3>
-                        <p class="problem-card__text">
-                            Die Rechtsabteilung blockiert KI-Projekte mit Verweis auf DSGVO-Risiken. Verständlich – 73 % der deutschen Unternehmen nennen Compliance als Haupthürde für KI-Adoption (Bitkom, 2024).
-                        </p>
-                        <p class="problem-card__footnote">Konsequenz: Wettbewerber mit gelöster Datenschutzfrage automatisieren bereits.</p>
-                        <div class="problem-card__separator" aria-hidden="true"></div>
-                        <div class="problem-card__more-area">
-                            <button type="button" class="problem-card__more" aria-label="Mitteltext im Pop-up anzeigen">Mehr lesen</button>
-                        </div>
-                    </div>
 
-                    <div class="problem-card problem-card--clickable" data-animate="fade-up" data-delay="2" data-popup-text="Lizenzen für ChatGPT, Copilot oder spezialisierte Tools sind vorhanden. Aber: keine API-Verbindung zu CRM, ERP oder Buchhaltung. Mitarbeiter exportieren, kopieren, importieren – manuell.">
-                        <div class="problem-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                            </svg>
-                        </div>
-                        <h3 class="problem-card__title">KI-Tools ohne Systemanbindung</h3>
-                        <p class="problem-card__text">
-                            Lizenzen für ChatGPT, Copilot oder spezialisierte Tools sind vorhanden. Aber: keine API-Verbindung zu CRM, ERP oder Buchhaltung. Mitarbeiter exportieren, kopieren, importieren – manuell.
-                        </p>
-                        <p class="problem-card__footnote">Ergebnis: Technologie-Investition ohne Prozesseffekt.</p>
-                        <div class="problem-card__separator" aria-hidden="true"></div>
-                        <div class="problem-card__more-area">
-                            <button type="button" class="problem-card__more" aria-label="Mitteltext im Pop-up anzeigen">Mehr lesen</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="before-after-showcase" data-animate="fade-up">
-                    <div class="before-after-card">
-                        <div class="before-after-header">
-                            <span class="before-after-badge before-after-badge--before">Ohne KI-Prozessnavigator</span>
-                            <span class="before-after-vs">vs.</span>
-                            <span class="before-after-badge before-after-badge--after u-text-success u-border-success">Mit KI-Prozessnavigator</span>
-                        </div>
-                        <div class="before-after-items">
-                            <div class="before-after-item">
-                                <div class="before-after-metric">
-                                    <span class="metric-label">Routineaufgaben pro Woche</span>
-                                    <div class="metric-values">
-                                        <span class="metric-before">40h</span>
-                                        <span class="metric-arrow u-text-white">→</span>
-                                        <span class="metric-after u-text-success">12h</span>
-                                    </div>
-                                </div>
+                        <div class="vE__cols">
+                            <div class="vE__col">
+                                <h4 class="vE__label">Ist-Zustand</h4>
+                                <p class="vE__text" data-stepper-problem>Manuelle Übergaben kosten Zeit: CRM-Felder pflegen, Rechnungsdaten übertragen, Reports aus Excel zusammensuchen – jede Woche wieder.</p>
                             </div>
-                            <div class="before-after-item">
-                                <div class="before-after-metric">
-                                    <span class="metric-label">Zeit für Kundenbetreuung</span>
-                                    <div class="metric-values">
-                                        <span class="metric-before">20%</span>
-                                        <span class="metric-arrow u-text-white">→</span>
-                                        <span class="metric-after u-text-success">65%</span>
-                                    </div>
-                                </div>
+                            <div class="vE__col">
+                                <h4 class="vE__label">Lösung</h4>
+                                <ul class="vE__list" data-stepper-fix>
+                                    <li>Prozess-Mapping: Wo entstehen manuelle Übergaben?</li>
+                                    <li>Systemanbindung (CRM/ERP/Buchhaltung) via API/Automations</li>
+                                    <li>Automatisierte Übergabe + Monitoring</li>
+                                </ul>
                             </div>
-                            <div class="before-after-item">
-                                <div class="before-after-metric">
-                                    <span class="metric-label">DSGVO-Verstöße / Jahr</span>
-                                    <div class="metric-values">
-                                        <span class="metric-before">Risiko</span>
-                                        <span class="metric-arrow u-text-white">→</span>
-                                        <span class="metric-after u-text-success">0</span><svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="2" class="metric-check-icon"><polyline points="20 6 9 17 4 12"/></svg>
+                            <div class="vE__col">
+                                <h4 class="vE__label">Ergebnis</h4>
+                                <div class="vE__kpi" data-stepper-kpi>
+                                    <div class="vKpi">
+                                        <span class="vKpi__values">
+                                            <span class="vKpi__before">15h</span>
+                                            <span class="vKpi__arrow" aria-hidden="true">→</span>
+                                            <span class="vKpi__after">4–5h</span>
+                                        </span>
+                                        <small>Routinearbeit pro Mitarbeiter/Woche</small>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </article>
 
-                <div class="solutions-connector">
-                    <div class="connector-line"></div>
-                    <div class="connector-text">Das ändern wir</div>
-                    <div class="connector-line"></div>
-                </div>
-                
-                <div class="solutions__grid">
-                    <div class="solution-card" data-animate="fade-up">
-                        <div class="solution-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                            </svg>
-                        </div>
-                        <h3 class="solution-card__title">70% weniger Routinearbeit</h3>
-                        <p class="solution-card__text">
-                            Ihre Teams fokussieren sich endlich auf das, was Menschen besser können als Maschinen. 
-                            <strong>Durchschnittswert unserer Kunden.</strong>
-                        </p>
-                    </div>
-                    
-                    <div class="solution-card" data-animate="fade-up" data-delay="1">
-                        <div class="solution-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                <polyline points="9 12 11 14 15 10"/>
-                            </svg>
-                        </div>
-                        <h3 class="solution-card__title">100% DSGVO-sicher</h3>
-                        <p class="solution-card__text">
-                            Ende-zu-Ende-Verschlüsselung. ISO 27001 in Zertifizierung. 
-                            <strong>Hosting in Frankfurt – Ihre Daten bleiben in Deutschland.</strong>
-                        </p>
-                    </div>
-                    
-                    <div class="solution-card" data-animate="fade-up" data-delay="2">
-                        <div class="solution-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-                                <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-                                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-                                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-                            </svg>
-                        </div>
-                        <h3 class="solution-card__title">In 2 Wochen produktiv</h3>
-                        <p class="solution-card__text">
-                            Keine 6-monatigen Projekte. Kein IT-Team nötig. 
-                            <strong>Onboarding in einer Stunde – wir machen 90% der Arbeit.</strong>
-                        </p>
+                    <div class="vBenefits" aria-label="Vorteile">
+                        <article class="vBenefit">
+                            <div class="vBenefit__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                </svg>
+                            </div>
+                            <h3 class="vBenefit__title">70% weniger Routinearbeit</h3>
+                            <p class="vBenefit__text">Mehr Zeit für Umsatz statt Verwaltung.</p>
+                        </article>
+                        <article class="vBenefit">
+                            <div class="vBenefit__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <polyline points="9 12 11 14 15 10"/>
+                                </svg>
+                            </div>
+                            <h3 class="vBenefit__title">100% DSGVO-sicher</h3>
+                            <p class="vBenefit__text">Sicherheit als Enabler – nicht als Bremse.</p>
+                        </article>
+                        <article class="vBenefit">
+                            <div class="vBenefit__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                                    <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                                    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                                    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+                                </svg>
+                            </div>
+                            <h3 class="vBenefit__title">In 2 Wochen produktiv</h3>
+                            <p class="vBenefit__text">Schnelle Aktivierung ohne Großprojekt.</p>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -2930,76 +2866,6 @@
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initIndustrySelect);
         else initIndustrySelect();
     })();
-    </script>
-
-    <div class="popup-overlay" id="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-hidden="true">
-        <div class="popup-box">
-            <div class="popup-box__icon" id="popup-icon" aria-hidden="true"></div>
-            <h3 class="popup-box__title" id="popup-title"></h3>
-            <div class="popup-box__body">
-                <p class="popup-box__text" id="popup-text"></p>
-                <div class="popup-box__footer">
-                    <div class="problem-card__more-area">
-                        <button type="button" class="popup-box__close" id="popup-close" aria-label="Schließen">Schließen</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        (function () {
-            var overlay = document.getElementById('popup-overlay');
-            var iconEl = document.getElementById('popup-icon');
-            var titleEl = document.getElementById('popup-title');
-            var textEl = document.getElementById('popup-text');
-            var closeBtn = document.getElementById('popup-close');
-            var cards = document.querySelectorAll('.problem-card--clickable[data-popup-text]');
-
-            function openPopup(card) {
-                var text = card.getAttribute('data-popup-text');
-                var titleNode = card.querySelector('.problem-card__title');
-                var iconNode = card.querySelector('.problem-card__icon');
-                titleEl.textContent = titleNode ? titleNode.textContent : '';
-                textEl.textContent = text || '';
-                iconEl.innerHTML = '';
-                if (iconNode) {
-                    var iconClone = iconNode.cloneNode(true);
-                    iconEl.appendChild(iconClone);
-                }
-                overlay.classList.add('is-open');
-                overlay.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-                closeBtn.focus();
-            }
-
-            function closePopup() {
-                overlay.classList.remove('is-open');
-                overlay.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            }
-
-            cards.forEach(function (card) {
-                var btn = card.querySelector('.problem-card__more');
-                if (!card.getAttribute('data-popup-text')) return;
-                function handleOpen() { openPopup(card); }
-                if (btn) {
-                    btn.addEventListener('click', handleOpen);
-                }
-                card.addEventListener('click', function (e) {
-                    if (e.target === btn || btn.contains(e.target)) return;
-                    handleOpen();
-                });
-            });
-
-            closeBtn.addEventListener('click', closePopup);
-            overlay.addEventListener('click', function (e) {
-                if (e.target === overlay) closePopup();
-            });
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && overlay.classList.contains('is-open')) closePopup();
-            });
-        })();
     </script>
 
     <!-- ============================================
