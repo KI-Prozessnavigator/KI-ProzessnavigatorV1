@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E-Mail Vorschau (file://) – KI‑Prozessnavigator</title>
+  <style>
+    :root { color-scheme: light; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: #0b1220; color: #e5e7eb; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .top { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .title { font-weight: 700; }
+    .badge { font-size: 12px; opacity: 0.8; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    select, button {
+      appearance: none;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: #e5e7eb;
+      padding: 10px 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+    button.active { border-color: rgba(0,217,143,0.6); background: rgba(0,217,143,0.18); }
+    .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); border-radius: 14px; overflow: hidden; }
+    .meta { padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.10); display: grid; gap: 6px; }
+    .metaLabel { font-size: 12px; opacity: 0.8; }
+    .metaValue { font-size: 14px; }
+    .content { background: #0f172a; }
+    iframe { width: 100%; height: 78vh; border: 0; background: #fff; }
+    pre { margin: 0; padding: 16px; white-space: pre-wrap; word-break: break-word; font-size: 13px; line-height: 1.5; color: #e5e7eb; }
+    .hint { font-size: 12px; opacity: 0.75; margin-top: 10px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="title">E-Mail Template Vorschau (file://, statisch)</div>
+        <div class="badge">Hinweis: Das ist eine Snapshot-Ansicht (PHP läuft nicht über <code>file://</code>).</div>
+      </div>
+      <div class="row">
+        <button id="modeRender" class="active" type="button">Render</button>
+        <button id="modeSource" type="button">HTML-Quelle</button>
+        <button id="modePlain" type="button">Plain-Text</button>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 14px;">
+      <select id="viewSelect" aria-label="Template auswählen">
+        <option value="contact-owner">Kontakt → Betreiber (du)</option>
+        <option value="contact-confirmation">Kontakt → Bestätigung (Absender)</option>
+        <option value="checklist-customer">Checkliste → Anfragender</option>
+        <option value="checklist-owner">Checkliste → Lead-Hinweis (du)</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <div class="meta">
+        <div class="metaLabel">Betreff</div>
+        <div class="metaValue" id="subject"></div>
+      </div>
+      <div class="content" id="content"></div>
+    </div>
+
+    <div class="hint">
+      Du bearbeitest die echten Templates in <code>php/templates/</code>. Wenn du willst, kann ich dir auch wieder die echte lokale PHP-Vorschau aktivieren (live, ohne Snapshot), dafür muss aber <code>php -S</code> laufen.
+    </div>
+  </div>
+
+  <!-- ==================== SNAPSHOT DATEN ==================== -->
+
+  <template id="html-contact-owner">
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #0077ff 0%, #00d98f 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+        .content { background: #f9fafb; padding: 30px; border-radius: 0 0 10px 10px; }
+        .field { margin-bottom: 20px; }
+        .label { font-weight: bold; color: #0077ff; margin-bottom: 5px; }
+        .value { color: #333; }
+        .footer { text-align: center; margin-top: 30px; color: #888; font-size: 12px; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h1>🚀 Neue Anfrage!</h1>
+          <p>Sie haben eine neue Anfrage über Ihre Website erhalten</p>
+        </div>
+        <div class="content">
+          <div class="field">
+            <div class="label">👤 Name:</div>
+            <div class="value">Max Mustermann</div>
+          </div>
+          <div class="field">
+            <div class="label">📧 E-Mail:</div>
+            <div class="value"><a href="mailto:max@unternehmen.de">max@unternehmen.de</a></div>
+          </div>
+          <div class="field">
+            <div class="label">📞 Telefon:</div>
+            <div class="value">+49 123 456789</div>
+          </div>
+          <div class="field">
+            <div class="label">🏢 Unternehmen:</div>
+            <div class="value">Muster GmbH</div>
+          </div>
+          <div class="field">
+            <div class="label">🎯 Interesse:</div>
+            <div class="value">Potenzialanalyse</div>
+          </div>
+          <div class="field">
+            <div class="label">💬 Nachricht:</div>
+            <div class="value">Hallo Dominik,<br>wir interessieren uns für Automatisierung im Backoffice.<br>Bitte melde dich diese Woche.</div>
+          </div>
+          <div class="field">
+            <div class="label">🕐 Zeitpunkt:</div>
+            <div class="value">(Beispiel)</div>
+          </div>
+          <div class="field">
+            <div class="label">🌐 IP-Adresse:</div>
+            <div class="value">(Beispiel)</div>
+          </div>
+        </div>
+        <div class="footer">
+          <p>Diese E-Mail wurde automatisch von Ihrer Website generiert.</p>
+          <p>KI-Prozessnavigator © 2026</p>
+        </div>
+      </div>
+    </body>
+    </html>
+  </template>
+
+  <template id="html-contact-confirmation">
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bestätigung – KI‑Prozessnavigator</title>
+      <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f5f5f5; }
+        .wrapper { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .header { background: linear-gradient(135deg, #0077ff 0%, #00d98f 100%); color: #fff; padding: 26px; text-align: center; }
+        .header h1 { margin: 0; font-size: 1.25rem; }
+        .content { padding: 26px; }
+        .content p { margin: 0 0 14px; }
+        .muted { color: #666; font-size: 0.92rem; }
+        .footer { text-align: center; padding: 18px 26px 24px; color: #888; font-size: 0.85rem; }
+      </style>
+    </head>
+    <body>
+      <div class="wrapper">
+        <div class="card">
+          <div class="header"><h1>✅ Anfrage erhalten</h1></div>
+          <div class="content">
+            <p><strong>Max,</strong></p>
+            <p>vielen Dank für Ihre Nachricht. Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+            <p class="muted">Wenn Sie diese E‑Mail nicht angefordert haben, können Sie sie ignorieren.</p>
+          </div>
+          <div class="footer">KI‑Prozessnavigator · Intelligente Automatisierung für den Mittelstand</div>
+        </div>
+      </div>
+    </body>
+    </html>
+  </template>
+
+  <template id="html-checklist-customer">
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Ihre Checkliste – KI-Prozessnavigator</title>
+      <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f5f5f5; }
+        .wrapper { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .header { background: linear-gradient(135deg, #0077ff 0%, #00d98f 100%); color: #fff; padding: 30px; text-align: center; }
+        .header h1 { margin: 0; font-size: 1.5rem; }
+        .header p { margin: 10px 0 0; opacity: 0.95; font-size: 0.95rem; }
+        .content { padding: 30px; }
+        .content h2 { color: #0077ff; font-size: 1.2rem; margin-top: 0; border-bottom: 2px solid #0077ff; padding-bottom: 8px; }
+        .checklist { list-style: none; padding: 0; margin: 0; }
+        .checklist li { padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start; gap: 12px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist-num { background: #0077ff; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.85rem; flex-shrink: 0; }
+        .checklist-title { font-weight: bold; color: #333; }
+        .checklist-desc { font-size: 0.9rem; color: #555; margin-top: 4px; }
+        .cta-box { background: #f0f9ff; border: 2px solid #0077ff; border-radius: 12px; padding: 24px; margin: 28px 0; text-align: center; }
+        .cta-box h3 { margin: 0 0 12px; color: #0077ff; font-size: 1.15rem; }
+        .cta-box p { margin: 0 0 16px; color: #444; }
+        .btn { display: inline-block; background: linear-gradient(135deg, #0077ff 0%, #00d98f 100%); color: #fff !important; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: bold; }
+        .footer { text-align: center; padding: 20px; color: #888; font-size: 0.85rem; }
+      </style>
+    </head>
+    <body>
+      <div class="wrapper">
+        <div class="card">
+          <div class="header">
+            <h1>📥 Ihre Checkliste ist da!</h1>
+            <p>10 Prozesse, die Sie JETZT automatisieren sollten</p>
+          </div>
+          <div class="content">
+            <h2>✅ Die 10 Prozesse im Überblick</h2>
+            <ol class="checklist">
+              <li><span class="checklist-num">1</span><div><span class="checklist-title">Lead-Qualifizierung</span><p class="checklist-desc">Erstgespräche führen, Anfragen einstufen – KI übernimmt die Vorauswahl. Typisch: 40 % mehr qualifizierte Termine.</p></div></li>
+              <li><span class="checklist-num">2</span><div><span class="checklist-title">Bewerbungs-Screening</span><p class="checklist-desc">Bewerbungen analysieren, ranken und Kurzfeedback – in Minuten statt Tagen. Ca. 8 h/Woche Ersparnis.</p></div></li>
+              <li><span class="checklist-num">3</span><div><span class="checklist-title">Rechnungsprüfung</span><p class="checklist-desc">OCR, Abgleich mit Bestellungen, Freigabe-Workflows. Fehlerquote nahe 0 %, weniger manuelle Prüfung.</p></div></li>
+              <li><span class="checklist-num">4</span><div><span class="checklist-title">FAQ-Beantwortung</span><p class="checklist-desc">Standardfragen sofort beantworten, Eskalation an Menschen nur bei Bedarf. Bis zu 60 % weniger Tickets.</p></div></li>
+              <li><span class="checklist-num">5</span><div><span class="checklist-title">Ticket-Routing</span><p class="checklist-desc">Anfragen nach Thema und Priorität zuordnen und an die richtige Stelle leiten. Schnellere Reaktionszeiten.</p></div></li>
+              <li><span class="checklist-num">6</span><div><span class="checklist-title">E-Mail-Klassifizierung</span><p class="checklist-desc">Eingehende E-Mails kategorisieren, Dringlichkeit erkennen und Vorlagen vorschlagen.</p></div></li>
+              <li><span class="checklist-num">7</span><div><span class="checklist-title">Dokumenten-Extraktion</span><p class="checklist-desc">Daten aus Rechnungen, Verträgen oder Formularen auslesen und in Systeme übernehmen.</p></div></li>
+              <li><span class="checklist-num">8</span><div><span class="checklist-title">Terminbuchung</span><p class="checklist-desc">Kalender prüfen, passende Slots vorschlagen und Termine buchen – ohne Hin und Her.</p></div></li>
+              <li><span class="checklist-num">9</span><div><span class="checklist-title">Datenabgleich</span><p class="checklist-desc">Stammdaten zwischen Systemen abgleichen, Duplikate erkennen und Bereinigung vorschlagen.</p></div></li>
+              <li><span class="checklist-num">10</span><div><span class="checklist-title">Report-Generierung</span><p class="checklist-desc">Zahlen aus Quellen sammeln, aufbereiten und wöchentliche oder monatliche Reports erzeugen.</p></div></li>
+            </ol>
+            <div class="cta-box">
+              <h3>🚀 Nächster Schritt: Kostenloses Beratungsgespräch</h3>
+              <p>Sie möchten wissen, welche dieser Prozesse in Ihrem Unternehmen am meisten bringen?<br>Buchen Sie jetzt einen <strong>kostenlosen 30-Minuten-Termin</strong> – unverbindlich und ohne Verkaufsdruck.</p>
+              <a href="https://calendly.com/d-buchele-ki-prozessnavigator/30min" class="btn">Jetzt kostenlosen Termin buchen →</a>
+            </div>
+            <p style="font-size: 0.9rem; color: #666;">Bei Fragen antworten Sie einfach auf diese E-Mail. Wir melden uns innerhalb von 24 Stunden.</p>
+          </div>
+          <div class="footer">
+            <p>KI-Prozessnavigator · Intelligente Automatisierung für den Mittelstand</p>
+            <p><a href="https://ki-prozessnavigator.de/datenschutz.html" style="color: #0077ff;">Datenschutzerklärung</a></p>
+          </div>
+        </div>
+      </div>
+    </body>
+    </html>
+  </template>
+
+  <template id="html-checklist-owner">
+    <!DOCTYPE html>
+    <html>
+    <head><meta charset="UTF-8"></head>
+    <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+      <p>Ein B2B-Kunde hat die Checkliste angefordert.</p>
+      <p><strong>E-Mail des Kunden:</strong> <a href="mailto:lead@beispiel.de">lead@beispiel.de</a></p>
+      <p><strong>Zeitpunkt:</strong> (Beispiel)</p>
+      <p><strong>IP:</strong> (Beispiel)</p>
+      <hr>
+      <p>Der Kunde hat die Checkliste per E-Mail erhalten inkl. Einladung zum kostenlosen Beratungstermin.</p>
+      <p><a href="https://calendly.com/d-buchele-ki-prozessnavigator/30min">→ Calendly öffnen</a></p>
+    </body>
+    </html>
+  </template>
+
+  <script>
+    const TEMPLATES = {
+      "contact-owner": {
+        subject: "🚀 Neue Anfrage von Max Mustermann",
+        htmlId: "html-contact-owner",
+        plain:
+`Max, 
+
+vielen Dank für Ihre Nachricht. (Diese Snapshot-Datei zeigt nur die Optik.)
+`
+      },
+      "contact-confirmation": {
+        subject: "✅ Wir haben Ihre Anfrage erhalten – KI-Prozessnavigator",
+        htmlId: "html-contact-confirmation",
+        plain:
+`Max,
+
+vielen Dank für Ihre Nachricht. Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.
+
+Freundliche Grüße
+KI‑Prozessnavigator`
+      },
+      "checklist-customer": {
+        subject: "📥 Ihre Checkliste: 10 Prozesse, die Sie JETZT automatisieren sollten",
+        htmlId: "html-checklist-customer",
+        plain:
+`Ihre Checkliste: 10 Prozesse, die Sie JETZT automatisieren sollten
+
+1. Lead-Qualifizierung
+2. Bewerbungs-Screening
+3. Rechnungsprüfung
+4. FAQ-Beantwortung
+5. Ticket-Routing
+6. E-Mail-Klassifizierung
+7. Dokumenten-Extraktion
+8. Terminbuchung
+9. Datenabgleich
+10. Report-Generierung
+
+Kostenloses Beratungsgespräch buchen: https://calendly.com/d-buchele-ki-prozessnavigator/30min`
+      },
+      "checklist-owner": {
+        subject: "📥 Neuer Lead: Checkliste angefordert von lead@beispiel.de",
+        htmlId: "html-checklist-owner",
+        plain:
+`Neuer Lead: Checkliste angefordert
+
+E-Mail: lead@beispiel.de
+Calendly: https://calendly.com/d-buchele-ki-prozessnavigator/30min`
+      }
+    };
+
+    const viewSelect = document.getElementById("viewSelect");
+    const subjectEl = document.getElementById("subject");
+    const contentEl = document.getElementById("content");
+    const modeRender = document.getElementById("modeRender");
+    const modeSource = document.getElementById("modeSource");
+    const modePlain = document.getElementById("modePlain");
+    let mode = "render";
+
+    function setMode(next) {
+      mode = next;
+      modeRender.classList.toggle("active", mode === "render");
+      modeSource.classList.toggle("active", mode === "source");
+      modePlain.classList.toggle("active", mode === "plain");
+      render();
+    }
+
+    function render() {
+      const key = viewSelect.value;
+      const t = TEMPLATES[key];
+      subjectEl.textContent = t.subject;
+      contentEl.innerHTML = "";
+
+      if (mode === "plain") {
+        const pre = document.createElement("pre");
+        pre.textContent = t.plain || "";
+        contentEl.appendChild(pre);
+        return;
+      }
+
+      if (mode === "source") {
+        const tpl = document.getElementById(t.htmlId);
+        const pre = document.createElement("pre");
+        pre.textContent = (tpl ? tpl.innerHTML.trim() : "");
+        contentEl.appendChild(pre);
+        return;
+      }
+
+      const tpl = document.getElementById(t.htmlId);
+      const iframe = document.createElement("iframe");
+      iframe.setAttribute("sandbox", "");
+      iframe.srcdoc = (tpl ? tpl.innerHTML.trim() : "<p>Template fehlt</p>");
+      contentEl.appendChild(iframe);
+    }
+
+    viewSelect.addEventListener("change", render);
+    modeRender.addEventListener("click", () => setMode("render"));
+    modeSource.addEventListener("click", () => setMode("source"));
+    modePlain.addEventListener("click", () => setMode("plain"));
+    render();
+  </script>
+</body>
+</html>
+

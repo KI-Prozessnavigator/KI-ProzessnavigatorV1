@@ -546,15 +546,29 @@
                         body: JSON.stringify(contactData)
                     });
 
-                    const result = await response.json();
+                    // Robust gegen Nicht-JSON Antworten (z.B. PHP-Fatal / HTML)
+                    const rawText = await response.text();
+                    let result = null;
+                    try {
+                        result = rawText ? JSON.parse(rawText) : null;
+                    } catch (e) {
+                        result = null;
+                    }
 
-                    if (result.success) {
+                    if (response.ok && result && result.success) {
                         // Show success
                         state.formData.contact = contactData;
                         showSuccess();
                     } else {
                         // Show error
-                        alert(result.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
+                        const serverMsg = result && result.message ? result.message : null;
+                        const fallbackMsg = response.ok
+                            ? 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.'
+                            : 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.';
+                        alert(serverMsg || fallbackMsg);
+                        if (!result && rawText) {
+                            console.warn('Non-JSON response from send-email.php:', rawText);
+                        }
                         submitBtn.disabled = false;
                         submitBtn.innerHTML = originalText;
                     }

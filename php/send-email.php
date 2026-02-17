@@ -24,11 +24,21 @@ if (in_array($origin, $allowed_origins)) {
     header('Access-Control-Allow-Headers: Content-Type');
 }
 
+// Preflight / OPTIONS (hilft v.a. bei Dev-/Staging-Setups; auf Prod harmless)
+if (($_SERVER['REQUEST_METHOD'] ?? '') === 'OPTIONS') {
+    http_response_code(204);
+    exit;
+}
+
 // Session starten für Rate Limiting
 session_start();
 
 // Konfiguration laden
 require_once __DIR__ . '/config.php';
+
+// Templates laden
+require_once __DIR__ . '/templates/contact-owner.php';
+require_once __DIR__ . '/templates/contact-confirmation.php';
 
 // ==================== FUNKTIONEN ====================
 
@@ -134,23 +144,44 @@ function sendEmail($data) {
     if (file_exists($autoloadPath)) {
         require_once $autoloadPath;
     }
-    
-    // PHPMailer verwenden (wenn verfügbar)
+
+    // 1) Betreiber-Mail (Pflicht)
+    // 2) Bestätigung an Absender (Nice-to-have; Fehler soll Betreiber-Mail nicht verhindern)
+    $ownerSent = false;
+
     if (class_exists('PHPMailer\PHPMailer\PHPMailer')) {
-        return sendEmailWithPHPMailer($data);
-    } else {
-        // Fallback: Native PHP mail()
-        return sendEmailNative($data);
+        if (!defined('SMTP_PASSWORD') || SMTP_PASSWORD === '') {
+            error_log('Contact Form Error: SMTP_PASSWORD missing (set ENV SMTP_PASSWORD).');
+            return false;
+        }
+        $ownerSent = sendOwnerEmailWithPHPMailer($data);
+        if ($ownerSent) {
+            $confirmationSent = sendConfirmationEmailWithPHPMailer($data);
+            if (!$confirmationSent) {
+                error_log('Contact Form Warning: Confirmation email could not be sent (PHPMailer).');
+            }
+        }
+        return $ownerSent;
     }
+
+    // Fallback: Native PHP mail()
+    $ownerSent = sendOwnerEmailNative($data);
+    if ($ownerSent) {
+        $confirmationSent = sendConfirmationEmailNative($data);
+        if (!$confirmationSent) {
+            error_log('Contact Form Warning: Confirmation email could not be sent (native mail).');
+        }
+    }
+    return $ownerSent;
 }
 
 /**
- * E-Mail mit PHPMailer senden (empfohlen)
+ * Betreiber-Mail mit PHPMailer senden (empfohlen)
  */
-function sendEmailWithPHPMailer($data) {
-    $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-    
+function sendOwnerEmailWithPHPMailer($data) {
     try {
+        $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+
         // SMTP Konfiguration
         $mail->isSMTP();
         $mail->Host = SMTP_HOST;
@@ -168,25 +199,59 @@ function sendEmailWithPHPMailer($data) {
         
         // E-Mail Inhalt
         $mail->isHTML(true);
-        $mail->Subject = '🚀 Neue Anfrage von ' . $data['firstName'] . ' ' . $data['lastName'];
-        $mail->Body = buildEmailHTML($data);
-        $mail->AltBody = buildEmailPlain($data);
+        $mail->Subject = kp_contact_owner_subject($data);
+        $mail->Body = kp_contact_owner_html($data);
+        $mail->AltBody = kp_contact_owner_plain($data);
         
         $mail->send();
         return true;
     } catch (Exception $e) {
-        error_log('PHPMailer Error: ' . $mail->ErrorInfo);
+        error_log('PHPMailer Error (Owner): ' . $e->getMessage());
         return false;
     }
 }
 
 /**
- * E-Mail mit nativer PHP mail() Funktion senden (Fallback)
+ * Bestätigung an Absender mit PHPMailer senden
  */
-function sendEmailNative($data) {
+function sendConfirmationEmailWithPHPMailer($data) {
+    try {
+        $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+
+        // SMTP Konfiguration
+        $mail->isSMTP();
+        $mail->Host = SMTP_HOST;
+        $mail->SMTPAuth = true;
+        $mail->Username = SMTP_USERNAME;
+        $mail->Password = SMTP_PASSWORD;
+        $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = SMTP_PORT;
+        $mail->CharSet = 'UTF-8';
+
+        $mail->setFrom(SMTP_USERNAME, 'KI-Prozessnavigator');
+        $mail->addAddress($data['email']);
+        $mail->addReplyTo(RECIPIENT_EMAIL, 'KI-Prozessnavigator');
+
+        $mail->isHTML(true);
+        $mail->Subject = kp_contact_confirmation_subject();
+        $mail->Body = kp_contact_confirmation_html($data);
+        $mail->AltBody = kp_contact_confirmation_plain($data);
+
+        $mail->send();
+        return true;
+    } catch (Exception $e) {
+        error_log('PHPMailer Error (Confirmation): ' . $e->getMessage());
+        return false;
+    }
+}
+
+/**
+ * Betreiber-Mail mit nativer PHP mail() Funktion senden (Fallback)
+ */
+function sendOwnerEmailNative($data) {
     $to = RECIPIENT_EMAIL;
-    $subject = '🚀 Neue Anfrage von ' . $data['firstName'] . ' ' . $data['lastName'];
-    $message = buildEmailPlain($data);
+    $subject = kp_contact_owner_subject($data);
+    $message = kp_contact_owner_plain($data);
     
     $headers = [
         'From: ' . SMTP_USERNAME,
@@ -200,140 +265,33 @@ function sendEmailNative($data) {
 }
 
 /**
- * E-Mail HTML Template
+ * Bestätigung an Absender mit nativer PHP mail() Funktion senden (Fallback)
  */
-function buildEmailHTML($data) {
-    $html = '
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: linear-gradient(135deg, #0077ff 0%, #00d98f 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
-            .content { background: #f9fafb; padding: 30px; border-radius: 0 0 10px 10px; }
-            .field { margin-bottom: 20px; }
-            .label { font-weight: bold; color: #0077ff; margin-bottom: 5px; }
-            .value { color: #333; }
-            .footer { text-align: center; margin-top: 30px; color: #888; font-size: 12px; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>🚀 Neue Anfrage!</h1>
-                <p>Sie haben eine neue Anfrage über Ihre Website erhalten</p>
-            </div>
-            <div class="content">
-                <div class="field">
-                    <div class="label">👤 Name:</div>
-                    <div class="value">' . $data['firstName'] . ' ' . $data['lastName'] . '</div>
-                </div>
-                
-                <div class="field">
-                    <div class="label">📧 E-Mail:</div>
-                    <div class="value"><a href="mailto:' . $data['email'] . '">' . $data['email'] . '</a></div>
-                </div>';
-    
-    if (!empty($data['phone'])) {
-        $html .= '
-                <div class="field">
-                    <div class="label">📞 Telefon:</div>
-                    <div class="value">' . $data['phone'] . '</div>
-                </div>';
-    }
-    
-    if (!empty($data['company'])) {
-        $html .= '
-                <div class="field">
-                    <div class="label">🏢 Unternehmen:</div>
-                    <div class="value">' . $data['company'] . '</div>
-                </div>';
-    }
-    
-    if (!empty($data['companySize'])) {
-        $html .= '
-                <div class="field">
-                    <div class="label">👥 Unternehmensgröße:</div>
-                    <div class="value">' . $data['companySize'] . '</div>
-                </div>';
-    }
-    
-    if (!empty($data['interest'])) {
-        $html .= '
-                <div class="field">
-                    <div class="label">🎯 Interesse:</div>
-                    <div class="value">' . $data['interest'] . '</div>
-                </div>';
-    }
-    
-    if (!empty($data['message'])) {
-        $html .= '
-                <div class="field">
-                    <div class="label">💬 Nachricht:</div>
-                    <div class="value">' . nl2br($data['message']) . '</div>
-                </div>';
-    }
-    
-    $html .= '
-                <div class="field">
-                    <div class="label">🕐 Zeitpunkt:</div>
-                    <div class="value">' . date('d.m.Y H:i:s') . '</div>
-                </div>
-                
-                <div class="field">
-                    <div class="label">🌐 IP-Adresse:</div>
-                    <div class="value">' . $_SERVER['REMOTE_ADDR'] . '</div>
-                </div>
-            </div>
-            <div class="footer">
-                <p>Diese E-Mail wurde automatisch von Ihrer Website generiert.</p>
-                <p>KI-Prozessnavigator © ' . date('Y') . '</p>
-            </div>
-        </div>
-    </body>
-    </html>';
-    
-    return $html;
-}
+function sendConfirmationEmailNative($data) {
+    $to = $data['email'];
+    $subject = kp_contact_confirmation_subject();
+    $html = kp_contact_confirmation_html($data);
+    $plain = kp_contact_confirmation_plain($data);
 
-/**
- * E-Mail Plain Text Template
- */
-function buildEmailPlain($data) {
-    $text = "🚀 NEUE ANFRAGE VON IHRER WEBSITE\n\n";
-    $text .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
-    $text .= "👤 NAME:\n" . $data['firstName'] . ' ' . $data['lastName'] . "\n\n";
-    $text .= "📧 E-MAIL:\n" . $data['email'] . "\n\n";
-    
-    if (!empty($data['phone'])) {
-        $text .= "📞 TELEFON:\n" . $data['phone'] . "\n\n";
-    }
-    
-    if (!empty($data['company'])) {
-        $text .= "🏢 UNTERNEHMEN:\n" . $data['company'] . "\n\n";
-    }
-    
-    if (!empty($data['companySize'])) {
-        $text .= "👥 UNTERNEHMENSGRÖSSE:\n" . $data['companySize'] . "\n\n";
-    }
-    
-    if (!empty($data['interest'])) {
-        $text .= "🎯 INTERESSE:\n" . $data['interest'] . "\n\n";
-    }
-    
-    if (!empty($data['message'])) {
-        $text .= "💬 NACHRICHT:\n" . $data['message'] . "\n\n";
-    }
-    
-    $text .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
-    $text .= "🕐 Zeitpunkt: " . date('d.m.Y H:i:s') . "\n";
-    $text .= "🌐 IP-Adresse: " . $_SERVER['REMOTE_ADDR'] . "\n\n";
-    $text .= "Diese E-Mail wurde automatisch von Ihrer Website generiert.\n";
-    $text .= "KI-Prozessnavigator © " . date('Y');
-    
-    return $text;
+    $boundary = 'kp_' . md5((string)microtime(true));
+    $headers = [
+        'From: KI-Prozessnavigator <' . SMTP_USERNAME . '>',
+        'Reply-To: ' . RECIPIENT_EMAIL,
+        'X-Mailer: PHP/' . phpversion(),
+        'MIME-Version: 1.0',
+        'Content-Type: multipart/alternative; boundary="' . $boundary . '"',
+    ];
+
+    $body =
+        "--{$boundary}\r\n" .
+        "Content-Type: text/plain; charset=UTF-8\r\n\r\n" .
+        $plain . "\r\n\r\n" .
+        "--{$boundary}\r\n" .
+        "Content-Type: text/html; charset=UTF-8\r\n\r\n" .
+        $html . "\r\n\r\n" .
+        "--{$boundary}--\r\n";
+
+    return mail($to, $subject, $body, implode("\r\n", $headers));
 }
 
 // ==================== HAUPTLOGIK ====================

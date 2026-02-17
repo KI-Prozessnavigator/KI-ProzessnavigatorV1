@@ -6095,6 +6095,13 @@ section.testimonials.expert-quotes,
 /* (Calculator kann intern kurz breiter als der Viewport sein) */
 #pricing.value-calculator {
     overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+}
+/* Container der Ersparnis-Sektion: Überlauf clippen, keine horizontale Scrollbar */
+#pricing.value-calculator .container {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
 }
 
 /* Mobile‑Spezifisch – volle Breite mit Innen‑Padding */

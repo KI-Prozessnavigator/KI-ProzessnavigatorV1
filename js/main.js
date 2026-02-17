@@ -314,16 +314,31 @@ function sendChecklisteViaPHP(data, submitBtn, originalText, form) {
         body: JSON.stringify(payload)
     })
         .then(function (response) {
-            return response.json().then(function (result) {
-                return { ok: response.ok, result };
+            return response.text().then(function (text) {
+                let result;
+                try {
+                    result = text ? JSON.parse(text) : null;
+                } catch (e) {
+                    result = null;
+                }
+                return { ok: response.ok, result, raw: text };
             });
         })
-        .then(function ({ ok, result }) {
-            if (ok && result.success) {
+        .then(function ({ ok, result, raw }) {
+            if (ok && result && result.success) {
                 showNotification(result.message || '🎉 Vielen Dank! Die Checkliste wurde an Ihre E-Mail gesendet – inkl. Einladung zum kostenlosen Termin.', 'success');
                 form.reset();
             } else {
-                showNotification(result.message || 'Fehler beim Versenden. Bitte versuchen Sie es später erneut.', 'error');
+                // Wenn der Server kein JSON liefert (z.B. PHP-Fatal/HTML), nicht mit JSON-Parse-Fehler enden.
+                const serverMsg = result && result.message ? result.message : null;
+                const fallbackMsg = ok
+                    ? 'Fehler beim Versenden. Bitte versuchen Sie es später erneut.'
+                    : 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.';
+                showNotification(serverMsg || fallbackMsg, 'error');
+
+                if (!result && raw) {
+                    console.warn('Non-JSON response from send-checklist.php:', raw);
+                }
             }
         })
         .catch(function (err) {

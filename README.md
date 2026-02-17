@@ -44,7 +44,7 @@ KI-ProzessnavigatorV1/
 - ✅ Smooth Scrolling Navigation
 - ✅ Mobile Hamburger Menu
 - ✅ Scroll-Animationen
-- ✅ Kontaktformular mit Validierung
+- ✅ Kontaktformular + Checkliste (Backend via PHP)
 - ✅ Accessibility-optimiert
 - ✅ Performance-optimiert
 
@@ -62,6 +62,33 @@ KI-ProzessnavigatorV1/
    # VS Code: Live Server Extension
    ```
 3. Im Browser öffnen: `http://localhost:8000`
+
+## 📧 PHP Backend (Kontaktformular & Checkliste)
+
+Es gibt zwei JSON-Endpunkte:
+
+- `php/send-email.php`: Kontakt/Anfrage aus dem Kontakt-Modal (`js/contact-modal.js`)
+- `php/send-checklist.php`: Checkliste/Lead Magnet (`js/main.js`)
+
+### Abhängigkeiten (PHPMailer)
+
+Für zuverlässigen SMTP-Versand wird PHPMailer genutzt (Fallback ist `mail()`, je nach Hosting oft eingeschränkt).
+
+Installieren:
+
+```bash
+composer install --no-dev
+```
+
+### Konfiguration (keine Secrets im Repo)
+
+Die Werte werden über Environment-Variablen gesetzt (auf dem Hosting).
+Wichtige Variablen:
+
+- `SMTP_PASSWORD` (Pflicht in Prod)
+- optional: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`
+- optional: `RECIPIENT_EMAIL`
+- optional: `CSRF_SECRET`
 
 ## 📋 Nächste Schritte
 
