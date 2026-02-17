@@ -298,6 +298,26 @@
             .about-hero__subtitle {
                 white-space: normal;
             }
+            
+            /* CTA-Bereich: Text im Container halten, Text + Button verkleinern – nur Mobil */
+            .about-cta {
+                box-sizing: border-box;
+                max-width: 100%;
+                overflow-wrap: break-word;
+            }
+            .about-cta h2 {
+                font-size: var(--text-xl);
+            }
+            .about-cta p {
+                white-space: normal !important;
+                max-width: 100%;
+                font-size: var(--text-sm);
+            }
+            .about-cta .btn {
+                padding: var(--space-3) var(--space-5);
+                font-size: var(--text-sm);
+                max-width: 100%;
+            }
         }
     </style>
 </head>

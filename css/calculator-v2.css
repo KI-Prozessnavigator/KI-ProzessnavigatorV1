@@ -26,18 +26,6 @@
   max-width: 100%;
   width: 100%;
   overflow-x: hidden; /* verhindert horizontale Scrollbar durch ::before-Inset */
-  margin-top: -90px; /* Rechner insgesamt 90px nach oben */
-}
-
-/* Rechner deutlich näher unter die Subheadline */
-#pricing.value-calculator .section__header {
-  margin-bottom: 8px;
-}
-
-/* Sektion insgesamt kompakter (nur Ersparnis) */
-#pricing.value-calculator {
-  padding-top: 0;
-  padding-bottom: 44px;
 }
 
 #pricing .calcV2 *,
@@ -428,8 +416,7 @@
 
 /* ---------- CTA row under both panels ---------- */
 #pricing .calcV2__ctaRow {
-  margin-top: 12px;
-  padding-top: 8px;
+  /* Abstand wird unten zentral gesteuert (Final Overrides) */
   display: grid;
   justify-items: center;
   gap: 8px;
@@ -467,5 +454,56 @@
   color: var(--muted-2);
   font-size: 0.9rem;
   line-height: 1.45;
+}
+
+/* =========================================================
+   SECTION SPACING (Single Source of Truth)
+   - Einmalig und sauber: keine doppelten Abstandsregeln mehr
+   - Muss gegen main.css + calculator-redesign.css gewinnen
+   - Ändert NICHT den Rechner selbst, nur Außenabstände
+   ========================================================= */
+
+#pricing.value-calculator {
+  /* Gesamten Block 30px nach unten verschieben (ohne interne Abstände zu ändern) */
+  --pricing_section_top: 58px;
+  --pricing_section_bottom: 0px;
+  /* Rechner + CTA nach oben, Überschrift bleibt unverändert */
+  --pricing_header_to_calculator: -80px;
+  /* Nur CTA: 100px weiter nach oben (12px - 100px = -88px) */
+  --pricing_calculator_to_cta: -88px;
+
+  /* Sektion kürzen, ohne Inhalte umzubauen */
+  padding: var(--pricing_section_top) 0 var(--pricing_section_bottom) !important;
+}
+
+#pricing.value-calculator .section__header {
+  /* Header bleibt „in Ruhe“, Abstand steuert der Rechner darunter */
+  margin-bottom: 0 !important;
+}
+
+#pricing .calcV2 {
+  /* Stabiler Abstand zwischen Header und Rechner */
+  margin-top: var(--pricing_header_to_calculator) !important;
+}
+
+#pricing .calcV2__ctaRow {
+  /* CTA-Abstand zur Unterkante des Rechners */
+  margin-top: var(--pricing_calculator_to_cta) !important;
+  padding-top: 0 !important;
+}
+
+/* Tablet + Mobile: keine aggressiven Negativ-Margins (verhindert Overlap/„Buggy“ Look) */
+@media (max-width: 1023px) {
+  #pricing.value-calculator {
+    --pricing_header_to_calculator: 0px;
+    --pricing_calculator_to_cta: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  #pricing.value-calculator {
+    --pricing_header_to_calculator: 0px;
+    --pricing_calculator_to_cta: 12px;
+  }
 }
 

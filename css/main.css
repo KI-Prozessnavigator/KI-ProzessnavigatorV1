@@ -6080,8 +6080,6 @@ section.testimonials.expert-quotes,
 #ersparnis .calculator-container,
 #ersparnis .value-calculator,
 #ersparnis .calculator-wrapper,
-#pricing .container,
-#pricing.value-calculator,
 #pricing .calculator__wrapper {
     overflow: visible !important;
     max-width: 100vw !important;
@@ -6101,15 +6099,14 @@ section.testimonials.expert-quotes,
 /* Container der Ersparnis-Sektion: Überlauf clippen, keine horizontale Scrollbar */
 #pricing.value-calculator .container {
     overflow-x: hidden !important;
-    max-width: 100% !important;
+    /* Keine Breiten-Overrides: Standard `.container` max-width soll greifen */
 }
 
 /* Mobile‑Spezifisch – volle Breite mit Innen‑Padding */
 @media (max-width: 767px) {
     #ersparnis .calculator-container,
     #ersparnis .value-calculator,
-    #pricing .container,
-    #pricing.value-calculator {
+    #pricing .calculator__wrapper {
         width: 100% !important;
         padding: 0 16px !important;
         box-sizing: border-box !important;
