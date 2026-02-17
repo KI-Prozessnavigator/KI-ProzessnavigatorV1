@@ -6024,7 +6024,7 @@ section.testimonials.expert-quotes,
     overflow: hidden;
     /* Kein !important: #pricing kann gezielt feinjustiert werden */
     padding-block: var(--space-8) var(--space-16);
-    scroll-margin-top: 200px;
+    scroll-margin-top: 100px; /* Oberkante + Überschrift sichtbar beim Anspringen von #pricing */
 }
 
 .value-calculator::before {
@@ -8431,7 +8431,8 @@ section.testimonials.expert-quotes,
     }
 }
 
-@media (max-width: 1023px) {
+/* Burger-Menü: ab Breiten wo Menüpunkte umbrechen (z. B. iPad Pro 1024px) bis 1199px */
+@media (max-width: 1199px) {
     /* ALTE DEFINITION ENTFERNT - WIRD VON RESPONSIVE.CSS ÜBERSCHRIEBEN */
     /* .nav__menu Definition jetzt komplett in responsive.css */
     

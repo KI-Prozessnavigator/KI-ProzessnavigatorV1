@@ -507,3 +507,41 @@
   }
 }
 
+/* iPad Pro (Portrait + Landscape): Abstände Ersparnis-Sektion
+   Portrait 11": 834px, 12.9": 1024px | Landscape 11": 1194px, 12.9": 1366px
+   Unter 834px = Handy/kleines Tablet unverändert; über 1366px = Desktop unverändert */
+@media (min-width: 834px) and (max-width: 1366px) {
+  /* Abstand Überschrift ↔ Rechner und Rechner ↔ CTA (nur iPad Pro, bewusst eng) */
+  #pricing.value-calculator {
+    --pricing_header_to_calculator: -30px;
+    --pricing_calculator_to_cta: -30px;
+  }
+
+  #pricing .calcV2__cards {
+    gap: 20px;
+  }
+
+  #pricing .calcV2__card {
+    padding: 16px 18px 14px;
+  }
+
+  #pricing .calcV2__cardHead {
+    margin-bottom: 10px;
+  }
+
+  #pricing .calcV2__valueRow {
+    padding: 8px 0 10px;
+  }
+
+  #pricing .calcV2__detailRow {
+    padding: 10px 12px;
+    gap: 10px;
+    margin-top: 2px;
+  }
+
+  #pricing .calcV2__detailLabel,
+  #pricing .calcV2__detailValue {
+    font-size: 0.88rem;
+  }
+}
+

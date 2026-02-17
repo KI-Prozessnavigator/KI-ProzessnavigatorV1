@@ -135,11 +135,13 @@ function scrollToSection(e) {
                 // Zentriere die Sektion: Sektion-Mitte = Viewport-Mitte (mit 60px mehr Abstand OBEN)
                 targetPosition = section.offsetTop - (viewportHeight / 2) + (sectionHeight / 2) - 60;
             }
-            // Ersparnis-Sektion mittig: alles (Rechner + CTA) auf einen Blick
+            // Ersparnis-Sektion: etwas Abstand über der Überschrift, Rechner mit Titel vollständig sichtbar
             if (href === '#pricing') {
-                const viewportHeight = window.innerHeight;
-                const sectionHeight = section.offsetHeight;
-                targetPosition = section.offsetTop - (viewportHeight / 2) + (sectionHeight / 2) + 20;
+                targetPosition = section.offsetTop - headerHeight + 50;
+            }
+            // Use Cases: etwas weiter nach unten, damit die Skip-Pfeile/Dots unten sichtbar sind
+            if (href === '#usecases') {
+                targetPosition = section.offsetTop - headerHeight + 30;
             }
             
             window.scrollTo({

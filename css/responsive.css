@@ -9,6 +9,225 @@
    Zero Scroll + Flexible Layout
    ========================================== */
 
+/* ===== BURGER MENÜ AUCH BEI MITTLERER BREITE (z. B. iPad Pro 1024px) – Menüpunkte brechen sonst um ===== */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    /* ===== HEADER & NAVIGATION - BURGER WIE MOBILE, GRÖßER FÜR iPAD PRO ===== */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 88px;
+        background: #0a0e1a;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        z-index: 10001;
+        padding: 0;
+        overflow: visible !important;
+    }
+    .header .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 88px;
+        padding: 0 clamp(1rem, 4vw, 2rem);
+        max-width: 100%;
+        overflow: visible !important;
+        position: relative;
+    }
+    .header .nav__logo {
+        display: flex;
+        align-items: center;
+        height: 88px;
+        z-index: 10002;
+    }
+    .header .nav__logo img {
+        height: 78px;
+        width: auto;
+    }
+    .header .nav__menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        max-width: 100vw;
+        max-height: 0;
+        overflow: hidden !important;
+        background: #0a0e1a;
+        border-bottom: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        transition: max-height 0.4s ease;
+        z-index: 10000;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        padding: 0;
+    }
+    .header .nav__menu.active {
+        max-height: 100vh;
+        overflow: hidden !important;
+        padding-top: 108px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    }
+    .header .nav__menu .nav__item {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    .header .nav__menu .nav__link {
+        display: block;
+        padding: 15px 40px;
+        color: #ffffff;
+        text-align: center;
+        border: none !important;
+        background: none !important;
+        font-size: 1rem;
+    }
+    .header .nav__menu .nav__link::after {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        content: none !important;
+    }
+    .header .nav__menu .nav__link:hover,
+    .header .nav__menu .nav__link:focus,
+    .header .nav__menu .nav__link:active,
+    .header .nav__menu .nav__link.active {
+        color: #ffffff !important;
+        background: none !important;
+        border: none !important;
+        text-shadow: none !important;
+    }
+    .header .nav__menu .nav__link:hover::after,
+    .header .nav__menu .nav__link:active::after,
+    .header .nav__menu .nav__link.active::after {
+        display: none !important;
+        width: 0 !important;
+    }
+    .header .nav__menu .nav__link--cta {
+        display: block !important;
+        margin: 20px auto 12px !important;
+        width: auto;
+        max-width: 220px;
+        padding: var(--space-2) var(--space-5) !important;
+        background: var(--gradient-neon-1) !important;
+        background-color: transparent !important;
+        color: white !important;
+        border: none !important;
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
+        text-align: center;
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    .header .nav__menu .nav__link--cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s ease;
+    }
+    .header .nav__menu .nav__link--cta:hover::before {
+        left: 100%;
+    }
+    .header .nav__menu .nav__link--cta::after {
+        display: none !important;
+    }
+    .header .nav__menu .nav__link--cta:hover,
+    .header .nav__menu .nav__link--cta:focus,
+    .header .nav__menu .nav__link--cta:active {
+        transform: translateY(-2px);
+        box-shadow: 0 0 25px rgba(0, 119, 255, 0.5);
+        filter: brightness(1.1);
+        background: var(--gradient-neon-1) !important;
+        background-color: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    .header .nav__toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 88px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 10002;
+        padding: 0;
+        margin: 0;
+    }
+    .header .nav__toggle .hamburger {
+        position: relative;
+        display: block;
+        width: 32px;
+        height: 2.5px;
+        background: #ffffff;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        margin: 0;
+    }
+    .header .nav__toggle .hamburger::before,
+    .header .nav__toggle .hamburger::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 32px;
+        height: 2.5px;
+        background: #ffffff;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+    .header .nav__toggle .hamburger::before {
+        top: -9px;
+    }
+    .header .nav__toggle .hamburger::after {
+        top: 9px;
+    }
+    .header .nav__toggle.active .hamburger {
+        background: transparent;
+    }
+    .header .nav__toggle.active .hamburger::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    .header .nav__toggle.active .hamburger::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    body.menu-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 9999;
+        backdrop-filter: blur(3px);
+    }
+    .header .nav__logo,
+    .header .nav__toggle {
+        position: relative;
+        z-index: 10002;
+    }
+    body.menu-open {
+        overflow: hidden !important;
+        position: fixed;
+        width: 100%;
+    }
+}
+
 @media (max-width: 1023px) {
     /* ===== GLOBAL OVERFLOW PROTECTION ===== */
     html,
@@ -2128,5 +2347,35 @@
     }
     .faq-section .lead-magnet .btn--primary::before {
         display: none !important;
+    }
+}
+
+/* ===== iPad Pro: Abstände Ersparnis-Sektion (nur 834px–1366px, danach laden = gewinnt) ===== */
+@media (min-width: 834px) and (max-width: 1366px) {
+    /* Abstand Überschrift ↔ Rechner und Rechner ↔ CTA (iPad Pro, bewusst eng) */
+    #pricing.value-calculator {
+        --pricing_header_to_calculator: -30px !important;
+        --pricing_calculator_to_cta: -30px !important;
+    }
+    #pricing.value-calculator .calcV2__cards {
+        gap: 20px !important;
+    }
+    #pricing.value-calculator .calcV2__card {
+        padding: 16px 18px 14px !important;
+    }
+    #pricing.value-calculator .calcV2__cardHead {
+        margin-bottom: 10px !important;
+    }
+    #pricing.value-calculator .calcV2__valueRow {
+        padding: 8px 0 10px !important;
+    }
+    #pricing.value-calculator .calcV2__detailRow {
+        padding: 10px 12px !important;
+        gap: 10px !important;
+        margin-top: 2px !important;
+    }
+    #pricing.value-calculator .calcV2__detailLabel,
+    #pricing.value-calculator .calcV2__detailValue {
+        font-size: 0.88rem !important;
     }
 }
