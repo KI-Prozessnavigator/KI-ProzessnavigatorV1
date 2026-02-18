@@ -84,6 +84,16 @@
         try {
             localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(data));
             currentConsent = data.consent;
+
+            // dataLayer Consent Update (für GTM/Consent Mode)
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'consent_update',
+                analytics_storage: data.consent.analytics ? 'granted' : 'denied',
+                ad_storage: data.consent.marketing ? 'granted' : 'denied',
+                ad_user_data: data.consent.marketing ? 'granted' : 'denied',
+                ad_personalization: data.consent.marketing ? 'granted' : 'denied'
+            });
             
             // Trigger Custom Event für andere Scripts
             window.dispatchEvent(new CustomEvent('cookieConsentUpdate', {

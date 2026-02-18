@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="dark">
 <head>
+    <!-- dataLayer + initial page_view -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'page_view',
+            page_title: document.title,
+            page_path: window.location.pathname,
+            page_location: window.location.href,
+            page_type: 'legal_privacy',
+            page_language: document.documentElement.lang || 'de'
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KT6JD5B2');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Datenschutzerklärung - KI-Prozessnavigator. Informationen zum Datenschutz und zur DSGVO-konformen Datenverarbeitung.">
@@ -168,6 +187,10 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KT6JD5B2"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header class="header" id="header">
         <nav class="nav container">
             <a href="index.html" class="nav__logo u-nav-logo-reset">
@@ -287,8 +310,8 @@
                         <p>Breslauer Straße 11</p>
                         <p>86690 Mertingen</p>
                         <p><br></p>
-                        <p>Telefon: <a href="tel:+4917555526398">0175/5526398</a></p>
-                        <p>E-Mail: <a href="mailto:d.buchele@ki-prozessnavigator.de">d.buchele@ki-prozessnavigator.de</a></p>
+                        <p>Telefon: <a href="tel:+4917555526398" data-cta-location="contact_section">0175/5526398</a></p>
+                        <p>E-Mail: <a href="mailto:d.buchele@ki-prozessnavigator.de" data-cta-location="contact_section">d.buchele@ki-prozessnavigator.de</a></p>
                     </div>
 
                     <p>
@@ -1015,7 +1038,7 @@
                     <ul class="footer__links footer__contact">
                         <li class="footer__contact-item">Breslauer Straße 11<br>86690 Mertingen</li>
                         <li class="footer__contact-item">Tel: +49 175 5526398</li>
-                        <li><a href="mailto:d.buchele@ki-prozessnavigator.de">d.buchele@ki-prozessnavigator.de</a></li>
+                        <li><a href="mailto:d.buchele@ki-prozessnavigator.de" data-cta-location="footer">d.buchele@ki-prozessnavigator.de</a></li>
                     </ul>
                 </div>
             </div>

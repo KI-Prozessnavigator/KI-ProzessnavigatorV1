@@ -20,6 +20,55 @@ const state = {
     theme: 'dark'
 };
 
+function pushDataLayer(eventName, params = {}) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: eventName,
+        ...params
+    });
+}
+
+function getFormMeta(form) {
+    const formId = form?.id || form?.getAttribute('name') || 'unknown_form';
+    const formName = form?.getAttribute('aria-label') || form?.getAttribute('name') || formId;
+    let formType = 'generic';
+
+    if (formId === 'lead-form') {
+        formType = 'lead_checklist';
+    } else if (formId === 'contact-form') {
+        formType = 'contact';
+    }
+
+    return {
+        form_id: formId,
+        form_name: formName,
+        form_type: formType
+    };
+}
+
+function trackFormStartOnce(form) {
+    if (!form || form.dataset.formStarted === 'true') return;
+    form.dataset.formStarted = 'true';
+    pushDataLayer('form_start', getFormMeta(form));
+}
+
+function getCtaType(href) {
+    if (!href) return 'other';
+    if (href.startsWith('mailto:')) return 'email';
+    if (href.startsWith('tel:')) return 'phone';
+    return 'other';
+}
+
+function getCtaLocation(link) {
+    if (!link) return 'unknown';
+    if (link.dataset && link.dataset.ctaLocation) return link.dataset.ctaLocation;
+    if (link.closest('footer')) return 'footer';
+    const section = link.closest('section[id]');
+    if (section && section.id) return section.id;
+    if (link.closest('nav')) return 'navigation';
+    return 'unknown';
+}
+
 function debounce(func, wait = 100) {
     let timeout;
     return function executedFunction(...args) {
@@ -273,6 +322,9 @@ function handleFormSubmit(e) {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
     const formType = e.target.id;
+    const formMeta = getFormMeta(e.target);
+
+    pushDataLayer('form_submit', formMeta);
     
     // Basic validation
     const email = data.email;
@@ -280,6 +332,10 @@ function handleFormSubmit(e) {
     
     if (!emailRegex.test(email)) {
         showNotification('Bitte geben Sie eine gültige E-Mail-Adresse ein.', 'error');
+        pushDataLayer('form_error', {
+            ...formMeta,
+            error_type: 'validation'
+        });
         return;
     }
     
@@ -299,6 +355,7 @@ function handleFormSubmit(e) {
             e.target.reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
+            pushDataLayer('form_success', formMeta);
         }, 1500);
     }
 }
@@ -309,6 +366,7 @@ function sendChecklisteViaPHP(data, submitBtn, originalText, form) {
         email: (data.email || '').trim(),
         website: (data.website || '')  // Honeypot
     };
+    const formMeta = getFormMeta(form);
 
     fetch('php/send-checklist.php', {
         method: 'POST',
@@ -330,6 +388,7 @@ function sendChecklisteViaPHP(data, submitBtn, originalText, form) {
             if (ok && result && result.success) {
                 showNotification(result.message || '🎉 Vielen Dank! Die Checkliste wurde an Ihre E-Mail gesendet – inkl. Einladung zum kostenlosen Termin.', 'success');
                 form.reset();
+                pushDataLayer('form_success', formMeta);
             } else {
                 // Wenn der Server kein JSON liefert (z.B. PHP-Fatal/HTML), nicht mit JSON-Parse-Fehler enden.
                 const serverMsg = result && result.message ? result.message : null;
@@ -337,6 +396,10 @@ function sendChecklisteViaPHP(data, submitBtn, originalText, form) {
                     ? 'Fehler beim Versenden. Bitte versuchen Sie es später erneut.'
                     : 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.';
                 showNotification(serverMsg || fallbackMsg, 'error');
+                pushDataLayer('form_error', {
+                    ...formMeta,
+                    error_type: ok ? 'server' : 'network'
+                });
 
                 if (!result && raw) {
                     console.warn('Non-JSON response from send-checklist.php:', raw);
@@ -346,6 +409,10 @@ function sendChecklisteViaPHP(data, submitBtn, originalText, form) {
         .catch(function (err) {
             console.error('Checklist send error:', err);
             showNotification('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.', 'error');
+            pushDataLayer('form_error', {
+                ...formMeta,
+                error_type: 'network'
+            });
         })
         .finally(function () {
             submitBtn.textContent = originalText;
@@ -698,10 +765,16 @@ function initEventListeners() {
     // Form submissions
     if (DOM.contactForm) {
         DOM.contactForm.addEventListener('submit', handleFormSubmit);
+        const startContactForm = () => trackFormStartOnce(DOM.contactForm);
+        DOM.contactForm.addEventListener('focusin', startContactForm);
+        DOM.contactForm.addEventListener('change', startContactForm);
     }
     
     if (DOM.leadForm) {
         DOM.leadForm.addEventListener('submit', handleFormSubmit);
+        const startLeadForm = () => trackFormStartOnce(DOM.leadForm);
+        DOM.leadForm.addEventListener('focusin', startLeadForm);
+        DOM.leadForm.addEventListener('change', startLeadForm);
     }
     
     // Scroll to top
@@ -723,6 +796,18 @@ function initEventListeners() {
             !DOM.navToggle.contains(e.target)) {
             closeMenu();
         }
+    });
+
+    // CTA tracking for mailto/tel
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="mailto:"], a[href^="tel:"]');
+        if (!link) return;
+
+        pushDataLayer('cta_click', {
+            cta_type: getCtaType(link.getAttribute('href')),
+            cta_location: getCtaLocation(link),
+            page_path: window.location.pathname
+        });
     });
     
     // Handle resize

@@ -51,8 +51,42 @@
         const state = {
             currentPath: null,
             currentStep: 1,
-            formData: createInitialFormData()
+            formData: createInitialFormData(),
+            tracking: {
+                startedPaths: {
+                    inquiry: false,
+                    analysis: false
+                },
+                lastSubmittedMeta: null
+            }
         };
+
+        function pushDataLayer(eventName, params = {}) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: eventName,
+                ...params
+            });
+        }
+
+        function getModalFormMeta(form, path, step) {
+            const fallbackId = path ? `${path}-flow` : 'contact-modal-flow';
+            const formId = form?.id || fallbackId;
+            const formName = form?.getAttribute('aria-label') || formId;
+
+            return {
+                form_id: formId,
+                form_name: formName,
+                form_type: path || 'unknown',
+                form_step: step
+            };
+        }
+
+        function trackModalStart(path, step) {
+            if (!path || state.tracking.startedPaths[path]) return;
+            state.tracking.startedPaths[path] = true;
+            pushDataLayer('form_start', getModalFormMeta(null, path, step));
+        }
 
         function createInitialFormData() {
             return {
@@ -87,6 +121,9 @@
             state.currentPath = null;
             state.currentStep = 1;
             state.formData = createInitialFormData();
+            state.tracking.startedPaths.inquiry = false;
+            state.tracking.startedPaths.analysis = false;
+            state.tracking.lastSubmittedMeta = null;
 
             // Show path selection
             elements.pathSelection.style.display = 'block';
@@ -322,6 +359,7 @@
             }
 
             updateProgress(path, step);
+            trackModalStart(path, step);
         }
 
         function updateProgress(path, step) {
@@ -504,6 +542,10 @@
         modal.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
+                const formMeta = getModalFormMeta(this, state.currentPath, state.currentStep);
+                state.tracking.lastSubmittedMeta = formMeta;
+
+                pushDataLayer('form_submit', formMeta);
 
                 // Collect contact data
                 const formElements = this.elements;
@@ -527,6 +569,10 @@
                         checkbox.style.border = '2px solid var(--color-accent)';
                         setTimeout(() => checkbox.style.border = '', 2000);
                     }
+                    pushDataLayer('form_error', {
+                        ...formMeta,
+                        error_type: 'validation'
+                    });
                     return;
                 }
 
@@ -566,6 +612,10 @@
                             ? 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.'
                             : 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.';
                         alert(serverMsg || fallbackMsg);
+                        pushDataLayer('form_error', {
+                            ...formMeta,
+                            error_type: response.ok ? 'server' : 'network'
+                        });
                         if (!result && rawText) {
                             console.warn('Non-JSON response from send-email.php:', rawText);
                         }
@@ -575,6 +625,10 @@
                 } catch (error) {
                     console.error('Error:', error);
                     alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt per E-Mail.');
+                    pushDataLayer('form_error', {
+                        ...formMeta,
+                        error_type: 'network'
+                    });
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalText;
                 }
@@ -584,6 +638,9 @@
         function showSuccess() {
             elements.allContents.forEach(c => c.classList.remove('active'));
             elements.successState.classList.add('active');
+            if (state.tracking.lastSubmittedMeta) {
+                pushDataLayer('form_success', state.tracking.lastSubmittedMeta);
+            }
         }
 
         // ===== INJECT SHAKE ANIMATION =====
