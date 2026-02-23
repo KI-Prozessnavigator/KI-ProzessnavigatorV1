@@ -9,6 +9,9 @@ php/config.php
 Thumbs.db
 __MACOSX/
 
+# Dev/Test (nicht für Live-Website)
+sandbox/
+
 # Backups / Tests (optional)
 *.backup
 *.backup-*

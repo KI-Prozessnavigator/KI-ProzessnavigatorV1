@@ -47,23 +47,47 @@ define('CSRF_SECRET', 'IHR_GEHEIMER_SCHLUESSEL_123456789');
 
 ### **Schritt 3: Dateien auf IONOS hochladen**
 
-Laden Sie diese Ordner/Dateien auf Ihren IONOS-Server:
+**Empfohlen:** Nutzen Sie das Deploy-Skript im Projektroot, damit **alle** Dateien synchronisiert werden:
+
+1. `.env.deploy.example` als `.env.deploy` kopieren und Server-Daten eintragen (Host, User, IONOS_WEBROOT, Port, ggf. SSH-Key).
+2. Im Projektordner ausführen: `.\deploy-ionos.ps1`
+
+Das Skript lädt alle relevanten Projektdateien per SCP hoch (ohne .git, __MACOSX, .env.deploy). `php/config.php` wird dabei **nicht** überschrieben – die Server-Konfiguration bleibt erhalten.
+
+**Manuell** müssen folgende Ordner/Dateien auf dem Server liegen (vollständig):
 
 ```
 /
-├── php/
-│   ├── config.php          ← WICHTIG: Mit Ihrem Passwort!
-│   ├── send-email.php      ← Kontaktformular
-│   └── send-checklist.php  ← Checkliste (FAQ)
-├── js/
-│   ├── contact-modal.js    ← Aktualisiert
-│   └── main.js             ← Aktualisiert (Checkliste → PHP)
-├── css/
-│   └── components.css      ← Honeypot-Style für Lead-Form
-└── index.html              ← Aktualisiert (Honeypot + Text)
+├── .htaccess
+├── _headers
+├── robots.txt
+├── sitemap.xml
+├── index.html
+├── agb.html
+├── datenschutz.html
+├── impressum.html
+├── ueber-uns.html
+├── assets/
+│   ├── icons/
+│   └── images/   (inkl. images/logos/)
+├── css/          (alle .css Dateien)
+├── includes/
+│   ├── header.html
+│   └── footer.html
+├── js/           (contact-modal.js, cookie-banner.js, main.js, value-calculator.js)
+└── php/
+    ├── config.php          ← WICHTIG: Auf Server anlegen/bearbeiten (nicht aus Git!)
+    ├── config.php.example
+    ├── send-email.php
+    ├── send-checklist.php
+    └── templates/
+        ├── checklist-customer.php
+        ├── checklist-owner.php
+        ├── contact-confirmation.php
+        └── contact-owner.php
 ```
 
-**Wichtig:** Die `php/` Ordner-Struktur muss erhalten bleiben!
+**Wichtig:** Die Ordnerstruktur muss erhalten bleiben. `php/config.php` mit Zugangsdaten bitte nur auf dem Server pflegen (steht in .gitignore).
 
 ---
 
