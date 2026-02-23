@@ -1,18 +1,14 @@
 <?php
 // ==================== E-MAIL KONFIGURATION ====================
-// Kopieren Sie diese Datei nach config.php und tragen Sie Ihre Werte ein.
-// config.php wird von Git ignoriert und darf NIEMALS echte Passwörter enthalten!
+// Empfohlen: Nutzung von ENV-Variablen auf dem Server.
+// Diese Datei dient nur als Referenz (keine Secrets committen!).
+
+// Resend API (empfohlen)
+define('RESEND_API_KEY', 'IHR_RESEND_API_KEY');
+define('RESEND_FROM', 'KI-Prozessnavigator <kontakt@ihre-domain.de>');
 
 // Empfänger E-Mail (Ihre E-Mail)
 define('RECIPIENT_EMAIL', 'ihre-email@ihre-domain.de');
-
-// SMTP Konfiguration für Gmail
-define('SMTP_HOST', 'smtp.gmail.com');
-define('SMTP_PORT', 587);
-define('SMTP_USERNAME', 'ihre-email@gmail.com');
-
-// Google App-Passwort: https://support.google.com/accounts/answer/185833
-define('SMTP_PASSWORD', 'IHR_GOOGLE_APP_PASSWORT_HIER_EINTRAGEN');
 
 // ==================== SPAM-SCHUTZ EINSTELLUNGEN ====================
 

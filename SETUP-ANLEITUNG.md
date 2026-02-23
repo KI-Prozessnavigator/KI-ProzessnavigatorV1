@@ -1,86 +1,33 @@
 # 🚀 PHP E-Mail Setup - Schritt für Schritt
 
+> Hinweis: Der Versand erfolgt über die Resend API (kein SMTP/PHPMailer erforderlich).
+
 ## ✅ Checkliste zum Abhaken
 
-### Phase 1: Google App-Passwort erstellen
+### Phase 1: Resend einrichten
 
-- [ ] Öffnen: https://myaccount.google.com/apppasswords
-- [ ] Anmelden mit: d.buchele@ki-prozessnavigator.de
-- [ ] App wählen: "Mail"
-- [ ] Gerät wählen: "Windows-Computer"
-- [ ] "Generieren" klicken
-- [ ] **16-stelliges Passwort kopieren** (z.B. `abcd efgh ijkl mnop`)
-- [ ] Leerzeichen entfernen → `abcdefghijklmnop`
-- [ ] Passwort sicher notieren (nicht im Chat posten!)
+- [ ] Resend Konto erstellen: https://resend.com
+- [ ] Domain `ki-prozessnavigator.de` verifizieren (SPF/DKIM/DMARC)
+- [ ] API Key erzeugen und sicher speichern
+- [ ] Absender festlegen (z. B. `kontakt@ki-prozessnavigator.de`)
 
 ---
 
 ### Phase 2: Server-Status prüfen
 
-#### Schritt 1: Test-Dateien hochladen
-
-Laden Sie diese 2 Dateien auf Ihren IONOS-Server hoch:
-- `test.php` → Root-Verzeichnis
-- `test-smtp.php` → Root-Verzeichnis
-
-#### Schritt 2: PHP-Test ausführen
-
-1. Öffnen Sie: `https://ihre-domain.de/test.php`
-2. **Erwartung:** Bunte Seite mit PHP-Version
-3. **Falls Download/Fehler:** PHP ist nicht aktiv → IONOS Support kontaktieren
-
-#### Schritt 3: SMTP-Test ausführen
-
-1. Öffnen Sie: `https://ihre-domain.de/test-smtp.php`
-2. Prüfen Sie die Ergebnisse:
-   - ✅ **Gmail SMTP grün:** Perfekt, nutzen Sie Gmail!
-   - ⚠️ **Gmail rot, IONOS grün:** Nutzen Sie IONOS SMTP
-   - ❌ **Alle rot:** IONOS Support kontaktieren (Port 587 freischalten)
-
-#### Schritt 4: Test-Dateien löschen (Sicherheit!)
-
-Nach erfolgreichen Tests vom Server entfernen:
-- `test.php` löschen
-- `test-smtp.php` löschen
+Hinweis: Die Test-Seiten wurden aus Sicherheitsgründen aus dem Repo entfernt.
+Falls Sie PHP prüfen wollen, nutzen Sie die IONOS Tools oder führen Sie lokale Tests über Ihren Hosting-Support durch.
 
 ---
 
-### Phase 3: Konfiguration anpassen
+### Phase 3: Environment-Variablen setzen (Server)
 
-#### Option A: Gmail SMTP (wenn Test erfolgreich)
+Setzen Sie auf dem Server folgende ENV‑Variablen:
 
-Öffnen Sie: `php/config.php`
-
-**Zeile 15 ändern:**
-```php
-// VORHER:
-define('SMTP_PASSWORD', 'HIER_IHR_GOOGLE_APP_PASSWORT_EINTRAGEN');
-
-// NACHHER (Ihr Google App-Passwort OHNE Leerzeichen):
-define('SMTP_PASSWORD', 'abcdefghijklmnop');
-```
-
-**Zeile 37 ändern (optional):**
-```php
-// VORHER:
-define('CSRF_SECRET', 'AENDERN_SIE_DIESEN_GEHEIMEN_SCHLUESSEL_' . bin2hex(random_bytes(16)));
-
-// NACHHER (eigenen langen String wählen):
-define('CSRF_SECRET', 'MeinGeheimerSchluessel2026KiProzessnavigator');
-```
-
-#### Option B: IONOS SMTP (falls Gmail nicht funktioniert)
-
-Öffnen Sie: `php/config.php`
-
-**Zeilen 8-15 ändern:**
-```php
-// SMTP Konfiguration für IONOS
-define('SMTP_HOST', 'smtp.ionos.de');
-define('SMTP_PORT', 587);
-define('SMTP_USERNAME', 'd.buchele@ki-prozessnavigator.de');
-define('SMTP_PASSWORD', 'ihr-ionos-mail-passwort');
-```
+- `RESEND_API_KEY` (Pflicht)
+- `RESEND_FROM` (Pflicht, z. B. `KI‑Prozessnavigator <kontakt@ki-prozessnavigator.de>`)
+- optional: `RECIPIENT_EMAIL`
+- optional: `CSRF_SECRET`
 
 ---
 
@@ -148,14 +95,14 @@ Laden Sie den kompletten `php/` Ordner auf Ihren Server:
 **Lösung:**
 1. IONOS Dashboard → Logs → PHP Error Log
 2. Suchen Sie nach "Contact Form Error"
-3. Häufig: Falsches Passwort in `config.php`
+3. Häufig: Resend API Key fehlt oder Domain nicht verifiziert
 
-### Problem: "SMTP Error: Could not authenticate"
+### Problem: "Resend API Error"
 
 **Lösung:**
-1. Neues Google App-Passwort generieren
-2. Ohne Leerzeichen in `config.php` eintragen
-3. Datei erneut hochladen
+1. Prüfen ob `RESEND_API_KEY` gesetzt ist
+2. Prüfen ob die Domain in Resend verifiziert ist
+3. DNS‑Records (SPF/DKIM/DMARC) kontrollieren
 
 ### Problem: "Zu viele Anfragen"
 
@@ -172,8 +119,8 @@ Laden Sie den kompletten `php/` Ordner auf Ihren Server:
 
 **Checkliste:**
 - [ ] Spam-Ordner geprüft?
-- [ ] test-smtp.php erfolgreich?
-- [ ] Passwort korrekt (ohne Leerzeichen)?
+- [ ] Resend‑Logs geprüft?
+- [ ] DNS‑Records korrekt?
 - [ ] Server-Logs geprüft?
 - [ ] 2FA bei Google aktiv?
 
@@ -183,8 +130,8 @@ Laden Sie den kompletten `php/` Ordner auf Ihren Server:
 
 Wenn Sie eine E-Mail erhalten haben:
 
-1. ✅ Test-Dateien vom Server löschen (`test.php`, `test-smtp.php`)
-2. ✅ Google App-Passwort sicher speichern
+1. ✅ Server-Tests abgeschlossen (über IONOS/Hosting-Tools)
+2. ✅ Resend API Key sicher speichern
 3. ✅ Website-Entwicklung fortsetzen
 4. ✅ Bei Problemen: Server-Logs prüfen
 
@@ -198,7 +145,7 @@ Falls Probleme auftreten:
 1. Browser-Konsole prüfen (F12)
 2. Server PHP Error Logs prüfen
 3. Test-Scripts erneut ausführen
-4. IONOS Support kontaktieren (bei Port-Problemen)
+4. Resend Support oder IONOS Support kontaktieren (DNS/Ports)
 
 ---
 

@@ -557,7 +557,7 @@
                     company: formElements['company']?.value || '',
                     message: formElements['message']?.value || '',
                     companySize: state.formData.companySize || '',
-                    interest: state.formData.interest || '',
+                    interest: (state.formData.automationAreas || []).join(', '),
                     website: '' // Honeypot field (empty for humans)
                 };
 
@@ -583,13 +583,19 @@
                 submitBtn.innerHTML = '<span>Wird gesendet...</span>';
 
                 try {
-                    // Send to PHP backend
-                    const response = await fetch('php/send-email.php', {
+                    // Send to PHP backend (x-www-form-urlencoded)
+                    const params = new URLSearchParams();
+                    Object.entries(contactData).forEach(([key, value]) => {
+                        if (value !== undefined && value !== null) {
+                            params.append(key, String(value));
+                        }
+                    });
+                    const response = await fetch('/php/send-email.php', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/x-www-form-urlencoded'
                         },
-                        body: JSON.stringify(contactData)
+                        body: params.toString()
                     });
 
                     // Robust gegen Nicht-JSON Antworten (z.B. PHP-Fatal / HTML)

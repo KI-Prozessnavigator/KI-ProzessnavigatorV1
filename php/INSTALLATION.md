@@ -20,42 +20,22 @@
 
 ## 🚀 Installation (3 Schritte)
 
-### **Schritt 1: Google App-Passwort erstellen**
+### **Schritt 1: Resend einrichten**
 
-Da Sie Gmail verwenden, benötigen Sie ein **App-spezifisches Passwort** (nicht Ihr normales Passwort!):
-
-1. Gehen Sie zu: https://myaccount.google.com/security
-2. Klicken Sie auf **"2-Faktor-Authentifizierung"** (muss aktiviert sein!)
-3. Scrollen Sie runter zu **"App-Passwörter"**
-4. Klicken Sie auf **"App-Passwörter"**
-5. Wählen Sie:
-   - App: **"Mail"**
-   - Gerät: **"Windows-Computer"** (oder beliebig)
-6. Klicken Sie auf **"Generieren"**
-7. **Kopieren Sie das 16-stellige Passwort** (z.B. `abcd efgh ijkl mnop`)
+1. Resend-Konto erstellen: https://resend.com
+2. Domain `ki-prozessnavigator.de` verifizieren (SPF/DKIM/DMARC).
+3. API-Key erzeugen und sicher speichern.
 
 ---
 
-### **Schritt 2: Konfiguration anpassen**
+### **Schritt 2: Environment-Variablen setzen (Server)**
 
-**Neue Installation:** Kopieren Sie `php/config.php.example` nach `php/config.php`:
-```bash
-cp php/config.php.example php/config.php
-```
+Setzen Sie **keine** Secrets im Code. Verwenden Sie ENV‑Variablen:
 
-Öffnen Sie die Datei: **`php/config.php`** (wird von Git ignoriert – niemals Passwörter committen!)
-
-Ersetzen Sie diese Zeile:
-
-```php
-define('SMTP_PASSWORD', 'HIER_IHR_GOOGLE_APP_PASSWORT_EINTRAGEN');
-```
-
-Mit Ihrem Google App-Passwort (OHNE Leerzeichen!):
-
-```php
-define('SMTP_PASSWORD', 'abcdefghijklmnop');
-```
+- `RESEND_API_KEY` (Pflicht)
+- `RESEND_FROM` (Pflicht, z. B. `KI‑Prozessnavigator <kontakt@ki-prozessnavigator.de>`)
+- optional: `RECIPIENT_EMAIL` (Empfänger für Betreiber‑Mails)
+- optional: `CSRF_SECRET`
 
 **Optional:** Ändern Sie auch den CSRF Secret:
 
@@ -95,7 +75,7 @@ Laden Sie diese Ordner/Dateien auf Ihren IONOS-Server:
 4. Klicken Sie auf **"Anfrage absenden"**
 5. **Prüfen Sie Ihr E-Mail-Postfach:** `d.buchele@ki-prozessnavigator.de`
 
-**Tipp:** Wenn keine E-Mail ankommt, prüfen Sie auch den **Spam-Ordner**!
+**Tipp:** Wenn keine E-Mail ankommt, prüfen Sie Resend‑Logs und Domain‑DNS‑Records.
 
 ---
 
@@ -103,19 +83,16 @@ Laden Sie diese Ordner/Dateien auf Ihren IONOS-Server:
 
 ### **Problem: Keine E-Mail kommt an**
 
-1. **Prüfen Sie `php/config.php`:**
-   - Ist das Google App-Passwort richtig eingetragen?
-   - Keine Leerzeichen im Passwort!
+1. **Prüfen Sie Resend‑Konfiguration:**
+   - `RESEND_API_KEY` gesetzt?
+   - `RESEND_FROM` Domain verifiziert?
 
-2. **Prüfen Sie Spam-Ordner**
+2. **Prüfen Sie DNS‑Records:**
+   - SPF/DKIM/DMARC laut Resend
 
 3. **Prüfen Sie Server-Logs:**
    - IONOS Dashboard → Logs → PHP Error Log
-   - Suchen Sie nach "Contact Form Error"
-
-4. **Testen Sie manuell:**
-   - Öffnen Sie: `https://ihre-domain.de/php/send-email.php`
-   - Sollte einen Fehler zeigen (weil keine POST-Daten)
+   - Suchen Sie nach "Resend"
 
 ### **Problem: "Zu viele Anfragen"**
 
@@ -178,21 +155,9 @@ Nach diesen 3 Schritten funktioniert Ihr Kontaktformular!
 
 ---
 
-## 📝 Optional: PHPMailer installieren (empfohlen)
+## 📝 Resend statt SMTP
 
-Für **noch zuverlässigeren** E-Mail-Versand:
-
-1. **Via Composer (empfohlen):**
-   ```bash
-   cd /pfad/zu/ihrer/website
-   composer require phpmailer/phpmailer
-   ```
-
-2. **Oder manuell:**
-   - Download: https://github.com/PHPMailer/PHPMailer/releases
-   - Entpacken nach `vendor/phpmailer/`
-
-**Das System funktioniert auch OHNE PHPMailer** (nutzt dann PHP's native `mail()` Funktion).
+Der Versand erfolgt über die Resend‑API. SMTP/PHPMailer ist nicht mehr erforderlich.
 
 ---
 

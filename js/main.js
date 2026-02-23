@@ -368,10 +368,17 @@ function sendChecklisteViaPHP(data, submitBtn, originalText, form) {
     };
     const formMeta = getFormMeta(form);
 
-    fetch('php/send-checklist.php', {
+    const params = new URLSearchParams();
+    Object.entries(payload).forEach(([key, value]) => {
+        if (value !== undefined && value !== null) {
+            params.append(key, String(value));
+        }
+    });
+
+    fetch('/php/send-checklist.php', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString()
     })
         .then(function (response) {
             return response.text().then(function (text) {

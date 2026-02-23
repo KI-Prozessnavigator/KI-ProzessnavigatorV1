@@ -70,23 +70,17 @@ Es gibt zwei JSON-Endpunkte:
 - `php/send-email.php`: Kontakt/Anfrage aus dem Kontakt-Modal (`js/contact-modal.js`)
 - `php/send-checklist.php`: Checkliste/Lead Magnet (`js/main.js`)
 
-### Abhängigkeiten (PHPMailer)
+### Versand (Resend API)
 
-Für zuverlässigen SMTP-Versand wird PHPMailer genutzt (Fallback ist `mail()`, je nach Hosting oft eingeschränkt).
-
-Installieren:
-
-```bash
-composer install --no-dev
-```
+Der Versand erfolgt über die Resend API (statt SMTP). Das ist stabiler und vermeidet Port-/Login‑Probleme.
 
 ### Konfiguration (keine Secrets im Repo)
 
 Die Werte werden über Environment-Variablen gesetzt (auf dem Hosting).
 Wichtige Variablen:
 
-- `SMTP_PASSWORD` (Pflicht in Prod)
-- optional: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`
+- `RESEND_API_KEY` (Pflicht)
+- `RESEND_FROM` (Pflicht, z. B. `KI‑Prozessnavigator <kontakt@ki-prozessnavigator.de>`)
 - optional: `RECIPIENT_EMAIL`
 - optional: `CSRF_SECRET`
 

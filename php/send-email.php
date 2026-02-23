@@ -1,24 +1,17 @@
 <?php
-// ==================== KONTAKTFORMULAR BACKEND ====================
 // KI-Prozessnavigator | Contact Form Handler
-// Mit Spam-Schutz, Rate Limiting und CSRF-Protection
 
 header('Content-Type: application/json; charset=utf-8');
-header('X-Content-Type-Options: nosniff');
+
+// Konfiguration laden
+require_once __DIR__ . '/config.php';
 
 // Sicherheits-Headers
-header('X-Frame-Options: DENY');
-header('X-XSS-Protection: 1; mode=block');
+kp_set_security_headers();
 
-// CORS für Ihre Domain (ändern Sie die Domain später!)
-$allowed_origins = [
-    'https://ki-prozessnavigator.de',
-    'https://www.ki-prozessnavigator.de',
-    'http://localhost'
-];
-
+// CORS für erlaubte Origins
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if (in_array($origin, $allowed_origins)) {
+if ($origin !== '' && kp_is_origin_allowed($origin)) {
     header("Access-Control-Allow-Origin: $origin");
     header('Access-Control-Allow-Methods: POST');
     header('Access-Control-Allow-Headers: Content-Type');
@@ -30,45 +23,23 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'OPTIONS') {
     exit;
 }
 
-// Session starten für Rate Limiting
+// Session starten (für Cookie-Flags und optionale Session-Nutzung)
+session_set_cookie_params([
+    'secure' => kp_is_https(),
+    'httponly' => true,
+    'samesite' => 'Lax'
+]);
 session_start();
-
-// Konfiguration laden
-require_once __DIR__ . '/config.php';
 
 // Templates laden
 require_once __DIR__ . '/templates/contact-owner.php';
 require_once __DIR__ . '/templates/contact-confirmation.php';
 
-// ==================== FUNKTIONEN ====================
-
 /**
  * Rate Limiting: Prüft, ob IP zu viele Anfragen sendet
  */
 function checkRateLimit() {
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $key = 'rate_limit_' . md5($ip);
-    
-    if (!isset($_SESSION[$key])) {
-        $_SESSION[$key] = ['count' => 0, 'time' => time()];
-    }
-    
-    $data = $_SESSION[$key];
-    
-    // Reset nach 1 Stunde
-    if (time() - $data['time'] > SESSION_TIMEOUT) {
-        $_SESSION[$key] = ['count' => 1, 'time' => time()];
-        return true;
-    }
-    
-    // Zu viele Anfragen
-    if ($data['count'] >= MAX_REQUESTS_PER_HOUR) {
-        return false;
-    }
-    
-    // Zähler erhöhen
-    $_SESSION[$key]['count']++;
-    return true;
+    return kp_rate_limit('contact_form', MAX_REQUESTS_PER_HOUR, SESSION_TIMEOUT);
 }
 
 /**
@@ -136,172 +107,86 @@ function validateAndSanitize($data) {
 }
 
 /**
- * E-Mail senden via SMTP
+ * E-Mail senden via Resend API
  */
 function sendEmail($data) {
-    // Autoloader laden (falls vorhanden)
-    $autoloadPath = __DIR__ . '/../vendor/autoload.php';
-    if (file_exists($autoloadPath)) {
-        require_once $autoloadPath;
-    }
-
     // 1) Betreiber-Mail (Pflicht)
     // 2) Bestätigung an Absender (Nice-to-have; Fehler soll Betreiber-Mail nicht verhindern)
-    $ownerSent = false;
-
-    if (class_exists('PHPMailer\PHPMailer\PHPMailer')) {
-        if (!defined('SMTP_PASSWORD') || SMTP_PASSWORD === '') {
-            error_log('Contact Form Error: SMTP_PASSWORD missing (set ENV SMTP_PASSWORD).');
-            return false;
-        }
-        $ownerSent = sendOwnerEmailWithPHPMailer($data);
-        if ($ownerSent) {
-            $confirmationSent = sendConfirmationEmailWithPHPMailer($data);
-            if (!$confirmationSent) {
-                error_log('Contact Form Warning: Confirmation email could not be sent (PHPMailer).');
-            }
-        }
-        return $ownerSent;
-    }
-
-    // Fallback: Native PHP mail()
-    $ownerSent = sendOwnerEmailNative($data);
-    if ($ownerSent) {
-        $confirmationSent = sendConfirmationEmailNative($data);
-        if (!$confirmationSent) {
-            error_log('Contact Form Warning: Confirmation email could not be sent (native mail).');
-        }
-    }
-    return $ownerSent;
-}
-
-/**
- * Betreiber-Mail mit PHPMailer senden (empfohlen)
- */
-function sendOwnerEmailWithPHPMailer($data) {
-    try {
-        $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-
-        // SMTP Konfiguration
-        $mail->isSMTP();
-        $mail->Host = SMTP_HOST;
-        $mail->SMTPAuth = true;
-        $mail->Username = SMTP_USERNAME;
-        $mail->Password = SMTP_PASSWORD;
-        $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = SMTP_PORT;
-        $mail->CharSet = 'UTF-8';
-        
-        // Absender und Empfänger
-        $mail->setFrom(SMTP_USERNAME, 'KI-Prozessnavigator Website');
-        $mail->addAddress(RECIPIENT_EMAIL);
-        $mail->addReplyTo($data['email'], $data['firstName'] . ' ' . $data['lastName']);
-        
-        // E-Mail Inhalt
-        $mail->isHTML(true);
-        $mail->Subject = kp_contact_owner_subject($data);
-        $mail->Body = kp_contact_owner_html($data);
-        $mail->AltBody = kp_contact_owner_plain($data);
-        
-        $mail->send();
-        return true;
-    } catch (Exception $e) {
-        error_log('PHPMailer Error (Owner): ' . $e->getMessage());
-        return false;
-    }
-}
-
-/**
- * Bestätigung an Absender mit PHPMailer senden
- */
-function sendConfirmationEmailWithPHPMailer($data) {
-    try {
-        $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-
-        // SMTP Konfiguration
-        $mail->isSMTP();
-        $mail->Host = SMTP_HOST;
-        $mail->SMTPAuth = true;
-        $mail->Username = SMTP_USERNAME;
-        $mail->Password = SMTP_PASSWORD;
-        $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = SMTP_PORT;
-        $mail->CharSet = 'UTF-8';
-
-        $mail->setFrom(SMTP_USERNAME, 'KI-Prozessnavigator');
-        $mail->addAddress($data['email']);
-        $mail->addReplyTo(RECIPIENT_EMAIL, 'KI-Prozessnavigator');
-
-        $mail->isHTML(true);
-        $mail->Subject = kp_contact_confirmation_subject();
-        $mail->Body = kp_contact_confirmation_html($data);
-        $mail->AltBody = kp_contact_confirmation_plain($data);
-
-        $mail->send();
-        return true;
-    } catch (Exception $e) {
-        error_log('PHPMailer Error (Confirmation): ' . $e->getMessage());
-        return false;
-    }
-}
-
-/**
- * Betreiber-Mail mit nativer PHP mail() Funktion senden (Fallback)
- */
-function sendOwnerEmailNative($data) {
-    $to = RECIPIENT_EMAIL;
-    $subject = kp_contact_owner_subject($data);
-    $message = kp_contact_owner_plain($data);
-    
-    $headers = [
-        'From: ' . SMTP_USERNAME,
-        'Reply-To: ' . $data['email'],
-        'X-Mailer: PHP/' . phpversion(),
-        'MIME-Version: 1.0',
-        'Content-Type: text/plain; charset=UTF-8'
-    ];
-    
-    return mail($to, $subject, $message, implode("\r\n", $headers));
-}
-
-/**
- * Bestätigung an Absender mit nativer PHP mail() Funktion senden (Fallback)
- */
-function sendConfirmationEmailNative($data) {
-    $to = $data['email'];
-    $subject = kp_contact_confirmation_subject();
-    $html = kp_contact_confirmation_html($data);
-    $plain = kp_contact_confirmation_plain($data);
-
-    $boundary = 'kp_' . md5((string)microtime(true));
-    $headers = [
-        'From: KI-Prozessnavigator <' . SMTP_USERNAME . '>',
-        'Reply-To: ' . RECIPIENT_EMAIL,
-        'X-Mailer: PHP/' . phpversion(),
-        'MIME-Version: 1.0',
-        'Content-Type: multipart/alternative; boundary="' . $boundary . '"',
+    $ownerPayload = [
+        'from' => RESEND_FROM,
+        'to' => [RECIPIENT_EMAIL],
+        'subject' => kp_contact_owner_subject($data),
+        'html' => kp_contact_owner_html($data),
+        'text' => kp_contact_owner_plain($data),
+        'reply_to' => $data['email'],
     ];
 
-    $body =
-        "--{$boundary}\r\n" .
-        "Content-Type: text/plain; charset=UTF-8\r\n\r\n" .
-        $plain . "\r\n\r\n" .
-        "--{$boundary}\r\n" .
-        "Content-Type: text/html; charset=UTF-8\r\n\r\n" .
-        $html . "\r\n\r\n" .
-        "--{$boundary}--\r\n";
+    $error = null;
+    $ownerSent = kp_resend_send($ownerPayload, $error);
+    if (!$ownerSent) {
+        error_log('Contact Form Error: Resend owner email failed. ' . ($error ?? ''));
+        return false;
+    }
 
-    return mail($to, $subject, $body, implode("\r\n", $headers));
+    $confirmationPayload = [
+        'from' => RESEND_FROM,
+        'to' => [$data['email']],
+        'subject' => kp_contact_confirmation_subject(),
+        'html' => kp_contact_confirmation_html($data),
+        'text' => kp_contact_confirmation_plain($data),
+        'reply_to' => RECIPIENT_EMAIL,
+    ];
+    $confirmationError = null;
+    $confirmationSent = kp_resend_send($confirmationPayload, $confirmationError);
+    if (!$confirmationSent) {
+        error_log('Contact Form Warning: Confirmation email failed. ' . ($confirmationError ?? ''));
+    }
+
+    return true;
 }
-
-// ==================== HAUPTLOGIK ====================
 
 try {
+    // Diagnose-Endpoint (nur mit Token/IP erlaubt)
+    if (($_SERVER['REQUEST_METHOD'] ?? '') === 'GET' && kp_is_test_endpoint_authorized()) {
+        echo json_encode([
+            'success' => true,
+            'env' => [
+                'app_env' => APP_ENV,
+                'smtp_host' => SMTP_HOST,
+                'smtp_port' => SMTP_PORT,
+                'smtp_user_set' => SMTP_USERNAME !== '',
+                'smtp_pass_set' => SMTP_PASSWORD !== '',
+                'recipient_set' => RECIPIENT_EMAIL !== '',
+                'csrf_secret_set' => CSRF_SECRET !== '' && CSRF_SECRET !== 'CHANGE_ME_SET_CSRF_SECRET_IN_ENV',
+                'resend_key_set' => RESEND_API_KEY !== '',
+                'resend_from_set' => RESEND_FROM !== '',
+            ],
+            'mailer' => [
+                'mail_disabled' => kp_is_mail_disabled(),
+            ],
+            'request' => [
+                'origin' => $_SERVER['HTTP_ORIGIN'] ?? '',
+                'referer' => $_SERVER['HTTP_REFERER'] ?? '',
+            ],
+        ]);
+        exit;
+    }
+
     // Nur POST-Requests erlauben
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         throw new Exception('Nur POST-Requests erlaubt');
     }
     
+    // CSRF-Check via Origin/Referer
+    if (!kp_enforce_csrf_origin()) {
+        http_response_code(403);
+        echo json_encode([
+            'success' => false,
+            'message' => 'Ungültiger Ursprung der Anfrage.'
+        ]);
+        exit;
+    }
+
     // Rate Limiting prüfen
     if (!checkRateLimit()) {
         http_response_code(429);
@@ -312,11 +197,17 @@ try {
         exit;
     }
     
-    // JSON-Daten empfangen
+    // JSON-Daten empfangen (Fallback auf $_POST)
     $json = file_get_contents('php://input');
-    $data = json_decode($json, true);
-    
-    if (!$data) {
+    $body = trim((string) $json);
+    $data = json_decode($body, true);
+    if (!is_array($data) || json_last_error() !== JSON_ERROR_NONE) {
+        $data = json_decode(stripslashes($body), true);
+    }
+    if (!is_array($data) || json_last_error() !== JSON_ERROR_NONE) {
+        $data = $_POST;
+    }
+    if (!is_array($data)) {
         throw new Exception('Ungültige Daten');
     }
     

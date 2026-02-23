@@ -1,19 +1,16 @@
 <?php
-// ==================== CHECKLISTE / LEAD MAGNET BACKEND ====================
 // KI-Prozessnavigator | Checkliste + Einladung zum kostenlosen Termin
-// Mit Spam-Schutz und Rate Limiting
 
 header('Content-Type: application/json; charset=utf-8');
-header('X-Content-Type-Options: nosniff');
 
-$allowed_origins = [
-    'https://ki-prozessnavigator.de',
-    'https://www.ki-prozessnavigator.de',
-    'http://localhost'
-];
+require_once __DIR__ . '/config.php';
 
+// Sicherheits-Headers
+kp_set_security_headers();
+
+// CORS für erlaubte Origins
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if (in_array($origin, $allowed_origins)) {
+if ($origin !== '' && kp_is_origin_allowed($origin)) {
     header("Access-Control-Allow-Origin: $origin");
     header('Access-Control-Allow-Methods: POST');
     header('Access-Control-Allow-Headers: Content-Type');
@@ -25,8 +22,13 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'OPTIONS') {
     exit;
 }
 
+// Session starten (für Cookie-Flags und optionale Session-Nutzung)
+session_set_cookie_params([
+    'secure' => kp_is_https(),
+    'httponly' => true,
+    'samesite' => 'Lax'
+]);
 session_start();
-require_once __DIR__ . '/config.php';
 
 // Calendly-URL für kostenlosen Termin
 define('CALENDLY_URL', 'https://calendly.com/d-buchele-ki-prozessnavigator/30min');
@@ -39,25 +41,7 @@ require_once __DIR__ . '/templates/checklist-owner.php';
 define('MAX_CHECKLIST_REQUESTS_PER_HOUR', 20);
 
 function checkChecklistRateLimit() {
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $key = 'checklist_rate_' . md5($ip);
-    
-    if (!isset($_SESSION[$key])) {
-        $_SESSION[$key] = ['count' => 0, 'time' => time()];
-    }
-    
-    $data = $_SESSION[$key];
-    if (time() - $data['time'] > SESSION_TIMEOUT) {
-        $_SESSION[$key] = ['count' => 1, 'time' => time()];
-        return true;
-    }
-    
-    if ($data['count'] >= MAX_CHECKLIST_REQUESTS_PER_HOUR) {
-        return false;
-    }
-    
-    $_SESSION[$key]['count']++;
-    return true;
+    return kp_rate_limit('checklist', MAX_CHECKLIST_REQUESTS_PER_HOUR, SESSION_TIMEOUT);
 }
 
 function checkHoneypot($data) {
@@ -69,123 +53,67 @@ function validateEmail($email) {
 }
 
 /**
- * E-Mail an Kunden senden (Checkliste + Calendly-Link)
+ * E-Mail an Kunden senden (Checkliste + Calendly-Link) via Resend
  */
 function sendChecklistToCustomer($email) {
-    // Autoloader laden (falls vorhanden)
-    $autoloadPath = __DIR__ . '/../vendor/autoload.php';
-    if (file_exists($autoloadPath)) {
-        require_once $autoloadPath;
-    }
-    
     $to = filter_var($email, FILTER_SANITIZE_EMAIL);
     $subject = kp_checklist_customer_subject();
     $body = kp_checklist_customer_html(CALENDLY_URL);
     $plain = kp_checklist_customer_plain(CALENDLY_URL);
-    
-    // PHPMailer nutzen, falls verfügbar
-    if (class_exists('PHPMailer\PHPMailer\PHPMailer')) {
-        if (!defined('SMTP_PASSWORD') || SMTP_PASSWORD === '') {
-            error_log('Checklist Error: SMTP_PASSWORD missing (set ENV SMTP_PASSWORD).');
-            return false;
-        }
-        try {
-            $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-            
-            $mail->isSMTP();
-            $mail->Host = SMTP_HOST;
-            $mail->SMTPAuth = true;
-            $mail->Username = SMTP_USERNAME;
-            $mail->Password = SMTP_PASSWORD;
-            $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = SMTP_PORT;
-            $mail->CharSet = 'UTF-8';
-            
-            $mail->setFrom(SMTP_USERNAME, 'KI-Prozessnavigator');
-            $mail->addAddress($to);
-            $mail->addReplyTo(RECIPIENT_EMAIL, 'KI-Prozessnavigator');
-            
-            $mail->isHTML(true);
-            $mail->Subject = $subject;
-            $mail->Body = $body;
-            $mail->AltBody = $plain;
-            
-            $mail->send();
-            return true;
-        } catch (Exception $e) {
-            error_log('PHPMailer Error (Checklist): ' . $e->getMessage());
-            return false;
-        }
-    } else {
-        // Fallback: Native mail()
-        $headers = [
-            'From: KI-Prozessnavigator <' . SMTP_USERNAME . '>',
-            'Reply-To: ' . RECIPIENT_EMAIL,
-            'X-Mailer: PHP/' . phpversion(),
-            'MIME-Version: 1.0',
-            'Content-Type: text/html; charset=UTF-8'
-        ];
-        
-        return mail($to, $subject, $body, implode("\r\n", $headers));
+
+    $payload = [
+        'from' => RESEND_FROM,
+        'to' => [$to],
+        'subject' => $subject,
+        'html' => $body,
+        'text' => $plain,
+        'reply_to' => RECIPIENT_EMAIL,
+    ];
+    $error = null;
+    $sent = kp_resend_send($payload, $error);
+    if (!$sent) {
+        error_log('Checklist Error: Resend customer email failed. ' . ($error ?? ''));
     }
+    return $sent;
 }
 
 /**
- * Benachrichtigung an Sie (neuer Lead)
+ * Benachrichtigung an Sie (neuer Lead) via Resend
  */
 function notifyOwner($customerEmail) {
     $subject = kp_checklist_owner_subject($customerEmail);
     $body = kp_checklist_owner_html($customerEmail, CALENDLY_URL);
     $plain = kp_checklist_owner_plain($customerEmail, CALENDLY_URL);
-    
-    // PHPMailer nutzen, falls verfügbar
-    if (class_exists('PHPMailer\PHPMailer\PHPMailer')) {
-        if (!defined('SMTP_PASSWORD') || SMTP_PASSWORD === '') {
-            error_log('Checklist Error: SMTP_PASSWORD missing (set ENV SMTP_PASSWORD).');
-            return false;
-        }
-        try {
-            $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-            
-            $mail->isSMTP();
-            $mail->Host = SMTP_HOST;
-            $mail->SMTPAuth = true;
-            $mail->Username = SMTP_USERNAME;
-            $mail->Password = SMTP_PASSWORD;
-            $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = SMTP_PORT;
-            $mail->CharSet = 'UTF-8';
-            
-            $mail->setFrom(SMTP_USERNAME, 'KI-Prozessnavigator');
-            $mail->addAddress(RECIPIENT_EMAIL);
-            
-            $mail->isHTML(true);
-            $mail->Subject = $subject;
-            $mail->Body = $body;
-            $mail->AltBody = $plain;
-            
-            $mail->send();
-            return true;
-        } catch (Exception $e) {
-            error_log('PHPMailer Error (Notify): ' . $e->getMessage());
-            return false;
-        }
-    } else {
-        // Fallback: Native mail()
-        $headers = [
-            'From: KI-Prozessnavigator <' . SMTP_USERNAME . '>',
-            'Content-Type: text/html; charset=UTF-8'
-        ];
-        
-        return mail(RECIPIENT_EMAIL, $subject, $body, implode("\r\n", $headers));
-    }
-}
 
-// ==================== HAUPTLOGIK ====================
+    $payload = [
+        'from' => RESEND_FROM,
+        'to' => [RECIPIENT_EMAIL],
+        'subject' => $subject,
+        'html' => $body,
+        'text' => $plain,
+        'reply_to' => $customerEmail,
+    ];
+    $error = null;
+    $sent = kp_resend_send($payload, $error);
+    if (!$sent) {
+        error_log('Checklist Error: Resend owner email failed. ' . ($error ?? ''));
+    }
+    return $sent;
+}
 
 try {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         throw new Exception('Nur POST erlaubt');
+    }
+
+    // CSRF-Check via Origin/Referer
+    if (!kp_enforce_csrf_origin()) {
+        http_response_code(403);
+        echo json_encode([
+            'success' => false,
+            'message' => 'Ungültiger Ursprung der Anfrage.'
+        ]);
+        exit;
     }
 
     if (!checkChecklistRateLimit()) {
@@ -198,9 +126,15 @@ try {
     }
 
     $json = file_get_contents('php://input');
-    $data = json_decode($json, true);
-
-    if (!$data || !isset($data['email'])) {
+    $body = trim((string) $json);
+    $data = json_decode($body, true);
+    if (!is_array($data) || json_last_error() !== JSON_ERROR_NONE) {
+        $data = json_decode(stripslashes($body), true);
+    }
+    if (!is_array($data) || json_last_error() !== JSON_ERROR_NONE) {
+        $data = $_POST;
+    }
+    if (!is_array($data) || !isset($data['email'])) {
         throw new Exception('E-Mail fehlt');
     }
 
