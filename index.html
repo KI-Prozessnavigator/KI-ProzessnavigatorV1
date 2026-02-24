@@ -2772,6 +2772,7 @@
                 '/kontakt': 'contact'
             };
 
+            var isIndexLike = path === '/' || !!routeToId[path];
             var targetId = routeToId[path];
             if (targetId) {
                 var target = document.getElementById(targetId);
@@ -2784,7 +2785,7 @@
                 var href = link.getAttribute('href') || '';
                 var cleanPath = href.replace(/\/$/, '');
                 if (!routeToId[cleanPath]) return;
-                if (window.location.pathname !== '/' && window.location.pathname !== '') return;
+                if (!isIndexLike) return;
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     var id = routeToId[cleanPath];
@@ -2792,6 +2793,15 @@
                     if (!el) return;
                     history.pushState({}, '', cleanPath);
                     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            document.querySelectorAll('a[href="/"]').forEach(function(link) {
+                if (!isIndexLike) return;
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    history.pushState({}, '', '/');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             });
 
