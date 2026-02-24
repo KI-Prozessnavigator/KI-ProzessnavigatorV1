@@ -2773,12 +2773,26 @@
             };
 
             var isIndexLike = path === '/' || !!routeToId[path];
+            function scrollToSectionById(sectionId) {
+                var section = document.getElementById(sectionId);
+                if (!section) return;
+                var header = document.getElementById('header');
+                var headerHeight = header ? header.offsetHeight : 0;
+                var targetPosition = section.offsetTop - headerHeight;
+                if (sectionId === 'usecases') {
+                    targetPosition = section.offsetTop - headerHeight - 20;
+                }
+                if (sectionId === 'faq') {
+                    var viewportHeight = window.innerHeight;
+                    var sectionHeight = section.offsetHeight;
+                    targetPosition = section.offsetTop - (viewportHeight / 2) + (sectionHeight / 2) - 40;
+                }
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
+
             var targetId = routeToId[path];
             if (targetId) {
-                var target = document.getElementById(targetId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                scrollToSectionById(targetId);
             }
 
             document.querySelectorAll('a[href^="/"]').forEach(function(link) {
@@ -2789,10 +2803,8 @@
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     var id = routeToId[cleanPath];
-                    var el = document.getElementById(id);
-                    if (!el) return;
                     history.pushState({}, '', cleanPath);
-                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    scrollToSectionById(id);
                 });
             });
 
