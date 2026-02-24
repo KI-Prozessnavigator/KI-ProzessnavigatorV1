@@ -2761,8 +2761,10 @@
     <script src="js/contact-modal.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            if (window.location.pathname === '/kontakt' && typeof window.openContactModal === 'function') {
-                setTimeout(window.openContactModal, 150);
+            if (window.location.pathname === '/kontakt') {
+                var contactSection = document.getElementById('contact');
+                if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (typeof window.openContactModal === 'function') setTimeout(window.openContactModal, 150);
             }
         });
     </script>
