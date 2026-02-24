@@ -2778,12 +2778,6 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-                if (path === '/kontakt' && typeof window.openContactModal === 'function') {
-                    setTimeout(window.openContactModal, 150);
-                }
-                if (window.location.pathname !== '/') {
-                    history.replaceState({}, '', '/');
-                }
             }
 
             document.querySelectorAll('[data-scroll-target]').forEach(function(link) {
