@@ -1,9 +1,0 @@
-{
-  "name": "ki-prozessnavigator/website",
-  "description": "KI-Prozessnavigator Website (Kontaktformular + Checkliste Backend)",
-  "type": "project",
-  "require": {
-    "phpmailer/phpmailer": "^6.10"
-  }
-}
-
