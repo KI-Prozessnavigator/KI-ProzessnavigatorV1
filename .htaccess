@@ -17,6 +17,15 @@ Options -Indexes
     RewriteCond %{HTTPS} off
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     RewriteRule ^php/config\.php$ - [F,L]
+
+    # .html-URLs auf Slugs umleiten
+    RewriteRule ^index\.html$ / [L,R=301]
+    RewriteRule ^(impressum|datenschutz|agb|ueber-uns)\.html$ /$1 [L,R=301]
+
+    # Slugs intern auf .html auflösen
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(impressum|datenschutz|agb|ueber-uns)/?$ $1.html [L]
 </IfModule>
 
 # HSTS: Browser nur über HTTPS verbinden (nach erstem HTTPS-Besuch)
