@@ -3,6 +3,14 @@ DirectoryIndex index.html index.php
 
 # Verzeichnislisting ausschalten (Sicherheit)
 Options -Indexes
+Options -MultiViews
+
+# .html-URLs auf Slugs umleiten (Fallback ohne mod_rewrite)
+RedirectMatch 301 ^/index\.html$ /
+RedirectMatch 301 ^/impressum\.html$ /impressum
+RedirectMatch 301 ^/datenschutz\.html$ /datenschutz
+RedirectMatch 301 ^/agb\.html$ /agb
+RedirectMatch 301 ^/ueber-uns\.html$ /ueber-uns
 
 # Sensible Dateien nicht per HTTP ausliefern
 <FilesMatch "^(\.env|\.env\.deploy|\.gitignore|config\.php)$">
