@@ -151,7 +151,7 @@ if (!function_exists('kp_checklist_customer_html')) {
             </div>
             <div class="footer">
                 <p>KI-Prozessnavigator · Intelligente Automatisierung für den Mittelstand</p>
-                <p><a href="https://ki-prozessnavigator.de/datenschutz.html" style="color: #0077ff;">Datenschutzerklärung</a></p>
+                <p><a href="https://ki-prozessnavigator.de/datenschutz" style="color: #0077ff;">Datenschutzerklärung</a></p>
             </div>
         </div>
     </div>
