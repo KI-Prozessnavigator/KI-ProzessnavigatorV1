@@ -342,12 +342,12 @@
             
             <ul class="nav__menu" id="nav-menu">
                 <li class="nav__item"><a href="/" class="nav__link">Start</a></li>
-                <li class="nav__item"><a href="#problems" class="nav__link">Vorteile</a></li>
-                <li class="nav__item"><a href="#usecases" class="nav__link">Use Cases</a></li>
-                <li class="nav__item"><a href="#ablauf" class="nav__link">Ablauf</a></li>
-                <li class="nav__item"><a href="#pricing" class="nav__link">Ersparnis</a></li>
-                <li class="nav__item"><a href="#dsgvo" class="nav__link">DSGVO</a></li>
-                <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
+                <li class="nav__item"><a href="/vorteile" class="nav__link">Vorteile</a></li>
+                <li class="nav__item"><a href="/use-cases" class="nav__link">Use Cases</a></li>
+                <li class="nav__item"><a href="/ablauf" class="nav__link">Ablauf</a></li>
+                <li class="nav__item"><a href="/ersparnis" class="nav__link">Ersparnis</a></li>
+                <li class="nav__item"><a href="/dsgvo" class="nav__link">DSGVO</a></li>
+                <li class="nav__item"><a href="/faq" class="nav__link">FAQ</a></li>
                 <li class="nav__item"><a href="/ueber-uns" class="nav__link">Über uns</a></li>
                 <li class="nav__item"><a href="/kontakt" class="nav__link nav__link--cta">Beratung anfragen</a></li>
             </ul>
@@ -361,7 +361,7 @@
     </header>
 
     <main>
-        <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+        <a href="javascript:void(0)" class="skip-link" data-scroll-target="main-content">Zum Hauptinhalt springen</a>
         
         <section class="hero" id="hero" aria-labelledby="hero-title">
             <div class="hero__container container" id="main-content">
@@ -382,7 +382,7 @@
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
-                        <a href="#demo" class="btn btn--glass btn--hero-trust" role="button">
+                        <a href="javascript:void(0)" class="btn btn--glass btn--hero-trust" role="button" data-scroll-target="demo">
                             <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <polygon points="5,3 19,12 5,21"/>
                             </svg>
@@ -424,7 +424,7 @@
                 
             </div>
             
-            <a href="#trust-bar" class="hero__scroll-indicator" role="button" aria-label="Mehr erfahren - Nach unten scrollen">
+            <a href="javascript:void(0)" class="hero__scroll-indicator" role="button" aria-label="Mehr erfahren - Nach unten scrollen" data-scroll-target="trust-bar">
                 <span>Mehr erfahren</span>
                 <div class="scroll-arrow" aria-hidden="true"></div>
             </a>
@@ -1801,10 +1801,10 @@
                 <div class="footer__links-group">
                     <h4 class="footer__heading">Produkt</h4>
                     <ul class="footer__links">
-                        <li><a href="#usecases">Use Cases</a></li>
-                        <li><a href="#pricing">Ersparnis</a></li>
-                        <li><a href="#">API Dokumentation</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="/use-cases">Use Cases</a></li>
+                        <li><a href="/ersparnis">Ersparnis</a></li>
+                        <li><a href="javascript:void(0)">API Dokumentation</a></li>
+                        <li><a href="javascript:void(0)">Blog</a></li>
                     </ul>
                 </div>
                 
@@ -2761,11 +2761,41 @@
     <script src="js/contact-modal.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            if (window.location.pathname === '/kontakt') {
-                var contactSection = document.getElementById('contact');
-                if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                if (typeof window.openContactModal === 'function') setTimeout(window.openContactModal, 150);
+            var path = window.location.pathname.replace(/\/$/, '') || '/';
+            var routeToId = {
+                '/vorteile': 'problems',
+                '/use-cases': 'usecases',
+                '/ablauf': 'ablauf',
+                '/dsgvo': 'dsgvo',
+                '/ersparnis': 'pricing',
+                '/faq': 'faq',
+                '/kontakt': 'contact'
+            };
+
+            var targetId = routeToId[path];
+            if (targetId) {
+                var target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                if (path === '/kontakt' && typeof window.openContactModal === 'function') {
+                    setTimeout(window.openContactModal, 150);
+                }
+                if (window.location.pathname !== '/') {
+                    history.replaceState({}, '', '/');
+                }
             }
+
+            document.querySelectorAll('[data-scroll-target]').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    var id = link.getAttribute('data-scroll-target');
+                    if (!id) return;
+                    var el = document.getElementById(id);
+                    if (!el) return;
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
         });
     </script>
     <script>
