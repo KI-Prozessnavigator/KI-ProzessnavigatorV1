@@ -1,6 +1,8 @@
 # Nginx: Slug-URLs aktivieren (ohne .html)
 
-Auf dem IONOS-VPS läuft **Nginx** (kein Apache). Nginx liest **keine** `.htaccess`-Dateien – daher greifen die Redirects erst, wenn die Regeln in der Nginx-Konfiguration stehen.
+Auf dem IONOS-VPS läuft **Nginx** (kein Apache).
+
+**Wichtig:** Für die Startseite darf **kein** `return 301 /` bei `location = /index.html` gesetzt werden. In Kombination mit `try_files … /index.html` entsteht sonst eine Redirect-Schleife (ERR_TOO_MANY_REDIRECTS). Die Adresszeile bereinigt die Startseite per JavaScript (`index.html` → `/`). Nginx liest **keine** `.htaccess`-Dateien – daher greifen die Redirects erst, wenn die Regeln in der Nginx-Konfiguration stehen.
 
 ## Schritte auf dem Server (per SSH)
 
