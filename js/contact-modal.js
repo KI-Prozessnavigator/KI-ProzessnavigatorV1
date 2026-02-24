@@ -167,7 +167,7 @@
         function initTriggers() {
             // Use event delegation for better performance
             document.addEventListener('click', function(e) {
-                const trigger = e.target.closest('.btn--neon, .btn--primary, a[href="#contact"], .pricing-card .btn, .nav__link--cta');
+                const trigger = e.target.closest('.btn--neon, .btn--primary, a[href="#contact"], a[href="/kontakt"], .pricing-card .btn, .nav__link--cta');
                 
                 if (trigger) {
                     // Don't intercept form submit buttons or lead form

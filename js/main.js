@@ -788,6 +788,18 @@ function initEventListeners() {
     if (DOM.scrollToTop) {
         DOM.scrollToTop.addEventListener('click', scrollToTopHandler);
     }
+
+    // Start-Link (href="/"): auf Hauptseite nur nach oben scrollen, kein Reload
+    document.querySelectorAll('a[href="/"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var path = window.location.pathname;
+            if (path === '/' || path === '/kontakt') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (typeof closeMenu === 'function') closeMenu();
+            }
+        });
+    });
     
     // Close menu on escape key
     document.addEventListener('keydown', (e) => {
