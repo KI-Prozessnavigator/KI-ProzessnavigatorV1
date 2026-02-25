@@ -978,7 +978,7 @@ section {
     font-size: var(--text-lg);
     color: var(--color-text-muted);
     margin-bottom: var(--space-10);
-    max-width: 58ch;
+    max-width: 70ch;
     text-align: left;
     grid-column: 1;
     grid-row: 2;
@@ -1443,7 +1443,7 @@ section {
     gap: 0;
     align-items: center;
     margin-top: var(--space-12);
-    padding: var(--space-6) var(--space-8);
+    padding: var(--space-6) 0;
     height: 9rem !important;
     min-height: 9rem !important;
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.08) 0%, rgba(0, 212, 255, 0.05) 50%, rgba(0, 85, 204, 0.03) 100%);
@@ -1456,6 +1456,7 @@ section {
     grid-row: 2;
     justify-self: end;
     align-self: start;
+    transform: translateY(-40px);
 }
 
 /* Accent glow */
@@ -1489,7 +1490,7 @@ section {
     justify-content: center !important;
     min-height: 0 !important;
     position: relative;
-    padding: var(--space-2) var(--space-3);
+    padding: var(--space-2) var(--space-2);
     text-align: center;
 }
 
