@@ -228,15 +228,6 @@
     }
 }
 
-@media (max-width: 768px) {
-    .hero__stats,
-    .hero .hero__stats,
-    section.hero .hero__stats {
-        transform: scale(0.85);
-        transform-origin: center top;
-    }
-}
-
 @media (max-width: 1023px) {
     /* ===== GLOBAL OVERFLOW PROTECTION ===== */
     html,
@@ -250,7 +241,6 @@
     
     
     /* Buttons: overflow visible für Glow */
-    .hero__actions .btn,
     .btn {
         overflow: visible !important;
     }
@@ -271,11 +261,6 @@
         box-sizing: border-box;
     }
 
-    .hero__container {
-        margin-top: 60px;
-        margin-bottom: 40px;
-    }
-    
     section {
         width: 100%;
         max-width: 100vw;
@@ -543,192 +528,6 @@
         overflow: hidden !important;
         position: fixed;
         width: 100%;
-    }
-    
-    /* Hero Stats - 3er-Grid mit Desktop-Design */
-    .hero__stats,
-    .hero .hero__stats,
-    section.hero .hero__stats {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        grid-template-rows: 1fr !important;
-        gap: 0 !important;
-        width: 100% !important;
-        height: auto !important;
-        max-height: none !important;
-        min-height: 0 !important;
-        padding: var(--space-4) 0 !important;
-        margin-top: var(--space-4) !important;
-        margin-bottom: var(--space-5) !important;
-        box-sizing: border-box !important;
-        
-        /* DESKTOP DESIGN - Blauer Gradient */
-        background: linear-gradient(135deg, rgba(0, 119, 255, 0.08) 0%, rgba(0, 212, 255, 0.05) 50%, rgba(0, 85, 204, 0.03) 100%) !important;
-        border: 1px solid rgba(0, 212, 255, 0.3) !important;
-        border-radius: var(--radius-xl) !important;
-        backdrop-filter: blur(10px) !important;
-        box-shadow: 0 0 30px rgba(0, 212, 255, 0.1) !important;
-        position: relative !important;
-        overflow: visible !important;
-    }
-    
-    /* Leuchtender Strich oben (wie Desktop) */
-    .hero__stats::before,
-    .hero .hero__stats::before,
-    section.hero .hero__stats::before {
-        content: '' !important;
-        position: absolute !important;
-        top: -1px !important;
-        left: 20% !important;
-        right: 20% !important;
-        height: 2px !important;
-        background: linear-gradient(90deg, 
-            rgba(0, 212, 255, 0.6) 0%,
-            rgba(0, 119, 255, 0.8) 50%,
-            rgba(0, 212, 255, 0.6) 100%
-        ) !important;
-        opacity: 0.6 !important;
-        animation: statsGlow 3s ease-in-out infinite !important;
-        z-index: 10 !important;
-    }
-    
-    /* Horizontale Trennlinie genau in der Mitte */
-    .hero__stats::after,
-    .hero .hero__stats::after,
-    section.hero .hero__stats::after {
-        content: '' !important;
-        position: absolute !important;
-        top: 50% !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        height: 1px !important;
-        background: linear-gradient(90deg, 
-            transparent 0%, 
-            rgba(0, 212, 255, 0.6) 20%,
-            rgba(0, 119, 255, 0.8) 50%,
-            rgba(0, 212, 255, 0.6) 80%,
-            transparent 100%
-        ) !important;
-        transform: translateY(-0.5px) !important;
-        z-index: 10 !important;
-        pointer-events: none !important;
-    }
-    
-    /* Jede Box: Höhe automatisch, vertikal zentriert */
-    .hero__stats .stat,
-    .hero .hero__stats .stat,
-    section.hero .hero__stats .stat {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        width: auto !important;
-        height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
-        padding: var(--space-2) var(--space-2) !important;
-        margin: 0 !important;
-        box-sizing: border-box !important;
-        position: relative !important;
-        z-index: 1 !important;
-    }
-    
-    /* Vertikale Trennlinien werden in Tablet-Regeln definiert */
-    
-    /* Innerer Container */
-    .hero__stats .stat__inner,
-    .hero .hero__stats .stat__inner,
-    section.hero .hero__stats .stat__inner {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        gap: 3px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* Zahlen - Gradient wie Desktop */
-    .hero__stats .stat__number,
-    .hero .hero__stats .stat__number,
-    section.hero .hero__stats .stat__number {
-        display: block !important;
-        font-size: clamp(1.5rem, 6vw, 1.875rem) !important;
-        font-weight: var(--font-bold) !important;
-        line-height: 1 !important;
-        text-align: center !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        background: linear-gradient(135deg, var(--color-neon) 0%, var(--color-primary) 100%) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        background-clip: text !important;
-        transform: none !important;
-    }
-    
-    /* Labels */
-    .hero__stats .stat__label,
-    .hero .hero__stats .stat__label,
-    section.hero .hero__stats .stat__label {
-        display: block !important;
-        font-size: clamp(0.6rem, 2.5vw, 0.7rem) !important;
-        line-height: 1.3 !important;
-        text-align: center !important;
-        width: 100% !important;
-        max-width: 90% !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-        color: var(--color-text-muted) !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.03em !important;
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
-        hyphens: auto !important;
-    }
-
-    /* Hero Stats: 3er-Grid wie Desktop, nur skaliert */
-    .hero__stats,
-    .hero .hero__stats,
-    section.hero .hero__stats {
-        grid-template-columns: repeat(3, 1fr) !important;
-        grid-template-rows: 1fr !important;
-        height: auto !important;
-        min-height: auto !important;
-        max-height: none !important;
-        padding: var(--space-4) 0 !important;
-        transform: scale(0.9);
-        transform-origin: center top;
-    }
-
-    .hero__stats::after,
-    .hero .hero__stats::after,
-    section.hero .hero__stats::after {
-        content: none !important;
-    }
-
-    .hero__stats .stat,
-    .hero .hero__stats .stat,
-    section.hero .hero__stats .stat {
-        height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
-        padding: var(--space-2) var(--space-2) !important;
-    }
-
-    .hero__stats .stat__inner,
-    .hero .hero__stats .stat__inner,
-    section.hero .hero__stats .stat__inner {
-        gap: 0 !important;
-    }
-
-    .hero__stats .stat__number,
-    .hero .hero__stats .stat__number,
-    section.hero .hero__stats .stat__number {
-        transform: none !important;
     }
     
     /* Animation für leuchtenden Strich */
@@ -1505,16 +1304,18 @@
         text-align: center;
     }
     
-    /* ===== HERO RESPONSIVE OVERRIDES (<=1023px) ===== */
+    /* ===== HERO RESPONSIVE RESET + REBUILD (<=1023px) ===== */
     .hero,
     section.hero,
     .hero__container,
     .hero__content,
-    .hero__actions {
+    .hero__actions,
+    .hero__stats {
         overflow: visible !important;
     }
 
     .hero {
+        padding-top: 120px;
         padding-bottom: 80px;
     }
 
@@ -1526,23 +1327,38 @@
         margin-right: auto !important;
     }
 
+    .hero__container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        margin-top: 0 !important;
+        text-align: center !important;
+    }
+
     .hero__content {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         text-align: center !important;
+        gap: var(--space-5) !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .hero__title {
+        order: 1 !important;
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
         text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        padding-inline: 8px !important;
-        font-size: clamp(1.25rem, 4.3vw, 2.1rem) !important;
-        line-height: 1.1 !important;
+        margin: 0 auto !important;
+        padding-inline: 10px !important;
+        font-size: clamp(0.95rem, 3.3vw, 1.7rem) !important;
+        line-height: 1.12 !important;
+        letter-spacing: -0.015em !important;
     }
 
     .hero__title-line1,
@@ -1561,24 +1377,80 @@
     }
 
     .hero__description {
+        order: 2 !important;
         text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        margin: 0 auto !important;
         max-width: 32rem !important;
+        padding-inline: 10px !important;
+        font-size: clamp(0.9rem, 2.6vw, 1.05rem) !important;
+        line-height: 1.6 !important;
+    }
+
+    .hero__stats {
+        order: 3 !important;
+        width: 100% !important;
+        max-width: 32rem !important;
+        margin: var(--space-5) auto 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 0 !important;
+        padding: var(--space-3) var(--space-3) !important;
+        box-sizing: border-box !important;
+        justify-items: center !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        justify-self: center !important;
+        align-self: center !important;
+        transform: none !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    .hero__stats .stat {
+        min-width: 0 !important;
+    }
+
+    .hero__stats .stat__inner {
+        transform: none !important;
+        width: 100% !important;
+        gap: 0.2rem !important;
+    }
+
+    .hero__stats .stat:last-child .stat__inner {
+        transform: none !important;
+    }
+
+    .hero__stats .stat__number {
+        height: auto !important;
+        min-height: 0 !important;
+        font-size: clamp(0.95rem, 2.8vw, 1.3rem) !important;
+        line-height: 1.15 !important;
+    }
+
+    .hero__stats .stat__label {
+        height: auto !important;
+        min-height: 0 !important;
+        margin-top: var(--space-2) !important;
+        font-size: clamp(0.55rem, 1.7vw, 0.72rem) !important;
+        line-height: 1.25 !important;
     }
 
     .hero__actions {
-        align-items: center !important;
+        order: 4 !important;
         width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-top: var(--space-5) !important;
     }
 
     .hero__actions .btn {
-        margin-left: auto !important;
-        margin-right: auto !important;
         width: auto !important;
         max-width: 100% !important;
-        align-self: center !important;
         display: inline-flex !important;
+        align-self: center !important;
+        padding: var(--space-3) var(--space-5) !important;
+        font-size: clamp(0.85rem, 2.4vw, 1rem) !important;
     }
 
     /* ===== SCROLL TO TOP ===== */
@@ -1642,100 +1514,7 @@
         margin-right: 12px !important;
     }
     
-    /* Hero Visual wieder anzeigen */
-    .hero__visual {
-        display: block;
-        order: -1;
-        max-width: 400px;
-        margin: 0 auto var(--space-6);
-    }
     
-    .hero__graphic {
-        max-width: 350px;
-        margin: 0 auto;
-    }
-    
-    /* Hero Text zentriert auf Tablet */
-    .hero .hero__content,
-    .hero .hero__title,
-    .hero .hero__description,
-    section.hero .hero__content,
-    section.hero .hero__title,
-    section.hero .hero__description {
-        text-align: center !important;
-    }
-    
-    .hero__description {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-    
-    /* Hero Stats - 3 Spalten horizontal */
-    .hero__stats,
-    .hero .hero__stats,
-    section.hero .hero__stats {
-        grid-template-columns: repeat(3, 1fr) !important;
-        grid-template-rows: 1fr !important;
-        height: 120px !important;
-        min-height: 120px !important;
-        max-height: 120px !important;
-        margin-bottom: var(--space-6) !important;
-    }
-    
-    /* Stats: vertikale Trenner zwischen allen */
-    .hero__stats .stat:not(:last-child)::after,
-    .hero .hero__stats .stat:not(:last-child)::after,
-    section.hero .hero__stats .stat:not(:last-child)::after {
-        content: '' !important;
-        position: absolute !important;
-        right: 0 !important;
-        top: 10% !important;
-        bottom: 10% !important;
-        width: 1px !important;
-        height: 80% !important;
-        background: linear-gradient(180deg, 
-            transparent 0%,
-            rgba(0, 212, 255, 0.6) 20%,
-            rgba(0, 119, 255, 0.8) 50%,
-            rgba(0, 212, 255, 0.6) 80%,
-            transparent 100%
-        ) !important;
-        z-index: 10 !important;
-    }
-    
-    /* Horizontale Trennlinie entfernen auf Tablet */
-    .hero__stats::after,
-    .hero .hero__stats::after,
-    section.hero .hero__stats::after {
-        display: none !important;
-    }
-    
-    /* Vertikale Trenner von Mobile entfernen */
-    .hero__stats .stat:nth-child(2)::before,
-    .hero__stats .stat:nth-child(3)::before,
-    .hero .hero__stats .stat:nth-child(2)::before,
-    .hero .hero__stats .stat:nth-child(3)::before {
-        display: none !important;
-    }
-    
-    /* Stat Inner Container - Tablet zentriert zurücksetzen */
-    .hero__stats .stat__inner,
-    .hero .hero__stats .stat__inner,
-    section.hero .hero__stats .stat__inner {
-        justify-content: center !important;
-        gap: var(--space-2) !important;
-        padding: 0 !important;
-    }
-    
-    /* Zahlen - Transform zurücksetzen auf Tablet */
-    .hero__stats .stat__number,
-    .hero .hero__stats .stat__number,
-    section.hero .hero__stats .stat__number {
-        margin: 0 !important;
-        transform: none !important;
-    }
     
     /* 2 Testimonials auf Tablet */
     .testimonial-card:nth-child(2) {
@@ -1876,51 +1655,6 @@
         font-size: calc(0.8rem - 0.125rem) !important; /* 2px kleiner als 0.8rem */
     }
     
-    /* Hero noch kompakter */
-    .hero {
-        padding-top: 110px;
-    }
-    
-    /* 2x2 Grid: Zahl+Label als Einheit mittig in jeder Box */
-    .hero__stats .stat__inner,
-    .hero .hero__stats .stat__inner,
-    section.hero .hero__stats .stat__inner {
-        transform: none !important;
-        gap: 3px !important;
-    }
-    
-    .hero__stats .stat__number,
-    .hero .hero__stats .stat__number,
-    section.hero .hero__stats .stat__number {
-        transform: none !important;
-        height: auto !important;
-        min-height: 0 !important;
-    }
-    
-    .hero__stats .stat__label,
-    .hero .hero__stats .stat__label,
-    section.hero .hero__stats .stat__label {
-        height: auto !important;
-        min-height: 0 !important;
-        margin-top: 5px !important;
-    }
-    
-    /* +30px Verschiebung NUR für Handy */
-    
-    /* Stats kompakter */
-    .hero__stats {
-        padding: var(--space-4);
-        gap: var(--space-3);
-    }
-    
-    .hero__stats .stat__number {
-        font-size: clamp(1.25rem, 5vw, 1.75rem);
-    }
-    
-    .hero__stats .stat__label {
-        font-size: clamp(0.6rem, 2vw, 0.7rem);
-    }
-    
     /* Section Titles kleiner */
     .section__title {
         font-size: clamp(1.25rem, 5vw, 1.75rem);
@@ -1962,63 +1696,6 @@
         width: 133.33%; /* 100% / 0.75 */
     }
 
-    /* ===== HERO RESPONSIVE OVERRIDES (<=576px) ===== */
-    .hero > .container,
-    .hero .container {
-        width: 90% !important;
-        max-width: 90% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
-    .hero__title,
-    [data-theme="dark"] .hero__title,
-    .hero .hero__title,
-    section.hero .hero__title {
-        font-size: clamp(1rem, 4.2vw, 1.6rem) !important;
-        text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        padding-inline: 8px !important;
-        line-height: 1.1 !important;
-        box-sizing: border-box !important;
-    }
-
-    .hero__title-line1,
-    .hero__title-line2 {
-        white-space: nowrap !important;
-    }
-
-    .hero__title-line3 {
-        white-space: normal !important;
-        display: block !important;
-    }
-
-    .hero__title-line3-break {
-        display: block !important;
-        white-space: normal !important;
-    }
-
-    .hero__description {
-        text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        max-width: 32rem !important;
-    }
-
-    .hero__actions {
-        align-items: center !important;
-        width: 100% !important;
-    }
-
-    .hero__actions .btn {
-        margin-left: auto !important;
-        margin-right: auto !important;
-        width: auto !important;
-        max-width: 100% !important;
-        align-self: center !important;
-        display: inline-flex !important;
-    }
 }
 
 /* ==========================================
@@ -2076,80 +1753,65 @@
     .hero__title span,
     .hero__title em,
     [data-theme="dark"] .hero__title *,
-    [data-theme="dark"] .hero__title span,
-    [data-theme="dark"] .hero__title em {
-        font-size: clamp(1.3rem, 5vw, 1.8rem);
-    }
-    
-    .hero__title-em,
-    .hero__title-line1,
-    .hero__title-line2,
-    .hero__title-line3,
-    [data-theme="dark"] .hero__title-em,
-    [data-theme="dark"] .hero__title-line1,
-    [data-theme="dark"] .hero__title-line2,
-    [data-theme="dark"] .hero__title-line3 {
-        font-size: clamp(1.3rem, 5vw, 1.8rem);
-        white-space: nowrap;
-        display: block;
-    }
-
-    .hero__title-line3,
-    [data-theme="dark"] .hero__title-line3 {
-        white-space: normal;
-    }
-    
-    .hero__description {
-        font-size: 0.75rem;
-        padding-left: 0;
-        padding-right: 0;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero__content {
-        align-items: center;
-        text-align: center;
-    }
-    
-    .hero__actions {
-        align-items: center;
-    }
-    
-    .hero__actions .btn {
-        width: auto;
-        padding: var(--space-3) var(--space-5);
-        font-size: 0.9rem;
-        min-height: 48px;
-        transform: scale(0.85);
-        transform-origin: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .hero__actions .btn--neon,
-    .hero__actions .btn--glass {
-        transform: scale(0.85);
-        transform-origin: center;
-    }
-    
-    .hero__actions .btn--glass {
-        margin-top: -20px !important;
-    }
-    
-    .hero__stats .stat__number {
-        font-size: 1.25rem;
-    }
-    
-    .hero__stats .stat__label {
-        font-size: 0.6rem;
-    }
-    
     .section__title {
         font-size: 1.25rem;
     }
     
+    /* ===== HERO RESPONSIVE FINE TUNE (<=576px) ===== */
+    .hero {
+        padding-top: 110px;
+    }
+
+    .hero__title {
+        font-size: clamp(0.85rem, 3.6vw, 1.2rem) !important;
+        line-height: 1.15 !important;
+        padding-inline: 12px !important;
+    }
+
+    .hero__title-line1,
+    .hero__title-line2 {
+        white-space: nowrap !important;
+    }
+
+    .hero__title-line3,
+    .hero__title-line3-break {
+        white-space: normal !important;
+        display: block !important;
+    }
+
+    .hero__description {
+        font-size: clamp(0.85rem, 2.6vw, 0.98rem) !important;
+        max-width: 30rem !important;
+        padding-inline: 12px !important;
+    }
+
+    .hero__stats {
+        max-width: 26rem !important;
+        padding: var(--space-2) var(--space-2) !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    .hero__stats .stat__number {
+        font-size: clamp(0.85rem, 3.6vw, 1.1rem) !important;
+        height: auto !important;
+        min-height: 0 !important;
+        line-height: 1.15 !important;
+    }
+
+    .hero__stats .stat__label {
+        font-size: clamp(0.5rem, 1.7vw, 0.62rem) !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin-top: var(--space-2) !important;
+        line-height: 1.2 !important;
+    }
+
+    .hero__actions .btn {
+        font-size: clamp(0.8rem, 2.6vw, 0.95rem) !important;
+        padding: var(--space-3) var(--space-4) !important;
+    }
+
     .calculator__wrapper {
         transform: scale(0.65);
         width: 153.85%; /* 100% / 0.65 */
