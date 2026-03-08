@@ -255,16 +255,6 @@
             display: none !important;
         }
         
-        /* TEXT: "10 Stunden mehr Zeit" WEIẞ mit Glow */
-        .hero__title em {
-            color: #ffffff !important;
-            text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 119, 255, 0.4) !important;
-            background: none !important;
-            -webkit-background-clip: unset !important;
-            -webkit-text-fill-color: unset !important;
-            background-clip: unset !important;
-        }
-        
         /* TEXT: "Ersparnis" GRÜN wie "Mit KI-Prozessnavigator" */
         #calculator-title em {
             color: #00D98F !important;
@@ -308,19 +298,6 @@
             background: #00D98F !important;
         }
         
-        /* BLINKENDER CURSOR in Hero-Überschrift */
-        @keyframes blink {
-            0%, 49% {
-                opacity: 1;
-            }
-            50%, 100% {
-                opacity: 0;
-            }
-        }
-        
-        .cursor-blink {
-            animation: blink 1s step-end infinite;
-        }
     </style>
 
 </head>
@@ -367,14 +344,10 @@
             <div class="hero__container container" id="main-content">
                 <div class="hero__content">
                     <h1 class="hero__title" id="hero-title">
-                        <span aria-label="Ihr Unternehmen auf Autopilot Mehr Zeit für Kunden und Wachstum Routinearbeit erledigt sich von allein">
-                            <em class="hero__title-em"><span class="hero__title-line1">Ihr Unternehmen auf Autopilot</span></em>
-                            <span class="hero__title-line2">Mehr Zeit für Kunden und Wachstum</span>
-                            <span class="hero__title-line3">Routinearbeit erledigt sich <span class="hero__title-line3-break">von allein</span></span>
-                        </span>
+                        Weniger Verwaltung, mehr Wachstum – durch intelligente Automatisierung
                     </h1>
                     <p class="hero__description">
-                        Stellen Sie sich vor, E-Mails sortieren sich selbst, Rechnungen werden automatisch geprüft und Termine buchen sich ohne Ihr Zutun. Ihre Mitarbeiter gewinnen 5–10 Stunden pro Woche – für das, was wirklich Umsatz bringt.
+                        In wenigen Wochen automatisieren wir deine Routineprozesse – von E-Mails über Rechnungen bis zur Terminplanung. Dein Team gewinnt 5–10 Stunden pro Woche für das, was wirklich Umsatz bringt.
                     </p>
                     
                     <div class="hero__actions" role="group" aria-label="Handlungsoptionen">
@@ -384,28 +357,45 @@
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
-                        <p style="margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.45); text-align: center; letter-spacing: 0.02em;">
+                        <p class="hero__trust-line">
                             30 Min. · Unverbindlich · Kein Verkaufsdruck
                         </p>
                     </div>
                     
-                    <div class="hero__stats" role="list" aria-label="Unsere Erfolgszahlen">
-                        <div class="stat" role="listitem">
-                            <div class="stat__inner">
-                                <span class="stat__number">+10h</span>
-                                <span class="stat__label">Zeitgewinn pro Woche</span>
+                    <div class="hero__badges" role="list" aria-label="Unsere Versprechen">
+                        <div class="hero-badge" role="listitem">
+                            <div class="hero-badge__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:22px;height:22px">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div class="hero-badge__text">
+                                <span class="hero-badge__value">+10h</span>
+                                <span class="hero-badge__label">Zeitgewinn pro Woche</span>
                             </div>
                         </div>
-                        <div class="stat" role="listitem">
-                            <div class="stat__inner">
-                                <span class="stat__number">–70 %</span>
-                                <span class="stat__label">weniger Verwaltung</span>
+                        <div class="hero-badge" role="listitem">
+                            <div class="hero-badge__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:22px;height:22px">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <div class="hero-badge__text">
+                                <span class="hero-badge__value">–70 %</span>
+                                <span class="hero-badge__label">weniger Verwaltung</span>
                             </div>
                         </div>
-                        <div class="stat" role="listitem">
-                            <div class="stat__inner">
-                                <span class="stat__number">100%</span>
-                                <span class="stat__label">DSGVO-sicher</span>
+                        <div class="hero-badge" role="listitem">
+                            <div class="hero-badge__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:22px;height:22px">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div class="hero-badge__text">
+                                <span class="hero-badge__value">100 %</span>
+                                <span class="hero-badge__label">DSGVO-sicher</span>
                             </div>
                         </div>
                     </div>
@@ -415,7 +405,7 @@
 
         <section class="logo-carousel hero__logo-bar" id="trust-bar" aria-label="Unterstützte Integrationen">
             <div class="container">
-                <p class="logo-carousel__heading">Funktioniert mit Ihrer bestehenden Software – kein Wechsel nötig</p>
+                <p class="logo-carousel__heading">Funktioniert mit deiner bestehenden Software – kein Wechsel nötig</p>
             </div>
             <div class="logo-carousel__track-wrapper">
                 <div class="logo-carousel__track" aria-hidden="true">
