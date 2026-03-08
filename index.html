@@ -200,6 +200,7 @@
     <link rel="stylesheet" href="css/calculator-v2.css?v=2.2">
     <link rel="stylesheet" href="css/contact-modal.css?v=2.0">
     <link rel="stylesheet" href="css/responsive.css?v=5.8">
+    <link rel="stylesheet" href="css/hero-override.css?v=1.0">
     <style>
         /* Ersparnis: Abstände werden ausschließlich über css/calculator-v2.css gesteuert. */
     </style>
@@ -343,13 +344,61 @@
         <section class="hero" id="hero" aria-labelledby="hero-title">
             <div class="hero__container container" id="main-content">
                 <div class="hero__content">
+                    <!-- 1. H1 ganz oben, volle Breite -->
                     <h1 class="hero__title" id="hero-title">
-                        Weniger Verwaltung, mehr Wachstum – durch intelligente Automatisierung
+                        Weniger Verwaltung, mehr Wachstum<br>
+                        – durch intelligente Automatisierung
                     </h1>
-                    <p class="hero__description">
-                        In wenigen Wochen automatisieren wir deine Routineprozesse – von E-Mails über Rechnungen bis zur Terminplanung. Dein Team gewinnt 5–10 Stunden pro Woche für das, was wirklich Umsatz bringt.
-                    </p>
-                    
+
+                    <!-- 2. Zwei-Spalten-Bereich: Sub-Headline links, Badges rechts -->
+                    <div class="hero__body">
+                        <p class="hero__description">
+                            In wenigen Wochen automatisieren wir deine Routineprozesse 
+                            – von E-Mails über Rechnungen bis zur Terminplanung. 
+                            Dein Team gewinnt 5–10 Stunden pro Woche für das, 
+                            was wirklich Umsatz bringt.
+                        </p>
+
+                        <div class="hero__badges" role="list" aria-label="Unsere Versprechen">
+                            <div class="hero-badge" role="listitem">
+                                <div class="hero-badge__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:22px;height:22px">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <polyline points="12 6 12 12 16 14"/>
+                                    </svg>
+                                </div>
+                                <div class="hero-badge__text">
+                                    <span class="hero-badge__value">+10h</span>
+                                    <span class="hero-badge__label">Zeitgewinn pro Woche</span>
+                                </div>
+                            </div>
+                            <div class="hero-badge" role="listitem">
+                                <div class="hero-badge__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:22px;height:22px">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                </div>
+                                <div class="hero-badge__text">
+                                    <span class="hero-badge__value">–70 %</span>
+                                    <span class="hero-badge__label">weniger Verwaltung</span>
+                                </div>
+                            </div>
+                            <div class="hero-badge" role="listitem">
+                                <div class="hero-badge__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:22px;height:22px">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    </svg>
+                                </div>
+                                <div class="hero-badge__text">
+                                    <span class="hero-badge__value">100 %</span>
+                                    <span class="hero-badge__label">DSGVO-sicher</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. CTA + Trust-Zeile zentriert -->
                     <div class="hero__actions" role="group" aria-label="Handlungsoptionen">
                         <a href="/kontakt" class="btn btn--neon btn--glow u-btn-transition" role="button">
                             <span>Jetzt kostenlos beraten lassen</span>
@@ -358,49 +407,23 @@
                             </svg>
                         </a>
                         <p class="hero__trust-line">
-                            30 Min. · Unverbindlich · Kein Verkaufsdruck
+                            <span class="hero__trust-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><polyline points="20 6 9 17 4 12"/></svg>
+                                30 Min.
+                            </span>
+                            <span class="hero__trust-sep">·</span>
+                            <span class="hero__trust-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><polyline points="20 6 9 17 4 12"/></svg>
+                                Unverbindlich
+                            </span>
+                            <span class="hero__trust-sep">·</span>
+                            <span class="hero__trust-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><polyline points="20 6 9 17 4 12"/></svg>
+                                Kein Verkaufsdruck
+                            </span>
                         </p>
                     </div>
-                    
-                    <div class="hero__badges" role="list" aria-label="Unsere Versprechen">
-                        <div class="hero-badge" role="listitem">
-                            <div class="hero-badge__icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:22px;height:22px">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                            </div>
-                            <div class="hero-badge__text">
-                                <span class="hero-badge__value">+10h</span>
-                                <span class="hero-badge__label">Zeitgewinn pro Woche</span>
-                            </div>
-                        </div>
-                        <div class="hero-badge" role="listitem">
-                            <div class="hero-badge__icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:22px;height:22px">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                            </div>
-                            <div class="hero-badge__text">
-                                <span class="hero-badge__value">–70 %</span>
-                                <span class="hero-badge__label">weniger Verwaltung</span>
-                            </div>
-                        </div>
-                        <div class="hero-badge" role="listitem">
-                            <div class="hero-badge__icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:22px;height:22px">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                </svg>
-                            </div>
-                            <div class="hero-badge__text">
-                                <span class="hero-badge__value">100 %</span>
-                                <span class="hero-badge__label">DSGVO-sicher</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                
             </div>
 
         <section class="logo-carousel hero__logo-bar" id="trust-bar" aria-label="Unterstützte Integrationen">

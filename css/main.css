@@ -924,20 +924,13 @@ section {
 }
 
 .hero__content {
-    padding-right: 0;
-}
-
-.hero__content {
-    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-rows: auto auto auto;
-    column-gap: var(--space-10);
-    row-gap: var(--space-6);
-    align-items: start;
-    align-self: center;
-    grid-column: 1 / -1;
+    max-width: var(--container-max);
+    position: relative;
+    z-index: 1;
 }
 /* Reset: keine erzwungene Verschiebung nach oben */
 .hero .hero__content {
@@ -980,23 +973,47 @@ section {
 
 .hero__title {
     font-family: var(--font-heading);
-    font-size: var(--text-4xl);
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
     font-weight: var(--font-bold);
     line-height: 1.15;
     letter-spacing: var(--tracking-tight);
     text-align: center;
-    grid-column: 1 / -1;
     width: 100%;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-10);
     color: #ffffff;
 }
 
+.hero__body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--space-10);
+    width: 100%;
+    max-width: 960px;
+    margin-bottom: var(--space-8);
+}
+
 .hero__trust-line {
-    margin-top: 14px;
-    font-size: 0.88rem;
-    color: rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    margin-bottom: var(--space-6);
+    font-size: 0.85rem;
+    color: #ffffff;
     text-align: center;
-    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.hero__trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.hero__trust-sep {
+    color: rgba(255, 255, 255, 0.3);
 }
 
 /* ===== Hero Trust Badges ===== */
@@ -1004,10 +1021,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    grid-column: 2;
-    grid-row: 2;
-    justify-self: end;
-    align-self: start;
+    flex-shrink: 0;
 }
 
 .hero-badge {
@@ -1058,18 +1072,17 @@ section {
 
 .hero-badge__label {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
     line-height: 1;
 }
 
 .hero__description {
     font-size: var(--text-lg);
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-10);
-    max-width: 70ch;
+    color: #ffffff;
+    max-width: 500px;
     text-align: left;
-    grid-column: 1;
-    grid-row: 2;
+    line-height: 1.65;
+    flex-shrink: 1;
     hyphens: none;
     word-break: normal;
     overflow-wrap: normal;
@@ -1082,11 +1095,8 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-4);
-    grid-column: 1 / -1;
-    grid-row: 3;
-    overflow: visible;
-    justify-self: center;
+    gap: 0;
+    width: 100%;
 }
 
 .hero__visual {
@@ -9950,15 +9960,6 @@ section.testimonials.expert-quotes,
 .u-border-success { border-color: #00D98F !important; }
 
 /* === Hero === */
-.hero__title-em {
-    display: block !important;
-    margin-bottom: 0 !important;
-    color: #ffffff !important;
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 119, 255, 0.4) !important;
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    -webkit-text-fill-color: unset !important;
-}
 .u-btn-transition { transition: box-shadow 0.3s ease, background 0.3s ease !important; }
 .cursor-blink {
     display: inline-block;
@@ -9981,11 +9982,6 @@ section.testimonials.expert-quotes,
     content: "\00a0"; /* Festes Leerzeichen aus CSS */
 }
 /* Ausrufezeichen steht im HTML (Zeile 1), damit es markierbar ist – kein ::after mehr */
-/* Dritte Zeile: KI-Automatisierung + Leerzeichen + Cursor – bleiben in einer Zeile */
-.hero__title-line3 {
-    display: inline;
-    white-space: nowrap;
-}
 /* Cursor im Hero – sichtbar und direkt hinter dem Leerzeichen, nie umbrechen */
 .hero .cursor-blink--hero {
     display: inline-block !important;
