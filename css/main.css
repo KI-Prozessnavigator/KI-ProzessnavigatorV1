@@ -11093,3 +11093,283 @@ section.solutions .container,
 .solutions__grid {
     overflow: visible !important;
 }
+
+/* ===== Vorteile-Vergleich (Wir vs. Du) ===== */
+.wir-vs-du {
+    background: #0a0e1a;
+    color: #f3f4f6;
+    padding-top: calc(clamp(2rem, 5vw, 4.25rem) - 40px);
+    padding-bottom: clamp(2rem, 5vw, 4.25rem);
+}
+
+.wir-vs-du .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(1.25rem, 5vw, 3rem);
+}
+
+.wir-vs-du__header {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.wir-vs-du__title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
+    margin: 0 0 0.75rem;
+    color: #f3f4f6;
+    max-width: 34ch;
+    margin-inline: auto;
+    text-wrap: balance;
+}
+
+.wir-vs-du__description {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+    color: #d1d5db;
+    max-width: 750px;
+    margin: 0 auto;
+    text-wrap: balance;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.wir-vs-du__toggle-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.wir-vs-du__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 0.85rem auto 1.75rem auto;
+    padding: 4px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(20, 27, 45, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: relative;
+}
+
+.wir-vs-du__toggle .toggle-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: calc(100% - 8px);
+    background: #0077FF;
+    border-radius: 9999px;
+    transition: left 0.3s ease, width 0.3s ease, background 0.3s ease;
+}
+
+.wir-vs-du__toggle .toggle-slider.tab-negative {
+    background: #374151;
+}
+
+.wir-vs-du .toggle-btn {
+    border: 0;
+    background: transparent;
+    color: #9ca3af;
+    border-radius: 9999px;
+    padding: 0.75rem 1.75rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.wir-vs-du .toggle-btn.is-active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.wir-vs-du__panels {
+    position: relative;
+}
+
+.wir-vs-du__panel {
+    transition: opacity 0.3s ease;
+}
+
+.wir-vs-du__panel.panel--hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.comparison-cards {
+    display: flex;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.wir-vs-du .card {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: clamp(1.25rem, 2vw, 1.75rem);
+    border-radius: 16px;
+    background: rgba(20, 27, 45, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.wir-vs-du .card h3 {
+    margin: 0;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
+    color: #f3f4f6;
+}
+
+.wir-vs-du .card p {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+    color: #d1d5db;
+}
+
+.wir-vs-du .card__cta {
+    margin-top: 1.5rem;
+}
+
+.wir-vs-du .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #0077FF;
+    color: #ffffff;
+    border-radius: 9999px;
+    padding: 0.75rem 1.75rem;
+    font-weight: 600;
+    font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    text-decoration: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wir-vs-du .cta-btn:hover {
+    background: #0066DD;
+    box-shadow: 0 0 22px rgba(0, 119, 255, 0.35);
+}
+
+.wir-vs-du .cta-button-positive {
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.wir-vs-du .cta-button-positive:hover {
+    background: #0066DD;
+    box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
+}
+
+.wir-vs-du .cta-center {
+    text-align: center;
+}
+
+.wir-vs-du .divider-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 1.5rem 0;
+    border: none;
+}
+
+.wir-vs-du .feature-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.wir-vs-du .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+    color: #f3f4f6;
+}
+
+.wir-vs-du .icon {
+    width: 1.25rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-top: 0.1rem;
+    flex: 0 0 auto;
+}
+
+.wir-vs-du .icon--check {
+    color: #00D98F;
+}
+
+.wir-vs-du .icon--x {
+    color: #e85a4f;
+}
+
+.wir-vs-du .highlight {
+    color: #00D4FF;
+    font-weight: 600;
+    display: inline;
+}
+
+.wir-vs-du .item-text {
+    color: #f3f4f6;
+    line-height: 1.6;
+}
+
+.wir-vs-du .vorteile-liste li,
+.wir-vs-du .vorteile-liste .item-text {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.wir-vs-du .nachteile-liste li,
+.wir-vs-du .nachteile-liste .item-text {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.wir-vs-du .subtext-highlight {
+    color: #00D4FF;
+    font-weight: 600;
+}
+
+@media (max-width: 767px) {
+    .comparison-cards {
+        flex-direction: column;
+    }
+
+    .wir-vs-du .toggle-btn {
+        padding: 0.6rem 1.1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wir-vs-du .toggle-btn,
+    .wir-vs-du__panel,
+    .wir-vs-du .cta-btn,
+    .wir-vs-du .cta-button-positive,
+    .wir-vs-du__toggle .toggle-slider {
+        transition: none;
+    }
+}

@@ -9,7 +9,7 @@ section.hero .hero__container {
     align-items: center !important;
     grid-template-columns: none !important;
     gap: 0 !important;
-    margin-top: 140px !important;
+    margin-top: 160px !important;
     margin-bottom: 0 !important;
     max-width: var(--container-max) !important;
     width: 100% !important;
@@ -30,14 +30,14 @@ section.hero .hero__content {
 /* === H1: Zentriert, volle Breite, weiß === */
 section.hero .hero__title {
     font-family: var(--font-heading) !important;
-    font-size: clamp(2rem, 4.2vw, 3.6rem) !important;
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem) !important;
     font-weight: var(--font-bold) !important;
     line-height: 1.15 !important;
     letter-spacing: var(--tracking-tight) !important;
     text-align: center !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin-bottom: var(--space-8) !important;
+    margin-bottom: var(--space-12) !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
     background: none !important;
@@ -61,7 +61,7 @@ section.hero .hero__body {
     gap: var(--space-10) !important;
     width: 100% !important;
     max-width: 900px !important;
-    margin-bottom: var(--space-8) !important;
+    margin-bottom: var(--space-10) !important;
     order: 2 !important;
 }
 
@@ -124,7 +124,7 @@ section.hero .hero__actions {
 
 /* === TRUST-LINE: Weiß, grüne Haken === */
 section.hero .hero__trust-line {
-    margin-top: 10px !important;
+    margin-top: 16px !important;
     margin-bottom: var(--space-16) !important;
     font-size: 0.85rem !important;
     color: #ffffff !important;
@@ -134,6 +134,15 @@ section.hero .hero__trust-line {
     justify-content: center !important;
     gap: 6px !important;
     flex-wrap: wrap !important;
+}
+
+/* === LOGO-CAROUSEL: Auf allen Geräten sichtbar === */
+section.hero .hero__logo-bar,
+.hero .logo-carousel.hero__logo-bar {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    overflow: hidden !important;
 }
 
 /* =========================================================
@@ -154,30 +163,33 @@ section.hero .hero__trust-line {
     }
 
     section.hero .hero__body {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: var(--space-5) !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: var(--space-8) !important;
         max-width: 100% !important;
     }
 
     section.hero .hero__description {
-        text-align: center !important;
-        max-width: 32rem !important;
+        text-align: left !important;
+        max-width: 480px !important;
         font-size: clamp(0.88rem, 2.4vw, 1.05rem) !important;
     }
 
-    section.hero .hero__badges {
-        align-items: center !important;
-    }
-
     section.hero .hero-badge {
-        width: 100% !important;
-        max-width: 260px !important;
         justify-content: flex-start !important;
     }
 
     section.hero .hero__trust-line {
         font-size: clamp(0.72rem, 2vw, 0.82rem) !important;
+    }
+
+    section.hero .hero__logo-bar,
+    .hero .logo-carousel.hero__logo-bar {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-top: var(--space-4) !important;
     }
 }
 
@@ -186,7 +198,8 @@ section.hero .hero__trust-line {
    ========================================================= */
 @media (max-width: 576px) {
     section.hero .hero__title {
-        font-size: clamp(1.05rem, 5.5vw, 1.35rem) !important;
+        font-size: clamp(1.15rem, 5.8vw, 1.45rem) !important;
+        padding-inline: var(--space-4) !important;
     }
 
     section.hero .hero-badge {
@@ -200,5 +213,30 @@ section.hero .hero__trust-line {
 
     section.hero .hero-badge__label {
         font-size: 0.72rem !important;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE: Handy-only gestapelt (≤767px)
+   ========================================================= */
+@media (max-width: 767px) {
+    section.hero .hero__body {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: var(--space-5) !important;
+    }
+
+    section.hero .hero__description {
+        text-align: center !important;
+        max-width: 32rem !important;
+    }
+
+    section.hero .hero__badges {
+        align-items: center !important;
+    }
+
+    section.hero .hero-badge {
+        width: 100% !important;
+        max-width: 260px !important;
     }
 }

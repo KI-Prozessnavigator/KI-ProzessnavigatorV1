@@ -1034,107 +1034,67 @@ function initBeratungsplaetzeCount() {
     el.textContent = '\u00A0' + String(slots) + '\u00A0';
 }
 
-// ===== Vorteile/Diagnose Stepper (Problems Section) =====
-function initVorteileStepper() {
-    var root = document.getElementById('vorteile-stepper');
+// ===== Vorteile-Vergleich Toggle (Wir vs. Du) =====
+function initWirVsDuToggle() {
+    var root = document.querySelector('.wir-vs-du');
     if (!root) return;
 
-    var buttons = Array.from(root.querySelectorAll('.vSeg[data-step]'));
-    if (buttons.length === 0) return;
+    var tabs = Array.from(root.querySelectorAll('[role="tab"]'));
+    var panels = Array.from(root.querySelectorAll('[role="tabpanel"]'));
+    var slider = root.querySelector('.toggle-slider');
+    if (tabs.length === 0 || panels.length === 0) return;
 
-    var iconEl = root.querySelector('[data-stepper-icon]');
-    var titleEl = root.querySelector('[data-stepper-title]');
-    var metaEl = root.querySelector('[data-stepper-meta]');
-    var stateEl = root.querySelector('[data-stepper-problem]');
-    var fixEl = root.querySelector('[data-stepper-fix]');
-    var kpiEl = root.querySelector('[data-stepper-kpi]');
-
-    var DATA = {
-        a: {
-            title: 'Fachkräfte in Administrationsschleifen',
-            meta: 'Messbarer Verlust: ca. 15h Routinearbeit pro Mitarbeiter/Woche.',
-            state: 'Manuelle Übergaben kosten Zeit: CRM-Felder pflegen, Rechnungsdaten übertragen, Reports aus Excel zusammensuchen – jede Woche wieder.',
-            fix: [
-                'Prozess-Mapping: Wo entstehen manuelle Übergaben?',
-                'Systemanbindung (CRM/ERP/Buchhaltung) via API/Automations',
-                'Automatisierte Übergabe + Monitoring'
-            ],
-            kpi: { before: '15h', after: '4–5h', label: 'Routinearbeit pro Mitarbeiter/Woche' },
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'
-        },
-        b: {
-            title: 'KI-Tools ohne Systemanbindung',
-            meta: 'Ergebnis: Technologie-Investition ohne Prozesseffekt.',
-            state: 'Lizenzen für ChatGPT, Copilot oder spezialisierte Tools sind vorhanden. Aber: keine API-Verbindung zu CRM, ERP oder Buchhaltung. Mitarbeiter exportieren, kopieren, importieren – manuell.',
-            fix: [
-                'Priorisierte Integrations-Roadmap (Quick Wins zuerst)',
-                'End‑to‑End Automations: Input → Verarbeitung → Zielsystem',
-                'Qualitätschecks + Ownership (wer überwacht was?)'
-            ],
-            kpi: { before: '20%', after: '65%', label: 'Zeit für Kundenbetreuung' },
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
-        },
-        c: {
-            title: 'Datenschutzbedenken als Innovationsbremse',
-            meta: 'Konsequenz: Projekte werden gestoppt oder nie gestartet.',
-            state: 'Die Rechtsabteilung blockiert KI-Projekte mit Verweis auf DSGVO-Risiken. Verständlich – ohne sauberes Setup bleibt nur „Nein“ als sichere Antwort. Das bremst Innovation und Umsetzung.',
-            fix: [
-                'Datenflüsse klar dokumentieren (was, wohin, warum)',
-                'DSGVO-konforme Architektur & Berechtigungen',
-                'Hosting in DE + Lösch-/Audit-Konzept'
-            ],
-            kpi: { before: 'Risiko', after: '0', label: 'DSGVO-Verstöße / Jahr (Zielbild)' },
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'
-        }
-    };
-
-    function render(key) {
-        var d = DATA[key];
-        if (!d) return;
-
-        buttons.forEach(function (btn) {
-            var isActive = btn.getAttribute('data-step') === key;
-            btn.classList.toggle('is-active', isActive);
-            btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-            btn.tabIndex = isActive ? 0 : -1;
-        });
-
-        if (iconEl) iconEl.innerHTML = d.icon || '';
-        if (titleEl) titleEl.textContent = d.title || '';
-        if (metaEl) metaEl.textContent = d.meta || '';
-        if (stateEl) stateEl.textContent = d.state || '';
-
-        if (fixEl) {
-            fixEl.innerHTML = '';
-            (d.fix || []).forEach(function (txt) {
-                var li = document.createElement('li');
-                li.textContent = txt;
-                fixEl.appendChild(li);
-            });
-        }
-
-        if (kpiEl) {
-            var k = d.kpi || {};
-            kpiEl.innerHTML =
-                '<div class="vKpi">' +
-                '  <span class="vKpi__values">' +
-                '    <span class="vKpi__before">' + (k.before || '') + '</span>' +
-                '    <span class="vKpi__arrow" aria-hidden="true">→</span>' +
-                '    <span class="vKpi__after">' + (k.after || '') + '</span>' +
-                '  </span>' +
-                '  <small>' + (k.label || '') + '</small>' +
-                '</div>';
-        }
+    function updateSlider(activeTab) {
+        if (!slider || !activeTab) return;
+        slider.style.left = activeTab.offsetLeft + 'px';
+        slider.style.width = activeTab.offsetWidth + 'px';
     }
 
-    buttons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            render(btn.getAttribute('data-step'));
+    function setActiveTab(activeTab) {
+        var targetId = activeTab.getAttribute('aria-controls');
+
+        tabs.forEach(function (tab) {
+            var isActive = tab === activeTab;
+            tab.classList.toggle('is-active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            tab.tabIndex = isActive ? 0 : -1;
+        });
+
+        panels.forEach(function (panel) {
+            var isActive = panel.id === targetId;
+            panel.classList.toggle('panel--hidden', !isActive);
+            panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        });
+
+        if (slider) {
+            var isNegative = activeTab.getAttribute('id') === 'tab-ohne';
+            slider.classList.toggle('tab-negative', isNegative);
+        }
+
+        updateSlider(activeTab);
+    }
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            setActiveTab(tab);
         });
     });
 
-    // Ensure first state is consistent
-    render('a');
+    var defaultTab = tabs[0];
+    tabs.forEach(function (tab) {
+        if (tab.getAttribute('aria-selected') === 'true') {
+            defaultTab = tab;
+        }
+    });
+
+    setActiveTab(defaultTab);
+
+    window.addEventListener('resize', function () {
+        var activeTab = tabs.find(function (tab) {
+            return tab.getAttribute('aria-selected') === 'true';
+        });
+        updateSlider(activeTab);
+    });
 }
 
 // ===== Initialization =====
@@ -1157,7 +1117,7 @@ function init() {
     initLazyLoading();
     initAccessibility();
     initContactModalFocusTrap();
-    initVorteileStepper();
+    initWirVsDuToggle();
     
     // Initialize enhanced features
     initAnimatedCounters();

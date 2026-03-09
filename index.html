@@ -681,96 +681,67 @@
 
         </section>
 
-        <section class="problems" id="problems" aria-labelledby="problems-title">
+        <section class="wir-vs-du" id="problems" data-section-name="vorteile-vergleich" aria-label="Vorteile Vergleich">
             <div class="container">
-                <header class="section__header">
-                    <span class="section__tag">KI-Implementierung ohne Tech-Blabla</span>
-                    <h2 class="section__title" id="problems-title">KI‑Implementierung, die sich<br class="br-desktop"> in 2 Wochen rechnet</h2>
-                    <p class="section__description">Drei Blockaden bei der KI‑Implementierung, die Unternehmen unterschätzen</p>
+                <header class="section__header wir-vs-du__header">
+                    <h2 class="wir-vs-du__title" id="problems-title">Warum Einzeltools und interne<br>Workarounds deine Marge auffressen</h2>
+                    <p class="wir-vs-du__description">Die meisten KMU basteln monatelang an Insellösungen – und stecken trotzdem bei unter 10 % Marge fest.<br>Unsere Kunden <span class="subtext-highlight">steigern ihre Profitabilität systematisch um über 40 %</span> – weil wir Prozesse end-to-end automatisieren,<br>statt nur einzelne Schritte zu flicken.</p>
                 </header>
-                <div class="vE" id="vorteile-stepper" data-stepper-root>
-                    <div class="vE__segmented" role="tablist" aria-label="Diagnose wählen">
-                        <button class="vSeg is-active" type="button" role="tab" aria-selected="true" data-step="a">01 Routine</button>
-                        <button class="vSeg" type="button" role="tab" aria-selected="false" data-step="b">02 Integration</button>
-                        <button class="vSeg" type="button" role="tab" aria-selected="false" data-step="c">03 DSGVO</button>
+
+                <div class="wir-vs-du__toggle-wrapper">
+                    <div class="wir-vs-du__toggle toggle-switch" role="tablist" aria-label="Vergleich wählen">
+                        <span class="toggle-slider" aria-hidden="true"></span>
+                        <button class="toggle-btn is-active" type="button" role="tab" id="tab-mit" aria-selected="true" aria-controls="panel-mit">Wir machen es</button>
+                        <button class="toggle-btn" type="button" role="tab" id="tab-ohne" aria-selected="false" aria-controls="panel-ohne">Du machst es selbst</button>
                     </div>
-                    <p class="vE__hint">Klicke auf einen Reiter, um die Diagnose zu wechseln.</p>
+                </div>
 
-                    <article class="vE__panel" aria-label="Diagnose">
-                        <div class="vE__head">
-                            <div class="vE__icon" aria-hidden="true" data-stepper-icon>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                            </div>
-                            <div class="vE__headText">
-                                <h3 class="vE__title" data-stepper-title>Fachkräfte in Administrationsschleifen</h3>
-                                <p class="vE__meta" data-stepper-meta>Messbarer Verlust: ca. 15h Routinearbeit pro Mitarbeiter/Woche.</p>
-                            </div>
-                        </div>
-
-                        <div class="vE__cols">
-                            <div class="vE__col">
-                                <h4 class="vE__label">Ist-Zustand</h4>
-                                <p class="vE__text" data-stepper-problem>Manuelle Übergaben kosten Zeit: CRM-Felder pflegen, Rechnungsdaten übertragen, Reports aus Excel zusammensuchen – jede Woche wieder.</p>
-                            </div>
-                            <div class="vE__col">
-                                <h4 class="vE__label">Lösung</h4>
-                                <ul class="vE__list" data-stepper-fix>
-                                    <li>Prozess-Mapping: Wo entstehen manuelle Übergaben?</li>
-                                    <li>Systemanbindung (CRM/ERP/Buchhaltung) via API/Automations</li>
-                                    <li>Automatisierte Übergabe + Monitoring</li>
-                                </ul>
-                            </div>
-                            <div class="vE__col">
-                                <h4 class="vE__label">Ergebnis</h4>
-                                <div class="vE__kpi" data-stepper-kpi>
-                                    <div class="vKpi">
-                                        <span class="vKpi__values">
-                                            <span class="vKpi__before">15h</span>
-                                            <span class="vKpi__arrow" aria-hidden="true">→</span>
-                                            <span class="vKpi__after">4–5h</span>
-                                        </span>
-                                        <small>Routinearbeit pro Mitarbeiter/Woche</small>
-                                    </div>
+                <div class="wir-vs-du__panels">
+                    <div class="wir-vs-du__panel" id="panel-mit" role="tabpanel" aria-labelledby="tab-mit" aria-hidden="false">
+                        <div class="comparison-cards">
+                            <article class="card card--text">
+                                <h3>Wir machen es für dich</h3>
+                                <p>Überlass uns den Aufbau deiner KI-Automatisierung – wir kennen die besten Tools, vermeiden typische Fehler und schaffen ein System, das vom ersten Tag an funktioniert. Du sparst Zeit und konzentrierst dich auf dein Kerngeschäft, während wir Prozesse automatisieren und eine nachhaltige Prozessautomatisierung Mittelstand aufbauen.</p>
+                                <div class="card__cta">
+                                    <a class="cta-btn cta-button-positive" href="/kontakt">Kostenloses Erstgespräch buchen →</a>
                                 </div>
-                            </div>
-                        </div>
-                    </article>
+                            </article>
 
-                    <div class="vBenefits" aria-label="Vorteile">
-                        <article class="vBenefit">
-                            <div class="vBenefit__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                                </svg>
-                            </div>
-                            <h3 class="vBenefit__title">70% weniger Routinearbeit</h3>
-                            <p class="vBenefit__text">Mehr Zeit für Umsatz statt Verwaltung.</p>
-                        </article>
-                        <article class="vBenefit">
-                            <div class="vBenefit__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                    <polyline points="9 12 11 14 15 10"/>
-                                </svg>
-                            </div>
-                            <h3 class="vBenefit__title">100% DSGVO-sicher</h3>
-                            <p class="vBenefit__text">Sicherheit als Enabler – nicht als Bremse.</p>
-                        </article>
-                        <article class="vBenefit">
-                            <div class="vBenefit__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-                                    <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-                                    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-                                    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-                                </svg>
-                            </div>
-                            <h3 class="vBenefit__title">In 2 Wochen produktiv</h3>
-                            <p class="vBenefit__text">Schnelle Aktivierung ohne Großprojekt.</p>
-                        </article>
+                            <article class="card card--list" aria-label="Vorteile">
+                                <ul class="feature-list vorteile-liste">
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir wählen <span class="highlight">genau die Tools</span>, die zu deinen Prozessen passen – kein Rätselraten</span></li>
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Du bekommst ein <span class="highlight">durchgängiges System</span>, das vom ersten Tag an reibungslos läuft</span></li>
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir kennen die <span class="highlight">versteckten Limits</span> aller Tools und umgehen sie von Anfang an</span></li>
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir messen den Erfolg mit <span class="highlight">klaren KPIs</span> – du siehst transparent, was funktioniert</span></li>
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">KI wird <span class="highlight">strategisch eingesetzt</span>, wo sie den größten Hebel hat</span></li>
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir setzen alles um und <span class="highlight">schulen dein Team</span>, damit ihr sofort produktiver arbeitet</span></li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="wir-vs-du__panel panel--hidden" id="panel-ohne" role="tabpanel" aria-labelledby="tab-ohne" aria-hidden="true">
+                        <div class="comparison-cards">
+                            <article class="card card--list" aria-label="Nachteile">
+                                <ul class="feature-list nachteile-liste">
+                                    <li class="drawback-item"><span class="icon icon--x" aria-hidden="true">✗</span><span class="sr-only">Nachteil:</span><span class="item-text">Du kämpfst dich durch zigtausende Tools und verlierst Wochen mit dem Vergleichen</span></li>
+                                    <li class="drawback-item"><span class="icon icon--x" aria-hidden="true">✗</span><span class="sr-only">Nachteil:</span><span class="item-text">Deine Tools arbeiten nicht zusammen – Daten werden per Copy-Paste hin und her geschoben</span></li>
+                                    <li class="drawback-item"><span class="icon icon--x" aria-hidden="true">✗</span><span class="sr-only">Nachteil:</span><span class="item-text">Du entdeckst Datenlimits oder Kompatibilitätsprobleme erst, wenn es zu spät ist</span></li>
+                                    <li class="drawback-item"><span class="icon icon--x" aria-hidden="true">✗</span><span class="sr-only">Nachteil:</span><span class="item-text">Du implementierst Verbesserungen, aber hast keine klaren Messgrößen für den Erfolg</span></li>
+                                    <li class="drawback-item"><span class="icon icon--x" aria-hidden="true">✗</span><span class="sr-only">Nachteil:</span><span class="item-text">Du investierst Wochen oder Monate in Einarbeitung und Konfiguration – Zeit, die du nicht hast</span></li>
+                                    <li class="drawback-item"><span class="icon icon--x" aria-hidden="true">✗</span><span class="sr-only">Nachteil:</span><span class="item-text">Du experimentierst mit teuren KI-Tools, ohne zu wissen, wo sie wirklich Geld sparen</span></li>
+                                </ul>
+                            </article>
+
+                            <article class="card card--text">
+                                <h3>Du machst es selbst</h3>
+                                <p>Du probierst dich durch zahlreiche Tools und Workarounds, kämpfst mit Kompatibilitätsproblemen und verlierst wertvolle Zeit – oft ohne messbaren Erfolg. Ohne Partner wird Automatisierung KMU schnell zur Dauerbaustelle, statt zur echten KI-Automatisierung für Prozessautomatisierung Mittelstand.</p>
+                                <hr class="divider-line">
+                                <div class="card__cta cta-center">
+                                    <a class="cta-btn cta-button-positive" href="/kontakt">Sichere dir lieber dein Erstgespräch →</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </div>
