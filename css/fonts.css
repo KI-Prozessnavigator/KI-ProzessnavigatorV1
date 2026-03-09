@@ -3,76 +3,51 @@
    ==========================================
    
    HINWEIS: Bitte lade die Fonts herunter:
-   1. Plus Jakarta Sans: https://fonts.google.com/specimen/Plus+Jakarta+Sans
-   2. Instrument Serif: https://fonts.google.com/specimen/Instrument+Serif
+   1. Montserrat: https://fonts.google.com/specimen/Montserrat
+   2. Lato: https://fonts.google.com/specimen/Lato
    
    Speichere die .woff2 Dateien in: /assets/fonts/
    ========================================== */
 
-/* Plus Jakarta Sans - Variable Font */
 @font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-VariableFont_wght.woff2') format('woff2');
-    font-weight: 300 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Plus Jakarta Sans - Fallback for individual weights */
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-SemiBold.woff2') format('woff2');
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-Bold.woff2') format('woff2');
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 
-/* Instrument Serif */
 @font-face {
-    font-family: 'Instrument Serif';
-    src: url('../assets/fonts/InstrumentSerif-Regular.woff2') format('woff2');
+    font-family: 'Lato';
+    src: url('../assets/fonts/Lato-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../assets/fonts/Lato-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Instrument Serif';
-    src: url('../assets/fonts/InstrumentSerif-Italic.woff2') format('woff2');
-    font-weight: 400;
-    font-style: italic;
+    font-family: 'Lato';
+    src: url('../assets/fonts/Lato-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
     font-display: swap;
 }
+
+/* TODO: Alte Font-Dateien für Instrument Serif und Plus Jakarta Sans können gelöscht werden */
 

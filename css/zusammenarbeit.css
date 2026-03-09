@@ -27,7 +27,6 @@
     font-weight: 600;
     font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
     letter-spacing: 0.04em;
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .zusammenarbeit__badge-icon svg {
@@ -37,7 +36,6 @@
 
 .zusammenarbeit__title {
     margin: 1rem 0 0.75rem;
-    font-family: "Instrument Serif", Georgia, serif;
     font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem);
     font-weight: 500;
     color: #f3f4f6;
@@ -48,7 +46,6 @@
     max-width: 700px;
     font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
     color: #d1d5db;
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .zusammenarbeit__seo {
@@ -56,7 +53,6 @@
     max-width: 700px;
     font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
     color: #9ca3af;
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .zusammenarbeit .highlight {
@@ -87,7 +83,6 @@
     color: #00d98f;
     font-weight: 500;
     font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .zusammenarbeit__time-icon svg {
@@ -136,7 +131,6 @@
     justify-content: center;
     background: linear-gradient(135deg, #0077ff 0%, #00d4ff 100%);
     color: #ffffff;
-    font-family: "Instrument Serif", Georgia, serif;
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1.25rem;
@@ -146,14 +140,12 @@
     margin: 0 0 0.5rem;
     font-size: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
     color: #f3f4f6;
-    font-family: "Instrument Serif", Georgia, serif;
 }
 
 .zusammenarbeit__step-text {
     margin: 0;
     font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
     color: #d1d5db;
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .zusammenarbeit__step-title,
@@ -179,7 +171,6 @@
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
     box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
@@ -203,7 +194,6 @@
     gap: 0.5rem;
     color: #d1d5db;
     font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 @media (max-width: 1024px) {

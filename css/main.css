@@ -1,3 +1,13 @@
+body {
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+}
+
+/* h5, h6 brauchen wir nicht separat – erben von body */
+
 /* ==========================================
    Globaler Overflow-Schutz
    ========================================== */
@@ -125,83 +135,6 @@ img, video {
 }
 
 
-/* ==========================================
-   Self-hosted Fonts (DSGVO-konform)
-   ==========================================
-   
-   HINWEIS: Bitte lade die Fonts herunter:
-   1. Plus Jakarta Sans: https://fonts.google.com/specimen/Plus+Jakarta+Sans
-   2. Instrument Serif: https://fonts.google.com/specimen/Instrument+Serif
-   
-   Speichere die .woff2 Dateien in: /assets/fonts/
-   ========================================== */
-
-/* Plus Jakarta Sans - Variable Font */
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-VariableFont_wght.woff2') format('woff2');
-    font-weight: 300 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Plus Jakarta Sans - Fallback for individual weights */
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Plus Jakarta Sans';
-    src: url('../assets/fonts/PlusJakartaSans-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Instrument Serif */
-@font-face {
-    font-family: 'Instrument Serif';
-    src: url('../assets/fonts/InstrumentSerif-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Instrument Serif';
-    src: url('../assets/fonts/InstrumentSerif-Italic.woff2') format('woff2');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
 
 
 /* ==========================================
@@ -290,8 +223,8 @@ img, video {
     /* ===== Typography ===== */
     
     /* Font Families */
-    --font-heading: 'Instrument Serif', Georgia, serif;
-    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Montserrat', Arial, sans-serif;
+    --font-body: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
     
     /* Font Sizes - Fluid Typography */
     --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -6953,7 +6886,7 @@ section.testimonials.expert-quotes,
 }
 
 .contact-modal__title {
-    font-family: var(--font-heading, 'Instrument Serif', Georgia, serif);
+    font-family: var(--font-heading);
     font-size: clamp(1.5rem, 4vw, 1.875rem);
     font-weight: 400;
     color: #00D4FF !important;
@@ -7183,7 +7116,7 @@ section.testimonials.expert-quotes,
 }
 
 .form-step__title {
-    font-family: var(--font-heading, 'Instrument Serif', Georgia, serif);
+    font-family: var(--font-heading);
     font-size: clamp(1.25rem, 3vw, 1.5rem);
     font-weight: 400;
     color: #00D4FF !important;
@@ -7499,7 +7432,7 @@ section.testimonials.expert-quotes,
 }
 
 .potential-results__title {
-    font-family: var(--font-heading, 'Instrument Serif', Georgia, serif);
+    font-family: var(--font-heading);
     font-size: 1.125rem;
     color: #ffffff;
     font-weight: 400;
@@ -7537,7 +7470,7 @@ section.testimonials.expert-quotes,
 }
 
 .result-card__value {
-    font-family: var(--font-heading, 'Instrument Serif', Georgia, serif);
+    font-family: var(--font-heading);
     font-size: clamp(1.25rem, 3vw, 1.5rem);
     color: #ffffff !important;
     font-weight: 700;
@@ -7709,7 +7642,7 @@ section.testimonials.expert-quotes,
 }
 
 .success-title {
-    font-family: var(--font-heading, 'Instrument Serif', Georgia, serif);
+    font-family: var(--font-heading);
     font-size: 1.75rem;
     color: #ffffff;
     margin-bottom: 0.75rem;
@@ -10403,7 +10336,6 @@ section.solutions .container,
 }
 
 .wir-vs-du__title {
-    font-family: 'Instrument Serif', Georgia, serif;
     font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
     margin: 0 0 0.75rem;
     color: #f3f4f6;
@@ -10413,7 +10345,6 @@ section.solutions .container,
 }
 
 .wir-vs-du__description {
-    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
     color: #d1d5db;
     max-width: 750px;
@@ -10470,7 +10401,6 @@ section.solutions .container,
     color: #9ca3af;
     border-radius: 9999px;
     padding: 0.75rem 1.75rem;
-    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 1rem;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -10521,14 +10451,12 @@ section.solutions .container,
 
 .wir-vs-du .card h3 {
     margin: 0;
-    font-family: 'Instrument Serif', Georgia, serif;
     font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
     color: #f3f4f6;
 }
 
 .wir-vs-du .card p {
     margin: 0;
-    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
     color: #d1d5db;
 }
@@ -10591,7 +10519,6 @@ section.solutions .container,
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
-    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
     color: #f3f4f6;
 }

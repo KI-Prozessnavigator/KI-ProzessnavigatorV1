@@ -126,7 +126,7 @@
 }
 
 .contact-modal__title {
-    font-family: var(--font-heading, 'Instrument Serif', Georgia, serif);
+    font-family: var(--font-heading);
     font-size: clamp(1.5rem, 4vw, 1.875rem);
     font-weight: 400;
     color: #00D4FF !important;
@@ -356,7 +356,7 @@
 }
 
 .form-step__title {
-    font-family: var(--font-heading, 'Instrument Serif', Georgia, serif);
+    font-family: var(--font-heading);
     font-size: clamp(1.2rem, 3vw, 1.4rem);
     font-weight: 400;
     color: #00D4FF !important;
@@ -844,7 +844,7 @@
 }
 
 .potential-results__title {
-    font-family: var(--font-heading, 'Instrument Serif', Georgia, serif);
+    font-family: var(--font-heading);
     font-size: 1.125rem;
     color: #ffffff;
     font-weight: 400;
@@ -882,7 +882,7 @@
 }
 
 .result-card__value {
-    font-family: var(--font-heading, 'Instrument Serif', Georgia, serif);
+    font-family: var(--font-heading);
     font-size: clamp(1.25rem, 3vw, 1.5rem);
     color: #ffffff !important;
     font-weight: 700;
@@ -1054,7 +1054,7 @@
 }
 
 .success-title {
-    font-family: var(--font-heading, 'Instrument Serif', Georgia, serif);
+    font-family: var(--font-heading);
     font-size: 1.75rem;
     color: #ffffff;
     margin-bottom: 0.75rem;

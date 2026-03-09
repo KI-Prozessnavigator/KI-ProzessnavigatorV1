@@ -84,8 +84,8 @@
     /* ===== Typography ===== */
     
     /* Font Families */
-    --font-heading: 'Instrument Serif', Georgia, serif;
-    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Montserrat', Arial, sans-serif;
+    --font-body: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
     
     /* Font Sizes - Fluid Typography */
     --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
