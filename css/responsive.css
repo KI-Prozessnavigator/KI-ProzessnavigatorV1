@@ -713,7 +713,6 @@
     .section__description,
     .problem-card__title,
     .solution-card__title,
-    .usecase-card__title,
     .pricing-card__title,
     .pricing-card__tagline,
     .trust-badge__subtitle,
@@ -845,150 +844,6 @@
     .metric-before,
     .metric-after {
         font-size: 1.1rem;
-    }
-    
-    /* ===== USE CASES KARUSSELL ===== */
-    /* Container - GLEICHER Abstand wie alle anderen Sektionen */
-    section.usecases .container,
-    .usecases .container,
-    #usecases .container {
-        width: 90%;
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-inline: 0;
-        overflow: visible;
-    }
-    
-    /* Slider Wrapper - zeigt genau 1 Karte auf Mobile */
-    section.usecases .usecases__slider-wrapper,
-    .usecases .usecases__slider-wrapper,
-    .usecases__slider-wrapper,
-    #usecases .usecases__slider-wrapper {
-        width: min(320px, calc(100vw - 32px));
-        max-width: calc(100vw - 32px);
-        margin-inline: auto;
-        padding: var(--space-3) 0;
-        overflow: hidden;
-        box-sizing: border-box;
-    }
-    
-    /* Grid/Slider - MUSS horizontal sein (Karussell-System) */
-    section.usecases .usecases__grid,
-    .usecases .usecases__grid,
-    .usecases__grid,
-    #usecases-slider,
-    div.usecases__grid,
-    div#usecases-slider {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        gap: var(--space-5);
-        grid-template-columns: unset !important;
-        align-items: stretch;
-    }
-    
-    /* Karten - responsive Breite für 1 Karte sichtbar */
-    section.usecases .usecases__grid .usecase-card,
-    .usecases .usecases__grid .usecase-card,
-    .usecases__grid .usecase-card,
-    #usecases-slider .usecase-card,
-    #usecases-slider > .usecase-card,
-    div.usecases__grid > div.usecase-card {
-        flex: 0 0 min(320px, calc(100vw - 48px));
-        width: min(320px, calc(100vw - 48px));
-        min-width: min(280px, calc(100vw - 48px));
-        max-width: min(320px, calc(100vw - 48px));
-        min-height: auto;
-        padding: var(--space-4);
-        box-sizing: border-box;
-        flex-shrink: 0;
-    }
-    
-    /* Navigation - Touch-optimiert */
-    .usecases__nav,
-    section.usecases .usecases__nav {
-        display: flex;
-        justify-content: center;
-        gap: var(--space-4);
-        margin-top: var(--space-4);
-    }
-    
-    .usecases__nav-btn,
-    .usecases__btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 48px;
-        height: 48px;
-        border-radius: var(--radius-full);
-        background: var(--color-surface);
-        border: 1px solid var(--color-border);
-        cursor: pointer;
-        transition: all var(--transition-base);
-    }
-    
-    .usecases__nav-btn:hover:not(:disabled),
-    .usecases__btn:hover:not(:disabled) {
-        background: var(--color-primary);
-        color: white;
-        border-color: var(--color-primary);
-    }
-    
-    .usecases__nav-btn:disabled,
-    .usecases__btn:disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
-    }
-    
-    /* Dots */
-    .usecases__dots,
-    section.usecases .usecases__dots {
-        display: flex;
-        justify-content: center;
-        gap: var(--space-2);
-        margin-top: var(--space-3);
-    }
-    
-    .usecases__dot {
-        width: 8px;
-        height: 8px;
-        border-radius: var(--radius-full);
-        background: var(--color-neutral-300);
-        border: none;
-        cursor: pointer;
-        transition: all var(--transition-base);
-    }
-    
-    .usecases__dot.active {
-        background: var(--color-primary);
-        width: 24px;
-    }
-    
-    /* Card Content kompakter */
-    .usecase-card__title {
-        font-size: 0.95rem;
-        margin-bottom: var(--space-2);
-    }
-    
-    .usecase-card__description {
-        font-size: 0.85rem;
-        line-height: 1.4;
-        margin-bottom: var(--space-3);
-    }
-    
-    .usecase-card__flow {
-        padding: var(--space-2);
-        gap: var(--space-2);
-    }
-    
-    .usecase-card__flow .flow-step__icon {
-        width: 28px;
-        height: 28px;
-    }
-    
-    .usecase-card__flow .flow-step__label {
-        font-size: 0.55rem;
     }
     
     /* ===== ABLAUF TIMELINE - MOBILE: vertikal ===== */
@@ -1498,7 +1353,6 @@
     .hero .container,
     .problems .container,
     .solutions .container,
-    .usecases .container,
     .testimonials .container,
     .dsgvo .container,
     .faq-section .container,
@@ -1551,25 +1405,6 @@
     .expert-quotes__grid .expert-quote-card {
         display: block !important;
         width: 100% !important;
-    }
-    
-    /* Use Cases Karussell - 2 Karten auf Tablet */
-    section.usecases .usecases__slider-wrapper,
-    .usecases .usecases__slider-wrapper,
-    .usecases__slider-wrapper {
-        width: calc(2 * 340px + 24px);
-        max-width: 95vw;
-    }
-    
-    section.usecases .usecases__grid .usecase-card,
-    .usecases .usecases__grid .usecase-card,
-    .usecases__grid .usecase-card,
-    #usecases-slider .usecase-card {
-        flex: 0 0 340px;
-        width: 340px;
-        min-width: 340px;
-        max-width: 340px;
-        min-height: 400px;
     }
     
     /* Problem/Solution Cards - 3 Spalten wie Desktop auf Tablet */
@@ -1650,7 +1485,6 @@
     .hero .container,
     .problems .container,
     .solutions .container,
-    .usecases .container,
     .testimonials .container,
     .dsgvo .container,
     .faq-section .container,
@@ -1722,7 +1556,6 @@
     /* Cards kompakter */
     .problem-card,
     .solution-card,
-    .usecase-card,
     .pricing-card {
         padding: var(--space-4);
     }
@@ -1775,7 +1608,6 @@
     .hero .container,
     .problems .container,
     .solutions .container,
-    .usecases .container,
     .testimonials .container,
     .dsgvo .container,
     .faq-section .container,
@@ -2073,7 +1905,6 @@
     
     .btn--primary,
     .pricing-card,
-    .usecase-card,
     .problem-card,
     .solution-card {
         border-width: 2px;

@@ -189,7 +189,7 @@ function scrollToSection(e) {
                 targetPosition = section.offsetTop - headerHeight + 50;
             }
             // Use Cases: etwas weiter nach unten, damit die Skip-Pfeile/Dots unten sichtbar sind
-            if (href === '#usecases') {
+            if (href === '#use-cases') {
                 targetPosition = section.offsetTop - headerHeight + 30;
             }
             
@@ -1123,7 +1123,7 @@ function init() {
     initAnimatedCounters();
     initScrollProgress();
     initBeratungsplaetzeCount(); // Beratungsplätze: Mo 7 → Sa 2, Mo Reset
-    initUseCasesSlider(); // Use Cases Slider
+    initUseCasesTabs(); // Use Cases Tabs
     
     // Initialize motion effects (respects reduced motion)
     if (!prefersReducedMotion()) {
@@ -1143,305 +1143,57 @@ function init() {
     }
 }
 
-// ===== Use Cases Slider =====
-function initUseCasesSlider() {
-    var slider = document.getElementById('usecases-slider');
-    var prevBtn = document.getElementById('usecases-prev');
-    var nextBtn = document.getElementById('usecases-next');
-    var dotsContainer = document.getElementById('usecases-dots');
-    
-    if (!slider || !prevBtn || !nextBtn) return;
-    
-    // Original-Karten
-    var originalCards = Array.from(slider.querySelectorAll('.usecase-card'));
-    var totalCards = originalCards.length;
-    
-    // Klone für Endlos-Loop (3 Karten am Anfang und Ende)
-    var cloneCount = 3;
-    
-    function getCardsPerView() {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 1024) return 2;
-        return 3;
-    }
-    
-    // Hilfsfunktion: Klon erstellen und Animations-Attribute/Klassen entfernen
-    // (sonst bleiben Klone durch animate-hidden unsichtbar, da der IntersectionObserver
-    //  sie nie beobachtet)
-    function createClone(card) {
-        var clone = card.cloneNode(true);
-        clone.classList.add('usecase-card--clone');
-        clone.classList.remove('animate-hidden');
-        clone.classList.add('animate-visible');
-        clone.removeAttribute('data-animate');
-        clone.removeAttribute('data-delay');
-        clone.setAttribute('aria-hidden', 'true');
-        return clone;
-    }
-    
-    // Klone am Ende hinzufügen (erste 3 Karten)
-    for (var i = 0; i < cloneCount; i++) {
-        slider.appendChild(createClone(originalCards[i]));
-    }
-    
-    // Klone am Anfang hinzufügen (letzte 3 Karten)
-    for (var i = totalCards - 1; i >= totalCards - cloneCount; i--) {
-        slider.insertBefore(createClone(originalCards[i]), slider.firstChild);
-    }
-    
-    // Alle Karten (inkl. Klone)
-    var allCards = Array.from(slider.querySelectorAll('.usecase-card'));
-    
-    // Konstanten
-    var ANIM_MS = 800;
-    var ANIM_CSS = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-    var GAP = 24;
-    
-    // State
-    var currentIndex = cloneCount; // Starte bei erster echten Karte
-    var isTransitioning = false;
-    var cardsPerView = getCardsPerView();
-    var safetyTimer = null;
-    
-    // ---- Hilfsfunktionen ----
-    
-    function getOffset(idx) {
-        if (!allCards[0]) return 0;
-        return idx * (allCards[0].offsetWidth + GAP);
-    }
-    
-    function setPosition(idx, animate) {
-        var offset = getOffset(idx);
-        slider.style.transition = animate ? ANIM_CSS : 'none';
-        slider.style.transform = 'translateX(-' + offset + 'px)';
-    }
-    
-    function getRealIndex() {
-        return ((currentIndex - cloneCount) % totalCards + totalCards) % totalCards;
-    }
-    
-    function updateDots() {
-        if (!dotsContainer) return;
-        var realIdx = getRealIndex();
-        var dots = dotsContainer.querySelectorAll('.usecases__dot');
-        dots.forEach(function(dot, i) {
-            dot.classList.toggle('active', i === realIdx);
+// ===== Use Cases Tabs =====
+function initUseCasesTabs() {
+    var root = document.querySelector('.use-cases-tabs');
+    if (!root) return;
+
+    var tabs = Array.from(root.querySelectorAll('[role="tab"]'));
+    var panels = Array.from(root.querySelectorAll('[role="tabpanel"]'));
+    if (tabs.length === 0 || panels.length === 0) return;
+
+    function setActiveTab(activeTab) {
+        var targetId = activeTab.getAttribute('aria-controls');
+
+        tabs.forEach(function(tab) {
+            var isActive = tab === activeTab;
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            tab.tabIndex = isActive ? 0 : -1;
+        });
+
+        panels.forEach(function(panel) {
+            var isActive = panel.id === targetId;
+            panel.classList.toggle('active', isActive);
+            panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
         });
     }
-    
-    // ---- Sicherheits-Reset: Wenn isTransitioning >2s hängt, force-reset ----
-    function startSafetyTimer() {
-        clearSafetyTimer();
-        safetyTimer = setTimeout(function() {
-            isTransitioning = false;
-        }, ANIM_MS + 1200);
-    }
-    
-    function clearSafetyTimer() {
-        if (safetyTimer) {
-            clearTimeout(safetyTimer);
-            safetyTimer = null;
-        }
-    }
-    
-    // ---- Zentrale Slide-Funktion: "Jump BEFORE Animate" ----
-    
-    function slideBy(delta, afterDone) {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        startSafetyTimer();
-        
-        var nextIndex = currentIndex + delta;
-        
-        // PRE-CHECK: Würde nextIndex in den Klon-Bereich landen?
-        if (nextIndex >= cloneCount + totalCards) {
-            // Vorwärts-Grenze erreicht: Repositioniere zum äquivalenten Klon am ANFANG
-            // z.B. Index 16 (echte Karte 13) → Index 2 (Klon von Karte 13)
-            currentIndex = currentIndex - totalCards;
-            slider.classList.add('usecases__grid--no-transition');
-            setPosition(currentIndex, false);
-            void slider.offsetWidth; // Force Reflow
-            slider.classList.remove('usecases__grid--no-transition');
-        } else if (nextIndex < cloneCount) {
-            // Rückwärts-Grenze erreicht: Repositioniere zum äquivalenten Klon am ENDE
-            // z.B. Index 3 (echte Karte 0) → Index 17 (Klon von Karte 0)
-            currentIndex = currentIndex + totalCards;
-            slider.classList.add('usecases__grid--no-transition');
-            setPosition(currentIndex, false);
-            void slider.offsetWidth; // Force Reflow
-            slider.classList.remove('usecases__grid--no-transition');
-        }
-        
-        // JETZT normal animieren (1 Karte vorwärts/rückwärts)
-        currentIndex += delta;
-        setPosition(currentIndex, true);
-        updateDots();
-        
-        // Nach Animation: Transition fertig
-        setTimeout(function() {
-            clearSafetyTimer();
-            isTransitioning = false;
-            if (afterDone) afterDone();
-        }, ANIM_MS + 100);
-    }
-    
-    function slideTo(targetRealIndex, afterDone) {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        startSafetyTimer();
-        
-        currentIndex = cloneCount + targetRealIndex;
-        setPosition(currentIndex, true);
-        updateDots();
-        
-        setTimeout(function() {
-            clearSafetyTimer();
-            isTransitioning = false;
-            if (afterDone) afterDone();
-        }, ANIM_MS + 100);
-    }
-    
-    // ---- Dots ----
-    
-    function createDots() {
-        if (!dotsContainer) return;
-        dotsContainer.replaceChildren();
-        
-        for (var i = 0; i < totalCards; i++) {
-            var dot = document.createElement('button');
-            dot.className = 'usecases__dot' + (i === 0 ? ' active' : '');
-            dot.setAttribute('aria-label', 'Gehe zu Karte ' + (i + 1));
-            dot.addEventListener('click', (function(idx) {
-                return function() {
-                    stopAutoScroll();
-                    slideTo(idx, function() {
-                        resetAutoScroll();
-                    });
-                };
-            })(i));
-            dotsContainer.appendChild(dot);
-        }
-    }
-    
-    // ---- Resize ----
-    
-    var resizeTimeout;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
-            cardsPerView = getCardsPerView();
-            applyCentering();
-            setPosition(currentIndex, false);
-            updateDots();
-        }, 250);
-    });
-    
-    // ---- Touch/Swipe ----
-    
-    var touchStartX = 0;
-    
-    slider.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    
-    slider.addEventListener('touchend', function(e) {
-        var diff = touchStartX - e.changedTouches[0].screenX;
-        if (Math.abs(diff) > 50) {
-            stopAutoScroll();
-            slideBy(diff > 0 ? 1 : -1, function() {
-                resetAutoScroll();
-            });
-        }
-    }, { passive: true });
-    
-    // ---- Auto-Scroll ----
-    
-    var autoScrollInterval = null;
-    var autoScrollEnabled = true;
-    
-    function startAutoScroll() {
-        if (!autoScrollEnabled || autoScrollInterval) return;
-        
-        autoScrollInterval = setInterval(function() {
-            if (isTransitioning) return;
-            slideBy(1);
-        }, 6000);
-    }
-    
-    function stopAutoScroll() {
-        if (autoScrollInterval) {
-            clearInterval(autoScrollInterval);
-            autoScrollInterval = null;
-        }
-    }
-    
-    function resetAutoScroll() {
-        stopAutoScroll();
-        if (autoScrollEnabled) {
-            setTimeout(function() {
-                if (autoScrollEnabled) startAutoScroll();
-            }, 8000);
-        }
-    }
-    
-    // Hover pausiert Auto-Scroll
-    slider.addEventListener('mouseenter', stopAutoScroll);
-    slider.addEventListener('mouseleave', function() {
-        if (autoScrollEnabled && !autoScrollInterval) startAutoScroll();
-    });
-    
-    allCards.forEach(function(card) {
-        card.addEventListener('mouseenter', stopAutoScroll);
-        card.addEventListener('mouseleave', function() {
-            if (autoScrollEnabled && !autoScrollInterval) {
-                setTimeout(function() {
-                    if (autoScrollEnabled && !autoScrollInterval) startAutoScroll();
-                }, 2000);
-            }
+
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            setActiveTab(tab);
+        });
+
+        tab.addEventListener('keydown', function(e) {
+            if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+            e.preventDefault();
+            var currentIndex = tabs.indexOf(tab);
+            var nextIndex = e.key === 'ArrowRight'
+                ? (currentIndex + 1) % tabs.length
+                : (currentIndex - 1 + tabs.length) % tabs.length;
+            tabs[nextIndex].focus();
+            setActiveTab(tabs[nextIndex]);
         });
     });
-    
-    // ---- Navigation Buttons ----
-    
-    prevBtn.addEventListener('click', function() {
-        stopAutoScroll();
-        slideBy(-1, function() {
-            resetAutoScroll();
-        });
+
+    var defaultTab = tabs[0];
+    tabs.forEach(function(tab) {
+        if (tab.getAttribute('aria-selected') === 'true') {
+            defaultTab = tab;
+        }
     });
-    
-    nextBtn.addEventListener('click', function() {
-        stopAutoScroll();
-        slideBy(1, function() {
-            resetAutoScroll();
-        });
-    });
-    
-    // ---- Zentrierung ----
-    
-    function applyCentering() {
-        if (!allCards[0]) return;
-        var cardWidth = allCards[0].offsetWidth;
-        var wrapperElement = slider.parentElement;
-        var wrapperStyle = window.getComputedStyle(wrapperElement);
-        var wrapperPadding = parseFloat(wrapperStyle.paddingLeft) + parseFloat(wrapperStyle.paddingRight);
-        var containerWidth = wrapperElement.offsetWidth - wrapperPadding;
-        var totalVisibleWidth = (cardWidth * cardsPerView) + (GAP * (cardsPerView - 1));
-        var sidePadding = Math.max(0, (containerWidth - totalVisibleWidth) / 2);
-        slider.style.paddingLeft = sidePadding + 'px';
-        slider.style.paddingRight = sidePadding + 'px';
-    }
-    
-    // ---- Init ----
-    
-    applyCentering();
-    createDots();
-    setPosition(currentIndex, false);
-    updateDots();
-    
-    setTimeout(function() {
-        startAutoScroll();
-    }, 1000);
+
+    setActiveTab(defaultTab);
 }
 
 // ===== Initialize Theme =====

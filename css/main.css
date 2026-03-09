@@ -2699,470 +2699,6 @@ section {
     transition: color var(--transition-base);
 }
 
-/* ===== Use Cases ===== */
-/* Zentrale Maße: alle 9 Karten starr, gleiche Breite/Höhe; grauer Flow starr */
-.usecases {
-    --usecase-card-w: 384px;
-    --usecase-card-h: 460px;
-    --usecase-flow-h: 88px;
-    --usecase-gap: 24px;
-    background: linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-background) 100%);
-    position: relative;
-    transition: background var(--transition-slow);
-    padding-top: var(--space-12);
-    padding-bottom: var(--space-8);
-    overflow: visible;
-}
-
-.usecases .section__header {
-    margin-bottom: 48px;
-    text-align: center;
-    /* Mehr Breite, damit die Description in 2 Zeilen statt 3 passt */
-    max-width: 920px;
-}
-
-.usecases .section__description {
-    text-align: center;
-    max-width: 920px;
-    margin-inline: auto;
-    /* Keine Silbentrennung / kein Wortbrechen in den Wörtern */
-    hyphens: none;
-    word-break: normal;
-    overflow-wrap: normal;
-    word-wrap: normal;
-    /* Schönerer Zeilenumbruch (falls unterstützt) */
-    text-wrap: balance;
-}
-
-/* Usecases-Subline: exakt 2 Zeilen (je Span eine Zeile), ohne Umbruch innerhalb der Zeile */
-.usecases__desc-line {
-    display: block;
-    white-space: nowrap;
-    hyphens: none;
-    word-break: normal;
-    overflow-wrap: normal;
-}
-
-/* Auf schmalen Viewports minimal verkleinern, damit beide Zeilen ohne Umbruch passen */
-@media (max-width: 768px) {
-    .usecases .section__description {
-        font-size: clamp(0.78rem, 2.6vw, var(--text-sm));
-    }
-}
-
-/* Slider Navigation Buttons */
-.usecases__nav {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-3);
-    margin-top: 0;
-    margin-bottom: var(--space-4);
-    padding: 20px 0;
-    overflow: visible;
-}
-
-.usecases__nav-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-full);
-    border: 2px solid var(--color-border);
-    background: var(--color-surface);
-    color: var(--color-text);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all var(--transition-fast);
-}
-
-.usecases__nav-btn:hover {
-    background: var(--gradient-neon-1);
-    border-color: transparent;
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.4), 0 0 20px rgba(0, 212, 255, 0.15);
-}
-
-.usecases__nav-btn:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-/* Slider Wrapper: Breite = genau 3 Karten + Abstände, mittig, nie abgeschnitten */
-.usecases__slider-wrapper {
-    position: relative;
-    padding: var(--space-4) 0;
-    margin: 0;
-    width: calc(3 * var(--usecase-card-w) + 2 * var(--usecase-gap)) !important;
-    max-width: 100%;
-    margin-inline: auto;
-    /* overflow-x entfernt: clip-path übernimmt die Begrenzung und lässt Glow durch */
-    box-sizing: border-box;
-}
-
-.usecases__grid {
-    display: flex !important;
-    flex-direction: row !important;
-    grid-template-columns: unset !important;
-    gap: var(--usecase-gap) !important;
-    transition: none;
-    scroll-behavior: smooth;
-    will-change: transform;
-}
-
-/* Karten starr: feste Breite + Höhe, alle 9 gleich */
-.usecases__grid .usecase-card {
-    flex: 0 0 var(--usecase-card-w) !important;
-    width: var(--usecase-card-w) !important;
-    min-width: var(--usecase-card-w) !important;
-    max-width: var(--usecase-card-w) !important;
-    height: var(--usecase-card-h) !important;
-    min-height: var(--usecase-card-h) !important;
-    max-height: var(--usecase-card-h) !important;
-    box-sizing: border-box;
-}
-
-/* Slider Dots */
-.usecases__dots {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-2);
-    margin-top: var(--space-2);
-    margin-bottom: var(--space-4);
-}
-
-.usecases__dot {
-    width: 10px;
-    height: 10px;
-    border-radius: var(--radius-full);
-    background: var(--color-border);
-    border: none;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-}
-
-.usecases__dot:hover,
-.usecases__dot.active {
-    background: var(--color-neon-cyan);
-    transform: scale(1.2);
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-}
-
-/* Tablet: genau 2 Karten sichtbar, mittig, starr, nicht abgeschnitten */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .usecases__slider-wrapper {
-        width: calc(2 * 340px + var(--usecase-gap)) !important;
-        max-width: calc(100vw - 32px) !important;
-        margin-inline: auto !important;
-        overflow: visible !important;
-        /* clip-path statt overflow: erlaubt Glow-Schatten (-30px horizontal) */
-        clip-path: inset(-100px -30px -100px -30px) !important;
-    }
-
-    /* KRITISCH: Flex-Layout für Karussell erzwingen! */
-    .usecases__grid {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        gap: var(--usecase-gap) !important;
-    }
-
-    .usecases__grid .usecase-card {
-        flex: 0 0 340px !important;
-        width: 340px !important;
-        min-width: 340px !important;
-        max-width: 340px !important;
-        height: auto !important;
-        min-height: 420px !important;
-        max-height: none !important;
-        box-sizing: border-box;
-    }
-
-    .usecase-card__flow {
-        min-width: 0;
-        min-height: var(--usecase-flow-h);
-        padding: var(--space-2);
-        gap: var(--space-2);
-    }
-
-    .usecase-card__flow .flow-step {
-        min-width: 0;
-        flex: 1 1 0;
-    }
-
-    .usecase-card__flow .flow-step__icon {
-        width: 28px;
-        height: 28px;
-    }
-
-    .usecase-card__flow .flow-step__label {
-        font-size: 0.55rem;
-    }
-
-    .usecase-card__flow .flow-arrow {
-        flex-shrink: 0;
-        font-size: 0.75rem;
-    }
-}
-
-/* Handy: genau 1 Karte sichtbar, mittig, starr (unter 384px schmaler = nicht abgeschnitten) */
-@media (max-width: 768px) {
-    /* Mobile: einheitliche, kompaktere Kartenhoehe (Desktop nutzt 460px) */
-    .usecases {
-        --usecase-card-h: 380px;
-    }
-
-    .usecases__slider-wrapper {
-        width: min(320px, calc(100vw - 32px)) !important;
-        max-width: calc(100vw - 32px) !important;
-        margin-inline: auto !important;
-        overflow: visible !important;
-        /* clip-path statt overflow: erlaubt Glow-Schatten (-30px horizontal) */
-        clip-path: inset(-100px -30px -100px -30px) !important;
-    }
-
-    /* KRITISCH: Flex-Layout für Karussell erzwingen! */
-    .usecases__grid {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        align-items: flex-start !important;
-        gap: var(--usecase-gap) !important;
-    }
-
-    .usecases__grid .usecase-card {
-        flex: 0 0 min(320px, calc(100vw - 48px)) !important;
-        width: min(320px, calc(100vw - 48px)) !important;
-        min-width: min(320px, calc(100vw - 48px)) !important;
-        max-width: min(320px, calc(100vw - 48px)) !important;
-        height: var(--usecase-card-h) !important;
-        min-height: var(--usecase-card-h) !important;
-        max-height: var(--usecase-card-h) !important;
-        overflow: visible !important;
-        box-sizing: border-box;
-    }
-
-    .usecases__nav {
-        display: flex !important;
-        justify-content: center !important;
-    }
-
-    /* Abstand Text -> Workflow stark reduzieren (nur Handy) */
-    .usecase-card__description {
-        margin-bottom: 12px !important;
-    }
-
-    .usecase-card__flow {
-        min-width: 0;
-        min-height: var(--usecase-flow-h);
-        padding: var(--space-2);
-        gap: var(--space-2);
-        margin-top: auto !important; /* Workflow bleibt auf gleicher Hoehe (unten) */
-    }
-
-    .usecase-card__flow .flow-step {
-        min-width: 0;
-        flex: 1 1 0;
-    }
-
-    .usecase-card__flow .flow-step__icon {
-        width: 28px;
-        height: 28px;
-    }
-
-    .usecase-card__flow .flow-step__label {
-        font-size: 0.55rem;
-    }
-
-    .usecase-card__flow .flow-arrow {
-        flex-shrink: 0;
-        font-size: 0.75rem;
-    }
-}
-
-.usecase-card {
-    padding: var(--space-8);
-    background: var(--color-surface);
-    border-radius: var(--radius-2xl);
-    border: 1px solid var(--color-border);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-}
-
-/* Verstecke visuelle Effekte auf Klonen (nur für Scroll-Logik) */
-.usecase-card--clone {
-    pointer-events: none;
-}
-
-/* Instant-Jump Klasse: erzwingt KEINE Transition (maximale Spezifität) */
-.usecases__grid--no-transition {
-    transition: none !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
-    transition-property: none !important;
-    animation: none !important;
-}
-
-.usecase-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: var(--gradient-neon-1);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity var(--transition-base);
-}
-
-.usecase-card:hover::after {
-    opacity: 0.6;
-}
-
-.usecase-card:hover {
-    transform: translateY(-8px) !important;
-    box-shadow: 0 12px 50px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.2);
-    border-color: rgba(0, 212, 255, 0.8);
-    z-index: 100;
-    position: relative;
-}
-
-.usecase-card__header {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    margin-bottom: var(--space-4);
-}
-
-.usecase-card__icon {
-    font-size: 1.5rem;
-}
-
-.usecase-card__category {
-    font-size: var(--text-xs);
-    font-weight: var(--font-semibold);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-wider);
-    color: var(--color-primary);
-    padding: var(--space-1) var(--space-3);
-    background: var(--color-primary-50);
-    border-radius: var(--radius-full);
-}
-
-.usecase-card__title {
-    font-family: var(--font-body);
-    font-size: var(--text-lg);
-    font-weight: var(--font-semibold);
-    line-height: 1.2;
-    /* Immer 2 Zeilen Platz reservieren -> gleiche Start-Hoehe fuer die Vorteils-Zeile */
-    min-height: calc(2 * 1.2em);
-    margin-bottom: var(--space-3);
-}
-
-.usecase-card__result {
-    display: flex;
-    align-items: baseline;
-    gap: var(--space-2);
-    flex-wrap: nowrap;
-    /* Einheitliche Blockhoehe, damit Beschreibung immer auf gleicher Ebene startet */
-    min-height: 2.2em;
-    margin-bottom: var(--space-6);
-}
-
-.result-number {
-    font-family: var(--font-heading);
-    font-size: var(--text-2xl);
-    color: var(--color-accent);
-}
-
-.result-text {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    white-space: nowrap;
-}
-
-/* Grauer Flow-Container: starr (feste Mindesthöhe), bleibt in der Karte */
-.usecase-card__flow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-4);
-    background: var(--color-neutral-50);
-    border-radius: var(--radius-lg);
-    gap: var(--space-3);
-    margin-top: auto;
-    min-width: 0;
-    min-height: var(--usecase-flow-h);
-    overflow: hidden;
-    box-sizing: border-box;
-    flex-shrink: 0;
-}
-
-.flow-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-1);
-    flex: 0 1 auto;
-    text-align: center;
-    min-width: 0;
-    max-width: 100px;
-}
-
-.flow-step__icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-surface);
-    border-radius: var(--radius-md);
-    font-size: 1.2rem;
-    border: 1px solid var(--color-border);
-}
-
-.flow-step--ai .flow-step__icon {
-    background: var(--gradient-neon-1);
-    border-color: transparent;
-    box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
-    animation: aiIconPulse 2s ease-in-out infinite;
-}
-
-@keyframes aiIconPulse {
-    0%, 100% {
-        box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 25px rgba(0, 119, 255, 0.5);
-    }
-}
-
-.flow-step__label {
-    font-size: 0.65rem;
-    color: var(--color-text-muted);
-    line-height: 1.2;
-    /* Einheitliche Label-Höhe (reserviert 2 Zeilen), damit der graue Flow-Container
-       auf allen Karten gleich hoch bleibt – unabhängig von Zeilenumbrüchen. */
-    min-height: calc(2 * 1.2em);
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    overflow: hidden;
-}
-
-.flow-arrow {
-    color: var(--color-primary);
-    font-weight: var(--font-bold);
-    flex-shrink: 0;
-}
-
 /* ===== DSGVO Section ===== */
 .dsgvo {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0a1628 100%);
@@ -4266,15 +3802,6 @@ section {
     transform: scale(1.1);
 }
 
-/* ===== Use Case Description ===== */
-.usecase-card__description {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-6);
-    line-height: var(--leading-relaxed);
-    flex-grow: 0; /* Nimmt nur den benötigten Platz */
-}
-
 /* ===== Pricing Guarantee ===== */
 .pricing__guarantee {
     text-align: center;
@@ -5374,7 +4901,6 @@ section.testimonials.expert-quotes,
 /* ===== Cards ===== */
 [data-theme="dark"] .problem-card,
 [data-theme="dark"] .solution-card,
-[data-theme="dark"] .usecase-card,
 [data-theme="dark"] .pricing-card,
 [data-theme="dark"] .testimonial-card {
     background: var(--color-surface);
@@ -5390,11 +4916,6 @@ section.testimonials.expert-quotes,
 [data-theme="dark"] .solution-card {
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.08), rgba(0, 212, 255, 0.05), var(--color-surface));
     border-color: rgba(0, 212, 255, 0.3);
-}
-
-[data-theme="dark"] .usecase-card:hover {
-    border-color: rgba(0, 212, 255, 0.5);
-    box-shadow: var(--shadow-neon-cyan);
 }
 
 [data-theme="dark"] .pricing-card:hover {
@@ -5586,34 +5107,6 @@ section.testimonials.expert-quotes,
     color: var(--color-neon-cyan);
 }
 
-/* ===== Use Cases Navigation ===== */
-[data-theme="dark"] .usecases__nav-btn {
-    background: var(--color-surface);
-    border-color: var(--color-border);
-    color: var(--color-text);
-}
-
-[data-theme="dark"] .usecases__nav-btn:hover {
-    background: var(--gradient-neon-1);
-    border-color: transparent;
-    color: white;
-}
-
-[data-theme="dark"] .usecases__dot {
-    background: var(--color-border);
-}
-
-[data-theme="dark"] .usecases__dot:hover,
-[data-theme="dark"] .usecases__dot.active {
-    background: var(--color-neon-cyan);
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
-}
-
-/* ===== Process Flow ===== */
-[data-theme="dark"] .usecase-card__flow {
-    background: var(--color-neutral-50);
-}
-
 [data-theme="dark"] .flow-step__icon {
     background: var(--color-surface);
     border-color: var(--color-border);
@@ -5655,16 +5148,7 @@ section.testimonials.expert-quotes,
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-[data-theme="dark"] .usecase-card__title {
-    color: #ffffff;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
 /* ===== Section Transitions ===== */
-[data-theme="dark"] .usecases {
-    background: linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-background) 100%);
-}
-
 [data-theme="dark"] .pricing {
     background: var(--color-background);
 }
@@ -5736,11 +5220,6 @@ section.testimonials.expert-quotes,
 
 [data-theme="dark"] .problem-card__text,
 [data-theme="dark"] .solution-card__text {
-    color: var(--color-text-muted);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="dark"] .usecase-card__description {
     color: var(--color-text-muted);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -8934,74 +8413,6 @@ section.testimonials.expert-quotes,
         font-size: 0.7rem;
     }
 
-    /* ===== Use Cases - Compact (nur Typo/Padding; Slider-Layout kommt aus Use-Case-Block oben) ===== */
-    .usecase-card {
-        padding: var(--space-4);
-    }
-
-    .usecase-card__header {
-        margin-bottom: var(--space-2);
-    }
-
-    .usecase-card__icon {
-        font-size: 1.2rem;
-    }
-
-    .usecase-card__category {
-        font-size: 0.6rem;
-        padding: 2px var(--space-2);
-    }
-
-    .usecase-card__title {
-        font-size: var(--text-sm);
-        margin-bottom: var(--space-2);
-    }
-
-    .usecase-card__result {
-        margin-bottom: var(--space-3);
-    }
-
-    .result-number {
-        font-size: var(--text-lg);
-    }
-
-    .result-text {
-        font-size: 0.7rem;
-    }
-
-    .usecase-card__description {
-        font-size: 0.75rem;
-        line-height: 1.4;
-        margin-bottom: var(--space-3);
-    }
-
-    /* Simplified flow on mobile */
-    .usecase-card__flow {
-        flex-direction: row;
-        justify-content: center;
-        gap: var(--space-2);
-        padding: var(--space-2);
-    }
-
-    .flow-step {
-        flex-direction: column;
-        gap: 2px;
-    }
-
-    .flow-step__icon {
-        width: 28px;
-        height: 28px;
-        font-size: 0.8rem;
-    }
-
-    .flow-step__label {
-        font-size: 0.55rem;
-    }
-
-    .flow-arrow {
-        font-size: 0.8rem;
-    }
-
     /* ===== DSGVO Section - Compact ===== */
     .dsgvo {
         padding-block: var(--space-10);
@@ -9467,8 +8878,7 @@ section.testimonials.expert-quotes,
 
     /* ===== Cards ===== */
     .problem-card,
-    .solution-card,
-    .usecase-card {
+    .solution-card {
         padding: var(--space-3);
     }
 
@@ -9488,41 +8898,6 @@ section.testimonials.expert-quotes,
     .solution-card__text {
         font-size: 0.7rem;
         line-height: 1.4;
-    }
-
-    /* ===== Use Cases ===== */
-    .usecase-card__icon {
-        font-size: 1rem;
-    }
-
-    .usecase-card__category {
-        font-size: 0.55rem;
-    }
-
-    .usecase-card__title {
-        font-size: 0.85rem;
-    }
-
-    .result-number {
-        font-size: var(--text-base);
-    }
-
-    .result-text {
-        font-size: 0.65rem;
-    }
-
-    .usecase-card__description {
-        font-size: 0.7rem;
-    }
-
-    .flow-step__icon {
-        width: 24px;
-        height: 24px;
-        font-size: 0.7rem;
-    }
-
-    .flow-step__label {
-        font-size: 0.5rem;
     }
 
     /* ===== DSGVO ===== */
@@ -9792,7 +9167,6 @@ section.testimonials.expert-quotes,
     }
 
     .pricing-card,
-    .usecase-card,
     .problem-card,
     .solution-card,
     .testimonial-card {
@@ -9824,7 +9198,6 @@ section.testimonials.expert-quotes,
     }
 
     .pricing-card,
-    .usecase-card,
     .problem-card,
     .solution-card {
         border-width: 2px;
@@ -9850,7 +9223,6 @@ section.testimonials.expert-quotes,
 
     .problem-card,
     .solution-card,
-    .usecase-card,
     .pricing-card,
     .testimonial-card,
     .faq-item {
@@ -10116,16 +9488,6 @@ section.testimonials.expert-quotes,
     padding-block: clamp(80px, 12vw, 120px) !important;
 }
 
-/* Use Cases Section - Reduziertes Padding oben (40-60px weniger) */
-[data-theme="dark"] .usecases {
-    padding-block: clamp(30px, 5vw, 60px) clamp(80px, 12vw, 120px) !important;
-}
-
-/* Use Cases Header - Weniger Abstand zu Cards (10-20px) */
-[data-theme="dark"] .usecases .section__header {
-    margin-bottom: 48px !important; /* 64px - 16px = 48px */
-}
-
 /* Problems Section - Reduziertes Padding oben */
 [data-theme="dark"] .problems {
     padding-block: clamp(20px, 4vw, 40px) clamp(80px, 12vw, 120px) !important;
@@ -10161,10 +9523,6 @@ section.testimonials.expert-quotes,
 [data-theme="dark"] .problem-card,
 [data-theme="dark"] .solution-card {
     padding: 40px !important;
-}
-
-[data-theme="dark"] .usecase-card {
-    padding: 32px !important;
 }
 
 [data-theme="dark"] .pricing-card {
@@ -10205,10 +9563,6 @@ section.testimonials.expert-quotes,
     gap: 32px !important;
 }
 
-[data-theme="dark"] .usecases__grid {
-    gap: 24px !important; /* wie Slider-JS (24px), sonst Verschiebung falsch */
-}
-
 [data-theme="dark"] .pricing__grid {
     gap: 32px !important;
 }
@@ -10240,7 +9594,6 @@ section.testimonials.expert-quotes,
 
 [data-theme="dark"] .problem-card,
 [data-theme="dark"] .solution-card,
-[data-theme="dark"] .usecase-card,
 [data-theme="dark"] .pricing-card,
 [data-theme="dark"] .testimonial-card,
 [data-theme="dark"] .faq-item {
@@ -10255,13 +9608,6 @@ section.testimonials.expert-quotes,
     box-shadow: 
         0 20px 60px rgba(0, 119, 255, 0.15),
         0 0 40px rgba(0, 119, 255, 0.1) !important;
-}
-
-[data-theme="dark"] .usecase-card:hover {
-    transform: translateY(-6px) !important;
-    box-shadow: 
-        0 16px 48px rgba(0, 119, 255, 0.12),
-        0 0 30px rgba(0, 119, 255, 0.08) !important;
 }
 
 [data-theme="dark"] .pricing-card:hover {
@@ -10323,35 +9669,6 @@ section.testimonials.expert-quotes,
     stroke-width: 1.5 !important;
     fill: none !important;
     filter: drop-shadow(0 0 8px rgba(0, 119, 255, 0.5)) !important;
-}
-
-/* Use Case Icons */
-[data-theme="dark"] .usecase-card__icon {
-    width: 40px !important;
-    height: 40px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: linear-gradient(135deg, rgba(0, 119, 255, 0.15) 0%, rgba(0, 119, 255, 0.05) 100%) !important;
-    border: 1px solid rgba(0, 119, 255, 0.3) !important;
-    border-radius: 10px !important;
-    font-size: 0 !important;
-    box-shadow: 0 0 20px rgba(0, 119, 255, 0.15) !important;
-    transition: all 0.3s ease !important;
-}
-
-[data-theme="dark"] .usecase-card:hover .usecase-card__icon {
-    box-shadow: 0 0 30px rgba(0, 119, 255, 0.25) !important;
-    border-color: rgba(0, 119, 255, 0.5) !important;
-}
-
-[data-theme="dark"] .usecase-card__icon svg {
-    width: 20px !important;
-    height: 20px !important;
-    stroke: #0077FF !important;
-    stroke-width: 1.5 !important;
-    fill: none !important;
-    filter: drop-shadow(0 0 6px rgba(0, 119, 255, 0.5)) !important;
 }
 
 /* ===== 5. FEATURED PRICING CARD ===== */
@@ -10536,7 +9853,6 @@ section.testimonials.expert-quotes,
 [data-theme="dark"] .logo-carousel,
 [data-theme="dark"] .problems,
 [data-theme="dark"] .solutions,
-[data-theme="dark"] .usecases,
 [data-theme="dark"] .pricing,
 [data-theme="dark"] .testimonials,
 [data-theme="dark"] .faq-section {
@@ -10567,26 +9883,6 @@ section.testimonials.expert-quotes,
 }
 
 [data-theme="dark"] .problems::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 119, 255, 0.6), transparent);
-}
-
-/* Use Cases Trennbalken */
-[data-theme="dark"] .usecases {
-    position: relative;
-    border-top: 1px solid rgba(0, 119, 255, 0.25) !important;
-    box-shadow: 
-        0 -30px 80px -30px rgba(0, 119, 255, 0.12),
-        inset 0 1px 0 rgba(0, 119, 255, 0.1) !important;
-}
-
-[data-theme="dark"] .usecases::before {
     content: '';
     position: absolute;
     top: 0;
@@ -10823,47 +10119,6 @@ section.testimonials.expert-quotes,
 [data-theme="dark"] .hero-trust-text {
     white-space: nowrap !important;
     line-height: 1 !important;
-}
-
-/* ===== 12. USE CASE RESULT - HORIZONTALE AUSRICHTUNG ===== */
-
-[data-theme="dark"] .usecase-card__result {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    flex-wrap: wrap !important;
-}
-
-[data-theme="dark"] .usecase-card__result .result-number {
-    display: inline-block !important;
-    line-height: 1 !important;
-}
-
-[data-theme="dark"] .usecase-card__result .result-icon {
-    width: 18px !important;
-    height: 18px !important;
-    flex-shrink: 0 !important;
-    stroke: currentColor !important;
-    vertical-align: middle !important;
-    margin: 0 !important;
-}
-
-[data-theme="dark"] .usecase-card__result .result-text {
-    line-height: 1 !important;
-}
-
-/* ===== 13. USE CASE RESULT NUMBERS - GRÜN ===== */
-
-[data-theme="dark"] .usecase-card__result .result-number {
-    color: #00D26A !important;
-    background: linear-gradient(135deg, #00D26A 0%, #00E676 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-}
-
-[data-theme="dark"] .usecase-card__result .result-icon {
-    stroke: #00D26A !important;
 }
 
 /* Trust Badge Icons */
@@ -11147,7 +10402,7 @@ section.solutions .container,
     align-items: center;
     justify-content: center;
     width: auto;
-    margin: 0.85rem auto 1.75rem auto;
+    margin: calc(0.85rem - 20px) auto 1.75rem auto;
     padding: 4px;
     border-radius: 9999px;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -11155,6 +10410,10 @@ section.solutions .container,
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     position: relative;
+}
+
+.wir-vs-du .no-wrap {
+    white-space: nowrap;
 }
 
 .wir-vs-du__toggle .toggle-slider {
