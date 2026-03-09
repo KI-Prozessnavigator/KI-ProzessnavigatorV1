@@ -24,7 +24,6 @@
 
 .rechner-v3__title {
     font-size: var(--text-3xl);
-    color: #f3f4f6;
     text-align: center;
     margin-bottom: 0.75rem;
 }
@@ -82,13 +81,34 @@
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: #9ca3af;
-    border-radius: 9999px;
+    border-radius: 8px;
     padding: 0.5rem 1.25rem;
     font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
     font-weight: 500;
     cursor: pointer;
     transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
+
+.rechner-v3__team-btn:not(.active) {
+    animation: subtle-pulse 2.5s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.rechner-v3__team-btn.active {
+    animation: none;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.rechner-v3__team-btn:not(.active):hover {
+    animation-play-state: paused;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.rechner-v3__team-toggle .rechner-v3__team-btn:nth-child(1) { animation-delay: 0s; }
+.rechner-v3__team-toggle .rechner-v3__team-btn:nth-child(2) { animation-delay: 0.3s; }
+.rechner-v3__team-toggle .rechner-v3__team-btn:nth-child(3) { animation-delay: 0.6s; }
 
 .rechner-v3__team-btn:hover {
     border-color: rgba(255, 255, 255, 0.3);
@@ -183,7 +203,7 @@
     background: #141b2d;
     border: 1px solid #1f2937;
     border-radius: 8px;
-    color: #f3f4f6;
+    color: #ffffff;
     text-align: center;
     padding: 0.4rem;
     font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
@@ -196,14 +216,14 @@
 }
 
 .rechner-slider-unit {
-    color: #9ca3af;
+    color: #d1d5db;
     font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
     margin-left: 0.25rem;
 }
 
 .rechner-v3__hint {
     font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-    color: #9ca3af;
+    color: #d1d5db;
     margin-top: 0.5rem;
 }
 
@@ -211,7 +231,6 @@
     font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #00D4FF;
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -220,7 +239,7 @@
 .rechner-v3__amount-currency {
     font-size: clamp(2.5rem, 1.75rem + 3.75vw, 4.5rem);
     font-weight: 700;
-    color: #f3f4f6;
+    color: #ffffff;
 }
 
 .rechner-v3__amount-value {
@@ -229,7 +248,7 @@
 
 .rechner-v3__amount-meta {
     font-size: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
-    color: #9ca3af;
+    color: #d1d5db;
     display: block;
     margin-top: 0.25rem;
 }
@@ -256,7 +275,7 @@
 
 .rechner-v3__time {
     font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-    color: #9ca3af;
+    color: #d1d5db;
     margin-top: 1.25rem;
 }
 
@@ -269,7 +288,7 @@
     background: #0077FF;
     color: #ffffff;
     padding: 1rem 2.5rem;
-    border-radius: 12px;
+    border-radius: 8px;
     font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
     font-weight: 600;
     box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
@@ -289,7 +308,7 @@
 
 .rechner-v3__trust {
     font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-    color: #9ca3af;
+    color: #d1d5db;
     text-align: center;
     margin-top: 0.75rem;
     display: flex;

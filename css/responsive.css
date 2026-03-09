@@ -117,7 +117,7 @@
         background-color: transparent !important;
         color: white !important;
         border: none !important;
-        border-radius: var(--radius-full);
+        border-radius: 8px;
         font-weight: 600;
         box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
         text-align: center;
@@ -146,7 +146,6 @@
     .header .nav__menu .nav__link--cta:hover,
     .header .nav__menu .nav__link--cta:focus,
     .header .nav__menu .nav__link--cta:active {
-        transform: translateY(-2px);
         box-shadow: 0 0 25px rgba(0, 119, 255, 0.5);
         filter: brightness(1.1);
         background: var(--gradient-neon-1) !important;
@@ -472,7 +471,7 @@
         background-color: transparent !important;
         color: white !important;
         border: none !important;
-        border-radius: var(--radius-full);
+        border-radius: 8px;
         font-weight: 600;
         box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
         text-align: center;
@@ -505,7 +504,6 @@
     .header .nav__menu .nav__link--cta:hover,
     .header .nav__menu .nav__link--cta:focus,
     .header .nav__menu .nav__link--cta:active {
-        transform: translateY(-2px);
         box-shadow: 0 0 25px rgba(0, 119, 255, 0.5);
         filter: brightness(1.1);
         background: var(--gradient-neon-1) !important;

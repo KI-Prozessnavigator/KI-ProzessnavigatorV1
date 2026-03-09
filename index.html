@@ -198,7 +198,7 @@
     <link rel="stylesheet" href="css/main.css?v=3.9">
     <link rel="stylesheet" href="css/contact-modal.css?v=2.0">
     <link rel="stylesheet" href="css/responsive.css?v=5.8">
-    <link rel="stylesheet" href="css/zusammenarbeit.css?v=1.0">
+    <link rel="stylesheet" href="css/zusammenarbeit.css?v=1.1">
     <link rel="stylesheet" href="css/hero-override.css?v=1.0">
     <link rel="stylesheet" href="css/use-cases-override.css?v=1.0">
     <link rel="stylesheet" href="css/calculator-v3.css?v=1.0">
@@ -210,7 +210,7 @@
         #timeSaved span,
         #moneySaved span,
         #capacityBoost span,
-        .result-card span,
+        .result-card__value,
         .result-card__value span,
         div[id="timeSaved"] > span,
         div[id="moneySaved"] > span,
@@ -221,9 +221,7 @@
         }
         
         /* Stelle sicher, dass ALLE Elemente in Result Cards weiß sind */
-        .result-card,
-        .result-card *,
-        .result-card__label,
+        .result-card__value,
         .result-card__detail {
             color: #ffffff !important;
         }
@@ -337,7 +335,6 @@
 
         .ablauf__benefits-label {
             display: block;
-            color: #00D4FF;
             font-weight: 600;
             font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
             text-transform: uppercase;
@@ -430,7 +427,7 @@
                 <li class="nav__item"><a href="/ablauf" class="nav__link">Ablauf</a></li>
                 <li class="nav__item"><a href="/dsgvo" class="nav__link">DSGVO</a></li>
                 <li class="nav__item"><a href="/faq" class="nav__link">FAQ</a></li>
-                <li class="nav__item"><a href="/ueber-uns" class="nav__link">Über uns</a></li>
+                <li class="nav__item"><a href="/ueber-uns.html" class="nav__link">Über uns</a></li>
                 <li class="nav__item"><a href="/kontakt" class="nav__link nav__link--cta">Beratung anfragen</a></li>
             </ul>
             
@@ -791,7 +788,7 @@
             <div class="container">
                 <header class="section__header wir-vs-du__header">
                     <h2 class="wir-vs-du__title" id="problems-title">Warum Einzeltools und interne<br>Workarounds deine Marge auffressen</h2>
-                    <p class="wir-vs-du__description"><span class="no-wrap">Die meisten KMU basteln monatelang an Insellösungen – und stecken trotzdem bei unter 10 % Marge fest.</span><br>Unsere Kunden <span class="subtext-highlight">steigern ihre Profitabilität systematisch um über 40 %</span><br>– weil wir Prozesse end-to-end automatisieren, statt nur einzelne Schritte zu flicken.<br><br>Klicke dich durch die einzelnen Module – und finde deinen größten Margenbooster.</p>
+                    <p class="wir-vs-du__description"><span class="no-wrap">Die meisten KMU basteln monatelang an Insellösungen – und stecken trotzdem bei unter 10 % Marge fest.</span><br>Unsere Kunden <span class="text-highlight">steigern ihre Profitabilität systematisch um über 40 %</span><br>– weil wir Prozesse end-to-end automatisieren, statt nur einzelne Schritte zu flicken.<br><br>Klicke dich durch die einzelnen Module – und finde deinen größten Margenbooster.</p>
                 </header>
 
                 <div class="wir-vs-du__toggle-wrapper">
@@ -815,12 +812,12 @@
 
                             <article class="card card--list" aria-label="Vorteile">
                                 <ul class="feature-list vorteile-liste">
-                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir wählen <span class="highlight">genau die Tools</span>, die zu deinen Prozessen passen – kein Rätselraten</span></li>
-                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Du bekommst ein <span class="highlight">durchgängiges System</span>, das vom ersten Tag an reibungslos läuft</span></li>
-                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir kennen die <span class="highlight">versteckten Limits</span> aller Tools und umgehen sie von Anfang an</span></li>
-                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir messen den Erfolg mit <span class="highlight">klaren KPIs</span> – du siehst transparent, was funktioniert</span></li>
-                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">KI wird <span class="highlight">strategisch eingesetzt</span>, wo sie den größten Hebel hat</span></li>
-                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir setzen alles um und <span class="highlight">schulen dein Team</span>, damit ihr sofort produktiver arbeitet</span></li>
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir wählen <span class="text-highlight">genau die Tools</span>, die zu deinen Prozessen passen – kein Rätselraten</span></li>
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Du bekommst ein <span class="text-highlight">durchgängiges System</span>, das vom ersten Tag an reibungslos läuft</span></li>
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir kennen die <span class="text-highlight">versteckten Limits</span> aller Tools und umgehen sie von Anfang an</span></li>
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir messen den Erfolg mit <span class="text-highlight">klaren KPIs</span> – du siehst transparent, was funktioniert</span></li>
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">KI wird <span class="text-highlight">strategisch eingesetzt</span>, wo sie den größten Hebel hat</span></li>
+                                    <li class="benefit-item"><span class="icon icon--check" aria-hidden="true">✓</span><span class="sr-only">Vorteil:</span><span class="item-text">Wir setzen alles um und <span class="text-highlight">schulen dein Team</span>, damit ihr sofort produktiver arbeitet</span></li>
                                 </ul>
                             </article>
                         </div>
@@ -906,7 +903,7 @@
                     </div>
 
                     <div class="rechner-v3__card rechner-v3__results">
-                        <div class="rechner-v3__result-label">DEIN EINSPARPOTENZIAL</div>
+                        <div class="rechner-v3__result-label text-highlight">DEIN EINSPARPOTENZIAL</div>
                         <div class="rechner-v3__amount">
                             <div class="rechner-v3__amount-main">
                                 <span class="rechner-v3__amount-value" id="savings-year">61.600</span>
@@ -935,9 +932,9 @@
         <section class="use-cases-tabs" id="use-cases" aria-label="KI-Automatisierungen nach Geschäftsbereich" data-section-name="use-cases">
             <div class="container use-cases-tabs__container">
                 <header class="use-cases-tabs__header">
-                    <h2 class="use-cases-tabs__title">Systeme, die deine Marge auf <span class="highlight-cyan">+40 %</span> boosten</h2>
+                    <h2 class="use-cases-tabs__title">Systeme, die deine Marge auf <span class="text-highlight">+40 %</span> boosten</h2>
                     <p class="use-cases-tabs__subtext">Einzeln nimmt dir jeder Prozess bereits konkrete Arbeit ab. In der Kombination entsteht ein komplettes System, das Prozesse automatisieren hilft, KI-Automatisierung für Automatisierung KMU liefert und deine Abläufe dauerhaft effizienter macht, damit du deine Marge steigern kannst.</p>
-                    <p class="use-cases-tabs__prompt"><span class="highlight-cyan">Klicke</span> dich durch die einzelnen Module – und finde deinen größten Margenbooster.</p>
+                    <p class="use-cases-tabs__prompt"><span class="text-highlight">Klicke</span> dich durch die einzelnen Module – und finde deinen größten Margenbooster.</p>
                 </header>
 
                 <div class="use-cases-tabs__tablist" role="tablist" aria-label="Geschäftsbereiche">
@@ -1395,7 +1392,7 @@
                                 Wo verlierst du wirklich Zeit und Geld? Wir durchleuchten deine Abläufe in Vertrieb, Verwaltung und Backoffice – und finden die Prozesse mit dem größten Hebel.
                             </p>
                             <div class="ablauf__benefits">
-                                <span class="ablauf__benefits-label">Du bekommst:</span>
+                                <span class="ablauf__benefits-label text-highlight">Du bekommst:</span>
                                 <ul class="ablauf__benefits-list">
                                     <li><span class="ablauf__benefits-check">✓</span><span>Komplette Prozess-Analyse aller Abteilungen</span></li>
                                     <li><span class="ablauf__benefits-check">✓</span><span>Klare Übersicht: Welche Aufgaben fressen die meiste Zeit?</span></li>
@@ -1420,7 +1417,7 @@
                                 Wir eliminieren unnötige Handarbeit, verknüpfen deine Tools und setzen KI gezielt dort ein, wo sie den größten Unterschied macht – keine Spielereien, nur messbarer Nutzen.
                             </p>
                             <div class="ablauf__benefits">
-                                <span class="ablauf__benefits-label">Du bekommst:</span>
+                                <span class="ablauf__benefits-label text-highlight">Du bekommst:</span>
                                 <ul class="ablauf__benefits-list">
                                     <li><span class="ablauf__benefits-check">✓</span><span>Automatisierte Workflows für deine Kernprozesse</span></li>
                                     <li><span class="ablauf__benefits-check">✓</span><span>Intelligente Verknüpfung deiner bestehenden Software</span></li>
@@ -1445,7 +1442,7 @@
                                 Dein Team arbeitet ab Tag 1 mit den neuen Systemen. Wir schulen praxisnah, begleiten die Einführung und stellen sicher, dass die Entlastung sofort spürbar ist.
                             </p>
                             <div class="ablauf__benefits">
-                                <span class="ablauf__benefits-label">Du bekommst:</span>
+                                <span class="ablauf__benefits-label text-highlight">Du bekommst:</span>
                                 <ul class="ablauf__benefits-list">
                                     <li><span class="ablauf__benefits-check">✓</span><span>Hands-on-Schulungen für dein gesamtes Team</span></li>
                                     <li><span class="ablauf__benefits-check">✓</span><span>Nahtlose Integration in den bestehenden Arbeitsalltag</span></li>
@@ -1488,19 +1485,11 @@
         <section class="zusammenarbeit" id="zusammenarbeit" aria-label="So läuft die Zusammenarbeit ab" data-section-name="zusammenarbeit-prozess">
             <div class="container">
                 <div class="zusammenarbeit__header">
-                    <span class="zusammenarbeit__badge">
-                        <span class="zusammenarbeit__badge-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 7.2l5-.7L12 2z"/>
-                            </svg>
-                        </span>
-                        So arbeiten wir zusammen
-                    </span>
                     <h2 class="zusammenarbeit__title">
-                        In 4 Schritten zu Prozessen, die <span class="highlight">dein Team wirklich entlasten</span>
+                        In 4 Schritten zu Prozessen, die <span class="text-highlight">dein Team wirklich entlasten</span>
                     </h2>
                     <p class="zusammenarbeit__subtitle">
-                        Kein monatelanges Projekt, keine Disruption im Tagesgeschäft. Wir übernehmen die Umsetzung – du konzentrierst dich auf das, was <span class="highlight-strong">Umsatz bringt</span>.
+                        Kein monatelanges Projekt, keine Disruption im Tagesgeschäft. Wir übernehmen die Umsetzung – du konzentrierst dich auf das, was <span class="text-highlight">Umsatz bringt</span>.
                     </p>
                     <p class="zusammenarbeit__seo">
                         Wir helfen KMU, Prozesse automatisieren und Automatisierung mit sauberer Integration umzusetzen.
@@ -1512,7 +1501,7 @@
                                 <path d="M12 7v5l3 2"/>
                             </svg>
                         </span>
-                        ⏱ Dein Zeitaufwand: nur wenige Stunden insgesamt
+                        Dein Zeitaufwand: nur wenige Stunden insgesamt
                     </div>
                 </div>
 
@@ -1522,7 +1511,7 @@
                         <div class="zusammenarbeit__step-content">
                             <h3 class="zusammenarbeit__step-title">Prozess-Analyse &amp; Konzept</h3>
                             <p class="zusammenarbeit__step-text">
-                                Wir schauen uns deine <span class="inline-highlight">wichtigsten Abläufe</span> gemeinsam an, identifizieren die größten Zeitfresser und entwickeln ein Automatisierungskonzept, das sich nahtlos in deinen Arbeitsalltag einfügt.
+                                Wir schauen uns deine <span class="text-highlight">wichtigsten Abläufe</span> gemeinsam an, identifizieren die größten Zeitfresser und entwickeln ein Automatisierungskonzept, das sich nahtlos in deinen Arbeitsalltag einfügt.
                             </p>
                         </div>
                     </div>
@@ -1531,7 +1520,7 @@
                         <div class="zusammenarbeit__step-content">
                             <h3 class="zusammenarbeit__step-title">Aufbau &amp; Integration</h3>
                             <p class="zusammenarbeit__step-text">
-                                Wir setzen die Automatisierungen mit <span class="inline-highlight">passgenauen Tools</span> wie Make, n8n oder Airtable um – und binden alles an die Systeme an, die du bereits nutzt. Kein Software-Wechsel nötig.
+                                Wir setzen die Automatisierungen mit <span class="text-highlight">passgenauen Tools</span> wie Make, n8n oder Airtable um – und binden alles an die Systeme an, die du bereits nutzt. Kein Software-Wechsel nötig.
                             </p>
                         </div>
                     </div>
@@ -1540,7 +1529,7 @@
                         <div class="zusammenarbeit__step-content">
                             <h3 class="zusammenarbeit__step-title">Praxistest &amp; Feinschliff</h3>
                             <p class="zusammenarbeit__step-text">
-                                Jede Automation wird <span class="inline-highlight">im echten Betrieb getestet</span>, feinjustiert und so optimiert, dass sie dauerhaft stabil und fehlerfrei läuft – ohne Überraschungen.
+                                Jede Automation wird <span class="text-highlight">im echten Betrieb getestet</span>, feinjustiert und so optimiert, dass sie dauerhaft stabil und fehlerfrei läuft – ohne Überraschungen.
                             </p>
                         </div>
                     </div>
@@ -1549,7 +1538,7 @@
                         <div class="zusammenarbeit__step-content">
                             <h3 class="zusammenarbeit__step-title">Übergabe &amp; Begleitung</h3>
                             <p class="zusammenarbeit__step-text">
-                                Du erhältst eine <span class="inline-highlight">vollständige Dokumentation</span>, Zugang zu allem – und auf Wunsch laufende Betreuung, damit du jederzeit anpassen oder erweitern kannst.
+                                Du erhältst eine <span class="text-highlight">vollständige Dokumentation</span>, Zugang zu allem – und auf Wunsch laufende Betreuung, damit du jederzeit anpassen oder erweitern kannst.
                             </p>
                         </div>
                     </div>
@@ -1652,7 +1641,7 @@
                 <div class="faq-section__wrapper">
                     <div class="faq">
                         <header class="faq__header">
-                            <span class="section__tag">Ihre Fragen, ehrlich beantwortet</span>
+                            <span class="section__tag text-highlight">Ihre Fragen, ehrlich beantwortet</span>
                             <h2 class="section__title section__title--left" id="faq-title">Das werden wir oft gefragt</h2>
                         </header>
                         
@@ -1694,7 +1683,7 @@
                                         Kein Training von KI-Modellen mit Ihren Daten. Hosting in Frankfurt. Löschung auf Knopfdruck.
                                     </p>
                                     <p>
-                                        <a href="/datenschutz" style="color: var(--color-primary); text-decoration: underline;">
+                                        <a href="/datenschutz.html">
                                             → Vollständige Datenschutzerklärung lesen
                                         </a>
                                     </p>
@@ -1754,7 +1743,7 @@
                                 <div class="form__group form__group--checkbox">
                                     <input type="checkbox" id="privacy-consent" name="privacy" required aria-describedby="privacy-hint">
                                     <label for="privacy-consent">
-                                        Ich stimme der <a href="/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu und willige in die Verarbeitung meiner Daten ein.<span class="required" aria-hidden="true">*</span>
+                                        Ich stimme der <a href="/datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu und willige in die Verarbeitung meiner Daten ein.<span class="required" aria-hidden="true">*</span>
                                     </label>
                                 </div>
                                 <button type="submit" class="btn btn--primary btn--full">
@@ -1841,9 +1830,9 @@
                 <div class="footer__links-group">
                     <h4 class="footer__heading">Rechtliches</h4>
                     <ul class="footer__links">
-                        <li><a href="/datenschutz">Datenschutz</a></li>
-                        <li><a href="/impressum">Impressum</a></li>
-                        <li><a href="/agb">AGB</a></li>
+                        <li><a href="/datenschutz.html">Datenschutz</a></li>
+                        <li><a href="/impressum.html">Impressum</a></li>
+                        <li><a href="/agb.html">AGB</a></li>
                         <li><a href="javascript:void(0)" onclick="openCookieSettings();" class="cookie-settings-link">Cookie-Einstellungen</a></li>
                     </ul>
                 </div>
@@ -2138,7 +2127,7 @@
                             <label class="privacy-checkbox">
                                 <input type="checkbox" name="privacy" required>
                                 <span class="privacy-checkbox__text">
-                                    Ich stimme der <a href="/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu 
+                                    Ich stimme der <a href="/datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu 
                                     und willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. <span class="required">*</span>
                                 </span>
                             </label>
@@ -2449,11 +2438,11 @@
                         <div class="potential-results__content potential-results__content--two">
                             <div class="result-card">
                                 <span class="result-card__value" id="result-hours">14h/Woche</span>
-                                <span class="result-card__label">Zeitersparnis</span>
+                                <span class="result-card__label text-highlight">Zeitersparnis</span>
                             </div>
                             <div class="result-card">
                                 <span class="result-card__value" id="result-savings">2.800€/Monat</span>
-                                <span class="result-card__label">Kosteneinsparung</span>
+                                <span class="result-card__label text-highlight">Kosteneinsparung</span>
                             </div>
                         </div>
 
@@ -2518,7 +2507,7 @@
                             <label class="privacy-checkbox">
                                 <input type="checkbox" name="privacy" required>
                                 <span class="privacy-checkbox__text">
-                                    Ich stimme der <a href="/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu 
+                                    Ich stimme der <a href="/datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu 
                                     und willige in die Verarbeitung meiner Daten zur Zusendung der Analyse und Kontaktaufnahme ein. <span class="required">*</span>
                                 </span>
                             </label>
@@ -2577,7 +2566,7 @@
                 <p class="cookie-banner__text" id="cookie-desc">
                     Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. 
                     Sie können wählen, welche Cookie-Kategorien Sie zulassen möchten.
-                    <a href="/datenschutz">Datenschutzerklärung</a>
+                    <a href="/datenschutz.html">Datenschutzerklärung</a>
                 </p>
             </div>
             <div class="cookie-banner__actions">
@@ -2769,9 +2758,9 @@
             
             <div class="cookie-modal__footer">
                 <div class="cookie-modal__info">
-                    <a href="/datenschutz" class="cookie-modal__link">Datenschutzerklärung</a>
+                    <a href="/datenschutz.html" class="cookie-modal__link">Datenschutzerklärung</a>
                     <span class="cookie-modal__separator">|</span>
-                    <a href="/impressum" class="cookie-modal__link">Impressum</a>
+                    <a href="/impressum.html" class="cookie-modal__link">Impressum</a>
                 </div>
                 <div class="cookie-modal__buttons">
                     <button class="cookie-modal__btn cookie-modal__btn--save" id="cookie-save-selection">

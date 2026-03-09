@@ -37,8 +37,6 @@ section.hero .hero__title {
     width: 100% !important;
     max-width: 100% !important;
     margin-bottom: var(--space-12) !important;
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
     background: none !important;
     -webkit-background-clip: unset !important;
     background-clip: unset !important;
@@ -67,7 +65,6 @@ section.hero .hero__body {
 /* === DESCRIPTION: Links, weiß === */
 section.hero .hero__description {
     font-size: var(--text-lg) !important;
-    color: #ffffff !important;
     max-width: 480px !important;
     text-align: left !important;
     line-height: 1.65 !important;
@@ -106,7 +103,6 @@ section.hero .hero-badge {
 }
 
 section.hero .hero-badge__label {
-    color: #ffffff !important;
 }
 
 /* === ACTIONS: CTA + Trust, zentriert === */
@@ -126,7 +122,6 @@ section.hero .hero__trust-line {
     margin-top: 16px !important;
     margin-bottom: var(--space-16) !important;
     font-size: 0.85rem !important;
-    color: #ffffff !important;
     text-align: center !important;
     display: flex !important;
     align-items: center !important;

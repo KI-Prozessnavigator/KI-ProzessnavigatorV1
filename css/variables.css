@@ -76,9 +76,14 @@
     /* Semantic Colors */
     --color-background: #fefdfb;
     --color-surface: #ffffff;
-    --color-text: var(--color-neutral-800);
-    --color-text-muted: var(--color-neutral-500);
-    --color-text-light: var(--color-neutral-400);
+    --color-text: #ffffff;
+    --color-text-muted: #d1d5db;
+    --color-text-inactive: #9ca3af;
+    --color-text-highlight: #00FFFF;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #d1d5db;
+    --color-bg-primary: #0a0e1a;
+    --color-bg-secondary: #141b2d;
     --color-border: var(--color-neutral-200);
     
     /* ===== Typography ===== */
@@ -185,9 +190,14 @@
     /* Background Colors */
     --color-background: #0a0e1a;
     --color-surface: #141b2d;
-    --color-text: #f3f4f6;
+    --color-text: #ffffff;
     --color-text-muted: #d1d5db;
-    --color-text-light: #9ca3af;
+    --color-text-inactive: #9ca3af;
+    --color-text-highlight: #00FFFF;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #d1d5db;
+    --color-bg-primary: #0a0e1a;
+    --color-bg-secondary: #141b2d;
     --color-border: #1f2937;
     
     /* Neutral Colors - Darker */
