@@ -2839,8 +2839,11 @@ section {
 #dsgvo h4,
 #dsgvo h5,
 #dsgvo h6 {
-    word-break: break-word !important;
+    word-break: normal !important;
     overflow-wrap: break-word !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
     white-space: normal !important;
     max-width: 100%;
 }
@@ -2873,6 +2876,18 @@ section {
     font-size: var(--text-3xl);
     margin-bottom: var(--space-4);
     color: white;
+    line-height: var(--leading-tight);
+    white-space: normal;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.dsgvo__title-line {
+    display: block;
+    white-space: nowrap;
 }
 
 .dsgvo__description {
@@ -2889,7 +2904,7 @@ section {
 
 .checklist-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--space-3);
     font-size: var(--text-base);
     padding-left: 0;
@@ -2899,6 +2914,13 @@ section {
 
 .checklist-icon {
     font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .checklist-text {
@@ -2910,6 +2932,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
+    margin-top: calc((var(--text-3xl) * 2 * var(--leading-tight)) + var(--space-4));
 }
 
 .trust-badge {
@@ -2958,6 +2981,7 @@ section {
     font-size: 1.5rem;
     box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
     transition: box-shadow var(--transition-fast);
+    flex-shrink: 0;
 }
 
 .trust-badge:hover .trust-badge__icon {
@@ -2974,6 +2998,11 @@ section {
     display: block;
     font-size: var(--text-sm);
     color: rgba(255, 255, 255, 0.6);
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 /* ===== Pricing ===== */
@@ -8206,6 +8235,11 @@ section.testimonials.expert-quotes,
         justify-content: flex-start;
         gap: var(--space-3);
         overflow: visible;
+        margin-top: 0;
+    }
+
+    .dsgvo__title-line {
+        white-space: normal;
     }
 
     .trust-badge {

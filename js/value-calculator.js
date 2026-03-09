@@ -1,205 +1,225 @@
-class ValueCalculator {
+class ValueCalculatorV3 {
     constructor() {
         this.init();
     }
 
     init() {
-        // Input-Elemente
-        this.employeeCount = document.getElementById('employeeCount');
-        this.hourlyRate = document.getElementById('hourlyRate');
-        this.processType = document.getElementById('processType'); // optional (kann entfernt sein)
-        this.minutesPerDay = document.getElementById('minutesPerDay');
-        this.affectedEmployees = document.getElementById('affectedEmployees');
-        
-        // Value Display-Elemente (für Slider-Werte)
-        this.affectedEmployeesValue = document.getElementById('affectedEmployeesValue');
-        this.minutesPerDayValue = document.getElementById('minutesPerDayValue');
-        this.hourlyRateValue = document.getElementById('hourlyRateValue');
-        
-        // Ergebnis-Elemente
-        this.timeSaved = document.getElementById('timeSaved');
-        this.timeSavedWeeks = document.getElementById('timeSavedWeeks');
-        this.moneySaved = document.getElementById('moneySaved');
-        
+        this.minutesPerDay = document.getElementById('slider-zeit');
+        this.affectedEmployees = document.getElementById('slider-team');
+        this.hourlyRate = document.getElementById('slider-lohn');
+        this.minutesPerDayValue = document.getElementById('slider-zeit-val');
+        this.affectedEmployeesValue = document.getElementById('slider-team-val');
+        this.hourlyRateValue = document.getElementById('slider-lohn-val');
+
+        this.savingsYearValue = document.getElementById('savings-year');
+        this.savingsMonthValue = document.getElementById('savings-month');
+        this.savingsInsight = document.getElementById('savings-insight');
+        this.timeSavedHoursValue = document.getElementById('time-saved-hours');
+        this.timeSavedWeeksValue = document.getElementById('time-saved-weeks');
+
+        this.teamButtons = Array.from(document.querySelectorAll('.rechner-v3__team-btn'));
+
+        if (!this.minutesPerDay || !this.affectedEmployees || !this.hourlyRate) return;
+
         this.setupEventListeners();
-        this.updateSliderDisplay(); // Slider-Werte anzeigen + Initiale Berechnung
+        this.applyActivePreset();
+        this.updateRangeFills();
+        this.calculate();
     }
 
     setupEventListeners() {
-        if (this.employeeCount) this.employeeCount.addEventListener('input', () => this.calculate());
-        if (this.hourlyRate) this.hourlyRate.addEventListener('input', () => this.updateSliderDisplay());
-        if (this.processType) this.processType.addEventListener('change', () => this.calculate());
-        if (this.minutesPerDay) this.minutesPerDay.addEventListener('input', () => this.updateSliderDisplay());
-        if (this.affectedEmployees) this.affectedEmployees.addEventListener('input', () => this.updateSliderDisplay());
-        
-        // Eingabefelder: Nutzer kann Wert tippen, Slider wird synchronisiert
-        if (this.minutesPerDayValue && this.minutesPerDayValue.nodeName === 'INPUT') {
-            this.minutesPerDayValue.addEventListener('change', () => this.syncFromInput('minutesPerDay', 15, 1440));
-        }
-        if (this.affectedEmployeesValue && this.affectedEmployeesValue.nodeName === 'INPUT') {
-            this.affectedEmployeesValue.addEventListener('change', () => this.syncFromInput('affectedEmployees', 1, 3000));
-        }
-        if (this.hourlyRateValue && this.hourlyRateValue.nodeName === 'INPUT') {
-            this.hourlyRateValue.addEventListener('change', () => this.syncFromInput('hourlyRate', 20, 400));
-        }
-    }
+        this.teamButtons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                this.setActiveTeamButton(btn);
+                this.applyPreset(btn);
+            });
+        });
 
-    syncFromInput(sliderId, min, max) {
-        const slider = document.getElementById(sliderId);
-        const input = sliderId === 'affectedEmployees' ? this.affectedEmployeesValue
-            : sliderId === 'minutesPerDay' ? this.minutesPerDayValue : this.hourlyRateValue;
-        if (!slider || !input || input.nodeName !== 'INPUT') return;
-        let val = parseFloat(input.value) || min;
-        val = Math.max(min, Math.min(max, val));
-        input.value = Math.round(val);
-        // Slider nur aktualisieren wenn innerhalb seines Bereichs (affectedEmployees-Slider max=200)
-        const sliderMax = parseFloat(slider.max) || max;
-        slider.value = Math.min(val, sliderMax);
-        this.calculate();
-    }
+        this.minutesPerDay.addEventListener('input', () => this.handleManualChange(this.minutesPerDay, this.minutesPerDayValue));
+        this.affectedEmployees.addEventListener('input', () => this.handleManualChange(this.affectedEmployees, this.affectedEmployeesValue));
+        this.hourlyRate.addEventListener('input', () => this.handleManualChange(this.hourlyRate, this.hourlyRateValue));
 
-    updateSliderDisplay() {
-        if (this.affectedEmployeesValue) {
-            this.affectedEmployeesValue[this.affectedEmployeesValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.affectedEmployees?.value ?? this.affectedEmployeesValue.value;
-        }
         if (this.minutesPerDayValue) {
-            this.minutesPerDayValue[this.minutesPerDayValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.minutesPerDay?.value ?? this.minutesPerDayValue.value;
+            this.minutesPerDayValue.addEventListener('input', () => this.syncFromInput(this.minutesPerDay, this.minutesPerDayValue));
+        }
+        if (this.affectedEmployeesValue) {
+            this.affectedEmployeesValue.addEventListener('input', () => this.syncFromInput(this.affectedEmployees, this.affectedEmployeesValue));
         }
         if (this.hourlyRateValue) {
-            this.hourlyRateValue[this.hourlyRateValue.nodeName === 'INPUT' ? 'value' : 'textContent'] = this.hourlyRate?.value ?? this.hourlyRateValue.value;
+            this.hourlyRateValue.addEventListener('input', () => this.syncFromInput(this.hourlyRate, this.hourlyRateValue));
         }
+    }
+
+    applyActivePreset() {
+        const activeBtn = this.teamButtons.find((btn) => btn.classList.contains('active'));
+        if (activeBtn) {
+            this.applyPreset(activeBtn);
+        }
+    }
+
+    setActiveTeamButton(activeBtn) {
+        this.teamButtons.forEach((btn) => {
+            const isActive = btn === activeBtn;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
+        });
+    }
+
+    clearTeamButtons() {
+        this.teamButtons.forEach((btn) => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-checked', 'false');
+        });
+    }
+
+    applyPreset(btn) {
+        const minutes = parseFloat(btn.dataset.minutes) || 40;
+        const employees = parseFloat(btn.dataset.employees) || 15;
+        const rate = parseFloat(btn.dataset.rate) || 40;
+
+        this.setRangeValue(this.minutesPerDay, this.minutesPerDayValue, minutes);
+        this.setRangeValue(this.affectedEmployees, this.affectedEmployeesValue, employees);
+        this.setRangeValue(this.hourlyRate, this.hourlyRateValue, rate);
+        this.updateRangeFills();
         this.calculate();
+    }
+
+    handleManualChange(slider, input) {
+        this.clearTeamButtons();
+        this.syncFromSlider(slider, input);
+        this.updateSliderFill(slider);
+        this.calculate();
+    }
+
+    syncFromInput(slider, input) {
+        if (!slider || !input) return;
+        const min = parseFloat(slider.min) || 0;
+        const max = parseFloat(slider.max) || 100;
+        const step = parseFloat(slider.step) || 1;
+        let value = parseFloat(input.value);
+        if (Number.isNaN(value)) value = min;
+        value = Math.max(min, Math.min(max, value));
+        value = Math.round(value / step) * step;
+        input.value = value;
+        slider.value = value;
+        slider.setAttribute('aria-valuenow', value);
+        this.clearTeamButtons();
+        this.updateSliderFill(slider);
+        this.calculate();
+    }
+
+    syncFromSlider(slider, input) {
+        if (!slider || !input) return;
+        const value = parseFloat(slider.value) || 0;
+        input.value = value;
+        slider.setAttribute('aria-valuenow', value);
+    }
+
+    setRangeValue(slider, input, value) {
+        if (!slider || !input) return;
+        const min = parseFloat(slider.min) || 0;
+        const max = parseFloat(slider.max) || 100;
+        const step = parseFloat(slider.step) || 1;
+        const boundedValue = Math.max(min, Math.min(max, value));
+        const steppedValue = Math.round(boundedValue / step) * step;
+        slider.value = steppedValue;
+        input.value = steppedValue;
+        slider.setAttribute('aria-valuenow', steppedValue);
+    }
+
+    updateRangeFills() {
+        [this.minutesPerDay, this.affectedEmployees, this.hourlyRate].forEach((slider) => {
+            if (!slider) return;
+            this.updateSliderFill(slider);
+        });
+    }
+
+    updateSliderFill(slider) {
+        if (!slider) return;
+        const min = parseFloat(slider.min) || 0;
+        const max = parseFloat(slider.max) || 100;
+        const value = parseFloat(slider.value) || 0;
+        const percent = ((value - min) / (max - min)) * 100;
+        slider.style.background = `linear-gradient(90deg, #0077FF 0%, #00D4FF ${percent}%, #1f2937 ${percent}%)`;
     }
 
     calculate() {
-        if (!this.hourlyRate || !this.minutesPerDay || !this.affectedEmployees) return;
-        // Hole Werte (bei Eingabefeldern: Wert aus Input lesen, falls > Slider-max möglich)
-        const totalEmployees = parseFloat(this.employeeCount.value) || 10;
-        const hourlyRate = parseFloat(this.hourlyRate.value) || 50;
-        const minutesPerDay = this.minutesPerDayValue?.nodeName === 'INPUT'
-            ? (parseFloat(this.minutesPerDayValue.value) || parseFloat(this.minutesPerDay.value) || 30)
-            : (parseFloat(this.minutesPerDay.value) || 30);
-        const affectedEmployees = this.affectedEmployeesValue?.nodeName === 'INPUT'
-            ? (parseFloat(this.affectedEmployeesValue.value) || parseFloat(this.affectedEmployees.value) || 3)
-            : (parseFloat(this.affectedEmployees.value) || 3);
+        const minutesPerDay = parseFloat(this.minutesPerDay.value) || 0;
+        const affectedEmployees = parseFloat(this.affectedEmployees.value) || 0;
+        const hourlyRate = parseFloat(this.hourlyRate.value) || 0;
 
-        // Berechnungen - Basierend auf Minuten pro Tag!
-        // 1. Zeitersparnis pro Jahr (in Stunden)
-        const hoursPerDay = minutesPerDay / 60; // Konvertiere Minuten zu Stunden
-        const hoursPerWeek = affectedEmployees * hoursPerDay * 5; // 5 Arbeitstage
-        const hoursPerYear = hoursPerWeek * 52; // 52 Wochen
-        
-        // 2. Monetärer Wert (Ersparnis)
-        const moneySavedValue = hoursPerYear * hourlyRate;
-        
-        // 3. Arbeitswochen (40 Stunden pro Woche)
-        const workWeeks = (hoursPerYear / 40).toFixed(1);
-        
-        // Update UI mit Animation
+        const hoursPerYear = (minutesPerDay * affectedEmployees * 220 * 0.7) / 60;
+        const moneyPerYear = hoursPerYear * hourlyRate;
+        const moneyPerMonth = moneyPerYear / 12;
+        const weeksSaved = hoursPerYear / 40;
+
         this.updateResults({
-            hours: Math.round(hoursPerYear),
-            weeks: workWeeks,
-            money: Math.round(moneySavedValue),
-            employees: totalEmployees,
-            affectedEmployees: affectedEmployees
+            hoursPerYear,
+            moneyPerYear,
+            moneyPerMonth,
+            weeksSaved
         });
     }
 
     updateResults(data) {
-        // Animierte Updates mit Zähl-Effekt
-        const timeElement = this.timeSaved.querySelector('span:first-child');
-        const moneyElement = this.moneySaved.querySelector('span:first-child');
-        
-        // Erzwinge weiße Farbe für alle Zahlen
-        if (timeElement) {
-            timeElement.style.color = '#ffffff';
-            this.animateNumber(timeElement, data.hours, '');
-        }
-        
-        if (moneyElement) {
-            moneyElement.style.color = '#ffffff';
-            this.animateNumber(moneyElement, data.money, '');
-        }
-        
-        // Update Arbeitswochen-Text (Zahl fett wie bei Ersparnis pro Monat)
-        const timeSavedWeeksNum = document.getElementById('timeSavedWeeksNum');
-        if (timeSavedWeeksNum) {
-            timeSavedWeeksNum.textContent = `≈ ${data.weeks}`;
-            timeSavedWeeksNum.style.color = '#ffffff';
-        } else if (this.timeSavedWeeks) {
-            this.timeSavedWeeks.textContent = `≈ ${data.weeks} Arbeitswochen gespart`;
-            this.timeSavedWeeks.style.color = '#ffffff';
-        }
-        
-        // Update Visualisierungen
-        this.updateCharts(data);
-    }
-    
-    updateCharts(data) {
-        // 1. Donut Chart für Zeitgewinn
-        const timeCircle = document.getElementById('timeCircle');
-        const timePercent = document.getElementById('timePercent');
-        
-        // Berechne Prozent (basierend auf Arbeitszeit der betroffenen Mitarbeiter)
-        const totalYearlyHours = 2080 * data.affectedEmployees;
-        const savedPercent = Math.min(Math.round((data.hours / totalYearlyHours) * 100), 100);
-        
-        if (timeCircle && timePercent) {
-            // SVG Circle: Umfang = 2πr = 2 * 3.14159 * 55 = 345.58
-            const circumference = 345;
-            const offset = circumference - (circumference * savedPercent / 100);
-            timeCircle.style.strokeDashoffset = offset;
-            timePercent.textContent = `${savedPercent}%`;
-        }
-        
-        // 2. Monatliche Akkumulations-Balken (12 Monate)
-        const monthlyAmount = Math.round(data.money / 12);
-        
-        // Update monatlichen Betrag
-        const monthlyAmountEl = document.getElementById('monthlyAmount');
-        if (monthlyAmountEl) {
-            monthlyAmountEl.textContent = this.formatNumber(monthlyAmount) + '€';
-        }
-        
-        // Update alle 12 Monatsbalken
-        for (let i = 1; i <= 12; i++) {
-            const monthBar = document.getElementById(`month${i}`);
-            if (monthBar) {
-                const heightPercent = (i / 12) * 100; // Linear ansteigend
-                monthBar.style.height = `${heightPercent}%`;
-            }
+        const hoursRounded = Math.round(data.hoursPerYear);
+        const monthRounded = Math.round(data.moneyPerMonth);
+        const yearRounded = Math.round(data.moneyPerYear);
+        const weeksRounded = data.weeksSaved.toFixed(1);
+
+        this.animateValue(this.savingsYearValue, this.getCurrentValue(this.savingsYearValue), yearRounded, 300);
+        if (this.savingsMonthValue) this.savingsMonthValue.textContent = this.formatNumber(monthRounded);
+        if (this.timeSavedHoursValue) this.timeSavedHoursValue.textContent = this.formatNumber(hoursRounded);
+        if (this.timeSavedWeeksValue) this.timeSavedWeeksValue.textContent = weeksRounded.replace('.', ',');
+
+        if (this.savingsInsight) {
+            this.savingsInsight.textContent = this.getInsightText(yearRounded, hoursRounded);
         }
     }
 
-    animateNumber(element, targetValue, prefix = '') {
-        const currentValue = parseInt(element.textContent.replace(/[^0-9]/g, '')) || 0;
-        const duration = 800; // ms
-        const steps = 30;
-        const stepValue = (targetValue - currentValue) / steps;
-        let currentStep = 0;
-
-        const interval = setInterval(() => {
-            currentStep++;
-            const newValue = Math.round(currentValue + (stepValue * currentStep));
-            
-            element.textContent = this.formatNumber(newValue);
-            element.style.color = '#ffffff'; // Erzwinge weiße Farbe bei jedem Update
-            
-            if (currentStep >= steps) {
-                element.textContent = this.formatNumber(targetValue);
-                element.style.color = '#ffffff'; // Erzwinge weiße Farbe am Ende
-                clearInterval(interval);
-            }
-        }, duration / steps);
+    getInsightText(yearAmount, hoursPerYear) {
+        if (yearAmount < 10000) {
+            const workDays = Math.max(1, Math.round(hoursPerYear / 8));
+            return `Das entspricht ${this.formatNumber(workDays)} zusätzlichen freien Arbeitstagen für dein Kerngeschäft.`;
+        }
+        if (yearAmount <= 30000) {
+            return `Damit finanzierst du ${this.formatNumber(hoursPerYear)} Stunden produktive Arbeit – jedes Jahr.`;
+        }
+        if (yearAmount <= 60000) {
+            return 'Das ist mehr als ein zusätzliches Vollzeit-Gehalt, das du in Wachstum investieren kannst.';
+        }
+        const salaries = (yearAmount / 42000).toFixed(1).replace('.', ',');
+        return `Du verschenkst aktuell so viel wie ${salaries} Vollzeit-Gehälter – jedes einzelne Jahr.`;
     }
 
-    formatNumber(num) {
-        // Formatiere Zahlen mit Tausender-Trenner
-        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    formatNumber(value) {
+        return Math.round(value).toLocaleString('de-DE');
+    }
+
+    getCurrentValue(element) {
+        if (!element) return 0;
+        const raw = element.textContent || '';
+        const numeric = parseFloat(raw.replace(/\./g, '').replace(',', '.'));
+        return Number.isNaN(numeric) ? 0 : numeric;
+    }
+
+    animateValue(element, start, end, duration) {
+        if (!element) return;
+        const startTime = performance.now();
+
+        const update = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(start + (end - start) * eased);
+            element.textContent = current.toLocaleString('de-DE');
+            if (progress < 1) requestAnimationFrame(update);
+        };
+
+        requestAnimationFrame(update);
     }
 }
 
-// Initialisiere Calculator nach DOM-Load
 document.addEventListener('DOMContentLoaded', () => {
-    new ValueCalculator();
+    new ValueCalculatorV3();
 });

@@ -196,12 +196,12 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
     </style>
     <link rel="stylesheet" href="css/main.css?v=3.9">
-    <link rel="stylesheet" href="css/calculator-redesign.css?v=2.0">
-    <link rel="stylesheet" href="css/calculator-v2.css?v=2.2">
     <link rel="stylesheet" href="css/contact-modal.css?v=2.0">
     <link rel="stylesheet" href="css/responsive.css?v=5.8">
+    <link rel="stylesheet" href="css/zusammenarbeit.css?v=1.0">
     <link rel="stylesheet" href="css/hero-override.css?v=1.0">
     <link rel="stylesheet" href="css/use-cases-override.css?v=1.0">
+    <link rel="stylesheet" href="css/calculator-v3.css?v=1.0">
     <style>
         /* Ersparnis: Abstände werden ausschließlich über css/calculator-v2.css gesteuert. */
     </style>
@@ -301,6 +301,111 @@
         }
         
     </style>
+    <style>
+        .ablauf__intro,
+        .ablauf__benefits,
+        .ablauf__benefits * {
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .ablauf__step-title {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-weight: 600;
+            color: #f3f4f6;
+            font-size: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
+        }
+
+        .ablauf__step-text {
+            color: #d1d5db;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+            margin-top: 0.75rem;
+            text-align: center;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ablauf__benefits {
+            margin-top: 1.25rem;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .ablauf__benefits-label {
+            display: block;
+            color: #00D4FF;
+            font-weight: 600;
+            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .ablauf__benefits-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .ablauf__benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            color: #d1d5db;
+            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+            text-align: left;
+        }
+
+        .ablauf__benefits-check {
+            color: #00D98F;
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+
+        #ablauf-title {
+            white-space: nowrap;
+            font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+        }
+
+        .ablauf__step-title {
+            min-height: 3.5rem;
+        }
+
+        .ablauf__step-text {
+            min-height: 8rem;
+        }
+
+        .ablauf .calculator__cta-block {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .ablauf .hero__trust-line {
+            color: #d1d5db;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 767px) {
+            #ablauf-title {
+                white-space: normal;
+            }
+
+            .ablauf__step-title,
+            .ablauf__step-text {
+                min-height: auto;
+            }
+        }
+    </style>
 
 </head>
 <body>
@@ -322,9 +427,9 @@
             <ul class="nav__menu" id="nav-menu">
                 <li class="nav__item"><a href="/" class="nav__link">Start</a></li>
                 <li class="nav__item"><a href="/vorteile" class="nav__link">Vorteile</a></li>
+                <li class="nav__item"><a href="/ersparnis" class="nav__link">Ersparnis</a></li>
                 <li class="nav__item"><a href="/use-cases" class="nav__link">Use Cases</a></li>
                 <li class="nav__item"><a href="/ablauf" class="nav__link">Ablauf</a></li>
-                <li class="nav__item"><a href="/ersparnis" class="nav__link">Ersparnis</a></li>
                 <li class="nav__item"><a href="/dsgvo" class="nav__link">DSGVO</a></li>
                 <li class="nav__item"><a href="/faq" class="nav__link">FAQ</a></li>
                 <li class="nav__item"><a href="/ueber-uns" class="nav__link">Über uns</a></li>
@@ -746,6 +851,85 @@
                             </article>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rechner-v3" id="ersparnis" data-section-name="ersparnisrechner" aria-label="Ersparnisrechner">
+            <div class="rechner-v3__container">
+                <header class="rechner-v3__header">
+                    <h2 class="rechner-v3__title">Finde heraus, wie viel Zeit und Geld du jede Woche verschenkst</h2>
+                    <p class="rechner-v3__subtext">Stell den Rechner auf dein Team ein – und sieh sofort, was Automatisierung dir bringt. Keine E-Mail, kein Haken – einfach rechnen.</p>
+                </header>
+
+                <div class="rechner-v3__grid">
+                    <div class="rechner-v3__card rechner-v3__inputs">
+                        <p class="rechner-v3__team-label">Wie groß ist dein Team?</p>
+                        <div class="rechner-v3__team-toggle" role="radiogroup" aria-label="Teamgröße wählen">
+                            <button class="rechner-v3__team-btn" type="button" role="radio" aria-checked="false" data-minutes="45" data-employees="4" data-rate="30">Kleines Team (3–5)</button>
+                            <button class="rechner-v3__team-btn active" type="button" role="radio" aria-checked="true" data-minutes="40" data-employees="15" data-rate="40">Wachsendes Team (10–20)</button>
+                            <button class="rechner-v3__team-btn" type="button" role="radio" aria-checked="false" data-minutes="35" data-employees="30" data-rate="50">Etabliertes Team (20–50)</button>
+                        </div>
+
+                        <div class="rechner-slider-group">
+                            <label for="slider-zeit">Täglicher Zeitaufwand pro Person</label>
+                            <div class="rechner-slider-row">
+                                <input type="range" id="slider-zeit" min="10" max="120" step="5" value="40" aria-valuemin="10" aria-valuemax="120" aria-valuenow="40">
+                                <div class="rechner-slider-value">
+                                    <input type="number" id="slider-zeit-val" value="40" min="10" max="120" step="5">
+                                    <span class="rechner-slider-unit">min</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rechner-slider-group">
+                            <label for="slider-team">Betroffene Teammitglieder</label>
+                            <div class="rechner-slider-row">
+                                <input type="range" id="slider-team" min="1" max="100" step="1" value="15" aria-valuemin="1" aria-valuemax="100" aria-valuenow="15">
+                                <div class="rechner-slider-value">
+                                    <input type="number" id="slider-team-val" value="15" min="1" max="100" step="1">
+                                    <span class="rechner-slider-unit">Personen</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rechner-slider-group">
+                            <label for="slider-lohn">Durchschnittlicher Stundenlohn</label>
+                            <div class="rechner-slider-row">
+                                <input type="range" id="slider-lohn" min="15" max="120" step="5" value="40" aria-valuemin="15" aria-valuemax="120" aria-valuenow="40">
+                                <div class="rechner-slider-value">
+                                    <input type="number" id="slider-lohn-val" value="40" min="15" max="120" step="5">
+                                    <span class="rechner-slider-unit">€</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="rechner-v3__hint">Wir rechnen mit 70 % Automatisierungspotenzial und 220 Arbeitstagen/Jahr.</p>
+                    </div>
+
+                    <div class="rechner-v3__card rechner-v3__results">
+                        <div class="rechner-v3__result-label">DEIN EINSPARPOTENZIAL</div>
+                        <div class="rechner-v3__amount">
+                            <div class="rechner-v3__amount-main">
+                                <span class="rechner-v3__amount-value" id="savings-year">61.600</span>
+                                <span class="rechner-v3__amount-currency">€</span>
+                            </div>
+                            <span class="rechner-v3__amount-meta">pro Jahr</span>
+                        </div>
+                        <div class="rechner-v3__monthly">Das sind <span id="savings-month">5.133</span>€ pro Monat</div>
+                        <div class="rechner-v3__divider"></div>
+                        <p class="rechner-v3__insight" id="savings-insight">Du verschenkst aktuell so viel wie 1,5 Vollzeit-Gehälter – jedes einzelne Jahr.</p>
+                        <div class="rechner-v3__time">⏱ <span id="time-saved-hours">1.540</span> Stunden pro Jahr – ca. <span id="time-saved-weeks">38,5</span> Arbeitswochen</div>
+                    </div>
+                </div>
+
+                <div class="rechner-v3__cta">
+                    <a href="/kontakt" class="rechner-v3__cta-btn">Jetzt kostenloses Erstgespräch buchen →</a>
+                    <p class="rechner-v3__trust">
+                        <span><span class="rechner-v3__trust-check">✓</span>Basierend auf deinen Angaben</span>
+                        <span><span class="rechner-v3__trust-check">✓</span>30 Min.</span>
+                        <span><span class="rechner-v3__trust-check">✓</span>Unverbindlich</span>
+                    </p>
                 </div>
             </div>
         </section>
@@ -1189,10 +1373,9 @@
         <section class="ablauf" id="ablauf" aria-labelledby="ablauf-title">
             <div class="container">
                 <header class="section__header">
-                    <span class="section__tag">In 3 Schritten starten</span>
-                    <h2 class="section__title" id="ablauf-title">So läuft die Zusammenarbeit ab</h2>
-                    <p class="section__description">
-                        Von der ersten Analyse bis zum laufenden Betrieb –<br>transparent, persönlich und ohne Risiko.
+                    <h2 class="section__title" id="ablauf-title">In 3 Schritten von Zeitfressern zu freien Kapazitäten</h2>
+                    <p class="section__description ablauf__intro">
+                        Kein monatelanges Projekt, kein IT-Chaos. Wir analysieren, automatisieren und schulen – damit dein Team schon nach wenigen Wochen spürbar entlastet ist.
                     </p>
                 </header>
 
@@ -1209,10 +1392,19 @@
                             <div class="ablauf__step-icon" aria-hidden="true">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
                             </div>
-                            <h3 class="ablauf__step-title">Firmenaudit & Erstgespräch</h3>
+                            <h3 class="ablauf__step-title">Analyse &amp; Potenzial-Check</h3>
                             <p class="ablauf__step-text">
-                                Wir analysieren Ihre bestehenden Prozesse, identifizieren konkretes Automatisierungspotenzial und erstellen ein maßgeschneidertes Angebot – das Erstgespräch ist kostenlos und unverbindlich.
+                                Wo verlierst du wirklich Zeit und Geld? Wir durchleuchten deine Abläufe in Vertrieb, Verwaltung und Backoffice – und finden die Prozesse mit dem größten Hebel.
                             </p>
+                            <div class="ablauf__benefits">
+                                <span class="ablauf__benefits-label">Du bekommst:</span>
+                                <ul class="ablauf__benefits-list">
+                                    <li><span class="ablauf__benefits-check">✓</span><span>Komplette Prozess-Analyse aller Abteilungen</span></li>
+                                    <li><span class="ablauf__benefits-check">✓</span><span>Klare Übersicht: Welche Aufgaben fressen die meiste Zeit?</span></li>
+                                    <li><span class="ablauf__benefits-check">✓</span><span>Priorisierte Roadmap mit konkreten Einspar-Potenzialen</span></li>
+                                    <li><span class="ablauf__benefits-check">✓</span><span>Transparentes KPI-Dashboard für deine Ausgangslage</span></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -1225,10 +1417,19 @@
                             <div class="ablauf__step-icon" aria-hidden="true">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"/><path d="M8 6l4-3 4 3"/><rect x="2" y="9" width="7" height="12" rx="1"/><rect x="15" y="6" width="7" height="15" rx="1"/><path d="M2 15h7"/><path d="M15 12h7"/></svg>
                             </div>
-                            <h3 class="ablauf__step-title">Workflow-Entwicklung & Integration</h3>
+                            <h3 class="ablauf__step-title">Automatisierung &amp; KI-Integration</h3>
                             <p class="ablauf__step-text">
-                                Wir entwickeln Ihre individuellen KI-Workflows und integrieren sie nahtlos in Ihre bestehenden Systeme. Alles DSGVO-konform, auf deutschen Servern in Frankfurt.
+                                Wir eliminieren unnötige Handarbeit, verknüpfen deine Tools und setzen KI gezielt dort ein, wo sie den größten Unterschied macht – keine Spielereien, nur messbarer Nutzen.
                             </p>
+                            <div class="ablauf__benefits">
+                                <span class="ablauf__benefits-label">Du bekommst:</span>
+                                <ul class="ablauf__benefits-list">
+                                    <li><span class="ablauf__benefits-check">✓</span><span>Automatisierte Workflows für deine Kernprozesse</span></li>
+                                    <li><span class="ablauf__benefits-check">✓</span><span>Intelligente Verknüpfung deiner bestehenden Software</span></li>
+                                    <li><span class="ablauf__benefits-check">✓</span><span>KI-Einsatz an den Stellen, die wirklich Geld sparen</span></li>
+                                    <li><span class="ablauf__benefits-check">✓</span><span>Saubere Dokumentation aller neuen Abläufe</span></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -1241,221 +1442,209 @@
                             <div class="ablauf__step-icon" aria-hidden="true">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                             </div>
-                            <h3 class="ablauf__step-title">Go-Live & persönlicher Support</h3>
+                            <h3 class="ablauf__step-title">Schulung &amp; Go-Live</h3>
                             <p class="ablauf__step-text">
-                                Wir begleiten Sie beim Go-Live, schulen Ihr Team und überwachen die Systeme laufend. Bei Fragen oder Fehlermeldungen sind wir direkt für Sie da – durchgehend persönlicher Support, kein Callcenter.
+                                Dein Team arbeitet ab Tag 1 mit den neuen Systemen. Wir schulen praxisnah, begleiten die Einführung und stellen sicher, dass die Entlastung sofort spürbar ist.
                             </p>
+                            <div class="ablauf__benefits">
+                                <span class="ablauf__benefits-label">Du bekommst:</span>
+                                <ul class="ablauf__benefits-list">
+                                    <li><span class="ablauf__benefits-check">✓</span><span>Hands-on-Schulungen für dein gesamtes Team</span></li>
+                                    <li><span class="ablauf__benefits-check">✓</span><span>Nahtlose Integration in den bestehenden Arbeitsalltag</span></li>
+                                    <li><span class="ablauf__benefits-check">✓</span><span>Persönlicher Support in der Startphase</span></li>
+                                    <li><span class="ablauf__benefits-check">✓</span><span>Messbare Entlastung ab der ersten Woche</span></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="calculator__cta-block">
                     <a href="/kontakt" class="btn btn--calculator">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        Jetzt kostenloses Erstgespräch vereinbaren
+                        <span>Jetzt kostenlos beraten lassen</span>
+                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
                     </a>
+                    <p class="hero__trust-line">
+                        <span class="hero__trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><polyline points="20 6 9 17 4 12"/></svg>
+                            30 Min.
+                        </span>
+                        <span class="hero__trust-sep">·</span>
+                        <span class="hero__trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><polyline points="20 6 9 17 4 12"/></svg>
+                            Unverbindlich
+                        </span>
+                        <span class="hero__trust-sep">·</span>
+                        <span class="hero__trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><polyline points="20 6 9 17 4 12"/></svg>
+                            Kein Verkaufsdruck
+                        </span>
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section class="value-calculator" id="pricing" aria-labelledby="calculator-title">
+        <!-- ===== ZUSAMMENARBEIT SECTION ===== -->
+        <section class="zusammenarbeit" id="zusammenarbeit" aria-label="So läuft die Zusammenarbeit ab" data-section-name="zusammenarbeit-prozess">
             <div class="container">
-                <header class="section__header">
-                    <span class="section__tag">Value-Based Selling</span>
-                    <h2 class="section__title" id="calculator-title">Berechnen Sie Ihre <em class="u-text-success">Ersparnis</em> in 60 Sekunden</h2>
-                    <p class="section__description">
-                        Finden Sie heraus, wie viel Zeit und Geld Sie mit Automatisierung sparen können.
+                <div class="zusammenarbeit__header">
+                    <span class="zusammenarbeit__badge">
+                        <span class="zusammenarbeit__badge-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 7.2l5-.7L12 2z"/>
+                            </svg>
+                        </span>
+                        So arbeiten wir zusammen
+                    </span>
+                    <h2 class="zusammenarbeit__title">
+                        In 4 Schritten zu Prozessen, die <span class="highlight">dein Team wirklich entlasten</span>
+                    </h2>
+                    <p class="zusammenarbeit__subtitle">
+                        Kein monatelanges Projekt, keine Disruption im Tagesgeschäft. Wir übernehmen die Umsetzung – du konzentrierst dich auf das, was <span class="highlight-strong">Umsatz bringt</span>.
                     </p>
-                </header>
-                
-                <div class="calcV2">
-                    <section class="calcV2__grid" aria-label="Ersparnis-Rechner">
-                        <!-- Inputs -->
-                        <form class="calcV2__panel" aria-label="Ihre Angaben">
-                            <input type="hidden" id="employeeCount" value="10">
-                            
-                            <div class="calcV2__panelHeader">
-                                <div class="calcV2__step" aria-hidden="true">1</div>
-                                <div>
-                                    <h3 class="calcV2__panelTitle">Ihre Angaben</h3>
-                                    <p class="calcV2__panelDesc">Passen Sie die Werte an – das Ergebnis aktualisiert sich live.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="calcV2__field">
-                                <label class="calcV2__label" for="minutesPerDay">
-                                    Aktueller Zeitaufwand
-                                    <span class="calcV2__labelSub">(Minuten pro Tag pro Mitarbeiter)</span>
-                                </label>
-                                <div class="calcV2__rangeRow">
-                                    <input type="range" id="minutesPerDay" class="calcV2__range" value="30" min="15" max="480" step="15">
-                                    <div class="calcV2__numberWrap">
-                                        <input type="number" id="minutesPerDayValue" class="calcV2__number" value="30" min="15" max="1440" step="15" inputmode="numeric" aria-label="Minuten pro Tag">
-                                        <span class="calcV2__numberUnit" aria-hidden="true">min</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="calcV2__field">
-                                <label class="calcV2__label" for="affectedEmployees">
-                                    Betroffene Mitarbeiter
-                                    <span class="calcV2__labelSub">(Anzahl)</span>
-                                </label>
-                                <div class="calcV2__rangeRow">
-                                    <input type="range" id="affectedEmployees" class="calcV2__range" value="3" min="1" max="200" step="1">
-                                    <div class="calcV2__numberWrap">
-                                        <input type="number" id="affectedEmployeesValue" class="calcV2__number" value="3" min="1" max="3000" step="1" inputmode="numeric" aria-label="Anzahl betroffener Mitarbeiter">
-                                        <span class="calcV2__numberUnit" aria-hidden="true">MA</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="calcV2__field">
-                                <label class="calcV2__label" for="hourlyRate">
-                                    Durchschnittlicher Stundenlohn
-                                    <span class="calcV2__labelSub">(€)</span>
-                                </label>
-                                <div class="calcV2__rangeRow">
-                                    <input type="range" id="hourlyRate" class="calcV2__range" value="50" min="20" max="400" step="5">
-                                    <div class="calcV2__numberWrap">
-                                        <input type="number" id="hourlyRateValue" class="calcV2__number" value="50" min="20" max="400" step="5" inputmode="numeric" aria-label="Stundenlohn in Euro">
-                                        <span class="calcV2__numberUnit" aria-hidden="true">€</span>
-                                    </div>
-                                </div>
-                            </div>
+                    <p class="zusammenarbeit__seo">
+                        Wir helfen KMU, Prozesse automatisieren und Automatisierung mit sauberer Integration umzusetzen.
+                    </p>
+                    <div class="zusammenarbeit__time-hint">
+                        <span class="zusammenarbeit__time-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M12 7v5l3 2"/>
+                            </svg>
+                        </span>
+                        ⏱ Dein Zeitaufwand: nur wenige Stunden insgesamt
+                    </div>
+                </div>
 
-                            <details class="calcV2__details">
-                                <summary class="calcV2__detailsSummary">Wie wird berechnet?</summary>
-                                <div class="calcV2__detailsBody">
-                                    <p class="calcV2__math"><strong>Stunden/Jahr</strong> = Betroffene&nbsp;MA × (Minuten/Tag ÷ 60) × 5 × 52</p>
-                                    <p class="calcV2__math"><strong>Einsparung/Jahr</strong> = Stunden/Jahr × Stundenlohn</p>
-                                    <p class="calcV2__math"><strong>Arbeitswochen</strong> = Stunden/Jahr ÷ 40</p>
-                                </div>
-                            </details>
-                        </form>
+                <div class="zusammenarbeit__steps">
+                    <div class="zusammenarbeit__step">
+                        <div class="zusammenarbeit__step-number">1</div>
+                        <div class="zusammenarbeit__step-content">
+                            <h3 class="zusammenarbeit__step-title">Prozess-Analyse &amp; Konzept</h3>
+                            <p class="zusammenarbeit__step-text">
+                                Wir schauen uns deine <span class="inline-highlight">wichtigsten Abläufe</span> gemeinsam an, identifizieren die größten Zeitfresser und entwickeln ein Automatisierungskonzept, das sich nahtlos in deinen Arbeitsalltag einfügt.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="zusammenarbeit__step">
+                        <div class="zusammenarbeit__step-number">2</div>
+                        <div class="zusammenarbeit__step-content">
+                            <h3 class="zusammenarbeit__step-title">Aufbau &amp; Integration</h3>
+                            <p class="zusammenarbeit__step-text">
+                                Wir setzen die Automatisierungen mit <span class="inline-highlight">passgenauen Tools</span> wie Make, n8n oder Airtable um – und binden alles an die Systeme an, die du bereits nutzt. Kein Software-Wechsel nötig.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="zusammenarbeit__step">
+                        <div class="zusammenarbeit__step-number">3</div>
+                        <div class="zusammenarbeit__step-content">
+                            <h3 class="zusammenarbeit__step-title">Praxistest &amp; Feinschliff</h3>
+                            <p class="zusammenarbeit__step-text">
+                                Jede Automation wird <span class="inline-highlight">im echten Betrieb getestet</span>, feinjustiert und so optimiert, dass sie dauerhaft stabil und fehlerfrei läuft – ohne Überraschungen.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="zusammenarbeit__step">
+                        <div class="zusammenarbeit__step-number">4</div>
+                        <div class="zusammenarbeit__step-content">
+                            <h3 class="zusammenarbeit__step-title">Übergabe &amp; Begleitung</h3>
+                            <p class="zusammenarbeit__step-text">
+                                Du erhältst eine <span class="inline-highlight">vollständige Dokumentation</span>, Zugang zu allem – und auf Wunsch laufende Betreuung, damit du jederzeit anpassen oder erweitern kannst.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Results -->
-                        <section class="calcV2__panel calcV2__panel--results" aria-label="Ergebnis">
-                            <div class="calcV2__panelHeader">
-                                <div class="calcV2__step calcV2__step--alt" aria-hidden="true">2</div>
-                                <div>
-                                    <h3 class="calcV2__panelTitle">Ihr Potenzial</h3>
-                                    <p class="calcV2__panelDesc">Live-Ergebnis basierend auf Ihren Angaben.</p>
-                                </div>
-                            </div>
-
-                            <div class="calcV2__cards" aria-live="polite">
-                                <article class="calcV2__card">
-                                    <div class="calcV2__cardHead">
-                                        <div class="calcV2__icon" aria-hidden="true">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                                <circle cx="12" cy="12" r="10"></circle>
-                                                <path d="M12 6v6l4 2"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="calcV2__cardLabel">Zeitgewinn pro Jahr</div>
-                                    </div>
-
-                                    <div id="timeSaved" class="calcV2__valueRow">
-                                        <span class="calcV2__valueNum">390</span>
-                                        <span class="calcV2__valueUnit">Stunden</span>
-                                    </div>
-
-                                    <div class="calcV2__detailRow">
-                                        <span class="calcV2__detailLabel">Arbeitswochen gespart</span>
-                                        <span id="timeSavedWeeksNum" class="calcV2__detailValue">≈ 9.8</span>
-                                    </div>
-                                </article>
-
-                                <article class="calcV2__card">
-                                    <div class="calcV2__cardHead">
-                                        <div class="calcV2__icon" aria-hidden="true">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M12 1v22"></path>
-                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="calcV2__cardLabel">Einsparpotenzial</div>
-                                    </div>
-
-                                    <div id="moneySaved" class="calcV2__valueRow">
-                                        <span class="calcV2__valueNum">19.500</span>
-                                        <span class="calcV2__valueUnit">€</span>
-                                        <span class="calcV2__valueMeta">pro Jahr</span>
-                                    </div>
-
-                                    <div class="calcV2__detailRow calcV2__detailRow--split">
-                                        <span class="calcV2__detailLabel">Ersparnis pro Monat</span>
-                                        <span id="monthlyAmount" class="calcV2__detailValue">1.625€</span>
-                                    </div>
-                                </article>
-                            </div>
-                        </section>
-                    </section>
-
-                    <section class="calcV2__ctaRow" aria-label="Nächster Schritt">
-                        <a class="calcV2__btn" href="/kontakt">Jetzt kostenloses Erstgespräch vereinbaren</a>
-                        <p class="calcV2__ctaNote">Wir berechnen Ihr individuelles Angebot – basierend auf diesem Potenzial</p>
-                    </section>
+                <div class="zusammenarbeit__cta-area">
+                    <a href="/kontakt" class="zusammenarbeit__cta-btn">
+                        <span>Lass uns deinen Prozess durchsprechen →</span>
+                        <svg class="zusammenarbeit__cta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <div class="zusammenarbeit__trust">
+                        <span class="zusammenarbeit__trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Kostenlos &amp; unverbindlich
+                        </span>
+                        <span class="zusammenarbeit__trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            30 Minuten Erstgespräch
+                        </span>
+                        <span class="zusammenarbeit__trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Kein Verkaufsdruck
+                        </span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== DSGVO SECTION (verschoben: nach Ersparnis, vor FAQ) ===== -->
-        <section class="dsgvo" id="dsgvo">
+        <section class="dsgvo" id="dsgvo" aria-label="DSGVO und Datenschutz" data-section-name="dsgvo-datenschutz">
             <div class="container">
                 <div class="dsgvo__wrapper">
                     <div class="dsgvo__content">
-                        <span class="section__tag section__tag--light">Datenschutz</span>
-                        <h2 class="dsgvo__title">KI ohne rechtliche Risiken</h2>
+                        <h2 class="dsgvo__title">
+                            <span class="dsgvo__title-line">Datenschutz, der dich absichert</span>
+                            <span class="dsgvo__title-line">– nicht ausbremst</span>
+                        </h2>
                         <p class="dsgvo__description">
-                            Unsere KI-Modelle werden ausschließlich auf europäischen Servern betrieben. 
-                            Ihre Daten verlassen niemals die EU – garantiert.
+                            DSGVO ist in Deutschland kein Nice-to-have – sie entscheidet, ob deine Kunden dir vertrauen.
+                            Mit unserer DSGVO-konformen KI-Automatisierung läuft alles auf deutschen Servern, Ende-zu-Ende geschützt und jederzeit prüfungssicher.
                         </p>
                         
                         <ul class="dsgvo__checklist">
                             <li class="checklist-item" data-animate="check">
                                 <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span class="checklist-text">Ende-zu-Ende-Verschlüsselung (AES-256)</span>
+                                <span class="checklist-text">Ende-zu-Ende verschlüsselt – niemand kann mitlesen</span>
                             </li>
                             <li class="checklist-item" data-animate="check" data-delay="1">
                                 <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span class="checklist-text">Löschfristen automatisiert (DSGVO Art. 17)</span>
+                                <span class="checklist-text">Automatische Datenlöschung nach Aufbewahrungsfrist</span>
                             </li>
                             <li class="checklist-item" data-animate="check" data-delay="2">
                                 <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span class="checklist-text">Revisionssichere Protokollierung</span>
+                                <span class="checklist-text">Revisionssicher dokumentiert – jederzeit auditbereit</span>
                             </li>
                             <li class="checklist-item" data-animate="check" data-delay="3">
                                 <span class="checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" style="width:20px;height:20px"><circle cx="12" cy="12" r="10" stroke="#00D26A" fill="rgba(0,210,106,0.1)"/><polyline points="8 12 11 15 16 9" stroke="#00D26A" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span class="checklist-text">Rollenbasierte Zugriffskontrolle (RBAC)</span>
+                                <span class="checklist-text">Zugriff nur für berechtigte Mitarbeiter</span>
                             </li>
                         </ul>
                     </div>
                     
-                    <div class="dsgvo__badges">
-                        <div class="trust-badge" data-animate="fade-up">
+                    <ul class="dsgvo__badges">
+                        <li class="trust-badge" data-animate="fade-up">
                             <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
                             <div class="trust-badge__content">
-                                <span class="trust-badge__title">EU-Hosting</span>
-                                <span class="trust-badge__subtitle">Server in Frankfurt</span>
+                                <span class="trust-badge__title">Deutsche Server</span>
+                                <span class="trust-badge__subtitle">Deine Daten bleiben in Deutschland – gehostet in zertifizierten EU-Rechenzentren.</span>
                             </div>
-                        </div>
-                        <div class="trust-badge" data-animate="fade-up" data-delay="1">
+                        </li>
+                        <li class="trust-badge" data-animate="fade-up" data-delay="1">
                             <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
                             <div class="trust-badge__content">
-                                <span class="trust-badge__title">ISO 27001</span>
-                                <span class="trust-badge__subtitle">In Zertifizierung</span>
+                                <span class="trust-badge__title">Geprüfte Sicherheit</span>
+                                <span class="trust-badge__subtitle">Alle Systeme erfüllen höchste Sicherheitsstandards nach ISO 27001 – regelmäßig geprüft.</span>
                             </div>
-                        </div>
-                        <div class="trust-badge" data-animate="fade-up" data-delay="2">
+                        </li>
+                        <li class="trust-badge" data-animate="fade-up" data-delay="2">
                             <div class="trust-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
                             <div class="trust-badge__content">
-                                <span class="trust-badge__title">AVV inklusive</span>
-                                <span class="trust-badge__subtitle">DSGVO-konform</span>
+                                <span class="trust-badge__title">AVV ab Tag 1</span>
+                                <span class="trust-badge__subtitle">Fertiger Auftragsverarbeitungsvertrag inklusive – ohne Anwalt, ohne Extrakosten.</span>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -1644,8 +1833,8 @@
                 <div class="footer__links-group">
                     <h4 class="footer__heading">Produkt</h4>
                     <ul class="footer__links">
-                        <li><a href="/use-cases">Use Cases</a></li>
                         <li><a href="/ersparnis">Ersparnis</a></li>
+                        <li><a href="/use-cases">Use Cases</a></li>
                         <li><a href="javascript:void(0)">API Dokumentation</a></li>
                         <li><a href="javascript:void(0)">Blog</a></li>
                     </ul>
@@ -2610,7 +2799,6 @@
                 '/use-cases': 'use-cases',
                 '/ablauf': 'ablauf',
                 '/dsgvo': 'dsgvo',
-                '/ersparnis': 'pricing',
                 '/faq': 'faq',
                 '/kontakt': 'contact'
             };

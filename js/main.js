@@ -184,10 +184,6 @@ function scrollToSection(e) {
                 // Zentriere die Sektion: Sektion-Mitte = Viewport-Mitte (mit 60px mehr Abstand OBEN)
                 targetPosition = section.offsetTop - (viewportHeight / 2) + (sectionHeight / 2) - 60;
             }
-            // Ersparnis-Sektion: etwas Abstand über der Überschrift, Rechner mit Titel vollständig sichtbar
-            if (href === '#pricing') {
-                targetPosition = section.offsetTop - headerHeight + 50;
-            }
             // Use Cases: etwas weiter nach unten, damit die Skip-Pfeile/Dots unten sichtbar sind
             if (href === '#use-cases') {
                 targetPosition = section.offsetTop - headerHeight + 30;

@@ -22,16 +22,16 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Erfahren Sie mehr über KI-Prozessnavigator: Unsere Mission, deutsche KMU und Handwerksbetriebe mit DSGVO-konformen KI-Lösungen zukunftssicher zu machen.">
+    <meta name="description" content="Ich bin Dominik Buchele – als Projektleiter in der Halbleiterindustrie habe ich erlebt, wie viel Zeit durch manuelle Prozesse verloren geht. Heute helfe ich KMU, genau das zu ändern.">
     <meta name="keywords" content="Über uns, KI-Prozessnavigator, DSGVO, KMU, Handwerk, Automatisierung, Made in Germany">
     <meta name="author" content="Dominik Buchele">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Über uns | KI-Prozessnavigator">
-    <meta property="og:description" content="Deutsche KI-Automatisierung mit Datenschutz im Fokus – aus der Praxis für die Praxis.">
+    <meta property="og:description" content="Aus Frust über ineffiziente Verwaltung wurde eine Mission: KMU mit intelligenter Automatisierung profitabler machen.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_DE">
     
-    <title>Über uns | KI-Prozessnavigator – DSGVO-konforme KI aus Deutschland</title>
+    <title>Über uns | KI-Prozessnavigator – Automatisierung aus der Praxis</title>
     <!-- JSON-LD Quelle: assets/gbp.jsonld -->
     <script type="application/ld+json">
     {
@@ -102,6 +102,24 @@
       ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dominik Buchele",
+      "jobTitle": "Gründer & Geschäftsführer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "KI-Prozessnavigator"
+      },
+      "url": "https://ki-prozessnavigator.de/ueber-uns",
+      "sameAs": [
+        "https://www.linkedin.com/in/dominik-buchele-ki-prozessnavigator/",
+        "https://www.instagram.com/kiprozessnavigator/"
+      ],
+      "knowsAbout": ["KI-Automatisierung", "Prozessautomatisierung", "DSGVO-konforme KI", "n8n", "Workflow-Automatisierung"]
+    }
+    </script>
     <link rel="canonical" href="https://ki-prozessnavigator.de/ueber-uns">
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg?v=3">
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/icons/favicon.svg?v=3">
@@ -122,14 +140,18 @@
     <link rel="stylesheet" href="css/cookie-banner.css">
     
     <style>
-        /* Über Uns - Spezifische Styles */
+        /* ============================================
+           Über-uns-Seite – Spezifische Styles
+           ============================================ */
+
+        /* --- Hero --- */
         .about-hero {
             background: linear-gradient(180deg, #0a0e1a 0%, #0f172a 50%, #0a0e1a 100%);
             padding-block: clamp(120px, 15vw, 160px) 20px;
             position: relative;
             overflow: hidden;
         }
-        
+
         .about-hero::before {
             content: '';
             position: absolute;
@@ -141,7 +163,7 @@
             background: radial-gradient(ellipse at center, rgba(0, 119, 255, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
-        
+
         .about-hero__container {
             max-width: 1200px;
             margin: 0 auto;
@@ -149,36 +171,37 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .about-hero__content {
             text-align: center;
             margin-bottom: 1.5rem;
         }
-        
+
         .about-hero__title {
             display: inline-block;
             font-size: clamp(2rem, 4vw, 3rem);
-            /* Größer als Tag aber nicht riesig */
             font-weight: var(--font-semibold);
             text-transform: uppercase;
             letter-spacing: var(--tracking-wider);
             color: var(--color-neon-cyan);
-            /* EXAKT wie auf Hauptseite */
             text-shadow: 0 0 8px rgba(0, 212, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
-            /* EXAKT wie auf Hauptseite */
             margin-bottom: var(--space-4);
             line-height: 1.1;
         }
-        
+
         .about-hero__subtitle {
             font-size: clamp(1rem, 2vw, 1.2rem);
             color: var(--color-text-muted);
-            max-width: 900px;
+            max-width: 750px;
             margin: 0 auto;
-            line-height: 1.5;
-            white-space: nowrap;
+            line-height: 1.6;
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
         }
-        
+
+        /* --- Profile (Story + Foto) --- */
         .about-profile {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -186,20 +209,20 @@
             align-items: center;
             margin-bottom: 0.75rem;
         }
-        
+
         .about-profile__image {
             position: relative;
         }
-        
+
         .about-profile__image::before {
             content: '';
             position: absolute;
             inset: -20px;
-            background: radial-gradient(circle at 30% 30%, rgba(0, 119, 255, 0.2) 0%, transparent 70%);
+            background: radial-gradient(circle at 70% 30%, rgba(0, 119, 255, 0.2) 0%, transparent 70%);
             border-radius: var(--radius-2xl);
             z-index: -1;
         }
-        
+
         .about-profile__image img {
             width: 100%;
             height: auto;
@@ -207,40 +230,55 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
+        .about-profile__content {
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .about-profile__content .about-section__tag {
+            margin-bottom: var(--space-4);
+        }
+
         .about-profile__content h2 {
             font-size: clamp(1.8rem, 3vw, 2.5rem);
             font-weight: var(--font-bold);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1.25rem;
             color: var(--color-text);
+            line-height: 1.2;
         }
-        
+
         .about-profile__content p {
             font-size: var(--text-base);
             line-height: 1.7;
             color: var(--color-text-muted);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
-        
+
+        .about-profile__content p:last-child {
+            margin-bottom: 0;
+        }
+
         .about-profile__content p strong {
             color: var(--color-text);
             font-weight: var(--font-semibold);
         }
-        
+
+        /* --- About Sections (allgemein) --- */
         .about-section {
             max-width: 1200px;
-            margin: 0 auto 0;
-            /* Kein Abstand mehr zwischen Sektionen */
+            margin: 0 auto;
             padding-inline: clamp(1.5rem, 4vw, 3rem);
-            padding-block: 1.5rem;
-            /* Nur internes Padding */
+            padding-block: 2rem;
         }
-        
+
         .about-section__header {
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
-        
+
         .about-section__tag {
             display: inline-block;
             padding: var(--space-2) var(--space-4);
@@ -252,14 +290,14 @@
             font-weight: var(--font-semibold);
             margin-bottom: 0.75rem;
         }
-        
+
         .about-section__title {
             font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             font-weight: var(--font-bold);
             margin-bottom: 0.75rem;
             color: var(--color-text);
         }
-        
+
         .about-section__description {
             font-size: clamp(1rem, 1.8vw, 1.2rem);
             color: var(--color-text-muted);
@@ -267,29 +305,85 @@
             margin: 0 auto 1rem;
             line-height: 1.6;
         }
-        
+
+        /* --- Conviction/Überzeugung --- */
+        .about-conviction {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-2xl);
+            padding: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .about-conviction__icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 119, 255, 0.1);
+            border-radius: var(--radius-lg);
+            margin: 0 auto var(--space-5);
+        }
+
+        .about-conviction__icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--color-primary);
+        }
+
+        .about-conviction h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: var(--font-bold);
+            margin-bottom: 1.25rem;
+            color: var(--color-text);
+        }
+
+        .about-conviction p {
+            font-size: var(--text-base);
+            line-height: 1.7;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto 1rem;
+            hyphens: none;
+            -webkit-hyphens: none;
+        }
+
+        .about-conviction p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-conviction p strong {
+            color: var(--color-text);
+            font-weight: var(--font-semibold);
+        }
+
+        /* --- Values Grid --- */
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             gap: var(--space-5);
-            margin-bottom: 0;
         }
-        
+
         .value-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: var(--radius-xl);
             padding: var(--space-5);
-            transition: all 0.3s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            hyphens: none;
+            -webkit-hyphens: none;
         }
-        
+
         .value-card:hover {
-            transform: translateY(-4px);
             border-color: rgba(0, 119, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 119, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 119, 255, 0.1);
+            /* KEIN transform – Regel aus Design-System */
         }
-        
+
         .value-card__icon {
             width: 56px;
             height: 56px;
@@ -300,54 +394,83 @@
             border-radius: var(--radius-lg);
             margin-bottom: var(--space-3);
         }
-        
+
         .value-card__icon svg {
             width: 28px;
             height: 28px;
             stroke: var(--color-primary);
         }
-        
+
         .value-card h3 {
             font-size: var(--text-xl);
             font-weight: var(--font-semibold);
             margin-bottom: var(--space-2);
             color: var(--color-text);
         }
-        
+
         .value-card p {
             font-size: var(--text-base);
             line-height: 1.6;
             color: var(--color-text-muted);
             margin-bottom: 0;
         }
-        
+
+        /* --- Tools Grid (NEU) --- */
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-3);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tool-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-5);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            transition: border-color 0.3s ease;
+        }
+
+        .tool-badge:hover {
+            border-color: rgba(0, 119, 255, 0.4);
+        }
+
+        .tool-badge__name {
+            font-size: var(--text-sm);
+            font-weight: var(--font-medium);
+            color: var(--color-text-muted);
+        }
+
+        /* --- CTA --- */
         .about-cta {
             background: linear-gradient(135deg, rgba(0, 119, 255, 0.1) 0%, rgba(0, 210, 106, 0.05) 100%);
             border: 1px solid rgba(0, 119, 255, 0.2);
             border-radius: var(--radius-2xl);
-            padding: 2rem;
+            padding: clamp(2rem, 4vw, 3rem);
             text-align: center;
         }
-        
+
         .about-cta h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
             font-weight: var(--font-bold);
             margin-bottom: 0.75rem;
             color: var(--color-text);
         }
-        
+
         .about-cta p {
-            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
             color: var(--color-text-muted);
-            margin-bottom: 0.5rem;
-            max-width: 700px;
-            margin-inline: auto;
-        }
-        
-        .about-cta p:last-of-type {
             margin-bottom: 1.25rem;
+            max-width: 650px;
+            margin-inline: auto;
+            line-height: 1.6;
         }
-        
+
         .about-cta .btn {
             display: inline-flex;
             align-items: center;
@@ -360,52 +483,78 @@
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(0, 119, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
         }
-        
+
         .about-cta .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.4);
+            background: #0066DD;
+            box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
+            /* KEIN transform */
         }
-        
+
+        .about-cta__trust {
+            margin-top: 1rem;
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            margin-bottom: 0 !important;
+        }
+
+        .about-cta__trust .trust-check {
+            color: #00D98F;
+            font-weight: var(--font-semibold);
+        }
+
+        .about-cta__trust .trust-separator {
+            margin-inline: var(--space-2);
+            opacity: 0.5;
+        }
+
+        /* --- Responsive --- */
         @media (max-width: 768px) {
             .about-profile {
                 grid-template-columns: 1fr;
                 gap: var(--space-6);
             }
-            
+
             .about-profile__image {
                 order: -1;
             }
-            
+
             .values-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .about-hero__subtitle {
-                white-space: normal;
-            }
-            
-            /* CTA-Bereich: Text im Container halten, Text + Button verkleinern – nur Mobil */
+
             .about-cta {
                 box-sizing: border-box;
                 max-width: 100%;
                 overflow-wrap: break-word;
             }
+
             .about-cta h2 {
                 font-size: var(--text-xl);
             }
+
             .about-cta p {
                 white-space: normal !important;
                 max-width: 100%;
                 font-size: var(--text-sm);
             }
+
             .about-cta .btn {
                 padding: var(--space-3) var(--space-5);
                 font-size: var(--text-sm);
                 max-width: 100%;
+            }
+        }
+
+        /* --- Reduced Motion --- */
+        @media (prefers-reduced-motion: reduce) {
+            .value-card,
+            .about-cta .btn,
+            .tool-badge {
+                transition: none;
             }
         }
     </style>
@@ -424,9 +573,9 @@
             <ul class="nav__menu" id="nav-menu">
                 <li class="nav__item"><a href="/" class="nav__link">Start</a></li>
                 <li class="nav__item"><a href="/vorteile" class="nav__link">Vorteile</a></li>
+                <li class="nav__item"><a href="/ersparnis" class="nav__link">Ersparnis</a></li>
                 <li class="nav__item"><a href="/use-cases" class="nav__link">Use Cases</a></li>
                 <li class="nav__item"><a href="/dsgvo" class="nav__link">DSGVO</a></li>
-                <li class="nav__item"><a href="/ersparnis" class="nav__link">Ersparnis</a></li>
                 <li class="nav__item"><a href="/faq" class="nav__link">FAQ</a></li>
                 <li class="nav__item"><a href="/ueber-uns" class="nav__link">Über uns</a></li>
                 <li class="nav__item"><a href="/kontakt" class="nav__link nav__link--cta">Beratung anfragen</a></li>
@@ -441,67 +590,67 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="about-hero">
+        <section class="about-hero" aria-label="Über KI-Prozessnavigator">
             <div class="about-hero__container">
                 <div class="about-hero__content">
-                    <h1 class="about-hero__title">Über uns</h1>
+                    <h1 class="about-hero__title">Über mich</h1>
                     <p class="about-hero__subtitle">
-                        KI-Automatisierung aus der Praxis für die Praxis – mit Datenschutz im Fokus
+                        Aus Frust über ineffiziente Verwaltung wurde eine Mission: KMU mit intelligenter Automatisierung profitabler machen.
                     </p>
                 </div>
-                
-                <!-- Profile Section -->
-                <div class="about-profile">
-                    <div class="about-profile__image">
-                        <img src="assets/images/dominik-buchele.png" alt="Dominik Buchele - Gründer KI-Prozessnavigator" loading="lazy">
-                    </div>
-                    <div class="about-profile__content">
-                        <h2>Die Entstehung von<br>KI-Prozessnavigator</h2>
-                        <p>
-                            Als <strong>Projektleiter in der Halbleiterindustrie</strong> habe ich hautnah erlebt, wie viel wertvolle Zeit durch standardisierte Verwaltungsprozesse verloren geht. Statt sich auf Innovationen zu konzentrieren, waren hochqualifizierte Fachkräfte stundenlang mit Datenpflege und Reporting gebunden.
-                        </p>
-                        <p>
-                            Die Analyse zeigte eindeutig: <strong>Mit effizienter Automatisierung hätten wir 30–40 % mehr Projekte umsetzen können</strong>. Doch die Suche nach passenden Tools war ernüchternd. Die Lösungen waren entweder zu komplex, zu teuer oder – das größte Hindernis – <strong>nicht mit dem deutschen Datenschutz vereinbar</strong>.
-                        </p>
-                        <p>
-                            Genau hier sah ich die Parallele zum Mittelstand: Auch <strong>Handwerksbetriebe und KMU</strong> leiden unter Fachkräftemangel und Zeitdruck, können sich aber keine langwierigen IT-Projekte leisten.
-                        </p>
-                        <p>
-                            <strong>Deshalb habe ich KI-Prozessnavigator gegründet.</strong> Mein Ziel ist es, deutschen Unternehmen eine Lösung zu bieten, die ihre Realität versteht: <strong>einfach, schnell umsetzbar und zu 100 % DSGVO-konform – Quality Made in Germany</strong>.
-                        </p>
-                    </div>
+            </div>
+        </section>
+
+        <section class="about-section" aria-label="Meine Geschichte">
+            <div class="about-profile">
+                <div class="about-profile__content">
+                    <span class="about-section__tag">Meine Geschichte</span>
+                    <h2>Warum ich KI-Prozessnavigator<br>gegründet habe</h2>
+                    <p>
+                        Als Projektleiter in der Halbleiterindustrie habe ich täglich gesehen, wie <strong>hochqualifizierte Fachkräfte ihre Zeit mit Datenpflege, Reporting und Copy-Paste verschwendet</strong> haben – statt an den Projekten zu arbeiten, für die sie eigentlich eingestellt wurden.
+                    </p>
+                    <p>
+                        Das Frustrierende: Mit der richtigen Automatisierung hätten wir <strong>30–40 % mehr Projekte umsetzen können</strong> – ohne einen einzigen neuen Mitarbeiter. Aber passende Tools? Entweder zu komplex, zu teuer oder nicht mit deutschem Datenschutz vereinbar.
+                    </p>
+                    <p>
+                        Und dann wurde mir klar: <strong>Genau das gleiche Problem haben tausende Handwerksbetriebe und KMU.</strong> Fachkräftemangel, Zeitdruck, steigende Kosten – aber kein Budget für monatelange IT-Projekte.
+                    </p>
+                    <p>
+                        Deshalb habe ich KI-Prozessnavigator gegründet. <strong>Mein Ziel: Dein Unternehmen soll von Automatisierung profitieren – einfach, schnell und zu 100 % DSGVO-konform.</strong>
+                    </p>
+                </div>
+                <div class="about-profile__image">
+                    <img src="assets/images/dominik-buchele.png" alt="Dominik Buchele – Gründer von KI-Prozessnavigator, Experte für KI-Automatisierung im Mittelstand" loading="lazy">
                 </div>
             </div>
         </section>
-        
-        <!-- Problem Section -->
-        <section class="about-section">
-            <div class="about-section__header">
-                <span class="about-section__tag">Datenschutz First</span>
-                <h2 class="about-section__title">Das Problem, das wir lösen</h2>
-                <p class="about-section__description">
-                    Deutsche KMU brauchen <strong>DSGVO-konforme KI</strong>, keine US-Cloud-Lösung<br>
-                    mit unklaren Datenschutzrisiken
+
+        <section class="about-section" aria-label="Meine Überzeugung">
+            <div class="about-conviction">
+                <div class="about-conviction__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                        <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+                    </svg>
+                </div>
+                <h2>Meine Überzeugung</h2>
+                <p>
+                    Der Wettbewerb im Mittelstand wird härter – Fachkräfte werden knapper, Kunden erwarten schnellere Reaktionen, und die Margen stehen unter Druck. <strong>KMU, die jetzt auf intelligente Automatisierung setzen, sichern sich einen entscheidenden Vorsprung</strong> – mehr Marge, mehr Kapazität, mehr Wachstum, ohne das Team aufzustocken.
                 </p>
-            </div>
-            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-xl); padding: var(--space-6) var(--space-3); text-align: center;">
-                <p style="font-size: var(--text-lg); line-height: 1.7; color: var(--color-text-muted); max-width: 100%; margin: 0 auto;">
-                    Viele KI-Tools kommen aus den USA und versprechen viel – aber was passiert mit Ihren<br>
-                    sensiblen Geschäftsdaten? Bei uns bleiben Ihre Daten in Deutschland, werden ausschließlich<br>
-                    für Ihre Prozesse genutzt und niemals für das Training von KI-Modellen verwendet.<br>
-                    <strong>Ihre Daten gehören Ihnen – Punkt.</strong>
+                <p>
+                    Ich bin überzeugt: Automatisierung ist kein Luxus für Konzerne mehr. <strong>Jedes KMU verdient Zugang zu Werkzeugen, die bisher nur großen Unternehmen vorbehalten waren</strong> – und genau das liefere ich.
                 </p>
             </div>
         </section>
-        
-        <!-- Values Section -->
-        <section class="about-section">
+
+        <section class="about-section" aria-label="Was mich ausmacht">
             <div class="about-section__header">
-                <span class="about-section__tag">Was uns ausmacht</span>
-                <h2 class="about-section__title">Unsere Werte</h2>
+                <span class="about-section__tag">Was mich ausmacht</span>
+                <h2 class="about-section__title">Darauf kannst du dich verlassen</h2>
                 <p class="about-section__description">
-                    Was uns antreibt und von anderen unterscheidet
+                    Keine leeren Versprechen – sondern klare Prinzipien, die meine Arbeit leiten.
                 </p>
             </div>
             <div class="values-grid">
@@ -513,12 +662,12 @@
                             <line x1="12" y1="22.08" x2="12" y2="12"/>
                         </svg>
                     </div>
-                    <h3>Made in Germany</h3>
+                    <h3>100 % Made in Germany</h3>
                     <p>
-                        Entwicklung, Hosting und Support zu 100% aus Deutschland. Keine Abhängigkeit von US-Tech-Giganten, keine versteckten Risiken.
+                        Hosting, Entwicklung und Support – alles aus Deutschland. Deine Daten verlassen nie die EU.
                     </p>
                 </div>
-                
+
                 <div class="value-card">
                     <div class="value-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -526,12 +675,12 @@
                             <path d="M9 12l2 2 4-4"/>
                         </svg>
                     </div>
-                    <h3>Datenschutz First</h3>
+                    <h3>DSGVO ist Grundlage, kein Extra</h3>
                     <p>
-                        DSGVO-Konformität ist kein Zusatzfeature, sondern die Grundlage. Ihre Daten werden niemals für KI-Training verwendet oder weitergegeben.
+                        Deine Daten werden nie für KI-Training genutzt oder weitergegeben. Datenschutz ist bei mir kein Häkchen, sondern Prinzip.
                     </p>
                 </div>
-                
+
                 <div class="value-card">
                     <div class="value-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -539,12 +688,12 @@
                             <polyline points="6 17 11 12 6 7"/>
                         </svg>
                     </div>
-                    <h3>Schnelle Implementierung</h3>
+                    <h3>Schnell produktiv</h3>
                     <p>
-                        Durchschnittlich 2 Wochen bis zum Go-Live. Keine IT-Ressourcen nötig – wir machen 90% der Arbeit und begleiten Sie bis zum ersten Erfolg.
+                        Kein Projekt, das Monate dauert. Durchschnittlich 2 Wochen bis zum Go-Live – ich mache 90 % der Arbeit, du konzentrierst dich auf dein Geschäft.
                     </p>
                 </div>
-                
+
                 <div class="value-card">
                     <div class="value-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -554,12 +703,12 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                         </svg>
                     </div>
-                    <h3>Mittelstand-Fokus</h3>
+                    <h3>Ich spreche deine Sprache</h3>
                     <p>
-                        Keine Enterprise-Komplexität, kein Tech-Blabla. Wir sprechen die Sprache des Mittelstands und verstehen die echten Probleme von KMU.
+                        Kein Tech-Blabla, kein IT-Jargon. Ich verstehe die echten Probleme von KMU und Handwerksbetrieben – und liefere Lösungen, die sofort Sinn ergeben.
                     </p>
                 </div>
-                
+
                 <div class="value-card">
                     <div class="value-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -567,12 +716,12 @@
                             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                         </svg>
                     </div>
-                    <h3>Transparente Preise</h3>
+                    <h3>Transparent & fair</h3>
                     <p>
-                        Keine versteckten Kosten, keine Überraschungen. Sie wissen von Anfang an genau, was Sie zahlen – und was Sie dafür bekommen.
+                        Du weißt von Anfang an, was du zahlst und was du dafür bekommst. Keine versteckten Kosten, keine Überraschungen.
                     </p>
                 </div>
-                
+
                 <div class="value-card">
                     <div class="value-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -580,31 +729,76 @@
                             <polyline points="22 4 12 14.01 9 11.01"/>
                         </svg>
                     </div>
-                    <h3>Messbare Erfolge</h3>
+                    <h3>Messbare Ergebnisse</h3>
                     <p>
-                        Keine leeren Versprechen. Wir tracken Zeitersparnis, Kosteneinsparungen und ROI – damit Sie genau sehen, was die Automatisierung bringt.
+                        Keine leeren Versprechen. Ich tracke Zeitersparnis, Kostensenkung und ROI – damit du genau siehst, was die Automatisierung bringt.
                     </p>
                 </div>
             </div>
         </section>
-        
-        <!-- CTA Section -->
-        <section class="about-section">
+
+        <section class="about-section" aria-label="Tools und Expertise">
+            <div class="about-section__header">
+                <span class="about-section__tag">Mein Werkzeugkasten</span>
+                <h2 class="about-section__title">Die Tools, mit denen ich arbeite</h2>
+                <p class="about-section__description">
+                    Ich kenne die Stärken und Grenzen jedes Tools – und wähle immer die beste Kombination für dein Unternehmen.
+                </p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-badge">
+                    <span class="tool-badge__name">n8n</span>
+                </div>
+                <div class="tool-badge">
+                    <span class="tool-badge__name">Make</span>
+                </div>
+                <div class="tool-badge">
+                    <span class="tool-badge__name">OpenAI API</span>
+                </div>
+                <div class="tool-badge">
+                    <span class="tool-badge__name">Anthropic API</span>
+                </div>
+                <div class="tool-badge">
+                    <span class="tool-badge__name">Google Workspace</span>
+                </div>
+                <div class="tool-badge">
+                    <span class="tool-badge__name">Microsoft 365</span>
+                </div>
+                <div class="tool-badge">
+                    <span class="tool-badge__name">Slack</span>
+                </div>
+                <div class="tool-badge">
+                    <span class="tool-badge__name">Airtable</span>
+                </div>
+                <div class="tool-badge">
+                    <span class="tool-badge__name">Notion</span>
+                </div>
+                <div class="tool-badge">
+                    <span class="tool-badge__name">HubSpot</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" aria-label="Erstgespräch buchen">
             <div class="about-cta">
-                <h2>Lass uns reden</h2>
-                <p style="white-space: nowrap;">
-                    Bereit, Ihr Unternehmen mit DSGVO-konformer KI nach vorne zu bringen?
-                </p>
+                <h2>Lass uns herausfinden, was bei dir möglich ist</h2>
                 <p>
-                    Vereinbaren Sie jetzt ein kostenloses Erstgespräch.
+                    In 30 Minuten analysieren wir gemeinsam, welche Prozesse in deinem Unternehmen das größte Automatisierungspotenzial haben – kostenlos und unverbindlich.
                 </p>
-                <a href="/kontakt" class="btn">
-                    Jetzt Beratungsgespräch vereinbaren
+                <a href="/kontakt" class="btn" data-cta-location="about-page-bottom">
+                    Kostenloses Erstgespräch buchen
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"/>
                         <polyline points="12 5 19 12 12 19"/>
                     </svg>
                 </a>
+                <p class="about-cta__trust">
+                    <span class="trust-check">✓</span> 30 Min.
+                    <span class="trust-separator">·</span>
+                    <span class="trust-check">✓</span> Unverbindlich
+                    <span class="trust-separator">·</span>
+                    <span class="trust-check">✓</span> Kein Verkaufsdruck
+                </p>
             </div>
         </section>
     </main>
@@ -636,8 +830,8 @@
                 <div class="footer__links-group">
                     <h4 class="footer__heading">Produkt</h4>
                     <ul class="footer__links">
-                        <li><a href="/use-cases">Use Cases</a></li>
                         <li><a href="/ersparnis">Ersparnis</a></li>
+                        <li><a href="/use-cases">Use Cases</a></li>
                         <li><a href="javascript:void(0)">API Dokumentation</a></li>
                         <li><a href="javascript:void(0)">Blog</a></li>
                     </ul>
