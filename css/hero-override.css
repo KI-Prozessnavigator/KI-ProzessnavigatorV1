@@ -150,7 +150,11 @@ section.hero .hero__logo-bar,
    ========================================================= */
 @media (max-width: 1023px) {
     section.hero {
-        padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px)) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 100vh !important;
+        min-height: 100dvh !important;
+        padding-bottom: 0 !important;
     }
 
     section.hero .hero__container {
@@ -158,6 +162,7 @@ section.hero .hero__logo-bar,
         padding-top: calc(90px + env(safe-area-inset-top, 0px) + 0.5rem) !important;
         padding-bottom: var(--space-3) !important;
         min-height: auto !important;
+        flex: 0 0 auto !important;
         justify-content: flex-start !important;
     }
 
@@ -183,14 +188,18 @@ section.hero .hero__logo-bar,
     }
 
     section.hero .hero__badges {
-        align-items: center !important;
+        align-items: stretch !important;
         justify-content: center !important;
         width: 100% !important;
+        max-width: 260px !important;
+        margin-inline: auto !important;
     }
 
     section.hero .hero-badge {
         justify-content: center !important;
-        margin-inline: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-inline: 0 !important;
     }
 
     section.hero .hero__actions {
@@ -207,8 +216,9 @@ section.hero .hero__logo-bar,
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
-        margin-top: var(--space-2) !important;
-        padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+        margin-top: auto !important;
+        flex: 0 0 auto !important;
+        padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px)) !important;
     }
 }
 
@@ -221,9 +231,13 @@ section.hero .hero__logo-bar,
         padding-inline: 4% !important;
     }
 
+    section.hero .hero__badges {
+        max-width: 240px !important;
+    }
+
     section.hero .hero-badge {
         padding: 8px 14px !important;
-        max-width: 240px !important;
+        max-width: 100% !important;
     }
 
     section.hero .hero-badge__value {
@@ -251,13 +265,15 @@ section.hero .hero__logo-bar,
     }
 
     section.hero .hero__badges {
-        align-items: center !important;
+        align-items: stretch !important;
         justify-content: center !important;
         width: 100% !important;
+        max-width: 260px !important;
+        margin-inline: auto !important;
     }
 
     section.hero .hero-badge {
         width: 100% !important;
-        max-width: 260px !important;
+        max-width: 100% !important;
     }
 }

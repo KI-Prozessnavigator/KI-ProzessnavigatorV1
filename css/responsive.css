@@ -1244,10 +1244,12 @@
     .hero {
         --mobile-header-height: 70px;
         padding-top: 0 !important;
-        padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px)) !important;
+        padding-bottom: 0 !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
+        min-height: 100vh !important;
+        min-height: 100dvh !important;
         box-sizing: border-box;
     }
 
@@ -1300,15 +1302,17 @@
     }
 
     .hero__badges {
-        align-items: center !important;
+        align-items: stretch !important;
         justify-content: center !important;
         width: 100% !important;
+        max-width: 260px !important;
+        margin-inline: auto !important;
     }
 
     .hero-badge {
         width: 100% !important;
-        max-width: 260px !important;
-        margin-inline: auto !important;
+        max-width: 100% !important;
+        margin-inline: 0 !important;
     }
 
     .hero__actions {
@@ -1325,7 +1329,7 @@
     }
 
     .hero__logo-bar {
-        margin-top: var(--space-2) !important;
+        margin-top: auto !important;
     }
 
     /* ===== SCROLL TO TOP ===== */
@@ -1536,9 +1540,13 @@
         max-width: 28rem !important;
     }
 
+    .hero__badges {
+        max-width: 240px !important;
+    }
+
     .hero-badge {
         padding: 8px 14px !important;
-        max-width: 240px !important;
+        max-width: 100% !important;
     }
 
     .hero-badge__value {
@@ -1555,7 +1563,7 @@
     }
 
     .hero__logo-bar {
-        margin-top: var(--space-2) !important;
+        margin-top: auto !important;
     }
     
     /* Cards kompakter */
