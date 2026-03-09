@@ -23,7 +23,7 @@
 }
 
 .use-cases-tabs__title {
-    font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem);
+    font-size: var(--text-3xl);
     color: #f3f4f6;
     margin-bottom: 1rem;
 }
@@ -114,7 +114,6 @@
 }
 
 .use-cases-tabs__card-text h3 {
-    font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
     font-weight: 600;
     color: #f3f4f6;
     margin: 0 0 0.75rem;

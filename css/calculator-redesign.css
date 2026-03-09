@@ -114,7 +114,7 @@
 }
 
 #pricing .results__header { margin-bottom: 28px !important; }
-#pricing .results__header h3 { font-size: 1.25rem !important; font-weight: 600 !important; }
+#pricing .results__header h3 { font-weight: 600 !important; }
 #pricing .results__header p { font-size: 0.9rem !important; color: rgba(255,255,255,0.6) !important; }
 
 #pricing .result-card__circle-wrap { display: none !important; }

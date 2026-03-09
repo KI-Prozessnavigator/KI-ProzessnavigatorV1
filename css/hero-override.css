@@ -30,7 +30,6 @@ section.hero .hero__content {
 /* === H1: Zentriert, volle Breite, weiß === */
 section.hero .hero__title {
     font-family: var(--font-heading) !important;
-    font-size: clamp(2.2rem, 4.5vw, 3.8rem) !important;
     font-weight: var(--font-bold) !important;
     line-height: 1.15 !important;
     letter-spacing: var(--tracking-tight) !important;
@@ -167,7 +166,6 @@ section.hero .hero__logo-bar,
     }
 
     section.hero .hero__title {
-        font-size: clamp(1.85rem, 6.5vw, 2.75rem) !important;
         margin-bottom: var(--space-4) !important;
         padding-inline: 4% !important;
     }
@@ -227,7 +225,6 @@ section.hero .hero__logo-bar,
    ========================================================= */
 @media (max-width: 576px) {
     section.hero .hero__title {
-        font-size: clamp(1.55rem, 7.5vw, 2rem) !important;
         padding-inline: 4% !important;
     }
 
