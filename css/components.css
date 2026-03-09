@@ -1405,29 +1405,19 @@
 }
 
 .btn--large {
-    padding: var(--space-5) var(--space-12);
-    font-size: var(--text-lg);
+    padding: 0.875rem 2rem;
+    font-size: var(--text-base);
 }
 
 .btn--glow {
-    background: var(--gradient-neon-3);
-    box-shadow: var(--shadow-neon-blue);
-    animation: buttonGlow 2s ease-in-out infinite;
-}
-
-@keyframes buttonGlow {
-    0%, 100% {
-        box-shadow: var(--shadow-neon-blue);
-    }
-    50% {
-        box-shadow: 0 0 40px rgba(0, 102, 255, 0.6), 0 0 80px rgba(0, 102, 255, 0.3);
-    }
+    background: #0077FF;
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
+    animation: none;
 }
 
 .btn--glow:hover {
-    box-shadow: var(--shadow-neon-multi);
-    filter: brightness(1.15);
-    animation: none;
+    background: #0066DD;
+    box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 
 /* ===== Footer Enhanced ===== */
@@ -2007,41 +1997,23 @@ section.testimonials.expert-quotes,
 
 /* ===== Neon CTA Button ===== */
 .btn--neon {
-    background: var(--color-neon);
+    background: #0077FF;
     color: #ffffff;
-    font-weight: var(--font-bold);
+    font-weight: 600;
     border: none;
     position: relative;
     overflow: hidden;
-    box-shadow:
-        0 0 20px var(--color-neon-glow),
-        0 0 40px rgba(0, 119, 255, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn--neon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
+    display: none;
 }
 
 .btn--neon:hover {
-    background: linear-gradient(135deg, var(--color-neon) 0%, var(--color-neon-hover) 100%);
-    transform: scale(1.02);
-    box-shadow:
-        0 0 30px var(--color-neon-glow),
-        0 0 60px rgba(0, 119, 255, 0.3),
-        0 10px 40px rgba(0, 119, 255, 0.25);
+    background: #0066DD;
+    box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 
 .btn--neon:focus {
@@ -2050,24 +2022,19 @@ section.testimonials.expert-quotes,
 }
 
 .btn--neon:active {
-    transform: scale(0.98);
 }
 
 /* ===== Glass Button ===== */
 .btn--glass {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--color-text);
-    transition: all 0.3s ease;
+    background: #0077FF;
+    border: none;
+    color: #ffffff;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn--glass:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: var(--color-neon);
-    color: var(--color-neon);
-    box-shadow: 0 0 20px rgba(0, 119, 255, 0.15);
+    background: #0066DD;
+    box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 
 .btn--glass:focus {
@@ -2413,11 +2380,11 @@ section.testimonials.expert-quotes,
     .fallback-ring--1 { width: 70%; height: 70%; }
     .fallback-ring--2 { width: 85%; height: 85%; }
     .fallback-ring--3 { display: none; }
-    .btn--neon, .btn--glass { width: 100%; justify-content: center; }
+    .btn--neon, .btn--glass { width: auto; justify-content: center; }
     .hero::after { opacity: 0.3; }
-    .btn--neon { padding: var(--space-4) var(--space-5); font-size: var(--text-sm); background: linear-gradient(135deg, var(--color-neon) 0%, var(--color-neon-hover) 100%); }
+    .btn--neon { padding: 0.875rem 2rem; font-size: var(--text-base); background: #0077FF; }
     .btn--neon .btn-icon { width: 18px; height: 18px; }
-    .btn--glass { display: flex !important; background: rgba(13, 115, 119, 0.08); border-color: var(--color-primary-200); }
+    .btn--glass { display: inline-flex !important; background: #0077FF; border: none; }
 }
 
 [data-lazy] { opacity: 0; transition: opacity 0.5s ease; }

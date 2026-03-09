@@ -89,26 +89,10 @@
     transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
-.rechner-v3__team-btn:not(.active) {
-    animation: subtle-pulse 2.5s ease-in-out infinite;
-    opacity: 0.7;
-}
-
-.rechner-v3__team-btn.active {
-    animation: none;
-    opacity: 1;
-    transform: scale(1);
-}
-
-.rechner-v3__team-btn:not(.active):hover {
+.rechner-v3__team-btn:not(.active):hover .tab-text-pulse {
     animation-play-state: paused;
     opacity: 1;
-    cursor: pointer;
 }
-
-.rechner-v3__team-toggle .rechner-v3__team-btn:nth-child(1) { animation-delay: 0s; }
-.rechner-v3__team-toggle .rechner-v3__team-btn:nth-child(2) { animation-delay: 0.3s; }
-.rechner-v3__team-toggle .rechner-v3__team-btn:nth-child(3) { animation-delay: 0.6s; }
 
 .rechner-v3__team-btn:hover {
     border-color: rgba(255, 255, 255, 0.3);
@@ -287,16 +271,18 @@
 .rechner-v3__cta-btn {
     background: #0077FF;
     color: #ffffff;
-    padding: 1rem 2.5rem;
+    padding: 0.875rem 2rem;
     border-radius: 8px;
-    font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+    font-size: var(--text-base);
     font-weight: 600;
+    font-family: var(--font-body);
     box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
     cursor: pointer;
     border: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
     text-decoration: none;
     transition: background 0.2s ease, box-shadow 0.2s ease;
 }

@@ -112,30 +112,24 @@
         margin: 20px auto 12px !important;
         width: auto;
         max-width: 220px;
-        padding: var(--space-2) var(--space-5) !important;
-        background: var(--gradient-neon-1) !important;
-        background-color: transparent !important;
+        padding: 0.875rem 2rem !important;
+        background: #0077FF !important;
         color: white !important;
         border: none !important;
         border-radius: 8px;
+        font-family: var(--font-body);
         font-weight: 600;
-        box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
+        font-size: var(--text-base);
+        box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
         text-align: center;
-        transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+        transition: background 0.2s ease, box-shadow 0.2s ease;
         position: relative;
         overflow: hidden;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
     }
     .header .nav__menu .nav__link--cta::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-        transition: left 0.5s ease;
+        display: none;
     }
     .header .nav__menu .nav__link--cta:hover::before {
         left: 100%;
@@ -146,10 +140,8 @@
     .header .nav__menu .nav__link--cta:hover,
     .header .nav__menu .nav__link--cta:focus,
     .header .nav__menu .nav__link--cta:active {
-        box-shadow: 0 0 25px rgba(0, 119, 255, 0.5);
-        filter: brightness(1.1);
-        background: var(--gradient-neon-1) !important;
-        background-color: transparent !important;
+        background: #0066DD !important;
+        box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
     }
@@ -466,16 +458,17 @@
         margin: 20px auto 12px !important;
         width: auto;
         max-width: 220px;
-        padding: var(--space-2) var(--space-5) !important;
-        background: var(--gradient-neon-1) !important;
-        background-color: transparent !important;
+        padding: 0.875rem 2rem !important;
+        background: #0077FF !important;
         color: white !important;
         border: none !important;
         border-radius: 8px;
+        font-family: var(--font-body);
         font-weight: 600;
-        box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
+        font-size: var(--text-base);
+        box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
         text-align: center;
-        transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+        transition: background 0.2s ease, box-shadow 0.2s ease;
         position: relative;
         overflow: hidden;
         backdrop-filter: none !important;
@@ -483,14 +476,7 @@
     }
     
     .header .nav__menu .nav__link--cta::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-        transition: left 0.5s ease;
+        display: none;
     }
     
     .header .nav__menu .nav__link--cta:hover::before {
@@ -504,10 +490,8 @@
     .header .nav__menu .nav__link--cta:hover,
     .header .nav__menu .nav__link--cta:focus,
     .header .nav__menu .nav__link--cta:active {
-        box-shadow: 0 0 25px rgba(0, 119, 255, 0.5);
-        filter: brightness(1.1);
-        background: var(--gradient-neon-1) !important;
-        background-color: transparent !important;
+        background: #0066DD !important;
+        box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
     }

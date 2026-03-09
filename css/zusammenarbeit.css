@@ -58,11 +58,15 @@
     gap: 0.5rem;
     padding: 0.5rem 1.25rem;
     border-radius: 12px;
-    background: rgba(0, 217, 143, 0.08);
-    border: 1px solid rgba(0, 217, 143, 0.2);
-    color: var(--color-text-muted);
+    background: rgba(0, 217, 143, 0.1);
+    border: 1px solid #00D98F;
+    color: #00D98F;
     font-weight: 500;
     font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+}
+
+.zusammenarbeit__time-icon {
+    color: #00D98F;
 }
 
 .zusammenarbeit__time-icon svg {
@@ -140,12 +144,15 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 2rem;
+    padding: 0.875rem 2rem;
     border-radius: 8px;
     background: #0077ff;
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    width: auto;
     box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }

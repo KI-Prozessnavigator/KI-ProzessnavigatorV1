@@ -265,11 +265,10 @@
     gap: 12px !important;
     max-width: 380px !important;
     /* Maximal 380px - kleiner als die 400px Kontainer */
-    width: 100% !important;
-    padding: 16px 32px !important;
-    /* Etwas kompakter */
-    font-size: 1rem !important;
-    /* Etwas kleinere Schrift */
+    width: auto !important;
+    padding: 0.875rem 2rem !important;
+    font-size: var(--text-base) !important;
+    font-family: var(--font-body) !important;
 }
 #pricing .calculator-cta-note {
     margin-top: 12px !important;
@@ -294,14 +293,15 @@
 /* Tablet (577–1023px): Weißen Schleier links vom CTA entfernen – ::before-Gradient deaktivieren */
 @media (min-width: 577px) and (max-width: 1023px) {
     #pricing .calculator__cta-block .btn--calculator {
-        box-shadow: 0 4px 16px rgba(0, 119, 255, 0.3) !important;
+        box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2) !important;
         overflow: hidden !important;
     }
     #pricing .calculator__cta-block .btn--calculator::before {
         display: none !important;
     }
     #pricing .calculator__cta-block .btn--calculator:hover {
-        box-shadow: 0 0 25px rgba(0, 212, 255, 0.5) !important;
+        background: #0066DD !important;
+        box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3) !important;
     }
 }
 
@@ -338,7 +338,7 @@
 
 @media (max-width: 768px) {
     #pricing .calculator__wrapper { grid-template-columns: 1fr !important; }
-    #pricing .calculator__cta-block .btn--calculator { min-width: 100% !important; }
+    #pricing .calculator__cta-block .btn--calculator { min-width: auto !important; }
     
     /* Container für kleine Handys: 90% Breite */
     #pricing .calculator__card,

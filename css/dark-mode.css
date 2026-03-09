@@ -62,8 +62,7 @@
 
 /* CTA Button bleibt hellblau - ohne grauen Schleier */
 [data-theme="dark"] .nav__link--cta {
-    background: var(--gradient-neon-1) !important;
-    background-color: transparent !important;
+    background: #0077FF !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
 }
@@ -71,8 +70,7 @@
 [data-theme="dark"] .nav__link--cta:hover,
 [data-theme="dark"] .nav__link--cta:focus,
 [data-theme="dark"] .nav__link--cta:active {
-    background: var(--gradient-neon-1) !important;
-    background-color: transparent !important;
+    background: #0066DD !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
 }
@@ -570,12 +568,13 @@
 
 /* ===== Buttons ===== */
 [data-theme="dark"] .btn--secondary {
-    border-color: rgba(0, 212, 255, 0.3);
-    color: var(--color-neon-cyan);
+    background: #0077FF;
+    border: none;
+    color: #ffffff;
 }
 
 [data-theme="dark"] .btn--secondary:hover {
-    background: rgba(0, 212, 255, 0.1);
-    border-color: var(--color-neon-cyan);
+    background: #0066DD;
+    box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 

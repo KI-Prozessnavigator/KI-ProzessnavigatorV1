@@ -953,23 +953,24 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9375rem;
+    padding: 0.875rem 2rem;
+    font-size: var(--text-base);
     font-weight: 600;
-    font-family: inherit;
+    font-family: var(--font-body);
     color: #ffffff;
-    background: linear-gradient(135deg, #0077FF 0%, #0099FF 100%);
+    background: #0077FF;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 16px rgba(0, 119, 255, 0.3);
-    flex: 1;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
+    flex: 0 0 auto;
     min-width: 0;
 }
 
 .btn--modal-primary:hover {
-    box-shadow: 0 6px 24px rgba(0, 119, 255, 0.5);
+    background: #0066DD;
+    box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 
 .btn--modal-primary:active {
@@ -987,23 +988,23 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    font-family: inherit;
-    color: rgba(255, 255, 255, 0.8);
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 0.875rem 2rem;
+    font-size: var(--text-base);
+    font-weight: 600;
+    font-family: var(--font-body);
+    color: #ffffff;
+    background: #0077FF;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    flex-shrink: 0;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
+    flex: 0 0 auto;
 }
 
 .btn--modal-secondary:hover {
-    border-color: #0077FF;
-    color: #00FFFF;
-    background: rgba(0, 119, 255, 0.1);
+    background: #0066DD;
+    box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 
 /* ===== Success State ===== */
@@ -1073,21 +1074,21 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.875rem 2rem;
-    font-size: 1rem;
+    font-size: var(--text-base);
     font-weight: 600;
-    font-family: inherit;
-    color: #00FFFF;
-    background: rgba(0, 119, 255, 0.15);
-    border: 2px solid rgba(0, 119, 255, 0.3);
+    font-family: var(--font-body);
+    color: #ffffff;
+    background: #0077FF;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
 }
 
 .success-cta:hover {
-    background: #0077FF;
-    border-color: #0077FF;
-    color: white;
+    background: #0066DD;
+    box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 
 /* ===== Privacy Checkbox ===== */
