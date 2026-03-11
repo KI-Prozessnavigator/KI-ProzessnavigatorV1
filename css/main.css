@@ -807,7 +807,7 @@ section {
 
 .section__header {
     text-align: center;
-    max-width: 700px;
+    max-width: 100%;
     margin-inline: auto;
     margin-bottom: var(--space-16);
 }
@@ -2097,15 +2097,7 @@ section {
 .problems .section__header {
     margin-bottom: var(--space-5);
     overflow: visible;
-    max-width: 980px;
-}
-
-
-@media (min-width: 1024px) {
-    #problems .section__description {
-        white-space: nowrap;
-        overflow: visible;
-    }
+    max-width: 100%;
 }
 
 .problems > .container,
@@ -9867,15 +9859,15 @@ section.solutions .container,
 
 .wir-vs-du__title {
     margin: 0 0 0.75rem;
-    max-width: 34ch;
+    max-width: 100%;
     margin-inline: auto;
     text-wrap: balance;
 }
 
 .wir-vs-du__description {
-    font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+    font-size: var(--text-lg);
     color: #d1d5db;
-    max-width: 750px;
+    max-width: 900px;
     margin: 0 auto;
     text-wrap: balance;
     hyphens: none;

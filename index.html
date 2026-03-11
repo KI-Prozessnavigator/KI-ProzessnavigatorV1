@@ -326,8 +326,8 @@
         }
 
         #ablauf-title {
-            white-space: nowrap;
-            font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+            white-space: normal;
+            font-size: var(--text-3xl);
         }
 
         .ablauf__step-title {
@@ -358,6 +358,49 @@
             .ablauf__step-text {
                 min-height: auto;
             }
+        }
+    </style>
+    <style>
+        /* === TEXT-CONTAINER-BREITE-FIX === */
+        /* Überschriften: Volle Container-Breite, keine Einengung */
+        .wir-vs-du__title,
+        .section__title,
+        .use-cases-tabs__title,
+        .rechner-v3__title {
+            max-width: 100% !important;
+            width: 100% !important;
+            white-space: normal !important;
+        }
+
+        /* Body-Texte / Descriptions: Max. 900px für Lesbarkeit, aber nicht kleiner */
+        .wir-vs-du__description,
+        .section__description,
+        .ablauf__intro,
+        .use-cases-tabs__subtitle,
+        .rechner-v3__subtitle {
+            max-width: 900px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* Einheitliche Body-Schriftgrößen (text-base aus Design-System) */
+        .wir-vs-du__description,
+        .section__description,
+        .ablauf__intro,
+        .use-cases-tabs__subtitle,
+        .rechner-v3__subtitle {
+            font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem) !important;
+            line-height: 1.7 !important;
+            color: #d1d5db !important;
+        }
+
+        /* Einheitliche H2-Schriftgrößen (text-3xl aus Design-System) */
+        .wir-vs-du__title,
+        .section__title,
+        .use-cases-tabs__title,
+        .rechner-v3__title {
+            font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem) !important;
+            line-height: 1.2 !important;
         }
     </style>
 
@@ -699,8 +742,8 @@
         <section class="wir-vs-du" id="problems" data-section-name="vorteile-vergleich" aria-label="Vorteile Vergleich">
             <div class="container">
                 <header class="section__header wir-vs-du__header">
-                    <h2 class="wir-vs-du__title" id="problems-title">Warum Einzeltools und interne<br>Workarounds deine Marge auffressen</h2>
-                    <p class="wir-vs-du__description"><span class="no-wrap">Die meisten KMU basteln monatelang an Insellösungen – und stecken trotzdem bei unter 10 % Marge fest.</span><br>Unsere Kunden <span class="text-highlight">steigern ihre Profitabilität systematisch um über 40 %</span><br>– weil wir Prozesse end-to-end automatisieren, statt nur einzelne Schritte zu flicken.<br><br>Klicke dich durch die einzelnen Module – und finde deinen größten Margenbooster.</p>
+                    <h2 class="wir-vs-du__title" id="problems-title">Warum Einzeltools und interne Workarounds deine Marge auffressen</h2>
+                    <p class="wir-vs-du__description"><span class="no-wrap">Die meisten KMU basteln monatelang an Insellösungen – und stecken trotzdem bei unter 10 % Marge fest.</span><br>Unsere Kunden <span class="text-highlight">steigern ihre Profitabilität systematisch um über 40 %</span><br>– weil wir Prozesse end-to-end automatisieren, statt nur einzelne Schritte zu flicken.</p>
                 </header>
 
                 <div class="wir-vs-du__toggle-wrapper">
@@ -1677,7 +1720,7 @@
                         </svg>
                     </span>
                     
-                    <h2 class="final-cta__title" id="cta-title">Potenzialanalyse:<br>30 Minuten für einen<br>dokumentierten Automatisierungsplan</h2>
+                    <h2 class="final-cta__title" id="cta-title">Potenzialanalyse: 30 Minuten für einen dokumentierten Automatisierungsplan</h2>
                     <p class="final-cta__description">
                         Wir analysieren Ihre bestehenden Prozesse und identifizieren konkret, welche Aufgaben automatisierbar sind<br>– mit geschätztem Zeitgewinn pro Woche.
                     </p>

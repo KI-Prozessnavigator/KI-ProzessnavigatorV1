@@ -41,14 +41,14 @@
 
 .zusammenarbeit__subtitle {
     margin: 0 auto;
-    max-width: 700px;
-    font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+    max-width: 900px;
+    font-size: var(--text-lg);
 }
 
 .zusammenarbeit__seo {
     margin: 0.75rem auto 0;
-    max-width: 700px;
-    font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    max-width: 900px;
+    font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
 }
 
 .zusammenarbeit__time-hint {
