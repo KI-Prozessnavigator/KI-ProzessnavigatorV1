@@ -896,28 +896,6 @@ section {
     }
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        linear-gradient(to right, rgba(0, 119, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 212, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(45deg, rgba(0, 153, 255, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px, 60px 60px, 120px 120px;
-    opacity: 0.6;
-    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
-    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
-    animation: gridPulse 4s ease-in-out infinite;
-}
-
-@keyframes gridPulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 0.8; }
-}
 
 .hero__container {
     display: grid;
@@ -1457,23 +1435,8 @@ section {
 .trust-bar {
     padding-block: var(--space-8);
     background: linear-gradient(180deg, rgba(0, 119, 255, 0.02) 0%, var(--color-neutral-50) 50%, var(--color-background) 100%);
-    border-top: 1px solid rgba(0, 119, 255, 0.1);
-    border-bottom: 1px solid var(--color-border);
     position: relative;
     transition: background var(--transition-slow), border-color var(--transition-base);
-}
-
-/* Subtle gradient accent line */
-.trust-bar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--color-neon), transparent);
-    opacity: 0.5;
 }
 
 .trust-bar .container {
@@ -2713,95 +2676,9 @@ section {
     color: white;
     position: relative;
     scroll-margin-top: 180px; /* Zentriert die Sektion im Viewport */
-    overflow: hidden;
-    animation: dsgvoGradientShift 12s ease-in-out infinite;
-    /* Sanfter Übergang von hellen Sektionen */
-    margin-top: -1px;
-    padding-top: calc(var(--section-padding) + 1px);
-    /* Sanfter Übergang am oberen Rand */
-    box-shadow: 0 -20px 40px -20px rgba(0, 0, 0, 0.1);
-    /* Sanfter Übergang am unteren Rand */
-    margin-bottom: -1px;
-    padding-bottom: calc(var(--section-padding) + 1px);
-}
-
-.dsgvo::after {
-    content: none;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 120px;
-    background: linear-gradient(180deg, 
-        rgba(15, 23, 42, 0) 0%, 
-        rgba(15, 23, 42, 0.1) 20%,
-        rgba(15, 23, 42, 0.3) 40%,
-        rgba(15, 23, 42, 0.5) 60%,
-        var(--color-background) 100%
-    );
-    pointer-events: none;
-    z-index: 1;
-    filter: blur(1px);
-}
-
-[data-theme="dark"] .dsgvo::after {
-    background: linear-gradient(180deg, 
-        rgba(15, 23, 42, 0) 0%, 
-        rgba(15, 23, 42, 0.15) 20%,
-        rgba(15, 23, 42, 0.35) 40%,
-        rgba(15, 23, 42, 0.6) 60%,
-        var(--color-background) 100%
-    );
-}
-
-/* Sanfter Übergang vor der DSGVO-Sektion */
-.pricing::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: linear-gradient(180deg, var(--color-background) 0%, rgba(15, 23, 42, 0.3) 100%);
-    pointer-events: none;
-    z-index: 1;
-}
-
-[data-theme="dark"] .pricing::before {
-    background: linear-gradient(180deg, var(--color-background) 0%, rgba(15, 23, 42, 0.5) 100%);
-}
-
-@keyframes dsgvoGradientShift {
-    0%, 100% {
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0a1628 100%);
-    }
-    50% {
-        background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
-    }
-}
-
-.dsgvo::before {
-    content: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(ellipse at 30% 50%, rgba(0, 212, 255, 0.15), transparent 50%),
-        radial-gradient(ellipse at 70% 30%, rgba(0, 119, 255, 0.1), transparent 50%),
-        radial-gradient(ellipse at 50% 80%, rgba(0, 153, 255, 0.1), transparent 50%);
-    pointer-events: none;
-    animation: dsgvoGlow 6s ease-in-out infinite;
-}
-
-@keyframes dsgvoGlow {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.7;
-    }
+    overflow-x: hidden;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
 }
 
 /* -------------------------------------------------
@@ -3367,20 +3244,8 @@ section {
 /* ===== FAQ Section ===== */
 .faq-section {
     background: transparent;
-    transition: background var(--transition-slow);
     /* Sanfter Übergang zur Final CTA */
     position: relative;
-}
-
-.faq-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
-    opacity: 0.5;
 }
 
 .faq-section__wrapper {
@@ -3568,22 +3433,7 @@ section {
     overflow-x: hidden;
     /* overflow-x verhindert horizontale Scrollbar, aber die Rakete kann vertikal sichtbar bleiben */
     /* Sanfter Übergang von der FAQ-Sektion */
-    margin-top: -1px;
-    padding-top: calc(var(--space-24) + 1px);
-    border-top: 1px solid rgba(0, 119, 255, 0.12);
-}
-
-.final-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 30% 30%, rgba(0, 119, 255, 0.06), transparent 50%),
-        radial-gradient(circle at 70% 70%, rgba(0, 217, 143, 0.05), transparent 50%);
-    pointer-events: none;
+    padding-top: var(--space-24);
 }
 
 .final-cta__content {
@@ -4019,8 +3869,6 @@ section {
 .logo-carousel {
     padding-block: 2rem 2.5rem;
     background: linear-gradient(180deg, rgba(0, 119, 255, 0.04) 0%, #0a0e1a 100%);
-    border-top: 1px solid rgba(0, 119, 255, 0.15);
-    border-bottom: 1px solid rgba(0, 119, 255, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -4042,18 +3890,6 @@ section {
     max-width: 100%;
 }
 
-.logo-carousel::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    transform: none;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--color-neon, #00D4FF), transparent);
-    opacity: 0.4;
-}
 
 .logo-carousel__heading {
     font-size: 1.15rem;
@@ -4994,13 +4830,6 @@ section.testimonials.expert-quotes,
     border-color: rgba(0, 212, 255, 0.3);
 }
 
-/* ===== Footer ===== */
-[data-theme="dark"] .footer {
-    background: #0a0e1a;
-    border-top: 1px solid rgba(0, 212, 255, 0.2);
-    color: var(--color-text-muted);
-}
-
 [data-theme="dark"] .footer__links a {
     color: var(--color-text-muted);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
@@ -5163,10 +4992,6 @@ section.testimonials.expert-quotes,
     background: transparent;
 }
 
-[data-theme="dark"] .pricing::after,
-[data-theme="dark"] .faq-section::after {
-    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
-}
 
 /* ===== Section Headers ===== */
 [data-theme="dark"] .section__tag {
@@ -5597,29 +5422,6 @@ section.testimonials.expert-quotes,
     font-size: var(--text-sm);
     color: var(--color-text-muted);
     line-height: 1.6;
-}
-
-/* Hellblauer Trenner oben (wie DSGVO) */
-[data-theme="dark"] .ablauf {
-    border-top: 2px solid rgba(0, 119, 255, 0.4);
-    position: relative;
-}
-
-[data-theme="dark"] .ablauf::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 10%;
-    right: 10%;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(0, 119, 255, 0.8), 
-        rgba(0, 119, 255, 0.8), 
-        transparent
-    );
-    filter: blur(1px);
-    z-index: 1;
 }
 
 /* Dark Mode Optimierung */
@@ -9840,228 +9642,6 @@ section.testimonials.expert-quotes,
     fill: none !important;
 }
 
-/* ===== 10. HINTERGRUND-STRUKTUR (V4 beibehalten) ===== */
-
-/* Basis: Einheitliche Dunkelheit */
-[data-theme="dark"] .trust-bar,
-[data-theme="dark"] .logo-carousel,
-[data-theme="dark"] .problems,
-[data-theme="dark"] .solutions,
-[data-theme="dark"] .pricing,
-[data-theme="dark"] .testimonials,
-[data-theme="dark"] .faq-section {
-    background: #0a0e1a !important;
-}
-
-/* Trust Bar / Logo Carousel Übergang */
-[data-theme="dark"] .trust-bar,
-[data-theme="dark"] .logo-carousel {
-    background: linear-gradient(180deg, 
-        rgba(0, 119, 255, 0.06) 0%, 
-        #0a0e1a 100%
-    ) !important;
-    border-top: 1px solid rgba(0, 119, 255, 0.2) !important;
-    border-bottom: 1px solid rgba(0, 119, 255, 0.15) !important;
-    box-shadow: 
-        0 -10px 40px -10px rgba(0, 119, 255, 0.1),
-        0 10px 40px -10px rgba(0, 119, 255, 0.1) !important;
-}
-
-/* Problems Trennbalken */
-[data-theme="dark"] .problems {
-    position: relative;
-    border-top: 1px solid rgba(0, 119, 255, 0.25) !important;
-    box-shadow: 
-        0 -30px 80px -30px rgba(0, 119, 255, 0.12),
-        inset 0 1px 0 rgba(0, 119, 255, 0.1) !important;
-}
-
-[data-theme="dark"] .problems::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 119, 255, 0.6), transparent);
-}
-
-/* DSGVO Highlight */
-[data-theme="dark"] .dsgvo {
-    background: linear-gradient(135deg, 
-        rgba(0, 119, 255, 0.05) 0%, 
-        #0a0e1a 30%,
-        #0a0e1a 70%,
-        rgba(0, 119, 255, 0.05) 100%
-    ) !important;
-    position: relative;
-    border-top: 2px solid rgba(0, 119, 255, 0.4) !important;
-    border-bottom: 2px solid rgba(0, 119, 255, 0.4) !important;
-    box-shadow: 
-        0 -40px 100px -40px rgba(0, 119, 255, 0.2),
-        0 40px 100px -40px rgba(0, 119, 255, 0.2),
-        inset 0 0 80px rgba(0, 119, 255, 0.03) !important;
-    margin: 0 !important;
-    animation: none !important;
-    scroll-margin-top: 180px !important; /* Zentriert die Sektion im Viewport */
-}
-
-[data-theme="dark"] .dsgvo::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 10%;
-    right: 10%;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(0, 119, 255, 0.8), 
-        rgba(0, 119, 255, 0.8), 
-        transparent
-    );
-    filter: blur(1px);
-}
-
-[data-theme="dark"] .dsgvo::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 10%;
-    right: 10%;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(0, 119, 255, 0.8), 
-        rgba(0, 119, 255, 0.8), 
-        transparent
-    );
-    filter: blur(1px);
-}
-
-/* Ersparnis (Value Calculator) - fehlender Glow-Trenner unten */
-[data-theme="dark"] .value-calculator {
-    border-bottom: 1px solid rgba(0, 119, 255, 0.25) !important;
-}
-
-[data-theme="dark"] .value-calculator::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 60%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(0, 119, 255, 0.6), transparent);
-    filter: blur(1px);
-    pointer-events: none;
-}
-
-/* Pricing Trennbalken */
-[data-theme="dark"] .pricing {
-    position: relative;
-    border-top: 1px solid rgba(0, 119, 255, 0.25) !important;
-    box-shadow: 
-        0 -30px 80px -30px rgba(0, 119, 255, 0.12),
-        inset 0 1px 0 rgba(0, 119, 255, 0.1) !important;
-}
-
-[data-theme="dark"] .pricing::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 119, 255, 0.6), transparent);
-}
-
-[data-theme="dark"] .pricing::after {
-    display: none !important;
-}
-
-/* Testimonials Trennbalken */
-[data-theme="dark"] .testimonials {
-    position: relative;
-    border-top: 1px solid rgba(0, 119, 255, 0.25) !important;
-    box-shadow: 
-        0 -30px 80px -30px rgba(0, 119, 255, 0.12),
-        inset 0 1px 0 rgba(0, 119, 255, 0.1) !important;
-}
-
-[data-theme="dark"] .testimonials::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 119, 255, 0.6), transparent);
-}
-
-/* FAQ Trennbalken */
-[data-theme="dark"] .faq-section {
-    position: relative;
-    border-top: 1px solid rgba(0, 119, 255, 0.25) !important;
-    box-shadow: 
-        0 -30px 80px -30px rgba(0, 119, 255, 0.12),
-        inset 0 1px 0 rgba(0, 119, 255, 0.1) !important;
-}
-
-[data-theme="dark"] .faq-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 119, 255, 0.5), transparent);
-}
-
-[data-theme="dark"] .faq-section::after {
-    display: none !important;
-}
-
-/* Final CTA */
-[data-theme="dark"] .final-cta {
-    background: linear-gradient(180deg, 
-        #0a0e1a 0%, 
-        rgba(0, 119, 255, 0.08) 50%, 
-        #0a0e1a 100%
-    ) !important;
-    position: relative;
-    border-top: 2px solid rgba(0, 119, 255, 0.4) !important;
-    box-shadow: 
-        0 -50px 120px -40px rgba(0, 119, 255, 0.25),
-        inset 0 0 100px rgba(0, 119, 255, 0.05) !important;
-}
-
-[data-theme="dark"] .final-cta::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 5%;
-    right: 5%;
-    height: 3px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(0, 119, 255, 0.9), 
-        rgba(0, 119, 255, 1), 
-        rgba(0, 119, 255, 0.9), 
-        transparent
-    );
-    filter: blur(2px);
-}
-
-/* Footer */
-[data-theme="dark"] .footer {
-    background: #080b14 !important;
-    border-top: 1px solid rgba(0, 119, 255, 0.2) !important;
-    box-shadow: 0 -20px 60px -20px rgba(0, 0, 0, 0.5) !important;
-}
 
 /* ===== 11. LEAD MAGNET & FINAL CTA ICONS ===== */
 

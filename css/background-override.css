@@ -1,39 +1,85 @@
 /* ============================================
    BACKGROUND OVERRIDE – KI-Prozessnavigator
-   Nur Hintergrund. Kein Layout.
+   NUR Hintergrund + Glow. Kein Layout.
+   Letzte CSS-Datei → höchste Kaskaden-Priorität.
    ============================================ */
 
-/* DOT-GRID auf body */
+/* ── DOT-GRID AUF BODY ── */
 body {
-  background-color: #0a0e1a !important;
+  background-color: #0a0e1a;
   background-image: radial-gradient(
     circle,
     rgba(55, 65, 81, 0.8) 1px,
     transparent 1px
-  ) !important;
-  background-size: 28px 28px !important;
-  background-attachment: scroll !important;
+  );
+  background-size: 28px 28px;
+  background-attachment: scroll;
 }
 
-/* ALLE Sektionen transparent damit Dot-Grid durchscheint */
-section.wir-vs-du,
-section.rechner-v3,
-section.use-cases-tabs,
-section.ablauf,
-section.zusammenarbeit,
-section.dsgvo,
-section.faq-section,
-section.final-cta,
-section.about-hero,
-section.about-section,
-section.legal-section,
-section.privacy-section,
-section.imprint-section {
-  background-color: transparent !important;
-  background-image: none !important;
+/* ── SEKTIONEN TRANSPARENT (Dot-Grid scheint durch) ──
+   WICHTIG: .hero ist NICHT in dieser Liste!
+   Hero behält ihre eigenen ::before/::after Effekte aus main.css + hero-override.css.
+   .logo-carousel und .trust-bar behalten ihren eigenen Hintergrund.
+*/
+.wir-vs-du,
+.rechner-v3,
+.use-cases-tabs,
+.ablauf,
+.zusammenarbeit,
+.dsgvo,
+.faq-section,
+.final-cta,
+.problems,
+.solutions,
+.pricing,
+.testimonials,
+.value-calculator,
+.about-hero,
+.about-section,
+.legal-section,
+.privacy-section,
+.imprint-section {
+  background: transparent;
+  border-top: none;
+  border-bottom: none;
+  box-shadow: none;
 }
 
-/* GLOW-DIVS */
+/* ── KEINE TRENNLINIEN ──
+   Alle ::before-Trennlinien zwischen Sektionen deaktiviert.
+   Alle ::after-Trennlinien zwischen Sektionen deaktiviert.
+   AUSNAHME: .hero::before und .hero::after werden NICHT angefasst!
+*/
+section#problems::before,
+section#ersparnis::before,
+section#use-cases::before,
+section#ablauf::before,
+section#zusammenarbeit::before,
+section#dsgvo::before,
+section#faq::before,
+section#contact::before,
+section#problems::after,
+section#ersparnis::after,
+section#use-cases::after,
+section#ablauf::after,
+section#zusammenarbeit::after,
+section#dsgvo::after,
+section#faq::after,
+section#contact::after,
+.dsgvo::before,
+.dsgvo::after,
+.faq-section::before,
+.faq-section::after,
+.final-cta::before {
+  content: none;
+  display: none;
+}
+
+/* ── GLOW-SPOTS (dezente Lichtakzente) ──
+   position: fixed mit max-height damit sie NICHT in den Footer gehen.
+   Glow #5 (unten) endet vor dem Footer.
+   Kein Glow in der Mitte des Bildschirms.
+*/
 .bg-glow {
   position: fixed;
   border-radius: 50%;
@@ -42,95 +88,52 @@ section.imprint-section {
   will-change: transform;
 }
 
+/* Oben links – dezenter blauer Schein */
 #glow-1 {
   width: 700px;
   height: 500px;
-  top: 3%;
-  left: -8%;
-  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.11) 0%, transparent 70%);
-}
-
-#glow-2 {
-  width: 550px;
-  height: 400px;
   top: 2%;
-  right: -6%;
-  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.07) 0%, transparent 70%);
+  left: -10%;
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.09) 0%, transparent 70%);
 }
 
+/* Oben rechts – sehr dezent */
+#glow-2 {
+  width: 500px;
+  height: 350px;
+  top: 1%;
+  right: -8%;
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.06) 0%, transparent 70%);
+}
+
+/* Glow-3 ENTFERNT – war der hellgraue Glow mittig im Bildschirm */
 #glow-3 {
-  width: 600px;
-  height: 450px;
-  top: 35%;
-  right: -10%;
-  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.06) 0%, transparent 65%);
+  display: none;
 }
 
+/* Unten links – sehr dezent */
 #glow-4 {
-  width: 420px;
-  height: 320px;
-  top: 68%;
-  left: -14%;
-  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.05) 0%, transparent 65%);
+  width: 400px;
+  height: 300px;
+  top: 55%;
+  left: -15%;
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.04) 0%, transparent 65%);
 }
 
+/* Glow-5 ENTFERNT – ging in den Footer rein */
 #glow-5 {
-  width: 650px;
-  height: 260px;
-  top: 87%;
-  left: 25%;
-  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.045) 0%, transparent 70%);
+  display: none;
 }
 
-/* EINHEITLICHE TRENNLINIEN – identisches Design überall */
-section#problems::before,
-section#ersparnis::before,
-section#use-cases::before,
-section#ablauf::before,
-section#zusammenarbeit::before,
-section#dsgvo::before,
-section#faq::before,
-section#contact::before {
-  content: '' !important;
-  display: block !important;
-  height: 1px !important;
-  width: 75% !important;
-  margin: 0 auto !important;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 119, 255, 0.18) 20%,
-    rgba(0, 212, 255, 0.5) 50%,
-    rgba(0, 119, 255, 0.18) 80%,
-    transparent 100%
-  ) !important;
-  box-shadow: 0 0 8px rgba(0, 212, 255, 0.25),
-              0 0 18px rgba(0, 119, 255, 0.12) !important;
-  position: static !important;
-  pointer-events: none !important;
-  animation: none !important;
-}
-
-/* trust-bar / Karussell: KEINE zusätzliche Linie von uns */
-section.logo-carousel::before,
-section#trust-bar::before {
-  content: none !important;
-  display: none !important;
-}
-
-/* faq-section::after und final-cta::before: deaktivieren */
-/* (verhindern Doppellinien) */
-.faq-section::after,
-[data-theme="dark"] .faq-section::after {
-  content: none !important;
-}
-
-.final-cta::before {
-  content: none !important;
-}
-
-/* FOOTER unverändert */
+/* ── FOOTER ──
+   Gleiche Farbe wie Header (#0a0e1a), damit beides identisch aussieht.
+   z-index: 1 stellt sicher, dass kein Glow-Spot in den Footer scheint.
+*/
 footer,
 .footer {
-  background-color: #0a0e1a !important;
+  background-color: #0a0e1a;
+  border-top: none;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
 }
