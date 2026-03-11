@@ -253,22 +253,23 @@ function typeWriter(element, text, speed = 50) {
 function initFAQ() {
     DOM.faqItems.forEach(item => {
         const question = item.querySelector('.faq-item__question');
+        const answer = item.querySelector('.faq-item__answer');
         
         if (question) {
+            if (answer) {
+                const expanded = question.getAttribute('aria-expanded') === 'true';
+                answer.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+            }
+
             question.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
-                
-                // Close all other items
-                DOM.faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
-                    }
-                });
-                
-                // Toggle current item
-                item.classList.toggle('active', !isActive);
-                question.setAttribute('aria-expanded', !isActive);
+                const nextState = !isActive;
+
+                item.classList.toggle('active', nextState);
+                question.setAttribute('aria-expanded', String(nextState));
+                if (answer) {
+                    answer.setAttribute('aria-hidden', nextState ? 'false' : 'true');
+                }
             });
         }
     });
