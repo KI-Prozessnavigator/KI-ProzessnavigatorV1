@@ -1,0 +1,136 @@
+/* ============================================
+   BACKGROUND OVERRIDE – KI-Prozessnavigator
+   Nur Hintergrund. Kein Layout.
+   ============================================ */
+
+/* DOT-GRID auf body */
+body {
+  background-color: #0a0e1a !important;
+  background-image: radial-gradient(
+    circle,
+    rgba(55, 65, 81, 0.8) 1px,
+    transparent 1px
+  ) !important;
+  background-size: 28px 28px !important;
+  background-attachment: scroll !important;
+}
+
+/* ALLE Sektionen transparent damit Dot-Grid durchscheint */
+section.wir-vs-du,
+section.rechner-v3,
+section.use-cases-tabs,
+section.ablauf,
+section.zusammenarbeit,
+section.dsgvo,
+section.faq-section,
+section.final-cta,
+section.about-hero,
+section.about-section,
+section.legal-section,
+section.privacy-section,
+section.imprint-section {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* GLOW-DIVS */
+.bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+#glow-1 {
+  width: 700px;
+  height: 500px;
+  top: 3%;
+  left: -8%;
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.11) 0%, transparent 70%);
+}
+
+#glow-2 {
+  width: 550px;
+  height: 400px;
+  top: 2%;
+  right: -6%;
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.07) 0%, transparent 70%);
+}
+
+#glow-3 {
+  width: 600px;
+  height: 450px;
+  top: 35%;
+  right: -10%;
+  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.06) 0%, transparent 65%);
+}
+
+#glow-4 {
+  width: 420px;
+  height: 320px;
+  top: 68%;
+  left: -14%;
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.05) 0%, transparent 65%);
+}
+
+#glow-5 {
+  width: 650px;
+  height: 260px;
+  top: 87%;
+  left: 25%;
+  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.045) 0%, transparent 70%);
+}
+
+/* EINHEITLICHE TRENNLINIEN – identisches Design überall */
+section#problems::before,
+section#ersparnis::before,
+section#use-cases::before,
+section#ablauf::before,
+section#zusammenarbeit::before,
+section#dsgvo::before,
+section#faq::before,
+section#contact::before {
+  content: '' !important;
+  display: block !important;
+  height: 1px !important;
+  width: 75% !important;
+  margin: 0 auto !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 119, 255, 0.18) 20%,
+    rgba(0, 212, 255, 0.5) 50%,
+    rgba(0, 119, 255, 0.18) 80%,
+    transparent 100%
+  ) !important;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.25),
+              0 0 18px rgba(0, 119, 255, 0.12) !important;
+  position: static !important;
+  pointer-events: none !important;
+  animation: none !important;
+}
+
+/* trust-bar / Karussell: KEINE zusätzliche Linie von uns */
+section.logo-carousel::before,
+section#trust-bar::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* faq-section::after und final-cta::before: deaktivieren */
+/* (verhindern Doppellinien) */
+.faq-section::after,
+[data-theme="dark"] .faq-section::after {
+  content: none !important;
+}
+
+.final-cta::before {
+  content: none !important;
+}
+
+/* FOOTER unverändert */
+footer,
+.footer {
+  background-color: #0a0e1a !important;
+}

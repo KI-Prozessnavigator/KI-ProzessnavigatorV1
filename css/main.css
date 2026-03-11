@@ -2709,7 +2709,7 @@ section {
 
 /* ===== DSGVO Section ===== */
 .dsgvo {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0a1628 100%);
+    background: transparent;
     color: white;
     position: relative;
     scroll-margin-top: 180px; /* Zentriert die Sektion im Viewport */
@@ -2726,7 +2726,7 @@ section {
 }
 
 .dsgvo::after {
-    content: '';
+    content: none;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -2781,7 +2781,7 @@ section {
 }
 
 .dsgvo::before {
-    content: '';
+    content: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -3366,7 +3366,7 @@ section {
 
 /* ===== FAQ Section ===== */
 .faq-section {
-    background: var(--color-background);
+    background: transparent;
     transition: background var(--transition-slow);
     /* Sanfter Übergang zur Final CTA */
     position: relative;
@@ -3560,7 +3560,7 @@ section {
 
 /* ===== Final CTA (Beratungssektion) ===== */
 .final-cta {
-    background: linear-gradient(180deg, #0a0e1a 0%, #0f172a 50%, #0a0e1a 100%);
+    background: transparent;
     color: white;
     text-align: center;
     padding-block: var(--space-24);
@@ -5160,7 +5160,7 @@ section.testimonials.expert-quotes,
 }
 
 [data-theme="dark"] .faq-section {
-    background: var(--color-background);
+    background: transparent;
 }
 
 [data-theme="dark"] .pricing::after,
