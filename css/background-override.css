@@ -45,6 +45,23 @@ body {
   box-shadow: none;
 }
 
+/* ── TRENNLINIEN VOR + NACH LOGO-CAROUSEL ──
+   Gleicher Stil wie die originalen Carousel-Borders.
+*/
+.logo-carousel,
+.trust-bar {
+  border-top: 1px solid rgba(0, 212, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 119, 255, 0.15);
+}
+
+/* ── TRENNLINIE VOR DEM FOOTER ──
+   Gleicher Stil wie die Carousel-Trennlinien.
+*/
+footer,
+.footer {
+  border-top: 1px solid rgba(0, 212, 255, 0.2) !important;
+}
+
 /* ── KEINE TRENNLINIEN ──
    Alle ::before-Trennlinien zwischen Sektionen deaktiviert.
    Alle ::after-Trennlinien zwischen Sektionen deaktiviert.
@@ -88,13 +105,13 @@ section#contact::after,
   will-change: transform;
 }
 
-/* Oben links – dezenter blauer Schein */
+/* Oben links – minimal verringert */
 #glow-1 {
-  width: 700px;
-  height: 500px;
+  width: 650px;
+  height: 450px;
   top: 2%;
   left: -10%;
-  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.09) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.07) 0%, transparent 70%);
 }
 
 /* Oben rechts – sehr dezent */
@@ -120,9 +137,13 @@ section#contact::after,
   background: radial-gradient(ellipse, rgba(0, 119, 255, 0.04) 0%, transparent 65%);
 }
 
-/* Glow-5 ENTFERNT – ging in den Footer rein */
+/* Rechts mittig – kleiner dezenter Glow (neu) */
 #glow-5 {
-  display: none;
+  width: 450px;
+  height: 350px;
+  top: 40%;
+  right: -12%;
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.05) 0%, transparent 70%);
 }
 
 /* ── FOOTER ──
@@ -132,7 +153,6 @@ section#contact::after,
 footer,
 .footer {
   background-color: #0a0e1a;
-  border-top: none;
   box-shadow: none;
   position: relative;
   z-index: 1;
