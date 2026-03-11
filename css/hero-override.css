@@ -1,8 +1,6 @@
-/* =========================================================
-   HERO OVERRIDE – Überschreibt ALLE alten Hero-Regeln
-   ========================================================= */
 
-/* === CONTAINER: kein 2-Spalten-Grid, einfach zentriert === */
+
+
 section.hero .hero__container {
     display: flex !important;
     flex-direction: column !important;
@@ -17,7 +15,7 @@ section.hero .hero__container {
     padding-right: var(--container-padding) !important;
 }
 
-/* === CONTENT: Flex-Column, alles zentriert === */
+
 section.hero .hero__content {
     display: flex !important;
     flex-direction: column !important;
@@ -27,7 +25,7 @@ section.hero .hero__content {
     padding-top: 0 !important;
 }
 
-/* === H1: Zentriert, volle Breite, weiß === */
+
 section.hero .hero__title {
     font-family: var(--font-heading) !important;
     font-weight: var(--font-bold) !important;
@@ -49,7 +47,7 @@ section.hero .hero__title {
     overflow-wrap: normal !important;
 }
 
-/* === BODY: Sub-Headline links + Badges rechts, mittig === */
+
 section.hero .hero__body {
     display: flex !important;
     flex-direction: row !important;
@@ -62,7 +60,7 @@ section.hero .hero__body {
     order: 2 !important;
 }
 
-/* === DESCRIPTION: Links, weiß === */
+
 section.hero .hero__description {
     font-size: var(--text-lg) !important;
     max-width: none !important;
@@ -81,7 +79,7 @@ section.hero .hero__description span {
     white-space: nowrap !important;
 }
 
-/* === BADGES: Rechts neben Description === */
+
 section.hero .hero__badges {
     display: flex !important;
     flex-direction: column !important;
@@ -111,7 +109,7 @@ section.hero .hero-badge {
 section.hero .hero-badge__label {
 }
 
-/* === ACTIONS: CTA + Trust, zentriert === */
+
 section.hero .hero__actions {
     display: flex !important;
     flex-direction: column !important;
@@ -123,7 +121,7 @@ section.hero .hero__actions {
     overflow: visible !important;
 }
 
-/* === TRUST-LINE: Weiß, grüne Haken === */
+
 section.hero .hero__trust-line {
     margin-top: 16px !important;
     margin-bottom: var(--space-16) !important;
@@ -136,7 +134,7 @@ section.hero .hero__trust-line {
     flex-wrap: wrap !important;
 }
 
-/* === LOGO-CAROUSEL: Auf allen Geräten sichtbar === */
+
 section.hero .hero__logo-bar,
 .hero .logo-carousel.hero__logo-bar {
     display: block !important;
@@ -145,9 +143,7 @@ section.hero .hero__logo-bar,
     overflow: hidden !important;
 }
 
-/* =========================================================
-   RESPONSIVE: Tablet + Mobile (≤1023px)
-   ========================================================= */
+
 @media (max-width: 1023px) {
     section.hero {
         display: flex !important;
@@ -221,9 +217,7 @@ section.hero .hero__logo-bar,
     }
 }
 
-/* =========================================================
-   RESPONSIVE: Small Mobile (≤576px)
-   ========================================================= */
+
 @media (max-width: 576px) {
     section.hero .hero__title {
         padding-inline: 4% !important;
@@ -247,9 +241,7 @@ section.hero .hero__logo-bar,
     }
 }
 
-/* =========================================================
-   RESPONSIVE: Handy-only gestapelt (≤767px)
-   ========================================================= */
+
 @media (max-width: 767px) {
     section.hero .hero__body {
         flex-direction: column !important;

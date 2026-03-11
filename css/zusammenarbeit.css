@@ -96,7 +96,7 @@
     border-color: rgba(0, 119, 255, 0.3);
 }
 
-/* Keine Verbindungslinien zwischen den Schritten */
+
 .zusammenarbeit__steps .zusammenarbeit__step::before,
 .zusammenarbeit__steps .zusammenarbeit__step::after {
     display: none !important;

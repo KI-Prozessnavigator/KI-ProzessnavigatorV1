@@ -1,6 +1,4 @@
-/* ==========================================
-   Globaler Overflow-Schutz
-   ========================================== */
+
 * {
     box-sizing: border-box;
 }
@@ -19,7 +17,7 @@ body {
     padding: 0;
 }
 
-/* Verhindere horizontales Scrollen bei allen Containern */
+
 section,
 .container,
 .wrapper,
@@ -30,16 +28,14 @@ footer {
     overflow-x: hidden;
 }
 
-/* Text-Umbruch für lange Wörter/URLs */
+
 p, h1, h2, h3, h4, h5, h6, span, div, a {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
 }
 
-/* ==========================================
-   CSS Reset - Modern Normalize
-   ========================================== */
+
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -101,9 +97,7 @@ table {
     border-spacing: 0;
 }
 
-/* ==========================================
-   Global Text Colors
-   ========================================== */
+
 h1, h2, h3, h4 {
     color: #ffffff;
 }
@@ -116,7 +110,7 @@ p, li, td, dd {
     color: inherit;
 }
 
-/* Highlight-Text: Cyan mit Glow */
+
 .text-highlight,
 .highlight,
 .subtext-highlight {
@@ -146,19 +140,19 @@ p, li, td, dd {
     opacity: 0.7;
 }
 
-/* Remove default button styles */
+
 button:focus {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
-/* Improve media defaults */
+
 img, video {
     max-width: 100%;
     height: auto;
 }
 
-/* Remove animations for users who prefer reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -171,22 +165,20 @@ img, video {
 
 
 
-/* ==========================================
-   Design System - CSS Custom Properties
-   ========================================== */
+
 
 :root {
-    /* ===== THEME CONFIGURATION ===== */
-    /* Ändere diese Werte um verschiedene Blautöne zu testen */
-    --theme-blue-primary: #0077FF;      /* Hauptakzent-Blau */
-    --theme-blue-secondary: #00D4FF;    /* Sekundär-Blau (Cyan) */
-    --theme-blue-dark: #0055CC;         /* Dunkles Blau */
-    --theme-blue-hover: #0066DD;        /* Hover-Zustand */
-    /* ================================ */
-
-    /* ===== Color Palette ===== */
     
-    /* Primary - Deep Teal / Petrol */
+    
+    --theme-blue-primary: #0077FF;      
+    --theme-blue-secondary: #00D4FF;    
+    --theme-blue-dark: #0055CC;         
+    --theme-blue-hover: #0066DD;        
+    
+
+    
+    
+    
     --color-primary-50: #e6f0ff;
     --color-primary-100: #b3d1ff;
     --color-primary-200: #80b3ff;
@@ -198,7 +190,7 @@ img, video {
     --color-primary-800: #003366;
     --color-primary-900: #002244;
     
-    /* Accent - Warm Coral (bleibt für Kontrast) */
+    
     --color-accent-50: #fff0ed;
     --color-accent-100: #ffd4cc;
     --color-accent-200: #ffb8ab;
@@ -208,13 +200,13 @@ img, video {
     --color-accent-700: #b03a31;
     --color-accent-800: #8c2a23;
     
-    /* Neon CTA - Jetzt Blau-basiert */
+    
     --color-neon: var(--theme-blue-primary);
     --color-neon-hover: var(--theme-blue-hover);
     --color-neon-glow: rgba(0, 119, 255, 0.4);
     --color-neon-dark: var(--theme-blue-dark);
     
-    /* Futuristische Neon-Farben - Blau-Palette */
+    
     --color-neon-cyan: var(--theme-blue-secondary);
     --color-neon-cyan-glow: rgba(0, 212, 255, 0.5);
     --color-neon-blue: var(--theme-blue-primary);
@@ -228,13 +220,13 @@ img, video {
     --color-neon-orange: #FF6B35;
     --color-neon-orange-glow: rgba(255, 107, 53, 0.5);
     
-    /* Futuristische Gradienten - Komplett Blau-basiert */
+    
     --gradient-neon-1: linear-gradient(135deg, var(--theme-blue-primary) 0%, var(--theme-blue-secondary) 100%);
     --gradient-neon-2: linear-gradient(135deg, var(--color-neon-blue-light) 0%, var(--theme-blue-primary) 50%, var(--theme-blue-secondary) 100%);
     --gradient-neon-3: linear-gradient(135deg, var(--theme-blue-primary) 0%, var(--theme-blue-secondary) 50%, var(--color-neon-blue-light) 100%);
     --gradient-cyber: linear-gradient(135deg, var(--theme-blue-dark) 0%, var(--theme-blue-primary) 25%, var(--color-neon-blue-light) 50%, var(--theme-blue-secondary) 75%, #00BFFF 100%);
     
-    /* Neutrals - Warm Grays */
+    
     --color-neutral-50: #fafaf9;
     --color-neutral-100: #f5f4f2;
     --color-neutral-200: #e8e6e3;
@@ -246,7 +238,7 @@ img, video {
     --color-neutral-800: #292524;
     --color-neutral-900: #1c1917;
     
-    /* Semantic Colors */
+    
     --color-background: #fefdfb;
     --color-surface: #ffffff;
     --color-text: #ffffff;
@@ -259,13 +251,13 @@ img, video {
     --color-bg-secondary: #141b2d;
     --color-border: var(--color-neutral-200);
     
-    /* ===== Typography ===== */
     
-    /* Font Families */
+    
+    
     --font-heading: 'Montserrat', Arial, sans-serif;
     --font-body: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
     
-    /* Font Sizes - Fluid Typography */
+    
     --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
     --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
     --text-base: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
@@ -276,26 +268,26 @@ img, video {
     --text-4xl: clamp(2.5rem, 1.75rem + 3.75vw, 4.5rem);
     --text-5xl: clamp(3rem, 2rem + 5vw, 6rem);
     
-    /* Font Weights */
+    
     --font-light: 300;
     --font-regular: 400;
     --font-medium: 500;
     --font-semibold: 600;
     --font-bold: 700;
     
-    /* Line Heights */
+    
     --leading-tight: 1.15;
     --leading-snug: 1.3;
     --leading-normal: 1.6;
     --leading-relaxed: 1.75;
     
-    /* Letter Spacing */
+    
     --tracking-tight: -0.02em;
     --tracking-normal: 0;
     --tracking-wide: 0.02em;
     --tracking-wider: 0.05em;
     
-    /* ===== Spacing ===== */
+    
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
@@ -310,14 +302,14 @@ img, video {
     --space-24: 6rem;
     --space-32: 8rem;
     
-    /* Section Spacing */
+    
     --section-padding: clamp(4rem, 8vw, 8rem);
     
-    /* ===== Layout ===== */
+    
     --container-max: 1200px;
     --container-padding: clamp(1.25rem, 5vw, 3rem);
     
-    /* ===== Borders & Radius ===== */
+    
     --radius-sm: 4px;
     --radius-md: 8px;
     --radius-lg: 12px;
@@ -325,7 +317,7 @@ img, video {
     --radius-2xl: 24px;
     --radius-full: 9999px;
     
-    /* ===== Shadows ===== */
+    
     --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(28, 25, 23, 0.07), 
                  0 2px 4px -1px rgba(28, 25, 23, 0.04);
@@ -335,7 +327,7 @@ img, video {
                  0 10px 10px -5px rgba(28, 25, 23, 0.04);
     --shadow-glow: 0 0 40px rgba(13, 115, 119, 0.15);
     
-    /* Futuristische Glow-Effekte - Blau-basiert */
+    
     --shadow-neon-green: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2), 0 0 60px rgba(0, 119, 255, 0.1);
     --shadow-neon-cyan: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 40px rgba(0, 212, 255, 0.2), 0 0 60px rgba(0, 212, 255, 0.1);
     --shadow-neon-blue: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2), 0 0 60px rgba(0, 119, 255, 0.1);
@@ -343,13 +335,13 @@ img, video {
     --shadow-neon-teal: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 40px rgba(0, 212, 255, 0.2), 0 0 60px rgba(0, 212, 255, 0.1);
     --shadow-neon-multi: 0 0 30px rgba(0, 119, 255, 0.3), 0 0 60px rgba(0, 212, 255, 0.2), 0 0 90px rgba(0, 153, 255, 0.1);
     
-    /* ===== Transitions ===== */
+    
     --transition-fast: 150ms ease;
     --transition-base: 250ms ease;
     --transition-slow: 400ms ease;
     --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
     
-    /* ===== Z-Index ===== */
+    
     --z-dropdown: 100;
     --z-sticky: 200;
     --z-fixed: 300;
@@ -358,9 +350,9 @@ img, video {
     --z-tooltip: 600;
 }
 
-/* ===== Dark Mode ===== */
+
 [data-theme="dark"] {
-    /* Background Colors */
+    
     --color-background: #0a0e1a;
     --color-surface: #141b2d;
     --color-text: #ffffff;
@@ -373,7 +365,7 @@ img, video {
     --color-bg-secondary: #141b2d;
     --color-border: #1f2937;
     
-    /* Neutral Colors - Darker */
+    
     --color-neutral-50: #1f2937;
     --color-neutral-100: #374151;
     --color-neutral-200: #4b5563;
@@ -385,7 +377,7 @@ img, video {
     --color-neutral-800: #f9fafb;
     --color-neutral-900: #ffffff;
     
-    /* Shadows - Lighter for dark mode */
+    
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 
                  0 2px 4px -1px rgba(0, 0, 0, 0.3);
@@ -395,19 +387,19 @@ img, video {
                  0 10px 10px -5px rgba(0, 0, 0, 0.4);
     --shadow-glow: 0 0 40px rgba(13, 115, 119, 0.3);
     
-    /* Glassmorphism - Darker */
+    
     --glass-background: rgba(20, 27, 45, 0.6);
     --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-/* Dark Mode Support (Optional - System Preference) */
+
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-        /* Automatisch Dark Mode wenn System es bevorzugt und kein manueller Modus gesetzt */
+        
     }
 }
 
-/* ===== Dark Section Theme ===== */
+
 .dark-section {
     --section-bg: #0a1628;
     --section-surface: rgba(255, 255, 255, 0.05);
@@ -416,7 +408,7 @@ img, video {
     --section-border: rgba(255, 255, 255, 0.1);
 }
 
-/* ===== Glassmorphism Variables ===== */
+
 :root {
     --glass-background: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
@@ -424,7 +416,7 @@ img, video {
     --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== Animation Timing Functions ===== */
+
 :root {
     --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
     --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
@@ -433,11 +425,9 @@ img, video {
 }
 
 
-/* ==========================================
-   Main Styles - KI-Prozessnavigator
-   ========================================== */
 
-/* ===== Base Styles ===== */
+
+
 body {
     font-size: var(--text-base);
     font-weight: 400;
@@ -447,7 +437,7 @@ body {
     font-family: var(--font-body);
 }
 
-/* ===== Layout ===== */
+
 .container {
     width: 100%;
     max-width: min(var(--container-max), 100vw);
@@ -456,7 +446,7 @@ body {
     box-sizing: border-box;
 }
 
-/* ===== Typography ===== */
+
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
     color: var(--color-neutral-900);
@@ -513,7 +503,7 @@ p, li, td, dd, label, input, textarea, select {
     font-size: var(--text-xl);
 }
 
-/* ===== Header & Navigation ===== */
+
 .header {
     position: fixed;
     top: 0;
@@ -552,7 +542,7 @@ p, li, td, dd, label, input, textarea, select {
     min-height: 0;
 }
 
-/* Logo bleibt innerhalb des Headers: max 82 % der Nav-Höhe */
+
 .nav__logo img {
     display: block;
     height: auto;
@@ -593,7 +583,7 @@ p, li, td, dd, label, input, textarea, select {
     display: none;
 }
 
-/* Entferne alle Hover-Effekte von den List Items */
+
 .nav__item {
     background: none !important;
     background-color: transparent !important;
@@ -704,9 +694,9 @@ p, li, td, dd, label, input, textarea, select {
     position: relative;
 }
 
-/* ALTE HAMBURGER DEFINITIONEN KOMPLETT ENTFERNT - WERDEN VON RESPONSIVE.CSS GESTEUERT */
 
-/* ===== Theme Toggle Button ===== */
+
+
 .theme-toggle {
     width: 44px;
     height: 44px;
@@ -756,7 +746,7 @@ p, li, td, dd, label, input, textarea, select {
     transform: rotate(0deg);
 }
 
-/* ===== Buttons ===== */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -810,7 +800,7 @@ p, li, td, dd, label, input, textarea, select {
     width: auto;
 }
 
-/* ===== Section Styles ===== */
+
 section {
     padding-block: var(--section-padding);
 }
@@ -841,7 +831,7 @@ section {
     color: var(--color-text-muted);
 }
 
-/* ===== Hero Section ===== */
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -918,7 +908,7 @@ section {
     position: relative;
     z-index: 1;
 }
-/* Reset: keine erzwungene Verschiebung nach oben */
+
 .hero .hero__content {
     padding-top: 0 !important;
 }
@@ -1002,7 +992,7 @@ section {
     color: rgba(255, 255, 255, 0.3);
 }
 
-/* ===== Hero Trust Badges ===== */
+
 .hero__badges {
     display: flex;
     flex-direction: column;
@@ -1146,7 +1136,7 @@ section {
     }
 }
 
-/* ===== Services Section ===== */
+
 .services {
     background: var(--color-surface);
 }
@@ -1157,7 +1147,7 @@ section {
     gap: var(--space-8);
 }
 
-/* ===== Process Section ===== */
+
 .process {
     background: 
         linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-background) 100%);
@@ -1169,7 +1159,7 @@ section {
     gap: var(--space-8);
 }
 
-/* ===== About Section ===== */
+
 .about {
     background: var(--color-surface);
 }
@@ -1179,7 +1169,7 @@ section {
     margin-inline: auto;
 }
 
-/* ===== Contact Section ===== */
+
 .contact {
     background: 
         linear-gradient(180deg, var(--color-background) 0%, var(--color-primary-50) 100%);
@@ -1245,7 +1235,7 @@ section {
     min-height: 120px;
 }
 
-/* ===== Footer ===== */
+
 .footer {
     background: var(--color-neutral-900);
     color: var(--color-neutral-300);
@@ -1303,7 +1293,7 @@ section {
     width: 100%;
 }
 
-/* Kontakt-Items ohne Hover-Effekt */
+
 .footer__links-group--contact {
     text-align: right;
 }
@@ -1342,7 +1332,7 @@ section {
     color: var(--color-neutral-500);
 }
 
-/* ===== Utility Classes ===== */
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -1355,9 +1345,9 @@ section {
     border: 0;
 }
 
-/* ===== Accessibility Enhancements ===== */
 
-/* Focus styles for keyboard navigation */
+
+
 .keyboard-navigation *:focus {
     outline: 3px solid var(--color-neon, var(--color-primary));
     outline-offset: 3px;
@@ -1369,20 +1359,20 @@ section {
     outline-offset: 3px;
 }
 
-/* Reduced motion mode */
+
 .reduce-motion * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
 }
 
-/* Ensure sufficient color contrast for text */
+
 .high-contrast-text {
     color: var(--color-neutral-900);
     text-shadow: none;
 }
 
-/* Screen reader only content */
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -1395,7 +1385,7 @@ section {
     border: 0;
 }
 
-/* Focus-visible polyfill styles */
+
 :focus:not(:focus-visible) {
     outline: none;
 }
@@ -1405,7 +1395,7 @@ section {
     outline-offset: 3px;
 }
 
-/* ===== Animations ===== */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1427,11 +1417,9 @@ section {
 .animate-delay-4 { animation-delay: 0.4s; }
 
 
-/* ==========================================
-   Components - KI-Prozessnavigator
-   ========================================== */
 
-/* ===== Trust Bar - Enhanced with Color Accents ===== */
+
+
 .trust-bar {
     padding-block: var(--space-8);
     background: linear-gradient(180deg, rgba(0, 119, 255, 0.02) 0%, var(--color-neutral-50) 50%, var(--color-background) 100%);
@@ -1505,7 +1493,7 @@ section {
     background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 119, 255, 0.05));
 }
 
-/* ===== Hero Stats - Enhanced with Gradients ===== */
+
 .hero__stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1528,7 +1516,7 @@ section {
     transform: translateY(-40px);
 }
 
-/* Accent glow */
+
 .hero__stats::before {
     content: '';
     position: absolute;
@@ -1552,7 +1540,7 @@ section {
     }
 }
 
-/* Eine Spalte – gleiche Breite/Höhe wie die anderen (Grid 1fr), Inhalt mittig */
+
 .hero__stats .stat {
     display: flex !important;
     align-items: center !important;
@@ -1563,7 +1551,7 @@ section {
     text-align: center;
 }
 
-/* Innerer Block: 15px nach links, vertikal mittig */
+
 .hero__stats .stat__inner {
     display: flex;
     flex-direction: column;
@@ -1574,7 +1562,7 @@ section {
     transform: translateX(-15px);
 }
 
-/* Vierte Spalte: „Plätze“ + „Verfügbar“ in zwei Zeilen (HTML <br>), minimal nach links = perfekt mittig */
+
 .hero__stats .stat:last-child .stat__inner {
     max-width: 100%;
     min-width: 0;
@@ -1590,7 +1578,7 @@ section {
     line-height: 1.35;
 }
 
-/* Letzte Spalte wie die anderen ausrichten (3er-Grid) */
+
 .hero__stats .stat:last-child .stat__inner {
     transform: translateX(-15px);
 }
@@ -1601,7 +1589,7 @@ section {
     line-height: 1.3;
 }
 
-/* Trennlinien: volle Höhe der Spalte (= Inhalt), liegen mit Block mittig in der Box */
+
 .hero__stats .stat:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -1613,7 +1601,7 @@ section {
     background: linear-gradient(180deg, transparent, var(--color-primary-200), transparent);
 }
 
-/* Zahlen strikt mittig, alle auf einer horizontalen Linie (feste Zeilenhöhe) */
+
 .hero__stats .stat__number {
     font-family: var(--font-heading);
     font-size: var(--text-2xl);
@@ -1623,7 +1611,7 @@ section {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    width: auto; /* nicht 100% – Block bleibt schmal, Zentrierung in Spalte bleibt erhalten */
+    width: auto; 
     text-align: center;
     flex-shrink: 0;
     background: var(--gradient-neon-1);
@@ -1635,7 +1623,7 @@ section {
     animation: statNumberGlow 3s ease-in-out infinite;
 }
 
-/* Erstes Kästchen: "10h+/" und "Woche" in zwei Zeilen */
+
 .hero__stats .stat:first-child .stat__number {
     font-size: 1.4rem;
     box-sizing: border-box;
@@ -1660,7 +1648,7 @@ section {
     }
 }
 
-/* Labels: vertikal MITTIG in der Zelle, alle auf derselben horizontalen Linie */
+
 .hero__stats .stat__label {
     font-size: var(--text-xs);
     line-height: 1.3;
@@ -1670,7 +1658,7 @@ section {
     margin-left: 0;
     margin-right: 0;
     display: flex;
-    align-items: center;       /* Text MITTIG in der Zelle (nicht unten) */
+    align-items: center;       
     justify-content: center;
     width: auto;
     text-align: center;
@@ -1680,13 +1668,13 @@ section {
     letter-spacing: var(--tracking-wide);
 }
 
-/* Zeitersparnis & Routinearbeit: Mittig auf der horizontalen Linie (schwarze Linie) */
+
 .hero__stats .stat:nth-child(1) .stat__label,
 .hero__stats .stat:nth-child(2) .stat__label {
     margin-top: calc(var(--space-4) - 5px);
 }
 
-/* ===== Hero Visual Enhancement ===== */
+
 .neural-network {
     position: relative;
     width: 200px;
@@ -1750,10 +1738,10 @@ section {
     to { transform: rotate(360deg); }
 }
 
-/* ===== Scroll Indicator ===== */
+
 .hero__scroll-indicator {
     position: absolute;
-    /* So nah wie möglich an den unteren Viewport-Rand, inkl. iOS Safe-Area */
+    
     bottom: 8px;
     bottom: calc(env(safe-area-inset-bottom) + 8px);
     left: 50%;
@@ -1781,8 +1769,8 @@ section {
     60% { transform: translateX(-50%) translateY(-5px); }
 }
 
-/* ===== Problem & Solution Cards ===== */
-/* Glow sichtbar: Section + Container + Grid overflow: visible, großzügiges Padding damit Glow nicht von body overflow-x: hidden abgeschnitten wird */
+
+
 .problems,
 .solutions {
     overflow: visible;
@@ -1802,7 +1790,7 @@ section {
     padding-inline: 0;
 }
 
-/* ===== Vorteile/Diagnose Stepper (Variante E) ===== */
+
 .problems .vE {
     max-width: 100%;
     margin-inline: 0;
@@ -1869,12 +1857,12 @@ section {
     text-align: center;
 }
 
-/* Fokus-Styling ohne „rechteckigen Kasten“ (Mobile/Touch) */
+
 .problems .vSeg:focus {
     outline: none;
 }
 
-/* Nur für Tastatur-Navigation sichtbar hervorheben */
+
 .keyboard-navigation .problems .vSeg:focus {
     box-shadow:
         0 0 0 4px rgba(0, 212, 255, 0.22),
@@ -2112,7 +2100,7 @@ section {
     max-width: 980px;
 }
 
-/* Subheadline in einer Zeile (Desktop) */
+
 @media (min-width: 1024px) {
     #problems .section__description {
         white-space: nowrap;
@@ -2125,7 +2113,7 @@ section {
     overflow: visible;
 }
 
-/* Rahmen um die Karten: ausreichend Abstand (min. 4rem), damit der Hover-Glow sichtbar ist */
+
 .problems__grid,
 .solutions__grid {
     display: grid;
@@ -2150,7 +2138,7 @@ section {
     text-align: center;
 }
 
-/* Obere Linie bei Hover */
+
 .problem-card::before,
 .solution-card::before {
     content: '';
@@ -2170,7 +2158,7 @@ section {
     transform: scaleX(1);
 }
 
-/* Glow direkt auf der Karte (kein ::after), damit er zuverlässig sichtbar ist; Padding oben sorgt dafür, dass er nicht von body overflow-x: hidden abgeschnitten wird */
+
 .problem-card:hover,
 .solution-card:hover {
     transform: translateY(-4px);
@@ -2183,7 +2171,7 @@ section {
     font-size: 2.5rem;
     margin-bottom: var(--space-4);
     text-align: center;
-    height: 2.5rem; /* Fixe Höhe für Icons */
+    height: 2.5rem; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2198,7 +2186,7 @@ section {
     color: var(--color-neutral-800);
     transition: color var(--transition-base);
     text-align: center;
-    min-height: 3.5rem; /* Sorgt für gleiche Höhe aller Überschriften */
+    min-height: 3.5rem; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2221,7 +2209,7 @@ section {
     margin-bottom: 0;
 }
 
-/* ===== Problem Cards mit Pop-up (Mitteltext ausblenden, "Mehr lesen" → Pop-up) ===== */
+
 .problems__grid--popup .problem-card__text {
     display: none;
 }
@@ -2229,11 +2217,11 @@ section {
     margin-bottom: 0;
     margin-top: 30px;
 }
-/* Grid: eine Zeile, gleiche Höhe für alle drei Karten */
+
 .problems__grid--popup {
     align-items: stretch;
 }
-/* NEUE STRUKTUR: Karte mit position relative, damit wir absolute Positionierung nutzen können */
+
 .problems__grid--popup .problem-card {
     position: relative;
     display: block;
@@ -2242,14 +2230,14 @@ section {
     padding-bottom: 120px;
 }
 
-/* Content-Bereich (Icon, Title, Footnote) - normal im Flow OBEN */
+
 .problems__grid--popup .problem-card__icon,
 .problems__grid--popup .problem-card__title,
 .problems__grid--popup .problem-card__footnote {
     position: relative;
 }
 
-/* Trennstrich: ABSOLUT positioniert von UNTEN - NICHT volle Breite */
+
 .problems__grid--popup .problem-card__separator {
     position: absolute;
     bottom: 70px;
@@ -2269,7 +2257,7 @@ section {
     background: none !important;
 }
 
-/* Mehr lesen: ABSOLUT positioniert - 15px näher an der Unterkante */
+
 .problems__grid--popup .problem-card__more-area {
     position: absolute;
     bottom: 20px;
@@ -2314,20 +2302,20 @@ section {
     cursor: pointer;
 }
 
-/* Ab 900px: drei Spalten, eine Zeile → gleiche Kartenhöhe → Trennstrich/Mehr lesen an Unterkante */
+
 @media (min-width: 900px) {
     .problems__grid--popup {
         grid-template-columns: repeat(3, 1fr) !important;
     }
 }
-/* Unter 900px: Popup-Grid wieder 1 Spalte (Karten untereinander) */
+
 @media (max-width: 899px) {
     .problems__grid--popup {
         grid-template-columns: 1fr !important;
     }
 }
 
-/* Pop-up: Overlay und Box */
+
 .popup-overlay {
     position: fixed;
     inset: 0;
@@ -2440,7 +2428,7 @@ section {
     background: var(--gradient-neon-2);
 }
 
-/* ===== Before/After Showcase - Desktop ===== */
+
 .before-after-showcase {
     margin-block: var(--space-12);
     padding-inline: 0;
@@ -2453,7 +2441,7 @@ section {
     border: 2px solid rgba(0, 212, 255, 0.3);
     border-radius: var(--radius-2xl);
     padding: var(--space-6);
-    /* Reduziert von var(--space-8) auf var(--space-6) für kompaktere Darstellung */
+    
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
@@ -2516,14 +2504,14 @@ section {
 .before-after-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-    /* Reduziert von 250px auf 220px für kompaktere Darstellung */
+    
     gap: var(--space-5);
-    /* Reduziert von var(--space-6) auf var(--space-5) */
+    
 }
 
 .before-after-item {
     padding: var(--space-4);
-    /* Reduziert von var(--space-5) auf var(--space-4) für kompaktere Darstellung */
+    
     background: var(--color-surface);
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
@@ -2582,7 +2570,7 @@ section {
     font-weight: var(--font-bold);
 }
 
-/* Responsive Before/After -- Mobile: horizontal + kompakt */
+
 @media (max-width: 768px) {
     .before-after-showcase {
         width: 100%;
@@ -2603,7 +2591,7 @@ section {
         gap: var(--space-2);
     }
     
-    /* Metriken horizontal nebeneinander (wie Desktop) */
+    
     .metric-values {
         flex-direction: row;
         gap: var(--space-3);
@@ -2623,7 +2611,7 @@ section {
     }
 }
 
-/* Before/After auf Mobile -- volle Breite */
+
 @media (max-width: 576px) {
     .before-after-showcase {
         display: block;
@@ -2642,14 +2630,14 @@ section {
     }
 }
 
-/* Solutions Connector */
+
 .solutions-connector {
     display: flex;
     align-items: center;
     gap: var(--space-6);
     margin-block: var(--space-8);
     padding-inline: 0;
-    /* Gleiche Breite wie .problems__grid und .solutions__grid */
+    
     transition: all var(--transition-base);
 }
 
@@ -2670,22 +2658,20 @@ section {
     transition: color var(--transition-base);
 }
 
-/* ===== DSGVO Section ===== */
+
 .dsgvo {
     background: transparent;
     color: white;
     position: relative;
-    scroll-margin-top: 180px; /* Zentriert die Sektion im Viewport */
+    scroll-margin-top: 180px; 
     overflow-x: hidden;
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
 }
 
-/* -------------------------------------------------
-   2️⃣ DSGVO‑Sektion – Scrollbalken entfernen (LAYOUT BEIBEHALTEN)
-   ------------------------------------------------- */
 
-/* 1. Haupt-Sektion: Hier verstecken wir den Scrollbalken. */
+
+
 #dsgvo-section,
 #dsgvo {
     overflow-x: hidden !important;
@@ -2693,7 +2679,7 @@ section {
     position: relative;
 }
 
-/* 2. Container / Wrapper: overflow + box-sizing, keine Breiten-Befehle (Theme-Design bleibt). */
+
 #dsgvo-section .dsgvo-container,
 #dsgvo-section .content-wrapper,
 #dsgvo .container,
@@ -2703,7 +2689,7 @@ section {
     box-sizing: border-box !important;
 }
 
-/* 3. Inhalte: Textumbruch erzwingen. */
+
 #dsgvo-section p,
 #dsgvo-section li,
 #dsgvo-section ul,
@@ -2733,7 +2719,7 @@ section {
     max-width: 100%;
 }
 
-/* Tabellen responsive halten */
+
 #dsgvo-section table,
 #dsgvo table {
     width: 100% !important;
@@ -2812,7 +2798,7 @@ section {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Trust Badges */
+
 .dsgvo__badges {
     display: flex;
     flex-direction: column;
@@ -2890,11 +2876,11 @@ section {
     overflow-wrap: break-word;
 }
 
-/* ===== Pricing ===== */
+
 .pricing {
     background: var(--color-background);
     transition: background var(--transition-slow);
-    /* Sanfter Übergang zur DSGVO-Sektion */
+    
     position: relative;
     scroll-margin-top: 100px;
     padding-block: var(--space-16);
@@ -3061,7 +3047,7 @@ section {
     color: var(--color-neutral-400);
 }
 
-/* ===== Testimonials ===== */
+
 .testimonials {
     background: linear-gradient(180deg, var(--color-background) 0%, var(--color-neutral-50) 100%);
     transition: background var(--transition-slow);
@@ -3156,7 +3142,7 @@ section {
 }
 
 .play-button svg {
-    margin-left: 4px; /* Optical centering for play icon */
+    margin-left: 4px; 
 }
 
 .play-button:hover {
@@ -3212,7 +3198,7 @@ section {
     color: var(--color-text-muted);
 }
 
-/* Client Logos */
+
 .client-logos {
     display: flex;
     justify-content: center;
@@ -3241,10 +3227,10 @@ section {
     transform: scale(1.05);
 }
 
-/* ===== FAQ Section ===== */
+
 .faq-section {
     background: transparent;
-    /* Sanfter Übergang zur Final CTA */
+    
     position: relative;
 }
 
@@ -3341,7 +3327,7 @@ section {
     padding-bottom: var(--space-3);
 }
 
-/* Lead Magnet */
+
 .lead-magnet {
     position: relative;
 }
@@ -3373,7 +3359,7 @@ section {
     line-height: var(--leading-relaxed);
 }
 
-/* Honeypot: unsichtbar für Menschen, fängt Bots */
+
 .lead-honeypot {
     position: absolute;
     left: -9999px;
@@ -3423,7 +3409,7 @@ section {
     color: var(--color-text-muted);
 }
 
-/* ===== Final CTA (Beratungssektion) ===== */
+
 .final-cta {
     background: transparent;
     color: white;
@@ -3431,8 +3417,8 @@ section {
     padding-block: var(--space-24);
     position: relative;
     overflow-x: hidden;
-    /* overflow-x verhindert horizontale Scrollbar, aber die Rakete kann vertikal sichtbar bleiben */
-    /* Sanfter Übergang von der FAQ-Sektion */
+    
+    
     padding-top: var(--space-24);
 }
 
@@ -3448,14 +3434,14 @@ section {
     display: block;
     margin-bottom: var(--space-6);
     margin-top: calc(var(--space-6) + 20px);
-    /* Zusätzlicher Platz oben, damit die Rakete beim Hochschweben nicht abgeschnitten wird */
+    
     animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
-    /* Rakete schwebt 20px nach oben */
+    
 }
 
 .final-cta__title {
@@ -3488,7 +3474,7 @@ section {
     box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 
-/* ===== Footer Enhanced ===== */
+
 .footer__grid {
     display: grid;
     grid-template-columns: 2fr repeat(3, 1fr);
@@ -3531,7 +3517,7 @@ section {
     overflow: hidden;
 }
 
-/* Instagram - Pink/Lila Gradient */
+
 .social-link[aria-label="Instagram"] {
     background: linear-gradient(45deg, #E4405F 0%, #FCAF45 50%, #833AB4 100%);
 }
@@ -3541,7 +3527,7 @@ section {
     box-shadow: 0 0 15px rgba(228, 64, 95, 0.5);
 }
 
-/* TikTok - Schwarz/Weiß */
+
 .social-link[aria-label="TikTok"] {
     background: #000000;
     color: white;
@@ -3553,7 +3539,7 @@ section {
     transform: scale(1.1);
 }
 
-/* Facebook - Blau */
+
 .social-link[aria-label="Facebook"] {
     background: #1877F2;
     color: white;
@@ -3565,7 +3551,7 @@ section {
     box-shadow: 0 0 15px rgba(24, 119, 242, 0.5);
 }
 
-/* LinkedIn - Blau */
+
 .social-link[aria-label="LinkedIn"] {
     background: #0A66C2;
     color: white;
@@ -3613,7 +3599,7 @@ section {
     z-index: 1;
 }
 
-/* Scroll to Top */
+
 .scroll-to-top {
     width: 50px;
     height: 50px;
@@ -3634,7 +3620,7 @@ section {
     font-size: 1.5rem;
 }
 
-/* ===== Zurück zur Startseite (Unterseiten) ===== */
+
 .back-to-start {
     display: inline-flex;
     align-items: center;
@@ -3660,7 +3646,7 @@ section {
     margin-bottom: 0;
 }
 
-/* ===== Button with Icon ===== */
+
 .btn-icon {
     width: 20px;
     height: 20px;
@@ -3679,7 +3665,7 @@ section {
     transform: scale(1.1);
 }
 
-/* ===== Pricing Guarantee ===== */
+
 .pricing__guarantee {
     text-align: center;
     margin-top: var(--space-8);
@@ -3694,7 +3680,7 @@ section {
     color: var(--color-primary);
 }
 
-/* ===== Final CTA Trust Text ===== */
+
 .final-cta__trust {
     margin-top: var(--space-6);
     font-size: var(--text-sm);
@@ -3712,7 +3698,7 @@ section {
     gap: var(--space-1);
 }
 
-/* ===== Urgency Badge Enhanced ===== */
+
 .final-cta__urgency {
     margin-bottom: var(--space-6);
 }
@@ -3751,7 +3737,7 @@ section {
     50% { box-shadow: 0 0 30px rgba(232, 90, 79, 0.6); }
 }
 
-/* ===== Social Proof Counter ===== */
+
 .final-cta__social-proof {
     display: flex;
     justify-content: center;
@@ -3798,7 +3784,7 @@ section {
     font-size: var(--text-xl);
 }
 
-/* Responsive Social Proof */
+
 @media (max-width: 576px) {
     .final-cta__social-proof {
         flex-direction: row;
@@ -3836,7 +3822,7 @@ section {
     }
 }
 
-/* ===== Software-Logos (Trust Bar Integrations) ===== */
+
 .trust-bar__logos--software {
     display: flex;
     gap: var(--space-4);
@@ -3865,7 +3851,7 @@ section {
     color: #ffffff !important;
 }
 
-/* ===== Logo Carousel (Endlosband) ===== */
+
 .logo-carousel {
     padding-block: 2rem 2.5rem;
     background: linear-gradient(180deg, rgba(0, 119, 255, 0.04) 0%, #0a0e1a 100%);
@@ -3873,7 +3859,7 @@ section {
     overflow: hidden;
 }
 
-/* Logo-Banner innerhalb der Hero: schmal, zentriert, ganz unten */
+
 .hero .logo-carousel.hero__logo-bar {
     width: 100vw;
     max-width: none;
@@ -3983,14 +3969,14 @@ section {
     }
 }
 
-/* Barrierefreiheit: Animation pausieren bei Praeferenz */
+
 @media (prefers-reduced-motion: reduce) {
     .logo-carousel__track {
         animation: none;
     }
 }
 
-/* ===== Expert Quote Cards ===== */
+
 #testimonials.testimonials.expert-quotes,
 section.testimonials.expert-quotes,
 #testimonials .container,
@@ -4076,32 +4062,32 @@ section.testimonials.expert-quotes,
     color: var(--color-neon);
 }
 
-/* Expert Quote Cards - Icon und CTA bündig mit Text */
+
 .expert-quote-card__header {
     margin-left: var(--space-4) !important;
-    /* Header nach rechts - bündig mit Text */
+    
     margin-bottom: var(--space-2) !important;
-    /* Weniger Abstand nach unten */
+    
 }
 
 .expert-quote-card .expert-link {
     margin-left: var(--space-4) !important;
-    /* CTA nach rechts - bündig mit Text */
+    
     padding-top: var(--space-2) !important;
-    /* Weniger Abstand nach oben */
+    
 }
 
 .expert-quote-card {
     padding: var(--space-4) var(--space-6) !important;
-    /* Vertikales Padding reduziert, horizontales bleibt */
+    
 }
 
 .expert-quote-card .testimonial-card__quote {
     padding-block: var(--space-3) !important;
-    /* Vertikales Padding vom Text reduziert */
+    
 }
 
-/* ===== Coming Soon Box ===== */
+
 .coming-soon-box {
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
     border: 2px solid rgba(0, 119, 255, 0.2);
@@ -4188,11 +4174,9 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ==========================================
-   Hero 3D / Skip-Link & Hero (aus hero-3d.css)
-   ========================================== */
 
-/* ===== Skip Link for Accessibility ===== */
+
+
 .skip-link {
     position: absolute;
     top: -100px;
@@ -4214,7 +4198,7 @@ section.testimonials.expert-quotes,
     outline-offset: 2px;
 }
 
-/* ===== Neon CTA Button ===== */
+
 .btn--neon {
     background: #0077FF;
     color: #ffffff;
@@ -4243,7 +4227,7 @@ section.testimonials.expert-quotes,
 .btn--neon:active {
 }
 
-/* ===== Glass Button ===== */
+
 .btn--glass {
     background: #0077FF;
     border: none;
@@ -4261,7 +4245,7 @@ section.testimonials.expert-quotes,
     outline-offset: 2px;
 }
 
-/* ===== Hero 3D Container ===== */
+
 .hero-3d-wrapper {
     position: relative;
     width: 100%;
@@ -4288,7 +4272,7 @@ section.testimonials.expert-quotes,
     height: 100% !important;
 }
 
-/* ===== Data Streams (Decorative) ===== */
+
 .data-streams {
     position: absolute;
     inset: -20%;
@@ -4321,7 +4305,7 @@ section.testimonials.expert-quotes,
     100% { opacity: 0; transform: translateY(200%) scaleY(0); }
 }
 
-/* ===== CSS Fallback for non-WebGL ===== */
+
 .hero-3d-fallback {
     width: 100%;
     height: 100%;
@@ -4370,7 +4354,7 @@ section.testimonials.expert-quotes,
     to { transform: rotate(360deg); }
 }
 
-/* ===== Hero Background Enhancement ===== */
+
 .hero {
     background:
         radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 119, 255, 0.08), transparent),
@@ -4627,13 +4611,11 @@ section.testimonials.expert-quotes,
 }
 
 
-/* ==========================================
-   Dark Mode Styles - KI-Prozessnavigator
-   ========================================== */
 
-/* ===== Header & Navigation ===== */
+
+
 [data-theme="dark"] .header {
-    /* Vollflächiger dunkler Hintergrund, damit keine helleren Bereiche der Hero-Section durchscheinen */
+    
     background: #0a0e1a;
     border-bottom-color: rgba(0, 212, 255, 0.2);
 }
@@ -4644,7 +4626,7 @@ section.testimonials.expert-quotes,
     background: #0a0e1a;
 }
 
-/* Entferne alle Hover-Effekte von den List Items im Dark Mode */
+
 [data-theme="dark"] .nav__item {
     background: none !important;
     background-color: transparent !important;
@@ -4682,14 +4664,14 @@ section.testimonials.expert-quotes,
     -webkit-backdrop-filter: none !important;
 }
 
-/* Unterstreichung mit stabiler Transition */
+
 [data-theme="dark"] .nav__link::after {
     background: var(--color-neon-cyan);
     transition: width 0.3s ease;
 }
 
 
-/* CTA Button bleibt hellblau - ohne grauen Schleier */
+
 [data-theme="dark"] .nav__link--cta {
     background: #0077FF !important;
     backdrop-filter: none !important;
@@ -4704,7 +4686,7 @@ section.testimonials.expert-quotes,
     -webkit-backdrop-filter: none !important;
 }
     
-/* ===== Hero Section ===== */
+
 [data-theme="dark"] .hero {
     background: 
         radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 119, 255, 0.15), transparent),
@@ -4736,7 +4718,7 @@ section.testimonials.expert-quotes,
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
     
-/* ===== Cards ===== */
+
 [data-theme="dark"] .problem-card,
 [data-theme="dark"] .solution-card,
 [data-theme="dark"] .pricing-card,
@@ -4771,7 +4753,7 @@ section.testimonials.expert-quotes,
     box-shadow: var(--shadow-neon-blue-light);
 }
     
-/* ===== Forms ===== */
+
 [data-theme="dark"] .form__input,
 [data-theme="dark"] .form__textarea {
     background: var(--color-neutral-50);
@@ -4785,21 +4767,21 @@ section.testimonials.expert-quotes,
     box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
 }
 
-/* ===== Stats & Metrics ===== */
+
 [data-theme="dark"] .hero__stats {
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.12) 0%, rgba(0, 212, 255, 0.08) 50%, rgba(0, 85, 204, 0.05) 100%);
     border-color: rgba(0, 212, 255, 0.4);
     box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
 }
 
-/* ===== Before/After ===== */
+
 [data-theme="dark"] .before-after-card {
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.08) 0%, rgba(0, 212, 255, 0.05) 50%, rgba(0, 85, 204, 0.03) 100%);
     border-color: rgba(0, 212, 255, 0.4);
     box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
 }
 
-/* ===== FAQ ===== */
+
 [data-theme="dark"] .faq-item {
     background: var(--color-surface);
     border-color: var(--color-border);
@@ -4824,7 +4806,7 @@ section.testimonials.expert-quotes,
     color: var(--color-text-muted);
 }
 
-/* ===== Lead Magnet ===== */
+
 [data-theme="dark"] .lead-magnet__content {
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.1), rgba(0, 212, 255, 0.08));
     border-color: rgba(0, 212, 255, 0.3);
@@ -4867,7 +4849,7 @@ section.testimonials.expert-quotes,
     color: #ffffff;
 }
 
-/* Social Media Icons mit echten Markenfarben für besseren Kontrast */
+
 [data-theme="dark"] .social-link[aria-label="Instagram"] {
     background: linear-gradient(45deg, #E4405F 0%, #FCAF45 50%, #833AB4 100%);
     color: white;
@@ -4888,7 +4870,7 @@ section.testimonials.expert-quotes,
     color: white;
 }
 
-/* ===== Scroll to Top ===== */
+
 [data-theme="dark"] .scroll-to-top {
     background: var(--gradient-neon-1);
     box-shadow: var(--shadow-neon-cyan);
@@ -4898,7 +4880,7 @@ section.testimonials.expert-quotes,
     box-shadow: var(--shadow-neon-multi);
 }
 
-/* ===== Logo Placeholder ===== */
+
 [data-theme="dark"] .logo-placeholder {
     background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-neutral-50) 100%);
     border-color: rgba(0, 212, 255, 0.3);
@@ -4909,7 +4891,7 @@ section.testimonials.expert-quotes,
     border-color: var(--color-neon-cyan);
 }
 
-/* ===== Trust Bar ===== */
+
 [data-theme="dark"] .trust-bar {
     background: linear-gradient(180deg, rgba(0, 119, 255, 0.05) 0%, var(--color-neutral-50) 50%, var(--color-background) 100%);
     border-top-color: rgba(0, 212, 255, 0.2);
@@ -4924,12 +4906,12 @@ section.testimonials.expert-quotes,
     color: var(--color-neon);
 }
 
-/* ===== Problems Section ===== */
+
 [data-theme="dark"] .problems {
     background: var(--color-background);
 }
 
-/* ===== Solutions Connector ===== */
+
 [data-theme="dark"] .connector-line {
     background: linear-gradient(90deg, transparent, var(--color-primary-300), transparent);
 }
@@ -4943,7 +4925,7 @@ section.testimonials.expert-quotes,
     border-color: var(--color-border);
 }
 
-/* ===== Testimonials ===== */
+
 [data-theme="dark"] .testimonial-card__video {
     background: linear-gradient(135deg, var(--color-neutral-200), var(--color-neutral-300));
 }
@@ -4957,7 +4939,7 @@ section.testimonials.expert-quotes,
     background: var(--color-neutral-50);
 }
 
-/* ===== Pricing ===== */
+
 [data-theme="dark"] .pricing-card__name {
     color: #ffffff;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.5);
@@ -4979,7 +4961,7 @@ section.testimonials.expert-quotes,
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== Section Transitions ===== */
+
 [data-theme="dark"] .pricing {
     background: var(--color-background);
 }
@@ -4993,11 +4975,11 @@ section.testimonials.expert-quotes,
 }
 
 
-/* ===== Section Headers ===== */
+
 [data-theme="dark"] .section__tag {
 }
 
-/* Datenschutz-Tag wie "Der Autopilot" / "KI-Implementierung ohne Tech-Blabla": Neon-Cyan + Leuchteffekt */
+
 [data-theme="dark"] .dsgvo .section__tag,
 [data-theme="dark"] .dsgvo .section__tag--light {
     background: none !important;
@@ -5008,7 +4990,7 @@ section.testimonials.expert-quotes,
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== Hero Title ===== */
+
 [data-theme="dark"] .hero__title {
     color: #ffffff;
     text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -5019,13 +5001,13 @@ section.testimonials.expert-quotes,
     text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 119, 255, 0.4);
 }
 
-/* ===== Section Titles ===== */
+
 [data-theme="dark"] .section__title {
     color: #ffffff;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== Body Text & Paragraphs ===== */
+
 [data-theme="dark"] body {
     color: var(--color-text);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -5062,7 +5044,7 @@ section.testimonials.expert-quotes,
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== Additional Text Elements ===== */
+
 [data-theme="dark"] .result-text {
     color: var(--color-text-muted);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -5133,7 +5115,7 @@ section.testimonials.expert-quotes,
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== Footer ===== */
+
 [data-theme="dark"] .footer__tagline {
     color: var(--color-text-muted);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -5149,7 +5131,7 @@ section.testimonials.expert-quotes,
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== DSGVO Section - Already has white text, but add shadows ===== */
+
 [data-theme="dark"] .dsgvo__title {
     color: #ffffff;
     text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -5171,7 +5153,7 @@ section.testimonials.expert-quotes,
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== Buttons ===== */
+
 [data-theme="dark"] .btn--secondary {
     background: #0077FF;
     border: none;
@@ -5184,29 +5166,26 @@ section.testimonials.expert-quotes,
 }
 
 
-/* ==========================================
-   ABLAUF / TIMELINE SECTION
-   Horizontale Timeline mit 3 Schritten
-   ========================================== */
+
 
 .ablauf {
     padding-block: var(--section-padding);
     padding-bottom: calc(var(--section-padding) + var(--space-10));
     position: relative;
-    /* Glows bleiben innerhalb der Sektion (kein Schleier außen, kein Abschneiden unten durch mehr Padding) */
+    
     overflow: hidden;
 }
 
 .ablauf .section__header {
     margin-bottom: var(--space-16);
-    /* Mehr Breite, damit die Description in 2 Zeilen statt 3 passt */
+    
     max-width: 920px;
 }
 
 .ablauf .section__description {
     max-width: 920px;
     margin-inline: auto;
-    /* Keine Silbentrennung / kein Wortbrechen in den Wörtern */
+    
     hyphens: none;
     word-break: normal;
     overflow-wrap: normal;
@@ -5214,7 +5193,7 @@ section.testimonials.expert-quotes,
     text-wrap: balance;
 }
 
-/* Timeline Container */
+
 .ablauf__timeline {
     display: flex;
     justify-content: center;
@@ -5225,7 +5204,7 @@ section.testimonials.expert-quotes,
     margin: 0 auto;
 }
 
-/* Horizontale Verbindungslinie */
+
 .ablauf__line {
     position: absolute;
     top: 32px;
@@ -5257,14 +5236,14 @@ section.testimonials.expert-quotes,
     filter: blur(4px);
 }
 
-/* Desktop: Linie nicht durch Kreise laufen lassen (Segmente pro Step) */
+
 @media (min-width: 1024px) {
     .ablauf__line,
     .ablauf__line::after {
         display: none !important;
     }
 
-    /* Sicherheitsnetz: keine horizontale Scrollbar durch Glows */
+    
     .ablauf,
     .ablauf__timeline {
         overflow-x: clip;
@@ -5274,16 +5253,12 @@ section.testimonials.expert-quotes,
         position: relative;
     }
 
-    /* Kreis immer über den Segmenten */
+    
     .ablauf__step-number {
         z-index: 2;
     }
 
-    /*
-      Wichtig: In der Timeline ist zuerst `.ablauf__line` im DOM.
-      Daher ist Step 1 NICHT `:first-child`. Wir steuern die Segmente per nth-child:
-      child(2)=Step1, child(3)=Step2, child(4)=Step3
-    */
+    
     .ablauf__timeline > .ablauf__step:nth-child(n+3)::before,
     .ablauf__timeline > .ablauf__step:nth-child(-n+3)::after {
         content: '';
@@ -5310,19 +5285,19 @@ section.testimonials.expert-quotes,
         box-shadow: 0 0 12px rgba(0, 212, 255, 0.25);
     }
 
-    /* Linkes Segment bis an den Kreisrand (Radius = 32px) */
+    
     .ablauf__timeline > .ablauf__step:nth-child(n+3)::before {
         left: 0;
         right: calc(50% + 32px);
     }
 
-    /* Rechtes Segment ab Kreisrand */
+    
     .ablauf__timeline > .ablauf__step:nth-child(-n+3)::after {
         left: calc(50% + 32px);
         right: 0;
     }
 
-    /* Dezenter Sweep über die Linie auf Hover (wiederholt) */
+    
     .ablauf__timeline:hover > .ablauf__step:nth-child(n+3)::before,
     .ablauf__timeline:hover > .ablauf__step:nth-child(-n+3)::after {
         animation: ablaufLineSweep 2.6s linear infinite;
@@ -5334,7 +5309,7 @@ section.testimonials.expert-quotes,
     100% { background-position: 0 0, 200% 0; }
 }
 
-/* Einzelner Schritt */
+
 .ablauf__step {
     flex: 1;
     display: flex;
@@ -5346,7 +5321,7 @@ section.testimonials.expert-quotes,
     padding: 0 var(--space-4);
 }
 
-/* Schrittnummer - leuchtender Kreis */
+
 .ablauf__step-number {
     width: 64px;
     height: 64px;
@@ -5354,7 +5329,7 @@ section.testimonials.expert-quotes,
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Opake Basis verhindert, dass die Timeline-Linie durchscheint */
+    
     background-color: var(--color-background);
     background-image: linear-gradient(135deg, rgba(0, 119, 255, 0.15) 0%, rgba(0, 212, 255, 0.1) 100%);
     border: 2px solid rgba(0, 212, 255, 0.5);
@@ -5379,12 +5354,12 @@ section.testimonials.expert-quotes,
     transform: scale(1.1);
 }
 
-/* Step Content */
+
 .ablauf__step-content {
     max-width: 300px;
 }
 
-/* Step Icon */
+
 .ablauf__step-icon {
     width: 40px;
     height: 40px;
@@ -5407,7 +5382,7 @@ section.testimonials.expert-quotes,
     max-height: 40px;
 }
 
-/* Step Title */
+
 .ablauf__step-title {
     font-family: var(--font-heading);
     font-size: var(--text-lg);
@@ -5417,14 +5392,14 @@ section.testimonials.expert-quotes,
     line-height: 1.3;
 }
 
-/* Step Text */
+
 .ablauf__step-text {
     font-size: var(--text-sm);
     color: var(--color-text-muted);
     line-height: 1.6;
 }
 
-/* Dark Mode Optimierung */
+
 [data-theme="dark"] .ablauf__step-title {
     color: #ffffff;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -5434,7 +5409,7 @@ section.testimonials.expert-quotes,
     color: rgba(255, 255, 255, 0.75);
 }
 
-/* CTA unterhalb der Ablauf-Timeline (nur in dieser Sektion) */
+
 .ablauf .calculator__cta-block {
     margin-top: var(--space-12);
     display: flex;
@@ -5459,18 +5434,16 @@ section.testimonials.expert-quotes,
     box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 
-/* ==========================================
-   Value Calculator Styles
-   ========================================== */
 
-/* ===== Section Styling ===== */
+
+
 .value-calculator {
     background: linear-gradient(180deg, #0a1628 0%, #0d1b36 50%, #0a1628 100%);
     position: relative;
     overflow: hidden;
-    /* Kein !important: #pricing kann gezielt feinjustiert werden */
+    
     padding-block: var(--space-8) var(--space-16);
-    scroll-margin-top: 100px; /* Oberkante + Überschrift sichtbar beim Anspringen von #pricing */
+    scroll-margin-top: 100px; 
 }
 
 .value-calculator::before {
@@ -5518,11 +5491,9 @@ section.testimonials.expert-quotes,
     margin-bottom: 0;
 }
 
-/* -------------------------------------------------
-   1️⃣ Kalkulator‑Container in der Ersparnis‑Sektion
-   ------------------------------------------------- */
 
-/* Basis‑Anpassungen – verhindern Abschneiden */
+
+
 #ersparnis .calculator-container,
 #ersparnis .value-calculator,
 #ersparnis .calculator-wrapper,
@@ -5535,20 +5506,20 @@ section.testimonials.expert-quotes,
     margin-right: auto !important;
 }
 
-/* KRITISCH: Kein horizontaler Scrollbalken beim Laden der Ersparnis-Sektion */
-/* (Calculator kann intern kurz breiter als der Viewport sein) */
+
+
 #pricing.value-calculator {
     overflow-x: hidden !important;
     width: 100% !important;
     max-width: 100vw !important;
 }
-/* Container der Ersparnis-Sektion: Überlauf clippen, keine horizontale Scrollbar */
+
 #pricing.value-calculator .container {
     overflow-x: hidden !important;
-    /* Keine Breiten-Overrides: Standard `.container` max-width soll greifen */
+    
 }
 
-/* Mobile‑Spezifisch – volle Breite mit Innen‑Padding */
+
 @media (max-width: 767px) {
     #ersparnis .calculator-container,
     #ersparnis .value-calculator,
@@ -5559,7 +5530,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* Falls ein Element absolut positioniert ist */
+
 #ersparnis .calculator-wrapper,
 #pricing .calculator__wrapper {
     position: relative !important;
@@ -5568,7 +5539,7 @@ section.testimonials.expert-quotes,
     transform: none !important;
 }
 
-/* ===== Calculator Wrapper ===== */
+
 .calculator__wrapper {
     display: grid;
     grid-template-columns: 40% 58%;
@@ -5579,7 +5550,7 @@ section.testimonials.expert-quotes,
     margin-bottom: var(--space-6);
 }
 
-/* ===== Left Side: Inputs ===== */
+
 .calculator__inputs {
     display: flex;
     flex-direction: column;
@@ -5626,7 +5597,7 @@ section.testimonials.expert-quotes,
     box-shadow: 0 0 20px rgba(0, 119, 255, 0.4);
 }
 
-/* ===== Form Inputs ===== */
+
 .calculator__input,
 .calculator__select {
     background: rgba(10, 22, 40, 0.6);
@@ -5667,7 +5638,7 @@ section.testimonials.expert-quotes,
     color: #ffffff;
 }
 
-/* ===== Range Slider ===== */
+
 .calculator__slider {
     -webkit-appearance: none;
     appearance: none;
@@ -5751,7 +5722,7 @@ section.testimonials.expert-quotes,
     margin-bottom: 0;
 }
 
-/* ===== Right Side: Results ===== */
+
 .calculator__results {
     background: rgba(20, 32, 56, 0.6);
     backdrop-filter: blur(12px);
@@ -5787,7 +5758,7 @@ section.testimonials.expert-quotes,
     font-size: var(--text-xs);
 }
 
-/* ===== Result Cards ===== */
+
 .results__grid {
     display: flex;
     flex-direction: column;
@@ -5880,7 +5851,7 @@ section.testimonials.expert-quotes,
     border: none;
 }
 
-/* ===== CTA Section ===== */
+
 .results__cta {
     position: relative;
     z-index: 1;
@@ -5923,7 +5894,7 @@ section.testimonials.expert-quotes,
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* ===== Responsive Design ===== */
+
 @media (max-width: 1024px) {
     .calculator__wrapper {
         grid-template-columns: 1fr;
@@ -5996,9 +5967,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ==========================================
-   Cookie Banner Styles (DSGVO-konform)
-   ========================================== */
+
 
 .cookie-banner {
     position: fixed;
@@ -6093,7 +6062,7 @@ section.testimonials.expert-quotes,
     white-space: nowrap;
 }
 
-/* Alle akzeptieren Button (Primär) */
+
 .cookie-banner__btn--accept-all {
     background: var(--color-neon);
     color: var(--color-neutral-900);
@@ -6105,7 +6074,7 @@ section.testimonials.expert-quotes,
     box-shadow: 0 4px 12px var(--color-neon-glow);
 }
 
-/* Ablehnen Button (gleicher Stil wie Alle akzeptieren) */
+
 .cookie-banner__btn--essential {
     background: var(--color-neon);
     color: var(--color-neutral-900);
@@ -6119,7 +6088,7 @@ section.testimonials.expert-quotes,
     color: var(--color-neutral-900);
 }
 
-/* Einstellungen Button (Ghost) */
+
 .cookie-banner__btn--settings {
     background: transparent;
     color: var(--color-neutral-400);
@@ -6133,9 +6102,7 @@ section.testimonials.expert-quotes,
     text-decoration-color: var(--color-neon);
 }
 
-/* ==========================================
-   Cookie Settings Modal
-   ========================================== */
+
 
 .cookie-modal {
     position: fixed;
@@ -6239,7 +6206,7 @@ section.testimonials.expert-quotes,
     margin-bottom: var(--space-6);
 }
 
-/* Cookie Categories */
+
 .cookie-category {
     background: #ffffff;
     border: 1px solid rgba(0, 212, 255, 0.2);
@@ -6306,7 +6273,7 @@ section.testimonials.expert-quotes,
     margin: 0;
 }
 
-/* Cookie Toggle Switch */
+
 .cookie-toggle {
     position: relative;
     display: inline-block;
@@ -6364,7 +6331,7 @@ section.testimonials.expert-quotes,
     background: #00D98F;
 }
 
-/* Cookie Details Table */
+
 .cookie-category__details {
     margin-top: var(--space-4);
 }
@@ -6414,7 +6381,7 @@ section.testimonials.expert-quotes,
     border-bottom: none;
 }
 
-/* Modal Footer */
+
 .cookie-modal__footer {
     display: flex;
     align-items: center;
@@ -6488,7 +6455,7 @@ section.testimonials.expert-quotes,
     box-shadow: 0 4px 12px rgba(0, 119, 255, 0.3);
 }
 
-/* Mobile Responsive */
+
 @media (max-width: 640px) {
     .cookie-banner {
         padding: var(--space-4);
@@ -6548,9 +6515,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ==========================================
-   Privacy Checkbox Styles (für Formulare)
-   ========================================== */
+
 
 .form__group--checkbox {
     display: flex;
@@ -6591,12 +6556,9 @@ section.testimonials.expert-quotes,
     color: var(--color-accent);
 }
 
-/* ==========================================
-   Contact Modal - KI-Prozessnavigator
-   Professional & Responsive Design
-   ========================================== */
 
-/* ===== Modal Backdrop ===== */
+
+
 .contact-modal {
     position: fixed;
     inset: 0;
@@ -6623,7 +6585,7 @@ section.testimonials.expert-quotes,
     -webkit-backdrop-filter: blur(12px);
 }
 
-/* ===== Modal Container ===== */
+
 .contact-modal__container {
     position: relative;
     display: flex;
@@ -6647,7 +6609,7 @@ section.testimonials.expert-quotes,
     transform: translateY(0) scale(1);
 }
 
-/* ===== Scrollable Content Wrapper ===== */
+
 .contact-modal__scroll-area {
     flex: 1;
     overflow-y: auto;
@@ -6663,7 +6625,7 @@ section.testimonials.expert-quotes,
     height: 0;
 }
 
-/* ===== Close Button ===== */
+
 .contact-modal__close {
     position: absolute;
     top: 1rem;
@@ -6693,7 +6655,7 @@ section.testimonials.expert-quotes,
     height: 18px;
 }
 
-/* ===== Modal Header ===== */
+
 .contact-modal__header {
     padding: 2.5rem 2.5rem 1.5rem;
     text-align: center;
@@ -6731,7 +6693,7 @@ section.testimonials.expert-quotes,
     line-height: 1.5;
 }
 
-/* ===== Path Selection ===== */
+
 .contact-modal__paths {
     padding: 2rem 2.5rem 2.5rem;
 }
@@ -6852,7 +6814,7 @@ section.testimonials.expert-quotes,
     border-radius: 100px;
 }
 
-/* ===== Form Content ===== */
+
 .contact-modal__content {
     padding: 2rem 2.5rem 2.5rem;
     display: none;
@@ -6874,7 +6836,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ===== Back Button ===== */
+
 .form-back-btn {
     display: inline-flex;
     align-items: center;
@@ -6904,7 +6866,7 @@ section.testimonials.expert-quotes,
     transform: translateX(-3px);
 }
 
-/* ===== Progress Indicator ===== */
+
 .form-progress {
     display: flex;
     align-items: center;
@@ -6930,7 +6892,7 @@ section.testimonials.expert-quotes,
     background: #0077FF;
 }
 
-/* ===== Step Container ===== */
+
 .form-step {
     display: none;
 }
@@ -6960,7 +6922,7 @@ section.testimonials.expert-quotes,
     color: #78716c;
 }
 
-/* ===== Form Fields ===== */
+
 .form-group {
     margin-bottom: 1.25rem;
 }
@@ -7052,7 +7014,7 @@ section.testimonials.expert-quotes,
     padding: 0.5rem;
 }
 
-/* ===== Option Cards ===== */
+
 .option-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -7165,7 +7127,7 @@ section.testimonials.expert-quotes,
     color: #ffffff;
 }
 
-/* ===== Sliders ===== */
+
 .slider-group {
     margin-bottom: 1.75rem;
 }
@@ -7231,7 +7193,7 @@ section.testimonials.expert-quotes,
     border: none;
 }
 
-/* ===== Potential Results ===== */
+
 .potential-results {
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
     border: 2px solid rgba(0, 119, 255, 0.2);
@@ -7351,14 +7313,14 @@ section.testimonials.expert-quotes,
     line-height: 1.5;
 }
 
-/* ===== Form Row ===== */
+
 .form-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
 
-/* ===== Form Actions ===== */
+
 .form-actions {
     display: flex;
     align-items: center;
@@ -7425,7 +7387,7 @@ section.testimonials.expert-quotes,
     background: rgba(0, 119, 255, 0.1);
 }
 
-/* ===== Success State ===== */
+
 .form-success {
     display: none;
     text-align: center;
@@ -7509,7 +7471,7 @@ section.testimonials.expert-quotes,
     color: white;
 }
 
-/* ===== Privacy Checkbox ===== */
+
 .privacy-checkbox {
     display: flex;
     align-items: flex-start;
@@ -7551,7 +7513,7 @@ section.testimonials.expert-quotes,
     color: #00FFFF;
 }
 
-/* ===== Trust Footer ===== */
+
 .modal-trust {
     display: flex;
     justify-content: center;
@@ -7577,11 +7539,9 @@ section.testimonials.expert-quotes,
     font-size: 0.875rem;
 }
 
-/* ==========================================
-   RESPONSIVE DESIGN
-   ========================================== */
 
-/* Tablet */
+
+
 @media (max-width: 768px) {
     .contact-modal {
         padding: 0.5rem;
@@ -7699,7 +7659,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* Mobile Small */
+
 @media (max-width: 480px) {
     .contact-modal__header {
         padding: 1.75rem 1.25rem 1rem;
@@ -7787,7 +7747,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* Handle notch/safe areas on modern phones */
+
 @supports (padding: max(0px)) {
     .contact-modal {
         padding-left: max(0.5rem, env(safe-area-inset-left));
@@ -7796,7 +7756,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* Landscape phone orientation */
+
 @media (max-height: 500px) and (orientation: landscape) {
     .contact-modal__container {
         max-height: calc(100vh - 1rem);
@@ -7819,7 +7779,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* Reduce motion for accessibility */
+
 @media (prefers-reduced-motion: reduce) {
     .contact-modal,
     .contact-modal__container,
@@ -7841,11 +7801,9 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ==========================================
-   Responsive Styles - Mobile First Approach
-   ========================================== */
 
-/* ===== Tablet: Logo und Header (768px–1024px) ===== */
+
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .nav {
         height: 72px;
@@ -7857,7 +7815,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ===== Mobile Navigation & Header (<768px) ===== */
+
 @media (max-width: 767px) {
     .nav {
         height: 56px;
@@ -7869,13 +7827,13 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* Burger-Menü: ab Breiten wo Menüpunkte umbrechen (z. B. iPad Pro 1024px) bis 1199px */
+
 @media (max-width: 1199px) {
-    /* ALTE DEFINITION ENTFERNT - WIRD VON RESPONSIVE.CSS ÜBERSCHRIEBEN */
-    /* .nav__menu Definition jetzt komplett in responsive.css */
+    
+    
     
     .nav__menu.active-old-removed {
-        /* Platzhalter damit Media Query nicht leer ist */
+        
     }
 
     .nav__link {
@@ -7885,7 +7843,7 @@ section.testimonials.expert-quotes,
         border-bottom: 1px solid var(--color-border);
     }
 
-    /* UNTERSTREICHUNG WIRD VON RESPONSIVE.CSS GESTEUERT */
+    
 
     .nav__link--cta {
         margin-top: var(--space-4);
@@ -7904,7 +7862,7 @@ section.testimonials.expert-quotes,
         z-index: calc(var(--z-fixed) + 1);
     }
 
-    /* ALTE HAMBURGER ANIMATION ENTFERNT - WIRD VON RESPONSIVE.CSS GESTEUERT */
+    
 
     body.menu-open::before {
         content: '';
@@ -7920,9 +7878,9 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ===== Tablet Styles ===== */
+
 @media (max-width: 992px) {
-    /* Hero */
+    
     .hero__container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -7959,7 +7917,7 @@ section.testimonials.expert-quotes,
         display: none;
     }
 
-    /* DSGVO */
+    
     .dsgvo__wrapper {
         grid-template-columns: 1fr;
         gap: var(--space-12);
@@ -8012,7 +7970,7 @@ section.testimonials.expert-quotes,
         justify-content: flex-start;
     }
 
-    /* FAQ Section */
+    
     .faq-section__wrapper {
         grid-template-columns: 1fr;
         gap: var(--space-10);
@@ -8022,7 +7980,7 @@ section.testimonials.expert-quotes,
         position: static;
     }
 
-    /* Footer */
+    
     .footer__grid {
         grid-template-columns: 1fr 1fr;
         gap: var(--space-8);
@@ -8038,9 +7996,9 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ===== Mobile Styles - REDESIGNED VERSION ===== */
+
 @media (max-width: 576px) {
-    /* ===== Global Mobile Settings ===== */
+    
     :root {
         --section-padding: clamp(2rem, 6vw, 3rem);
     }
@@ -8049,7 +8007,7 @@ section.testimonials.expert-quotes,
         padding-block: var(--space-10);
     }
 
-    /* ALLE Container: 90% Breite (AUSSER Calculator) */
+    
     .container:not(.value-calculator .container):not(#pricing .container),
     section:not(.value-calculator):not(#pricing) > .container,
     .hero .container,
@@ -8069,7 +8027,7 @@ section.testimonials.expert-quotes,
         box-sizing: border-box;
     }
 
-    /* ===== Navigation ===== */
+    
     .nav {
         height: 60px;
     }
@@ -8078,9 +8036,9 @@ section.testimonials.expert-quotes,
         font-size: var(--text-base);
     }
 
-    /* ===== Hero (Mobile): in responsive.css zentral gepflegt ===== */
+    
 
-    /* ===== Trust Bar - Redesigned ===== */
+    
     .trust-bar {
         padding-block: var(--space-5);
         background: linear-gradient(180deg, rgba(0, 255, 163, 0.03) 0%, var(--color-neutral-50) 100%);
@@ -8109,7 +8067,7 @@ section.testimonials.expert-quotes,
         font-weight: var(--font-semibold);
     }
 
-    /* Show logos with horizontal scroll */
+    
     .trust-bar__logos {
         display: flex;
         gap: var(--space-3);
@@ -8134,7 +8092,7 @@ section.testimonials.expert-quotes,
         font-weight: var(--font-semibold);
     }
 
-    /* ===== Section Headers - Compact ===== */
+    
     .section__header {
         margin-bottom: var(--space-6);
     }
@@ -8155,7 +8113,7 @@ section.testimonials.expert-quotes,
         line-height: 1.4;
     }
 
-    /* ===== Problem/Solution Cards - Compact ===== */
+    
     .problems__grid,
     .solutions__grid {
         grid-template-columns: 1fr;
@@ -8185,7 +8143,7 @@ section.testimonials.expert-quotes,
         line-height: 1.4;
     }
 
-    /* Before/After auf mobile -- volle Breite, kompakt */
+    
     .before-after-showcase {
         display: block;
         width: 100%;
@@ -8210,7 +8168,7 @@ section.testimonials.expert-quotes,
         font-size: 0.7rem;
     }
 
-    /* ===== DSGVO Section - Compact ===== */
+    
     .dsgvo {
         padding-block: var(--space-10);
     }
@@ -8242,7 +8200,7 @@ section.testimonials.expert-quotes,
         font-size: 1rem;
     }
 
-    /* Trust Badges: vertikal untereinander, kein Scrollbalken */
+    
     .dsgvo__badges {
         flex-direction: column;
         overflow: visible;
@@ -8272,7 +8230,7 @@ section.testimonials.expert-quotes,
         font-size: 0.65rem;
     }
 
-    /* ===== Pricing - Compact ===== */
+    
     .pricing {
         padding-block: var(--space-10);
     }
@@ -8340,7 +8298,7 @@ section.testimonials.expert-quotes,
         margin-top: var(--space-6);
     }
 
-    /* ===== Testimonials - Show only 1 on mobile ===== */
+    
     .testimonials {
         padding-block: var(--space-10);
     }
@@ -8350,14 +8308,14 @@ section.testimonials.expert-quotes,
         gap: var(--space-4);
     }
 
-    /* Hide 2nd and 3rd testimonial on mobile */
+    
     .testimonial-card:nth-child(2),
     .testimonial-card:nth-child(3) {
         display: none;
     }
 
     .testimonial-card__video {
-        aspect-ratio: 16/10; /* Slightly smaller */
+        aspect-ratio: 16/10; 
     }
 
     .play-button {
@@ -8389,7 +8347,7 @@ section.testimonials.expert-quotes,
         font-size: 0.65rem;
     }
 
-    /* Client logos - horizontal scroll */
+    
     .client-logos {
         gap: var(--space-3);
         overflow-x: auto;
@@ -8406,7 +8364,7 @@ section.testimonials.expert-quotes,
         height: 24px;
     }
 
-    /* ===== FAQ - Compact ===== */
+    
     .faq-section {
         padding-block: var(--space-10);
     }
@@ -8434,7 +8392,7 @@ section.testimonials.expert-quotes,
         line-height: 1.5;
     }
 
-    /* Lead Magnet - Compact */
+    
     .lead-magnet__content {
         padding: var(--space-5);
     }
@@ -8474,7 +8432,7 @@ section.testimonials.expert-quotes,
         gap: var(--space-3);
     }
 
-    /* ===== Final CTA - Compact ===== */
+    
     .final-cta {
         padding-block: var(--space-10);
     }
@@ -8539,7 +8497,7 @@ section.testimonials.expert-quotes,
         margin-top: var(--space-4);
     }
 
-    /* ===== Footer - Compact ===== */
+    
     .footer {
         padding-block: var(--space-8) var(--space-4);
     }
@@ -8583,9 +8541,9 @@ section.testimonials.expert-quotes,
         font-size: 0.75rem;
     }
 
-    /* Hide some footer sections on mobile */
+    
     .footer__links-group:nth-child(3) {
-        display: none; /* Hide "Unternehmen" section */
+        display: none; 
     }
 
     .footer__bottom {
@@ -8604,7 +8562,7 @@ section.testimonials.expert-quotes,
         font-size: 1.2rem;
     }
 
-    /* ===== Notifications ===== */
+    
     .notification {
         left: 0.75rem !important;
         right: 0.75rem !important;
@@ -8615,13 +8573,13 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ===== Extra Small Devices - ULTRA COMPACT ===== */
+
 @media (max-width: 375px) {
     :root {
         --container-padding: 0.75rem;
     }
 
-    /* ALLE Container: 90% Breite auch auf ultra-kleinen Geräten (AUSSER Calculator) */
+    
     .container:not(.value-calculator .container):not(#pricing .container),
     section:not(.value-calculator):not(#pricing) > .container,
     .hero .container,
@@ -8641,10 +8599,10 @@ section.testimonials.expert-quotes,
     }
 
     section {
-        padding-block: var(--space-8); /* Even more compact */
+        padding-block: var(--space-8); 
     }
 
-    /* ===== Navigation ===== */
+    
     .nav {
         height: 56px;
     }
@@ -8653,9 +8611,9 @@ section.testimonials.expert-quotes,
         font-size: var(--text-sm);
     }
 
-    /* ===== Hero (Ultra Small): in responsive.css zentral gepflegt ===== */
+    
 
-    /* ===== Section Headers ===== */
+    
     .section__header {
         margin-bottom: var(--space-5);
     }
@@ -8673,7 +8631,7 @@ section.testimonials.expert-quotes,
         font-size: 0.75rem;
     }
 
-    /* ===== Cards ===== */
+    
     .problem-card,
     .solution-card {
         padding: var(--space-3);
@@ -8697,7 +8655,7 @@ section.testimonials.expert-quotes,
         line-height: 1.4;
     }
 
-    /* ===== DSGVO ===== */
+    
     .dsgvo__title {
         font-size: var(--text-lg);
     }
@@ -8732,7 +8690,7 @@ section.testimonials.expert-quotes,
         font-size: 0.6rem;
     }
 
-    /* ===== Pricing ===== */
+    
     .pricing-card {
         padding: var(--space-4);
     }
@@ -8757,14 +8715,14 @@ section.testimonials.expert-quotes,
         font-size: 0.7rem;
     }
 
-    /* Ensure touch targets */
+    
     .btn,
     .nav__link--cta,
     .faq-item__question {
         min-height: 44px;
     }
 
-    /* ===== Testimonials ===== */
+    
     .testimonial-card__quote {
         font-size: 0.8rem;
         padding: var(--space-3);
@@ -8784,7 +8742,7 @@ section.testimonials.expert-quotes,
         font-size: 0.6rem;
     }
 
-    /* ===== FAQ ===== */
+    
     .faq-item__question {
         padding: var(--space-3);
         font-size: 0.8rem;
@@ -8799,7 +8757,7 @@ section.testimonials.expert-quotes,
         padding: 0 var(--space-3) var(--space-3);
     }
 
-    /* ===== Lead Magnet ===== */
+    
     .lead-magnet__content {
         padding: var(--space-4);
     }
@@ -8816,7 +8774,7 @@ section.testimonials.expert-quotes,
         font-size: 0.75rem;
     }
 
-    /* ===== Final CTA ===== */
+    
     .final-cta__icon {
         font-size: 1.75rem;
     }
@@ -8843,7 +8801,7 @@ section.testimonials.expert-quotes,
         font-size: 0.8rem;
     }
 
-    /* ===== Footer ===== */
+    
     .footer {
         padding-block: var(--space-6) var(--space-3);
     }
@@ -8883,7 +8841,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ===== Large Screens ===== */
+
 @media (min-width: 1400px) {
     :root {
         --container-max: 1320px;
@@ -8898,14 +8856,14 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ===== Extra Large Screens ===== */
+
 @media (min-width: 1600px) {
     :root {
         --container-max: 1440px;
     }
 }
 
-/* ===== Reduced Motion ===== */
+
 @media (prefers-reduced-motion: reduce) {
     .hero__graphic,
     .orbit-icons,
@@ -8928,7 +8886,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ===== Print Styles ===== */
+
 @media print {
     .header,
     .nav__toggle,
@@ -8982,7 +8940,7 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ===== High Contrast Mode ===== */
+
 @media (prefers-contrast: high) {
     :root {
         --color-primary: #006666;
@@ -9001,40 +8959,12 @@ section.testimonials.expert-quotes,
     }
 }
 
-/* ===== Dark Mode (Optional) ===== */
+
 @media (prefers-color-scheme: dark) {
-    /* Uncomment to enable automatic dark mode
-    :root {
-        --color-background: #0f172a;
-        --color-surface: #1e293b;
-        --color-text: #e2e8f0;
-        --color-text-muted: #94a3b8;
-        --color-border: #334155;
-        --color-neutral-50: #1e293b;
-        --color-neutral-100: #334155;
-    }
-
-    .header {
-        background: rgba(15, 23, 42, 0.9);
-    }
-
-    .problem-card,
-    .solution-card,
-    .pricing-card,
-    .testimonial-card,
-    .faq-item {
-        background: var(--color-surface);
-    }
-
-    .logo-placeholder,
-    .logo-item {
-        background: var(--color-neutral-100);
-        color: var(--color-text-muted);
-    }
-    */
+    
 }
 
-/* FORCE Override alle Farben in den Result-Cards auf Weiß */
+
 .value-calculator .calculator__results .results__grid .result-card * {
     color: #ffffff !important;
 }
@@ -9050,7 +8980,7 @@ section.testimonials.expert-quotes,
     text-shadow: none !important;
 }
 
-/* Spezifische Überschreibung für jede einzelne Karte */
+
 .result-card--time .value-number,
 .result-card--time .value-unit,
 .result-card--money .value-number,
@@ -9060,7 +8990,7 @@ section.testimonials.expert-quotes,
     color: #ffffff !important;
 }
 
-/* Stelle sicher, dass alle drei Karten #0077FF Hintergrund haben */
+
 .value-calculator .calculator__results .results__grid .result-card,
 .value-calculator .calculator__results .results__grid .result-card--time,
 .value-calculator .calculator__results .results__grid .result-card--money,
@@ -9072,15 +9002,15 @@ section.testimonials.expert-quotes,
     background: #0077FF !important;
 }
 
-/* FORCE WHITE TEXT für Value Calculator Result Cards */
 
-/* Überschreibe CSS-Variablen nur im Result-Bereich (nicht im Section-Header), damit "Value-Based Selling" Neon-Cyan behält */
+
+
 .value-calculator .calculator__results,
 .value-calculator .result-card {
     --color-neon-cyan: #ffffff;
 }
 
-/* Erzwinge weiße Farbe für ALLE Texte in Result Cards */
+
 .value-calculator .result-card,
 .value-calculator .result-card *,
 .value-calculator .result-card .value-number,
@@ -9090,27 +9020,24 @@ section.testimonials.expert-quotes,
     color: #ffffff !important;
 }
 
-/* Spezifische Überschreibung für Spans */
+
 .value-calculator .result-card span {
     color: #ffffff !important;
 }
 
-/* Entferne alle möglichen CSS-Variable-Referenzen */
+
 .value-calculator .result-card .value-number {
     color: #ffffff !important;
-    /* Überschreibe auch wenn var(--color-neon-cyan) verwendet wird */
+    
 }
 
 .value-calculator .result-card .value-unit {
     color: #ffffff !important;
 }
 
-/**
- * Utility classes – aus Inline-Styles extrahiert
- * Keine visuellen Änderungen, nur strukturelle Auslagerung
- */
 
-/* === Layout / Spacing === */
+
+
 .u-block { display: block; }
 .u-pt-110 { padding-top: 110px; }
 .u-mt-90 { margin-top: 90px; }
@@ -9120,7 +9047,7 @@ section.testimonials.expert-quotes,
 .u-flex-1 { flex: 1; }
 .u-ml-neg8 { margin-left: -8px; }
 
-/* === Typography / Color (Trust-Bar, Metrics, etc.) === */
+
 .u-text-white { color: #ffffff !important; }
 .u-text-success { color: #00D98F !important; }
 .u-fw600 { font-weight: 600; }
@@ -9128,7 +9055,7 @@ section.testimonials.expert-quotes,
 .u-fw700 { font-weight: 700; }
 .u-border-success { border-color: #00D98F !important; }
 
-/* === Hero === */
+
 .u-btn-transition { transition: box-shadow 0.3s ease, background 0.3s ease !important; }
 .cursor-blink {
     display: inline-block;
@@ -9139,7 +9066,7 @@ section.testimonials.expert-quotes,
     animation: blink 1s step-end infinite;
     vertical-align: text-bottom;
 }
-/* Leerzeichen zwischen KI-Automatisierung und Cursor – per CSS, damit es immer sichtbar ist */
+
 .hero__title-space {
     display: inline-block !important;
     width: 0.5em !important;
@@ -9148,10 +9075,10 @@ section.testimonials.expert-quotes,
     vertical-align: baseline;
 }
 .hero__title-space::before {
-    content: "\00a0"; /* Festes Leerzeichen aus CSS */
+    content: "\00a0"; 
 }
-/* Ausrufezeichen steht im HTML (Zeile 1), damit es markierbar ist – kein ::after mehr */
-/* Cursor im Hero – sichtbar und direkt hinter dem Leerzeichen, nie umbrechen */
+
+
 .hero .cursor-blink--hero {
     display: inline-block !important;
     width: 3px !important;
@@ -9161,7 +9088,7 @@ section.testimonials.expert-quotes,
     vertical-align: text-bottom;
 }
 
-/* === Result cards (Value Calculator) – Basis === */
+
 .result-card--time,
 .result-card--money,
 .result-card--capacity {
@@ -9267,14 +9194,11 @@ section.testimonials.expert-quotes,
 
 
 
-/* ==========================================
-   PREMIUM DESIGN V10 - Final
-   Dark Premium & Professional
-   ========================================== */
 
-/* ===== 1. MEHR WEISSRAUM - Größere Abstände ===== */
 
-/* Section Padding erhöhen - ABER NICHT Hero! */
+
+
+
 [data-theme="dark"] .solutions,
 [data-theme="dark"] .dsgvo,
 [data-theme="dark"] .pricing,
@@ -9285,29 +9209,29 @@ section.testimonials.expert-quotes,
     padding-block: clamp(80px, 12vw, 120px) !important;
 }
 
-/* Problems Section - Reduziertes Padding oben */
+
 [data-theme="dark"] .problems {
     padding-block: clamp(20px, 4vw, 40px) clamp(80px, 12vw, 120px) !important;
 }
 
-/* Problems Section Header - Weniger Abstand zu Cards */
+
 [data-theme="dark"] .problems .section__header {
     margin-bottom: 28px !important;
     overflow: visible;
     max-width: 980px;
 }
 
-/* Problem Cards - Etwas kompakter (5px weniger oben + 5px weniger unten) */
+
 [data-theme="dark"] .problem-card {
-    padding: 35px 40px !important; /* 40px - 5px = 35px oben/unten */
+    padding: 35px 40px !important; 
 }
 
-/* Hero behält Original-Padding */
+
 [data-theme="dark"] .hero {
     padding-block: initial !important;
 }
 
-/* Section Headers mehr Abstand */
+
 [data-theme="dark"] .section__header {
     margin-bottom: 64px;
 }
@@ -9316,7 +9240,7 @@ section.testimonials.expert-quotes,
     margin-bottom: 24px !important;
 }
 
-/* Cards mehr inneren Weißraum */
+
 [data-theme="dark"] .problem-card,
 [data-theme="dark"] .solution-card {
     padding: 40px !important;
@@ -9332,29 +9256,29 @@ section.testimonials.expert-quotes,
 
 [data-theme="dark"] .expert-quote-card__header {
     margin-left: 32px !important;
-    /* Im Dark-Mode: Text hat padding:32px, also Header auch um 32px verschieben */
+    
     margin-bottom: var(--space-2) !important;
-    /* Weniger Abstand nach unten */
+    
 }
 
 [data-theme="dark"] .expert-quote-card .expert-link {
     margin-left: 32px !important;
-    /* Im Dark-Mode: CTA auch um 32px verschieben */
+    
     padding-top: var(--space-2) !important;
-    /* Weniger Abstand nach oben */
+    
 }
 
 [data-theme="dark"] .expert-quote-card {
     padding: var(--space-4) var(--space-6) !important;
-    /* Vertikales Padding reduziert im Dark-Mode */
+    
 }
 
 [data-theme="dark"] .expert-quote-card .testimonial-card__quote {
     padding: var(--space-3) 32px !important;
-    /* Vertikales Padding reduziert, horizontales bleibt bei 32px */
+    
 }
 
-/* Grid Gaps erhöhen */
+
 [data-theme="dark"] .problems__grid,
 [data-theme="dark"] .solutions__grid {
     gap: 32px !important;
@@ -9364,22 +9288,22 @@ section.testimonials.expert-quotes,
     gap: 32px !important;
 }
 
-/* ===== 2. STÄRKERE TYPOGRAFIE-HIERARCHIE ===== */
 
-/* Hero-Titel VIEL größer */
+
+
 [data-theme="dark"] .hero__title {
     font-size: clamp(2.8rem, 7vw, 4.5rem) !important;
     letter-spacing: -0.03em !important;
     line-height: 1.1 !important;
 }
 
-/* Section Titles größer */
+
 [data-theme="dark"] .section__title {
     font-size: clamp(2.2rem, 5vw, 3.2rem) !important;
     letter-spacing: -0.02em !important;
 }
 
-/* Card Titles etwas größer */
+
 [data-theme="dark"] .problem-card__title,
 [data-theme="dark"] .solution-card__title {
     font-size: 1.35rem !important;
@@ -9387,7 +9311,7 @@ section.testimonials.expert-quotes,
     margin-bottom: 16px !important;
 }
 
-/* ===== 3. PREMIUM CARD HOVER-EFFEKTE ===== */
+
 
 [data-theme="dark"] .problem-card,
 [data-theme="dark"] .solution-card,
@@ -9421,9 +9345,9 @@ section.testimonials.expert-quotes,
         0 0 20px rgba(0, 119, 255, 0.06) !important;
 }
 
-/* ===== 4. PREMIUM SVG ICONS (statt Emojis) ===== */
 
-/* Icon Container Styling - ZENTRIERT */
+
+
 [data-theme="dark"] .problem-card__icon,
 [data-theme="dark"] .solution-card__icon {
     width: 64px !important;
@@ -9434,8 +9358,8 @@ section.testimonials.expert-quotes,
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.15) 0%, rgba(0, 119, 255, 0.05) 100%) !important;
     border: 1px solid rgba(0, 119, 255, 0.3) !important;
     border-radius: 16px !important;
-    margin: 0 auto 24px auto !important; /* ZENTRIERT */
-    font-size: 0 !important; /* Hide emoji text */
+    margin: 0 auto 24px auto !important; 
+    font-size: 0 !important; 
     position: relative;
     box-shadow: 
         0 0 30px rgba(0, 119, 255, 0.15),
@@ -9443,7 +9367,7 @@ section.testimonials.expert-quotes,
     transition: all 0.3s ease !important;
 }
 
-/* Cards Text zentrieren */
+
 [data-theme="dark"] .problem-card,
 [data-theme="dark"] .solution-card {
     text-align: center !important;
@@ -9457,7 +9381,7 @@ section.testimonials.expert-quotes,
     border-color: rgba(0, 119, 255, 0.5) !important;
 }
 
-/* SVG Icon inside */
+
 [data-theme="dark"] .problem-card__icon svg,
 [data-theme="dark"] .solution-card__icon svg {
     width: 32px !important;
@@ -9468,7 +9392,7 @@ section.testimonials.expert-quotes,
     filter: drop-shadow(0 0 8px rgba(0, 119, 255, 0.5)) !important;
 }
 
-/* ===== 5. FEATURED PRICING CARD ===== */
+
 
 [data-theme="dark"] .pricing-card--popular {
     transform: scale(1.05) !important;
@@ -9483,7 +9407,7 @@ section.testimonials.expert-quotes,
     transform: scale(1.05) translateY(-10px) !important;
 }
 
-/* ===== 6. TRUST BAR VERBESSERUNGEN ===== */
+
 
 [data-theme="dark"] .trust-bar {
     padding-block: 24px !important;
@@ -9503,7 +9427,7 @@ section.testimonials.expert-quotes,
     transform: translateY(-2px) !important;
 }
 
-/* ===== 7. STATS COUNTER VERBESSERUNGEN ===== */
+
 
 [data-theme="dark"] .hero__stats {
     padding: 32px 40px !important;
@@ -9519,7 +9443,7 @@ section.testimonials.expert-quotes,
     background-clip: text !important;
 }
 
-/* ===== 8. BUTTON VERBESSERUNGEN ===== */
+
 
 [data-theme="dark"] .btn--neon {
     padding: 0.875rem 2rem !important;
@@ -9535,9 +9459,9 @@ section.testimonials.expert-quotes,
     padding: 16px 28px !important;
 }
 
-/* ===== 9. VALUE CALCULATOR / ERSPARNIS - Dunkles Design ===== */
 
-/* Calculator Cards dunkles Design */
+
+
 [data-theme="dark"] .calculator__card,
 [data-theme="dark"] .calculator__inputs .calculator__card {
     background: #141b2d !important;
@@ -9554,7 +9478,7 @@ section.testimonials.expert-quotes,
         0 0 30px rgba(0, 119, 255, 0.1) !important;
 }
 
-/* Result Cards - Konsistentes dunkles Design */
+
 [data-theme="dark"] .result-card,
 [data-theme="dark"] .result-card--time,
 [data-theme="dark"] .result-card--money,
@@ -9576,17 +9500,17 @@ section.testimonials.expert-quotes,
     transform: translateY(-4px) !important;
 }
 
-/* Calculator Results Container */
+
 [data-theme="dark"] .calculator__results {
     background: transparent !important;
 }
 
-/* Calculator Wrapper */
+
 [data-theme="dark"] .calculator__wrapper {
     background: transparent !important;
 }
 
-/* Input/Select Styling */
+
 [data-theme="dark"] .calculator__input,
 [data-theme="dark"] .calculator__select {
     background: #0a0e1a !important;
@@ -9600,7 +9524,7 @@ section.testimonials.expert-quotes,
     box-shadow: 0 0 15px rgba(0, 119, 255, 0.15) !important;
 }
 
-/* Slider Styling */
+
 [data-theme="dark"] .calculator__slider {
     background: rgba(0, 119, 255, 0.2) !important;
 }
@@ -9610,7 +9534,7 @@ section.testimonials.expert-quotes,
     box-shadow: 0 0 10px rgba(0, 119, 255, 0.5) !important;
 }
 
-/* Result Card Icon Box */
+
 [data-theme="dark"] .result-card__icon-box {
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.2) 0%, rgba(0, 119, 255, 0.1) 100%) !important;
     border: 1px solid rgba(0, 119, 255, 0.3) !important;
@@ -9624,7 +9548,7 @@ section.testimonials.expert-quotes,
     height: 48px !important;
 }
 
-/* Flow Step Icons */
+
 [data-theme="dark"] .flow-step__icon {
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.15) 0%, rgba(0, 119, 255, 0.05) 100%) !important;
     border: 1px solid rgba(0, 119, 255, 0.3) !important;
@@ -9643,7 +9567,7 @@ section.testimonials.expert-quotes,
 }
 
 
-/* ===== 11. LEAD MAGNET & FINAL CTA ICONS ===== */
+
 
 [data-theme="dark"] .lead-magnet__icon {
     font-size: 0 !important;
@@ -9667,12 +9591,12 @@ section.testimonials.expert-quotes,
     justify-content: center !important;
 }
 
-/* Result Card Icon Box */
+
 [data-theme="dark"] .result-card__icon-box {
     font-size: 0 !important;
 }
 
-/* ===== 11. HERO TRUST BUTTON - HORIZONTALE AUSRICHTUNG ===== */
+
 
 [data-theme="dark"] .btn--hero-trust {
     display: inline-flex !important;
@@ -9695,7 +9619,7 @@ section.testimonials.expert-quotes,
     line-height: 1 !important;
 }
 
-/* Trust Badge Icons */
+
 [data-theme="dark"] .trust-badge__icon {
     font-size: 0 !important;
     display: flex !important;
@@ -9709,7 +9633,7 @@ section.testimonials.expert-quotes,
     stroke: #0077FF !important;
 }
 
-/* Expert Icons */
+
 [data-theme="dark"] .expert-icon {
     font-size: 0 !important;
     display: flex !important;
@@ -9727,7 +9651,7 @@ section.testimonials.expert-quotes,
     stroke: #0077FF !important;
 }
 
-/* Checklist Icons */
+
 [data-theme="dark"] .checklist-icon {
     font-size: 0 !important;
     display: flex !important;
@@ -9735,7 +9659,7 @@ section.testimonials.expert-quotes,
     justify-content: center !important;
 }
 
-/* Option Card Check Icons – Haken nur bei ausgewählter Karte sichtbar */
+
 [data-theme="dark"] .option-card__check {
     font-size: 0 !important;
     display: flex !important;
@@ -9758,7 +9682,7 @@ section.testimonials.expert-quotes,
     opacity: 1 !important;
 }
 
-/* Option Card Icons */
+
 [data-theme="dark"] .option-card__icon {
     font-size: 0 !important;
     display: flex !important;
@@ -9778,7 +9702,7 @@ section.testimonials.expert-quotes,
     stroke: #00D4FF !important;
 }
 
-/* Coming Soon Icon (Megafon) */
+
 [data-theme="dark"] .coming-soon__icon {
     font-size: 0 !important;
     display: flex !important;
@@ -9798,7 +9722,7 @@ section.testimonials.expert-quotes,
     stroke: #0077FF !important;
 }
 
-/* Coming Soon Note - Inline Clock */
+
 [data-theme="dark"] .coming-soon__note {
     display: flex !important;
     align-items: center !important;
@@ -9811,7 +9735,7 @@ section.testimonials.expert-quotes,
     stroke: rgba(255, 255, 255, 0.7) !important;
 }
 
-/* ===== 13B. VORTEILS-SEKTION METRIC CHECK ===== */
+
 
 [data-theme="dark"] .metric-values {
     display: flex !important;
@@ -9828,7 +9752,7 @@ section.testimonials.expert-quotes,
     vertical-align: middle !important;
 }
 
-/* ===== 14. SCROLL TO TOP BUTTON ===== */
+
 
 [data-theme="dark"] .scroll-to-top {
     background: linear-gradient(135deg, #0077FF 0%, #0055CC 100%) !important;
@@ -9857,27 +9781,27 @@ section.testimonials.expert-quotes,
     stroke: #ffffff !important;
 }
 
-/* ===== HERO SCROLL INDICATOR - SMOOTH SCROLL ===== */
+
 
 .hero__scroll-indicator {
     cursor: pointer !important;
     text-decoration: none !important;
     color: inherit !important;
     transition: transform 0.3s ease !important;
-    /* Vergrößerte Klickfläche */
-    /* Wenig Bottom-Padding, damit der Pfeil wirklich „am Rand“ steht */
+    
+    
     padding: 16px 40px 6px !important;
     margin-bottom: 0 !important;
 }
 
 .hero__scroll-indicator:hover {
-    /* Nicht nach unten schieben (sonst Clip-Risiko) */
+    
     transform: translateX(-50%) translateY(-4px) !important;
 }
 
-/* ===== HORIZONTALE AUSRICHTUNG FIXES ===== */
 
-/* Final CTA Urgency Badge - Uhr VOR Text */
+
+
 [data-theme="dark"] .urgency-badge span {
     display: inline-flex !important;
     align-items: center !important;
@@ -9889,7 +9813,7 @@ section.testimonials.expert-quotes,
     margin-right: 6px !important;
 }
 
-/* Lead Magnet Trust - Haken VOR Text */
+
 [data-theme="dark"] .lead-magnet__trust {
     display: flex !important;
     justify-content: center !important;
@@ -9907,7 +9831,7 @@ section.testimonials.expert-quotes,
     margin-right: 4px !important;
 }
 
-/* Glow-Karten: Verhindern, dass der Hover-Glow abgeschnitten wird – alle übergeordneten Ebenen explizit overflow: visible (steht am Ende, überschreibt andere Regeln) */
+
 html,
 body,
 main {
@@ -9923,7 +9847,7 @@ section.solutions .container,
     overflow: visible !important;
 }
 
-/* ===== Vorteile-Vergleich (Wir vs. Du) ===== */
+
 .wir-vs-du {
     background: #0a0e1a;
     padding-top: calc(clamp(2rem, 5vw, 4.25rem) - 40px);

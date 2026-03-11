@@ -1,9 +1,6 @@
-/* ==========================================
-   Contact Modal - KI-Prozessnavigator
-   Professional & Responsive Design
-   ========================================== */
 
-/* ===== Modal Backdrop ===== */
+
+
 .contact-modal {
     position: fixed;
     inset: 0;
@@ -30,7 +27,7 @@
     -webkit-backdrop-filter: blur(12px);
 }
 
-/* ===== Modal Container ===== */
+
 .contact-modal__container {
     position: relative;
     display: flex;
@@ -48,7 +45,7 @@
     transform: translateY(20px) scale(0.96);
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     overflow: hidden;
-    /* Verhindert Stacking-Konflikte mit externen Layern */
+    
     isolation: isolate;
 }
 
@@ -56,7 +53,7 @@
     transform: translateY(0) scale(1);
 }
 
-/* ===== Scrollable Content Wrapper ===== */
+
 .contact-modal__scroll-area {
     flex: 1;
     min-height: 0;
@@ -73,7 +70,7 @@
     height: 0;
 }
 
-/* ===== Close Button ===== */
+
 .contact-modal__close {
     position: absolute;
     top: 1rem;
@@ -103,7 +100,7 @@
     height: 18px;
 }
 
-/* ===== Modal Header ===== */
+
 .contact-modal__header {
     padding: 1.75rem 2rem 1rem;
     text-align: center;
@@ -141,7 +138,7 @@
     line-height: 1.5;
 }
 
-/* ===== Path Selection ===== */
+
 .contact-modal__paths {
     padding: 2rem 2.5rem 2.5rem;
 }
@@ -262,7 +259,7 @@
     border-radius: 100px;
 }
 
-/* ===== Form Content ===== */
+
 .contact-modal__content {
     padding: 0.5rem 1.75rem 0.75rem;
     display: none;
@@ -284,7 +281,7 @@
     }
 }
 
-/* ===== Back Button ===== */
+
 .form-back-btn {
     display: inline-flex;
     align-items: center;
@@ -314,7 +311,7 @@
     transform: translateX(-3px);
 }
 
-/* ===== Progress Indicator ===== */
+
 .form-progress {
     display: flex;
     align-items: center;
@@ -340,7 +337,7 @@
     background: #0077FF;
 }
 
-/* ===== Step Container ===== */
+
 .form-step {
     display: none;
 }
@@ -370,7 +367,7 @@
     color: #78716c;
 }
 
-/* ===== Form Fields ===== */
+
 .form-group {
     margin-bottom: 1.25rem;
 }
@@ -379,7 +376,7 @@
     margin-bottom: 2rem;
 }
 
-/* Komprimiert: Schritt 3 (Kontaktdaten) – ohne Scrollen, Header bleibt */
+
 .contact-modal__content .form-step[data-step="3"] .form-group,
 .contact-modal__content form#inquiry-form .form-group {
     margin-bottom: 0.5rem !important;
@@ -512,7 +509,7 @@
     padding: 0.5rem;
 }
 
-/* ===== Industry Select (Custom Dropdown mit SVG-Icons) ===== */
+
 .industry-select-wrap {
     position: relative;
 }
@@ -620,7 +617,7 @@
     stroke: currentColor;
 }
 
-/* ===== Option Cards ===== */
+
 .option-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -682,7 +679,7 @@
     transition: none;
 }
 
-/* Icon bleibt sichtbar bei Auswahl – kein solid blue, kein Hover-Effekt */
+
 .option-card.selected .option-card__icon {
     background: rgba(255, 255, 255, 0.1);
 }
@@ -732,7 +729,7 @@
     transition: all 0.2s ease;
 }
 
-/* Haken nur bei ausgewählter Karte sichtbar */
+
 .option-card__check svg {
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -747,7 +744,7 @@
     color: #ffffff;
 }
 
-/* ===== Sliders ===== */
+
 .slider-group {
     margin-bottom: 1.75rem;
 }
@@ -813,7 +810,7 @@
     border: none;
 }
 
-/* ===== Potential Results ===== */
+
 .potential-results {
     background: linear-gradient(135deg, rgba(0, 119, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
     border: 2px solid rgba(0, 119, 255, 0.2);
@@ -932,14 +929,14 @@
     line-height: 1.5;
 }
 
-/* ===== Form Row ===== */
+
 .form-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
 
-/* ===== Form Actions ===== */
+
 .form-actions {
     display: flex;
     align-items: center;
@@ -1007,7 +1004,7 @@
     box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 
-/* ===== Success State ===== */
+
 .form-success {
     display: none;
     text-align: center;
@@ -1091,7 +1088,7 @@
     box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 
-/* ===== Privacy Checkbox ===== */
+
 .privacy-checkbox {
     display: flex;
     align-items: flex-start;
@@ -1133,7 +1130,7 @@
     color: #00FFFF;
 }
 
-/* ===== Trust Footer ===== */
+
 .modal-trust {
     display: flex;
     justify-content: center;
@@ -1159,11 +1156,9 @@
     font-size: 0.875rem;
 }
 
-/* ==========================================
-   RESPONSIVE DESIGN
-   ========================================== */
 
-/* Tablet */
+
+
 @media (max-width: 768px) {
     .contact-modal {
         padding: 0.5rem !important;
@@ -1176,7 +1171,7 @@
         overflow: hidden !important;
     }
     
-    /* Close Button besser sichtbar */
+    
     .contact-modal__close {
         width: 38px !important;
         height: 38px !important;
@@ -1294,20 +1289,20 @@
         font-size: 0.75rem !important;
     }
     
-    /* Ensure no horizontal overflow */
+    
     .contact-modal__scroll-area {
         overflow-x: hidden !important;
     }
 }
 
-/* Mobile Small */
+
 @media (max-width: 480px) {
-    /* Modal-Container: Volle Breite ohne Overflow */
+    
     .contact-modal {
         --mobile-header-h: 70px;
-        /* Unter Header (z-index 10001/10002), aber über der Seite */
+        
         z-index: 10000 !important;
-        /* Modal beginnt direkt unter dem (fixen) Header */
+        
         inset: auto !important;
         top: var(--mobile-header-h) !important;
         left: 0 !important;
@@ -1315,10 +1310,10 @@
         bottom: 0 !important;
         width: 100% !important;
         max-width: 100vw !important;
-        /* Wichtig: Nicht vertikal zentrieren, sonst „schneidet“ es oben ab */
+        
         align-items: flex-start !important;
         padding: 0.25rem !important;
-        /* Safe-Area oben ist durch Header bereits abgedeckt */
+        
         padding-top: 0.25rem !important;
         padding-bottom: calc(0.25rem + env(safe-area-inset-bottom)) !important;
         overflow-x: hidden !important;
@@ -1333,7 +1328,7 @@
     .contact-modal__container {
         max-width: calc(100vw - 0.5rem) !important;
         max-width: 100vw !important;
-        /* Höhe: Rest-Viewport unterhalb des Headers */
+        
         height: calc((var(--vh, 1vh) * 100) - var(--mobile-header-h) - 0.5rem) !important;
         height: calc(100vh - var(--mobile-header-h) - 0.5rem) !important;
         height: calc(100dvh - var(--mobile-header-h) - 0.5rem) !important;
@@ -1343,7 +1338,7 @@
         overflow: hidden !important;
     }
     
-    /* Close Button: Größer, besser klickbar, höherer z-index */
+    
     .contact-modal__close {
         top: 0.5rem !important;
         right: 0.5rem !important;
@@ -1359,7 +1354,7 @@
         height: 20px !important;
     }
     
-    /* Header kompakter */
+    
     .contact-modal__header {
         padding: 1.5rem 1rem 0.75rem !important;
     }
@@ -1380,7 +1375,7 @@
         font-size: 0.8125rem !important;
     }
     
-    /* Pfad-Auswahl kompakter */
+    
     .contact-modal__paths {
         padding: 1rem !important;
     }
@@ -1404,7 +1399,7 @@
         font-size: 0.8125rem !important;
     }
     
-    /* Formular-Content kompakter */
+    
     .contact-modal__content {
         padding: 0.75rem 1rem 1rem !important;
     }
@@ -1422,7 +1417,7 @@
         font-size: 0.8125rem !important;
     }
     
-    /* Progress Indicator kleiner */
+    
     .form-progress {
         margin-bottom: 0.5rem !important;
     }
@@ -1436,7 +1431,7 @@
         width: 36px !important;
     }
     
-    /* Form-Gruppen kompakter */
+    
     .form-group {
         margin-bottom: 0.75rem !important;
     }
@@ -1458,7 +1453,7 @@
         min-height: 70px !important;
     }
     
-    /* Option-Grid: zurück auf lesbares Standard-Layout */
+    
     .option-grid {
         grid-template-columns: 1fr !important;
         gap: 0.5rem !important;
@@ -1488,7 +1483,7 @@
         height: 20px !important;
     }
     
-    /* Slider kompakter */
+    
     .slider-group {
         margin-bottom: 1rem !important;
     }
@@ -1523,7 +1518,7 @@
         height: 20px !important;
     }
     
-    /* Potential Results kompakter */
+    
     .potential-results {
         padding: 1rem !important;
         margin-bottom: 1rem !important;
@@ -1598,7 +1593,7 @@
         margin-top: 0.25rem !important;
     }
     
-    /* Form Actions kompakter */
+    
     .form-actions {
         flex-direction: column-reverse !important;
         gap: 0.5rem !important;
@@ -1618,7 +1613,7 @@
         width: 100% !important;
     }
     
-    /* Privacy Checkbox kompakter */
+    
     .privacy-checkbox {
         padding: 0.75rem !important;
         gap: 0.5rem !important;
@@ -1634,7 +1629,7 @@
         line-height: 1.5 !important;
     }
     
-    /* Success Screen kompakter */
+    
     .form-success {
         padding: 2rem 1.25rem !important;
     }
@@ -1661,7 +1656,7 @@
         font-size: 0.9375rem !important;
     }
     
-    /* Trust Footer kompakter */
+    
     .modal-trust {
         flex-direction: column !important;
         align-items: center !important;
@@ -1674,7 +1669,7 @@
         white-space: nowrap !important;
     }
 
-    /* Trust Footer: 3 Items in einer Zeile + kompakter */
+    
     .modal-trust {
         flex-wrap: nowrap !important;
         gap: 0.4rem !important;
@@ -1686,7 +1681,7 @@
         height: 13px !important;
     }
     
-    /* Industry Select kompakter */
+    
     .industry-select-trigger {
         padding: 0.625rem 0.75rem !important;
         font-size: 0.9375rem !important;
@@ -1706,29 +1701,29 @@
         font-size: 0.875rem !important;
     }
     
-    /* Back Button */
+    
     .form-back-btn {
         font-size: 0.75rem !important;
         margin-bottom: 0.375rem !important;
     }
     
-    /* Scroll Area Optimization */
+    
     .contact-modal__scroll-area {
-        /* Fallback: Wenn ein Gerät zu klein ist, darf der Inhalt scrollen */
+        
         overflow-y: auto !important;
         overflow-x: hidden !important;
         overscroll-behavior: contain !important;
         -webkit-overflow-scrolling: touch !important;
     }
     
-    /* Ensure no horizontal overflow anywhere */
+    
     .contact-modal__container * {
         max-width: 100% !important;
         box-sizing: border-box !important;
     }
 }
 
-/* Extra Small Mobile (< 375px) */
+
 @media (max-width: 374px) {
     .contact-modal {
         padding: 0.125rem !important;
@@ -1768,7 +1763,7 @@
     }
 }
 
-/* Handle notch/safe areas on modern phones */
+
 @supports (padding: max(0px)) {
     .contact-modal {
         padding-left: max(0.25rem, env(safe-area-inset-left)) !important;
@@ -1777,7 +1772,7 @@
     }
 }
 
-/* Landscape phone orientation */
+
 @media (max-height: 500px) and (orientation: landscape) {
     .contact-modal {
         padding: 0.25rem !important;
@@ -1847,7 +1842,7 @@
     }
 }
 
-/* Reduce motion for accessibility */
+
 @media (prefers-reduced-motion: reduce) {
     .contact-modal,
     .contact-modal__container,
@@ -1869,7 +1864,7 @@
     }
 }
 
-/* Glow-Karten: Wird zuletzt geladen – verhindert, dass Hover-Glow abgeschnitten wird */
+
 section.problems,
 section.solutions,
 section.problems .container,

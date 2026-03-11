@@ -1,17 +1,10 @@
-/* ==========================================
-   RESPONSIVE DESIGN - COMPLETE RESET
-   Mobile First Approach
-   Desktop ab 1024px bleibt UNVERÄNDERT
-   ========================================== */
 
-/* ==========================================
-   BASE MOBILE STYLES (< 1024px)
-   Zero Scroll + Flexible Layout
-   ========================================== */
 
-/* ===== BURGER MENÜ AUCH BEI MITTLERER BREITE (z. B. iPad Pro 1024px) – Menüpunkte brechen sonst um ===== */
+
+
+
 @media (min-width: 1024px) and (max-width: 1199px) {
-    /* ===== HEADER & NAVIGATION - BURGER WIE MOBILE, GRÖßER FÜR iPAD PRO ===== */
+    
     .header {
         position: fixed;
         top: 0;
@@ -218,7 +211,7 @@
         width: 100%;
     }
 
-    /* ===== HERO: Tablet/Laptop-Zwischenbereich (1024-1199) ===== */
+    
     .hero,
     section.hero,
     .hero__container,
@@ -293,7 +286,7 @@
 }
 
 @media (max-width: 1023px) {
-    /* ===== GLOBAL OVERFLOW PROTECTION ===== */
+    
     html,
     body {
         overflow-x: hidden !important;
@@ -304,7 +297,7 @@
     }
     
     
-    /* Buttons: overflow visible für Glow */
+    
     .btn {
         overflow: visible !important;
     }
@@ -315,7 +308,7 @@
         box-sizing: border-box;
     }
     
-    /* ===== CONTAINER RESET - 90% Breite mit 5% Rand ===== */
+    
     .container:not(.value-calculator .container):not(#pricing .container) {
         width: 90%;
         max-width: 90%;
@@ -332,7 +325,7 @@
         padding-inline: 0;
     }
     
-    /* Alle section > .container bekommen 90% Breite (außer Calculator) */
+    
     section:not(.value-calculator):not(#pricing) > .container {
         width: 90%;
         max-width: 90%;
@@ -340,7 +333,7 @@
         margin-right: auto;
     }
     
-    /* ===== HEADER & NAVIGATION - BURGER MENÜ ===== */
+    
     .header {
         position: fixed;
         top: 0;
@@ -366,7 +359,7 @@
         position: relative;
     }
     
-    /* Logo sichtbar */
+    
     .header .nav__logo {
         display: flex;
         align-items: center;
@@ -375,11 +368,11 @@
     }
     
     .header .nav__logo img {
-        height: 63px; /* 90% von 70px Header = 63px, mit 3.5px Platz oben/unten durch center */
+        height: 63px; 
         width: auto;
     }
     
-    /* Desktop-Menü verstecken, Burger anzeigen - ÜBER DEM HEADER */
+    
     .header .nav__menu {
         position: fixed;
         top: 0;
@@ -409,7 +402,7 @@
         border-bottom: 1px solid rgba(0, 212, 255, 0.2);
     }
     
-    /* Menüpunkte mittig */
+    
     .header .nav__menu .nav__item {
         width: 100%;
         max-width: 300px;
@@ -426,7 +419,7 @@
         font-size: 1rem;
     }
     
-    /* ENTFERNE ALLE ::after Unterstreichungen im Burger-Menü */
+    
     .header .nav__menu .nav__link::after {
         display: none !important;
         width: 0 !important;
@@ -434,7 +427,7 @@
         content: none !important;
     }
     
-    /* ENTFERNE ALLE Hover/Active Effekte im Burger-Menü */
+    
     .header .nav__menu .nav__link:hover,
     .header .nav__menu .nav__link:focus,
     .header .nav__menu .nav__link:active,
@@ -452,7 +445,7 @@
         width: 0 !important;
     }
     
-    /* CTA Button im Menü - IDENTISCH ZUR DESKTOP-VERSION */
+    
     .header .nav__menu .nav__link--cta {
         display: block !important;
         margin: 20px auto 12px !important;
@@ -496,7 +489,7 @@
         -webkit-backdrop-filter: none !important;
     }
     
-    /* Burger Button - MITTIG IM HEADER, RECHTS AM RAND */
+    
     .header .nav__toggle {
         display: flex;
         align-items: center;
@@ -511,7 +504,7 @@
         margin: 0;
     }
     
-    /* Hamburger Icon - 3 PERFEKT übereinander liegende Striche */
+    
     .header .nav__toggle .hamburger {
         position: relative;
         display: block;
@@ -543,7 +536,7 @@
         top: 8px;
     }
     
-    /* X-Animation wenn aktiv */
+    
     .header .nav__toggle.active .hamburger {
         background: transparent;
     }
@@ -558,7 +551,7 @@
         transform: rotate(-45deg);
     }
     
-    /* Backdrop wenn Menü offen */
+    
     body.menu-open::before {
         content: '';
         position: fixed;
@@ -571,27 +564,27 @@
         backdrop-filter: blur(3px);
     }
     
-    /* Logo und Burger über dem Menü */
+    
     .header .nav__logo,
     .header .nav__toggle {
         position: relative;
         z-index: 10002;
     }
     
-    /* Verhindert Scrollen wenn Menü offen */
+    
     body.menu-open {
         overflow: hidden !important;
         position: fixed;
         width: 100%;
     }
     
-    /* Animation für leuchtenden Strich */
+    
     @keyframes statsGlow {
         0%, 100% { opacity: 0.6; }
         50% { opacity: 1; }
     }
     
-    /* ===== TRUST BAR (Legacy) ===== */
+    
     .trust-bar {
         padding-block: var(--space-5);
         width: 100%;
@@ -632,7 +625,7 @@
         white-space: nowrap;
     }
 
-    /* ===== LOGO CAROUSEL - Mobile Anpassungen ===== */
+    
     .logo-carousel {
         padding-block: 1.25rem calc(2rem + env(safe-area-inset-bottom, 0px));
     }
@@ -663,7 +656,7 @@
         font-size: 0.6rem;
     }
     
-    /* ===== SECTION HEADERS ===== */
+    
     .section__header {
         margin-bottom: var(--space-6);
         text-align: center;
@@ -685,7 +678,7 @@
         line-height: 1.5;
     }
 
-    /* ===== HEADLINES/SUBHEADLINES: keine Silbentrennung (Mobile/Tablet) ===== */
+    
     .hero__title,
     .hero__title *,
     .hero__description,
@@ -707,7 +700,7 @@
         overflow-wrap: normal !important;
     }
     
-    /* ===== PROBLEM/SOLUTION CARDS - Container mit 90% Breite ===== */
+    
     .problems .container,
     .solutions .container,
     section.problems .container,
@@ -755,7 +748,7 @@
         line-height: 1.5;
     }
     
-    /* Before/After Showcase - volle Breite wie umliegende Sektionen */
+    
     .before-after-showcase {
         display: block;
         width: 100%;
@@ -786,7 +779,7 @@
         box-sizing: border-box;
     }
     
-    /* Metriken HORIZONTAL: Rot → Grün nebeneinander (wie Desktop) */
+    
     .metric-values {
         display: flex !important;
         flex-direction: row !important;
@@ -796,7 +789,7 @@
         padding: var(--space-1) 0;
     }
     
-    /* Pfeil horizontal (nicht nach unten rotiert) */
+    
     .metric-arrow {
         transform: none !important;
         font-size: 1rem;
@@ -828,7 +821,7 @@
         font-size: 1.1rem;
     }
     
-    /* ===== ABLAUF TIMELINE - MOBILE: vertikal ===== */
+    
     .ablauf .container {
         width: 90%;
         max-width: 90%;
@@ -847,7 +840,7 @@
         gap: var(--space-8);
     }
     
-    /* Linie wird vertikal auf Mobile */
+    
     .ablauf__line {
         display: none !important;
     }
@@ -878,7 +871,7 @@
         font-size: var(--text-sm);
     }
     
-    /* ===== DSGVO SECTION - Container mit 90% Breite (NUR MOBILE) ===== */
+    
     .dsgvo .container,
     section.dsgvo .container {
         width: 90%;
@@ -894,7 +887,7 @@
         overflow-x: hidden;
     }
     
-    /* MOBILE: 1-spaltig untereinander */
+    
     .dsgvo__wrapper {
         grid-template-columns: 1fr !important;
         gap: var(--space-8);
@@ -933,7 +926,7 @@
         flex-shrink: 0;
     }
     
-    /* Trust Badges - MOBILE: vertikal untereinander, kein Scrollbalken */
+    
     section.dsgvo .dsgvo__badges,
     .dsgvo .dsgvo__badges,
     .dsgvo__badges {
@@ -960,14 +953,14 @@
         overflow: visible !important;
     }
     
-    /* ===== VALUE CALCULATOR - SKALIEREN ===== */
+    
     .value-calculator,
     #pricing {
         overflow-x: hidden;
         width: 100%;
     }
 
-    /* Ersparnis: feine Grid-Linien entfernen (gehen sonst durch Text) */
+    
     .value-calculator::before {
         background-image:
             radial-gradient(circle at 20% 30%, rgba(0, 119, 255, 0.15) 0%, transparent 50%),
@@ -978,13 +971,13 @@
     .calculator__wrapper {
         transform: scale(0.85);
         transform-origin: top center;
-        width: 117.65%; /* 100% / 0.85 */
+        width: 117.65%; 
         max-width: none;
         margin-left: auto;
         margin-right: auto;
     }
     
-    /* ===== PRICING CARDS - Volle Breite ===== */
+    
     .pricing__grid {
         grid-template-columns: 1fr;
         gap: var(--space-5);
@@ -1016,7 +1009,7 @@
         font-size: var(--text-sm);
     }
     
-    /* ===== TESTIMONIALS - Container mit 90% Breite ===== */
+    
     .testimonials .container,
     section.testimonials .container {
         width: 90%;
@@ -1033,12 +1026,12 @@
         padding: 0;
     }
     
-    /* Nur 1 Testimonial auf Mobile */
+    
     .testimonial-card:nth-child(n+2) {
         display: none;
     }
     
-    /* Expert Quotes auf Mobile: ALLE ANZEIGEN, untereinander */
+    
     .expert-quotes__grid {
         display: flex !important;
         flex-direction: column !important;
@@ -1064,7 +1057,7 @@
         font-size: var(--text-sm);
     }
     
-    /* Client Logos - Horizontal Scroll */
+    
     .client-logos {
         overflow-x: auto;
         justify-content: flex-start;
@@ -1077,7 +1070,7 @@
         flex-shrink: 0;
     }
     
-    /* ===== FAQ - Container mit 90% Breite ===== */
+    
     .faq-section .container,
     section.faq-section .container {
         width: 90%;
@@ -1106,7 +1099,7 @@
         font-size: var(--text-sm);
     }
     
-    /* Lead Magnet - Compact */
+    
     .lead-magnet {
         position: static;
         margin-top: var(--space-6);
@@ -1124,8 +1117,8 @@
         font-size: var(--text-sm);
     }
     
-    /* ===== FINAL CTA - Container mit 90% Breite ===== */
-    /* Final CTA Section - Overflow visible für Leuchteffekt */
+    
+    
     .final-cta,
     section.final-cta {
         overflow: visible !important;
@@ -1138,11 +1131,11 @@
         margin-left: auto;
         margin-right: auto;
         padding-inline: 0;
-        overflow: visible !important; /* Leuchteffekt nicht abschneiden */
+        overflow: visible !important; 
     }
     
     .final-cta__content {
-        overflow: visible !important; /* Leuchteffekt nicht abschneiden */
+        overflow: visible !important; 
     }
     
     .final-cta__icon {
@@ -1161,11 +1154,11 @@
         margin-bottom: var(--space-5);
     }
     
-    /* CTA Button - Schrift um 2px verkleinern, overflow visible für Leuchteffekt */
+    
     .final-cta .btn--large,
     .final-cta .btn--neon {
-        font-size: calc(var(--text-sm) - 0.125rem) !important; /* 2px kleiner */
-        overflow: visible !important; /* Leuchteffekt vollständig sichtbar */
+        font-size: calc(var(--text-sm) - 0.125rem) !important; 
+        overflow: visible !important; 
     }
     
     .final-cta__social-proof {
@@ -1178,7 +1171,7 @@
         display: none;
     }
     
-    /* ===== FOOTER ===== */
+    
     .footer__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-6);
@@ -1197,13 +1190,13 @@
         align-items: center;
     }
     
-    /* Produkt und Rechtliches EXPLIZIT einblenden */
+    
     .footer__links-group:nth-child(2),
     .footer__links-group:nth-child(3) {
         display: block !important;
     }
     
-    /* Kontakt und weitere ausblenden */
+    
     .footer__links-group:nth-child(n+4) {
         display: none !important;
     }
@@ -1214,7 +1207,7 @@
         text-align: center;
     }
     
-    /* ===== HERO RESPONSIVE RESET + REBUILD (<=1023px) ===== */
+    
     .hero,
     section.hero,
     .hero__container,
@@ -1314,7 +1307,7 @@
         margin-top: auto !important;
     }
 
-    /* ===== SCROLL TO TOP ===== */
+    
     .scroll-to-top {
         width: 50px;
         height: 50px;
@@ -1322,7 +1315,7 @@
         right: 1.5rem;
     }
     
-    /* ===== NOTIFICATIONS ===== */
+    
     .notification {
         left: 1rem;
         right: 1rem;
@@ -1332,12 +1325,10 @@
     }
 }
 
-/* ==========================================
-   TABLET SPECIFIC (577px - 1023px)
-   ========================================== */
+
 
 @media (min-width: 577px) and (max-width: 1023px) {
-    /* Container auch auf Tablet 90% Breite - ALLE Sektionen (AUSSER Calculator) */
+    
     .container:not(.value-calculator .container):not(#pricing .container),
     section:not(.value-calculator):not(#pricing) > .container,
     .hero .container,
@@ -1356,7 +1347,7 @@
         padding-inline: 0 !important;
     }
     
-    /* COMING SOON BOX auf Tablet - NORMAL (keine neue Zeile) */
+    
     .benefit-result {
         display: inline !important;
     }
@@ -1376,7 +1367,7 @@
     
     
     
-    /* 2 Testimonials auf Tablet */
+    
     .testimonial-card:nth-child(2) {
         display: block;
     }
@@ -1385,7 +1376,7 @@
         display: none;
     }
     
-    /* Expert Quotes auf Tablet: ALLE ANZEIGEN, untereinander */
+    
     .expert-quotes__grid {
         display: flex !important;
         flex-direction: column !important;
@@ -1397,7 +1388,7 @@
         width: 100% !important;
     }
     
-    /* Problem/Solution Cards - 3 Spalten wie Desktop auf Tablet */
+    
     .problems__grid,
     .solutions__grid,
     section.problems .problems__grid,
@@ -1406,42 +1397,42 @@
         gap: var(--space-4);
     }
     
-    /* Problem Cards auf Tablet - Texte auf exakt gleicher Höhe wie mittlerer Text */
+    
     .problems__grid--popup .problem-card {
         min-height: 420px !important;
         padding-bottom: 85px !important;
     }
     
-    /* Erstes und drittes Card: Text weiter nach unten (wegen kürzerer Überschrift) */
+    
     .problems__grid--popup .problem-card:nth-child(1) .problem-card__footnote,
     .problems__grid--popup .problem-card:nth-child(3) .problem-card__footnote {
         margin-top: 60px !important;
         margin-bottom: 5px !important;
     }
     
-    /* Mittleres Card: Text auf normaler Höhe (längere Überschrift) */
+    
     .problems__grid--popup .problem-card:nth-child(2) .problem-card__footnote {
         margin-top: 30px !important;
         margin-bottom: 5px !important;
     }
     
-    /* Separator - weniger Abstand zum Text, mehr Abstand zu Mehr lesen */
+    
     .problems__grid--popup .problem-card__separator {
         bottom: 60px !important;
     }
     
-    /* Mehr lesen Link - mehr Abstand zur Trennlinie */
+    
     .problems__grid--popup .problem-card__more-area {
         bottom: 20px !important;
     }
     
-    /* Pricing - 2 Spalten */
+    
     .pricing__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-6);
     }
     
-    /* Footer - 2 Spalten */
+    
     .footer__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-8);
@@ -1452,24 +1443,21 @@
     }
 }
 
-/* ==========================================
-   MOBILE SPECIFIC (max-width: 576px)
-   Extra Optimierungen für kleine Handys
-   ========================================== */
+
 
 @media (max-width: 576px) {
-    /* Noch kompaktere Abstände */
+    
     section {
         padding-block: var(--space-10);
     }
     
-    /* Final CTA - Overflow visible für Leuchteffekt */
+    
     .final-cta,
     section.final-cta {
         overflow: visible !important;
     }
     
-    /* ALLE Container auf kleine Handys: 90% Breite (AUSSER Calculator) */
+    
     .container:not(.value-calculator .container):not(#pricing .container),
     section:not(.value-calculator):not(#pricing) > .container,
     .hero .container,
@@ -1486,21 +1474,21 @@
         margin-left: auto !important;
         margin-right: auto !important;
         padding-inline: 0 !important;
-        overflow: visible !important; /* Leuchteffekt nicht abschneiden */
+        overflow: visible !important; 
     }
     
-    /* CTA Button - Schrift um 2px verkleinern */
+    
     .final-cta .btn--large,
     .final-cta .btn--neon {
-        font-size: calc(0.8rem - 0.125rem) !important; /* 2px kleiner als 0.8rem */
+        font-size: calc(0.8rem - 0.125rem) !important; 
     }
     
-    /* Section Titles kleiner */
+    
     .section__title {
         font-size: clamp(1.25rem, 5vw, 1.75rem);
     }
 
-    /* Hero-Titel größer auf Mobile */
+    
     .hero__title {
         font-size: clamp(1.55rem, 7.5vw, 2rem) !important;
         padding-inline: 4% !important;
@@ -1548,14 +1536,14 @@
         margin-top: auto !important;
     }
     
-    /* Cards kompakter */
+    
     .problem-card,
     .solution-card,
     .pricing-card {
         padding: var(--space-4);
     }
     
-    /* ===== COMING SOON BOX - Ergebnisse in neue Zeile NUR auf Handy ===== */
+    
     .coming-soon__benefits li {
         display: block !important;
         font-size: 0.85rem !important;
@@ -1577,27 +1565,24 @@
         padding-left: 0 !important;
     }
     
-    /* Calculator noch stärker skalieren */
+    
     .calculator__wrapper {
         transform: scale(0.75);
-        width: 133.33%; /* 100% / 0.75 */
+        width: 133.33%; 
     }
 
 }
 
-/* ==========================================
-   ULTRA SMALL DEVICES (max-width: 375px)
-   Für sehr kleine Smartphones
-   ========================================== */
+
 
 @media (max-width: 375px) {
-    /* Final CTA - Overflow visible für Leuchteffekt */
+    
     .final-cta,
     section.final-cta {
         overflow: visible !important;
     }
     
-    /* ALLE Container auch auf ultra-kleinen Geräten: 90% Breite (AUSSER Calculator) */
+    
     .container:not(.value-calculator .container):not(#pricing .container),
     section:not(.value-calculator):not(#pricing) > .container,
     .hero .container,
@@ -1614,13 +1599,13 @@
         margin-left: auto !important;
         margin-right: auto !important;
         padding-inline: 0 !important;
-        overflow: visible !important; /* Leuchteffekt nicht abschneiden */
+        overflow: visible !important; 
     }
     
-    /* CTA Button - Schrift um 2px verkleinern */
+    
     .final-cta .btn--large,
     .final-cta .btn--neon {
-        font-size: calc(0.75rem - 0.125rem) !important; /* 2px kleiner als kleinster Wert */
+        font-size: calc(0.75rem - 0.125rem) !important; 
     }
     
     .hero__title {
@@ -1633,7 +1618,7 @@
         font-size: 0.82em !important;
     }
     
-    /* ===== HERO RESPONSIVE FINE TUNE (<=576px) ===== */
+    
     .hero {
         padding-top: 0;
     }
@@ -1675,14 +1660,11 @@
 
     .calculator__wrapper {
         transform: scale(0.65);
-        width: 153.85%; /* 100% / 0.65 */
+        width: 153.85%; 
     }
 }
 
-/* ==========================================
-   LARGE SCREENS (Desktop 1400px+)
-   Optimierungen für große Bildschirme
-   ========================================== */
+
 
 @media (min-width: 1400px) {
     :root {
@@ -1698,9 +1680,7 @@
     }
 }
 
-/* ==========================================
-   EXTRA LARGE SCREENS (1600px+)
-   ========================================== */
+
 
 @media (min-width: 1600px) {
     :root {
@@ -1708,18 +1688,16 @@
     }
 }
 
-/* ==========================================
-   TABLET SPECIFIC - 2-Spalten Layout (768px - 1023px)
-   ========================================== */
+
 
 @media (min-width: 768px) and (max-width: 1023px) {
 
-    /* ===== DSGVO TABLET: Desktop-Layout, kein Scrollbalken, kein Schleier ===== */
-    /* WICHTIG: ID-Selektor #dsgvo noetig um main.css Regeln                     */
-    /*          (#dsgvo .dsgvo__wrapper { overflow: visible !important })          */
-    /*          per Spezifitaet zu ueberschreiben.                                */
+    
+    
+    
+    
 
-    /* 1. Container-Breite zuruecksetzen (Mobile setzt 90%) */
+    
     #dsgvo .container {
         width: 100% !important;
         max-width: 100% !important;
@@ -1727,12 +1705,12 @@
         overflow: visible !important;
     }
 
-    /* 2. Sektion: overflow clippen (kein Scrollbalken) */
+    
     #dsgvo {
         overflow: hidden !important;
     }
 
-    /* 3. Grid: 2 Spalten - links breit fuer Titel, rechts schmal fuer Badges */
+    
     #dsgvo .dsgvo__wrapper {
         display: grid !important;
         grid-template-columns: 1fr auto !important;
@@ -1742,17 +1720,17 @@
         overflow: hidden !important;
     }
 
-    /* 4. Titel: Font verkleinern damit er in eine Zeile passt */
+    
     #dsgvo .dsgvo__title {
         font-size: 2rem !important;
     }
 
-    /* 5. Checklist: overflow visible (KEIN Scroll-Container!) */
+    
     #dsgvo .dsgvo__checklist {
         overflow: visible !important;
     }
 
-    /* 6. Checklist-Items: Schrift + white-space zuruecksetzen */
+    
     #dsgvo .checklist-item {
         font-size: 0.95rem !important;
         white-space: normal !important;
@@ -1765,7 +1743,7 @@
         overflow-wrap: break-word !important;
     }
 
-    /* 7. Badges: schmal, auf Hoehe der Checkliste, rechts in der Spalte */
+    
     #dsgvo .dsgvo__badges {
         display: flex !important;
         flex-direction: column !important;
@@ -1779,7 +1757,7 @@
         overflow: visible !important;
     }
 
-    /* 8. Trust Badge: kompakt, KEIN Schleier/Blur */
+    
     #dsgvo .trust-badge {
         padding: var(--space-3) var(--space-4) !important;
         min-height: auto !important;
@@ -1792,12 +1770,12 @@
         overflow: hidden !important;
     }
 
-    /* Schleier-Effekt (::before Gradient) entfernen */
+    
     #dsgvo .trust-badge::before {
         display: none !important;
     }
 
-    /* 9. Icon: feste Groesse, nicht schrumpfen (alle 3 sauber untereinander) */
+    
     #dsgvo .trust-badge__icon {
         width: 48px !important;
         min-width: 48px !important;
@@ -1810,7 +1788,7 @@
         height: 24px !important;
     }
 
-    /* 10. Trust Badge Text */
+    
     #dsgvo .trust-badge__title {
         font-size: 1rem !important;
         font-weight: 600 !important;
@@ -1828,9 +1806,7 @@
     }
 }
 
-/* ==========================================
-   ACCESSIBILITY - Reduced Motion
-   ========================================== */
+
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -1852,9 +1828,7 @@
     }
 }
 
-/* ==========================================
-   PRINT STYLES
-   ========================================== */
+
 
 @media print {
     .header,
@@ -1887,9 +1861,7 @@
     }
 }
 
-/* ==========================================
-   HIGH CONTRAST MODE
-   ========================================== */
+
 
 @media (prefers-contrast: high) {
     :root {
@@ -1906,22 +1878,22 @@
     }
 }
 
-/* ===== Bedingte Zeilenumbrüche: Desktop vs. Mobile ===== */
-/* Desktop/Tablet: .br-mobile ausblenden */
+
+
 .br-mobile { display: none; }
 .br-desktop { display: inline; }
 
 @media (max-width: 768px) {
-    /* Mobile: .br-desktop ausblenden, .br-mobile einblenden */
+    
     .br-mobile { display: inline; }
     .br-desktop { display: none; }
     
-    /* FAQ: DSGVO-Antwort auf Handy vollständig lesbar (inkl. Datenschutz-Link) */
+    
     .faq-item.active .faq-item__answer {
         max-height: 320px !important;
     }
     
-    /* Checklisten-Sektion: Grau/grünen Schleier links vom CTA entfernen */
+    
     .faq-section .lead-magnet__content {
         background: var(--color-surface) !important;
     }
@@ -1933,9 +1905,9 @@
     }
 }
 
-/* ===== iPad Pro: Abstände Ersparnis-Sektion (nur 834px–1366px, danach laden = gewinnt) ===== */
+
 @media (min-width: 834px) and (max-width: 1366px) {
-    /* Abstand Überschrift ↔ Rechner und Rechner ↔ CTA (iPad Pro, bewusst eng) */
+    
     #pricing.value-calculator {
         --pricing_header_to_calculator: -30px !important;
         --pricing_calculator_to_cta: -30px !important;

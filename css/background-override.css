@@ -1,10 +1,6 @@
-/* ============================================
-   BACKGROUND OVERRIDE – KI-Prozessnavigator
-   NUR Hintergrund + Glow. Kein Layout.
-   Letzte CSS-Datei → höchste Kaskaden-Priorität.
-   ============================================ */
 
-/* ── DOT-GRID AUF BODY ── */
+
+
 body {
   background-color: #0a0e1a;
   background-image: radial-gradient(
@@ -16,11 +12,7 @@ body {
   background-attachment: scroll;
 }
 
-/* ── SEKTIONEN TRANSPARENT (Dot-Grid scheint durch) ──
-   WICHTIG: .hero ist NICHT in dieser Liste!
-   Hero behält ihre eigenen ::before/::after Effekte aus main.css + hero-override.css.
-   .logo-carousel und .trust-bar behalten ihren eigenen Hintergrund.
-*/
+
 .wir-vs-du,
 .rechner-v3,
 .use-cases-tabs,
@@ -45,28 +37,20 @@ body {
   box-shadow: none;
 }
 
-/* ── TRENNLINIEN VOR + NACH LOGO-CAROUSEL ──
-   Gleicher Stil wie die originalen Carousel-Borders.
-*/
+
 .logo-carousel,
 .trust-bar {
   border-top: 1px solid rgba(0, 212, 255, 0.2);
   border-bottom: 1px solid rgba(0, 119, 255, 0.15);
 }
 
-/* ── TRENNLINIE VOR DEM FOOTER ──
-   Gleicher Stil wie die Carousel-Trennlinien.
-*/
+
 footer,
 .footer {
   border-top: 1px solid rgba(0, 212, 255, 0.2) !important;
 }
 
-/* ── KEINE TRENNLINIEN ──
-   Alle ::before-Trennlinien zwischen Sektionen deaktiviert.
-   Alle ::after-Trennlinien zwischen Sektionen deaktiviert.
-   AUSNAHME: .hero::before und .hero::after werden NICHT angefasst!
-*/
+
 section#problems::before,
 section#ersparnis::before,
 section#use-cases::before,
@@ -92,11 +76,7 @@ section#contact::after,
   display: none;
 }
 
-/* ── GLOW-SPOTS (dezente Lichtakzente) ──
-   position: fixed mit max-height damit sie NICHT in den Footer gehen.
-   Glow #5 (unten) endet vor dem Footer.
-   Kein Glow in der Mitte des Bildschirms.
-*/
+
 .bg-glow {
   position: fixed;
   border-radius: 50%;
@@ -105,7 +85,7 @@ section#contact::after,
   will-change: transform;
 }
 
-/* Oben links – minimal verringert */
+
 #glow-1 {
   width: 650px;
   height: 450px;
@@ -114,7 +94,7 @@ section#contact::after,
   background: radial-gradient(ellipse, rgba(0, 119, 255, 0.07) 0%, transparent 70%);
 }
 
-/* Oben rechts – sehr dezent */
+
 #glow-2 {
   width: 500px;
   height: 350px;
@@ -123,12 +103,12 @@ section#contact::after,
   background: radial-gradient(ellipse, rgba(0, 119, 255, 0.06) 0%, transparent 70%);
 }
 
-/* Glow-3 ENTFERNT – war der hellgraue Glow mittig im Bildschirm */
+
 #glow-3 {
   display: none;
 }
 
-/* Unten links – sehr dezent */
+
 #glow-4 {
   width: 400px;
   height: 300px;
@@ -137,7 +117,7 @@ section#contact::after,
   background: radial-gradient(ellipse, rgba(0, 119, 255, 0.04) 0%, transparent 65%);
 }
 
-/* Rechts mittig – kleiner dezenter Glow (neu) */
+
 #glow-5 {
   width: 450px;
   height: 350px;
@@ -146,10 +126,7 @@ section#contact::after,
   background: radial-gradient(ellipse, rgba(0, 119, 255, 0.05) 0%, transparent 70%);
 }
 
-/* ── FOOTER ──
-   Gleiche Farbe wie Header (#0a0e1a), damit beides identisch aussieht.
-   z-index: 1 stellt sicher, dass kein Glow-Spot in den Footer scheint.
-*/
+
 footer,
 .footer {
   background-color: #0a0e1a;

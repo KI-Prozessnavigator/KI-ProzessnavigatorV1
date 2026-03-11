@@ -1,7 +1,3 @@
-/* ==========================================
-   Cookie Banner Styles (DSGVO-konform)
-   ========================================== */
-
 .cookie-banner {
     position: fixed;
     bottom: 0;
@@ -95,7 +91,6 @@
     white-space: nowrap;
 }
 
-/* Alle akzeptieren Button (Primär) */
 .cookie-banner__btn--accept-all {
     background: var(--color-neon);
     color: var(--color-neutral-900);
@@ -107,7 +102,6 @@
     box-shadow: 0 4px 12px var(--color-neon-glow);
 }
 
-/* Ablehnen Button (gleicher Stil wie Alle akzeptieren) */
 .cookie-banner__btn--essential {
     background: var(--color-neon);
     color: var(--color-neutral-900);
@@ -119,7 +113,6 @@
     box-shadow: 0 4px 12px var(--color-neon-glow);
 }
 
-/* Einstellungen Button (Ghost) */
 .cookie-banner__btn--settings {
     background: transparent;
     color: var(--color-neutral-400);
@@ -132,10 +125,6 @@
     color: #fff;
     text-decoration-color: var(--color-neon);
 }
-
-/* ==========================================
-   Cookie Settings Modal
-   ========================================== */
 
 .cookie-modal {
     position: fixed;
@@ -239,7 +228,6 @@
     margin-bottom: var(--space-6);
 }
 
-/* Cookie Categories */
 .cookie-category {
     background: #ffffff;
     border: 1px solid rgba(0, 212, 255, 0.2);
@@ -306,7 +294,6 @@
     margin: 0;
 }
 
-/* Cookie Toggle Switch */
 .cookie-toggle {
     position: relative;
     display: inline-block;
@@ -364,7 +351,6 @@
     background: #00D98F;
 }
 
-/* Cookie Details Table */
 .cookie-category__details {
     margin-top: var(--space-4);
 }
@@ -414,7 +400,6 @@
     border-bottom: none;
 }
 
-/* Modal Footer */
 .cookie-modal__footer {
     display: flex;
     align-items: center;
@@ -488,7 +473,6 @@
     box-shadow: 0 4px 12px rgba(0, 119, 255, 0.3);
 }
 
-/* Mobile Responsive */
 @media (max-width: 640px) {
     .cookie-banner {
         padding: var(--space-4);
@@ -547,10 +531,6 @@
         margin-top: calc(-1 * var(--space-8));
     }
 }
-
-/* ==========================================
-   Privacy Checkbox Styles (für Formulare)
-   ========================================== */
 
 .form__group--checkbox {
     display: flex;

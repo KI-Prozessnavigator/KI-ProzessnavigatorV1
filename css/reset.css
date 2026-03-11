@@ -1,6 +1,4 @@
-/* ==========================================
-   CSS Reset - Modern Normalize
-   ========================================== */
+
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -63,19 +61,19 @@ table {
     border-spacing: 0;
 }
 
-/* Remove default button styles */
+
 button:focus {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
-/* Improve media defaults */
+
 img, video {
     max-width: 100%;
     height: auto;
 }
 
-/* Remove animations for users who prefer reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
