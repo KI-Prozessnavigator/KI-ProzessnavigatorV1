@@ -1,15 +1,46 @@
 /* ============================================
-   ZUSAMMENARBEIT V2 – Split-Layout mit Scroll-Cards
-   Links: Sticky Header-Text
-   Rechts: 4 vertikale Karten zum Durchscrollen
+   ZUSAMMENARBEIT V2 – Sticky Stacking Cards
    Namespace: .zusammenarbeit-v2
+   
+   TECHNIK: Reines CSS position:sticky
+   - Linke Spalte: sticky (bleibt fixiert)
+   - Rechte Spalte: Cards mit gestaffeltem top-Wert
+   - Cards stapeln sich übereinander beim Scrollen
+   - KEIN JavaScript nötig
+   
+   KRITISCH: overflow auf der Section und allen
+   Eltern-Elementen MUSS visible sein!
    ============================================ */
 
+/* --- OVERFLOW-FIX (bricht die globale section-Regel aus main.css) --- */
+section#ablauf.zusammenarbeit-v2 {
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+}
+
+/* Falls alte .ablauf-Klasse matcht */
+section#ablauf {
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+}
+
+/* Container innerhalb der Sektion darf auch kein overflow:hidden haben */
+section#ablauf .zusammenarbeit-v2__container,
+section#ablauf .zusammenarbeit-v2__layout,
+section#ablauf .zusammenarbeit-v2__right {
+    overflow: visible !important;
+}
+
+/* --- SEKTION --- */
 .zusammenarbeit-v2 {
     background: transparent;
     width: 100%;
     max-width: none;
-    padding: clamp(4rem, 8vw, 7rem) 0;
+    padding-top: clamp(4rem, 8vw, 7rem);
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+    position: relative;
 }
 
 .zusammenarbeit-v2,
@@ -26,15 +57,20 @@
     padding: 0 clamp(1.25rem, 5vw, 3rem);
 }
 
-/* ---- SPLIT-LAYOUT (Desktop) ---- */
+/* DSGVO-Sektion direkt danach: weniger Abstand */
+section#ablauf.zusammenarbeit-v2 + section#dsgvo {
+    padding-top: clamp(2rem, 4vw, 3.5rem);
+    margin-top: 0;
+}
 
+/* --- SPLIT-LAYOUT --- */
 .zusammenarbeit-v2__layout {
     display: flex;
     gap: clamp(2rem, 4vw, 3.5rem);
     align-items: flex-start;
 }
 
-/* LINKE SPALTE – Sticky */
+/* LINKE SPALTE – Sticky (bleibt beim Scrollen im Viewport fixiert) */
 .zusammenarbeit-v2__left {
     flex: 0 0 42%;
     max-width: 42%;
@@ -106,14 +142,8 @@
     margin-bottom: 2rem;
 }
 
-.zusammenarbeit-v2__time-icon {
-    color: #00D98F;
-}
-
-.zusammenarbeit-v2__time-icon svg {
-    width: 16px;
-    height: 16px;
-}
+.zusammenarbeit-v2__time-icon { color: #00D98F; }
+.zusammenarbeit-v2__time-icon svg { width: 16px; height: 16px; }
 
 /* CTA in der linken Spalte (nur Desktop sichtbar) */
 .zusammenarbeit-v2__left-cta {
@@ -122,31 +152,42 @@
     align-items: flex-start;
 }
 
-/* RECHTE SPALTE – Scrollbare Cards */
+/* --- RECHTE SPALTE: Normale Spalte, Cards darin sind sticky --- */
 .zusammenarbeit-v2__right {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: clamp(1.25rem, 2.5vw, 1.75rem);
+    gap: 0;
 }
 
-/* ---- CARDS ---- */
-
+/* --- STACKING CARDS (Desktop) --- */
 .zusammenarbeit-v2__card {
-    background: rgba(20, 27, 45, 0.6);
+    position: sticky;
+    background: rgba(20, 27, 45, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: clamp(1.5rem, 3vw, 2rem);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.05);
+    margin-bottom: 100px;
 }
+
+.zusammenarbeit-v2__card:last-child {
+    margin-bottom: 0;
+}
+
+.zusammenarbeit-v2__card:nth-child(1) { top: 120px; z-index: 1; }
+.zusammenarbeit-v2__card:nth-child(2) { top: 150px; z-index: 2; }
+.zusammenarbeit-v2__card:nth-child(3) { top: 180px; z-index: 3; }
+.zusammenarbeit-v2__card:nth-child(4) { top: 210px; z-index: 4; }
 
 .zusammenarbeit-v2__card:hover {
     border-color: rgba(0, 119, 255, 0.25);
-    box-shadow: 0 0 30px rgba(0, 119, 255, 0.08);
 }
 
+/* --- CARD-INHALTE --- */
 .zusammenarbeit-v2__card-header {
     display: flex;
     align-items: center;
@@ -224,8 +265,7 @@
     line-height: 1.5;
 }
 
-/* ---- CTA BUTTON (wiederverwendbar) ---- */
-
+/* --- CTA BUTTON --- */
 .zusammenarbeit-v2__cta-btn {
     display: inline-flex;
     align-items: center;
@@ -248,6 +288,7 @@
     box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
 }
 
+/* Trust-Items: nebeneinander */
 .zusammenarbeit-v2__trust {
     margin-top: 1rem;
     display: flex;
@@ -265,52 +306,31 @@
     color: #d1d5db;
 }
 
-/* Mobiler CTA-Block – nur auf Mobile sichtbar */
+/* Mobiler CTA-Block (nur auf Mobile sichtbar) */
 .zusammenarbeit-v2__mobile-cta {
     display: none;
 }
 
-/* ---- STACKING (Desktop) ---- */
-.zusammenarbeit-v2__right {
-    position: sticky;
-    top: 120px;
-}
-
-.zusammenarbeit-v2__card {
-    position: sticky;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.zusammenarbeit-v2__card:nth-child(1) {
-    top: 120px;
-    z-index: 10;
-}
-
-.zusammenarbeit-v2__card:nth-child(2) {
-    top: 140px;
-    z-index: 20;
-}
-
-.zusammenarbeit-v2__card:nth-child(3) {
-    top: 160px;
-    z-index: 30;
-}
-
-.zusammenarbeit-v2__card:nth-child(4) {
-    top: 180px;
-    z-index: 40;
-}
-
-/* ---- RESPONSIVE ---- */
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 
 @media (max-width: 1023px) {
     .zusammenarbeit-v2__left {
         flex: 0 0 38%;
         max-width: 38%;
     }
+
+    .zusammenarbeit-v2__card {
+        margin-bottom: 80px;
+    }
 }
 
 @media (max-width: 767px) {
+    .zusammenarbeit-v2 {
+        padding-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
     .zusammenarbeit-v2__layout {
         flex-direction: column;
         gap: 2rem;
@@ -333,12 +353,10 @@
         margin-right: auto;
     }
 
-    /* CTA in linker Spalte auf Mobile ausblenden */
     .zusammenarbeit-v2__left-cta {
         display: none;
     }
 
-    /* Mobiler CTA-Block einblenden */
     .zusammenarbeit-v2__mobile-cta {
         display: flex;
         flex-direction: column;
@@ -357,32 +375,33 @@
     .zusammenarbeit-v2__right {
         flex: none;
         width: 100%;
-        position: static;
-        top: auto;
     }
 
     .zusammenarbeit-v2__card {
-        position: static;
-        top: auto;
-        z-index: auto;
+        position: static !important;
+        top: auto !important;
+        z-index: auto !important;
         box-shadow: none;
+        margin-bottom: 1.25rem;
+        background: rgba(20, 27, 45, 0.6);
+    }
+
+    .zusammenarbeit-v2__card:last-child {
+        margin-bottom: 0;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .zusammenarbeit-v2 * {
-        transition: none !important;
-    }
-
-    .zusammenarbeit-v2__right {
-        position: static;
-        top: auto;
-    }
-
     .zusammenarbeit-v2__card {
-        position: static;
-        top: auto;
-        z-index: auto;
+        position: static !important;
+        top: auto !important;
+        z-index: auto !important;
         box-shadow: none;
+        margin-bottom: 1.25rem;
+        background: rgba(20, 27, 45, 0.6);
+    }
+
+    .zusammenarbeit-v2__left {
+        position: static;
     }
 }

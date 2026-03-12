@@ -220,7 +220,7 @@
     <style>
         /* CRITICAL CSS - Verhindert horizontalen Scrollbalken beim Laden */
         html, body {
-            overflow-x: hidden !important;
+            overflow-x: clip !important;
             max-width: 100vw !important;
             margin: 0;
             padding: 0;
@@ -1455,54 +1455,6 @@
 
             </div>
         </section>
-        <script>
-            (() => {
-                const section = document.querySelector('#ablauf.zusammenarbeit-v2');
-                if (!section) return;
-
-                const rightColumn = section.querySelector('.zusammenarbeit-v2__right');
-                const cards = Array.from(section.querySelectorAll('.zusammenarbeit-v2__card'));
-                if (!rightColumn || cards.length === 0) return;
-
-                const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-                const applyStacking = () => {
-                    const isMobile = window.matchMedia('(max-width: 767px)').matches;
-                    if (isMobile || prefersReduced.matches) {
-                        section.style.minHeight = '';
-                        rightColumn.style.position = '';
-                        rightColumn.style.top = '';
-                        cards.forEach((card) => {
-                            card.style.position = '';
-                            card.style.top = '';
-                            card.style.zIndex = '';
-                            card.style.boxShadow = '';
-                        });
-                        return;
-                    }
-
-                    const baseTop = 120;
-                    const offsetStep = 20;
-                    const stackHeight = window.innerHeight * 0.9;
-                    const minHeight = Math.max(stackHeight * cards.length + window.innerHeight * 0.6, window.innerHeight * 3);
-                    section.style.minHeight = `${Math.round(minHeight)}px`;
-
-                    rightColumn.style.position = 'sticky';
-                    rightColumn.style.top = `${baseTop}px`;
-
-                    cards.forEach((card, index) => {
-                        card.style.position = 'sticky';
-                        card.style.top = `${baseTop + index * offsetStep}px`;
-                        card.style.zIndex = `${10 + index * 10}`;
-                        card.style.boxShadow = '0 -10px 30px rgba(0, 0, 0, 0.3)';
-                    });
-                };
-
-                applyStacking();
-                window.addEventListener('resize', applyStacking, { passive: true });
-                prefersReduced.addEventListener('change', applyStacking);
-            })();
-        </script>
 
         <section class="dsgvo" id="dsgvo" aria-label="DSGVO und Datenschutz" data-section-name="dsgvo-datenschutz">
             <div class="container">
