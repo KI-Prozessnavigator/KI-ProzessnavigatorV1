@@ -3,18 +3,12 @@
     color: #f3f4f6;
     padding: 5rem 0 4rem;
     position: relative;
+    overflow: visible;
     hyphens: none !important;
     -webkit-hyphens: none !important;
     -ms-hyphens: none !important;
     word-break: normal !important;
     overflow-wrap: break-word;
-}
-
-.problem-awareness::before,
-.problem-awareness::after {
-    display: none !important;
-    background: none !important;
-    background-image: none !important;
 }
 
 .problem-awareness * {
@@ -26,12 +20,15 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 clamp(1.25rem, 5vw, 3rem);
+    overflow: visible;
 }
 
 .problem-awareness__pillars {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2.5rem;
+    padding-top: 1rem;
+    overflow: visible;
 }
 
 .problem-awareness__pillar {
@@ -39,6 +36,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    overflow: visible;
+    transition: color 0.2s ease;
 }
 
 .problem-awareness__icon {
@@ -53,6 +52,7 @@
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.12);
     color: #00D4FF;
     margin: 0 auto 1.25rem;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .problem-awareness__icon svg {
@@ -67,6 +67,7 @@
     font-size: var(--text-lg);
     font-weight: 600;
     margin: 0;
+    transition: color 0.2s ease;
 }
 
 .problem-awareness__pillar-text {
@@ -76,6 +77,23 @@
     color: #d1d5db;
     margin: 0.75rem auto 0;
     max-width: 320px;
+    transition: color 0.2s ease;
+}
+
+.problem-awareness__pillar:hover .problem-awareness__icon,
+.problem-awareness__pillar:focus-within .problem-awareness__icon {
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 26px rgba(0, 212, 255, 0.2);
+}
+
+.problem-awareness__pillar:hover .problem-awareness__pillar-title,
+.problem-awareness__pillar:focus-within .problem-awareness__pillar-title {
+    color: #f3f4f6;
+}
+
+.problem-awareness__pillar:hover .problem-awareness__pillar-text,
+.problem-awareness__pillar:focus-within .problem-awareness__pillar-text {
+    color: #e5e7eb;
 }
 
 .problem-awareness__divider {

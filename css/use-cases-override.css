@@ -28,10 +28,14 @@
 }
 
 .use-cases-tabs__subtext {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto 1rem;
     line-height: 1.7;
-    font-size: var(--text-lg);
+    font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.125rem);
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+    -webkit-hyphens: none;
 }
 
 .use-cases-tabs__prompt {
