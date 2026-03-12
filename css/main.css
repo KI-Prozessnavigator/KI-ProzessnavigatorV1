@@ -9918,7 +9918,7 @@ section.testimonials.expert-quotes,
 html,
 body,
 main {
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
 }
 
 section.problems,
