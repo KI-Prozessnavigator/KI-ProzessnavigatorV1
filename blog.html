@@ -33,10 +33,27 @@
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/icons/favicon.svg?v=3">
     <link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/icons/favicon.svg?v=3">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <link rel="preload" href="assets/fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        /* CRITICAL CSS – identisch zur Startseite */
+        html, body {
+            overflow-x: clip !important;
+            max-width: 100vw !important;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body { font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .container { max-width: min(var(--container-max, 1200px), 100vw); margin: 0 auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+    </style>
     <link rel="stylesheet" href="css/main.css?v=3.9">
     <link rel="stylesheet" href="css/responsive.css?v=5.8">
     <link rel="stylesheet" href="css/background-override.css?v=2.0">
-    <link rel="stylesheet" href="css/blog.css?v=1.0">
+    <link rel="stylesheet" href="css/blog.css?v=1.1">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -99,6 +116,7 @@
                     <a class="blog__chip" href="#hr">HR</a>
                     <a class="blog__chip" href="#praxistipp">Praxistipp</a>
                     <a class="blog__chip" href="#produktivitaet">Produktivität</a>
+                    <a class="blog__chip" href="#buchhaltung">Buchhaltung</a>
                 </div>
             </div>
         </section>
@@ -165,21 +183,6 @@
                     </div>
                 </article>
 
-                <div class="blog__lead-magnet">
-                    <div>
-                        <div class="blog__lead-icon">✓</div>
-                    </div>
-                    <div>
-                        <h3 class="blog__lead-title">Kostenlose Checkliste: 10 Prozesse, die du JETZT automatisieren solltest</h3>
-                        <p class="blog__lead-text">Finde in 5 Minuten heraus, wo dein Unternehmen das größte Einsparpotenzial hat – branchenspezifisch und sofort umsetzbar.</p>
-                        <form class="blog__lead-form" action="javascript:void(0)" aria-label="Checkliste anfordern">
-                            <input type="email" class="blog__lead-input" placeholder="Deine E-Mail-Adresse" required>
-                            <button type="submit" class="blog__lead-btn">Checkliste anfordern</button>
-                        </form>
-                        <p class="blog__lead-trust"><strong>✓</strong> DSGVO-konform · <strong>✓</strong> Kein Spam · <strong>✓</strong> Jederzeit abbestellbar</p>
-                    </div>
-                </div>
-
                 <article class="blog__card" id="einsparpotenzial-2">
                     <span class="blog__card-badge">Einsparpotenzial</span>
                     <a href="/blog/angebote-automatisch-erstellen.html" class="blog__card-title">Angebote automatisch erstellen: Vom Kundenwunsch zum PDF in 30 Sekunden</a>
@@ -199,6 +202,30 @@
                         <span>13.03.2026</span>
                     </div>
                 </article>
+                
+                <article class="blog__card" id="buchhaltung">
+                    <span class="blog__card-badge">Buchhaltung</span>
+                    <a href="/blog/buchhaltung-automatisieren-kmu" class="blog__card-title">Buchhaltung automatisieren: Vorbereitende Buchführung ohne Handarbeit</a>
+                    <p class="blog__card-excerpt">Von Belegerfassung bis DATEV-Export: Wie KMU ihre vorbereitende Buchhaltung komplett automatisieren – und was dein Steuerberater davon hat.</p>
+                    <div class="blog__card-meta">
+                        <span>9 Min. Lesezeit</span>
+                        <span>13.03.2026</span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Lead-Magnet-Checkliste (unterhalb aller Artikel) -->
+            <div class="blog__bottom-lead-magnet">
+                <div class="blog__lead-icon" style="margin: 0 auto 1.25rem;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                </div>
+                <h3 class="blog__lead-title">Kostenlose Checkliste: 10 Prozesse, die du JETZT automatisieren solltest</h3>
+                <p class="blog__lead-text" style="max-width: 600px; margin: 0.5rem auto 1.25rem;">Finde in 5 Minuten heraus, wo dein Unternehmen das größte Einsparpotenzial hat – branchenspezifisch und sofort umsetzbar.</p>
+                <form class="blog__lead-form" action="javascript:void(0)" aria-label="Checkliste anfordern" style="justify-content: center;">
+                    <input type="email" class="blog__lead-input" placeholder="Deine E-Mail-Adresse" required>
+                    <button type="submit" class="blog__lead-btn">Checkliste anfordern</button>
+                </form>
+                <p class="blog__lead-trust" style="text-align: center;"><strong>✓</strong> DSGVO-konform · <strong>✓</strong> Kein Spam · <strong>✓</strong> Jederzeit abbestellbar</p>
             </div>
         </section>
     </main>

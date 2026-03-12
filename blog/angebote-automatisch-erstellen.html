@@ -33,10 +33,24 @@
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="../assets/icons/favicon.svg?v=3">
     <link rel="icon" type="image/svg+xml" sizes="16x16" href="../assets/icons/favicon.svg?v=3">
     <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <link rel="preload" href="../assets/fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        html, body {
+            overflow-x: clip !important;
+            max-width: 100vw !important;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .container { max-width: min(var(--container-max, 1200px), 100vw); margin: 0 auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+    </style>
     <link rel="stylesheet" href="../css/main.css?v=3.9">
     <link rel="stylesheet" href="../css/responsive.css?v=5.8">
     <link rel="stylesheet" href="../css/background-override.css?v=2.0">
-    <link rel="stylesheet" href="../css/blog.css?v=1.0">
+    <link rel="stylesheet" href="../css/blog.css?v=1.1">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -224,9 +238,9 @@
             <p>Wir bauen dir einen Ablauf, der in Minuten statt in Stunden arbeitet.</p>
             <a class="blog-article__cta-btn" href="/kontakt">Kostenloses Erstgespräch buchen</a>
             <div class="blog-article__cta-trust">
-                <span>✓ Unverbindlich</span>
-                <span>✓ Schnell messbar</span>
-                <span>✓ DSGVO‑konform</span>
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 30 Min.</span>
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Unverbindlich</span>
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kein Verkaufsdruck</span>
             </div>
         </section>
     </main>

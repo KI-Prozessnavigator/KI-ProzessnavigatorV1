@@ -3,7 +3,7 @@
 .blog-article {
     background: #0a0e1a;
     color: #f3f4f6;
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
     hyphens: none;
     -webkit-hyphens: none;
 }
@@ -17,11 +17,11 @@
 
 .blog__hero {
     text-align: center;
-    padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(1.5rem, 4vw, 2.5rem);
+    padding: clamp(6rem, 12vw, 10rem) 0 clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .blog__hero-title {
-    font-family: "Instrument Serif", Georgia, serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-3xl);
     line-height: 1.15;
     margin-bottom: 0.75rem;
@@ -96,7 +96,7 @@
 }
 
 .blog__card-title {
-    font-family: "Instrument Serif", Georgia, serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-xl);
     color: #f3f4f6;
     text-decoration: none;
@@ -144,7 +144,7 @@
 }
 
 .blog__lead-title {
-    font-family: "Instrument Serif", Georgia, serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-2xl);
     margin-bottom: 0.5rem;
 }
@@ -214,7 +214,7 @@
 .blog-article__breadcrumb {
     color: #9ca3af;
     font-size: var(--text-sm);
-    margin: 1.5rem 0 0.75rem;
+    margin: clamp(6rem, 12vw, 10rem) 0 0.75rem;
 }
 
 .blog-article__breadcrumb a {
@@ -231,7 +231,7 @@
 }
 
 .blog-article__title {
-    font-family: "Instrument Serif", Georgia, serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-3xl);
     line-height: 1.15;
     margin-bottom: 0.75rem;
@@ -275,7 +275,7 @@
 }
 
 .blog-article__body h2 {
-    font-family: "Instrument Serif", Georgia, serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     margin-top: 2.5rem;
     margin-bottom: 0.75rem;
     color: #f3f4f6;
@@ -283,7 +283,7 @@
 }
 
 .blog-article__body h3 {
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 600;
     margin-top: 1.75rem;
     margin-bottom: 0.5rem;
@@ -461,9 +461,15 @@
 }
 
 .blog-article__cta-section h3 {
-    font-family: "Instrument Serif", Georgia, serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: var(--text-2xl);
     margin-bottom: 0.75rem;
+}
+
+.blog-article__cta-section .blog-article__cta-btn {
+    width: auto;
+    display: inline-flex;
+    padding: 0.875rem 2rem;
 }
 
 .blog-article__cta-section p {
@@ -478,6 +484,44 @@
     justify-content: center;
     color: #9ca3af;
     font-size: var(--text-sm);
+}
+
+.blog__bottom-lead-magnet {
+    margin-top: clamp(2rem, 4vw, 3rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    background: rgba(20, 27, 45, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog__bottom-lead-magnet .blog__lead-title {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.blog__bottom-lead-magnet .blog__lead-form {
+    justify-content: center;
+}
+
+.blog__bottom-lead-magnet .blog__lead-trust {
+    text-align: center;
+}
+
+.header {
+    overflow: visible !important;
+    overflow-x: visible !important;
+}
+
+.header .nav {
+    overflow: visible !important;
+}
+
+.nav__menu {
+    overflow: visible !important;
 }
 
 .text-highlight {
