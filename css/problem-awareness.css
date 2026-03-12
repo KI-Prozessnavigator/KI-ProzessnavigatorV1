@@ -100,11 +100,11 @@
     height: 1px;
     background: rgba(255, 255, 255, 0.15);
     max-width: 120px;
-    margin: 3.5rem auto;
+    margin: 2.5rem auto;
 }
 
 .problem-awareness__story {
-    max-width: 100%;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
@@ -126,10 +126,10 @@
 
 .problem-awareness__story-hook {
     font-family: var(--font-body);
-    font-size: var(--text-lg);
-    font-weight: 600;
+    font-size: var(--text-base);
+    font-weight: 700;
     color: #f3f4f6;
-    margin: 1.5rem 0 0;
+    margin: 1.25rem 0 0;
 }
 
 @media (max-width: 1023px) {

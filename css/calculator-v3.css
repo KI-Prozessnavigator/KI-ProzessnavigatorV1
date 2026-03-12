@@ -1,6 +1,6 @@
 .rechner-v3 {
     background: #0a0e1a;
-    padding: 5rem 0;
+    padding: 3rem 0 5rem;
 }
 
 .rechner-v3,
@@ -13,13 +13,13 @@
 
 .rechner-v3__container {
     max-width: min(var(--container-max), 100vw);
-    margin: 0 auto;
+    margin: -15px auto 0;
     padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
 .rechner-v3__header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .rechner-v3__title {
@@ -40,6 +40,7 @@
     display: flex;
     gap: 2rem;
     align-items: stretch;
+    margin-top: -30px;
 }
 
 .rechner-v3__card {
@@ -127,7 +128,7 @@
 
 .rechner-slider-row input[type='range'] {
     flex: 1;
-    max-width: calc(100% - 120px);
+    max-width: calc(100% - 130px);
     height: 6px;
     border-radius: 3px;
     background: #1f2937;
@@ -148,9 +149,9 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #00D4FF;
+    background: #0077FF;
     border: 2px solid #0a0e1a;
-    box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 8px rgba(0, 119, 255, 0.4);
     margin-top: -7px;
     cursor: pointer;
 }
@@ -165,25 +166,27 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #00D4FF;
+    background: #0077FF;
     border: 2px solid #0a0e1a;
-    box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 8px rgba(0, 119, 255, 0.4);
     cursor: pointer;
 }
 
 .rechner-slider-row input[type='range']:hover::-webkit-slider-thumb {
-    box-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+    box-shadow: 0 0 12px rgba(0, 119, 255, 0.6);
 }
 
 .rechner-slider-row input[type='range']:hover::-moz-range-thumb {
-    box-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+    box-shadow: 0 0 12px rgba(0, 119, 255, 0.6);
 }
 
 .rechner-slider-value {
     display: flex;
     align-items: center;
-    min-width: 100px;
-    justify-content: flex-end;
+    min-width: 130px;
+    width: 130px;
+    flex-shrink: 0;
+    justify-content: flex-start;
 }
 
 .rechner-slider-value input[type='number'] {
@@ -207,6 +210,9 @@
     color: #d1d5db;
     font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
     margin-left: 0.25rem;
+    min-width: 72px;
+    text-align: left;
+    display: inline-block;
 }
 
 .rechner-v3__hint {
