@@ -231,7 +231,7 @@
         }
         body { font-family: system-ui, -apple-system, sans-serif; }
         .hero { min-height: 100vh; display: flex; align-items: center; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+        .container { max-width: min(var(--container-max, 1200px), 100vw); margin: 0 auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
     </style>
     <link rel="stylesheet" href="css/main.css?v=3.9">
     <link rel="stylesheet" href="css/contact-modal.css?v=2.0">

@@ -14,9 +14,9 @@
 }
 
 .use-cases-tabs__container {
-    max-width: 1200px;
+    max-width: min(var(--container-max), 100vw);
     margin: 0 auto;
-    padding: clamp(1.25rem, 5vw, 3rem);
+    padding-inline: clamp(1.25rem, 5vw, 3rem);
 }
 
 .use-cases-tabs__header {

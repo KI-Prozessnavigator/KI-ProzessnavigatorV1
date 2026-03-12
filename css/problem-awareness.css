@@ -17,7 +17,7 @@
 }
 
 .problem-awareness .container {
-    max-width: 1200px;
+    max-width: min(var(--container-max), 100vw);
     margin: 0 auto;
     padding: 0 clamp(1.25rem, 5vw, 3rem);
     overflow: visible;
