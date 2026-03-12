@@ -646,7 +646,7 @@ p, li, td, dd, label, input, textarea, select {
 }
 
 .nav__link--cta {
-    padding: 0.875rem 2rem !important;
+    padding: 0.625rem 1.75rem !important;
     background: #0077FF !important;
     color: white !important;
     border-radius: 8px;

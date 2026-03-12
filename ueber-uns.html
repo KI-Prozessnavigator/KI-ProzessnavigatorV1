@@ -139,47 +139,47 @@
            Über-uns-Seite – Spezifische Styles
            ============================================ */
 
-        /* --- Hero --- */
+        /* --- Hero (angeglichen an Legal-Seiten) --- */
         .about-hero {
-            background: linear-gradient(180deg, #0a0e1a 0%, #0f172a 50%, #0a0e1a 100%);
-            padding-block: clamp(120px, 15vw, 160px) 20px;
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
             position: relative;
-            overflow: hidden;
         }
 
         .about-hero::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150%;
-            height: 100%;
-            background: radial-gradient(ellipse at center, rgba(0, 119, 255, 0.1) 0%, transparent 70%);
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(94, 234, 212, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
             pointer-events: none;
         }
 
         .about-hero__container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-inline: clamp(1.5rem, 4vw, 3rem);
             position: relative;
             z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .about-hero__content {
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0;
         }
 
         .about-hero__title {
-            display: inline-block;
-            font-weight: var(--font-semibold);
-            text-transform: uppercase;
-            letter-spacing: var(--tracking-wider);
-            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
-            margin-bottom: var(--space-4);
-            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: none;
+            letter-spacing: normal;
+            text-shadow: none;
+            display: block;
+            line-height: 1.15;
         }
 
         .about-hero__subtitle {
@@ -190,6 +190,24 @@
             -webkit-hyphens: none;
             word-break: normal;
             overflow-wrap: break-word;
+        }
+
+        .back-to-start {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .back-to-start:hover {
+            background: rgba(94, 234, 212, 0.1);
+            transform: translateX(-4px);
         }
 
         /* --- Profile (Story + Foto) --- */
@@ -497,6 +515,10 @@
 
         /* --- Responsive --- */
         @media (max-width: 768px) {
+            .about-hero {
+                padding: 6rem 0 3rem;
+            }
+
             .about-profile {
                 grid-template-columns: 1fr;
                 gap: var(--space-6);
@@ -561,12 +583,10 @@
             <ul class="nav__menu" id="nav-menu">
                 <li class="nav__item"><a href="/" class="nav__link">Start</a></li>
                 <li class="nav__item"><a href="/vorteile" class="nav__link">Vorteile</a></li>
-                <li class="nav__item"><a href="/ersparnis" class="nav__link">Ersparnis</a></li>
                 <li class="nav__item"><a href="/use-cases" class="nav__link">Use Cases</a></li>
-                <li class="nav__item"><a href="/dsgvo" class="nav__link">DSGVO</a></li>
                 <li class="nav__item"><a href="/faq" class="nav__link">FAQ</a></li>
                 <li class="nav__item"><a href="/ueber-uns.html" class="nav__link">Über uns</a></li>
-                <li class="nav__item"><a href="/kontakt" class="nav__link nav__link--cta">Beratung anfragen</a></li>
+                <li class="nav__item"><a href="/kontakt" class="nav__link nav__link--cta">Kostenloses Erstgespräch</a></li>
             </ul>
             
             <div class="nav__actions">
@@ -581,6 +601,9 @@
         <section class="about-hero" aria-label="Über KI-Prozessnavigator">
             <div class="about-hero__container">
                 <div class="about-hero__content">
+                    <a href="/" class="back-to-start">
+                        ← Zurück zur Startseite
+                    </a>
                     <h1 class="about-hero__title">Über mich</h1>
                     <p class="about-hero__subtitle">
                         Aus Frust über ineffiziente Verwaltung wurde eine Mission: KMU mit intelligenter Automatisierung profitabler machen.
@@ -818,9 +841,7 @@
                 <div class="footer__links-group">
                     <h4 class="footer__heading">Produkt</h4>
                     <ul class="footer__links">
-                        <li><a href="/ersparnis">Ersparnis</a></li>
                         <li><a href="/use-cases">Use Cases</a></li>
-                        <li><a href="javascript:void(0)">API Dokumentation</a></li>
                         <li><a href="javascript:void(0)">Blog</a></li>
                     </ul>
                 </div>
