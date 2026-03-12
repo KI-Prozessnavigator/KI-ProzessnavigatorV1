@@ -33,7 +33,7 @@
     max-width: 1200px;
     margin: 0 auto 1rem;
     line-height: 1.7;
-    font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.125rem);
+    font-size: var(--text-base);
     overflow-wrap: normal;
     word-break: normal;
     hyphens: none;
@@ -128,7 +128,7 @@
 }
 
 .use-cases-tabs__card-text p {
-    font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+    font-size: var(--text-base);
     line-height: 1.7;
     margin: 0;
 }

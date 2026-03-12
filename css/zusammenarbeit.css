@@ -83,6 +83,7 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
     display: flex;
     flex-direction: column;
     gap: 0;
+    align-items: flex-start;
 }
 
 .zusammenarbeit-v2__badge {
@@ -149,12 +150,14 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
 .zusammenarbeit-v2__left-cta {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 /* --- RECHTE SPALTE: Normale Spalte, Cards darin sind sticky --- */
 .zusammenarbeit-v2__right {
     flex: 1;
+    max-width: 580px;
+    margin-left: auto;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -218,7 +221,7 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
 }
 
 .zusammenarbeit-v2__card-text {
-    font-size: clamp(0.925rem, 0.875rem + 0.25vw, 1.05rem);
+    font-size: var(--text-base);
     color: #d1d5db;
     line-height: 1.7;
     margin: 0;
@@ -267,8 +270,9 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
 
 /* --- CTA BUTTON --- */
 .zusammenarbeit-v2__cta-btn {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: 0.875rem 2rem;
     border-radius: 8px;
@@ -278,7 +282,7 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
     font-weight: 600;
     font-family: var(--font-body);
     font-size: var(--text-base);
-    width: auto;
+    width: 100%;
     box-shadow: 0 0 20px rgba(0, 119, 255, 0.4), 0 0 40px rgba(0, 119, 255, 0.2);
     transition: background 0.2s ease, box-shadow 0.2s ease;
 }
@@ -381,6 +385,8 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
     .zusammenarbeit-v2__right {
         flex: none;
         width: 100%;
+        max-width: 100%;
+        margin-left: 0;
     }
 
     .zusammenarbeit-v2__card {
