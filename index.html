@@ -300,108 +300,6 @@
         
     </style>
     <style>
-        .ablauf__intro,
-        .ablauf__benefits,
-        .ablauf__benefits * {
-            hyphens: none;
-            -webkit-hyphens: none;
-            word-break: normal;
-            overflow-wrap: break-word;
-        }
-
-        .ablauf__step-title {
-            font-weight: 600;
-            color: #f3f4f6;
-            font-size: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
-        }
-
-        .ablauf__step-text {
-            color: #d1d5db;
-            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-            margin-top: 0.75rem;
-            text-align: center;
-            max-width: 320px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .ablauf__benefits {
-            margin-top: 1.25rem;
-            max-width: 320px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: left;
-        }
-
-        .ablauf__benefits-label {
-            display: block;
-            font-weight: 600;
-            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-        }
-
-        .ablauf__benefits-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .ablauf__benefits-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            color: #d1d5db;
-            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-            text-align: left;
-        }
-
-        .ablauf__benefits-check {
-            color: #00D98F;
-            flex-shrink: 0;
-            font-weight: 700;
-        }
-
-        #ablauf-title {
-            white-space: normal;
-            font-size: var(--text-3xl);
-        }
-
-        .ablauf__step-title {
-            min-height: 3.5rem;
-        }
-
-        .ablauf__step-text {
-            min-height: 8rem;
-        }
-
-        .ablauf .calculator__cta-block {
-            flex-direction: column;
-            align-items: center;
-            gap: 0;
-        }
-
-        .ablauf .hero__trust-line {
-            color: #d1d5db;
-            margin-top: 12px;
-        }
-
-        @media (max-width: 767px) {
-            #ablauf-title {
-                white-space: normal;
-            }
-
-            .ablauf__step-title,
-            .ablauf__step-text {
-                min-height: auto;
-            }
-        }
-    </style>
-    <style>
         /* === TEXT-CONTAINER-BREITE-FIX === */
         /* Überschriften: Volle Container-Breite, keine Einengung */
         .wir-vs-du__title,
@@ -1402,210 +1300,209 @@
             </div>
         </section>
 
-        <section class="ablauf" id="ablauf" aria-labelledby="ablauf-title">
-            <div class="container">
-                <header class="section__header">
-                    <h2 class="section__title" id="ablauf-title">In 3 Schritten von Zeitfressern zu freien Kapazitäten</h2>
-                    <p class="section__description ablauf__intro">
-                        Kein monatelanges Projekt, kein IT-Chaos. Wir analysieren, automatisieren und schulen – damit dein Team schon nach wenigen Wochen spürbar entlastet ist.
-                    </p>
-                </header>
+        <section class="zusammenarbeit-v2" id="ablauf" aria-label="So läuft die Zusammenarbeit ab" data-section-name="zusammenarbeit-ablauf">
+            <div class="zusammenarbeit-v2__container">
 
-                <div class="ablauf__timeline">
-                    <div class="ablauf__line" aria-hidden="true"></div>
+                <div class="zusammenarbeit-v2__layout">
 
-                    <div class="ablauf__step" data-animate="fade-up">
-                        <div class="ablauf__step-number">
-                            <span>1</span>
-                        </div>
-                        <div class="ablauf__step-content">
-                            <div class="ablauf__step-icon" aria-hidden="true">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                            </div>
-                            <h3 class="ablauf__step-title">Analyse &amp; Potenzial-Check</h3>
-                            <p class="ablauf__step-text">
-                                Wo verlierst du wirklich Zeit und Geld? Wir durchleuchten deine Abläufe in Vertrieb, Verwaltung und Backoffice – und finden die Prozesse mit dem größten Hebel.
+                    <!-- LINKE SPALTE: Header-Text (sticky auf Desktop) -->
+                    <div class="zusammenarbeit-v2__left">
+                        <div class="zusammenarbeit-v2__left-inner">
+                            <h2 class="zusammenarbeit-v2__title">
+                                In 4 Schritten zu Prozessen, die <span class="text-highlight">dein Team wirklich entlasten</span>
+                            </h2>
+
+                            <p class="zusammenarbeit-v2__subtitle">
+                                Kein monatelanges Projekt, keine Disruption im Tagesgeschäft. Wir übernehmen die Umsetzung – du konzentrierst dich auf das, was <span class="text-highlight">Umsatz bringt</span>.
                             </p>
-                            <div class="ablauf__benefits">
-                                <span class="ablauf__benefits-label text-highlight">Du bekommst:</span>
-                                <ul class="ablauf__benefits-list">
-                                    <li><span class="ablauf__benefits-check">✓</span><span>Komplette Prozess-Analyse aller Abteilungen</span></li>
-                                    <li><span class="ablauf__benefits-check">✓</span><span>Klare Übersicht: Welche Aufgaben fressen die meiste Zeit?</span></li>
-                                    <li><span class="ablauf__benefits-check">✓</span><span>Priorisierte Roadmap mit konkreten Einspar-Potenzialen</span></li>
-                                    <li><span class="ablauf__benefits-check">✓</span><span>Transparentes KPI-Dashboard für deine Ausgangslage</span></li>
-                                </ul>
+
+                            <div class="zusammenarbeit-v2__time-hint">
+                                <span class="zusammenarbeit-v2__time-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                                </span>
+                                Dein Zeitaufwand: nur wenige Stunden insgesamt
+                            </div>
+
+                            <!-- CTA auf Desktop in der linken Spalte -->
+                            <div class="zusammenarbeit-v2__left-cta">
+                                <a href="/kontakt" class="zusammenarbeit-v2__cta-btn">
+                                    <span>Lass uns deinen Prozess durchsprechen →</span>
+                                </a>
+                                <div class="zusammenarbeit-v2__trust">
+                                    <span class="zusammenarbeit-v2__trust-item">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                        Kostenlos &amp; unverbindlich
+                                    </span>
+                                    <span class="zusammenarbeit-v2__trust-item">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                        30 Minuten Erstgespräch
+                                    </span>
+                                    <span class="zusammenarbeit-v2__trust-item">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                        Kein Verkaufsdruck
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="ablauf__step" data-animate="fade-up" data-delay="1">
-                        <div class="ablauf__step-number">
-                            <span>2</span>
-                        </div>
-                        <div class="ablauf__step-content">
-                            <div class="ablauf__step-icon" aria-hidden="true">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"/><path d="M8 6l4-3 4 3"/><rect x="2" y="9" width="7" height="12" rx="1"/><rect x="15" y="6" width="7" height="15" rx="1"/><path d="M2 15h7"/><path d="M15 12h7"/></svg>
-                            </div>
-                            <h3 class="ablauf__step-title">Automatisierung &amp; KI-Integration</h3>
-                            <p class="ablauf__step-text">
-                                Wir eliminieren unnötige Handarbeit, verknüpfen deine Tools und setzen KI gezielt dort ein, wo sie den größten Unterschied macht – keine Spielereien, nur messbarer Nutzen.
-                            </p>
-                            <div class="ablauf__benefits">
-                                <span class="ablauf__benefits-label text-highlight">Du bekommst:</span>
-                                <ul class="ablauf__benefits-list">
-                                    <li><span class="ablauf__benefits-check">✓</span><span>Automatisierte Workflows für deine Kernprozesse</span></li>
-                                    <li><span class="ablauf__benefits-check">✓</span><span>Intelligente Verknüpfung deiner bestehenden Software</span></li>
-                                    <li><span class="ablauf__benefits-check">✓</span><span>KI-Einsatz an den Stellen, die wirklich Geld sparen</span></li>
-                                    <li><span class="ablauf__benefits-check">✓</span><span>Saubere Dokumentation aller neuen Abläufe</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- RECHTE SPALTE: 4 Scroll-Cards -->
+                    <div class="zusammenarbeit-v2__right">
 
-                    <div class="ablauf__step" data-animate="fade-up" data-delay="2">
-                        <div class="ablauf__step-number">
-                            <span>3</span>
-                        </div>
-                        <div class="ablauf__step-content">
-                            <div class="ablauf__step-icon" aria-hidden="true">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <!-- CARD 1 -->
+                        <div class="zusammenarbeit-v2__card">
+                            <div class="zusammenarbeit-v2__card-header">
+                                <div class="zusammenarbeit-v2__card-number"><span>1</span></div>
+                                <h3 class="zusammenarbeit-v2__card-title">Prozess-Analyse &amp; Konzept</h3>
                             </div>
-                            <h3 class="ablauf__step-title">Schulung &amp; Go-Live</h3>
-                            <p class="ablauf__step-text">
-                                Dein Team arbeitet ab Tag 1 mit den neuen Systemen. Wir schulen praxisnah, begleiten die Einführung und stellen sicher, dass die Entlastung sofort spürbar ist.
-                            </p>
-                            <div class="ablauf__benefits">
-                                <span class="ablauf__benefits-label text-highlight">Du bekommst:</span>
-                                <ul class="ablauf__benefits-list">
-                                    <li><span class="ablauf__benefits-check">✓</span><span>Hands-on-Schulungen für dein gesamtes Team</span></li>
-                                    <li><span class="ablauf__benefits-check">✓</span><span>Nahtlose Integration in den bestehenden Arbeitsalltag</span></li>
-                                    <li><span class="ablauf__benefits-check">✓</span><span>Persönlicher Support in der Startphase</span></li>
-                                    <li><span class="ablauf__benefits-check">✓</span><span>Messbare Entlastung ab der ersten Woche</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="calculator__cta-block">
-                    <a href="/kontakt" class="btn btn--calculator">
-                        <span>Jetzt kostenlos beraten lassen</span>
-                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <p class="hero__trust-line">
-                        <span class="hero__trust-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                            30 Min.
-                        </span>
-                        <span class="hero__trust-sep">·</span>
-                        <span class="hero__trust-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                            Unverbindlich
-                        </span>
-                        <span class="hero__trust-sep">·</span>
-                        <span class="hero__trust-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                            Kein Verkaufsdruck
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="zusammenarbeit" id="zusammenarbeit" aria-label="So läuft die Zusammenarbeit ab" data-section-name="zusammenarbeit-prozess">
-            <div class="container">
-                <div class="zusammenarbeit__header">
-                    <h2 class="zusammenarbeit__title">
-                        In 4 Schritten zu Prozessen, die <span class="text-highlight">dein Team wirklich entlasten</span>
-                    </h2>
-                    <p class="zusammenarbeit__subtitle">
-                        Kein monatelanges Projekt, keine Disruption im Tagesgeschäft. Wir übernehmen die Umsetzung – du konzentrierst dich auf das, was <span class="text-highlight">Umsatz bringt</span>.
-                    </p>
-                    <p class="zusammenarbeit__seo">
-                        Wir helfen KMU, Prozesse automatisieren und Automatisierung mit sauberer Integration umzusetzen.
-                    </p>
-                    <div class="zusammenarbeit__time-hint">
-                        <span class="zusammenarbeit__time-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="9"/>
-                                <path d="M12 7v5l3 2"/>
-                            </svg>
-                        </span>
-                        Dein Zeitaufwand: nur wenige Stunden insgesamt
-                    </div>
-                </div>
-
-                <div class="zusammenarbeit__steps">
-                    <div class="zusammenarbeit__step">
-                        <div class="zusammenarbeit__step-number">1</div>
-                        <div class="zusammenarbeit__step-content">
-                            <h3 class="zusammenarbeit__step-title">Prozess-Analyse &amp; Konzept</h3>
-                            <p class="zusammenarbeit__step-text">
+                            <p class="zusammenarbeit-v2__card-text">
                                 Wir schauen uns deine <span class="text-highlight">wichtigsten Abläufe</span> gemeinsam an, identifizieren die größten Zeitfresser und entwickeln ein Automatisierungskonzept, das sich nahtlos in deinen Arbeitsalltag einfügt.
                             </p>
+                            <div class="zusammenarbeit-v2__deliverables">
+                                <span class="zusammenarbeit-v2__deliverables-label text-highlight">Du bekommst:</span>
+                                <ul class="zusammenarbeit-v2__deliverables-list">
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Komplette Prozess-Analyse aller Abteilungen</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Klare Übersicht: Welche Aufgaben fressen die meiste Zeit?</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Priorisierte Roadmap mit konkreten Einspar-Potenzialen</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Transparentes KPI-Dashboard für deine Ausgangslage</span></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="zusammenarbeit__step">
-                        <div class="zusammenarbeit__step-number">2</div>
-                        <div class="zusammenarbeit__step-content">
-                            <h3 class="zusammenarbeit__step-title">Aufbau &amp; Integration</h3>
-                            <p class="zusammenarbeit__step-text">
+
+                        <!-- CARD 2 -->
+                        <div class="zusammenarbeit-v2__card">
+                            <div class="zusammenarbeit-v2__card-header">
+                                <div class="zusammenarbeit-v2__card-number"><span>2</span></div>
+                                <h3 class="zusammenarbeit-v2__card-title">Aufbau &amp; Integration</h3>
+                            </div>
+                            <p class="zusammenarbeit-v2__card-text">
                                 Wir setzen die Automatisierungen mit <span class="text-highlight">passgenauen Tools</span> wie Make, n8n oder Airtable um – und binden alles an die Systeme an, die du bereits nutzt. Kein Software-Wechsel nötig.
                             </p>
+                            <div class="zusammenarbeit-v2__deliverables">
+                                <span class="zusammenarbeit-v2__deliverables-label text-highlight">Du bekommst:</span>
+                                <ul class="zusammenarbeit-v2__deliverables-list">
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Automatisierte Workflows für deine Kernprozesse</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Intelligente Verknüpfung deiner bestehenden Software</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>KI-Einsatz an den Stellen, die wirklich Geld sparen</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Saubere Dokumentation aller neuen Abläufe</span></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="zusammenarbeit__step">
-                        <div class="zusammenarbeit__step-number">3</div>
-                        <div class="zusammenarbeit__step-content">
-                            <h3 class="zusammenarbeit__step-title">Praxistest &amp; Feinschliff</h3>
-                            <p class="zusammenarbeit__step-text">
+
+                        <!-- CARD 3 -->
+                        <div class="zusammenarbeit-v2__card">
+                            <div class="zusammenarbeit-v2__card-header">
+                                <div class="zusammenarbeit-v2__card-number"><span>3</span></div>
+                                <h3 class="zusammenarbeit-v2__card-title">Praxistest &amp; Feinschliff</h3>
+                            </div>
+                            <p class="zusammenarbeit-v2__card-text">
                                 Jede Automation wird <span class="text-highlight">im echten Betrieb getestet</span>, feinjustiert und so optimiert, dass sie dauerhaft stabil und fehlerfrei läuft – ohne Überraschungen.
                             </p>
+                            <div class="zusammenarbeit-v2__deliverables">
+                                <span class="zusammenarbeit-v2__deliverables-label text-highlight">Du bekommst:</span>
+                                <ul class="zusammenarbeit-v2__deliverables-list">
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Praxistest unter realen Bedingungen in deinem Betrieb</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Feinjustierung bis alles reibungslos funktioniert</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Fehlerprotokoll und Optimierungsbericht</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Stabile Automationen, auf die du dich verlassen kannst</span></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="zusammenarbeit__step">
-                        <div class="zusammenarbeit__step-number">4</div>
-                        <div class="zusammenarbeit__step-content">
-                            <h3 class="zusammenarbeit__step-title">Übergabe &amp; Begleitung</h3>
-                            <p class="zusammenarbeit__step-text">
+
+                        <!-- CARD 4 -->
+                        <div class="zusammenarbeit-v2__card">
+                            <div class="zusammenarbeit-v2__card-header">
+                                <div class="zusammenarbeit-v2__card-number"><span>4</span></div>
+                                <h3 class="zusammenarbeit-v2__card-title">Übergabe &amp; Begleitung</h3>
+                            </div>
+                            <p class="zusammenarbeit-v2__card-text">
                                 Du erhältst eine <span class="text-highlight">vollständige Dokumentation</span>, Zugang zu allem – und auf Wunsch laufende Betreuung, damit du jederzeit anpassen oder erweitern kannst.
                             </p>
+                            <div class="zusammenarbeit-v2__deliverables">
+                                <span class="zusammenarbeit-v2__deliverables-label text-highlight">Du bekommst:</span>
+                                <ul class="zusammenarbeit-v2__deliverables-list">
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Hands-on-Schulungen für dein gesamtes Team</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Vollständige Dokumentation und Zugang zu allem</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Persönlicher Support in der Startphase</span></li>
+                                    <li><span class="zusammenarbeit-v2__check">✓</span><span>Messbare Entlastung ab der ersten Woche</span></li>
+                                </ul>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
-                <div class="zusammenarbeit__cta-area">
-                    <a href="/kontakt" class="zusammenarbeit__cta-btn">
+                <!-- MOBILER CTA (nur auf Mobile sichtbar, unter den Cards) -->
+                <div class="zusammenarbeit-v2__mobile-cta">
+                    <a href="/kontakt" class="zusammenarbeit-v2__cta-btn">
                         <span>Lass uns deinen Prozess durchsprechen →</span>
-                        <svg class="zusammenarbeit__cta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
                     </a>
-                    <div class="zusammenarbeit__trust">
-                        <span class="zusammenarbeit__trust-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
+                    <div class="zusammenarbeit-v2__trust">
+                        <span class="zusammenarbeit-v2__trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                             Kostenlos &amp; unverbindlich
                         </span>
-                        <span class="zusammenarbeit__trust-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
+                        <span class="zusammenarbeit-v2__trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                             30 Minuten Erstgespräch
                         </span>
-                        <span class="zusammenarbeit__trust-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
+                        <span class="zusammenarbeit-v2__trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                             Kein Verkaufsdruck
                         </span>
                     </div>
                 </div>
+
             </div>
         </section>
+        <script>
+            (() => {
+                const section = document.querySelector('#ablauf.zusammenarbeit-v2');
+                if (!section) return;
+
+                const rightColumn = section.querySelector('.zusammenarbeit-v2__right');
+                const cards = Array.from(section.querySelectorAll('.zusammenarbeit-v2__card'));
+                if (!rightColumn || cards.length === 0) return;
+
+                const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+                const applyStacking = () => {
+                    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+                    if (isMobile || prefersReduced.matches) {
+                        section.style.minHeight = '';
+                        rightColumn.style.position = '';
+                        rightColumn.style.top = '';
+                        cards.forEach((card) => {
+                            card.style.position = '';
+                            card.style.top = '';
+                            card.style.zIndex = '';
+                            card.style.boxShadow = '';
+                        });
+                        return;
+                    }
+
+                    const baseTop = 120;
+                    const offsetStep = 20;
+                    const stackHeight = window.innerHeight * 0.9;
+                    const minHeight = Math.max(stackHeight * cards.length + window.innerHeight * 0.6, window.innerHeight * 3);
+                    section.style.minHeight = `${Math.round(minHeight)}px`;
+
+                    rightColumn.style.position = 'sticky';
+                    rightColumn.style.top = `${baseTop}px`;
+
+                    cards.forEach((card, index) => {
+                        card.style.position = 'sticky';
+                        card.style.top = `${baseTop + index * offsetStep}px`;
+                        card.style.zIndex = `${10 + index * 10}`;
+                        card.style.boxShadow = '0 -10px 30px rgba(0, 0, 0, 0.3)';
+                    });
+                };
+
+                applyStacking();
+                window.addEventListener('resize', applyStacking, { passive: true });
+                prefersReduced.addEventListener('change', applyStacking);
+            })();
+        </script>
 
         <section class="dsgvo" id="dsgvo" aria-label="DSGVO und Datenschutz" data-section-name="dsgvo-datenschutz">
             <div class="container">

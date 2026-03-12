@@ -9923,6 +9923,8 @@ section.solutions .container,
 
 .wir-vs-du {
     background: #0a0e1a;
+    width: 100%;
+    max-width: none;
     padding-top: calc(clamp(2rem, 5vw, 4.25rem) - 40px);
     padding-bottom: clamp(2rem, 5vw, 4.25rem);
 }

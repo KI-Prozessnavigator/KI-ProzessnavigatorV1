@@ -1,5 +1,7 @@
 .use-cases-tabs {
     background: #0a0e1a;
+    width: 100%;
+    max-width: none;
     padding: clamp(4rem, 5vw, 6rem) 0;
 }
 
