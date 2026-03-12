@@ -3,13 +3,23 @@
 
 body {
   background-color: #0a0e1a;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image: radial-gradient(
     circle,
     rgba(55, 65, 81, 0.8) 1px,
     transparent 1px
   );
   background-size: 28px 28px;
-  background-attachment: scroll;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 

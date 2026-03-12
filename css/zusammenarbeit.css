@@ -166,7 +166,7 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
 .zusammenarbeit-v2__right::after {
     content: '';
     display: block;
-    height: 50vh;
+    height: 15vh;
     flex-shrink: 0;
 }
 

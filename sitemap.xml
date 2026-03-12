@@ -25,4 +25,49 @@
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
+    <url>
+        <loc>https://ki-prozessnavigator.de/blog</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://ki-prozessnavigator.de/blog/ki-automatisierung-handwerk</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://ki-prozessnavigator.de/blog/dsgvo-ki-mittelstand</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://ki-prozessnavigator.de/blog/rechnungen-automatisch-verarbeiten</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://ki-prozessnavigator.de/blog/crm-automatisierung-mittelstand</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://ki-prozessnavigator.de/blog/mitarbeiter-onboarding-automatisieren</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://ki-prozessnavigator.de/blog/no-show-termine-reduzieren</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://ki-prozessnavigator.de/blog/angebote-automatisch-erstellen</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://ki-prozessnavigator.de/blog/email-automatisierung-kmu</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>
