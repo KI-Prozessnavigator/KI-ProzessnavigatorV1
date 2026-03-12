@@ -39,7 +39,7 @@ section#ablauf .zusammenarbeit-v2__right {
     width: 100%;
     max-width: none;
     padding-top: clamp(4rem, 8vw, 7rem);
-    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+    padding-bottom: clamp(4rem, 8vw, 8rem);
     position: relative;
 }
 
@@ -72,10 +72,10 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
 
 /* LINKE SPALTE – Sticky (bleibt beim Scrollen im Viewport fixiert) */
 .zusammenarbeit-v2__left {
-    flex: 0 0 42%;
-    max-width: 42%;
+    flex: 0 0 50%;
+    max-width: 50%;
     position: sticky;
-    top: 15vh;
+    top: 30vh;
     align-self: flex-start;
 }
 
@@ -156,11 +156,18 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
 /* --- RECHTE SPALTE: Normale Spalte, Cards darin sind sticky --- */
 .zusammenarbeit-v2__right {
     flex: 1;
-    max-width: 580px;
+    max-width: 480px;
     margin-left: auto;
     display: flex;
     flex-direction: column;
     gap: 0;
+}
+
+.zusammenarbeit-v2__right::after {
+    content: '';
+    display: block;
+    height: 50vh;
+    flex-shrink: 0;
 }
 
 /* --- STACKING CARDS (Desktop) --- */
@@ -181,10 +188,10 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
     margin-bottom: 0;
 }
 
-.zusammenarbeit-v2__card:nth-child(1) { top: 15vh; z-index: 1; }
-.zusammenarbeit-v2__card:nth-child(2) { top: calc(15vh + 30px); z-index: 2; }
-.zusammenarbeit-v2__card:nth-child(3) { top: calc(15vh + 60px); z-index: 3; }
-.zusammenarbeit-v2__card:nth-child(4) { top: calc(15vh + 90px); z-index: 4; }
+.zusammenarbeit-v2__card:nth-child(1) { top: 30vh; z-index: 1; }
+.zusammenarbeit-v2__card:nth-child(2) { top: calc(30vh + 30px); z-index: 2; }
+.zusammenarbeit-v2__card:nth-child(3) { top: calc(30vh + 60px); z-index: 3; }
+.zusammenarbeit-v2__card:nth-child(4) { top: calc(30vh + 90px); z-index: 4; }
 
 .zusammenarbeit-v2__card:hover {
     border-color: rgba(0, 119, 255, 0.25);
@@ -321,22 +328,29 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
 
 @media (max-width: 1023px) {
     .zusammenarbeit-v2__left {
-        flex: 0 0 38%;
-        max-width: 38%;
-        top: 100px;
+        flex: 0 0 45%;
+        max-width: 45%;
+        top: 110px;
+    }
+
+    .zusammenarbeit-v2__right {
+        max-width: 500px;
     }
 
     .zusammenarbeit-v2__card {
         margin-bottom: 80px;
     }
 
-    .zusammenarbeit-v2__card:nth-child(1) { top: 100px; }
-    .zusammenarbeit-v2__card:nth-child(2) { top: 125px; }
-    .zusammenarbeit-v2__card:nth-child(3) { top: 150px; }
-    .zusammenarbeit-v2__card:nth-child(4) { top: 175px; }
+    .zusammenarbeit-v2__card:nth-child(1) { top: 110px; }
+    .zusammenarbeit-v2__card:nth-child(2) { top: 135px; }
+    .zusammenarbeit-v2__card:nth-child(3) { top: 160px; }
+    .zusammenarbeit-v2__card:nth-child(4) { top: 185px; }
 }
 
 @media (max-width: 767px) {
+    .zusammenarbeit-v2__right::after {
+        display: none;
+    }
     .zusammenarbeit-v2 {
         padding-bottom: clamp(2rem, 4vw, 3rem);
     }
@@ -415,5 +429,9 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
 
     .zusammenarbeit-v2__left {
         position: static;
+    }
+
+    .zusammenarbeit-v2__right::after {
+        display: none;
     }
 }

@@ -72,7 +72,7 @@ footer {
 
 main {
     max-width: 100vw;
-    overflow-x: clip;
+    /* overflow-x: clip ENTFERNT – bricht position:sticky in Child-Sektionen */
 }
 
 /* Sticky Stacking Cards: #ablauf braucht overflow:visible */
