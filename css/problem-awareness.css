@@ -111,9 +111,14 @@
 
 .problem-awareness__story-title {
     font-family: var(--font-heading);
-    font-size: var(--text-2xl);
+    font-size: var(--text-3xl);
     font-weight: 700;
     margin: 0 0 1rem;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding-inline: clamp(1.25rem, 5vw, 3rem);
+    box-sizing: border-box;
 }
 
 .problem-awareness__story-text {

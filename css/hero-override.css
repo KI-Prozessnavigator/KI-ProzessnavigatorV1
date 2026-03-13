@@ -28,6 +28,7 @@ section.hero .hero__content {
 
 section.hero .hero__title {
     font-family: var(--font-heading) !important;
+    font-size: var(--text-4xl) !important;
     font-weight: var(--font-bold) !important;
     line-height: 1.15 !important;
     letter-spacing: var(--tracking-tight) !important;
@@ -48,8 +49,8 @@ section.hero .hero__title {
 }
 
 section.hero .h1-highlight {
-    color: #00D4FF !important;
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.25) !important;
+    color: #00FFFF !important;
+    text-shadow: 0 0 8px rgba(0, 180, 255, 0.7), 0 0 20px rgba(0, 140, 255, 0.4) !important;
     display: inline !important;
 }
 
@@ -181,7 +182,7 @@ section.hero .hero__logo-bar,
 
     section.hero .hero__container {
         margin-top: 0 !important;
-        padding-top: calc(90px + env(safe-area-inset-top, 0px) + 0.5rem) !important;
+        padding-top: calc(90px + env(safe-area-inset-top, 0px) + 3rem) !important;
         padding-bottom: var(--space-3) !important;
         min-height: auto !important;
         flex: 0 0 auto !important;
@@ -189,46 +190,52 @@ section.hero .hero__logo-bar,
     }
 
     section.hero .hero__title {
-        margin-bottom: var(--space-4) !important;
-        padding-inline: 4% !important;
+        margin-bottom: var(--space-8) !important;
+        padding-inline: 2% !important;
+        font-size: clamp(2.2rem, 5.2vw, 3.5rem) !important;
     }
 
     section.hero .hero__body {
-        flex-direction: column !important;
+        flex-direction: row !important;
         justify-content: center !important;
-        align-items: center !important;
-        gap: var(--space-3) !important;
+        align-items: flex-start !important;
+        gap: 24px !important;
         max-width: 100% !important;
-        margin-bottom: var(--space-4) !important;
+        margin-bottom: var(--space-6) !important;
     }
 
     section.hero .hero__description {
-        text-align: center !important;
-        max-width: 32rem !important;
-        font-size: clamp(0.88rem, 2.4vw, 1.05rem) !important;
+        text-align: left !important;
+        max-width: none !important;
+        font-size: clamp(0.85rem, 1.8vw, 1.05rem) !important;
+        flex: 1 1 auto !important;
     }
 
     section.hero .hero__badges {
         align-items: stretch !important;
-        justify-content: center !important;
-        width: 100% !important;
-        max-width: 260px !important;
-        margin-inline: auto !important;
+        flex-shrink: 0 !important;
+        width: auto !important;
+        max-width: none !important;
+        margin-inline: 0 !important;
     }
 
     section.hero .hero-badge {
         justify-content: flex-start !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-inline: 0 !important;
+        width: auto !important;
+        max-width: none !important;
+        white-space: nowrap !important;
+    }
+
+    section.hero .hero-badge__label {
+        white-space: nowrap !important;
     }
 
     section.hero .hero__actions {
-        margin-top: var(--space-3) !important;
+        margin-top: var(--space-4) !important;
     }
 
     section.hero .hero__trust-line {
-        font-size: clamp(0.72rem, 2vw, 0.82rem) !important;
+        font-size: clamp(0.75rem, 1.8vw, 0.85rem) !important;
         margin-bottom: var(--space-6) !important;
     }
 
@@ -244,13 +251,68 @@ section.hero .hero__logo-bar,
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
+    section.hero .hero__container {
+        padding-top: calc(80px + env(safe-area-inset-top, 0px) + 0.75rem) !important;
+    }
+
     section.hero .hero__title {
-        padding-inline: 4% !important;
+        padding-inline: 2% !important;
+        font-size: clamp(1.8rem, 7.5vw, 2.8rem) !important;
+        line-height: 1.15 !important;
+        margin-bottom: var(--space-4) !important;
+    }
+
+    section.hero .hero__description span {
+        display: inline !important;
+        white-space: normal !important;
+    }
+
+    section.hero .hero__body {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: var(--space-3) !important;
+        margin-bottom: var(--space-3) !important;
+    }
+
+    section.hero .hero__description {
+        text-align: center !important;
+        max-width: 32rem !important;
     }
 
     section.hero .hero__badges {
-        max-width: 240px !important;
+        align-items: stretch !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 340px !important;
+        margin-inline: auto !important;
+        gap: 6px !important;
+    }
+
+    section.hero .hero-badge {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    section.hero .hero__actions {
+        margin-top: var(--space-2) !important;
+    }
+
+    section.hero .hero__trust-line {
+        margin-bottom: var(--space-4) !important;
+    }
+}
+
+
+@media (max-width: 576px) {
+    section.hero .hero__title {
+        padding-inline: 2% !important;
+        font-size: clamp(1.65rem, 7.2vw, 2.4rem) !important;
+        line-height: 1.15 !important;
+    }
+
+    section.hero .hero__badges {
+        max-width: 300px !important;
     }
 
     section.hero .hero-badge {
@@ -264,32 +326,5 @@ section.hero .hero__logo-bar,
 
     section.hero .hero-badge__label {
         font-size: 0.72rem !important;
-    }
-}
-
-
-@media (max-width: 767px) {
-    section.hero .hero__body {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: var(--space-5) !important;
-    }
-
-    section.hero .hero__description {
-        text-align: center !important;
-        max-width: 32rem !important;
-    }
-
-    section.hero .hero__badges {
-        align-items: stretch !important;
-        justify-content: center !important;
-        width: 100% !important;
-        max-width: 260px !important;
-        margin-inline: auto !important;
-    }
-
-    section.hero .hero-badge {
-        width: 100% !important;
-        max-width: 100% !important;
     }
 }
