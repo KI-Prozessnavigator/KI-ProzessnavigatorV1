@@ -80,7 +80,7 @@ if (!function_exists('kp_contact_owner_html')) {
             <div class="container">
                 <div class="header">
                     <h1>🚀 Neue Anfrage!</h1>
-                    <p>Sie haben eine neue Anfrage über Ihre Website erhalten</p>
+                    <p>Neue Anfrage über deine Website</p>
                 </div>
                 <div class="content">
                     <div class="field">
@@ -145,7 +145,7 @@ if (!function_exists('kp_contact_owner_html')) {
                     </div>
                 </div>
                 <div class="footer">
-                    <p>Diese E-Mail wurde automatisch von Ihrer Website generiert.</p>
+                    <p>Diese E-Mail wurde automatisch von deiner Website generiert.</p>
                     <p>KI-Prozessnavigator © ' . date('Y') . '</p>
                 </div>
             </div>

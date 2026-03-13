@@ -120,7 +120,7 @@ try {
         http_response_code(429);
         echo json_encode([
             'success' => false,
-            'message' => 'Zu viele Anfragen. Bitte versuchen Sie es in einer Stunde erneut.'
+            'message' => 'Zu viele Anfragen. Bitte versuch es in einer Stunde erneut.'
         ]);
         exit;
     }
@@ -147,7 +147,7 @@ try {
     $email = trim($data['email']);
     if (!validateEmail($email)) {
         http_response_code(400);
-        echo json_encode(['success' => false, 'message' => 'Bitte geben Sie eine gültige E-Mail-Adresse ein.']);
+        echo json_encode(['success' => false, 'message' => 'Bitte gib eine gültige E-Mail-Adresse ein.']);
         exit;
     }
 
@@ -159,7 +159,7 @@ try {
     if ($sent) {
         echo json_encode([
             'success' => true,
-            'message' => 'Vielen Dank! Die Checkliste wurde an Ihre E-Mail gesendet. Darin finden Sie auch den Link zu Ihrem kostenlosen Beratungstermin.'
+            'message' => 'Vielen Dank! Die Checkliste ist unterwegs an dein Postfach – inklusive Einladung zum kostenlosen Erstgespräch.'
         ]);
     } else {
         throw new Exception('E-Mail konnte nicht gesendet werden');
@@ -169,7 +169,7 @@ try {
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.'
+        'message' => 'Ein Fehler ist aufgetreten. Bitte versuch es später erneut.'
     ]);
     error_log('Checklist Error: ' . $e->getMessage());
 }

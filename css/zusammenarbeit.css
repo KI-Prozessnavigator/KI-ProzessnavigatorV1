@@ -39,7 +39,7 @@ section#ablauf .zusammenarbeit-v2__right {
     width: 100%;
     max-width: none;
     padding-top: clamp(4rem, 8vw, 7rem);
-    padding-bottom: clamp(4rem, 8vw, 8rem);
+    padding-bottom: clamp(8rem, 12vw, 14rem);
     position: relative;
 }
 
@@ -59,7 +59,7 @@ section#ablauf .zusammenarbeit-v2__right {
 
 /* DSGVO-Sektion direkt danach: weniger Abstand */
 section#ablauf.zusammenarbeit-v2 + section#dsgvo {
-    padding-top: clamp(2rem, 4vw, 3.5rem);
+    padding-top: clamp(1rem, 2vw, 2rem);
     margin-top: 0;
 }
 
@@ -161,13 +161,6 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
     display: flex;
     flex-direction: column;
     gap: 0;
-}
-
-.zusammenarbeit-v2__right::after {
-    content: '';
-    display: block;
-    height: 15vh;
-    flex-shrink: 0;
 }
 
 /* --- STACKING CARDS (Desktop) --- */
@@ -348,9 +341,6 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
 }
 
 @media (max-width: 767px) {
-    .zusammenarbeit-v2__right::after {
-        display: none;
-    }
     .zusammenarbeit-v2 {
         padding-bottom: clamp(2rem, 4vw, 3rem);
     }
@@ -429,9 +419,5 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
 
     .zusammenarbeit-v2__left {
         position: static;
-    }
-
-    .zusammenarbeit-v2__right::after {
-        display: none;
     }
 }

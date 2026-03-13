@@ -37,11 +37,7 @@
             modal: modal,
             backdrop: modal.querySelector('.contact-modal__backdrop'),
             closeBtn: modal.querySelector('.contact-modal__close'),
-            pathSelection: modal.querySelector('.contact-modal__paths'),
-            inquiryPath: document.getElementById('path-inquiry'),
-            analysisPath: document.getElementById('path-analysis'),
             inquiryContent: document.getElementById('inquiry-content'),
-            analysisContent: document.getElementById('analysis-content'),
             allContents: modal.querySelectorAll('.contact-modal__content'),
             successState: modal.querySelector('.form-success'),
             successCloseBtn: modal.querySelector('.success-cta')
@@ -49,13 +45,12 @@
 
         // State
         const state = {
-            currentPath: null,
+            currentPath: 'inquiry',
             currentStep: 1,
             formData: createInitialFormData(),
             tracking: {
                 startedPaths: {
-                    inquiry: false,
-                    analysis: false
+                    inquiry: false
                 },
                 lastSubmittedMeta: null
             }
@@ -90,18 +85,10 @@
 
         function createInitialFormData() {
             return {
-                path: null,
+                path: 'inquiry',
                 companySize: null,
-                automationAreas: [],
-                contact: {},
-                analysis: {
-                    employees: 10,
-                    weeklyHours: 20,
-                    hourlyCost: 50,
-                    processes: [],
-                    challenges: [],
-                    industry: null
-                }
+                painPoints: [],
+                contact: {}
             };
         }
 
@@ -110,6 +97,7 @@
             elements.modal.classList.add('active');
             document.body.style.overflow = 'hidden';
             resetModal();
+            showStep('inquiry', 1);
         }
 
         function closeModal() {
@@ -118,16 +106,17 @@
         }
 
         function resetModal() {
-            state.currentPath = null;
+            state.currentPath = 'inquiry';
             state.currentStep = 1;
             state.formData = createInitialFormData();
             state.tracking.startedPaths.inquiry = false;
-            state.tracking.startedPaths.analysis = false;
             state.tracking.lastSubmittedMeta = null;
 
-            // Show path selection
-            elements.pathSelection.style.display = 'block';
+            // Show inquiry content directly
             elements.allContents.forEach(c => c.classList.remove('active'));
+            if (elements.inquiryContent) {
+                elements.inquiryContent.classList.add('active');
+            }
             elements.successState.classList.remove('active');
 
             // Reset all form inputs
@@ -151,16 +140,13 @@
 
             // Reset steps
             modal.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
-            modal.querySelectorAll('.form-step[data-step="1"]').forEach(step => step.classList.add('active'));
+            if (elements.inquiryContent) {
+                const firstStep = elements.inquiryContent.querySelector('.form-step[data-step="1"]');
+                if (firstStep) firstStep.classList.add('active');
+            }
 
             // Reset progress
             updateProgress('inquiry', 1);
-            updateProgress('analysis', 1);
-
-            // Reset slider displays
-            updateSliderDisplay('employee-count', 10);
-            updateSliderDisplay('weekly-hours', 20);
-            updateSliderDisplay('hourly-cost', 50);
         }
 
         // ===== INIT TRIGGERS =====
@@ -178,36 +164,6 @@
                 }
             });
         }
-
-        // ===== PATH SELECTION =====
-        elements.inquiryPath.addEventListener('click', function() {
-            state.currentPath = 'inquiry';
-            state.formData.path = 'inquiry';
-            elements.pathSelection.style.display = 'none';
-            elements.inquiryContent.classList.add('active');
-            state.currentStep = 1;
-            showStep('inquiry', 1);
-        });
-
-        elements.analysisPath.addEventListener('click', function() {
-            state.currentPath = 'analysis';
-            state.formData.path = 'analysis';
-            elements.pathSelection.style.display = 'none';
-            elements.analysisContent.classList.add('active');
-            state.currentStep = 1;
-            showStep('analysis', 1);
-        });
-
-        // ===== BACK BUTTONS =====
-        modal.querySelectorAll('.form-back-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const content = this.closest('.contact-modal__content');
-                content.classList.remove('active');
-                elements.pathSelection.style.display = 'block';
-                state.currentPath = null;
-                state.currentStep = 1;
-            });
-        });
 
         // ===== CLOSE HANDLERS =====
         elements.closeBtn.addEventListener('click', closeModal);
@@ -278,45 +234,6 @@
             }
         });
 
-        // ===== SLIDERS =====
-        const employeeSlider = document.getElementById('employee-count');
-        const hoursSlider = document.getElementById('weekly-hours');
-        const hourlyCostSlider = document.getElementById('hourly-cost');
-
-        if (employeeSlider) {
-            employeeSlider.addEventListener('input', function() {
-                updateSliderDisplay('employee-count', this.value);
-                state.formData.analysis.employees = parseInt(this.value);
-            });
-        }
-
-        if (hoursSlider) {
-            hoursSlider.addEventListener('input', function() {
-                updateSliderDisplay('weekly-hours', this.value);
-                state.formData.analysis.weeklyHours = parseInt(this.value);
-            });
-        }
-
-        if (hourlyCostSlider) {
-            hourlyCostSlider.addEventListener('input', function() {
-                updateSliderDisplay('hourly-cost', this.value);
-                state.formData.analysis.hourlyCost = parseInt(this.value);
-            });
-        }
-
-        function updateSliderDisplay(sliderId, value) {
-            const display = document.getElementById(sliderId + '-value');
-            if (!display) return;
-
-            if (sliderId === 'employee-count') {
-                display.textContent = value + (parseInt(value) >= 100 ? '+' : '') + ' Mitarbeiter';
-            } else if (sliderId === 'weekly-hours') {
-                display.textContent = value + ' Std./Woche';
-            } else if (sliderId === 'hourly-cost') {
-                display.textContent = value + ' €/Stunde';
-            }
-        }
-
         // ===== NAVIGATION =====
         modal.addEventListener('click', function(e) {
             const nextBtn = e.target.closest('.btn--modal-primary[data-next]');
@@ -332,11 +249,6 @@
                 // Collect data from current step
                 collectStepData();
 
-                // Calculate potential before showing results
-                if (state.currentPath === 'analysis' && nextStep === 4) {
-                    updatePotentialResults();
-                }
-
                 state.currentStep = nextStep;
                 showStep(state.currentPath, nextStep);
             }
@@ -350,7 +262,7 @@
         });
 
         function showStep(path, step) {
-            const content = path === 'inquiry' ? elements.inquiryContent : elements.analysisContent;
+            const content = elements.inquiryContent;
 
             content.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
             const targetStep = content.querySelector(`.form-step[data-step="${step}"]`);
@@ -363,7 +275,7 @@
         }
 
         function updateProgress(path, step) {
-            const content = path === 'inquiry' ? elements.inquiryContent : elements.analysisContent;
+            const content = elements.inquiryContent;
             if (!content) return;
 
             const steps = content.querySelectorAll('.progress-step');
@@ -379,7 +291,7 @@
         }
 
         function validateCurrentStep() {
-            const content = state.currentPath === 'inquiry' ? elements.inquiryContent : elements.analysisContent;
+            const content = elements.inquiryContent;
             const currentStepEl = content.querySelector(`.form-step[data-step="${state.currentStep}"]`);
             if (!currentStepEl) return true;
 
@@ -410,132 +322,21 @@
         }
 
         function collectStepData() {
-            const content = state.currentPath === 'inquiry' ? elements.inquiryContent : elements.analysisContent;
+            const content = elements.inquiryContent;
             const currentStepEl = content.querySelector(`.form-step[data-step="${state.currentStep}"]`);
             if (!currentStepEl) return;
 
-            if (state.currentPath === 'inquiry') {
-                if (state.currentStep === 1) {
-                    const selected = currentStepEl.querySelector('input[name="company-size"]:checked');
-                    if (selected) {
-                        state.formData.companySize = selected.value;
-                    }
-                } else if (state.currentStep === 2) {
-                    state.formData.automationAreas = [];
-                    currentStepEl.querySelectorAll('input[name="automation-area"]:checked').forEach(input => {
-                        state.formData.automationAreas.push(input.value);
-                    });
+            if (state.currentStep === 1) {
+                const selected = currentStepEl.querySelector('input[name="company-size"]:checked');
+                if (selected) {
+                    state.formData.companySize = selected.value;
                 }
-            } else if (state.currentPath === 'analysis') {
-                if (state.currentStep === 1) {
-                    const industrySelect = currentStepEl.querySelector('#industry');
-                    if (industrySelect) {
-                        state.formData.analysis.industry = industrySelect.value;
-                    }
-                } else if (state.currentStep === 2) {
-                    state.formData.analysis.processes = [];
-                    currentStepEl.querySelectorAll('input[name="process"]:checked').forEach(input => {
-                        state.formData.analysis.processes.push(input.value);
-                    });
-                } else if (state.currentStep === 3) {
-                    state.formData.analysis.challenges = [];
-                    currentStepEl.querySelectorAll('input[name="challenge"]:checked').forEach(input => {
-                        state.formData.analysis.challenges.push(input.value);
-                    });
-                }
-            }
-        }
-
-        // ===== POTENTIAL CALCULATION =====
-        function updatePotentialResults() {
-            const { employees, weeklyHours, hourlyCost, processes } = state.formData.analysis;
-
-            // Automationsraten pro Prozesstyp
-            // Einfache Aufgaben (regelbasiert, hohe Automatisierbarkeit): 90%
-            // Komplexe Aufgaben (Entscheidungslogik nötig): 65%
-            var simpleProcesses = ['terminbuchung', 'buchhaltung', 'onboarding', 'finanzen'];
-            var complexProcesses = ['vertrieb', 'kundenservice', 'hr', 'projektmanagement'];
-
-            var simpleCount = 0;
-            var complexCount = 0;
-            processes.forEach(function(p) {
-                if (simpleProcesses.indexOf(p) !== -1) simpleCount++;
-                if (complexProcesses.indexOf(p) !== -1) complexCount++;
-            });
-
-            // Gewichtete Automationsrate (Durchschnitt der ausgewählten Prozesse)
-            var automationRate = 0.65; // Standard wenn nichts gewählt
-            var totalSelected = simpleCount + complexCount;
-            if (totalSelected > 0) {
-                automationRate = ((simpleCount * 0.90) + (complexCount * 0.65)) / totalSelected;
-            }
-
-            // Zeitersparnis: Stunden pro Mitarbeiter × Anzahl Mitarbeiter × Automationsrate
-            var totalWeeklyHours = weeklyHours * employees;
-            var hoursSaved = Math.round(totalWeeklyHours * automationRate);
-
-            // Kosteneinsparung: Stunden pro Monat × Stundenlohn (4,33 Wochen/Monat)
-            var monthlyHoursSaved = hoursSaved * 4.33;
-            var monthlyEuroSaved = Math.round(monthlyHoursSaved * hourlyCost);
-
-            // Update displays
-            var hoursSavedEl = document.getElementById('result-hours');
-            var euroSavedEl = document.getElementById('result-savings');
-
-            if (hoursSavedEl) hoursSavedEl.textContent = hoursSaved + 'h/Woche';
-            if (euroSavedEl) euroSavedEl.textContent = formatCurrency(monthlyEuroSaved) + '€/Monat';
-
-            updateRecommendations();
-        }
-
-        function updateRecommendations() {
-            const recommendationsEl = document.getElementById('potential-recommendations');
-            if (!recommendationsEl) return;
-
-            const processRecommendations = {
-                'vertrieb': { icon: '🎯', text: 'Lead-Qualifizierung und automatische Terminbuchung können Ihre Abschlussquote um 40% steigern' },
-                'hr': { icon: '👥', text: 'KI-gestütztes Bewerber-Matching spart durchschnittlich 8 Stunden pro Woche' },
-                'finanzen': { icon: '💰', text: 'Automatische Rechnungsprüfung reduziert Fehler auf nahezu 0%' },
-                'kundenservice': { icon: '💬', text: '24/7 Chatbot-Support erhöht die Kundenzufriedenheit um 35%' },
-                'projektmanagement': { icon: '📋', text: 'Automatisierte Projekt-Setups verhindern vergessene Deadlines' },
-                'buchhaltung': { icon: '📄', text: 'OCR-basierte Rechnungserfassung beschleunigt die Buchhaltung um 60%' },
-                'onboarding': { icon: '🎓', text: 'Digitales Onboarding reduziert die Einarbeitungszeit um 70%' },
-                'terminbuchung': { icon: '📅', text: 'Online-Buchung mit SMS-Erinnerung eliminiert No-Shows' }
-            };
-
-            const selectedProcesses = state.formData.analysis.processes.slice(0, 3);
-
-            let html = '';
-            if (selectedProcesses.length === 0) {
-                html = `
-                    <div class="recommendation-item">
-                        <span class="recommendation-item__icon">✅</span>
-                        <span>Basierend auf Ihrer Unternehmensgröße empfehlen wir einen schrittweisen Start</span>
-                    </div>
-                    <div class="recommendation-item">
-                        <span class="recommendation-item__icon">✅</span>
-                        <span>Die größten Einsparungen sind oft in der Kundenkommunikation zu finden</span>
-                    </div>
-                `;
-            } else {
-                selectedProcesses.forEach(process => {
-                    const rec = processRecommendations[process];
-                    if (rec) {
-                        html += `
-                            <div class="recommendation-item">
-                                <span class="recommendation-item__icon">${rec.icon}</span>
-                                <span>${rec.text}</span>
-                            </div>
-                        `;
-                    }
+            } else if (state.currentStep === 2) {
+                state.formData.painPoints = [];
+                currentStepEl.querySelectorAll('input[name="pain-points"]:checked').forEach(input => {
+                    state.formData.painPoints.push(input.value);
                 });
             }
-
-            recommendationsEl.innerHTML = html;
-        }
-
-        function formatCurrency(value) {
-            return new Intl.NumberFormat('de-DE').format(Math.round(value));
         }
 
         // ===== FORM SUBMISSION =====
@@ -555,10 +356,9 @@
                     email: formElements['email']?.value || '',
                     phone: formElements['phone']?.value || '',
                     company: formElements['company']?.value || '',
-                    message: formElements['message']?.value || '',
-                    companySize: state.formData.companySize || '',
-                    interest: (state.formData.automationAreas || []).join(', '),
-                    website: '' // Honeypot field (empty for humans)
+                    'company-size': state.formData.companySize || '',
+                    'pain-points': (state.formData.painPoints || []).join(', '),
+                    website: formElements['website']?.value || '' // Honeypot field
                 };
 
                 // Check privacy consent

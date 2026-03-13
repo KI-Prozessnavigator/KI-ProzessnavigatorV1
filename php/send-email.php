@@ -192,7 +192,7 @@ try {
         http_response_code(429);
         echo json_encode([
             'success' => false,
-            'message' => 'Zu viele Anfragen. Bitte versuchen Sie es später erneut.'
+            'message' => 'Zu viele Anfragen. Bitte versuch es in einer Stunde erneut.'
         ]);
         exit;
     }
@@ -240,7 +240,7 @@ try {
     if ($sent) {
         echo json_encode([
             'success' => true,
-            'message' => 'Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.'
+            'message' => 'Vielen Dank! Wir haben deine Anfrage erhalten und melden uns innerhalb von 24 Stunden bei dir.'
         ]);
     } else {
         throw new Exception('E-Mail konnte nicht gesendet werden');
@@ -250,7 +250,7 @@ try {
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.'
+        'message' => 'Ein Fehler ist aufgetreten. Bitte versuch es später erneut.'
     ]);
     
     // Fehler loggen (für Debugging)

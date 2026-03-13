@@ -33,9 +33,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 720px;
-    max-height: calc(100vh - 1rem);
-    max-height: calc(100dvh - 1rem);
+    max-width: 840px;
+    height: auto;
+    max-height: 92vh;
+    min-height: 0;
     background: #0f172a;
     border-radius: 24px;
     box-shadow: 
@@ -47,6 +48,22 @@
     overflow: hidden;
     
     isolation: isolate;
+}
+
+/* Dot-Raster-Hintergrund (passend zur Website) */
+.contact-modal__container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 24px;
+    background-image: radial-gradient(
+        circle,
+        rgba(55, 65, 81, 0.35) 1px,
+        transparent 1px
+    );
+    background-size: 28px 28px;
 }
 
 .contact-modal.active .contact-modal__container {
@@ -62,6 +79,8 @@
     overscroll-behavior: contain;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-modal__scroll-area::-webkit-scrollbar {
@@ -266,7 +285,9 @@
 }
 
 .contact-modal__content.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     animation: fadeInUp 0.35s ease;
 }
 
@@ -343,13 +364,15 @@
 }
 
 .form-step.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     animation: fadeInUp 0.35s ease;
 }
 
 .form-step__header {
     text-align: center;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-step__title {
@@ -376,55 +399,6 @@
     margin-bottom: 2rem;
 }
 
-
-.contact-modal__content .form-step[data-step="3"] .form-group,
-.contact-modal__content form#inquiry-form .form-group {
-    margin-bottom: 0.5rem !important;
-}
-.contact-modal__content .form-step[data-step="3"] .form-group:last-of-type,
-.contact-modal__content form#inquiry-form .form-group:last-of-type {
-    margin-bottom: 0.75rem !important;
-}
-.contact-modal__content .form-step[data-step="3"] .form-label,
-.contact-modal__content form#inquiry-form .form-label {
-    margin-bottom: 0.3rem !important;
-    font-size: 0.8125rem !important;
-}
-.contact-modal__content .form-step[data-step="3"] .form-input,
-.contact-modal__content .form-step[data-step="3"] .form-textarea,
-.contact-modal__content form#inquiry-form .form-input,
-.contact-modal__content form#inquiry-form .form-textarea {
-    padding: 0.5rem 0.75rem !important;
-    font-size: 0.9375rem !important;
-}
-.contact-modal__content .form-step[data-step="3"] .form-textarea,
-.contact-modal__content form#inquiry-form .form-textarea {
-    min-height: 56px !important;
-}
-.contact-modal__content .form-step[data-step="3"] .form-row,
-.contact-modal__content form#inquiry-form .form-row {
-    gap: 0.5rem !important;
-}
-.contact-modal__content .form-step[data-step="3"] .form-step__header,
-.contact-modal__content .form-step[data-step="3"] .form-step__title {
-    margin-bottom: 0.35rem !important;
-}
-.contact-modal__content .form-step[data-step="3"] .privacy-checkbox {
-    padding: 0.5rem 0.65rem !important;
-}
-.contact-modal__content .form-step[data-step="3"] .privacy-checkbox__text {
-    font-size: 0.8125rem !important;
-    line-height: 1.4 !important;
-}
-.contact-modal__content .form-step[data-step="3"] .form-actions {
-    padding-top: 0 !important;
-    margin-top: 0.25rem !important;
-}
-.contact-modal__content .form-step[data-step="3"] .btn--modal-primary,
-.contact-modal__content .form-step[data-step="3"] .btn--modal-secondary {
-    padding: 0.6rem 1.25rem !important;
-    font-size: 0.9375rem !important;
-}
 
 .form-label {
     display: block;
@@ -489,6 +463,12 @@
 
 .form-textarea {
     min-height: 100px;
+    resize: vertical;
+}
+
+#inquiry-form .form-textarea {
+    min-height: 38px;
+    max-height: 80px;
     resize: vertical;
 }
 
@@ -621,8 +601,8 @@
 .option-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .option-grid--single {
@@ -940,9 +920,22 @@
 .form-actions {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
-    padding-top: 0;
-    margin-top: 0;
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+#inquiry-form .form-group {
+    margin-bottom: 0.75rem;
+}
+
+#inquiry-form .form-group:last-of-type {
+    margin-bottom: 0.75rem;
+}
+
+#inquiry-form .form-row {
+    gap: 0.75rem;
 }
 
 .btn--modal-primary {
@@ -967,11 +960,12 @@
 
 .btn--modal-primary:hover {
     background: #0066DD;
-    box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.5), 0 0 35px rgba(0, 119, 255, 0.2);
+    transform: none;
 }
 
 .btn--modal-primary:active {
-    transform: translateY(0);
+    transform: none;
 }
 
 .btn--modal-primary svg {
@@ -1001,7 +995,20 @@
 
 .btn--modal-secondary:hover {
     background: #0066DD;
-    box-shadow: 0 0 25px rgba(0, 119, 255, 0.6), 0 0 50px rgba(0, 119, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.5), 0 0 35px rgba(0, 119, 255, 0.2);
+    transform: none;
+}
+
+/* Kein transform/translate auf Modal-Buttons — niemals */
+.contact-modal .btn--modal-primary,
+.contact-modal .btn--modal-secondary,
+.contact-modal .btn--modal-primary:hover,
+.contact-modal .btn--modal-secondary:hover,
+.contact-modal .btn--modal-primary:active,
+.contact-modal .btn--modal-secondary:active,
+.contact-modal .btn--modal-primary:focus,
+.contact-modal .btn--modal-secondary:focus {
+    transform: none !important;
 }
 
 
@@ -1064,6 +1071,42 @@
     max-width: 360px;
     margin: 0 auto 2rem;
     line-height: 1.6;
+}
+
+/* === Success Animation === */
+@keyframes successCircle {
+    to { stroke-dashoffset: 0; }
+}
+@keyframes successCheck {
+    to { stroke-dashoffset: 0; }
+}
+
+.success-extras {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.success-extra-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+}
+
+.success-extra-item strong {
+    color: #00D4FF;
+    font-weight: 600;
+}
+
+.success-spam-hint {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin: 8px 0 16px;
 }
 
 .success-cta {
@@ -1154,6 +1197,47 @@
 .modal-trust__icon {
     color: #00D98F;
     font-size: 0.875rem;
+}
+
+/* Step-Trust-Hint (Step 1) */
+.step-trust-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.step-trust-hint svg {
+    color: #00D98F;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* Step-Insight (Step 2, nach Checkbox-Auswahl) */
+.step-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 217, 143, 0.08);
+    border: 1px solid rgba(0, 217, 143, 0.25);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.3s ease;
+}
+.step-insight__icon {
+    flex-shrink: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.step-insight__text {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
 }
 
 
@@ -1334,8 +1418,17 @@
         height: calc(100dvh - var(--mobile-header-h) - 0.5rem) !important;
         height: calc(100svh - var(--mobile-header-h) - 0.5rem) !important;
         max-height: none !important;
+        min-height: 0 !important;
         border-radius: 16px !important;
         overflow: hidden !important;
+    }
+
+    .contact-modal__container::before {
+        border-radius: 16px !important;
+    }
+
+    .contact-modal__scroll-area {
+        min-height: 0 !important;
     }
     
     
@@ -1731,6 +1824,10 @@
     
     .contact-modal__container {
         max-width: calc(100vw - 0.25rem) !important;
+        border-radius: 12px !important;
+    }
+
+    .contact-modal__container::before {
         border-radius: 12px !important;
     }
     
