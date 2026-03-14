@@ -173,7 +173,7 @@ if ($phpRefs) {
     Write-Host ""
     Write-Host "!!! KRITISCHER FEHLER !!!" -ForegroundColor Red
     Write-Host "JS-Dateien referenzieren noch /php/ Endpoints:" -ForegroundColor Red
-    $phpRefs | ForEach-Object { Write-Host "  $($_.Filename):$($_.LineNumber) → $($_.Line.Trim())" -ForegroundColor Red }
+    $phpRefs | ForEach-Object { Write-Host "  $($_.Filename):$($_.LineNumber) -> $($_.Line.Trim())" -ForegroundColor Red }
     Write-Host ""
     Write-Host "Das Kontaktformular wird auf dem Server NICHT funktionieren!" -ForegroundColor Red
     Write-Host "JS-Dateien muessen /api/send-email und /api/send-checklist verwenden." -ForegroundColor Red
