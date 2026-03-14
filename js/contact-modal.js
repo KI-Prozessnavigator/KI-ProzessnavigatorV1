@@ -118,6 +118,10 @@
                 elements.inquiryContent.classList.add('active');
             }
             elements.successState.classList.remove('active');
+            const successHeader = document.querySelector('.contact-modal__header');
+            if (successHeader) {
+                successHeader.style.display = '';
+            }
 
             // Reset all form inputs
             modal.querySelectorAll('input, select, textarea').forEach(input => {
@@ -437,6 +441,10 @@
 
         function showSuccess() {
             elements.allContents.forEach(c => c.classList.remove('active'));
+            const successHeader = document.querySelector('.contact-modal__header');
+            if (successHeader) {
+                successHeader.style.display = 'none';
+            }
             elements.successState.classList.add('active');
             if (state.tracking.lastSubmittedMeta) {
                 pushDataLayer('form_success', state.tracking.lastSubmittedMeta);

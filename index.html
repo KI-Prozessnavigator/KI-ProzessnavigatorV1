@@ -2080,9 +2080,9 @@
 
             <div class="form-success">
                 <div class="success-icon">
-                    <svg viewBox="0 0 52 52" style="width:52px;height:52px">
-                        <circle cx="26" cy="26" r="24" fill="none" stroke="#00D26A" stroke-width="3" opacity="0.2"/>
-                        <circle cx="26" cy="26" r="24" fill="none" stroke="#00D26A" stroke-width="3"
+                    <svg viewBox="0 0 52 52" style="width:48px;height:48px">
+                        <circle cx="26" cy="26" r="24" fill="none" stroke="#00D26A" stroke-width="2.5" opacity="0.15"/>
+                        <circle cx="26" cy="26" r="24" fill="none" stroke="#00D26A" stroke-width="2.5"
                             stroke-dasharray="150" stroke-dashoffset="150" stroke-linecap="round"
                             style="animation: successCircle 0.6s ease-out 0.2s forwards"/>
                         <polyline points="16 27 23 34 36 19" fill="none" stroke="#00D26A" stroke-width="3"
@@ -2093,25 +2093,64 @@
                 </div>
                 <h3 class="success-title">Perfekt – deine Anfrage ist bei uns!</h3>
                 <p class="success-message">
-                    Wir melden uns <strong>innerhalb von 24 Stunden</strong> persönlich bei dir – per E-Mail oder Telefon, wie es dir lieber ist.
+                    Wir melden uns <strong>innerhalb von 24 Stunden</strong> persönlich bei dir.
                 </p>
-                <div class="success-extras">
-                    <div class="success-extra-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#0077FF" stroke-width="1.5" style="width:20px;height:20px;flex-shrink:0">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                        <span>Bestätigung ist unterwegs an dein Postfach</span>
+
+                <div class="success-timeline">
+                    <div class="success-timeline__step">
+                        <div class="success-timeline__number success-timeline__number--done">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div class="success-timeline__content">
+                            <p class="success-timeline__label">Anfrage erhalten</p>
+                            <p class="success-timeline__desc">Bestätigung per E-Mail</p>
+                        </div>
                     </div>
-                    <div class="success-extra-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#00D26A" stroke-width="1.5" style="width:20px;height:20px;flex-shrink:0">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
-                        <span><strong>Bonus:</strong> Kostenlose Checkliste „10 Prozesse, die du sofort automatisieren kannst" liegt auch in deinem Postfach</span>
+                    <div class="success-timeline__step">
+                        <div class="success-timeline__number success-timeline__number--next">2</div>
+                        <div class="success-timeline__content">
+                            <p class="success-timeline__label">Wir melden uns</p>
+                            <p class="success-timeline__desc">Innerhalb von 24 Stunden</p>
+                        </div>
+                    </div>
+                    <div class="success-timeline__step">
+                        <div class="success-timeline__number success-timeline__number--later">3</div>
+                        <div class="success-timeline__content">
+                            <p class="success-timeline__label">Kostenloses Erstgespräch</p>
+                            <p class="success-timeline__desc">30 Min. · Unverbindlich</p>
+                        </div>
                     </div>
                 </div>
+
+                <div class="success-cards">
+                    <div class="success-card">
+                        <div class="success-card__icon success-card__icon--mail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#0077FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <p class="success-card__title">Bestätigung per E-Mail</p>
+                        <p class="success-card__text">Ist bereits unterwegs an dein Postfach – mit allen Details zu deiner Anfrage.</p>
+                    </div>
+                    <div class="success-card">
+                        <div class="success-card__icon success-card__icon--checklist">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="9" y1="13" x2="15" y2="13"/>
+                                <line x1="9" y1="17" x2="13" y2="17"/>
+                            </svg>
+                        </div>
+                        <p class="success-card__title">Bonus: Deine Checkliste</p>
+                        <p class="success-card__text">Sneak Peek: 10 Prozesse, die du sofort automatisieren kannst.</p>
+                        <a href="#faq" class="success-card__link">
+                            Jetzt in der FAQ entdecken
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
                 <p class="success-spam-hint">Schau auch im Spam-Ordner nach, falls nichts ankommt.</p>
                 <button type="button" class="success-cta">Fenster schließen</button>
             </div>
