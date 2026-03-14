@@ -1,23 +1,23 @@
 # ============================================================================
-# IONOS Deploy – KI-Prozessnavigator
+# IONOS Deploy â€“ KI-Prozessnavigator
 # ============================================================================
 # Deployt alle Projektdateien per SCP + startet Node-Server neu per SSH.
 #
 # Voraussetzung: .env.deploy mit IONOS_HOST, IONOS_USER, IONOS_WEBROOT, IONOS_PORT
-#                Optional: IONOS_SSH_KEY für Key-basierte Authentifizierung
+#                Optional: IONOS_SSH_KEY fÃ¼r Key-basierte Authentifizierung
 #
 # Nutzung: .\deploy-ionos.ps1
 #
 # Was dieses Skript tut:
-#   1. Projektdateien sammeln (ohne geschützte Dateien)
+#   1. Projektdateien sammeln (ohne geschÃ¼tzte Dateien)
 #   2. Per SCP auf den Server hochladen
-#   3. Per SSH: npm install (falls package.json geändert)
+#   3. Per SSH: npm install (falls package.json geÃ¤ndert)
 #   4. Per SSH: pm2 restart (Node-Server neustart)
 #   5. Per SSH: Health-Check (/api/health)
-#   6. Per HTTPS: Externer Health-Check (über nginx)
+#   6. Per HTTPS: Externer Health-Check (Ã¼ber nginx)
 #
-# GESCHÜTZTE DATEIEN (werden NIE überschrieben/gelöscht):
-#   - .env auf dem Server (enthält echte API-Keys)
+# GESCHÃœTZTE DATEIEN (werden NIE Ã¼berschrieben/gelÃ¶scht):
+#   - .env auf dem Server (enthÃ¤lt echte API-Keys)
 #   - node_modules/ auf dem Server (werden per npm install verwaltet)
 #   - nginx-Config (/etc/nginx/conf.d/ki-prozessnavigator.conf)
 #   - SSL-Zertifikate (/etc/letsencrypt/...)
@@ -67,9 +67,9 @@ if ($sshKey) {
 $sshTarget = "${userName}@${hostName}"
 $scpDest   = "${sshTarget}:${webRoot}"
 
-# ==================== GESCHÜTZTE DATEIEN ====================
+# ==================== GESCHÃœTZTE DATEIEN ====================
 # Diese Dateien/Ordner werden NIE zum Server hochgeladen.
-# Sie existieren nur auf dem Server und dürfen nicht überschrieben werden.
+# Sie existieren nur auf dem Server und dÃ¼rfen nicht Ã¼berschrieben werden.
 
 $excludeNames = @(
     # Versionskontrolle & Editor
@@ -87,7 +87,7 @@ $excludeNames = @(
     "node_modules",
     "package-lock.json",
     
-    # Betriebssystem-Müll
+    # Betriebssystem-MÃ¼ll
     "__MACOSX",
     ".DS_Store",
     "Thumbs.db",
@@ -102,7 +102,7 @@ $excludeNames = @(
     # Deploy-Skript selbst
     "deploy-ionos.ps1",
     
-    # Nicht mehr benötigt
+    # Nicht mehr benÃ¶tigt
     "netlify.toml",
     "_htaccess",
     "_headers",
@@ -128,7 +128,7 @@ $segments = $normalized -split "/"
     return $false
 }
 
-# ==================== HILFSFUNKTION: SSH-Befehl ausführen ====================
+# ==================== HILFSFUNKTION: SSH-Befehl ausfÃ¼hren ====================
 
 function Invoke-SSH($command) {
     $fullArgs = $sshBaseArgs + @($sshTarget, $command)
@@ -140,7 +140,7 @@ function Invoke-SSH($command) {
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "  KI-Prozessnavigator – Deploy" -ForegroundColor Cyan
+Write-Host "  KI-Prozessnavigator â€“ Deploy" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Ziel: ${scpDest}" -ForegroundColor White
@@ -162,7 +162,7 @@ if (-not (Test-Path (Join-Path $ProjectRoot "package.json"))) {
 if (Test-Path (Join-Path $ProjectRoot "php")) {
     Write-Host "WARNUNG: php/ Ordner existiert noch lokal! PHP wird nicht mehr verwendet." -ForegroundColor Yellow
     Write-Host "Der php/ Ordner wird NICHT hochgeladen." -ForegroundColor Yellow
-    # php/ zur Exclude-Liste hinzufügen
+    # php/ zur Exclude-Liste hinzufÃ¼gen
     $excludeNames += "php"
 }
 
@@ -261,11 +261,12 @@ try {
     # Check A: pm2 Status
     Write-Host "  [A] pm2 Status:" -ForegroundColor White
     Invoke-SSH "pm2 list" | Out-Null
-    $pm2Status = & ssh @($sshBaseArgs + @($sshTarget, "pm2 jlist")) | ConvertFrom-Json -ErrorAction SilentlyContinue
+    $pm2Json = & ssh @($sshBaseArgs + @($sshTarget, "pm2 jlist"))
+    $pm2Status = $pm2Json | ConvertFrom-Json -ErrorAction SilentlyContinue
     if ($pm2Status -and $pm2Status[0].pm2_env.status -eq "online") {
         Write-Host "      pm2: ONLINE" -ForegroundColor Green
     } else {
-        Write-Host "      pm2: PROBLEM – Server scheint nicht zu laufen!" -ForegroundColor Red
+        Write-Host "      pm2: PROBLEM â€“ Server scheint nicht zu laufen!" -ForegroundColor Red
         Write-Host ("      Pruefe mit: ssh " + $sshTarget + ' "pm2 logs --lines 20"') -ForegroundColor Yellow
     }
 
