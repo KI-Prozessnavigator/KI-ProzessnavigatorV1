@@ -383,19 +383,13 @@
                 submitBtn.innerHTML = '<span>Wird gesendet...</span>';
 
                 try {
-                    // Send to PHP backend (x-www-form-urlencoded)
-                    const params = new URLSearchParams();
-                    Object.entries(contactData).forEach(([key, value]) => {
-                        if (value !== undefined && value !== null) {
-                            params.append(key, String(value));
-                        }
-                    });
-                    const response = await fetch('/php/send-email.php', {
+                    // Send to Node.js API (JSON)
+                    const response = await fetch('/api/send-email', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded'
+                            'Content-Type': 'application/json'
                         },
-                        body: params.toString()
+                        body: JSON.stringify(contactData)
                     });
 
                     // Robust gegen Nicht-JSON Antworten (z.B. PHP-Fatal / HTML)
@@ -423,7 +417,7 @@
                             error_type: response.ok ? 'server' : 'network'
                         });
                         if (!result && rawText) {
-                            console.warn('Non-JSON response from send-email.php:', rawText);
+                            console.warn('Non-JSON response from /api/send-email:', rawText);
                         }
                         submitBtn.disabled = false;
                         submitBtn.innerHTML = originalText;

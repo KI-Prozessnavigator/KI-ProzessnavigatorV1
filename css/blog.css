@@ -590,9 +590,10 @@
 }
 
 .text-highlight {
-    color: #00D4FF;
+    color: #00FFFF;
     font-weight: 600;
     display: inline;
+    text-shadow: 0 0 8px rgba(0, 180, 255, 0.7), 0 0 20px rgba(0, 140, 255, 0.4);
 }
 
 @media (max-width: 1024px) {

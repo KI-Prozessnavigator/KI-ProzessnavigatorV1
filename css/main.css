@@ -6,16 +6,8 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../assets/fonts/Montserrat-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../assets/fonts/Montserrat-Bold.woff2') format('woff2');
-    font-weight: 700;
+    src: url('../assets/fonts/Montserrat-VariableFont_wght.woff2') format('woff2-variations');
+    font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
@@ -1012,6 +1004,12 @@ section {
     width: 100%;
     margin-bottom: var(--space-10);
     color: #ffffff;
+}
+
+@media (min-width: 1024px) {
+    .hero__title {
+        font-size: clamp(2.05rem, 3.0vw, 2.7rem);
+    }
 }
 
 .hero__body {
@@ -3458,6 +3456,37 @@ section {
 @media (max-width: 767px) {
     #faq-title br {
         display: none;
+    }
+
+    .faq-item {
+        padding: 0.5rem 0.75rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .faq-item__question {
+        padding: 0.5rem 0.25rem !important;
+        min-height: 40px !important;
+        font-size: clamp(0.85rem, 3.5vw, 1rem) !important;
+    }
+
+    .faq__cta-area {
+        padding-inline: 1rem !important;
+        text-align: center !important;
+    }
+
+    .faq__cta-btn,
+    .faq__cta-area .btn {
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        padding: 0.875rem 1.5rem !important;
+        font-size: clamp(0.85rem, 3.5vw, 1rem) !important;
+    }
+
+    .faq__cta-trust {
+        padding-inline: 0.5rem !important;
     }
 }
 

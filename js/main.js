@@ -357,7 +357,7 @@ function handleFormSubmit(e) {
     }
 }
 
-// Checkliste per PHP (E-Mail an Kunde mit Checkliste + Calendly-Einladung)
+// Checkliste per Node.js API (E-Mail an Kunde mit Checkliste + Calendly-Einladung)
 function sendChecklisteViaPHP(data, submitBtn, originalText, form) {
     const payload = {
         email: (data.email || '').trim(),
@@ -365,17 +365,10 @@ function sendChecklisteViaPHP(data, submitBtn, originalText, form) {
     };
     const formMeta = getFormMeta(form);
 
-    const params = new URLSearchParams();
-    Object.entries(payload).forEach(([key, value]) => {
-        if (value !== undefined && value !== null) {
-            params.append(key, String(value));
-        }
-    });
-
-    fetch('/php/send-checklist.php', {
+    fetch('/api/send-checklist', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params.toString()
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
     })
         .then(function (response) {
             return response.text().then(function (text) {
@@ -406,7 +399,7 @@ function sendChecklisteViaPHP(data, submitBtn, originalText, form) {
                 });
 
                 if (!result && raw) {
-                    console.warn('Non-JSON response from send-checklist.php:', raw);
+                    console.warn('Non-JSON response from /api/send-checklist:', raw);
                 }
             }
         })

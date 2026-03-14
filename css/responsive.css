@@ -1912,6 +1912,27 @@
     }
 }
 
+@media (max-width: 767px) {
+    #dsgvo .checklist-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    #dsgvo .checklist-text {
+        text-align: left !important;
+    }
+
+    #dsgvo .dsgvo__checklist {
+        align-items: flex-start !important;
+        width: 100% !important;
+    }
+}
+
 
 @media (min-width: 834px) and (max-width: 1366px) {
     

@@ -110,7 +110,7 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
 
 .zusammenarbeit-v2__title {
     font-size: var(--text-3xl);
-    font-weight: 500;
+    font-weight: 700;
     margin: 0 0 1rem;
     line-height: 1.2;
 }
@@ -365,6 +365,9 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
     .zusammenarbeit-v2__time-hint {
         margin-left: auto;
         margin-right: auto;
+        white-space: nowrap;
+        font-size: clamp(0.7rem, 2.8vw, 0.875rem);
+        padding: 0.4rem 0.75rem;
     }
 
     .zusammenarbeit-v2__left-cta {
@@ -377,6 +380,12 @@ section#ablauf.zusammenarbeit-v2 + section#dsgvo {
         align-items: center;
         text-align: center;
         margin-top: 2rem;
+    }
+
+    .zusammenarbeit-v2__cta-btn {
+        white-space: nowrap;
+        font-size: clamp(0.8rem, 3vw, 1rem);
+        padding: 0.75rem 1.25rem;
     }
 
     .zusammenarbeit-v2__mobile-cta .zusammenarbeit-v2__trust {

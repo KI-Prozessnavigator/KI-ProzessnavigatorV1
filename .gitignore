@@ -1,17 +1,18 @@
-# Deploy-Zugangsdaten (niemals committen)
+# Secrets (NIEMALS committen)
+.env
 .env.deploy
 
-# PHP-Konfiguration mit sensiblen Daten (SMTP-Passwort etc.)
-php/config.php
+# Node.js
+node_modules/
 
 # OS
 .DS_Store
 Thumbs.db
 __MACOSX/
 
-# Dev/Test (nicht für Live-Website)
+# Dev/Test
 sandbox/
 
-# Backups / Tests (optional)
+# Backups
 *.backup
 *.backup-*

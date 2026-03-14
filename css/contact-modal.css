@@ -1970,3 +1970,59 @@ section.solutions .container,
 .solutions__grid {
     overflow: visible !important;
 }
+
+/* ============================================================
+   FIX: Input-Felder im Contact-Modal – IMMER dunkler Hintergrund
+   Muss am ENDE der Datei stehen um alle vorherigen Regeln zu überschreiben.
+   ============================================================ */
+
+/* Basis-Zustand: Dunkler Hintergrund */
+#contact-modal input[type="text"],
+#contact-modal input[type="email"],
+#contact-modal input[type="tel"],
+#contact-modal textarea,
+#contact-modal select {
+    background: rgba(15, 23, 42, 0.8) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Fokus: Leicht dunkler + blaue Border */
+#contact-modal input[type="text"]:focus,
+#contact-modal input[type="email"]:focus,
+#contact-modal input[type="tel"]:focus,
+#contact-modal textarea:focus,
+#contact-modal select:focus {
+    background: rgba(15, 23, 42, 0.95) !important;
+    color: #ffffff !important;
+    border-color: #0077FF;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+}
+
+/* Felder mit eingegebenem Text – dunkel halten */
+#contact-modal input:not(:placeholder-shown),
+#contact-modal textarea:not(:placeholder-shown) {
+    background: rgba(15, 23, 42, 0.9) !important;
+    color: #ffffff !important;
+}
+
+/* Placeholder-Farbe */
+#contact-modal input::placeholder,
+#contact-modal textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* KRITISCH: Chrome/Edge Autofill Override
+   Browser färbt Autofill-Felder gelb/weiß – das muss überschrieben werden.
+   Der box-shadow Trick überdeckt Chromes interne Background-Farbe. */
+#contact-modal input:-webkit-autofill,
+#contact-modal input:-webkit-autofill:hover,
+#contact-modal input:-webkit-autofill:focus,
+#contact-modal input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgba(15, 23, 42, 1) inset !important;
+    -webkit-text-fill-color: #ffffff !important;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: #ffffff;
+}
