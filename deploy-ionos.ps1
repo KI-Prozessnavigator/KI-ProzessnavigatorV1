@@ -227,7 +227,7 @@ try {
     # ==================== SCHRITT 3: npm install auf Server ====================
 
     Write-Host "[3/5] npm install auf Server..." -ForegroundColor Cyan
-    $npmExit = Invoke-SSH "cd ${webRoot} && npm install --production 2>&1 | tail -3"
+    $npmExit = Invoke-SSH ("cd " + $webRoot + "; npm install --production 2>&1 | tail -3")
     if ($npmExit -ne 0) {
         Write-Host "WARNUNG: npm install hat Fehler gemeldet (Exit: $npmExit)" -ForegroundColor Yellow
         Write-Host "Pruefe ob die Abhaengigkeiten auf dem Server korrekt sind." -ForegroundColor Yellow
@@ -238,7 +238,12 @@ try {
     # ==================== SCHRITT 4: pm2 restart ====================
 
     Write-Host "[4/5] Node-Server neustarten (pm2)..." -ForegroundColor Cyan
-    $pm2Exit = Invoke-SSH "pm2 restart ki-prozessnavigator 2>&1 || (cd ${webRoot} && pm2 start server.js --name ki-prozessnavigator 2>&1)"
+    $pm2Exit = Invoke-SSH "pm2 restart ki-prozessnavigator 2>&1"
+    if ($pm2Exit -ne 0) {
+        Write-Host "WARNUNG: pm2 restart hat Fehler gemeldet (Exit: $pm2Exit)" -ForegroundColor Yellow
+        Write-Host "  -> Versuche pm2 start..." -ForegroundColor Yellow
+        $pm2Exit = Invoke-SSH ("cd " + $webRoot + "; pm2 start server.js --name ki-prozessnavigator 2>&1")
+    }
     if ($pm2Exit -ne 0) {
         Write-Host "WARNUNG: pm2 restart hat Fehler gemeldet (Exit: $pm2Exit)" -ForegroundColor Yellow
     } else {
