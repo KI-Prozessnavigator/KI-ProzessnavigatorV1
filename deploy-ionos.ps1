@@ -261,30 +261,30 @@ try {
         Write-Host "      pm2: ONLINE" -ForegroundColor Green
     } else {
         Write-Host "      pm2: PROBLEM – Server scheint nicht zu laufen!" -ForegroundColor Red
-        Write-Host "      Pruefe mit: ssh ${sshTarget} 'pm2 logs --lines 20'" -ForegroundColor Yellow
+        Write-Host "      Pruefe mit: ssh ${sshTarget} `"pm2 logs --lines 20`"" -ForegroundColor Yellow
     }
 
     # Check B: Interner Health-Check (Node direkt)
     Write-Host "  [B] Interner Health-Check (Node -> localhost:3000):" -ForegroundColor White
-    $internalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/api/health 2>/dev/null")) 2>$null
+    $internalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w `"%{http_code}`" http://127.0.0.1:3000/api/health 2>/dev/null")) 2>$null
     if ($internalHealth -eq "200") {
         Write-Host "      Node-Server: OK (HTTP 200)" -ForegroundColor Green
     } else {
         Write-Host "      Node-Server: FEHLER (HTTP $internalHealth)" -ForegroundColor Red
         Write-Host "      Der Node-Server antwortet nicht! Pruefe Logs:" -ForegroundColor Yellow
-        Write-Host "      ssh ${sshTarget} 'pm2 logs --lines 20'" -ForegroundColor Yellow
+        Write-Host "      ssh ${sshTarget} `"pm2 logs --lines 20`"" -ForegroundColor Yellow
     }
 
     # Check C: Externer Health-Check (nginx -> Node)
     Write-Host "  [C] Externer Health-Check (nginx -> https://ki-prozessnavigator.de/api/health):" -ForegroundColor White
-    $externalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w '%{http_code}' -k https://127.0.0.1:443/api/health -H 'Host: ki-prozessnavigator.de' 2>/dev/null")) 2>$null
+    $externalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w `"%{http_code}`" -k https://127.0.0.1:443/api/health -H `"Host: ki-prozessnavigator.de`" 2>/dev/null")) 2>$null
     if ($externalHealth -eq "200") {
         Write-Host "      nginx -> Node: OK (HTTP 200)" -ForegroundColor Green
     } else {
         Write-Host "      nginx -> Node: FEHLER (HTTP $externalHealth)" -ForegroundColor Red
         Write-Host "      nginx leitet /api/ nicht an Node weiter!" -ForegroundColor Red
         Write-Host "      LOESUNG: proxy_pass in nginx-Config pruefen:" -ForegroundColor Yellow
-        Write-Host "      ssh ${sshTarget} 'grep proxy_pass /etc/nginx/conf.d/ki-prozessnavigator.conf'" -ForegroundColor Yellow
+        Write-Host "      ssh ${sshTarget} `"grep proxy_pass /etc/nginx/conf.d/ki-prozessnavigator.conf`"" -ForegroundColor Yellow
         Write-Host ""
         Write-Host "      Falls kein proxy_pass vorhanden, diesen Block in den HTTPS-Server-Block einfuegen:" -ForegroundColor Yellow
         Write-Host "      location /api/ {" -ForegroundColor Yellow
@@ -300,12 +300,12 @@ try {
     # Check D: Resend API konfiguriert?
     Write-Host "  [D] Resend API Konfiguration:" -ForegroundColor White
     $resendCheck = & ssh @($sshBaseArgs + @($sshTarget, "curl -s http://127.0.0.1:3000/api/health 2>/dev/null")) 2>$null
-    if ($resendCheck -match '"resend_configured":true') {
+    if ($resendCheck -match "`"resend_configured`":true") {
         Write-Host "      Resend API: KONFIGURIERT" -ForegroundColor Green
     } else {
         Write-Host "      Resend API: NICHT KONFIGURIERT!" -ForegroundColor Red
         Write-Host "      Die .env auf dem Server hat keinen gueltigen RESEND_API_KEY!" -ForegroundColor Yellow
-        Write-Host "      LOESUNG: ssh ${sshTarget} 'nano ${webRoot}/.env'" -ForegroundColor Yellow
+        Write-Host "      LOESUNG: ssh ${sshTarget} `"nano ${webRoot}/.env`"" -ForegroundColor Yellow
     }
 
     # ==================== ZUSAMMENFASSUNG ====================
