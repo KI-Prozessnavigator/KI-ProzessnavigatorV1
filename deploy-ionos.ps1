@@ -195,7 +195,7 @@ Write-Host ""
 
 Write-Host "[1/5] Projektdateien vorbereiten..." -ForegroundColor Cyan
 
-$tempDir = Join-Path $env:TEMP "ki-prozessnavigator-deploy-$(Get-Date -Format `"yyyyMMddHHmmss`")"
+$tempDir = Join-Path $env:TEMP ("ki-prozessnavigator-deploy-" + (Get-Date -Format "yyyyMMddHHmmss"))
 New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
 
 $fileCount = 0
