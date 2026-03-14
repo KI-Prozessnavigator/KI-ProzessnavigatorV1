@@ -260,8 +260,8 @@ try {
 
     # Check A: pm2 Status
     Write-Host "  [A] pm2 Status:" -ForegroundColor White
-    Invoke-SSH "pm2 list 2>&1" | Out-Null
-    $pm2Status = & ssh @($sshBaseArgs + @($sshTarget, "pm2 jlist 2>/dev/null")) 2>$null | ConvertFrom-Json -ErrorAction SilentlyContinue
+    Invoke-SSH "pm2 list" | Out-Null
+    $pm2Status = & ssh @($sshBaseArgs + @($sshTarget, "pm2 jlist 2>/dev/null")) | ConvertFrom-Json -ErrorAction SilentlyContinue
     if ($pm2Status -and $pm2Status[0].pm2_env.status -eq "online") {
         Write-Host "      pm2: ONLINE" -ForegroundColor Green
     } else {
@@ -271,7 +271,7 @@ try {
 
     # Check B: Interner Health-Check (Node direkt)
     Write-Host "  [B] Interner Health-Check (Node -> localhost:3000):" -ForegroundColor White
-    $internalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w `"%{http_code}`" http://127.0.0.1:3000/api/health 2>/dev/null")) 2>$null
+    $internalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w `"%{http_code}`" http://127.0.0.1:3000/api/health 2>/dev/null"))
     if ($internalHealth -eq "200") {
         Write-Host "      Node-Server: OK (HTTP 200)" -ForegroundColor Green
     } else {
@@ -282,7 +282,7 @@ try {
 
     # Check C: Externer Health-Check (nginx -> Node)
     Write-Host "  [C] Externer Health-Check (nginx -> https://ki-prozessnavigator.de/api/health):" -ForegroundColor White
-    $externalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w `"%{http_code}`" -k https://127.0.0.1:443/api/health -H `"Host: ki-prozessnavigator.de`" 2>/dev/null")) 2>$null
+    $externalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w `"%{http_code}`" -k https://127.0.0.1:443/api/health -H `"Host: ki-prozessnavigator.de`" 2>/dev/null"))
     if ($externalHealth -eq "200") {
         Write-Host "      nginx -> Node: OK (HTTP 200)" -ForegroundColor Green
     } else {
@@ -304,7 +304,7 @@ try {
 
     # Check D: Resend API konfiguriert?
     Write-Host "  [D] Resend API Konfiguration:" -ForegroundColor White
-    $resendCheck = & ssh @($sshBaseArgs + @($sshTarget, "curl -s http://127.0.0.1:3000/api/health 2>/dev/null")) 2>$null
+    $resendCheck = & ssh @($sshBaseArgs + @($sshTarget, "curl -s http://127.0.0.1:3000/api/health 2>/dev/null"))
     if ($resendCheck -match '"resend_configured":true') {
         Write-Host "      Resend API: KONFIGURIERT" -ForegroundColor Green
     } else {
