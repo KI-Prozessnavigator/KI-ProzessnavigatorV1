@@ -39,8 +39,8 @@ if (-not (Test-Path $envFile)) {
 
 $envVars = @{}
 Get-Content $envFile | ForEach-Object {
-    if ($_ -match '^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$') {
-        $envVars[$matches[1]] = $matches[2].Trim().Trim('"').Trim("'")
+if ($_ -match "^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$") {
+        $envVars[$matches[1]] = $matches[2].Trim().Trim("`"").Trim([char]39)
     }
 }
 
@@ -110,8 +110,8 @@ $excludeNames = @(
 )
 
 function ShouldExclude($relativePath) {
-    $normalized = $relativePath -replace '\\', '/'
-    $segments = $normalized -split '/'
+$normalized = $relativePath -replace "\\", "/"
+$segments = $normalized -split "/"
     foreach ($seg in $segments) {
         foreach ($ex in $excludeNames) {
             if ($ex -contains "*") {
@@ -168,7 +168,7 @@ if (Test-Path (Join-Path $ProjectRoot "php")) {
 
 # Check 4: Referenzieren JS-Dateien noch /php/ Endpoints?
 $phpRefs = Get-ChildItem -Path (Join-Path $ProjectRoot "js") -Filter "*.js" -File | 
-    Select-String -Pattern '/php/' -SimpleMatch
+    Select-String -Pattern "/php/" -SimpleMatch
 if ($phpRefs) {
     Write-Host ""
     Write-Host "!!! KRITISCHER FEHLER !!!" -ForegroundColor Red
@@ -195,14 +195,14 @@ Write-Host ""
 
 Write-Host "[1/5] Projektdateien vorbereiten..." -ForegroundColor Cyan
 
-$tempDir = Join-Path $env:TEMP "ki-prozessnavigator-deploy-$(Get-Date -Format 'yyyyMMddHHmmss')"
+$tempDir = Join-Path $env:TEMP "ki-prozessnavigator-deploy-$(Get-Date -Format `"yyyyMMddHHmmss`")"
 New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
 
 $fileCount = 0
 try {
     Get-ChildItem -Path $ProjectRoot -Recurse -File | ForEach-Object {
-        $rel = $_.FullName.Substring($ProjectRoot.Length).TrimStart('\','/')
-        if ($rel -match '^\.git[\\/]') { return }
+        $rel = $_.FullName.Substring($ProjectRoot.Length).TrimStart([char]92, "/")
+        if ($rel -match "^\.git[\\/]") { return }
         if (ShouldExclude $rel) { return }
         $destPath = Join-Path $tempDir $rel
         $destDir  = Split-Path -Parent $destPath
