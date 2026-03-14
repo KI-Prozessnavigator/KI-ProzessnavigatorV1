@@ -227,7 +227,7 @@ try {
     # ==================== SCHRITT 3: npm install auf Server ====================
 
     Write-Host "[3/5] npm install auf Server..." -ForegroundColor Cyan
-    $npmExit = Invoke-SSH ("cd " + $webRoot + "; npm install --production 2>&1 | tail -3")
+    $npmExit = Invoke-SSH ("cd " + $webRoot + "; npm install --production | tail -3")
     if ($npmExit -ne 0) {
         Write-Host "WARNUNG: npm install hat Fehler gemeldet (Exit: $npmExit)" -ForegroundColor Yellow
         Write-Host "Pruefe ob die Abhaengigkeiten auf dem Server korrekt sind." -ForegroundColor Yellow
@@ -238,11 +238,11 @@ try {
     # ==================== SCHRITT 4: pm2 restart ====================
 
     Write-Host "[4/5] Node-Server neustarten (pm2)..." -ForegroundColor Cyan
-    $pm2Exit = Invoke-SSH "pm2 restart ki-prozessnavigator 2>&1"
+    $pm2Exit = Invoke-SSH "pm2 restart ki-prozessnavigator"
     if ($pm2Exit -ne 0) {
         Write-Host "WARNUNG: pm2 restart hat Fehler gemeldet (Exit: $pm2Exit)" -ForegroundColor Yellow
         Write-Host "  -> Versuche pm2 start..." -ForegroundColor Yellow
-        $pm2Exit = Invoke-SSH ("cd " + $webRoot + "; pm2 start server.js --name ki-prozessnavigator 2>&1")
+        $pm2Exit = Invoke-SSH ("cd " + $webRoot + "; pm2 start server.js --name ki-prozessnavigator")
     }
     if ($pm2Exit -ne 0) {
         Write-Host "WARNUNG: pm2 restart hat Fehler gemeldet (Exit: $pm2Exit)" -ForegroundColor Yellow
@@ -261,7 +261,7 @@ try {
     # Check A: pm2 Status
     Write-Host "  [A] pm2 Status:" -ForegroundColor White
     Invoke-SSH "pm2 list" | Out-Null
-    $pm2Status = & ssh @($sshBaseArgs + @($sshTarget, "pm2 jlist 2>/dev/null")) | ConvertFrom-Json -ErrorAction SilentlyContinue
+    $pm2Status = & ssh @($sshBaseArgs + @($sshTarget, "pm2 jlist")) | ConvertFrom-Json -ErrorAction SilentlyContinue
     if ($pm2Status -and $pm2Status[0].pm2_env.status -eq "online") {
         Write-Host "      pm2: ONLINE" -ForegroundColor Green
     } else {
@@ -271,7 +271,7 @@ try {
 
     # Check B: Interner Health-Check (Node direkt)
     Write-Host "  [B] Interner Health-Check (Node -> localhost:3000):" -ForegroundColor White
-    $internalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w `"%{http_code}`" http://127.0.0.1:3000/api/health 2>/dev/null"))
+    $internalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w `"%{http_code}`" http://127.0.0.1:3000/api/health"))
     if ($internalHealth -eq "200") {
         Write-Host "      Node-Server: OK (HTTP 200)" -ForegroundColor Green
     } else {
@@ -282,7 +282,7 @@ try {
 
     # Check C: Externer Health-Check (nginx -> Node)
     Write-Host "  [C] Externer Health-Check (nginx -> https://ki-prozessnavigator.de/api/health):" -ForegroundColor White
-    $externalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w `"%{http_code}`" -k https://127.0.0.1:443/api/health -H `"Host: ki-prozessnavigator.de`" 2>/dev/null"))
+    $externalHealth = & ssh @($sshBaseArgs + @($sshTarget, "curl -s -o /dev/null -w `"%{http_code}`" -k https://127.0.0.1:443/api/health -H `"Host: ki-prozessnavigator.de`""))
     if ($externalHealth -eq "200") {
         Write-Host "      nginx -> Node: OK (HTTP 200)" -ForegroundColor Green
     } else {
@@ -304,7 +304,7 @@ try {
 
     # Check D: Resend API konfiguriert?
     Write-Host "  [D] Resend API Konfiguration:" -ForegroundColor White
-    $resendCheck = & ssh @($sshBaseArgs + @($sshTarget, "curl -s http://127.0.0.1:3000/api/health 2>/dev/null"))
+    $resendCheck = & ssh @($sshBaseArgs + @($sshTarget, "curl -s http://127.0.0.1:3000/api/health"))
     if ($resendCheck -match '"resend_configured":true') {
         Write-Host "      Resend API: KONFIGURIERT" -ForegroundColor Green
     } else {
