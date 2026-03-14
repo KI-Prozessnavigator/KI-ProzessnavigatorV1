@@ -40,7 +40,7 @@ if (-not (Test-Path $envFile)) {
 $envVars = @{}
 Get-Content $envFile | ForEach-Object {
 if ($_ -match "^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$") {
-        $envVars[$matches[1]] = $matches[2].Trim().Trim('"').Trim([char]39)
+        $envVars[$matches[1]] = $matches[2].Trim().Trim([char]34).Trim([char]39)
     }
 }
 
