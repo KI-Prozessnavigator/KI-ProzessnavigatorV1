@@ -1073,6 +1073,7 @@
     color: rgba(255, 255, 255, 0.6);
     margin: 0 auto 2.25rem;
     line-height: 1.6;
+    white-space: nowrap;
 }
 
 /* === 3-Schritte-Timeline (horizontal, nebeneinander) === */
@@ -1865,7 +1866,8 @@
     }
     
     .success-message {
-        font-size: 0.9375rem !important;
+        white-space: normal !important;
+        font-size: 0.875rem !important;
         margin-bottom: 1.5rem !important;
     }
 

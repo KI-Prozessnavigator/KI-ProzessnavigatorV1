@@ -183,6 +183,22 @@
             elements.successCloseBtn.addEventListener('click', closeModal);
         }
 
+        // FAQ-Link im Success-State: Modal schließen + zur FAQ scrollen
+        const faqLink = modal.querySelector('.success-card__link');
+        if (faqLink) {
+            faqLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                closeModal();
+                // Kurz warten bis Modal-Animation fertig, dann scrollen
+                setTimeout(function() {
+                    const target = document.querySelector('#faq');
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 400);
+            });
+        }
+
         // ===== OPTION CARDS - FIXED VERSION =====
         // Use event delegation and handle the input change event instead
         modal.addEventListener('change', function(e) {
