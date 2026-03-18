@@ -129,6 +129,46 @@
         "mainEntity": [
             {
                 "@type": "Question",
+                "name": "Ist das nicht viel zu teuer für ein kleines Unternehmen?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Die meisten Projekte liegen zwischen 2.000 und 8.000€ einmalig. Das entspricht 1–3 Monatsgehältern einer Bürokraft, aber die Automatisierung arbeitet 24/7, ohne Urlaub und ohne Krankheitstage. Die Investition holt sich in 2–4 Monaten von selbst zurück."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Meine Mitarbeiter sind nicht technikaffin – funktioniert das trotzdem?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Genau dafür ist es gemacht. Dein Team merkt die Automatisierung kaum – sie läuft im Hintergrund. Keine neue Software lernen, keine Schulungstage. Wir passen uns an deine bestehenden Tools an, nicht umgekehrt."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ich hab schon mal was mit KI probiert – hat nicht funktioniert.",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Das höre ich oft. Meistens lag es an einem generischen Tool ohne echtes Verständnis der Abläufe. Wir machen es anders: Wir schauen uns zuerst DEINE Prozesse an und automatisieren exakt das, was bei DIR den größten Hebel hat. Kein Standardpaket."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Muss ich meine bestehende Software wechseln?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nein. Wir arbeiten mit deiner bestehenden Software – DATEV, Lexware, Salesforce, HubSpot, Personio und über 50 weiteren Systemen. Wir bauen die Automatisierung drumherum. Kein Systemwechsel, keine Umgewöhnung für dein Team."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was passiert, wenn etwas nicht funktioniert oder sich meine Abläufe ändern?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nach der Übergabe monitoren wir dein System 4 Wochen lang und passen alles an, was im echten Arbeitsalltag nicht rund läuft. Danach bin ich bei Fragen einen Anruf entfernt. Und wenn sich deine Prozesse ändern – neues Tool, neuer Mitarbeiter, neuer Ablauf – passen wir das System an."
+                }
+            },
+            {
+                "@type": "Question",
                 "name": "Wie steigert Automatisierung konkret meine Marge?",
                 "acceptedAnswer": {
                     "@type": "Answer",
@@ -137,34 +177,10 @@
             },
             {
                 "@type": "Question",
-                "name": "Brauche ich technisches Wissen, um das zu nutzen?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Nein. Du brauchst weder Tool-Kenntnisse noch Programmiererfahrung. Wir übernehmen Konzeption, Aufbau und Konfiguration komplett – und schulen dein Team anschließend so, dass alle sofort damit arbeiten können."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Was passiert mit meinen bestehenden Tools und Systemen?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Die bleiben. Wir docken an deine vorhandene Software an – ob CRM, Buchhaltung oder E-Mail – und schaffen Verbindungen zwischen Tools, die bisher nicht miteinander geredet haben. Kein Tool-Wechsel, kein Datenverlust."
-                }
-            },
-            {
-                "@type": "Question",
                 "name": "Was unterscheidet euch von anderen Automatisierungs-Anbietern?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Wir liefern kein loses Tool-Setup, das du selbst zusammenbauen musst. Bei uns bekommst du ein fertig integriertes System: von der Analyse über die Umsetzung bis zur Schulung – alles aus einer Hand, mit messbarem Ergebnis statt vager Versprechen."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Wie schnell sehe ich erste Ergebnisse?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Erste spürbare Entlastungen erlebst du oft schon in der ersten Woche nach Go-Live. Die volle Wirkung auf Effizienz und Kostenstruktur zeigt sich erfahrungsgemäß nach 8 bis 12 Wochen."
                 }
             },
             {
@@ -189,22 +205,6 @@
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Am stärksten wirkt Automatisierung dort, wo repetitive Aufgaben den Alltag dominieren: Vertrieb und Lead-Management, Rechnungs- und Angebotsverarbeitung, Terminplanung, HR-Onboarding und interne Kommunikation. Wir analysieren, wo bei dir der größte Hebel liegt."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Was kostet das – und ab wann lohnt sich die Investition?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Die Investition rechnet sich bei den meisten Kunden innerhalb weniger Monate – durch eingesparte Personalstunden und wegfallende Fehlerkosten. Konkrete Preise hängen von deinem Bedarf ab und werden im Erstgespräch transparent besprochen. Die Potenzialanalyse selbst ist kostenlos."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Kann mein Team danach eigenständig damit arbeiten?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolut. Wir schulen dein Team so, dass alle direkt nach der Einführung selbstständig arbeiten können – ohne dauerhaft auf uns angewiesen zu sein. Bei Fragen sind wir natürlich trotzdem erreichbar."
                 }
             }
         ]
@@ -337,6 +337,221 @@
             font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem) !important;
             line-height: 1.2 !important;
         }
+
+        .problem-awareness__story {
+            max-width: 750px;
+            margin: 0 auto;
+            padding-top: 3rem;
+            border-top: none;
+            text-align: center;
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .problem-awareness__story * {
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .problem-awareness__story-text {
+            font-family: var(--font-body, 'Lato', -apple-system, BlinkMacSystemFont, sans-serif);
+            color: #d1d5db;
+            font-size: clamp(1rem, 1.3vw, 1.08rem);
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+        }
+
+        .problem-awareness__story-text strong {
+            color: #f3f4f6;
+            font-weight: 600;
+        }
+
+        .problem-awareness__story-hook {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 1.4rem;
+            color: #00D4FF;
+            margin-top: 1.5rem;
+        }
+
+        .problem-awareness .text-highlight,
+        .founder-section .text-highlight {
+            display: inline;
+            font-weight: 600;
+            color: #00D4FF;
+            text-shadow: none;
+        }
+
+        .founder-section {
+            padding: clamp(3rem, 6vw, 4rem) 0;
+            border-top: none;
+            border-bottom: none;
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .founder-section * {
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .founder-section__inner {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .founder-section__img {
+            width: 180px;
+            height: 180px;
+            border-radius: 16px;
+            flex-shrink: 0;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            background: #141b2d;
+        }
+
+        .founder-section__img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%;
+        }
+
+        .founder-section__quote {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+            font-style: italic;
+            font-weight: 500;
+            color: #f3f4f6;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .founder-section__name {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            color: #00D4FF;
+            font-size: 0.95rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .founder-section__title {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.85rem;
+            color: #9ca3af;
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-section__credentials {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-top: 0.75rem;
+        }
+
+        .founder-section__check {
+            color: #00D98F;
+            font-weight: 700;
+            margin-right: 0.4rem;
+        }
+
+        .problem-awareness__divider {
+            display: none;
+        }
+
+        section.problem-awareness,
+        section#gruender,
+        .founder-section {
+            border-top: none !important;
+            border-bottom: none !important;
+        }
+
+        .hero__google-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 24px;
+            padding: 0.6rem 1.5rem;
+            font-size: 1rem;
+            color: #d1d5db;
+            margin-bottom: 1.25rem;
+            text-decoration: none;
+            transition: border-color 0.2s ease, background 0.2s ease;
+            cursor: pointer;
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .hero__google-rating:hover {
+            border-color: rgba(251, 188, 4, 0.4);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .hero__google-rating * {
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .hero__google-stars {
+            color: #FBBC04;
+            letter-spacing: 2px;
+            font-size: 1.2rem;
+        }
+
+        .hero__google-logo {
+            font-weight: 700;
+            color: #f3f4f6;
+        }
+
+        .faq-item--new,
+        .faq-item--new * {
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .faq-separator,
+        .faq-separator * {
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        @media (max-width: 1023px) {
+            .founder-section__inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .founder-section__img {
+                margin: 0 auto;
+            }
+
+            .founder-section__credentials {
+                justify-content: center;
+            }
+        }
     </style>
 
 </head>
@@ -441,6 +656,11 @@
                     </div>
 
                     <div class="hero__actions" role="group" aria-label="Handlungsoptionen">
+                        <a href="https://g.page/r/DEIN-GOOGLE-BUSINESS-ID/review" target="_blank" rel="noopener noreferrer" class="hero__google-rating" aria-label="5.0 Sterne auf Google – Bewertungen ansehen">
+                            <span class="hero__google-stars">★★★★★</span>
+                            <span>5.0 auf</span>
+                            <span class="hero__google-logo">Google</span>
+                        </a>
                         <a href="/kontakt" class="btn btn--neon btn--glow u-btn-transition" role="button">
                             <span>Jetzt kostenlos beraten lassen</span>
                             <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -709,8 +929,30 @@
 
                 <div class="problem-awareness__story">
                     <h2 class="problem-awareness__story-title">Dein <span class="text-highlight">Unternehmen wächst</span> –<br>aber deine <span class="text-highlight">Prozesse wachsen nicht&nbsp;mit</span></h2>
-                    <p class="problem-awareness__story-text">Mehr Kunden, mehr Aufträge, mehr Mitarbeiter – eigentlich gute Nachrichten. Aber mit jedem neuen Projekt kommen neue Aufgaben dazu: Termine koordinieren, Rechnungen nachfassen, Anfragen beantworten, <span class="text-highlight">Daten zwischen Tools hin und her schieben</span>. Irgendwann landen Trello, Google Sheets und fünf weitere Notlösungen im Arbeitsalltag. Was als schnelle Lösung begann, wird zum <span class="text-highlight">unsichtbaren Kostentreiber</span>. Neue Mitarbeiter brauchen Wochen zur Einarbeitung. Informationen gehen zwischen Tools verloren. Und statt am Unternehmen zu arbeiten, arbeitest du jeden Tag <span class="text-highlight">im Unternehmen</span> – gefangen in <span class="text-highlight">Verwaltung statt in Wachstum</span>.</p>
-                    <p class="problem-awareness__story-hook">Genau das ändern wir!</p>
+                    <p class="problem-awareness__story-text">Montag, 8:14 Uhr. Dein Postfach hat über Nacht 47 neue E-Mails gesammelt. Drei Kunden wollen Termine verschieben. Zwei Rechnungen müssen raus. Ein Lieferant fragt zum dritten Mal nach der Bestellbestätigung. Und dein neuer Mitarbeiter braucht die Zugangsdaten, die irgendwo in einem Google Doc stecken.</p>
+                    <p class="problem-awareness__story-text">Du weißt: <strong>Eigentlich solltest du heute an dem Großauftrag arbeiten.</strong> Stattdessen verbringst du den halben Vormittag damit, Daten zwischen Excel, E-Mail und deinem CRM hin und her zu kopieren. Manuell. Wie jede Woche.</p>
+                    <p class="problem-awareness__story-text"><strong>Das kostet dich nicht nur Zeit. Es kostet dich Marge.</strong> Denn jede Stunde, die dein Team mit Verwaltung verbringt, fehlt beim Kunden, beim Verkauf, beim Wachstum. Die meisten KMU verlieren so <span class="text-highlight">5–10 Stunden pro Woche</span> – ohne es zu merken.</p>
+                    <p class="problem-awareness__story-hook">Genau das ändern wir.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="founder-section" id="gruender">
+            <div class="container">
+                <div class="founder-section__inner">
+                    <div class="founder-section__img">
+                        <img src="assets/images/dominik-buchele.png" alt="Dominik Buchele – Gründer KI-Prozessnavigator" loading="lazy">
+                    </div>
+                    <div class="founder-section__content">
+                        <p class="founder-section__quote">"Ich finde es falsch, dass kleine Betriebe die gleiche Verwaltungsarbeit haben wie Konzerne – aber ohne die Ressourcen. Das ändere ich. Betrieb für Betrieb."</p>
+                        <p class="founder-section__name">Dominik Buchele</p>
+                        <p class="founder-section__title">Gründer & KI-Automatisierungs-Experte · Mertingen bei Augsburg</p>
+                        <div class="founder-section__credentials">
+                            <span><span class="founder-section__check">✓</span>Spezialisiert auf KMU mit 5–50 Mitarbeitern</span>
+                            <span><span class="founder-section__check">✓</span>Persönliche Betreuung</span>
+                            <span><span class="founder-section__check">✓</span>DSGVO-konform</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1515,128 +1757,131 @@
             <div class="container">
                 <header class="faq__header">
                     <h2 class="section__title" id="faq-title">Häufige Fragen zu KI-gestützter<br>Automatisierung für KMU</h2>
-                    <p class="faq__subtitle">Du hast Fragen? Hier findest du Antworten</p>
-                    <p class="faq__subtitle faq__subtitle--secondary">– oder wir klären alles direkt in einem kurzen Call.</p>
+                    <p class="faq__subtitle">Du hast Fragen? Hier findest du Antworten – oder wir klären alles direkt in einem kurzen Call.</p>
                 </header>
                 <div class="faq-section__wrapper">
                     <div class="faq">
                         <div class="faq__list" role="list">
-                            <div class="faq-item" role="listitem">
+                            <div class="faq-item faq-item--new" role="listitem">
                                 <button class="faq-item__question" id="faq-question-1" aria-expanded="false" aria-controls="faq-answer-1">
-                                    <span>Wie steigert Automatisierung konkret meine Marge?</span>
+                                    <span>Ist das nicht viel zu teuer für ein kleines Unternehmen?</span>
                                     <span class="faq-icon" aria-hidden="true">+</span>
                                 </button>
                                 <div class="faq-item__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+                                    <p>
+                                        Die meisten Projekte liegen zwischen 2.000 und 8.000€ einmalig. Das entspricht 1–3 Monatsgehältern einer Bürokraft, aber die Automatisierung arbeitet 24/7, ohne Urlaub und ohne Krankheitstage. Die Investition holt sich in 2–4 Monaten von selbst zurück.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item faq-item--new" role="listitem">
+                                <button class="faq-item__question" id="faq-question-2" aria-expanded="false" aria-controls="faq-answer-2">
+                                    <span>Meine Mitarbeiter sind nicht technikaffin – funktioniert das trotzdem?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
+                                    <p>
+                                        Genau dafür ist es gemacht. Dein Team merkt die Automatisierung kaum – sie läuft im Hintergrund. Keine neue Software lernen, keine Schulungstage. Wir passen uns an deine bestehenden Tools an, nicht umgekehrt.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item faq-item--new" role="listitem">
+                                <button class="faq-item__question" id="faq-question-3" aria-expanded="false" aria-controls="faq-answer-3">
+                                    <span>Ich hab schon mal was mit KI probiert – hat nicht funktioniert.</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
+                                    <p>
+                                        Das höre ich oft. Meistens lag es an einem generischen Tool ohne echtes Verständnis der Abläufe. Wir machen es anders: Wir schauen uns zuerst DEINE Prozesse an und automatisieren exakt das, was bei DIR den größten Hebel hat. Kein Standardpaket.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item faq-item--new" role="listitem">
+                                <button class="faq-item__question" id="faq-question-4" aria-expanded="false" aria-controls="faq-answer-4">
+                                    <span>Muss ich meine bestehende Software wechseln?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+                                    <p>
+                                        Nein. Wir arbeiten mit deiner bestehenden Software – DATEV, Lexware, Salesforce, HubSpot, Personio und über 50 weiteren Systemen. Wir bauen die Automatisierung drumherum. Kein Systemwechsel, keine Umgewöhnung für dein Team.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item faq-item--new" role="listitem">
+                                <button class="faq-item__question" id="faq-question-5" aria-expanded="false" aria-controls="faq-answer-5">
+                                    <span>Was passiert, wenn etwas nicht funktioniert oder sich meine Abläufe ändern?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
+                                    <p>
+                                        Nach der Übergabe monitoren wir dein System 4 Wochen lang und passen alles an, was im echten Arbeitsalltag nicht rund läuft. Danach bin ich bei Fragen einen Anruf entfernt. Und wenn sich deine Prozesse ändern – neues Tool, neuer Mitarbeiter, neuer Ablauf – passen wir das System an.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="faq-separator" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #1f2937;">
+                                <p style="font-size: 0.75rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Weitere Fragen</p>
+                            </div>
+
+                            <div class="faq-item" role="listitem">
+                                <button class="faq-item__question" id="faq-question-6" aria-expanded="false" aria-controls="faq-answer-6">
+                                    <span>Wie steigert Automatisierung konkret meine Marge?</span>
+                                    <span class="faq-icon" aria-hidden="true">+</span>
+                                </button>
+                                <div class="faq-item__answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
                                     <p>
                                         Wir eliminieren manuelle Routinearbeit, verbinden deine Tools zu einem durchgängigen System und decken versteckte Kostenfresser auf. Das Ergebnis: weniger Personalaufwand für Verwaltung, schnellere Durchlaufzeiten und eine Marge, die systematisch wächst – bei unseren Kunden um durchschnittlich 40 %.
                                     </p>
                                 </div>
                             </div>
-                            
+
                             <div class="faq-item" role="listitem">
-                                <button class="faq-item__question" id="faq-question-2" aria-expanded="false" aria-controls="faq-answer-2">
-                                    <span>Brauche ich technisches Wissen, um das zu nutzen?</span>
-                                    <span class="faq-icon" aria-hidden="true">+</span>
-                                </button>
-                                <div class="faq-item__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
-                                    <p>
-                                        Nein. Du brauchst weder Tool-Kenntnisse noch Programmiererfahrung. Wir übernehmen Konzeption, Aufbau und Konfiguration komplett – und schulen dein Team anschließend so, dass alle sofort damit arbeiten können.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item" role="listitem">
-                                <button class="faq-item__question" id="faq-question-3" aria-expanded="false" aria-controls="faq-answer-3">
-                                    <span>Was passiert mit meinen bestehenden Tools und Systemen?</span>
-                                    <span class="faq-icon" aria-hidden="true">+</span>
-                                </button>
-                                <div class="faq-item__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
-                                    <p>
-                                        Die bleiben. Wir docken an deine vorhandene Software an – ob CRM, Buchhaltung oder E-Mail – und schaffen Verbindungen zwischen Tools, die bisher nicht miteinander geredet haben. Kein Tool-Wechsel, kein Datenverlust.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item" role="listitem">
-                                <button class="faq-item__question" id="faq-question-4" aria-expanded="false" aria-controls="faq-answer-4">
+                                <button class="faq-item__question" id="faq-question-7" aria-expanded="false" aria-controls="faq-answer-7">
                                     <span>Was unterscheidet euch von anderen Automatisierungs-Anbietern?</span>
                                     <span class="faq-icon" aria-hidden="true">+</span>
                                 </button>
-                                <div class="faq-item__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+                                <div class="faq-item__answer" id="faq-answer-7" role="region" aria-labelledby="faq-question-7">
                                     <p>
                                         Wir liefern kein loses Tool-Setup, das du selbst zusammenbauen musst. Bei uns bekommst du ein fertig integriertes System: von der Analyse über die Umsetzung bis zur Schulung – alles aus einer Hand, mit messbarem Ergebnis statt vager Versprechen.
                                     </p>
                                 </div>
                             </div>
-                            
+
                             <div class="faq-item" role="listitem">
-                                <button class="faq-item__question" id="faq-question-5" aria-expanded="false" aria-controls="faq-answer-5">
-                                    <span>Wie schnell sehe ich erste Ergebnisse?</span>
-                                    <span class="faq-icon" aria-hidden="true">+</span>
-                                </button>
-                                <div class="faq-item__answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
-                                    <p>
-                                        Erste spürbare Entlastungen erlebst du oft schon in der ersten Woche nach Go-Live. Die volle Wirkung auf Effizienz und Kostenstruktur zeigt sich erfahrungsgemäß nach 8 bis 12 Wochen.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item" role="listitem">
-                                <button class="faq-item__question" id="faq-question-6" aria-expanded="false" aria-controls="faq-answer-6">
+                                <button class="faq-item__question" id="faq-question-8" aria-expanded="false" aria-controls="faq-answer-8">
                                     <span>Warum reichen einzelne Tools oder interne Workarounds nicht?</span>
                                     <span class="faq-icon" aria-hidden="true">+</span>
                                 </button>
-                                <div class="faq-item__answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
+                                <div class="faq-item__answer" id="faq-answer-8" role="region" aria-labelledby="faq-question-8">
                                     <p>
                                         Weil Insellösungen nur kurzfristig Symptome flicken. Ohne durchgängige Integration entstehen Medienbrüche, doppelte Datenpflege und Fehlerquellen. Wir bauen ein System, das sauber zusammenspielt und langfristig skaliert – statt immer neue Workarounds draufzupacken.
                                     </p>
                                 </div>
                             </div>
-                            
+
                             <div class="faq-item" role="listitem">
-                                <button class="faq-item__question" id="faq-question-7" aria-expanded="false" aria-controls="faq-answer-7">
+                                <button class="faq-item__question" id="faq-question-9" aria-expanded="false" aria-controls="faq-answer-9">
                                     <span>Ist das DSGVO-konform? Wo liegen meine Daten?</span>
                                     <span class="faq-icon" aria-hidden="true">+</span>
                                 </button>
-                                <div class="faq-item__answer" id="faq-answer-7" role="region" aria-labelledby="faq-question-7">
+                                <div class="faq-item__answer" id="faq-answer-9" role="region" aria-labelledby="faq-question-9">
                                     <p>
                                         Ja, zu 100 %. Alle Systeme laufen auf deutschen Servern in zertifizierten EU-Rechenzentren. Deine Daten werden nicht für KI-Training verwendet, und du bekommst ab Tag 1 einen fertigen Auftragsverarbeitungsvertrag (AVV) – ohne Anwalt, ohne Extrakosten.
                                     </p>
                                 </div>
                             </div>
-                            
-                            <div class="faq-item" role="listitem">
-                                <button class="faq-item__question" id="faq-question-8" aria-expanded="false" aria-controls="faq-answer-8">
-                                    <span>Welche Unternehmensbereiche profitieren am meisten?</span>
-                                    <span class="faq-icon" aria-hidden="true">+</span>
-                                </button>
-                                <div class="faq-item__answer" id="faq-answer-8" role="region" aria-labelledby="faq-question-8">
-                                    <p>
-                                        Am stärksten wirkt Automatisierung dort, wo repetitive Aufgaben den Alltag dominieren: Vertrieb und Lead-Management, Rechnungs- und Angebotsverarbeitung, Terminplanung, HR-Onboarding und interne Kommunikation. Wir analysieren, wo bei dir der größte Hebel liegt.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item" role="listitem">
-                                <button class="faq-item__question" id="faq-question-9" aria-expanded="false" aria-controls="faq-answer-9">
-                                    <span>Was kostet das – und ab wann lohnt sich die Investition?</span>
-                                    <span class="faq-icon" aria-hidden="true">+</span>
-                                </button>
-                                <div class="faq-item__answer" id="faq-answer-9" role="region" aria-labelledby="faq-question-9">
-                                    <p>
-                                        Die Investition rechnet sich bei den meisten Kunden innerhalb weniger Monate – durch eingesparte Personalstunden und wegfallende Fehlerkosten. Konkrete Preise hängen von deinem Bedarf ab und werden im Erstgespräch transparent besprochen. Die Potenzialanalyse selbst ist kostenlos.
-                                    </p>
-                                </div>
-                            </div>
-                            
+
                             <div class="faq-item" role="listitem">
                                 <button class="faq-item__question" id="faq-question-10" aria-expanded="false" aria-controls="faq-answer-10">
-                                    <span>Kann mein Team danach eigenständig damit arbeiten?</span>
+                                    <span>Welche Unternehmensbereiche profitieren am meisten?</span>
                                     <span class="faq-icon" aria-hidden="true">+</span>
                                 </button>
                                 <div class="faq-item__answer" id="faq-answer-10" role="region" aria-labelledby="faq-question-10">
                                     <p>
-                                        Absolut. Wir schulen dein Team so, dass alle direkt nach der Einführung selbstständig arbeiten können – ohne dauerhaft auf uns angewiesen zu sein. Bei Fragen sind wir natürlich trotzdem erreichbar.
+                                        Am stärksten wirkt Automatisierung dort, wo repetitive Aufgaben den Alltag dominieren: Vertrieb und Lead-Management, Rechnungs- und Angebotsverarbeitung, Terminplanung, HR-Onboarding und interne Kommunikation. Wir analysieren, wo bei dir der größte Hebel liegt.
                                     </p>
                                 </div>
                             </div>
