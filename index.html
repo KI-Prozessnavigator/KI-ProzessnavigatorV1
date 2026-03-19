@@ -215,8 +215,8 @@
     <style>
         /* CRITICAL CSS - Verhindert horizontalen Scrollbalken beim Laden */
         html, body {
-            overflow-x: clip !important;
-            max-width: 100vw !important;
+            overflow-x: clip;
+            max-width: 100vw;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -228,133 +228,9 @@
         .hero { min-height: 100vh; display: flex; align-items: center; }
         .container { max-width: min(var(--container-max, 1200px), 100vw); margin: 0 auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
     </style>
-    <link rel="stylesheet" href="css/main.css?v=3.9">
+    <link rel="stylesheet" href="css/main.css?v=4.0">
     <link rel="stylesheet" href="css/contact-modal.css?v=2.0">
     <link rel="stylesheet" href="css/responsive.css?v=5.8">
-    <link rel="stylesheet" href="css/zusammenarbeit.css?v=1.1">
-    <link rel="stylesheet" href="css/hero-override.css?v=1.0">
-    <link rel="stylesheet" href="css/problem-awareness.css?v=1.0">
-    <link rel="stylesheet" href="css/use-cases-override.css?v=1.0">
-    <link rel="stylesheet" href="css/calculator-v3.css?v=1.0">
-    <link rel="stylesheet" href="css/background-override.css?v=2.0">
-    <link rel="stylesheet" href="css/final-cta-override.css?v=1.0">
-    <style>
-        /* BUTTON: Absolut KEINE Bewegung mehr! */
-        .btn--neon,
-        .btn--neon:hover,
-        .btn--neon:active,
-        .btn--neon:focus {
-            transform: none !important;
-        }
-        
-        .btn--neon::before {
-            display: none !important;
-        }
-        
-        /* TEXT: "Ersparnis" GRÜN wie "Mit KI-Prozessnavigator" */
-        #calculator-title em {
-            color: #00D98F !important;
-            background: none !important;
-            -webkit-background-clip: unset !important;
-            -webkit-text-fill-color: unset !important;
-            background-clip: unset !important;
-        }
-        
-        /* COOKIE-CONTAINER: ALLE TEXTE SCHWARZ #000000 */
-        .cookie-category__title,
-        .cookie-category__title *,
-        .cookie-category__desc,
-        .cookie-category__desc *,
-        .cookie-table th,
-        .cookie-table td,
-        .cookie-category__badge,
-        .cookie-icon {
-            color: #000000 !important;
-            text-shadow: none !important;
-        }
-        
-        /* Glühbirne + CTA-Text in einer Zeile */
-        .calculator-cta-note {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            gap: 8px !important;
-        }
-        .calculator-cta-note__icon { width: 18px; height: 18px; flex-shrink: 0; }
-        
-        /* COOKIE-DETAILS: SCHWARZ #000000 (keine Unschärfe) */
-        .cookie-category__details summary {
-            color: #000000 !important;
-            text-shadow: none !important;
-            filter: none !important;
-        }
-        
-        /* COOKIE-TOGGLE: GRÜN wenn aktiviert */
-        .cookie-toggle input:checked + .cookie-toggle__slider {
-            background: #00D98F !important;
-        }
-        
-    </style>
-    <style>
-        /* === TEXT-CONTAINER-BREITE-FIX === */
-        /* Überschriften: Volle Container-Breite, keine Einengung */
-        .wir-vs-du__title,
-        .section__title,
-        .use-cases-tabs__title,
-        .rechner-v3__title {
-            max-width: 100% !important;
-            width: 100% !important;
-            white-space: normal !important;
-        }
-
-        /* Body-Texte / Descriptions: Max. 900px für Lesbarkeit, aber nicht kleiner */
-        .wir-vs-du__description,
-        .section__description,
-        .ablauf__intro,
-        .use-cases-tabs__subtitle,
-        .rechner-v3__subtitle {
-            max-width: 900px !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-        }
-
-        /* Einheitliche Body-Schriftgrößen (text-base aus Design-System) */
-        .wir-vs-du__description,
-        .section__description,
-        .ablauf__intro,
-        .use-cases-tabs__subtitle,
-        .rechner-v3__subtitle {
-            font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem) !important;
-            line-height: 1.7 !important;
-            color: #d1d5db !important;
-        }
-
-        /* Einheitliche H2-Schriftgrößen (text-3xl aus Design-System) */
-        .wir-vs-du__title,
-        .section__title,
-        .use-cases-tabs__title,
-        .rechner-v3__title {
-            font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem) !important;
-            line-height: 1.2 !important;
-        }
-
-        .faq-item--new,
-        .faq-item--new * {
-            hyphens: none;
-            -webkit-hyphens: none;
-            word-break: normal;
-            overflow-wrap: break-word;
-        }
-
-        .faq-separator,
-        .faq-separator * {
-            hyphens: none;
-            -webkit-hyphens: none;
-            word-break: normal;
-            overflow-wrap: break-word;
-        }
-    </style>
-
 </head>
 <body>
     <div class="bg-glow" id="glow-1"></div>
