@@ -325,14 +325,6 @@
         padding-inline: 0;
     }
 
-    section#ablauf,
-    section#ablauf.zusammenarbeit-v2 {
-        overflow: visible !important;
-        overflow-x: visible !important;
-        overflow-y: visible !important;
-    }
-    
-    
     section:not(.value-calculator):not(#pricing) > .container {
         width: 90%;
         max-width: 90%;
@@ -1816,14 +1808,6 @@
 
 
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-    
     .typewriter::after {
         animation: none;
         display: none;

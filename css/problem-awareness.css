@@ -4,16 +4,16 @@
     padding: 5rem 0 4rem;
     position: relative;
     overflow: visible;
-    hyphens: none !important;
-    -webkit-hyphens: none !important;
-    -ms-hyphens: none !important;
-    word-break: normal !important;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    word-break: normal;
     overflow-wrap: break-word;
 }
 
 .problem-awareness * {
-    hyphens: none !important;
-    -webkit-hyphens: none !important;
+    hyphens: none;
+    -webkit-hyphens: none;
 }
 
 .problem-awareness .container {
@@ -68,6 +68,10 @@
     font-weight: 600;
     margin: 0;
     transition: color 0.2s ease;
+    color: #ffffff;
+    text-shadow:
+        0 0 8px rgba(0, 180, 255, 0.7),
+        0 0 20px rgba(0, 140, 255, 0.4);
 }
 
 .problem-awareness__pillar-text {
@@ -101,12 +105,26 @@
     background: rgba(255, 255, 255, 0.15);
     max-width: 120px;
     margin: 2.5rem auto;
+    display: none;
 }
 
 .problem-awareness__story {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
+    padding-top: 3rem;
+    border-top: none;
     text-align: center;
+    hyphens: none;
+    -webkit-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.problem-awareness__story * {
+    hyphens: none;
+    -webkit-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 .problem-awareness__story-title {
@@ -114,6 +132,7 @@
     font-size: var(--text-3xl);
     font-weight: 700;
     margin: 0 0 1rem;
+    color: #ffffff;
     width: 100vw;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -122,24 +141,141 @@
 }
 
 .problem-awareness__story-text {
-    font-family: var(--font-body);
-    font-size: var(--text-base);
+    font-family: var(--font-body, 'Lato', -apple-system, BlinkMacSystemFont, sans-serif);
+    font-size: clamp(1rem, 1.3vw, 1.08rem);
     font-weight: 400;
     color: #d1d5db;
+    line-height: 1.85;
     margin: 0 0 1.25rem;
+}
+
+.problem-awareness__story-text strong {
+    color: #f3f4f6;
+    font-weight: 600;
 }
 
 .problem-awareness__story-hook {
     font-family: var(--font-body);
-    font-size: var(--text-base);
+    font-size: clamp(1.3rem, 1.5vw, 1.5rem);
     font-weight: 700;
+    margin: 2rem 0 0;
+}
+
+.text-glow-white {
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow:
+        0 0 8px rgba(0, 180, 255, 0.7),
+        0 0 20px rgba(0, 140, 255, 0.4);
+}
+
+
+section.problem-awareness,
+section#gruender,
+.founder-section {
+    border-top: none;
+    border-bottom: none;
+}
+
+.founder-section {
+    padding: clamp(3rem, 6vw, 4rem) 0;
+    hyphens: none;
+    -webkit-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.founder-section * {
+    hyphens: none;
+    -webkit-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.founder-section__inner {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.founder-section__img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    background: #141b2d;
+}
+
+.founder-section__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+}
+
+.founder-section__quote {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    font-style: italic;
+    font-weight: 500;
     color: #f3f4f6;
-    margin: 1.25rem 0 0;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.founder-section__name {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    color: #00D4FF;
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+}
+
+.founder-section__title {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 0.5rem;
+}
+
+.founder-section__credentials {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin-top: 0.75rem;
+}
+
+.founder-section__check {
+    color: #00D98F;
+    font-weight: 700;
+    margin-right: 0.4rem;
 }
 
 @media (max-width: 1023px) {
     .problem-awareness__story {
         max-width: 100%;
+    }
+
+    .founder-section__inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .founder-section__img {
+        margin: 0 auto;
+    }
+
+    .founder-section__credentials {
+        justify-content: center;
     }
 }
 
