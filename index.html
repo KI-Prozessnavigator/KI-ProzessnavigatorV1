@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="dark">
 <head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="N7G_XMxssE1n-fSa1MyRTRtWciaVjgsa_q3wFrO_mIM" />
     <script>
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
@@ -19,7 +21,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KT6JD5B2');</script>
     <!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="KI-Automatisierung für den Mittelstand – spare bis zu 10h pro Woche durch intelligente Prozessautomatisierung. DSGVO-konform, deutsche Server. Jetzt kostenlos beraten lassen.">
     <meta name="keywords" content="KI, Prozessautomatisierung, DSGVO, KMU, Chatbot, Automatisierung, Datenschutz">
@@ -212,11 +213,155 @@
     </script>
     <link rel="preload" href="assets/fonts/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/main-v4.css?v=4.0">
+    <style>
+        /* CRITICAL CSS - Verhindert horizontalen Scrollbalken beim Laden */
+        html, body {
+            overflow-x: clip !important;
+            max-width: 100vw !important;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body { font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .hero { min-height: 100vh; display: flex; align-items: center; }
+        .container { max-width: min(var(--container-max, 1200px), 100vw); margin: 0 auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+    </style>
+    <link rel="stylesheet" href="css/main.css?v=3.9">
     <link rel="stylesheet" href="css/contact-modal.css?v=2.0">
+    <link rel="stylesheet" href="css/responsive.css?v=5.8">
+    <link rel="stylesheet" href="css/zusammenarbeit.css?v=1.1">
+    <link rel="stylesheet" href="css/hero-override.css?v=1.0">
+    <link rel="stylesheet" href="css/problem-awareness.css?v=1.0">
+    <link rel="stylesheet" href="css/use-cases-override.css?v=1.0">
+    <link rel="stylesheet" href="css/calculator-v3.css?v=1.0">
+    <link rel="stylesheet" href="css/background-override.css?v=2.0">
+    <link rel="stylesheet" href="css/final-cta-override.css?v=1.0">
+    <style>
+        /* BUTTON: Absolut KEINE Bewegung mehr! */
+        .btn--neon,
+        .btn--neon:hover,
+        .btn--neon:active,
+        .btn--neon:focus {
+            transform: none !important;
+        }
+        
+        .btn--neon::before {
+            display: none !important;
+        }
+        
+        /* TEXT: "Ersparnis" GRÜN wie "Mit KI-Prozessnavigator" */
+        #calculator-title em {
+            color: #00D98F !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: unset !important;
+            background-clip: unset !important;
+        }
+        
+        /* COOKIE-CONTAINER: ALLE TEXTE SCHWARZ #000000 */
+        .cookie-category__title,
+        .cookie-category__title *,
+        .cookie-category__desc,
+        .cookie-category__desc *,
+        .cookie-table th,
+        .cookie-table td,
+        .cookie-category__badge,
+        .cookie-icon {
+            color: #000000 !important;
+            text-shadow: none !important;
+        }
+        
+        /* Glühbirne + CTA-Text in einer Zeile */
+        .calculator-cta-note {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 8px !important;
+        }
+        .calculator-cta-note__icon { width: 18px; height: 18px; flex-shrink: 0; }
+        
+        /* COOKIE-DETAILS: SCHWARZ #000000 (keine Unschärfe) */
+        .cookie-category__details summary {
+            color: #000000 !important;
+            text-shadow: none !important;
+            filter: none !important;
+        }
+        
+        /* COOKIE-TOGGLE: GRÜN wenn aktiviert */
+        .cookie-toggle input:checked + .cookie-toggle__slider {
+            background: #00D98F !important;
+        }
+        
+    </style>
+    <style>
+        /* === TEXT-CONTAINER-BREITE-FIX === */
+        /* Überschriften: Volle Container-Breite, keine Einengung */
+        .wir-vs-du__title,
+        .section__title,
+        .use-cases-tabs__title,
+        .rechner-v3__title {
+            max-width: 100% !important;
+            width: 100% !important;
+            white-space: normal !important;
+        }
+
+        /* Body-Texte / Descriptions: Max. 900px für Lesbarkeit, aber nicht kleiner */
+        .wir-vs-du__description,
+        .section__description,
+        .ablauf__intro,
+        .use-cases-tabs__subtitle,
+        .rechner-v3__subtitle {
+            max-width: 900px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* Einheitliche Body-Schriftgrößen (text-base aus Design-System) */
+        .wir-vs-du__description,
+        .section__description,
+        .ablauf__intro,
+        .use-cases-tabs__subtitle,
+        .rechner-v3__subtitle {
+            font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem) !important;
+            line-height: 1.7 !important;
+            color: #d1d5db !important;
+        }
+
+        /* Einheitliche H2-Schriftgrößen (text-3xl aus Design-System) */
+        .wir-vs-du__title,
+        .section__title,
+        .use-cases-tabs__title,
+        .rechner-v3__title {
+            font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem) !important;
+            line-height: 1.2 !important;
+        }
+
+        .faq-item--new,
+        .faq-item--new * {
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        .faq-separator,
+        .faq-separator * {
+            hyphens: none;
+            -webkit-hyphens: none;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+    </style>
 
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KT6JD5B2"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="bg-glow" id="glow-1"></div>
     <div class="bg-glow" id="glow-2"></div>
     <div class="bg-glow" id="glow-3"></div>
@@ -227,10 +372,6 @@
             window.location.replace('/');
         }
     </script>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KT6JD5B2"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <header class="header" id="header">
         <nav class="nav container">
             <a href="/" class="nav__logo u-nav-logo-reset">
@@ -243,7 +384,7 @@
                 <li class="nav__item"><a href="/use-cases" class="nav__link">Use Cases</a></li>
                 <li class="nav__item"><a href="/ablauf" class="nav__link">Ablauf</a></li>
                 <li class="nav__item"><a href="/faq" class="nav__link">FAQ</a></li>
-                <li class="nav__item"><a href="/ueber-uns.html" class="nav__link">Über uns</a></li>
+                <li class="nav__item"><a href="/ueber-uns" class="nav__link">Über uns</a></li>
                 <li class="nav__item"><a href="/kontakt" class="nav__link nav__link--cta">Kostenloses Erstgespräch</a></li>
             </ul>
             
@@ -1574,7 +1715,7 @@
                                 <div class="form__group form__group--checkbox">
                                     <input type="checkbox" id="privacy-consent" name="privacy" required aria-describedby="privacy-hint">
                                     <label for="privacy-consent">
-                                        Ich stimme der <a href="/datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu und willige in die Verarbeitung meiner Daten ein.<span class="required" aria-hidden="true">*</span>
+                                        Ich stimme der <a href="/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu und willige in die Verarbeitung meiner Daten ein.<span class="required" aria-hidden="true">*</span>
                                     </label>
                                 </div>
                                 <button type="submit" class="btn btn--primary btn--full">
@@ -1696,17 +1837,17 @@
                     <h4 class="footer__heading">Produkt</h4>
                     <ul class="footer__links">
                         <li><a href="/use-cases">Use Cases</a></li>
-                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/blog">Blog</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer__links-group">
                     <h4 class="footer__heading">Rechtliches</h4>
                     <ul class="footer__links">
-                        <li><a href="/datenschutz.html">Datenschutz</a></li>
-                        <li><a href="/impressum.html">Impressum</a></li>
-                        <li><a href="/agb.html">AGB</a></li>
-                        <li><a href="/barrierefreiheit.html">Barrierefreiheit</a></li>
+                        <li><a href="/datenschutz">Datenschutz</a></li>
+                        <li><a href="/impressum">Impressum</a></li>
+                        <li><a href="/agb">AGB</a></li>
+                        <li><a href="/barrierefreiheit">Barrierefreiheit</a></li>
                         <li><a href="javascript:void(0)" onclick="openCookieSettings();" class="cookie-settings-link">Cookie-Einstellungen</a></li>
                     </ul>
                 </div>
@@ -1966,7 +2107,7 @@
                             <label class="privacy-checkbox">
                                 <input type="checkbox" name="privacy" required>
                                 <span class="privacy-checkbox__text">
-                                    Ich stimme der <a href="/datenschutz.html" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu 
+                                    Ich stimme der <a href="/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zu 
                                     und willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. <span class="required">*</span>
                                 </span>
                             </label>
@@ -2089,7 +2230,7 @@
                 <p class="cookie-banner__text" id="cookie-desc">
                     Wir verwenden Cookies und ähnliche Technologien, um dir die bestmögliche Erfahrung auf unserer Website zu bieten. 
                     Einige Cookies sind technisch notwendig (§ 25 Abs. 2 TDDDG), andere setzen wir nur mit deiner Einwilligung ein. 
-                    Mehr erfährst du in unserer <a href="/datenschutz.html">Datenschutzerklärung</a>.
+                    Mehr erfährst du in unserer <a href="/datenschutz">Datenschutzerklärung</a>.
                 </p>
             </div>
             <div class="cookie-banner__actions">
@@ -2281,9 +2422,9 @@
             
             <div class="cookie-modal__footer">
                 <div class="cookie-modal__info">
-                    <a href="/datenschutz.html" class="cookie-modal__link">Datenschutzerklärung</a>
+                    <a href="/datenschutz" class="cookie-modal__link">Datenschutzerklärung</a>
                     <span class="cookie-modal__separator">|</span>
-                    <a href="/impressum.html" class="cookie-modal__link">Impressum</a>
+                    <a href="/impressum" class="cookie-modal__link">Impressum</a>
                 </div>
                 <div class="cookie-modal__buttons">
                     <button class="cookie-modal__btn cookie-modal__btn--save" id="cookie-save-selection">

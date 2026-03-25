@@ -305,9 +305,12 @@
 }
 
 .blog-article__body a {
-    color: #00D4FF;
+    color: #00FFFF;
     font-weight: 600;
     text-decoration: none;
+    text-shadow:
+        0 0 8px rgba(0, 180, 255, 0.7),
+        0 0 20px rgba(0, 140, 255, 0.4);
 }
 
 .blog-article__body code {
@@ -553,40 +556,17 @@
 }
 
 /* ============================================
-   FIX 3: Header-Logo auf Blog-Seiten
+   Glow-Effekt für hervorgehobene Texte
+   Einheitlich mit der Startseite:
+   color: #00FFFF + text-shadow Glow
    ============================================ */
-.blog .header .nav__logo,
-.blog-article .header .nav__logo {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    padding-left: 0;
-    margin-left: 0;
-    height: 100%;
-    min-height: 0;
-    flex-shrink: 0;
-}
-
-.blog .header .nav__logo img,
-.blog-article .header .nav__logo img {
-    display: block;
-    height: auto;
-    max-height: 82%;
-    width: auto;
-    object-fit: contain;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-}
-
-.blog .header .logo-text,
-.blog-article .header .logo-text {
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 1.4rem;
-    color: #ffffff;
-    letter-spacing: -0.02em;
+.blog-article__body .text-highlight {
+    color: #00FFFF;
     font-weight: 600;
-    margin-left: 0;
-    white-space: nowrap;
+    display: inline;
+    text-shadow:
+        0 0 8px rgba(0, 180, 255, 0.7),
+        0 0 20px rgba(0, 140, 255, 0.4);
 }
 @media (max-width: 1024px) {
     .blog__grid {
