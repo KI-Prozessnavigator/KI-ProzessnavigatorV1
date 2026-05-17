@@ -1,0 +1,78 @@
+# IONOS / Apache: Startseite (HTML zuerst)
+DirectoryIndex index.html index.php
+
+# Verzeichnislisting ausschalten (Sicherheit)
+Options -Indexes
+Options -MultiViews
+
+# .html-URLs auf Slugs umleiten (Fallback ohne mod_rewrite)
+RedirectMatch 301 ^/index\.html$ /
+RedirectMatch 301 ^/impressum\.html$ /impressum
+RedirectMatch 301 ^/datenschutz\.html$ /datenschutz
+RedirectMatch 301 ^/agb\.html$ /agb
+RedirectMatch 301 ^/ueber-uns\.html$ /ueber-uns
+
+# Sensible Dateien nicht per HTTP ausliefern
+<FilesMatch "^(\.env|\.env\.deploy|\.gitignore|config\.php)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+
+# HTTP → HTTPS Weiterleitung (Fallback, falls Apache-VHost es nicht macht)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteRule ^php/config\.php$ - [F,L]
+
+    # .html-URLs auf Slugs umleiten
+    RewriteRule ^index\.html$ / [L,R=301]
+    RewriteRule ^(impressum|datenschutz|agb|ueber-uns)\.html$ /$1 [L,R=301]
+
+    # Slugs intern auf .html auflösen
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(impressum|datenschutz|agb|ueber-uns)/?$ $1.html [L]
+</IfModule>
+
+# HSTS: Browser nur über HTTPS verbinden (nach erstem HTTPS-Besuch)
+<IfModule mod_setenvif.c>
+    SetEnvIf HTTPS "on" HTTPS_ON
+</IfModule>
+<IfModule mod_headers.c>
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS_ON
+</IfModule>
+
+# Apache: Security-Header (optional, wenn Hosting Apache nutzt)
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "DENY"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+</IfModule>
+
+# Kompression (Gzip)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain text/html text/css text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+# Browser-Caching für statische Assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/json "access plus 1 day"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|svg|png|jpe?g|webp|woff2)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>

@@ -1,0 +1,149 @@
+
+
+
+body {
+  background-color: #0a0e1a;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    rgba(55, 65, 81, 0.8) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.wir-vs-du,
+.rechner-v3,
+.use-cases-tabs,
+.ablauf,
+.zusammenarbeit-v2,
+.dsgvo,
+.faq-section,
+.final-cta,
+.problems,
+.problem-awareness,
+.solutions,
+.pricing,
+.testimonials,
+.value-calculator,
+.about-hero,
+.about-section,
+.legal-section,
+.privacy-section,
+.imprint-section {
+  background: transparent;
+  border-top: none;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+
+.logo-carousel,
+.trust-bar {
+  border-top: 1px solid rgba(0, 212, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 119, 255, 0.15);
+}
+
+
+footer,
+.footer {
+  border-top: 1px solid rgba(0, 212, 255, 0.2) !important;
+}
+
+
+section#problems::before,
+section#problem-awareness::before,
+section#ersparnis::before,
+section#use-cases::before,
+section#ablauf::before,
+section#dsgvo::before,
+section#faq::before,
+section#contact::before,
+section#problems::after,
+section#problem-awareness::after,
+section#ersparnis::after,
+section#use-cases::after,
+section#ablauf::after,
+section#dsgvo::after,
+section#faq::after,
+section#contact::after,
+.problem-awareness::before,
+.problem-awareness::after,
+.dsgvo::before,
+.dsgvo::after,
+.faq-section::before,
+.faq-section::after,
+.final-cta::before {
+  content: none;
+  display: none;
+}
+
+
+.bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+
+#glow-1 {
+  width: 650px;
+  height: 450px;
+  top: 2%;
+  left: -10%;
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.07) 0%, transparent 70%);
+}
+
+
+#glow-2 {
+  width: 500px;
+  height: 350px;
+  top: 1%;
+  right: -8%;
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.06) 0%, transparent 70%);
+}
+
+
+#glow-3 {
+  display: none;
+}
+
+
+#glow-4 {
+  width: 400px;
+  height: 300px;
+  top: 55%;
+  left: -15%;
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.04) 0%, transparent 65%);
+}
+
+
+#glow-5 {
+  width: 450px;
+  height: 350px;
+  top: 40%;
+  right: -12%;
+  background: radial-gradient(ellipse, rgba(0, 119, 255, 0.05) 0%, transparent 70%);
+}
+
+
+footer,
+.footer {
+  background-color: #0a0e1a;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+}

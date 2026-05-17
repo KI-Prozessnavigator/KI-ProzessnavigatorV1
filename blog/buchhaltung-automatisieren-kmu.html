@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="N7G_XMxssE1n-fSa1MyRTRtWciaVjgsa_q3wFrO_mIM" />
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'page_view',
+            page_title: document.title,
+            page_path: window.location.pathname,
+            page_location: window.location.href,
+            page_type: 'blog_article',
+            page_language: document.documentElement.lang || 'de'
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KT6JD5B2');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buchhaltung automatisieren: Vorbereitende Buchführung ohne Handarbeit | KI-Prozessnavigator</title>
+    <meta name="description" content="Vorbereitende Buchhaltung automatisieren: Belege erfassen, prüfen, zuordnen und an DATEV exportieren. Spart 8h/Woche. Für KMU ab 5 Mitarbeitern.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ki-prozessnavigator.de/blog/buchhaltung-automatisieren-kmu">
+    <meta property="og:title" content="Buchhaltung automatisieren: Vorbereitende Buchführung ohne Handarbeit">
+    <meta property="og:description" content="Belege erfassen, prüfen, zuordnen und an DATEV exportieren. Spart 8h/Woche. Für KMU ab 5 Mitarbeitern.">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="de_DE">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg?v=3">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="../assets/icons/favicon.svg?v=3">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="../assets/icons/favicon.svg?v=3">
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+    <link rel="preload" href="../assets/fonts/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        html, body {
+            overflow-x: clip !important;
+            max-width: 100vw !important;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif; }
+        body.blog-article {
+            background-color: #0a0e1a !important;
+            color: #f3f4f6;
+        }
+        .container { max-width: min(var(--container-max, 1200px), 100vw); margin: 0 auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+    </style>
+    <link rel="stylesheet" href="../css/main.css?v=3.9">
+    <link rel="stylesheet" href="../css/responsive.css?v=5.8">
+    <link rel="stylesheet" href="../css/background-override.css?v=2.0">
+    <link rel="stylesheet" href="../css/blog.css?v=1.1">
+    <link rel="stylesheet" href="../css/cookie-banner.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Buchhaltung automatisieren: Vorbereitende Buchführung ohne Handarbeit",
+      "description": "Vorbereitende Buchhaltung automatisieren: Belege erfassen, prüfen, zuordnen und an DATEV exportieren. Spart 8h/Woche.",
+      "author": {
+        "@type": "Person",
+        "name": "Dominik Buchele",
+        "url": "https://ki-prozessnavigator.de/ueber-uns.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "KI-Prozessnavigator",
+        "url": "https://ki-prozessnavigator.de/"
+      },
+      "datePublished": "2026-03-13",
+      "dateModified": "2026-03-13",
+      "mainEntityOfPage": "https://ki-prozessnavigator.de/blog/buchhaltung-automatisieren-kmu",
+      "keywords": "Buchhaltung automatisieren, vorbereitende Buchführung, DATEV Export, KMU"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Buchhaltung automatisieren: Vorbereitende Buchführung ohne Handarbeit",
+      "description": "5 Schritte, wie KMU ihre vorbereitende Buchhaltung automatisieren und Daten sauber an DATEV übergeben.",
+      "step": [
+        { "@type": "HowToStep", "name": "Belegeingang digitalisieren", "text": "Belege zentral per E-Mail, Upload oder Scan erfassen und in einem System bündeln." },
+        { "@type": "HowToStep", "name": "Daten automatisch extrahieren", "text": "KI liest Beträge, Datum, USt und Rechnungsnummer aus." },
+        { "@type": "HowToStep", "name": "Kontenzuordnung lernen", "text": "System ordnet Belege anhand deiner Historie zu und lernt aus Korrekturen." },
+        { "@type": "HowToStep", "name": "Zahlungen abgleichen", "text": "Banktransaktionen werden automatisch den Belegen zugeordnet." },
+        { "@type": "HowToStep", "name": "DATEV-Export erzeugen", "text": "Export auf Knopfdruck oder automatisiert an den Steuerberater senden." }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://ki-prozessnavigator.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://ki-prozessnavigator.de/blog.html" },
+        { "@type": "ListItem", "position": 3, "name": "Buchhaltung automatisieren", "item": "https://ki-prozessnavigator.de/blog/buchhaltung-automatisieren-kmu" }
+      ]
+    }
+    </script>
+</head>
+<body class="blog-article">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KT6JD5B2"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="bg-glow" id="glow-1"></div>
+    <div class="bg-glow" id="glow-2"></div>
+    <div class="bg-glow" id="glow-3"></div>
+    <div class="bg-glow" id="glow-4"></div>
+    <div class="bg-glow" id="glow-5"></div>
+    <div class="blog-article__progress" id="progress-bar"></div>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="/" class="nav__logo u-nav-logo-reset">
+                <img src="../assets/images/logo.svg?v=2" alt="KI-Prozessnavigator Logo" height="80" class="u-block">
+            </a>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item"><a href="/" class="nav__link">Start</a></li>
+                <li class="nav__item"><a href="/vorteile" class="nav__link">Vorteile</a></li>
+                <li class="nav__item"><a href="/use-cases" class="nav__link">Use Cases</a></li>
+                <li class="nav__item"><a href="/ablauf" class="nav__link">Ablauf</a></li>
+                <li class="nav__item"><a href="/faq" class="nav__link">FAQ</a></li>
+                <li class="nav__item"><a href="/ueber-uns.html" class="nav__link">Über uns</a></li>
+                <li class="nav__item"><a href="/kontakt" class="nav__link nav__link--cta">Kostenloses Erstgespräch</a></li>
+            </ul>
+            
+            <div class="nav__actions">
+                <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container blog-article__content">
+        <nav class="blog-article__breadcrumb">
+            <a href="/">Start</a> · <a href="/blog.html">Blog</a> · <span>Buchhaltung</span>
+        </nav>
+
+        <header class="blog-article__header">
+            <span class="blog-article__badge">Buchhaltung</span>
+            <h1 class="blog-article__title">Buchhaltung automatisieren: Vorbereitende Buchführung ohne Handarbeit</h1>
+            <div class="blog-article__meta">
+                <span>13.03.2026</span>
+                <span>9 Min. Lesezeit</span>
+                <span>Focus: Buchhaltung automatisieren KMU</span>
+            </div>
+        </header>
+
+        <div class="blog-article__layout">
+            <article class="blog-article__body" id="article-body">
+                <p>Du kennst das: Am Monatsende türmt sich ein Stapel Belege. Eingangsrechnungen, Ausgangsrechnungen, Kontoauszüge, Kassenbons. Alles muss geprüft, sortiert und für den Steuerberater vorbereitet werden. In KMU mit 10–30 Mitarbeitern verschlingt die vorbereitende Buchhaltung durchschnittlich <strong>8–12 Stunden pro Woche</strong>. Das sind über 400 Stunden im Jahr – Zeit, die dein Team für Kunden, Projekte oder Wachstum nutzen könnte.</p>
+                <p><strong>Definition:</strong> Vorbereitende Buchhaltung automatisieren bedeutet: Belege werden automatisch erfasst, geprüft, den richtigen Konten zugeordnet und für DATEV oder Lexware exportbereit gemacht – ohne manuelle Tipparbeit.</p>
+                <p>Wenn du heute noch per Hand sortierst, kontrollierst und nachfasst, ist das kein persönliches Versagen. Es liegt am Prozess. Der Unterschied zwischen „anstrengender Buchhaltung“ und „sauberer Übergabe an den Steuerberater“ ist ein klarer, automatisierter Ablauf.</p>
+
+                <h2>Was gehört zur vorbereitenden Buchhaltung? (Und was davon lässt sich automatisieren?)</h2>
+                <p>Vorbereitende Buchführung ist die Brücke zwischen deinem Tagesgeschäft und dem Steuerberater. Sie umfasst alle Schritte, bevor gebucht wird. Der gute Teil: Viele dieser Aufgaben lassen sich komplett automatisieren.</p>
+                <ul>
+                    <li><strong>Belegerfassung</strong> (Eingangsrechnungen, Quittungen, Lieferscheine) → 100% automatisierbar</li>
+                    <li><strong>Datenextraktion</strong> (Betrag, Datum, Rechnungsnummer, USt) → 100% automatisierbar</li>
+                    <li><strong>Kontenzuordnung</strong> (SKR03/SKR04) → 90% automatisierbar, KI lernt deine Zuordnung</li>
+                    <li><strong>Dublettenprüfung</strong> → 100% automatisierbar</li>
+                    <li><strong>Zahlungsabgleich</strong> mit Bankkonto → 100% automatisierbar</li>
+                    <li><strong>DATEV-Export</strong> → 100% automatisierbar</li>
+                </ul>
+                <p>Der Engpass ist also nicht die Technik, sondern der fehlende Prozess. Genau dort setzen wir an – mit einem klaren Ablauf, der in jeder Branche funktioniert.</p>
+
+                <h2>In 5 Schritten zur automatisierten Buchhaltung</h2>
+                <p>Hier ist der praxiserprobte Ablauf für KMU. Die Logik ist immer gleich – egal ob Handwerk, Dienstleistung oder Produktion.</p>
+
+                <h3>Schritt 1: Belegeingang digitalisieren</h3>
+                <p>Alle Belege kommen digital rein: über ein zentrales E-Mail-Postfach, eine Scan-App oder ein Upload-Portal. Physische Belege werden per Smartphone erfasst oder über einen Dokumentenscanner automatisch hochgeladen.</p>
+                <p><strong>Ergebnis:</strong> Kein Papierstapel mehr. Jeder Beleg landet automatisch im System und ist sofort auffindbar.</p>
+
+                <h3>Schritt 2: Automatische Datenextraktion</h3>
+                <p>Die KI liest Rechnungsdaten aus: Betrag, Datum, Mehrwertsteuer, Lieferant, Rechnungsnummer. Bei guter Bildqualität liegt die Genauigkeit bei 95–99%. Unklare Belege werden markiert – du prüfst nur die Ausnahmen.</p>
+                <p><strong>Ergebnis:</strong> Keine manuelle Dateneingabe mehr, keine Tippfehler.</p>
+
+                <h3>Schritt 3: Intelligente Kontenzuordnung</h3>
+                <p>Das System lernt aus deinen bisherigen Buchungen. Beispiel: „Beleg von Bauhaus → Konto 4900 Werkzeug“. Nach 2–3 Monaten ordnet es den Großteil der Belege korrekt zu. Du bestätigst nur noch die Ausnahmen.</p>
+                <p><strong>Ergebnis:</strong> 90% weniger Korrekturen und Rückfragen.</p>
+
+                <h3>Schritt 4: Automatischer Zahlungsabgleich</h3>
+                <p>Bankkontoauszüge werden per API oder CSV importiert. Das System matcht Rechnungen mit Zahlungseingängen, offene Posten werden automatisch aktualisiert. Auf Wunsch können Mahnungen automatisch ausgelöst werden.</p>
+                <p><strong>Ergebnis:</strong> Klarer Überblick über offene Posten – ohne Excel.</p>
+
+                <h3>Schritt 5: DATEV/Lexware-Export auf Knopfdruck</h3>
+                <p>Am Ende generierst du eine exportfertige DATEV-Datei (oder Lexware, sevDesk, Lexoffice). Dein Steuerberater bekommt alles digital – der Pendelordner verschwindet.</p>
+                <p><strong>Ergebnis:</strong> Monatsabschluss ohne Stress.</p>
+
+                <div class="blog-article__image">Bild: Automatisierter Buchhaltungs-Workflow</div>
+
+                <h2>Was bringt das unterm Strich?</h2>
+                <p>Die Einsparung ist messbar. Hier ein realistisches Beispiel für ein KMU mit 10–30 Mitarbeitern:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aufgabe</th>
+                            <th>Zeitaufwand vorher</th>
+                            <th>Zeitaufwand nachher</th>
+                            <th>Ersparnis/Woche</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Belegerfassung</td>
+                            <td>3h</td>
+                            <td>15 Min</td>
+                            <td>2h 45min</td>
+                        </tr>
+                        <tr>
+                            <td>Kontenzuordnung</td>
+                            <td>2h</td>
+                            <td>20 Min</td>
+                            <td>1h 40min</td>
+                        </tr>
+                        <tr>
+                            <td>Zahlungsabgleich</td>
+                            <td>1,5h</td>
+                            <td>10 Min</td>
+                            <td>1h 20min</td>
+                        </tr>
+                        <tr>
+                            <td>DATEV-Export</td>
+                            <td>1h</td>
+                            <td>5 Min</td>
+                            <td>55min</td>
+                        </tr>
+                        <tr>
+                            <td>Rückfragen Steuerberater</td>
+                            <td>1,5h</td>
+                            <td>15 Min</td>
+                            <td>1h 15min</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gesamt</strong></td>
+                            <td><strong>9h/Woche</strong></td>
+                            <td><strong>1h 5min/Woche</strong></td>
+                            <td><strong>~8h/Woche</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Bei einem Stundensatz von 35€ sind das <strong>280€ pro Woche</strong> oder <strong>14.560€ pro Jahr</strong>. Rechne es für dein Unternehmen durch – der <a href="/ersparnis">Ersparnisrechner</a> zeigt dir den Hebel in Minuten.</p>
+
+                <h2>Welche Tools setzen wir ein?</h2>
+                <p>Wir arbeiten mit den Tools, die du bereits nutzt – oder sinnvoll ergänzen kannst. Typische Bausteine:</p>
+                <ul>
+                    <li><strong>n8n</strong> für Workflow-Automatisierung (Open Source, EU-hosted)</li>
+                    <li><strong>DATEV</strong> als Schnittstelle zum Steuerberater</li>
+                    <li><strong>sevDesk / Lexware / Lexoffice</strong> als Buchhaltungssystem</li>
+                    <li><strong>Dein E-Mail-Provider</strong> für automatischen Belegeingang</li>
+                </ul>
+                <p>Eine Übersicht zu weiteren Automatisierungsfällen findest du auf der <a href="/">Startseite</a> und den <a href="/use-cases">Use Cases</a>.</p>
+
+                <h2>DSGVO und automatisierte Buchhaltung</h2>
+                <p>Finanzdaten zählen zu den sensibelsten Unternehmensdaten. Deshalb gilt: Automatisierung muss DSGVO-konform sein. Wir hosten in Frankfurt, schließen einen AVV ab und geben keine Daten an Dritte weiter. Mehr Details findest du im Artikel <a href="/blog/dsgvo-ki-mittelstand.html">DSGVO und KI: Was Mittelständler wirklich wissen müssen</a>.</p>
+
+                <h2>FAQ</h2>
+                <h3>Brauche ich trotzdem noch einen Steuerberater?</h3>
+                <p>Ja, auf jeden Fall. Automatisierung ersetzt nicht die steuerliche Beratung – sie macht nur die Vorarbeit schneller und fehlerfreier. Dein Steuerberater bekommt saubere, digitale Daten und kann sich auf die Beratung konzentrieren.</p>
+
+                <h3>Was passiert, wenn das System einen Beleg falsch zuordnet?</h3>
+                <p>Das System markiert unsichere Zuordnungen automatisch. Du prüfst nur diese Ausnahmen (ca. 10% der Belege). Mit der Zeit wird es immer genauer, weil es aus deinen Korrekturen lernt.</p>
+
+                <h3>Funktioniert das auch mit meinem Steuerberater, der noch mit Pendelordner arbeitet?</h3>
+                <p>Ja. Wir können den Export auch als PDF-Sammlung oder physische Übergabe vorbereiten. Ideal ist der digitale DATEV-Export – aber wir passen uns an deinen Steuerberater an.</p>
+
+                <h2>Nächster Schritt</h2>
+                <p>Du willst sehen, was bei deiner Buchhaltung automatisierbar ist? Dann buch dir eine kostenlose 30‑Minuten‑Potenzialanalyse. Wir zeigen dir die größten Hebel – und du bekommst eine klare Priorisierung.</p>
+                <p>Wenn du vorher noch wissen willst, wie automatisierte Rechnungsprozesse aussehen, lies den Artikel <a href="/blog/rechnungen-automatisch-verarbeiten.html">Rechnungen automatisch verarbeiten</a>. Und wenn du wissen willst, wer hinter der Umsetzung steht: <a href="/ueber-uns.html">Über uns</a>.</p>
+            </article>
+
+            <aside class="blog-article__sidebar">
+                <div class="blog-article__sidebar-card blog-article__author">
+                    <div class="blog-article__author-photo">Foto</div>
+                    <div>
+                        <strong>Dominik Buchele</strong>
+                        <p>Inhaber von KI‑Prozessnavigator. Unterstützt KMU dabei, Buchhaltung und Verwaltung zu automatisieren.</p>
+                    </div>
+                </div>
+
+                <div class="blog-article__sidebar-card">
+                    <strong>Inhaltsverzeichnis</strong>
+                    <nav class="blog-article__toc" id="toc"></nav>
+                </div>
+
+                <div class="blog-article__sidebar-card blog-article__cta-box">
+                    <strong>Kostenlose Potenzialanalyse</strong>
+                    <p>Wir zeigen dir, wie du 8–10 Stunden pro Woche sparst.</p>
+                    <a class="blog-article__cta-btn" href="/kontakt">Kostenloses Erstgespräch sichern</a>
+                </div>
+            </aside>
+        </div>
+
+        <section class="blog-article__related">
+            <h2>Verwandte Artikel</h2>
+            <div class="blog-article__related-grid">
+                <article class="blog__card">
+                    <span class="blog__card-badge">Einsparpotenzial</span>
+                    <a href="/blog/rechnungen-automatisch-verarbeiten.html" class="blog__card-title">Rechnungen automatisch verarbeiten</a>
+                    <p class="blog__card-excerpt">Schritt-für-Schritt zur automatisierten Rechnungsverarbeitung.</p>
+                </article>
+                <article class="blog__card">
+                    <span class="blog__card-badge">DSGVO</span>
+                    <a href="/blog/dsgvo-ki-mittelstand.html" class="blog__card-title">DSGVO und KI: Was Mittelständler wirklich wissen müssen</a>
+                    <p class="blog__card-excerpt">Rechtssicher starten – ohne Fachchinesisch.</p>
+                </article>
+                <article class="blog__card">
+                    <span class="blog__card-badge">Einsparpotenzial</span>
+                    <a href="/blog/angebote-automatisch-erstellen.html" class="blog__card-title">Angebote automatisch erstellen</a>
+                    <p class="blog__card-excerpt">Vom Kundenwunsch zum PDF in 30 Sekunden.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="blog-article__cta-section">
+            <h3>Du willst sehen, was bei deiner Buchhaltung automatisierbar ist?</h3>
+            <p>Buche jetzt eine kostenlose 30‑Minuten‑Potenzialanalyse – mit konkreten Next Steps.</p>
+            <a class="blog-article__cta-btn" href="/kontakt">Kostenloses Erstgespräch buchen</a>
+            <div class="blog-article__cta-trust">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 30 Min.</span>
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Unverbindlich</span>
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D98F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kein Verkaufsdruck</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">
+                        <img src="../assets/images/logo.svg?v=2" alt="KI-Prozessnavigator Logo" height="50">
+                    </a>
+                    <p class="footer__tagline">Intelligente Automatisierung für den Mittelstand.</p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/kiprozessnavigator/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@kiprozessnavigator" class="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61584576234002&locale=de_DE" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/dominik-buchele-ki-prozessnavigator/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .771 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__links-group">
+                    <h4 class="footer__heading">Produkt</h4>
+                    <ul class="footer__links">
+                        <li><a href="/use-cases">Use Cases</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__links-group">
+                    <h4 class="footer__heading">Rechtliches</h4>
+                    <ul class="footer__links">
+                        <li><a href="/datenschutz.html">Datenschutz</a></li>
+                        <li><a href="/impressum.html">Impressum</a></li>
+                        <li><a href="/agb.html">AGB</a></li>
+                        <li><a href="/barrierefreiheit.html">Barrierefreiheit</a></li>
+                        <li><a href="javascript:void(0)" onclick="openCookieSettings();" class="cookie-settings-link">Cookie-Einstellungen</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__links-group footer__links-group--contact">
+                    <h4 class="footer__heading">Kontakt</h4>
+                    <ul class="footer__links footer__contact">
+                        <li class="footer__contact-item">Breslauer Str. 11,<br>86690 Mertingen<br>Deutschland</li>
+                        <li class="footer__contact-item">Tel. 0175 5526398</li>
+                        <li><a href="mailto:d.buchele@ki-prozessnavigator.de" data-cta-location="footer">d.buchele@ki-prozessnavigator.de</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 KI-Prozessnavigator, Inh. Buchele Dominik. Alle Rechte vorbehalten.</p>
+                <button class="scroll-to-top" id="scroll-to-top" aria-label="Nach oben scrollen">
+                    <span class="scroll-to-top__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px">
+                            <line x1="12" y1="19" x2="12" y2="5"/>
+                            <polyline points="5 12 12 5 19 12"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc" aria-modal="true">
+        <div class="cookie-banner__container">
+            <div class="cookie-banner__content">
+                <p class="cookie-banner__title" id="cookie-title">
+                    <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px;vertical-align:middle"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span> Wir respektieren deine Privatsphäre
+                </p>
+                <p class="cookie-banner__text" id="cookie-desc">
+                    Wir verwenden Cookies und ähnliche Technologien, um dir die bestmögliche Erfahrung auf unserer Website zu bieten. 
+                    Einige Cookies sind technisch notwendig (§ 25 Abs. 2 TDDDG), andere setzen wir nur mit deiner Einwilligung ein. 
+                    Mehr erfährst du in unserer <a href="/datenschutz.html">Datenschutzerklärung</a>.
+                </p>
+            </div>
+            <div class="cookie-banner__actions">
+                <button class="cookie-banner__btn cookie-banner__btn--accept-all" id="cookie-accept-all" aria-label="Alle Cookies akzeptieren">
+                    Alle akzeptieren
+                </button>
+                <button class="cookie-banner__btn cookie-banner__btn--essential" id="cookie-essential-only" aria-label="Nicht-essentielle Cookies ablehnen">
+                    Ablehnen
+                </button>
+                <button class="cookie-banner__btn cookie-banner__btn--settings" id="cookie-settings" aria-label="Cookie-Einstellungen öffnen">
+                    Einstellungen anpassen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-modal" class="cookie-modal" role="dialog" aria-labelledby="cookie-modal-title" aria-modal="true" hidden>
+        <div class="cookie-modal__backdrop" id="cookie-modal-backdrop"></div>
+        <div class="cookie-modal__dialog">
+            <div class="cookie-modal__header">
+                <h2 class="cookie-modal__title" id="cookie-modal-title">
+                    <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;vertical-align:middle"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span> Cookie-Einstellungen
+                </h2>
+                <button class="cookie-modal__close" id="cookie-modal-close" aria-label="Schließen">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="cookie-modal__body">
+                <p class="cookie-modal__intro">
+                    Hier kannst du deine Cookie-Präferenzen verwalten. Technisch notwendige Cookies 
+                    können nicht deaktiviert werden, da sie für die Grundfunktionen der Website erforderlich sind.
+                </p>
+                
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px;vertical-align:middle"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                                Technisch notwendig
+                            </h3>
+                            <span class="cookie-category__badge cookie-category__badge--required">Erforderlich</span>
+                        </div>
+                        <label class="cookie-toggle cookie-toggle--disabled">
+                            <input type="checkbox" checked disabled aria-label="Technisch notwendige Cookies (immer aktiv)">
+                            <span class="cookie-toggle__slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Diese Cookies sind für die Grundfunktionen der Website unbedingt erforderlich. 
+                        Dazu gehören z. B. Sicherheitsfunktionen und die Speicherung deiner Cookie-Einstellungen.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cookie_consent</td>
+                                    <td>Speichert deine Cookie-Einstellungen</td>
+                                    <td>1 Jahr</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+                
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:18px;height:18px;vertical-align:middle"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                                Statistik & Analyse
+                            </h3>
+                        </div>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-analytics" name="analytics" aria-label="Statistik-Cookies erlauben">
+                            <span class="cookie-toggle__slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren. 
+                        Alle Daten werden anonymisiert erfasst und nicht an Dritte weitergegeben.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_gid</td>
+                                    <td>Unterscheidung von Nutzern</td>
+                                    <td>24 Stunden</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+                
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;vertical-align:middle"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
+                                Marketing & Werbung
+                            </h3>
+                        </div>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-marketing" name="marketing" aria-label="Marketing-Cookies erlauben">
+                            <span class="cookie-toggle__slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Diese Cookies werden verwendet, um dir relevante Werbung basierend auf deinen 
+                        Interessen anzuzeigen. Diese werden auch genutzt, um die Anzahl der Werbeeinblendungen zu begrenzen.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_ga</td>
+                                    <td>Google Analytics (anonymisiert)</td>
+                                    <td>2 Jahre</td>
+                                </tr>
+                                <tr>
+                                    <td>_fbp</td>
+                                    <td>Facebook Pixel</td>
+                                    <td>3 Monate</td>
+                                </tr>
+                                <tr>
+                                    <td>_gcl_au</td>
+                                    <td>Google Ads Conversion-Tracking</td>
+                                    <td>3 Monate</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+                
+                <div class="cookie-category">
+                    <div class="cookie-category__header">
+                        <div class="cookie-category__info">
+                            <h3 class="cookie-category__title">
+                                <span class="cookie-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;vertical-align:middle"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polygon points="10 8 10 12 14 10 10 8"/></svg></span>
+                                Externe Medien
+                            </h3>
+                        </div>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-external" name="external" aria-label="Externe Medien erlauben">
+                            <span class="cookie-toggle__slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category__desc">
+                        Ermöglicht die Einbindung externer Inhalte wie YouTube-Videos, Google Maps 
+                        oder Social-Media-Einbettungen. Ohne diese Cookies werden Platzhalter angezeigt.
+                    </p>
+                    <details class="cookie-category__details">
+                        <summary>Details anzeigen</summary>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr><th>Name</th><th>Zweck</th><th>Laufzeit</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>YSC</td>
+                                    <td>YouTube Session-Cookie</td>
+                                    <td>Session</td>
+                                </tr>
+                                <tr>
+                                    <td>VISITOR_INFO1_LIVE</td>
+                                    <td>YouTube Bandbreiten-Schätzung</td>
+                                    <td>6 Monate</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+            </div>
+            
+            <div class="cookie-modal__footer">
+                <div class="cookie-modal__info">
+                    <a href="/datenschutz.html" class="cookie-modal__link">Datenschutzerklärung</a>
+                    <span class="cookie-modal__separator">|</span>
+                    <a href="/impressum.html" class="cookie-modal__link">Impressum</a>
+                </div>
+                <div class="cookie-modal__buttons">
+                    <button class="cookie-modal__btn cookie-modal__btn--save" id="cookie-save-selection">
+                        Auswahl speichern
+                    </button>
+                    <button class="cookie-modal__btn cookie-modal__btn--accept-all" id="cookie-modal-accept-all">
+                        Alle akzeptieren
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const articleBody = document.getElementById('article-body');
+        const toc = document.getElementById('toc');
+        const progressBar = document.getElementById('progress-bar');
+        if (articleBody && toc) {
+            const headings = articleBody.querySelectorAll('h2');
+            headings.forEach((heading, index) => {
+                const id = `section-${index + 1}`;
+                heading.id = id;
+                const link = document.createElement('a');
+                link.href = `#${id}`;
+                link.textContent = heading.textContent;
+                toc.appendChild(link);
+            });
+        }
+        window.addEventListener('scroll', () => {
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = total > 0 ? (window.scrollY / total) * 100 : 0;
+            progressBar.style.width = `${progress}%`;
+        });
+    </script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/cookie-banner.js" defer></script>
+    <script src="../js/background-parallax.js" defer></script>
+</body>
+</html>
