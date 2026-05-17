@@ -791,53 +791,7 @@
     </div>
   </div>
 
-  <!-- Cookie Banner -->
-  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc" aria-modal="true">
-    <div class="cookie-banner__container">
-      <div class="cookie-banner__content">
-        <p class="cookie-banner__title" id="cookie-title">Wir respektieren deine Privatsphare</p>
-        <p class="cookie-banner__text" id="cookie-desc">Wir verwenden Cookies und ahnliche Technologien.</p>
-      </div>
-      <div class="cookie-banner__actions">
-        <button class="btn btn-primary btn-sm" id="cookie-accept-all">Alle akzeptieren</button>
-        <button class="btn btn-ghost btn-sm" id="cookie-essential-only">Ablehnen</button>
-        <button class="btn btn-ghost btn-sm" id="cookie-settings">Einstellungen</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Cookie Modal -->
-  <div id="cookie-modal" class="cookie-modal" role="dialog" aria-labelledby="cookie-modal-title" aria-modal="true" hidden>
-    <div class="cookie-modal__backdrop" id="cookie-modal-backdrop"></div>
-    <div class="cookie-modal__dialog">
-      <div class="cookie-modal__header">
-        <h2 id="cookie-modal-title">Cookie-Einstellungen</h2>
-        <button class="cookie-modal__close" id="cookie-modal-close" aria-label="Schliessen">&times;</button>
-      </div>
-      <div class="cookie-modal__body">
-        <div class="cookie-category">
-          <h3>Technisch notwendig</h3>
-          <label class="cookie-toggle"><input type="checkbox" checked disabled><span class="cookie-toggle__slider"></span></label>
-        </div>
-        <div class="cookie-category">
-          <h3>Statistik &amp; Analyse</h3>
-          <label class="cookie-toggle"><input type="checkbox" id="cookie-analytics" name="analytics"><span class="cookie-toggle__slider"></span></label>
-        </div>
-        <div class="cookie-category">
-          <h3>Marketing</h3>
-          <label class="cookie-toggle"><input type="checkbox" id="cookie-marketing" name="marketing"><span class="cookie-toggle__slider"></span></label>
-        </div>
-        <div class="cookie-category">
-          <h3>Externe Medien</h3>
-          <label class="cookie-toggle"><input type="checkbox" id="cookie-external" name="external"><span class="cookie-toggle__slider"></span></label>
-        </div>
-      </div>
-      <div class="cookie-modal__footer">
-        <button class="btn btn-ghost" id="cookie-save-selection">Auswahl speichern</button>
-        <button class="btn btn-primary" id="cookie-modal-accept-all">Alle akzeptieren</button>
-      </div>
-    </div>
-  </div>
+  <!--#include virtual="/includes/cookie-banner.html" -->
 
   <script src="/assets/vendor/gsap.min.js" defer></script>
   <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
