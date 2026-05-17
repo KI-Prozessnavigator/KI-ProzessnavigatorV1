@@ -148,7 +148,7 @@
     function showBanner() {
         if (elements.banner) {
             elements.banner.removeAttribute('hidden');
-            elements.banner.style.animation = 'slideUp 0.5s ease forwards';
+            elements.banner.classList.add('is-visible');
         }
     }
 
@@ -157,13 +157,11 @@
      */
     function hideBanner() {
         if (elements.banner) {
-            elements.banner.style.animation = 'none';
-            elements.banner.style.transform = 'translateY(100%)';
-            elements.banner.style.opacity = '0';
-            elements.banner.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
-            
+            elements.banner.classList.remove('is-visible');
+            elements.banner.classList.add('is-hiding');
             setTimeout(() => {
                 elements.banner.setAttribute('hidden', '');
+                elements.banner.classList.remove('is-hiding');
             }, 300);
         }
     }
@@ -329,16 +327,11 @@
      * Kann über Footer-Link aufgerufen werden
      */
     window.openCookieSettings = function() {
-        // Zeige Banner wieder
         if (elements.banner) {
             elements.banner.removeAttribute('hidden');
-            elements.banner.style.transform = '';
-            elements.banner.style.opacity = '';
-            elements.banner.style.transition = '';
-            elements.banner.style.animation = 'slideUp 0.5s ease forwards';
+            elements.banner.classList.remove('is-hiding');
+            elements.banner.classList.add('is-visible');
         }
-        
-        // Öffne Modal
         openModal();
     };
 

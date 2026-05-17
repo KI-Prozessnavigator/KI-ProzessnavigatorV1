@@ -40,7 +40,7 @@
             inquiryContent: document.getElementById('inquiry-content'),
             allContents: modal.querySelectorAll('.contact-modal__content'),
             successState: modal.querySelector('.form-success'),
-            successCloseBtn: modal.querySelector('.success-cta')
+            successCloseBtn: modal.querySelector('.form-success .btn')
         };
 
         // State
@@ -118,9 +118,10 @@
                 elements.inquiryContent.classList.add('active');
             }
             elements.successState.classList.remove('active');
+            elements.successState.setAttribute('hidden', '');
             const successHeader = document.querySelector('.contact-modal__header');
             if (successHeader) {
-                successHeader.style.display = '';
+                successHeader.hidden = false;
             }
 
             // Reset all form inputs
@@ -157,7 +158,7 @@
         function initTriggers() {
             // Use event delegation for better performance
             document.addEventListener('click', function(e) {
-                const trigger = e.target.closest('.btn--neon, .btn--primary, a[href="#contact"], a[href="/kontakt"], .pricing-card .btn, .nav__link--cta');
+                const trigger = e.target.closest('[data-open-modal="contact"]');
                 
                 if (trigger) {
                     // Don't intercept form submit buttons or lead form
@@ -256,8 +257,8 @@
 
         // ===== NAVIGATION =====
         modal.addEventListener('click', function(e) {
-            const nextBtn = e.target.closest('.btn--modal-primary[data-next]');
-            const prevBtn = e.target.closest('.btn--modal-secondary[data-prev]');
+            const nextBtn = e.target.closest('[data-next]');
+            const prevBtn = e.target.closest('[data-prev]');
 
             if (nextBtn) {
                 e.preventDefault();
@@ -320,9 +321,8 @@
             for (const group of optionGroups) {
                 const hasSelection = group.querySelector('input:checked');
                 if (!hasSelection) {
-                    // Visual feedback
-                    group.style.animation = 'shake 0.5s ease';
-                    setTimeout(() => group.style.animation = '', 500);
+                    group.classList.add('is-shaking');
+                    setTimeout(() => group.classList.remove('is-shaking'), 500);
                     return false;
                 }
             }
@@ -332,8 +332,8 @@
             for (const input of requiredInputs) {
                 if (!input.value.trim()) {
                     input.focus();
-                    input.style.borderColor = 'var(--color-accent)';
-                    setTimeout(() => input.style.borderColor = '', 2000);
+                    input.classList.add('is-invalid');
+                    setTimeout(() => input.classList.remove('is-invalid'), 2000);
                     return false;
                 }
             }
@@ -386,8 +386,8 @@
                 if (privacyConsent && !privacyConsent.checked) {
                     const checkbox = privacyConsent.closest('.privacy-checkbox');
                     if (checkbox) {
-                        checkbox.style.border = '2px solid var(--color-accent)';
-                        setTimeout(() => checkbox.style.border = '', 2000);
+                        checkbox.classList.add('is-invalid');
+                        setTimeout(() => checkbox.classList.remove('is-invalid'), 2000);
                     }
                     pushDataLayer('form_error', {
                         ...formMeta,
@@ -459,26 +459,14 @@
             elements.allContents.forEach(c => c.classList.remove('active'));
             const successHeader = document.querySelector('.contact-modal__header');
             if (successHeader) {
-                successHeader.style.display = 'none';
+                successHeader.hidden = true;
             }
+            elements.successState.removeAttribute('hidden');
             elements.successState.classList.add('active');
             if (state.tracking.lastSubmittedMeta) {
                 pushDataLayer('form_success', state.tracking.lastSubmittedMeta);
             }
         }
-
-        // ===== INJECT SHAKE ANIMATION =====
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes shake {
-                0%, 100% { transform: translateX(0); }
-                20% { transform: translateX(-6px); }
-                40% { transform: translateX(6px); }
-                60% { transform: translateX(-4px); }
-                80% { transform: translateX(4px); }
-            }
-        `;
-        document.head.appendChild(style);
 
         // ===== INITIALIZE =====
         initTriggers();

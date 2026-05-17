@@ -17,7 +17,7 @@ class ValueCalculatorV3 {
         this.timeSavedHoursValue = document.getElementById('time-saved-hours');
         this.timeSavedWeeksValue = document.getElementById('time-saved-weeks');
 
-        this.teamButtons = Array.from(document.querySelectorAll('.rechner-v3__team-btn'));
+        this.teamButtons = Array.from(document.querySelectorAll('.calculator__team-btn'));
 
         if (!this.minutesPerDay || !this.affectedEmployees || !this.hourlyRate) return;
 
@@ -51,7 +51,7 @@ class ValueCalculatorV3 {
     }
 
     applyActivePreset() {
-        const activeBtn = this.teamButtons.find((btn) => btn.classList.contains('active'));
+        const activeBtn = this.teamButtons.find((btn) => btn.classList.contains('is-active'));
         if (activeBtn) {
             this.applyPreset(activeBtn);
         }
@@ -60,14 +60,14 @@ class ValueCalculatorV3 {
     setActiveTeamButton(activeBtn) {
         this.teamButtons.forEach((btn) => {
             const isActive = btn === activeBtn;
-            btn.classList.toggle('active', isActive);
+            btn.classList.toggle('is-active', isActive);
             btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
         });
     }
 
     clearTeamButtons() {
         this.teamButtons.forEach((btn) => {
-            btn.classList.remove('active');
+            btn.classList.remove('is-active');
             btn.setAttribute('aria-checked', 'false');
         });
     }
@@ -140,7 +140,7 @@ class ValueCalculatorV3 {
         const max = parseFloat(slider.max) || 100;
         const value = parseFloat(slider.value) || 0;
         const percent = ((value - min) / (max - min)) * 100;
-        slider.style.background = `linear-gradient(90deg, var(--accent) 0%, var(--accent2) ${percent}%, var(--border) ${percent}%)`;
+        slider.style.setProperty('--range-fill', percent + '%');
     }
 
     calculate() {
