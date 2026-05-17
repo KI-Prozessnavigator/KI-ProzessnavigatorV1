@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Vielen Dank &mdash; KI-Prozessnavigator</title>
+  <meta name="description" content="Deine Anfrage ist da. Wir melden uns innerhalb von 24 Stunden.">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <style>html{background:#0a0e1a}</style>
+  <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <noscript><style>.gs-reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+  <a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+  <div class="bg-glow bg-glow--primary" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--accent" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--secondary" aria-hidden="true"></div>
+
+  <!--#include virtual="/includes/header.html" -->
+
+  <main id="main">
+
+    <!-- ═══ Thank You Hero ═══ -->
+    <section class="subpage-hero section">
+      <div class="container container--narrow">
+
+        <div class="gs-reveal" style="margin-bottom: var(--space-6);">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true" style="margin-inline: auto;">
+            <circle cx="24" cy="24" r="22" stroke="#34D399" stroke-width="2.5" fill="none"/>
+            <polyline points="15,25 22,32 34,18" stroke="#34D399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+
+        <h1 class="gs-reveal">Vielen Dank f&uuml;r deine Anfrage!</h1>
+        <p class="section-header__lead gs-reveal">Wir haben deine Nachricht erhalten und melden uns innerhalb von 24&nbsp;Stunden bei dir &mdash; meistens sogar schneller.</p>
+
+        <!-- What happens next -->
+        <div class="card gs-reveal" style="margin-top: var(--space-10); margin-bottom: var(--space-10); text-align: left; padding: var(--space-8);">
+          <h2 style="font-size: var(--text-xl); font-weight: 600; margin-bottom: var(--space-6); color: var(--color-text);">So geht es weiter:</h2>
+          <ol style="counter-reset: step; list-style: none; padding: 0;">
+            <li style="display: flex; gap: var(--space-4); align-items: baseline; margin-bottom: var(--space-5);">
+              <span class="eyebrow" style="font-size: var(--text-sm); flex-shrink: 0;">01</span>
+              <span>Wir pr&uuml;fen deine Angaben</span>
+            </li>
+            <li style="display: flex; gap: var(--space-4); align-items: baseline; margin-bottom: var(--space-5);">
+              <span class="eyebrow" style="font-size: var(--text-sm); flex-shrink: 0;">02</span>
+              <span>Du bekommst innerhalb von 24h eine R&uuml;ckmeldung</span>
+            </li>
+            <li style="display: flex; gap: var(--space-4); align-items: baseline;">
+              <span class="eyebrow" style="font-size: var(--text-sm); flex-shrink: 0;">03</span>
+              <span>Wir vereinbaren einen Termin f&uuml;r dein kostenloses Erstgespr&auml;ch</span>
+            </li>
+          </ol>
+        </div>
+
+        <a href="/" class="btn btn-primary btn-lg btn--glow-pulse gs-reveal">Zur&uuml;ck zur Startseite</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!--#include virtual="/includes/footer.html" -->
+
+  <script src="/assets/vendor/gsap.min.js" defer></script>
+  <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/js/app.js" defer></script>
+  <script src="/js/animations.js" defer></script>
+</body>
+</html>
