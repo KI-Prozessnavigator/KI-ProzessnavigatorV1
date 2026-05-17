@@ -1,0 +1,18 @@
+# Secrets (NIEMALS committen)
+.env
+.env.deploy
+
+# Node.js
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+__MACOSX/
+
+# Dev/Test
+sandbox/
+
+# Backups
+*.backup
+*.backup-*
