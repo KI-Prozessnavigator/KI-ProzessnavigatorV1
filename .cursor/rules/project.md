@@ -114,13 +114,10 @@ Nav-Break: @media (min-width: 880px)      Nav-Umschaltung
 - `deploy/` und `deploy-ionos.ps1` (Deploy-Skript — NIEMALS ausführen)
 - `server.js` (nur nach Rückfrage)
 - `package.json` / `package-lock.json` (nur nach Rückfrage)
-- `_handoff/` (Read-Only Design-Referenz)
 
 ## Referenz-Dokumente
 
-- `../docs/seo-keywords.md` — Keywords pro Seite
-- `../docs/seo-meta-tags.md` — Title + Description
-- `../docs/content-neu.md` — Texte aller Sektionen
-- `../Website-Optimierung-Komplett.md` — SEO/GEO-optimierte Texte
-- `_handoff/animations.md` — Motion-Patterns (Referenz)
-- `_handoff/STYLEGUIDE.md` — Design-Regeln (Referenz)
+- `docs/seo-keywords.md` — Keywords pro Seite
+- `docs/seo-meta-tags.md` — Title + Description
+- `docs/content-neu.md` — Texte aller Sektionen
+- `docs/backlog.md` — Offene Aufgaben + Nächste Schritte
