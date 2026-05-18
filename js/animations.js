@@ -135,25 +135,35 @@
 
   /* ── Cards with Stagger (3D entrance) ── */
   function initCards() {
-    var cardGroups = [
-      '.consequences__grid .card',
+    var consequenceCards = gsap.utils.toArray('.consequences__grid .card');
+    if (consequenceCards.length) {
+      gsap.fromTo(consequenceCards,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1, y: 0,
+          stagger: 0.2, duration: 0.6,
+          ease: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          scrollTrigger: { trigger: consequenceCards[0].parentElement, start: 'top 85%', toggleActions: 'play none none none' }
+        }
+      );
+    }
+
+    var otherGroups = [
       '.modules__grid .card',
       '.dsgvo__grid .card',
       '.final-cta__cards .card'
     ];
 
-    cardGroups.forEach(function (selector) {
+    otherGroups.forEach(function (selector) {
       var cards = gsap.utils.toArray(selector);
       if (!cards.length) return;
-
-      var parent = cards[0].parentElement;
 
       gsap.fromTo(cards,
         { opacity: 0, y: 50, rotateX: 6 },
         {
           opacity: 1, y: 0, rotateX: 0,
           stagger: 0.12, duration: 0.7,
-          scrollTrigger: { trigger: parent, start: 'top 85%', toggleActions: 'play none none none' }
+          scrollTrigger: { trigger: cards[0].parentElement, start: 'top 85%', toggleActions: 'play none none none' }
         }
       );
     });
@@ -397,6 +407,35 @@
     });
   }
 
+  /* ── Scroll-Triggered CountUp (sitewide) ── */
+  function initScrollCounters() {
+    var counters = document.querySelectorAll('[data-scroll-count]');
+    if (!counters.length) return;
+
+    counters.forEach(function (el) {
+      var target = parseFloat(el.getAttribute('data-scroll-count'));
+      var prefix = el.getAttribute('data-prefix') || '';
+      var suffix = el.getAttribute('data-suffix') || '';
+
+      gsap.fromTo(el,
+        { innerText: 0 },
+        {
+          innerText: target,
+          duration: 1.5,
+          ease: 'power2.out',
+          snap: { innerText: 1 },
+          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
+          onUpdate: function () {
+            el.textContent = prefix + Math.round(parseFloat(el.textContent)) + suffix;
+          },
+          onStart: function () {
+            el.textContent = prefix + '0' + suffix;
+          }
+        }
+      );
+    });
+  }
+
   /* ── Init ── */
   function init() {
     initHero();
@@ -414,6 +453,7 @@
     initLeadMagnet();
     initFinalCTA();
     initParallaxGlows();
+    initScrollCounters();
 
     ScrollTrigger.refresh();
   }
