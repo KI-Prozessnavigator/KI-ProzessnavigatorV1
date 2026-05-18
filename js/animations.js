@@ -38,11 +38,11 @@
       );
     }
 
-    var words = hero.querySelectorAll('.word');
-    if (words.length) {
-      tl.fromTo(words,
-        { opacity: 0, y: 30, rotateX: -15 },
-        { opacity: 1, y: 0, rotateX: 0, stagger: 0.05, duration: 0.6 },
+    var title = hero.querySelector('.hero__title');
+    if (title) {
+      tl.fromTo(title,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.6 },
         '-=0.2'
       );
     }
@@ -80,6 +80,15 @@
         { opacity: 0 },
         { opacity: 1, duration: 0.5 },
         '-=0.2'
+      );
+    }
+
+    var dashboard = hero.querySelector('.hero__dashboard');
+    if (dashboard) {
+      tl.fromTo(dashboard,
+        { opacity: 0, x: 40 },
+        { opacity: 1, x: 0, duration: 0.8 },
+        '-=0.5'
       );
     }
   }
@@ -407,6 +416,22 @@
     });
   }
 
+  /* ── Word Rotator ── */
+  function initWordRotator() {
+    var rotator = document.querySelector('.word-rotator');
+    if (!rotator) return;
+
+    var words = rotator.querySelectorAll('.word-rotator__word');
+    if (words.length < 2) return;
+
+    var current = 0;
+    setInterval(function () {
+      words[current].classList.remove('is-active');
+      current = (current + 1) % words.length;
+      words[current].classList.add('is-active');
+    }, 2500);
+  }
+
   /* ── Scroll-Triggered CountUp (sitewide) ── */
   function initScrollCounters() {
     var counters = document.querySelectorAll('[data-scroll-count]');
@@ -440,6 +465,7 @@
   function init() {
     initHero();
     initCounters();
+    initWordRotator();
     initScrollReveals();
     initPainStory();
     initCards();
