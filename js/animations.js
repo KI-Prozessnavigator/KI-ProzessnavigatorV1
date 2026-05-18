@@ -219,6 +219,23 @@
         scrollTrigger: { trigger: grid, start: 'top 80%', toggleActions: 'play none none none' }
       }
     );
+
+    var checkmarks = grid.querySelectorAll('.transformation__col--after .check-list__icon polyline');
+    checkmarks.forEach(function (polyline) {
+      var len = polyline.getTotalLength ? polyline.getTotalLength() : 30;
+      polyline.style.strokeDasharray = len;
+      polyline.style.strokeDashoffset = len;
+    });
+
+    if (checkmarks.length) {
+      gsap.to(checkmarks, {
+        strokeDashoffset: 0,
+        duration: 0.4,
+        stagger: 0.15,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: '.transformation', start: 'top 70%', toggleActions: 'play none none none' }
+      });
+    }
   }
 
   /* ── Comparison Table ── */

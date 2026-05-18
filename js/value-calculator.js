@@ -174,6 +174,19 @@ class ValueCalculatorV3 {
         if (this.timeSavedHoursValue) this.timeSavedHoursValue.textContent = this.formatNumber(hoursRounded);
         if (this.timeSavedWeeksValue) this.timeSavedWeeksValue.textContent = weeksRounded.replace('.', ',');
         if (this.savingsFteValue) this.savingsFteValue.textContent = data.fteEquivalent.toFixed(1).replace('.', ',');
+
+        this.updateDonut(data.fteEquivalent);
+    }
+
+    updateDonut(fte) {
+        var fill = document.getElementById('donut-fill');
+        var text = document.getElementById('donut-text');
+        if (!fill) return;
+        var pct = Math.min(Math.round(fte / 3 * 100), 100);
+        var circumference = 2 * Math.PI * 15.9;
+        var dash = (pct / 100) * circumference;
+        fill.setAttribute('stroke-dasharray', dash + ' ' + (circumference - dash));
+        if (text) text.textContent = pct + '%';
     }
 
     formatNumber(value) {

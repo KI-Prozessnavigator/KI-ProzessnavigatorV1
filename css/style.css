@@ -1187,6 +1187,41 @@
     height: 16px;
   }
 
+  /* ═══ COMPONENT: Live Ticker ═══ */
+  .ticker {
+    overflow: hidden;
+    padding-block: var(--space-3);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.01);
+  }
+
+  .ticker__track {
+    display: flex;
+    width: max-content;
+    gap: var(--space-10);
+    animation: marquee 25s linear infinite;
+  }
+
+  .ticker__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .ticker__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-success);
+    box-shadow: 0 0 6px var(--color-success);
+    flex-shrink: 0;
+  }
+
   /* ═══ COMPONENT: Marquee Section ═══ */
   .marquee-section {
     padding-block: var(--space-8);
@@ -2299,6 +2334,7 @@
 
   .transformation__col--after {
     border-color: rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.06);
   }
 
   /* ═══ SECTION: Comparison ═══ */
@@ -2466,8 +2502,22 @@
     text-align: center;
   }
 
-  .calculator__amount {
+  .calculator__amount-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
     margin-top: var(--space-4);
+  }
+
+  .donut-chart {
+    flex-shrink: 0;
+  }
+
+  .donut-chart__fill {
+    transition: stroke-dasharray 0.5s ease;
+  }
+
+  .calculator__amount {
     margin-bottom: var(--space-2);
   }
 
