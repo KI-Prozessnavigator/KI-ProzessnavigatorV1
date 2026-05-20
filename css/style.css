@@ -196,6 +196,20 @@
     background-attachment: fixed;
   }
 
+  #smooth-wrapper {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  #smooth-content {
+    overflow: visible;
+    width: 100%;
+  }
+
   /* ── Typography ── */
   h1 {
     font-size: var(--text-hero);
@@ -3253,6 +3267,23 @@
   }
 
   /* ═══ SECTION: DSGVO ═══ */
+  .dsgvo__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    margin-bottom: var(--space-6);
+  }
+
+  .dsgvo__anim-icon {
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+  }
+
+  .dsgvo__anim-icon:hover {
+    opacity: 1;
+  }
+
   .dsgvo__shield {
     display: flex;
     align-items: center;
