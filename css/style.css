@@ -3181,6 +3181,11 @@
     padding: var(--space-6);
   }
 
+  .process-step__icon {
+    display: block;
+    margin-bottom: var(--space-3);
+  }
+
   .process-step__title {
     font-size: var(--text-2xl);
     font-weight: 600;
