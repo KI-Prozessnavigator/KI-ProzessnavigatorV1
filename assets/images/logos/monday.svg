@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="#ffffff">
+  <!-- Dots/bars icon representing monday.com's brand mark -->
+  <ellipse cx="8" cy="24" rx="3.5" ry="6" fill="#ffffff" transform="rotate(-10 8 24)"/>
+  <ellipse cx="18" cy="22" rx="3.5" ry="7" fill="#ffffff" transform="rotate(-10 18 22)"/>
+  <ellipse cx="28" cy="24" rx="3.5" ry="6" fill="#ffffff" transform="rotate(-10 28 24)"/>
+  <circle cx="35" cy="28" r="2.5" fill="#ffffff"/>
+  <!-- Text -->
+  <text x="96" y="26" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="600" text-anchor="middle">monday</text>
+</svg>

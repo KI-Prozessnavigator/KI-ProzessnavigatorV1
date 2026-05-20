@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 40" fill="#ffffff">
+  <!-- 2x2 grid squares icon -->
+  <rect x="6" y="10" width="9" height="9" rx="1" fill="#ffffff"/>
+  <rect x="17" y="10" width="9" height="9" rx="1" fill="#ffffff"/>
+  <rect x="6" y="21" width="9" height="9" rx="1" fill="#ffffff"/>
+  <rect x="17" y="21" width="9" height="9" rx="1" fill="#ffffff"/>
+  <!-- Text -->
+  <text x="108" y="26" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Microsoft 365</text>
+</svg>
