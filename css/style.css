@@ -2610,6 +2610,19 @@
     box-shadow: 0 0 40px rgba(0, 212, 255, 0.06);
   }
 
+  .transformation__icon {
+    display: block;
+    margin-bottom: var(--space-4);
+  }
+
+  .transformation__result {
+    text-align: center;
+    font-size: var(--text-xl);
+    max-width: 700px;
+    margin-inline: auto;
+    margin-top: var(--space-10);
+  }
+
   /* ═══ SECTION: Comparison ═══ */
   .comparison__table {
     display: grid;
