@@ -30,9 +30,9 @@
   var smoother = ScrollSmoother.create({
     wrapper: '#smooth-wrapper',
     content: '#smooth-content',
-    smooth: 1.2,
+    smooth: 0.6,
     effects: true,
-    smoothTouch: 0.1
+    smoothTouch: false
   });
 
   /* ── Smooth Anchor Scrolling ── */
@@ -126,6 +126,8 @@
   /* ── Section Headers with SplitText ── */
   function initSectionHeaders() {
     gsap.utils.toArray('.section-header.gs-reveal').forEach(function (header) {
+      gsap.set(header, { opacity: 1 });
+
       var h2 = header.querySelector('h2');
       if (h2) {
         var split = SplitText.create(h2, {
