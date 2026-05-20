@@ -186,10 +186,10 @@
     var image = section.querySelector('.founder__image');
     if (image) {
       gsap.fromTo(image,
-        { opacity: 0, scale: 0.9 },
+        { opacity: 0, scale: 0.95, y: 20 },
         {
-          opacity: 1, scale: 1, duration: 0.8,
-          scrollTrigger: { trigger: section, start: 'top 75%', toggleActions: 'play none none none' }
+          opacity: 1, scale: 1, y: 0, duration: 1, ease: 'power2.out',
+          scrollTrigger: { trigger: section, start: 'top 70%', toggleActions: 'play none none none' }
         }
       );
     }
@@ -197,10 +197,10 @@
     var text = section.querySelector('.founder__text');
     if (text) {
       gsap.fromTo(text,
-        { opacity: 0, x: 40 },
+        { opacity: 0, x: 30 },
         {
-          opacity: 1, x: 0, duration: 0.8, delay: 0.15,
-          scrollTrigger: { trigger: section, start: 'top 75%', toggleActions: 'play none none none' }
+          opacity: 1, x: 0, duration: 0.9, delay: 0.25, ease: 'power2.out',
+          scrollTrigger: { trigger: section, start: 'top 70%', toggleActions: 'play none none none' }
         }
       );
     }
