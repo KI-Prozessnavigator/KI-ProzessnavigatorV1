@@ -2438,9 +2438,17 @@
   }
 
   /* ═══ SECTION: Pain Story ═══ */
-  .pain-story {
-    max-width: 800px;
-    margin-inline: auto;
+  .pain-story__body {
+    display: grid;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 1024px) {
+    .pain-story__body {
+      grid-template-columns: 1fr 320px;
+      align-items: start;
+      gap: var(--space-12);
+    }
   }
 
   .pain-story p {
@@ -2450,13 +2458,37 @@
     max-width: none;
   }
 
+  .pain-story__visual {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .pain-story__visual {
+      display: block;
+      position: sticky;
+      top: 120px;
+      opacity: 0.7;
+    }
+
+    .pain-story__visual img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .pain-story__callout {
-    font-size: var(--text-xl);
+    font-size: var(--text-2xl);
     font-style: italic;
     color: var(--color-accent);
     border-left: 3px solid var(--color-accent);
     padding-left: var(--space-6);
-    margin-block: var(--space-8);
+    margin-block: var(--space-10);
+    max-width: 800px;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
+  }
+
+  .pain-story__callout p {
+    max-width: none;
   }
 
   /* ═══ SECTION: Consequence Cards ═══ */
