@@ -243,11 +243,11 @@
     var table = document.querySelector('.comparison__table');
     if (!table) return;
 
-    var cols = table.querySelectorAll('.comparison__col');
-    gsap.fromTo(cols,
-      { opacity: 0, y: 30 },
+    var rows = table.querySelectorAll('.comparison__row:not(.comparison__row--header)');
+    gsap.fromTo(rows,
+      { opacity: 0, x: -20 },
       {
-        opacity: 1, y: 0, stagger: 0.15, duration: 0.7,
+        opacity: 1, x: 0, stagger: 0.1, duration: 0.5,
         scrollTrigger: { trigger: table, start: 'top 80%', toggleActions: 'play none none none' }
       }
     );
