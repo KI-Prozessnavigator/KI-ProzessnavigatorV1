@@ -2867,10 +2867,19 @@
 
   .donut-chart {
     flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+  }
+
+  @media (min-width: 1024px) {
+    .donut-chart {
+      width: 100px;
+      height: 100px;
+    }
   }
 
   .donut-chart__fill {
-    transition: stroke-dasharray 0.5s ease;
+    transition: stroke-dasharray 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .calculator__amount {
@@ -2912,6 +2921,7 @@
     font-size: var(--text-xs);
     color: var(--color-text-muted);
     margin-bottom: var(--space-1);
+    white-space: nowrap;
   }
 
   .calculator__meta-val {
@@ -2919,6 +2929,11 @@
     font-size: var(--text-xl);
     font-weight: 600;
     color: var(--color-accent);
+  }
+
+  .calculator__meta-item {
+    min-width: 0;
+    text-align: center;
   }
 
   /* ═══ SECTION: Modules Grid ═══ */

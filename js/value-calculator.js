@@ -167,13 +167,12 @@ class ValueCalculatorV3 {
         const hoursRounded = Math.round(data.hoursPerYear);
         const monthRounded = Math.round(data.moneyPerMonth);
         const yearRounded = Math.round(data.moneyPerYear);
-        const weeksRounded = data.weeksSaved.toFixed(1);
 
-        this.animateValue(this.savingsYearValue, this.getCurrentValue(this.savingsYearValue), yearRounded, 300);
-        if (this.savingsMonthValue) this.savingsMonthValue.textContent = this.formatNumber(monthRounded);
-        if (this.timeSavedHoursValue) this.timeSavedHoursValue.textContent = this.formatNumber(hoursRounded);
-        if (this.timeSavedWeeksValue) this.timeSavedWeeksValue.textContent = weeksRounded.replace('.', ',');
-        if (this.savingsFteValue) this.savingsFteValue.textContent = data.fteEquivalent.toFixed(1).replace('.', ',');
+        this.animateValue(this.savingsYearValue, this.getCurrentValue(this.savingsYearValue), yearRounded, 400);
+        this.animateValue(this.savingsMonthValue, this.getCurrentValue(this.savingsMonthValue), monthRounded, 400);
+        this.animateValue(this.timeSavedHoursValue, this.getCurrentValue(this.timeSavedHoursValue), hoursRounded, 400);
+        this.animateDecimal(this.timeSavedWeeksValue, this.getCurrentDecimal(this.timeSavedWeeksValue), data.weeksSaved, 400);
+        this.animateDecimal(this.savingsFteValue, this.getCurrentDecimal(this.savingsFteValue), data.fteEquivalent, 400);
 
         this.updateDonut(data.fteEquivalent);
     }
@@ -214,6 +213,29 @@ class ValueCalculatorV3 {
         };
 
         requestAnimationFrame(update);
+    }
+
+    animateDecimal(element, start, end, duration) {
+        if (!element) return;
+        const startTime = performance.now();
+
+        const update = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = start + (end - start) * eased;
+            element.textContent = current.toFixed(1).replace('.', ',');
+            if (progress < 1) requestAnimationFrame(update);
+        };
+
+        requestAnimationFrame(update);
+    }
+
+    getCurrentDecimal(element) {
+        if (!element) return 0;
+        const raw = element.textContent || '';
+        const numeric = parseFloat(raw.replace(',', '.'));
+        return Number.isNaN(numeric) ? 0 : numeric;
     }
 }
 
