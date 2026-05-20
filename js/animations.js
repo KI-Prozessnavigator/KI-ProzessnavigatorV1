@@ -60,7 +60,7 @@
     if (stats.length) {
       tl.fromTo(stats,
         { opacity: 0, y: 15, scale: 0.9 },
-        { opacity: 1, y: 0, scale: 1, stagger: 0.1, duration: 0.5, ease: 'elastic.out(1, 0.5)' },
+        { opacity: 1, y: 0, scale: 1, stagger: 0.3, duration: 0.6, ease: 'back.out(1.4)' },
         '-=0.3'
       );
     }
@@ -83,12 +83,12 @@
       );
     }
 
-    var dashboard = hero.querySelector('.hero__dashboard');
-    if (dashboard) {
-      tl.fromTo(dashboard,
-        { opacity: 0, x: 40 },
-        { opacity: 1, x: 0, duration: 0.8 },
-        '-=0.5'
+    var visual = hero.querySelector('.hero__visual');
+    if (visual) {
+      tl.fromTo(visual,
+        { opacity: 0, x: 30, scale: 0.97 },
+        { opacity: 1, x: 0, scale: 1, duration: 1, ease: 'power2.out' },
+        '-=0.6'
       );
     }
   }
