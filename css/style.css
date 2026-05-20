@@ -3020,42 +3020,74 @@
 
   .testimonial__card {
     padding: var(--space-8);
-    text-align: center;
+    text-align: left;
     max-width: 700px;
     margin-inline: auto;
     margin-bottom: var(--space-8);
   }
 
+  .testimonial__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .testimonial__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+  }
+
+  .testimonial__header-text {
+    display: flex;
+    flex-direction: column;
+  }
+
   .testimonial__stars {
     display: flex;
-    justify-content: center;
-    gap: 4px;
+    align-items: center;
+    gap: var(--space-3);
     margin-bottom: var(--space-4);
     color: #FBBF24;
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
+  }
+
+  .testimonial__verified {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--color-primary);
+    font-style: normal;
+    letter-spacing: 0.02em;
   }
 
   .testimonial__quote {
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     font-style: italic;
     color: var(--color-text);
     margin-bottom: var(--space-6);
     line-height: 1.7;
   }
 
-  .testimonial__author {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-4);
-  }
-
   .testimonial__name {
     font-weight: 600;
     color: var(--color-text);
+    font-size: var(--text-base);
   }
 
   .testimonial__role {
     color: var(--color-text-muted);
+    font-size: var(--text-sm);
   }
 
   .testimonial__result {
@@ -3064,6 +3096,7 @@
     border-top: 1px solid var(--glass-border);
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
+    text-align: center;
   }
 
   /* ═══ SECTION: Process Timeline ═══ */
