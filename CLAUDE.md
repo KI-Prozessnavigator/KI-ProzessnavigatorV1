@@ -30,6 +30,14 @@ Bevor du CSS analysierst oder Änderungen vorschlägst:
 2. Lies die Token-Definitionen im `@layer tokens` Block
 3. Verstehe die URSACHE eines Problems, nicht nur das Symptom
 
+## Vor jedem Vorschlag: Tools prüfen!
+
+Bevor du Animations-, Design- oder Komponenten-Vorschläge machst:
+1. **Skills prüfen** — `shortcuts_list` aufrufen, verfügbare Skills checken
+2. **MCP Registry durchsuchen** — `search_mcp_registry` mit relevanten Keywords (z.B. "SVG", "animation", "UI", "design", "21st", "component", "lottie")
+3. **Vorhandene Vendor-Libs prüfen** — `ls assets/vendor/` checken was lokal vorhanden ist
+4. Erst DANACH eigene Lösungen vorschlagen
+
 ## Häufige Aufgaben
 - "Analysiere [Datei]" → Lies die Datei, finde Probleme, schlage Fixes vor
 - "Prüfe [Datei] auf Regelkonformität" → Check gegen `.cursor/rules/project.md`

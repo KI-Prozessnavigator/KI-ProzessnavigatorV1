@@ -106,9 +106,8 @@
 <body>
   <a href="#main" class="skip-link">Zum Inhalt springen</a>
 
-  <div class="bg-glow bg-glow--primary" aria-hidden="true"></div>
-  <div class="bg-glow bg-glow--accent" aria-hidden="true"></div>
-  <div class="bg-glow bg-glow--secondary" aria-hidden="true"></div>
+  <!-- bg-glow orbs entfernt per Design-Review -->
+
 
   <!--#include virtual="/includes/header.html" -->
 
@@ -117,8 +116,10 @@
     <!-- ═══ SECTION 1: Hero ═══ -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
       <canvas id="hero-canvas" class="hero__canvas" aria-hidden="true"></canvas>
-      <div class="container hero__inner">
-        <div class="hero__content">
+      <div class="container">
+
+        <!-- Zentrierter Header -->
+        <div class="hero__header">
           <span class="eyebrow">KI-Automatisierung für den Mittelstand</span>
           <h1 class="hero__title" id="hero-title">
             Dein Team verliert jede Woche Stunden an
@@ -129,143 +130,134 @@
               <span class="word-rotator__word">verwalten</span>
               <span class="word-rotator__word">koordinieren</span>
             </span>
-            &mdash; wir automatisieren das.
+            &mdash; wir automatisieren&nbsp;das.
           </h1>
-          <p class="hero__description">Die restlichen 30? Verwalten, kopieren, nachfassen, hinterhertelefonieren. Dein Team ist beschäftigt &ndash; aber nicht produktiv. In 8&ndash;12 Wochen automatisieren wir genau diese Prozesse. Ohne Softwarewechsel. Ohne IT-Chaos. Und du gewinnst 5&ndash;10 Stunden pro Woche zurück.</p>
-          <div class="hero__stats">
-            <div class="hero__stat">
-              <span class="hero__stat-value" data-count="10" data-prefix="+">+10h</span>
-              <span class="hero__stat-label">Zeitgewinn / Woche</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-value" data-count="70" data-prefix="-" data-suffix="%">-70%</span>
-              <span class="hero__stat-label">Verwaltungsaufwand</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-value" data-count="100" data-suffix="%">100%</span>
-              <span class="hero__stat-label">DSGVO-konform</span>
-            </div>
-          </div>
-          <div class="hero__cta-row">
-            <a href="/kontakt" class="btn btn-primary btn-lg btn--glow-pulse">Kostenlose Prozess-Analyse sichern</a>
-            <p class="hero__trust-line">30 Min. &middot; Unverbindlich &middot; Kein Verkaufsdruck</p>
-          </div>
-          <div class="hero__rating">
-            <a href="https://share.google/sPxHQVjXUGgFKjiJc" target="_blank" rel="noopener noreferrer" class="rating" aria-label="5.0 Sterne auf Google - Bewertungen ansehen">
-              <span class="rating__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-              <span class="rating__text">5.0 auf <strong>Google</strong></span>
-            </a>
-          </div>
         </div>
-        <div class="hero__dashboard" aria-hidden="true">
-          <div class="dashboard">
-            <div class="dashboard__header">
-              <span class="dashboard__dots"><i></i><i></i><i></i></span>
-              <span class="dashboard__url">business-os.ki-prozessnavigator.de</span>
-            </div>
-            <div class="dashboard__kpis">
-              <div class="dashboard__kpi">
-                <span class="dashboard__kpi-value">+10h</span>
-                <span class="dashboard__kpi-label">Zeitersparnis</span>
-              </div>
-              <div class="dashboard__kpi">
-                <span class="dashboard__kpi-value">12</span>
-                <span class="dashboard__kpi-label">Workflows</span>
-              </div>
-              <div class="dashboard__kpi">
-                <span class="dashboard__kpi-value">0</span>
-                <span class="dashboard__kpi-label">Fehler</span>
-              </div>
-              <div class="dashboard__kpi">
-                <span class="dashboard__kpi-value">340%</span>
-                <span class="dashboard__kpi-label">ROI</span>
-              </div>
-            </div>
-            <div class="dashboard__body">
-              <div class="dashboard__chart">
-                <div class="dashboard__bar" style="--h:45%"></div>
-                <div class="dashboard__bar" style="--h:62%"></div>
-                <div class="dashboard__bar" style="--h:38%"></div>
-                <div class="dashboard__bar" style="--h:80%"></div>
-                <div class="dashboard__bar" style="--h:95%"></div>
-              </div>
-              <div class="dashboard__workflows">
-                <div class="dashboard__wf-item"><span class="dashboard__wf-dot"></span>CRM-Sync<span class="dashboard__wf-status">Live</span></div>
-                <div class="dashboard__wf-item"><span class="dashboard__wf-dot"></span>Rechnungen<span class="dashboard__wf-status">Live</span></div>
-                <div class="dashboard__wf-item"><span class="dashboard__wf-dot"></span>Lead-Scoring<span class="dashboard__wf-status">Live</span></div>
-              </div>
-            </div>
-            <div class="dashboard__feed">
-              <div class="dashboard__feed-line">09:14 — Lead qualifiziert &middot; HubSpot</div>
-              <div class="dashboard__feed-line">09:12 — Rechnung erstellt &middot; DATEV</div>
-              <div class="dashboard__feed-line">09:08 — Onboarding gestartet &middot; Personio</div>
-            </div>
-            <div class="dashboard__toast">Neuer Lead qualifiziert!</div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ═══ Live-Ticker ═══ -->
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker__track">
-        <span class="ticker__item"><i class="ticker__dot"></i>Workflow gestartet &middot; Augsburg &middot; CRM-Sync</span>
-        <span class="ticker__item"><i class="ticker__dot"></i>Lead qualifiziert &middot; München &middot; HubSpot</span>
-        <span class="ticker__item"><i class="ticker__dot"></i>Rechnung erstellt &middot; Berlin &middot; DATEV</span>
-        <span class="ticker__item"><i class="ticker__dot"></i>Onboarding abgeschlossen &middot; Hamburg &middot; Personio</span>
-        <span class="ticker__item"><i class="ticker__dot"></i>E-Mail beantwortet &middot; Köln &middot; 0.3 Sek.</span>
-        <span class="ticker__item"><i class="ticker__dot"></i>Workflow gestartet &middot; Augsburg &middot; CRM-Sync</span>
-        <span class="ticker__item"><i class="ticker__dot"></i>Lead qualifiziert &middot; München &middot; HubSpot</span>
-        <span class="ticker__item"><i class="ticker__dot"></i>Rechnung erstellt &middot; Berlin &middot; DATEV</span>
-        <span class="ticker__item"><i class="ticker__dot"></i>Onboarding abgeschlossen &middot; Hamburg &middot; Personio</span>
-        <span class="ticker__item"><i class="ticker__dot"></i>E-Mail beantwortet &middot; Köln &middot; 0.3 Sek.</span>
-      </div>
-    </div>
+        <!-- Zwei-Spalten: Links Text, Rechts Visual -->
+        <div class="hero__body">
+          <div class="hero__content">
+            <p class="hero__description">Die restlichen 30? Verwalten, kopieren, nachfassen, hinterhertelefonieren. Dein Team ist beschäftigt &ndash; aber nicht produktiv. In 8&ndash;12 Wochen automatisieren wir genau diese Prozesse. Ohne Softwarewechsel. Ohne IT-Chaos. Und du gewinnst 5&ndash;10 Stunden pro Woche zurück.</p>
+            <div class="hero__stats">
+              <div class="hero__stat">
+                <span class="hero__stat-value" data-count="10" data-prefix="+">+10h</span>
+                <span class="hero__stat-label">Zeitgewinn / Woche</span>
+              </div>
+              <div class="hero__stat">
+                <span class="hero__stat-value" data-count="70" data-prefix="-" data-suffix="%">-70%</span>
+                <span class="hero__stat-label">Verwaltungsaufwand</span>
+              </div>
+              <div class="hero__stat">
+                <span class="hero__stat-value" data-count="100" data-suffix="%">100%</span>
+                <span class="hero__stat-label">DSGVO-konform</span>
+              </div>
+            </div>
+          </div>
 
-    <!-- ═══ SECTION 2: Logo-Marquee ═══ -->
-    <section class="marquee-section" aria-label="Kompatible Software-Partner">
-      <div class="container">
-        <p class="marquee-section__heading gs-reveal">Funktioniert mit der Software, die du schon nutzt</p>
-      </div>
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee__track">
-          <span class="marquee__item">DATEV</span>
-          <span class="marquee__item">Lexware</span>
-          <span class="marquee__item">sevDesk</span>
-          <span class="marquee__item">Salesforce</span>
-          <span class="marquee__item">HubSpot</span>
-          <span class="marquee__item">Pipedrive</span>
-          <span class="marquee__item">Microsoft 365</span>
-          <span class="marquee__item">Google</span>
-          <span class="marquee__item">Slack</span>
-          <span class="marquee__item">Zoom</span>
-          <span class="marquee__item">Calendly</span>
-          <span class="marquee__item">Personio</span>
-          <span class="marquee__item">Trello</span>
-          <span class="marquee__item">Asana</span>
-          <span class="marquee__item">Monday</span>
-          <span class="marquee__item">Plancraft</span>
-          <span class="marquee__item">HERO</span>
-          <span class="marquee__item">n8n</span>
-          <span class="marquee__item">DATEV</span>
-          <span class="marquee__item">Lexware</span>
-          <span class="marquee__item">sevDesk</span>
-          <span class="marquee__item">Salesforce</span>
-          <span class="marquee__item">HubSpot</span>
-          <span class="marquee__item">Pipedrive</span>
-          <span class="marquee__item">Microsoft 365</span>
-          <span class="marquee__item">Google</span>
-          <span class="marquee__item">Slack</span>
-          <span class="marquee__item">Zoom</span>
-          <span class="marquee__item">Calendly</span>
-          <span class="marquee__item">Personio</span>
-          <span class="marquee__item">Trello</span>
-          <span class="marquee__item">Asana</span>
-          <span class="marquee__item">Monday</span>
-          <span class="marquee__item">Plancraft</span>
-          <span class="marquee__item">HERO</span>
-          <span class="marquee__item">n8n</span>
+          <div class="hero__visual" aria-hidden="true">
+            <!-- Automation Monitor -->
+            <div class="auto-monitor">
+              <div class="auto-monitor__chrome">
+                <span class="auto-monitor__dots"><i></i><i></i><i></i></span>
+                <span class="auto-monitor__url">live.ki-prozessnavigator.de/monitor</span>
+              </div>
+              <div class="auto-monitor__topbar">
+                <span class="auto-monitor__badge auto-monitor__badge--live"><i class="auto-monitor__pulse"></i>Live</span>
+                <span class="auto-monitor__metric"><strong>12</strong> Workflows</span>
+                <span class="auto-monitor__metric"><strong>0</strong> Fehler</span>
+                <span class="auto-monitor__metric"><strong>340%</strong> ROI</span>
+              </div>
+              <div class="auto-monitor__feed">
+                <div class="auto-monitor__row">
+                  <span class="auto-monitor__time">09:14</span>
+                  <span class="auto-monitor__dot auto-monitor__dot--success"></span>
+                  <span class="auto-monitor__event">Lead qualifiziert</span>
+                  <span class="auto-monitor__source">HubSpot &rarr; Slack</span>
+                  <span class="auto-monitor__dur">0.8s</span>
+                </div>
+                <div class="auto-monitor__row">
+                  <span class="auto-monitor__time">09:12</span>
+                  <span class="auto-monitor__dot auto-monitor__dot--success"></span>
+                  <span class="auto-monitor__event">Rechnung erstellt</span>
+                  <span class="auto-monitor__source">DATEV &rarr; E-Mail</span>
+                  <span class="auto-monitor__dur">1.2s</span>
+                </div>
+                <div class="auto-monitor__row">
+                  <span class="auto-monitor__time">09:08</span>
+                  <span class="auto-monitor__dot auto-monitor__dot--success"></span>
+                  <span class="auto-monitor__event">Onboarding gestartet</span>
+                  <span class="auto-monitor__source">Personio &rarr; Teams</span>
+                  <span class="auto-monitor__dur">2.1s</span>
+                </div>
+                <div class="auto-monitor__row">
+                  <span class="auto-monitor__time">09:03</span>
+                  <span class="auto-monitor__dot auto-monitor__dot--success"></span>
+                  <span class="auto-monitor__event">CRM-Sync abgeschlossen</span>
+                  <span class="auto-monitor__source">Salesforce</span>
+                  <span class="auto-monitor__dur">0.3s</span>
+                </div>
+                <div class="auto-monitor__row">
+                  <span class="auto-monitor__time">08:57</span>
+                  <span class="auto-monitor__dot auto-monitor__dot--success"></span>
+                  <span class="auto-monitor__event">Report generiert</span>
+                  <span class="auto-monitor__source">Google Sheets</span>
+                  <span class="auto-monitor__dur">3.4s</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Zentrierter CTA -->
+        <div class="hero__actions">
+          <a href="/kontakt" class="btn btn-primary btn-lg btn--glow-pulse">Kostenlose Prozess-Analyse sichern</a>
+        </div>
+
+        <!-- Zentrierter Bottom: Software-Marquee -->
+        <div class="hero__bottom">
+          <p class="hero__bottom-heading">Funktioniert mit der Software, die du schon nutzt</p>
+          <div class="marquee">
+            <div class="marquee__track">
+              <span class="marquee__item">DATEV</span>
+              <span class="marquee__item">Lexware</span>
+              <span class="marquee__item">sevDesk</span>
+              <span class="marquee__item">Salesforce</span>
+              <span class="marquee__item">HubSpot</span>
+              <span class="marquee__item">Pipedrive</span>
+              <span class="marquee__item">Microsoft 365</span>
+              <span class="marquee__item">Google</span>
+              <span class="marquee__item">Slack</span>
+              <span class="marquee__item">Zoom</span>
+              <span class="marquee__item">Calendly</span>
+              <span class="marquee__item">Personio</span>
+              <span class="marquee__item">Trello</span>
+              <span class="marquee__item">Asana</span>
+              <span class="marquee__item">Monday</span>
+              <span class="marquee__item">Plancraft</span>
+              <span class="marquee__item">HERO</span>
+              <span class="marquee__item">n8n</span>
+              <span class="marquee__item">DATEV</span>
+              <span class="marquee__item">Lexware</span>
+              <span class="marquee__item">sevDesk</span>
+              <span class="marquee__item">Salesforce</span>
+              <span class="marquee__item">HubSpot</span>
+              <span class="marquee__item">Pipedrive</span>
+              <span class="marquee__item">Microsoft 365</span>
+              <span class="marquee__item">Google</span>
+              <span class="marquee__item">Slack</span>
+              <span class="marquee__item">Zoom</span>
+              <span class="marquee__item">Calendly</span>
+              <span class="marquee__item">Personio</span>
+              <span class="marquee__item">Trello</span>
+              <span class="marquee__item">Asana</span>
+              <span class="marquee__item">Monday</span>
+              <span class="marquee__item">Plancraft</span>
+              <span class="marquee__item">HERO</span>
+              <span class="marquee__item">n8n</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
