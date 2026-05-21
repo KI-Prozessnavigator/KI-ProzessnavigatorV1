@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark light">
   <meta name="google-site-verification" content="N7G_XMxssE1n-fSa1MyRTRtWciaVjgsa_q3wFrO_mIM">
 
   <title>KI-Automatisierung für KMU &amp; Handwerk | KI-Prozessnavigator Augsburg</title>
-  <meta name="description" content="Routineprozesse automatisieren in 8-12 Wochen. 5-10h/Woche sparen. DSGVO-konform. Für Handwerker, Agenturen &amp; Dienstleister. Kostenlose Erstberatung.">
+  <meta name="description" content="Routineprozesse automatisieren in 4-6 Wochen. 5-10h/Woche sparen. DSGVO-konform. Für Handwerker, Agenturen &amp; Dienstleister. Kostenlose Erstberatung.">
   <link rel="canonical" href="https://ki-prozessnavigator.de/">
 
   <meta property="og:type" content="website">
@@ -21,7 +21,8 @@
   <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 
-  <style>html{background:#0a0e1a}</style>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
+  <style>html{background:#0a0e1a}html[data-theme="light"]{background:#f8fafc}</style>
 
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
@@ -35,7 +36,7 @@
     "name": "KI-Prozessnavigator",
     "description": "DSGVO-konforme KI-Automatisierung für den Mittelstand. Routineaufgaben automatisieren, 5-10h/Woche sparen. Hosting in Deutschland, Daten bleiben in der EU.",
     "url": "https://ki-prozessnavigator.de/",
-    "telephone": "+4917555263978",
+    "telephone": "+4917555526398",
     "email": "kontakt@ki-prozessnavigator.de",
     "foundingDate": "2026-01-01",
     "founder": {
@@ -67,6 +68,24 @@
       "ratingValue": "5.0",
       "reviewCount": "5",
       "bestRating": "5"
+    },
+    "sameAs": [
+      "https://www.instagram.com/kiprozessnavigator/",
+      "https://www.linkedin.com/in/dominik-buchele-ki-prozessnavigator/",
+      "https://www.tiktok.com/@kiprozessnavigator",
+      "https://www.facebook.com/profile.php?id=61584576234002"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "KI-Automatisierungsmodule",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing-Automatisierung" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sales & Service-Automatisierung" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fulfillment-Automatisierung" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Backoffice-Automatisierung" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HR & Personal-Automatisierung" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI-Agenten" } }
+      ]
     }
   }
   </script>
@@ -117,106 +136,153 @@
 
     <!-- ═══ SECTION 1: Hero ═══ -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
-      <canvas id="hero-canvas" class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__bg" aria-hidden="true"></div>
       <div class="container">
 
-        <!-- Zentrierter Header -->
-        <div class="hero__header">
-          <span class="eyebrow">KI-Automatisierung für den Mittelstand</span>
+        <!-- Centered H1 -->
+        <div class="hero__headline gs-reveal">
+          <span class="eyebrow">KI-Automatisierung für KMU, Handwerk &amp; Agenturen</span>
           <h1 class="hero__title" id="hero-title">
-            Dein Team verliert jede Woche Stunden an
-            <span class="word-rotator" aria-live="polite">
-              <span class="word-rotator__word is-active">kopieren</span>
-              <span class="word-rotator__word">nachfassen</span>
-              <span class="word-rotator__word">abtippen</span>
-              <span class="word-rotator__word">verwalten</span>
-              <span class="word-rotator__word">koordinieren</span>
-            </span>
-            &mdash; wir automatisieren&nbsp;das.
+            KI-Automatisierung f&uuml;r deinen Betrieb&nbsp;&mdash;<br> weniger Verwaltung, <span class="text-glow">mehr Umsatz.</span>
           </h1>
         </div>
 
-        <!-- Zwei-Spalten: Links Text, Rechts Visual -->
-        <div class="hero__body">
-          <div class="hero__content">
-            <p class="hero__description">Die restlichen 30? Verwalten, kopieren, nachfassen, hinterhertelefonieren. Dein Team ist beschäftigt &ndash; aber nicht produktiv. In 8&ndash;12 Wochen automatisieren wir genau diese Prozesse. Ohne Softwarewechsel. Ohne IT-Chaos. Und du gewinnst 5&ndash;10 Stunden pro Woche zurück.</p>
-            <div class="hero__stats">
-              <div class="hero__stat">
-                <span class="hero__stat-value" data-count="10" data-prefix="+">+10h</span>
-                <span class="hero__stat-label">Zeitgewinn / Woche</span>
+        <!-- Split: Text+Metrics left, Visual right -->
+        <div class="hero__split">
+          <div class="hero__content gs-reveal">
+            <p class="hero__subtitle">Wir automatisieren die Aufgaben, die dein Team jeden Tag ausbremsen: Datenübertragungen, E-Mail-Verarbeitung, Rechnungsstellung, Kundenkommunikation. Ohne Softwarewechsel, ohne IT-Abteilung, 100&nbsp;% DSGVO-konform. Du behältst deine bestehende Software, wir verbinden sie intelligent.</p>
+            <div class="hero__metrics">
+              <div class="hero__metric">
+                <span class="hero__metric-value" data-count="10" data-prefix="+">+10h</span>
+                <span class="hero__metric-label">Zeitgewinn pro Woche</span>
               </div>
-              <div class="hero__stat">
-                <span class="hero__stat-value" data-count="70" data-prefix="-" data-suffix="%">-70%</span>
-                <span class="hero__stat-label">Verwaltungsaufwand</span>
+              <div class="hero__metric">
+                <span class="hero__metric-value" data-count="70" data-prefix="-" data-suffix="%">-70%</span>
+                <span class="hero__metric-label">weniger Verwaltung</span>
               </div>
-              <div class="hero__stat">
-                <span class="hero__stat-value" data-count="100" data-suffix="%">100%</span>
-                <span class="hero__stat-label">DSGVO-konform</span>
+              <div class="hero__metric">
+                <span class="hero__metric-value" data-count="0" data-suffix="%">0%</span>
+                <span class="hero__metric-label">Fehlerquote</span>
               </div>
             </div>
           </div>
 
-          <div class="hero__visual" aria-hidden="true">
-            <!-- Automation Monitor -->
-            <div class="auto-monitor">
-              <div class="auto-monitor__chrome">
-                <span class="auto-monitor__dots"><i></i><i></i><i></i></span>
-                <span class="auto-monitor__url">live.ki-prozessnavigator.de/monitor</span>
+          <div class="hero__visual gs-reveal" aria-hidden="true">
+            <div class="wf-editor">
+              <div class="wf-editor__chrome">
+                <span class="wf-editor__dots"><i></i><i></i><i></i></span>
+                <span class="wf-editor__title">workflow-automatisierung.n8n</span>
+                <span class="wf-editor__status"><i class="wf-editor__live-dot"></i>Aktiv</span>
               </div>
-              <div class="auto-monitor__topbar">
-                <span class="auto-monitor__badge auto-monitor__badge--live"><i class="auto-monitor__pulse"></i>Live</span>
-                <span class="auto-monitor__metric"><strong>12</strong> Workflows</span>
-                <span class="auto-monitor__metric"><strong>0</strong> Fehler</span>
-                <span class="auto-monitor__metric"><strong>340%</strong> ROI</span>
-              </div>
-              <div class="auto-monitor__feed">
-                <div class="auto-monitor__row">
-                  <span class="auto-monitor__time">09:14</span>
-                  <span class="auto-monitor__dot auto-monitor__dot--success"></span>
-                  <span class="auto-monitor__event">Lead qualifiziert</span>
-                  <span class="auto-monitor__source">HubSpot &rarr; Slack</span>
-                  <span class="auto-monitor__dur">0.8s</span>
+              <div class="wf-editor__canvas">
+                <svg class="wf-editor__lines" viewBox="0 0 460 260" fill="none">
+                  <path class="wf-line wf-line--1" d="M92 65 C130 65 130 95 162 95" stroke="var(--color-primary)" stroke-width="2"/>
+                  <path class="wf-line wf-line--2" d="M92 195 C130 195 130 145 162 145" stroke="var(--color-primary)" stroke-width="2"/>
+                  <path class="wf-line wf-line--3" d="M282 120 C320 120 320 75 352 75" stroke="var(--color-primary)" stroke-width="2"/>
+                  <path class="wf-line wf-line--4" d="M282 120 C320 120 320 185 352 185" stroke="var(--color-primary)" stroke-width="2"/>
+                  <circle r="3" fill="var(--color-accent)">
+                    <animateMotion dur="2s" repeatCount="indefinite" path="M92 65 C130 65 130 95 162 95"/>
+                  </circle>
+                  <circle r="2.5" fill="var(--color-accent)" opacity="0.7">
+                    <animateMotion dur="2s" repeatCount="indefinite" begin="0.3s" path="M92 65 C130 65 130 95 162 95"/>
+                  </circle>
+                  <circle r="3" fill="var(--color-accent)">
+                    <animateMotion dur="2.4s" repeatCount="indefinite" path="M92 195 C130 195 130 145 162 145"/>
+                  </circle>
+                  <circle r="2.5" fill="var(--color-accent)" opacity="0.7">
+                    <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.4s" path="M92 195 C130 195 130 145 162 145"/>
+                  </circle>
+                  <circle r="3" fill="var(--color-accent)">
+                    <animateMotion dur="1.8s" repeatCount="indefinite" path="M282 120 C320 120 320 75 352 75"/>
+                  </circle>
+                  <circle r="2.5" fill="var(--color-accent)" opacity="0.7">
+                    <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.3s" path="M282 120 C320 120 320 75 352 75"/>
+                  </circle>
+                  <circle r="3" fill="var(--color-accent)">
+                    <animateMotion dur="2.2s" repeatCount="indefinite" path="M282 120 C320 120 320 185 352 185"/>
+                  </circle>
+                  <circle r="2.5" fill="var(--color-accent)" opacity="0.7">
+                    <animateMotion dur="2.2s" repeatCount="indefinite" begin="0.5s" path="M282 120 C320 120 320 185 352 185"/>
+                  </circle>
+                </svg>
+                <div class="wf-card wf-card--trigger" data-pos="1">
+                  <div class="wf-card__icon wf-card__icon--email">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </div>
+                  <div class="wf-card__body">
+                    <span class="wf-card__name">E-Mail Eingang</span>
+                    <span class="wf-card__meta">Trigger</span>
+                  </div>
                 </div>
-                <div class="auto-monitor__row">
-                  <span class="auto-monitor__time">09:12</span>
-                  <span class="auto-monitor__dot auto-monitor__dot--success"></span>
-                  <span class="auto-monitor__event">Rechnung erstellt</span>
-                  <span class="auto-monitor__source">DATEV &rarr; E-Mail</span>
-                  <span class="auto-monitor__dur">1.2s</span>
+                <div class="wf-card wf-card--trigger" data-pos="2">
+                  <div class="wf-card__icon wf-card__icon--crm">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  </div>
+                  <div class="wf-card__body">
+                    <span class="wf-card__name">Neuer Lead</span>
+                    <span class="wf-card__meta">CRM Webhook</span>
+                  </div>
                 </div>
-                <div class="auto-monitor__row">
-                  <span class="auto-monitor__time">09:08</span>
-                  <span class="auto-monitor__dot auto-monitor__dot--success"></span>
-                  <span class="auto-monitor__event">Onboarding gestartet</span>
-                  <span class="auto-monitor__source">Personio &rarr; Teams</span>
-                  <span class="auto-monitor__dur">2.1s</span>
+                <div class="wf-card wf-card--process" data-pos="3">
+                  <div class="wf-card__icon wf-card__icon--ai">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                  </div>
+                  <div class="wf-card__body">
+                    <span class="wf-card__name">KI Analyse</span>
+                    <span class="wf-card__meta">GPT-4o &middot; n8n</span>
+                  </div>
+                  <span class="wf-card__badge">AI</span>
                 </div>
-                <div class="auto-monitor__row">
-                  <span class="auto-monitor__time">09:03</span>
-                  <span class="auto-monitor__dot auto-monitor__dot--success"></span>
-                  <span class="auto-monitor__event">CRM-Sync abgeschlossen</span>
-                  <span class="auto-monitor__source">Salesforce</span>
-                  <span class="auto-monitor__dur">0.3s</span>
+                <div class="wf-card wf-card--action" data-pos="4">
+                  <div class="wf-card__icon wf-card__icon--check">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <div class="wf-card__body">
+                    <span class="wf-card__name">CRM Update</span>
+                    <span class="wf-card__meta">Automatisch</span>
+                  </div>
                 </div>
-                <div class="auto-monitor__row">
-                  <span class="auto-monitor__time">08:57</span>
-                  <span class="auto-monitor__dot auto-monitor__dot--success"></span>
-                  <span class="auto-monitor__event">Report generiert</span>
-                  <span class="auto-monitor__source">Google Sheets</span>
-                  <span class="auto-monitor__dur">3.4s</span>
+                <div class="wf-card wf-card--action" data-pos="5">
+                  <div class="wf-card__icon wf-card__icon--notify">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                  </div>
+                  <div class="wf-card__body">
+                    <span class="wf-card__name">Team Notify</span>
+                    <span class="wf-card__meta">Slack &middot; E-Mail</span>
+                  </div>
+                </div>
+                <div class="wf-editor__activity">
+                  <div class="wf-activity__row wf-activity__row--active">
+                    <span class="wf-activity__dot"></span>
+                    <span>Lead qualifiziert &rarr; Slack</span>
+                    <span class="wf-activity__time">0.8s</span>
+                  </div>
+                  <div class="wf-activity__row">
+                    <span class="wf-activity__dot"></span>
+                    <span>Rechnung erstellt &rarr; DATEV</span>
+                    <span class="wf-activity__time">1.2s</span>
+                  </div>
+                  <div class="wf-activity__row">
+                    <span class="wf-activity__dot"></span>
+                    <span>Onboarding &rarr; Personio</span>
+                    <span class="wf-activity__time">2.1s</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Zentrierter CTA -->
-        <div class="hero__actions">
-          <a href="/kontakt" class="btn btn-primary btn-lg btn--glow-pulse">Kostenlose Prozess-Analyse sichern</a>
+        <!-- Centered CTAs -->
+        <div class="hero__actions gs-reveal">
+          <a href="/kontakt" class="btn btn-primary btn-lg">Kostenlose Prozess-Analyse</a>
+          <a href="#ablauf" class="btn btn-secondary btn-lg">So funktioniert es</a>
         </div>
 
-        <!-- Zentrierter Bottom: Software-Marquee -->
-        <div class="hero__bottom">
+      </div>
+
+      <!-- Marquee at hero bottom, outside container for full-width -->
+      <div class="hero__bottom">
           <p class="hero__bottom-heading">Funktioniert mit der Software, die du schon nutzt</p>
           <div class="marquee marquee--logos">
             <div class="marquee__track">
@@ -295,7 +361,6 @@
           </div>
         </div>
 
-      </div>
     </section>
 
     <!-- ═══ SECTION 3: Pain Story ═══ -->
@@ -328,13 +393,11 @@
         <div class="consequences__grid">
           <article class="card card--consequence gs-reveal">
             <div class="card__icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <rect x="4" y="36" width="6" height="8" rx="1" fill="#0077FF" opacity="0.5"/>
-                <rect x="14" y="30" width="6" height="14" rx="1" fill="#0077FF" opacity="0.4"/>
-                <rect x="24" y="24" width="6" height="20" rx="1" fill="#0077FF" opacity="0.3"/>
-                <rect x="34" y="18" width="6" height="26" rx="1" fill="#0077FF" opacity="0.2"/>
-                <path d="M7 14 L17 18 L27 10 L37 6" stroke="#ff5f57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
-                <circle cx="37" cy="6" r="3" fill="#ff5f57" opacity="0.8"/>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="24" cy="26" r="14" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <polyline points="24 18 24 26 30 30" stroke="var(--color-accent)" stroke-width="2"/>
+                <line x1="18" y1="8" x2="30" y2="8" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="24" y1="8" x2="24" y2="12" stroke="var(--color-primary)" stroke-width="1.5"/>
               </svg>
             </div>
             <h3 class="card__title">Effizienzlücke</h3>
@@ -342,13 +405,12 @@
           </article>
           <article class="card card--consequence gs-reveal">
             <div class="card__icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <line x1="4" y1="44" x2="4" y2="4" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-                <line x1="4" y1="44" x2="44" y2="44" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-                <path d="M8 12 L16 16 L24 22 L32 30 L40 40" stroke="#ff5f57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
-                <path d="M8 12 L16 16 L24 22 L32 30 L40 40 L40 44 L8 44 Z" fill="#ff5f57" opacity="0.08"/>
-                <circle cx="8" cy="12" r="3" fill="#00D4FF" opacity="0.6"/>
-                <circle cx="40" cy="40" r="3" fill="#ff5f57" opacity="0.6"/>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="8" width="36" height="32" rx="3" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <polyline points="12 34 20 26 28 30 36 16" stroke="var(--color-accent)" stroke-width="2"/>
+                <line x1="36" y1="16" x2="36" y2="22" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <line x1="36" y1="16" x2="30" y2="16" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <circle cx="36" cy="16" r="2" fill="var(--color-accent)"/>
               </svg>
             </div>
             <h3 class="card__title">Margen-Killer</h3>
@@ -356,14 +418,14 @@
           </article>
           <article class="card card--consequence gs-reveal">
             <div class="card__icon" aria-hidden="true">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <path d="M8 4 L40 4 L30 20 L30 40 L18 40 L18 20 Z" stroke="#0077FF" stroke-width="1.5" opacity="0.4" stroke-linejoin="round"/>
-                <rect x="12" y="6" width="24" height="4" rx="1" fill="#0077FF" opacity="0.2"/>
-                <rect x="14" y="12" width="20" height="3" rx="1" fill="#0077FF" opacity="0.15"/>
-                <rect x="19" y="22" width="10" height="16" rx="1" fill="#ff5f57" opacity="0.15"/>
-                <path d="M22 28 L26 28" stroke="#ff5f57" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-                <path d="M22 32 L26 32" stroke="#ff5f57" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-                <circle cx="24" cy="44" r="3" fill="#febc2e" opacity="0.5"/>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 40 L14 8 L34 8 L34 40" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="8" y1="40" x2="40" y2="40" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="14" y1="24" x2="34" y2="24" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <polyline points="20 18 24 14 28 18" stroke="var(--color-accent)" stroke-width="2"/>
+                <line x1="24" y1="14" x2="24" y2="24" stroke="var(--color-accent)" stroke-width="2"/>
+                <line x1="20" y1="30" x2="20" y2="40" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <line x1="28" y1="33" x2="28" y2="40" stroke="var(--color-accent)" stroke-width="1.5"/>
               </svg>
             </div>
             <h3 class="card__title">Wachstums-Deckel</h3>
@@ -381,7 +443,7 @@
         </div>
         <div class="founder__text gs-reveal">
           <h2 class="founder__title" id="founder-title">&bdquo;Ich habe genau dieses Problem jeden Tag erlebt &ndash; und beschlossen, es zu lösen.&ldquo;</h2>
-          <p>Mein Name ist Dominik Buchele. Bevor ich KI-Prozessnavigator gegrundet habe, war ich Projektleiter in der Halbleiterindustrie. Ich habe dort taglich gesehen, wie hochqualifizierte Fachkrafte ihre Zeit mit Datenpflege, Reporting und Copy-Paste verbrannt haben.</p>
+          <p>Mein Name ist Dominik Buchele. Bevor ich KI-Prozessnavigator gegründet habe, war ich Projektleiter in der Halbleiterindustrie. Ich habe dort täglich gesehen, wie hochqualifizierte Fachkräfte ihre Zeit mit Datenpflege, Reporting und Copy-Paste verbrannt haben.</p>
           <p>Mit der richtigen Automatisierung hätten wir 30&ndash;40&nbsp;% mehr Projekte umsetzen können. Ohne einen einzigen neuen Mitarbeiter. Deshalb mache ich heute eines: Ich automatisiere die Prozesse, die dein Unternehmen bremsen. Schnell, bezahlbar und zu 100&nbsp;% DSGVO-konform.</p>
           <div class="founder__info card">
             <ul class="check-list">
@@ -434,7 +496,7 @@
               </li>
               <li class="check-list__item">
                 <svg class="check-list__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-danger)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                Rechnungen werden zu spat geschrieben &ndash; Cashflow leidet
+                Rechnungen werden zu spät geschrieben &ndash; Cashflow leidet
               </li>
               <li class="check-list__item">
                 <svg class="check-list__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-danger)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -484,66 +546,17 @@
       </div>
     </section>
 
-    <!-- ═══ SECTION 7: Comparison ═══ -->
-    <section class="comparison" id="vergleich" aria-labelledby="comparison-title">
-      <div class="container">
-        <header class="section-header gs-reveal">
-          <span class="eyebrow">Warum wir?</span>
-          <h2 id="comparison-title">Warum Einzeltools und interne Workarounds deine Marge auffressen</h2>
-          <p class="section-header__lead">Die meisten KMU basteln monatelang an Inselloesungen. Am Ende hast du zehn Tools, die nicht miteinander reden, und ein Team, das trotzdem alles manuell zusammenklebt.</p>
-        </header>
-        <div class="comparison__table gs-reveal" role="table" aria-label="Vergleich: Mit uns vs. selbst machen">
-          <div class="comparison__row comparison__row--header" role="row">
-            <span class="comparison__cell comparison__cell--feature" role="columnheader">Feature</span>
-            <span class="comparison__cell comparison__cell--us" role="columnheader">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Mit uns
-            </span>
-            <span class="comparison__cell comparison__cell--them" role="columnheader">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              Selbst machen
-            </span>
-          </div>
-          <div class="comparison__row" role="row">
-            <span class="comparison__cell comparison__cell--feature" role="rowheader">Systemintegration</span>
-            <span class="comparison__cell comparison__cell--us" role="cell">Ein durchgängiges System</span>
-            <span class="comparison__cell comparison__cell--them" role="cell">Zehn Tools, die nicht reden</span>
-          </div>
-          <div class="comparison__row" role="row">
-            <span class="comparison__cell comparison__cell--feature" role="rowheader">KI-Strategie</span>
-            <span class="comparison__cell comparison__cell--us" role="cell">Strategisch für maximalen ROI</span>
-            <span class="comparison__cell comparison__cell--them" role="cell">Copy-Paste zwischen Systemen</span>
-          </div>
-          <div class="comparison__row" role="row">
-            <span class="comparison__cell comparison__cell--feature" role="rowheader">Messbarkeit</span>
-            <span class="comparison__cell comparison__cell--us" role="cell">Klare KPIs &amp; Reporting</span>
-            <span class="comparison__cell comparison__cell--them" role="cell">Keine Messwerte verfügbar</span>
-          </div>
-          <div class="comparison__row" role="row">
-            <span class="comparison__cell comparison__cell--feature" role="rowheader">Teamproduktivität</span>
-            <span class="comparison__cell comparison__cell--us" role="cell">Produktiver ab Tag 1</span>
-            <span class="comparison__cell comparison__cell--them" role="cell">Monate Einarbeitung</span>
-          </div>
-          <div class="comparison__row" role="row">
-            <span class="comparison__cell comparison__cell--feature" role="rowheader">DSGVO &amp; Compliance</span>
-            <span class="comparison__cell comparison__cell--us" role="cell">Deutsche Server + AVV</span>
-            <span class="comparison__cell comparison__cell--them" role="cell">Kompatibilitätsprobleme</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ═══ SECTION 8: Calculator ═══ -->
     <section class="calculator" id="ersparnis" aria-labelledby="calculator-title">
       <div class="container">
         <header class="section-header gs-reveal">
           <span class="eyebrow">Dein Einsparpotenzial</span>
-          <h2 id="calculator-title">Rechne selbst: Wie viel Geld lasst du jeden Monat liegen?</h2>
+          <h2 id="calculator-title">Rechne selbst: Wie viel Geld lässt du jeden Monat liegen?</h2>
           <p class="section-header__lead">Stell den Rechner auf dein Team ein &ndash; und sieh sofort, was Automatisierung dir bringt. Keine E-Mail nötig, kein Haken.</p>
         </header>
         <div class="calculator__grid gs-reveal">
           <div class="calculator__inputs card">
-            <p class="calculator__team-label">Wie gross ist dein Team?</p>
+            <p class="calculator__team-label">Wie groß ist dein Team?</p>
             <div class="calculator__team-toggle" role="radiogroup" aria-label="Teamgröße wählen">
               <button class="calculator__team-btn" type="button" role="radio" aria-checked="false" data-minutes="45" data-employees="4" data-rate="30">Kleines Team (3&ndash;5)</button>
               <button class="calculator__team-btn is-active" type="button" role="radio" aria-checked="true" data-minutes="40" data-employees="15" data-rate="40">Wachsendes Team (10&ndash;20)</button>
@@ -617,14 +630,13 @@
         <div class="modules__grid">
           <article class="card card--module gs-reveal">
             <div class="card__icon" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <path d="M6 8h28l-4 10h-20z" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.08)"/>
-                <path d="M14 18h12l-3 8h-6z" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.12)"/>
-                <line x1="20" y1="26" x2="20" y2="34" stroke="var(--color-accent)" stroke-width="1.5"/>
-                <circle cx="20" cy="36" r="2" fill="var(--color-accent)"/>
-                <circle cx="12" cy="5" r="1.5" fill="var(--color-accent)" opacity="0.6"/>
-                <circle cx="20" cy="4" r="1.5" fill="var(--color-accent)" opacity="0.8"/>
-                <circle cx="28" cy="5" r="1.5" fill="var(--color-accent)" opacity="0.5"/>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 10 L24 4 L40 10 L40 26 L24 32 L8 26 Z" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="24" y1="32" x2="24" y2="44" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <line x1="8" y1="26" x2="24" y2="32" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="40" y1="26" x2="24" y2="32" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <circle cx="24" cy="18" r="5" stroke="var(--color-accent)" stroke-width="2"/>
+                <circle cx="24" cy="44" r="2" fill="var(--color-accent)"/>
               </svg>
             </div>
             <h3 class="card__title">Marketing</h3>
@@ -633,36 +645,34 @@
           </article>
           <article class="card card--module gs-reveal">
             <div class="card__icon" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="2" y="14" width="8" height="18" rx="2" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.06)"/>
-                <rect x="16" y="8" width="8" height="24" rx="2" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.1)"/>
-                <rect x="30" y="4" width="8" height="28" rx="2" stroke="var(--color-accent)" stroke-width="1.5" fill="rgba(0,212,255,0.1)"/>
-                <path d="M10 22h6M24 18h6" stroke="var(--color-accent)" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.5"/>
-                <circle cx="6" cy="18" r="2" fill="var(--color-primary)" opacity="0.6"/>
-                <circle cx="20" cy="14" r="2" fill="var(--color-primary)" opacity="0.8"/>
-                <circle cx="34" cy="10" r="2" fill="var(--color-accent)"/>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="24" cy="24" r="18" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <path d="M16 30 L16 22" stroke="var(--color-primary)" stroke-width="2"/>
+                <path d="M24 30 L24 18" stroke="var(--color-primary)" stroke-width="2"/>
+                <path d="M32 30 L32 14" stroke="var(--color-accent)" stroke-width="2"/>
+                <polyline points="12 20 18 14 26 18 36 10" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <circle cx="36" cy="10" r="2" fill="var(--color-accent)"/>
               </svg>
             </div>
             <h3 class="card__title">Sales &amp; Service</h3>
-            <p class="card__text">Vom Erstkontakt bis zum Abschluss &ndash; kein Lead fallt mehr durchs Raster.</p>
+            <p class="card__text">Vom Erstkontakt bis zum Abschluss &ndash; kein Lead fällt mehr durchs Raster.</p>
             <a href="/use-cases" class="card__link">Mehr erfahren</a>
           </article>
           <article class="card card--module gs-reveal">
             <div class="card__icon" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="4" y="6" width="12" height="14" rx="2" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.08)"/>
-                <line x1="7" y1="10" x2="13" y2="10" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-                <line x1="7" y1="13" x2="13" y2="13" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-                <line x1="7" y1="16" x2="11" y2="16" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-                <path d="M16 13h6" stroke="var(--color-accent)" stroke-width="1.5" marker-end="url(#arrowF)"/>
-                <rect x="24" y="8" width="12" height="10" rx="2" stroke="var(--color-accent)" stroke-width="1.5" fill="rgba(0,212,255,0.08)"/>
-                <polyline points="27 13 29 15 33 11" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="10" y="26" width="20" height="8" rx="2" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.06)"/>
-                <path d="M20 20v6" stroke="var(--color-accent)" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.5"/>
-                <circle cx="15" cy="30" r="1.5" fill="var(--color-accent)" opacity="0.6"/>
-                <circle cx="20" cy="30" r="1.5" fill="var(--color-accent)" opacity="0.8"/>
-                <circle cx="25" cy="30" r="1.5" fill="var(--color-accent)"/>
-                <defs><marker id="arrowF" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L6 3L0 6z" fill="var(--color-accent)"/></marker></defs>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="8" width="16" height="20" rx="3" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="8" y1="14" x2="16" y2="14" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="8" y1="18" x2="14" y2="18" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="8" y1="22" x2="16" y2="22" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <path d="M20 18 L28 18" stroke="var(--color-accent)" stroke-width="2"/>
+                <polyline points="25 15 28 18 25 21" stroke="var(--color-accent)" stroke-width="2"/>
+                <rect x="28" y="10" width="16" height="16" rx="3" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <polyline points="33 18 35 20 39 14" stroke="var(--color-accent)" stroke-width="2"/>
+                <rect x="14" y="34" width="20" height="10" rx="3" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <circle cx="21" cy="39" r="1.5" fill="var(--color-accent)"/>
+                <circle cx="27" cy="39" r="1.5" fill="var(--color-accent)"/>
+                <circle cx="33" cy="39" r="1.5" fill="var(--color-accent)"/>
               </svg>
             </div>
             <h3 class="card__title">Fulfillment</h3>
@@ -671,17 +681,18 @@
           </article>
           <article class="card card--module gs-reveal">
             <div class="card__icon" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="4" y="4" width="16" height="20" rx="2" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.08)"/>
-                <line x1="8" y1="9" x2="16" y2="9" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-                <line x1="8" y1="12" x2="14" y2="12" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-                <line x1="8" y1="15" x2="16" y2="15" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-                <text x="10" y="21" font-family="JetBrains Mono, monospace" font-size="5" fill="var(--color-accent)" opacity="0.7">EUR</text>
-                <path d="M20 14 C24 14 24 10 28 10 C32 10 32 14 36 14" stroke="var(--color-accent)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                <circle cx="28" cy="10" r="2" fill="var(--color-accent)" opacity="0.6"/>
-                <path d="M12 28h16" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.3"/>
-                <path d="M12 28h10" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
-                <text x="12" y="35" font-family="JetBrains Mono, monospace" font-size="4" fill="rgba(255,255,255,0.3)">auto</text>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="6" width="22" height="28" rx="3" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="11" y1="14" x2="23" y2="14" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="11" y1="19" x2="20" y2="19" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="11" y1="24" x2="23" y2="24" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="11" y1="29" x2="18" y2="29" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <circle cx="36" cy="20" r="8" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <path d="M33 20 L36 20 L38 17" stroke="var(--color-accent)" stroke-width="2"/>
+                <path d="M30 36 L42 36" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <path d="M30 36 L38 36" stroke="var(--color-accent)" stroke-width="2"/>
+                <path d="M30 42 L42 42" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <path d="M30 42 L40 42" stroke="var(--color-accent)" stroke-width="2"/>
               </svg>
             </div>
             <h3 class="card__title">Backoffice</h3>
@@ -690,36 +701,30 @@
           </article>
           <article class="card card--module gs-reveal">
             <div class="card__icon" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <circle cx="12" cy="10" r="5" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.08)"/>
-                <path d="M4 28a8 8 0 0 1 16 0" stroke="var(--color-primary)" stroke-width="1.5" fill="none"/>
-                <rect x="24" y="6" width="3" height="3" rx="1" stroke="var(--color-accent)" stroke-width="1" fill="rgba(0,212,255,0.15)"/>
-                <rect x="24" y="13" width="3" height="3" rx="1" stroke="var(--color-accent)" stroke-width="1" fill="rgba(0,212,255,0.25)"/>
-                <rect x="24" y="20" width="3" height="3" rx="1" stroke="var(--color-accent)" stroke-width="1" fill="rgba(0,212,255,0.35)"/>
-                <rect x="24" y="27" width="3" height="3" rx="1" stroke="var(--color-accent)" stroke-width="1" fill="var(--color-accent)"/>
-                <line x1="25.5" y1="9" x2="25.5" y2="13" stroke="var(--color-accent)" stroke-width="1" opacity="0.4"/>
-                <line x1="25.5" y1="16" x2="25.5" y2="20" stroke="var(--color-accent)" stroke-width="1" opacity="0.4"/>
-                <line x1="25.5" y1="23" x2="25.5" y2="27" stroke="var(--color-accent)" stroke-width="1" opacity="0.4"/>
-                <line x1="30" y1="7.5" x2="36" y2="7.5" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-                <line x1="30" y1="14.5" x2="34" y2="14.5" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-                <line x1="30" y1="21.5" x2="37" y2="21.5" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-                <line x1="30" y1="28.5" x2="35" y2="28.5" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="14" r="7" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <path d="M6 38 a12 12 0 0 1 24 0" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <circle cx="36" cy="16" r="5" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <path d="M28 42 a8 8 0 0 1 16 0" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <line x1="30" y1="16" x2="24" y2="16" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <polyline points="34 14 36 12 38 14" stroke="var(--color-accent)" stroke-width="1.5"/>
               </svg>
             </div>
             <h3 class="card__title">HR &amp; Personal</h3>
-            <p class="card__text">Neue Mitarbeiter in der Halfte der Zeit einarbeiten.</p>
+            <p class="card__text">Neue Mitarbeiter in der Hälfte der Zeit einarbeiten.</p>
             <a href="/use-cases" class="card__link">Mehr erfahren</a>
           </article>
           <article class="card card--module gs-reveal">
             <div class="card__icon" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="4" y="4" width="24" height="18" rx="4" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.08)"/>
-                <path d="M10 26l-3 5v-5" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.08)"/>
-                <circle cx="11" cy="13" r="1.5" fill="var(--color-accent)" opacity="0.5"/>
-                <circle cx="16" cy="13" r="1.5" fill="var(--color-accent)" opacity="0.7"/>
-                <circle cx="21" cy="13" r="1.5" fill="var(--color-accent)" opacity="0.9"/>
-                <path d="M32 12l3-3M32 12l3 3M35 9l3 0M35 15l3 0" stroke="var(--color-accent)" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-                <circle cx="32" cy="12" r="2" fill="var(--color-accent)" opacity="0.3"/>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="6" width="36" height="24" rx="4" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <path d="M14 30 L10 38" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <circle cx="18" cy="18" r="3" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <circle cx="30" cy="18" r="3" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <path d="M21 18 L27 18" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <polyline points="25 16 27 18 25 20" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <path d="M34 38 L38 38 L38 42 L42 42" stroke="var(--color-accent)" stroke-width="2"/>
+                <circle cx="42" cy="42" r="2" fill="var(--color-accent)"/>
               </svg>
             </div>
             <h3 class="card__title">KI-Agenten</h3>
@@ -761,7 +766,7 @@
           </div>
         </article>
         <div class="text-center gs-reveal">
-          <a href="/kontakt" class="btn btn-primary">Willst du der Nachste sein?</a>
+          <a href="/kontakt" class="btn btn-primary">Willst du der Nächste sein?</a>
         </div>
       </div>
     </section>
@@ -772,7 +777,7 @@
         <header class="section-header gs-reveal">
           <span class="eyebrow">In 4 Schritten</span>
           <h2 id="process-title">In 4 Schritten zu Prozessen, die dein Team wirklich entlasten</h2>
-          <p class="section-header__lead">Kein monatelanges Projekt, keine Disruption im Tagesgeschaft. In 8&ndash;12 Wochen automatisieren wir deine Routineprozesse.</p>
+          <p class="section-header__lead">Kein monatelanges Projekt, keine Disruption im Tagesgeschäft. In 4&ndash;6 Wochen automatisieren wir deine Routineprozesse.</p>
         </header>
         <div class="process__timeline">
           <div class="process__line" aria-hidden="true">
@@ -781,71 +786,66 @@
           <div class="process-step gs-reveal">
             <div class="process-step__dot" aria-hidden="true"><span>1</span></div>
             <div class="process-step__content card">
-              <svg class="process-step__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                <rect x="6" y="12" width="24" height="18" rx="3" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.06)"/>
-                <line x1="10" y1="24" x2="10" y2="18" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
-                <line x1="15" y1="24" x2="15" y2="20" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
-                <line x1="20" y1="24" x2="20" y2="16" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
-                <line x1="25" y1="24" x2="25" y2="22" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="36" cy="22" r="8" stroke="var(--color-primary)" stroke-width="1.5" fill="none"/>
-                <line x1="42" y1="28" x2="46" y2="32" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+              <svg class="process-step__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="20" cy="20" r="12" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="29" y1="29" x2="38" y2="38" stroke="var(--color-primary)" stroke-width="2"/>
+                <line x1="14" y1="24" x2="14" y2="18" stroke="var(--color-accent)" stroke-width="2"/>
+                <line x1="20" y1="24" x2="20" y2="14" stroke="var(--color-accent)" stroke-width="2"/>
+                <line x1="26" y1="24" x2="26" y2="16" stroke="var(--color-accent)" stroke-width="2"/>
+                <circle cx="38" cy="38" r="3" fill="var(--color-accent)"/>
               </svg>
               <h3 class="process-step__title">Prozess-Analyse &amp; Konzept</h3>
-              <p class="process-step__meta">Woche 1&ndash;2 &middot; Dein Aufwand: 2&ndash;3h</p>
+              <p class="process-step__meta">Woche 1 &middot; Dein Aufwand: 2&ndash;3h</p>
               <p>Wir analysieren deine wichtigsten Abläufe, identifizieren die größten Zeitfresser und entwickeln eine priorisierte Roadmap mit konkreten Euro-Beträgen.</p>
             </div>
           </div>
           <div class="process-step gs-reveal">
             <div class="process-step__dot" aria-hidden="true"><span>2</span></div>
             <div class="process-step__content card">
-              <svg class="process-step__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                <rect x="4" y="8" width="12" height="10" rx="3" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.08)"/>
-                <rect x="18" y="18" width="12" height="10" rx="3" stroke="var(--color-accent)" stroke-width="1.5" fill="rgba(0,212,255,0.08)"/>
-                <rect x="32" y="8" width="12" height="10" rx="3" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.08)"/>
-                <rect x="18" y="34" width="12" height="10" rx="3" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.08)"/>
-                <path d="M16 13h2M30 23h2M24 28v6M10 18v5l8 0" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
-                <path d="M38 18v5l-8 0" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+              <svg class="process-step__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="8" width="14" height="12" rx="3" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <rect x="30" y="8" width="14" height="12" rx="3" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <rect x="17" y="28" width="14" height="12" rx="3" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <path d="M18 14 L30 14" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <path d="M11 20 L11 28 L17 34" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <path d="M37 20 L37 28 L31 34" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <circle cx="24" cy="34" r="2" fill="var(--color-accent)"/>
               </svg>
               <h3 class="process-step__title">Aufbau &amp; Integration</h3>
-              <p class="process-step__meta">Woche 3&ndash;8 &middot; Dein Aufwand: 30 Min./Woche</p>
+              <p class="process-step__meta">Woche 2&ndash;4 &middot; Dein Aufwand: 30 Min./Woche</p>
               <p>Wir setzen die Automatisierungen mit n8n, Make oder Airtable um und binden alles an deine bestehende Software an. Kein Systemwechsel nötig.</p>
             </div>
           </div>
           <div class="process-step gs-reveal">
             <div class="process-step__dot" aria-hidden="true"><span>3</span></div>
             <div class="process-step__content card">
-              <svg class="process-step__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                <rect x="8" y="6" width="32" height="24" rx="3" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.06)"/>
-                <polyline points="14 18 18 22 26 14" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <line x1="30" y1="14" x2="36" y2="14" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="30" y1="19" x2="36" y2="19" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="30" y1="24" x2="34" y2="24" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M18 34 C18 34 20 38 24 38 C28 38 30 34 30 34" stroke="var(--color-accent)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
-                <line x1="24" y1="30" x2="24" y2="34" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <svg class="process-step__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="8" y="6" width="32" height="24" rx="3" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <polyline points="16 18 20 22 30 12" stroke="var(--color-accent)" stroke-width="2"/>
+                <line x1="24" y1="30" x2="24" y2="36" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <path d="M16 36 L32 36" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <path d="M12 42 L36 42" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <circle cx="36" cy="12" r="2" fill="var(--color-accent)"/>
               </svg>
               <h3 class="process-step__title">Praxistest &amp; Feinschliff</h3>
-              <p class="process-step__meta">Woche 9&ndash;10 &middot; Dein Aufwand: 1&ndash;2h</p>
+              <p class="process-step__meta">Woche 5 &middot; Dein Aufwand: 1&ndash;2h</p>
               <p>Jede Automatisierung wird im echten Betrieb getestet und so optimiert, dass sie dauerhaft stabil und fehlerfrei läuft.</p>
             </div>
           </div>
           <div class="process-step gs-reveal">
             <div class="process-step__dot" aria-hidden="true"><span>4</span></div>
             <div class="process-step__content card">
-              <svg class="process-step__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                <rect x="4" y="6" width="40" height="28" rx="3" stroke="var(--color-primary)" stroke-width="1.5" fill="rgba(0,119,255,0.06)"/>
-                <rect x="8" y="10" width="10" height="14" rx="2" stroke="var(--color-accent)" stroke-width="1" fill="rgba(0,212,255,0.06)"/>
-                <path d="M10 20 L11 16 L13 18 L15 12" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="22" y="10" width="18" height="4" rx="1" fill="rgba(0,212,255,0.1)"/>
-                <rect x="22" y="10" width="14" height="4" rx="1" fill="rgba(0,212,255,0.2)"/>
-                <rect x="22" y="17" width="18" height="4" rx="1" fill="rgba(0,212,255,0.1)"/>
-                <rect x="22" y="17" width="10" height="4" rx="1" fill="rgba(0,212,255,0.15)"/>
-                <rect x="22" y="24" width="18" height="4" rx="1" fill="rgba(0,212,255,0.1)"/>
-                <rect x="22" y="24" width="16" height="4" rx="1" fill="rgba(0,212,255,0.25)"/>
-                <circle cx="24" cy="40" r="3" stroke="var(--color-accent)" stroke-width="1" fill="none" opacity="0.4"/>
-                <polyline points="23 40 24 41 26 39" stroke="var(--color-accent)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+              <svg class="process-step__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="6" y="6" width="36" height="28" rx="3" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <path d="M12 26 L16 18 L22 22 L28 14 L34 20" stroke="var(--color-accent)" stroke-width="2"/>
+                <line x1="18" y1="34" x2="18" y2="40" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="30" y1="34" x2="30" y2="40" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="14" y1="40" x2="34" y2="40" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <polyline points="20 44 24 46 28 44" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <circle cx="24" cy="46" r="2" fill="var(--color-accent)"/>
               </svg>
               <h3 class="process-step__title">Übergabe &amp; Begleitung</h3>
-              <p class="process-step__meta">Woche 11&ndash;12 &middot; Dein Aufwand: 1&ndash;2h</p>
+              <p class="process-step__meta">Woche 6 &middot; Dein Aufwand: 1&ndash;2h</p>
               <p>Praxisnahe Schulung deines Teams, vollständige Dokumentation und 4 Wochen persönlicher Support nach Go-Live.</p>
             </div>
           </div>
@@ -859,24 +859,6 @@
     <!-- ═══ SECTION 12: DSGVO ═══ -->
     <section class="dsgvo" id="dsgvo" aria-labelledby="dsgvo-title">
       <div class="container">
-        <div class="dsgvo__icons gs-reveal" aria-hidden="true">
-          <svg class="dsgvo__anim-icon dsgvo__anim-icon--shield" width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <path class="dsgvo__shield-body" d="M24 4L6 12v12c0 11.1 7.7 21.5 18 24 10.3-2.5 18-12.9 18-24V12L24 4z" stroke="var(--color-primary)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline class="dsgvo__shield-check" points="16 24 22 30 32 18" stroke="var(--color-accent)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <svg class="dsgvo__anim-icon dsgvo__anim-icon--lock" width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <rect class="dsgvo__lock-body" x="10" y="22" width="28" height="20" rx="4" stroke="var(--color-primary)" stroke-width="2.5" fill="none"/>
-            <path class="dsgvo__lock-shackle" d="M16 22V16a8 8 0 0 1 16 0v6" stroke="var(--color-primary)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <circle cx="24" cy="33" r="3" fill="var(--color-accent)"/>
-          </svg>
-          <svg class="dsgvo__anim-icon dsgvo__anim-icon--doc" width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <path class="dsgvo__doc-page" d="M30 4H12a4 4 0 0 0-4 4v32a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V14L30 4z" stroke="var(--color-primary)" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
-            <polyline class="dsgvo__doc-fold" points="30 4 30 14 40 14" stroke="var(--color-primary)" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
-            <line x1="16" y1="24" x2="32" y2="24" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-            <line x1="16" y1="30" x2="28" y2="30" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-            <line x1="16" y1="36" x2="24" y2="36" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-          </svg>
-        </div>
         <header class="section-header gs-reveal">
           <span class="eyebrow">Datenschutz</span>
           <h2 id="dsgvo-title">Datenschutz, der dich absichert &ndash; nicht ausbremst</h2>
@@ -884,22 +866,35 @@
         </header>
         <div class="dsgvo__grid">
           <div class="dsgvo__item card gs-reveal">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div class="dsgvo__anim-wrapper" aria-hidden="true">
+              <svg class="dsgvo__anim-icon dsgvo__anim-icon--shield" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <path class="dsgvo__shield-body" d="M24 4L6 12v12c0 11.1 7.7 21.5 18 24 10.3-2.5 18-12.9 18-24V12L24 4z" stroke="var(--color-primary)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline class="dsgvo__shield-check" points="16 24 22 30 32 18" stroke="var(--color-accent)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
             <h3 class="card__title">Deutsche Server</h3>
             <p class="card__text">Server in Frankfurt am Main. Keine Daten in den USA, kein Cloud Act.</p>
           </div>
           <div class="dsgvo__item card gs-reveal">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <div class="dsgvo__anim-wrapper" aria-hidden="true">
+              <svg class="dsgvo__anim-icon dsgvo__anim-icon--lock" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <rect class="dsgvo__lock-body" x="10" y="22" width="28" height="20" rx="4" stroke="var(--color-primary)" stroke-width="2.5" fill="none"/>
+                <path class="dsgvo__lock-shackle" d="M16 22V16a8 8 0 0 1 16 0v6" stroke="var(--color-primary)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <circle cx="24" cy="33" r="3" fill="var(--color-accent)"/>
+              </svg>
             </div>
             <h3 class="card__title">Keine KI-Training-Nutzung</h3>
             <p class="card__text">Was wir für dich automatisieren, bleibt deins. Kein Modell wird mit deinen Daten gefüttert.</p>
           </div>
           <div class="dsgvo__item card gs-reveal">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <div class="dsgvo__anim-wrapper" aria-hidden="true">
+              <svg class="dsgvo__anim-icon dsgvo__anim-icon--doc" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <path class="dsgvo__doc-page" d="M30 4H12a4 4 0 0 0-4 4v32a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V14L30 4z" stroke="var(--color-primary)" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+                <polyline class="dsgvo__doc-fold" points="30 4 30 14 40 14" stroke="var(--color-primary)" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+                <line x1="16" y1="24" x2="32" y2="24" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                <line x1="16" y1="30" x2="28" y2="30" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                <line x1="16" y1="36" x2="24" y2="36" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+              </svg>
             </div>
             <h3 class="card__title">AVV ab Tag 1</h3>
             <p class="card__text">Auftragsverarbeitungsvertrag bei jedem Projekt standardmäßig dabei. Ohne Anwalt, ohne Extrakosten.</p>
@@ -945,7 +940,7 @@
           </div>
           <div class="accordion__item gs-reveal" role="listitem">
             <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-4">
-              <span>Was passiert, wenn sich meine Abläufe andern?</span>
+              <span>Was passiert, wenn sich meine Abl&auml;ufe &auml;ndern?</span>
               <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="accordion__content" id="faq-4" role="region" hidden>
@@ -1017,24 +1012,41 @@
     <section class="final-cta" id="cta" aria-labelledby="final-cta-title">
       <div class="container">
         <header class="section-header gs-reveal">
-          <h2 class="final-cta__title" id="final-cta-title">In 30 Minuten weißt du genau, wo dein grosster Hebel liegt</h2>
+          <h2 class="final-cta__title" id="final-cta-title">In 30 Minuten weißt du genau, wo dein größter Hebel liegt</h2>
         </header>
         <div class="final-cta__cards gs-reveal">
           <div class="final-cta__card card">
             <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="20" cy="20" r="12" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="29" y1="29" x2="40" y2="40" stroke="var(--color-primary)" stroke-width="2"/>
+                <circle cx="20" cy="20" r="5" stroke="var(--color-accent)" stroke-width="1.5"/>
+                <circle cx="20" cy="20" r="1.5" fill="var(--color-accent)"/>
+              </svg>
             </div>
             <h3 class="card__title">Prozess-Röntgenbild</h3>
           </div>
           <div class="final-cta__card card">
             <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8" y="6" width="32" height="36" rx="3" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="14" y1="14" x2="34" y2="14" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="14" y1="22" x2="34" y2="22" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <line x1="14" y1="30" x2="28" y2="30" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <circle cx="14" cy="14" r="2" fill="var(--color-accent)"/>
+                <circle cx="14" cy="22" r="2" fill="var(--color-accent)"/>
+                <circle cx="14" cy="30" r="2" fill="var(--color-accent)"/>
+                <polyline points="30 34 34 38 42 28" stroke="var(--color-accent)" stroke-width="2"/>
+              </svg>
             </div>
             <h3 class="card__title">Automatisierungs-Fahrplan</h3>
           </div>
           <div class="final-cta__card card">
             <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="24 4 30 16 44 18 34 28 36 42 24 36 12 42 14 28 4 18 18 16" stroke="var(--color-primary)" stroke-width="1.5"/>
+                <polyline points="18 24 22 28 30 18" stroke="var(--color-accent)" stroke-width="2"/>
+              </svg>
             </div>
             <h3 class="card__title">Sofort-Maßnahme</h3>
           </div>
@@ -1064,7 +1076,7 @@
         <div class="contact-modal__content" id="inquiry-content">
           <div class="form-progress"><div class="progress-step active"></div><div class="progress-step"></div><div class="progress-step"></div></div>
           <div class="form-step active" data-step="1">
-            <h3>Wie gross ist dein Team?</h3>
+            <h3>Wie groß ist dein Team?</h3>
             <div class="option-grid" data-required="true">
               <div class="option-card"><input type="radio" name="company-size" value="1-10"><span class="option-card__content">1&ndash;10 Mitarbeiter</span></div>
               <div class="option-card"><input type="radio" name="company-size" value="11-50"><span class="option-card__content">11&ndash;50 Mitarbeiter</span></div>
@@ -1079,7 +1091,7 @@
               <div class="option-card"><input type="checkbox" name="pain-points" value="kunden-nachfassen"><span class="option-card__content">Leads nachfassen</span></div>
               <div class="option-card"><input type="checkbox" name="pain-points" value="daten-kopieren"><span class="option-card__content">Daten kopieren</span></div>
             </div>
-            <div class="form-actions"><button type="button" class="btn btn-ghost" data-prev="1">Zuruck</button><button type="button" class="btn btn-primary" data-next="3">Weiter</button></div>
+            <div class="form-actions"><button type="button" class="btn btn-ghost" data-prev="1">Zurück</button><button type="button" class="btn btn-primary" data-next="3">Weiter</button></div>
           </div>
           <div class="form-step" data-step="3">
             <form id="inquiry-form">
@@ -1094,7 +1106,7 @@
                 <div class="form-group"><label for="inquiry-phone">Telefon</label><input type="tel" id="inquiry-phone" name="phone"></div>
               </div>
               <div class="form-group"><label class="privacy-checkbox"><input type="checkbox" name="privacy" required><span>Ich stimme der <a href="/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutzerklarung</a> zu.</span></label></div>
-              <div class="form-actions"><button type="button" class="btn btn-ghost" data-prev="2">Zuruck</button><button type="submit" class="btn btn-primary">Kostenlosen Termin sichern</button></div>
+              <div class="form-actions"><button type="button" class="btn btn-ghost" data-prev="2">Zurück</button><button type="submit" class="btn btn-primary">Kostenlosen Termin sichern</button></div>
             </form>
           </div>
         </div>

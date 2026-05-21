@@ -35,9 +35,23 @@
 
 | Seite | Title (max 60 Z.) | Description (max 155 Z.) |
 |-------|-------------------|--------------------------|
-| /ki-automatisierung-augsburg | KI-Automatisierung Augsburg — Beratung vor Ort | KI-Prozessnavigator aus Mertingen bei Augsburg. Persönliche Beratung für Handwerker und KMU. |
-| /ki-automatisierung-muenchen | KI-Automatisierung München — für KMU & Handwerk | Prozesse automatisieren lassen. Persönliche Betreuung aus Bayern. DSGVO-konform. Ab 2.000 €. |
-| /prozessautomatisierung-bayern | Prozessautomatisierung Bayern — KI für den Mittelstand | Von Augsburg aus betreuen wir KMU in ganz Bayern. Vor Ort oder digital. Kostenlose Erstberatung. |
+| /geo/augsburg | KI-Automatisierung Augsburg — Beratung vor Ort | KI-Prozessnavigator aus Mertingen bei Augsburg. Persönliche Beratung für Handwerker und KMU. |
+| /geo/muenchen | KI-Automatisierung München — für KMU & Handwerk | Prozesse automatisieren lassen. Persönliche Betreuung aus Bayern. DSGVO-konform. Ab 2.000 €. |
+| /geo/bayern | Prozessautomatisierung Bayern — KI für den Mittelstand | Von Augsburg aus betreuen wir KMU in ganz Bayern. Vor Ort oder digital. Kostenlose Erstberatung. |
+
+## Blog-Artikel
+
+| Seite | Title (max 60 Z.) | Description (max 155 Z.) |
+|-------|-------------------|--------------------------|
+| /blog/ki-automatisierung-handwerk | KI-Automatisierung im Handwerk: 5 Prozesse die sofort Zeit sparen | 5 Prozesse, die jeder Handwerksbetrieb sofort automatisieren kann. Bis zu 10h/Woche sparen. |
+| /blog/email-automatisierung-kmu | E-Mail-Chaos lösen: Automatische Sortierung & Antworten für KMU | E-Mail-Automatisierung für KMU: Eingehende Mails automatisch sortieren und beantworten. 5h/Woche sparen. |
+| /blog/crm-automatisierung-mittelstand | CRM-Automatisierung für den Mittelstand: Leitfaden 2026 | CRM-Automatisierung für KMU: Leads erfassen, Follow-ups automatisieren, Umsatz steigern. |
+| /blog/buchhaltung-automatisieren-kmu | Buchhaltung automatisieren: Vorbereitende Buchführung ohne Handarbeit | Vorbereitende Buchhaltung automatisieren: Belege erfassen, prüfen, an DATEV exportieren. 8h/Woche sparen. |
+| /blog/mitarbeiter-onboarding-automatisieren | Mitarbeiter-Onboarding automatisieren: Einarbeitung halbieren | Onboarding automatisieren: Verträge, IT-Zugänge, Einarbeitungspläne automatisch vorbereitet. |
+| /blog/no-show-termine-reduzieren | No-Show bei Terminen? Ausfälle um 60 % reduzieren | Terminausfälle kosten KMU tausende Euro/Jahr. 4 automatisierte Maßnahmen gegen No-Shows. |
+| /blog/rechnungen-automatisch-verarbeiten | Rechnungen automatisch verarbeiten: 10h/Woche sparen | Eingangsrechnungen automatisch erfassen, prüfen und verbuchen. DSGVO-konform für KMU. |
+| /blog/angebote-automatisch-erstellen | Angebote automatisch erstellen: Vom Kundenwunsch zum PDF | Angebote automatisch erstellen lassen, vom Kundenwunsch zum PDF in unter einer Minute. |
+| /blog/dsgvo-ki-mittelstand | DSGVO und KI: Was Mittelständler 2026 wissen müssen | DSGVO und KI einfach erklärt. Was du als Geschäftsführer wissen musst. KI rechtssicher einsetzen. |
 
 ## Spezialseiten
 

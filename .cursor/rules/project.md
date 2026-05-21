@@ -115,6 +115,21 @@ Nav-Break: @media (min-width: 880px)      Nav-Umschaltung
 - `server.js` (nur nach Rückfrage)
 - `package.json` / `package-lock.json` (nur nach Rückfrage)
 
+## SEO-Textregeln (Prüf-Pflicht bei jeder Textänderung)
+
+Vor jeder Textänderung prüfen und aktiv verbessern:
+
+1. **H1:** Primäres Keyword enthalten, max 60 Zeichen, genau 1x pro Seite
+2. **Title-Tag:** Keyword vorne, Brand hinten, max 60 Zeichen. Format: `{Keyword-Titel} | KI-Prozessnavigator`
+3. **Meta-Description:** 140–155 Zeichen, Keyword + Nutzenversprechen + CTA-Impuls, einzigartig pro Seite
+4. **Heading-Hierarchie:** H1 → H2 → H3 ohne Lücken, Keywords natürlich in H2s
+5. **Textlänge-Minimum:** Landingpages 800+, Use-Cases/Geo 600+, Blog 1000+ Wörter
+6. **Keyword-Dichte:** 1–2 % natürlich, kein Stuffing, LSI-Keywords verwenden
+7. **Interne Verlinkung:** Jede Seite min. 3 interne Links, kontextuelle Ankertexte (nie "hier klicken")
+8. **Lesbarkeit:** Sätze max 20 Wörter, Absätze max 3 Sätze, Zwischenüberschriften alle 150–200 Wörter
+9. **CTA:** Jede Seite endet mit CTA-Sektion (Calendly oder /kontakt)
+10. **Prüfung:** Bei Textänderung: Keyword-Abdeckung, H-Hierarchie, Meta-Tags, interne Links checken. Verbesserungen aktiv vorschlagen.
+
 ## Referenz-Dokumente
 
 - `docs/seo-keywords.md` — Keywords pro Seite

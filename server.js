@@ -459,10 +459,10 @@ app.get(/\.html$|^\/$|^\/[^.]+$/, (req, res, next) => {
 
 app.use(express.static(path.join(__dirname, '.'), { extensions: ['html'], index: 'index.html' }));
 
-// SPA-Fallback
+// 404-Fallback
 app.get('*', (req, res) => {
     if (req.path.startsWith('/api/')) return res.status(404).json({ success: false, message: 'Endpoint nicht gefunden' });
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.status(404).sendFile(path.join(__dirname, '404.html'));
 });
 
 // ==================== START ====================

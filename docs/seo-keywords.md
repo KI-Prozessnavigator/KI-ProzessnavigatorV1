@@ -24,6 +24,21 @@
 | /geo/augsburg | KI Automatisierung Augsburg | Mertingen, Region, vor Ort |
 | /geo/muenchen | KI Automatisierung München | Bayern, Beratung |
 | /geo/bayern | Prozessautomatisierung Bayern | Mittelstand, KMU, regional |
+| /use-cases/it-dienstleister | Automatisierung IT-Dienstleister | Ticket-Routing, Angebote, SLA |
+
+## Blog-Artikel Keywords
+
+| Seite | Primär | Sekundär |
+|-------|--------|----------|
+| /blog/ki-automatisierung-handwerk | KI Automatisierung Handwerk | Digitalisierung Handwerk, Prozesse, Zeit sparen |
+| /blog/email-automatisierung-kmu | E-Mail Automatisierung KMU | Posteingang sortieren, automatische Antworten |
+| /blog/crm-automatisierung-mittelstand | CRM Automatisierung Mittelstand | Leads, Follow-ups, HubSpot, Salesforce |
+| /blog/buchhaltung-automatisieren-kmu | Buchhaltung automatisieren KMU | DATEV, Belege, vorbereitende Buchführung |
+| /blog/mitarbeiter-onboarding-automatisieren | Onboarding automatisieren | Einarbeitung, Checklisten, Zugänge |
+| /blog/no-show-termine-reduzieren | No-Show Termine reduzieren | Terminerinnerung, Ausfälle, Bestätigung |
+| /blog/rechnungen-automatisch-verarbeiten | Rechnungen automatisch verarbeiten | Eingangsrechnungen, OCR, DATEV |
+| /blog/angebote-automatisch-erstellen | Angebote automatisch erstellen | Angebotserstellung, PDF, Kalkulation |
+| /blog/dsgvo-ki-mittelstand | DSGVO KI Mittelstand | Datenschutz, AVV, deutsche Server |
 
 ## Long-Tail Keywords (für Blog-Artikel)
 - "Was kostet KI Automatisierung für KMU"
