@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark light">
 
   <title>KI f&uuml;r Handwerksbetriebe &mdash; B&uuml;roarbeit automatisieren | KI-Prozessnavigator</title>
   <meta name="description" content="Angebote, Rechnungen, Termine automatisieren. 8h/Woche weniger B&uuml;roarbeit. F&uuml;r Handwerker in Bayern.">
@@ -20,7 +20,8 @@
   <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 
-  <style>html{background:#0a0e1a}</style>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
+  <style>html{background:#0a0e1a}html[data-theme="light"]{background:#f8fafc}</style>
 
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
@@ -49,6 +50,35 @@
           "@type": "State",
           "name": "Bayern"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Muss ich meine bestehende Software wechseln?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Wir bauen auf deiner bestehenden Software auf — DATEV, Lexware, sevDesk, Google Workspace und über 50 weitere Systeme. Kein Softwarewechsel nötig."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie viel Zeit muss ich als Handwerker investieren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Insgesamt 8-10 Stunden über die gesamte Projektlaufzeit von 8-12 Wochen. Wir kommen zu dir, schauen uns deine Abläufe an und setzen alles auf. Dein Tagesgeschäft läuft normal weiter."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet die Automatisierung für einen Handwerksbetrieb?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Projekte liegen zwischen 2.000 und 8.000 Euro einmalig als Festpreis. Ein einzelner Prozess (z.B. nur Angebotserstellung) startet ab 2.000 Euro. Im Erstgespräch analysieren wir, wo sich die Investition am schnellsten rechnet."
+            }
+          }
+        ]
       }
     ]
   }
@@ -145,6 +175,14 @@
             <p class="card__text">Ein KI-Chatbot beantwortet h&auml;ufige Fragen, nimmt Anfragen auf und leitet sie strukturiert an dich weiter &ndash; rund um die Uhr.</p>
           </div>
 
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3 class="card__title">Google-Bewertungen automatisieren</h3>
+            <p class="card__text">Nach Auftragsabschluss erh&auml;lt dein Kunde automatisch eine freundliche Bewertungsanfrage. Mehr 5-Sterne-Bewertungen, bessere lokale Sichtbarkeit bei Google.</p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -172,8 +210,54 @@
       </div>
     </section>
 
+    <!-- ═══ Typischer Tag ═══ -->
+    <section class="section" aria-labelledby="alltag-heading">
+      <div class="container container--narrow">
+        <h2 id="alltag-heading" class="gs-reveal">Ein typischer Tag als Handwerker mit Automatisierung</h2>
+        <p class="gs-reveal">Morgens um 7 &ouml;ffnest du dein Handy. Drei Kundenanfragen von gestern Abend sind bereits als Angebote vorbereitet &ndash; du pr&uuml;fst kurz und gibst frei. Zwei Kunden haben online Termine f&uuml;r n&auml;chste Woche gebucht, Erinnerungen gehen automatisch raus.</p>
+        <p class="gs-reveal">Auf der Baustelle arbeitest du ungest&ouml;rt. Kein Telefonieren wegen Terminbest&auml;tigungen, kein Hin und Her per WhatsApp. Wenn der Auftrag fertig ist, wird die Rechnung automatisch erstellt und an DATEV &uuml;bertragen. Abends bist du p&uuml;nktlich zu Hause &ndash; statt noch zwei Stunden Papierkram zu erledigen.</p>
+        <p class="gs-reveal">Das ist kein Wunschdenken. Das ist der Alltag unserer Handwerkskunden nach 8&ndash;12 Wochen Zusammenarbeit. Dein Zeitaufwand w&auml;hrend des gesamten Projekts: nur 8&ndash;10 Stunden.</p>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="container container--narrow">
+        <h2 id="faq-heading" class="gs-reveal">H&auml;ufige Fragen von Handwerkern</h2>
+        <div class="accordion" role="list">
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-1">
+              <span>Muss ich meine bestehende Software wechseln?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-1" role="region" hidden>
+              <p>Nein. Wir bauen auf deiner bestehenden Software auf &ndash; DATEV, Lexware, sevDesk, Google Workspace und &uuml;ber 50 weitere Systeme. Kein Softwarewechsel n&ouml;tig.</p>
+            </div>
+          </div>
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-2">
+              <span>Wie viel Zeit muss ich als Handwerker investieren?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-2" role="region" hidden>
+              <p>Insgesamt 8&ndash;10 Stunden &uuml;ber die gesamte Projektlaufzeit von 8&ndash;12 Wochen. Wir kommen zu dir, schauen uns deine Abl&auml;ufe an und setzen alles auf. Dein Tagesgesch&auml;ft l&auml;uft normal weiter.</p>
+            </div>
+          </div>
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-3">
+              <span>Was kostet die Automatisierung f&uuml;r einen Handwerksbetrieb?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-3" role="region" hidden>
+              <p>Projekte liegen zwischen 2.000 und 8.000 Euro einmalig als Festpreis. Ein einzelner Prozess wie Angebotserstellung startet ab 2.000 Euro. Im Erstgespr&auml;ch analysieren wir, wo sich die Investition am schnellsten rechnet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ Final CTA ═══ -->
-    <section class="section">
+    <section class="section section--cta">
       <div class="container text-center">
         <h2 class="gs-reveal">Bereit, deine B&uuml;roarbeit zu automatisieren?</h2>
         <p class="section-header__lead gs-reveal">In 30 Minuten zeigen wir dir, welche Prozesse in deinem Betrieb das gr&ouml;&szlig;te Einsparpotenzial haben.</p>

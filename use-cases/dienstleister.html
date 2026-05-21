@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark light">
 
   <title>Automatisierung f&uuml;r Dienstleister &amp; Berater | KI-Prozessnavigator</title>
   <meta name="description" content="Terminbuchung, Onboarding, Reporting automatisieren. Mehr Kunden bei weniger Verwaltung.">
@@ -20,7 +20,8 @@
   <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 
-  <style>html{background:#0a0e1a}</style>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
+  <style>html{background:#0a0e1a}html[data-theme="light"]{background:#f8fafc}</style>
 
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
@@ -45,6 +46,35 @@
         "@type": "LocalBusiness",
         "name": "KI-Prozessnavigator",
         "description": "KI-Automatisierung für Dienstleister und Berater"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kann der KI-Chatbot auch individuelle Kundenfragen beantworten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Der Chatbot wird mit deinen FAQ, Leistungsbeschreibungen und Preisen trainiert. Er beantwortet Standardfragen rund um die Uhr und leitet komplexe Anfragen strukturiert an dich weiter."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie viele Kunden kann ich mit Automatisierung mehr betreuen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Die meisten Dienstleister gewinnen 5-8 Stunden pro Woche zurück. Das entspricht je nach Geschäftsmodell 2-4 zusätzlichen Kunden pro Monat — ohne zusätzliches Personal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Muss ich meine bestehenden Tools wechseln?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Wir integrieren in deine bestehende Software: Google Workspace, Microsoft 365, Calendly, HubSpot, Lexware, sevDesk und über 50 weitere Systeme."
+            }
+          }
+        ]
       }
     ]
   }
@@ -141,6 +171,14 @@
             <p class="card__text">Rechnungen werden automatisch aus Projektdaten generiert, versendet und in deiner Buchhaltung verbucht. Kein Monatsende-Stress mehr.</p>
           </div>
 
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="card__title">KI-Chatbot &amp; Dokumentenerstellung</h3>
+            <p class="card__text">Dein KI-Chatbot beantwortet FAQ rund um die Uhr, nimmt Anfragen strukturiert auf und erstellt automatisch Angebote, Vertr&auml;ge und Protokolle aus Vorlagen.</p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -153,19 +191,69 @@
         </div>
         <div class="hero__stats gs-reveal">
           <div class="hero__stat">
-            <span class="hero__stat-value">5h</span>
+            <span class="hero__stat-value">5&ndash;8h</span>
             <span class="hero__stat-label">gespart pro Berater / Woche</span>
           </div>
           <div class="hero__stat">
             <span class="hero__stat-value">2 Tage</span>
             <span class="hero__stat-label">Onboarding statt 2 Wochen</span>
           </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value">60%</span>
+            <span class="hero__stat-label">weniger No-Shows</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Typischer Tag ═══ -->
+    <section class="section" aria-labelledby="alltag-heading">
+      <div class="container container--narrow">
+        <h2 id="alltag-heading" class="gs-reveal">Ein typischer Tag als Dienstleister mit Automatisierung</h2>
+        <p class="gs-reveal">Morgens checkst du dein Dashboard: &Uuml;ber Nacht haben zwei Interessenten Termine gebucht. Die Best&auml;tigungen und Erinnerungen wurden automatisch versendet. Der KI-Chatbot hat drei FAQ-Anfragen beantwortet und eine komplexere Anfrage strukturiert an dich weitergeleitet.</p>
+        <p class="gs-reveal">Ein Projekt ist abgeschlossen. Der Abschlussbericht wurde automatisch aus deinen Projektdaten generiert, die Rechnung erstellt und an die Buchhaltung &uuml;bertragen. Die Follow-up-Sequenz startet in drei Tagen: eine kurze Zufriedenheitsumfrage, gefolgt von einem Angebot f&uuml;r das n&auml;chste Quartal.</p>
+        <p class="gs-reveal">Statt f&uuml;nf Stunden Admin pro Tag brauchst du 30 Minuten. Den Rest der Zeit berätst du Kunden, entwickelst Strategien und baust dein Gesch&auml;ft aus &ndash; nicht deine To-Do-Liste.</p>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="container container--narrow">
+        <h2 id="faq-heading" class="gs-reveal">H&auml;ufige Fragen von Dienstleistern</h2>
+        <div class="accordion" role="list">
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-1">
+              <span>Kann der KI-Chatbot auch individuelle Kundenfragen beantworten?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-1" role="region" hidden>
+              <p>Ja. Der Chatbot wird mit deinen FAQ, Leistungsbeschreibungen und Preisen trainiert. Er beantwortet Standardfragen rund um die Uhr und leitet komplexe Anfragen strukturiert an dich weiter.</p>
+            </div>
+          </div>
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-2">
+              <span>Wie viele Kunden kann ich mit Automatisierung mehr betreuen?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-2" role="region" hidden>
+              <p>Die meisten Dienstleister gewinnen 5&ndash;8 Stunden pro Woche zur&uuml;ck. Das entspricht je nach Gesch&auml;ftsmodell 2&ndash;4 zus&auml;tzlichen Kunden pro Monat &ndash; ohne zus&auml;tzliches Personal.</p>
+            </div>
+          </div>
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-3">
+              <span>Muss ich meine bestehenden Tools wechseln?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-3" role="region" hidden>
+              <p>Nein. Wir integrieren in deine bestehende Software: Google Workspace, Microsoft 365, Calendly, HubSpot, Lexware, sevDesk und &uuml;ber 50 weitere Systeme.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ═══ Final CTA ═══ -->
-    <section class="section">
+    <section class="section section--cta">
       <div class="container text-center">
         <h2 class="gs-reveal">Bereit, mehr Kunden zu betreuen &ndash; ohne mehr zu arbeiten?</h2>
         <p class="section-header__lead gs-reveal">In 30 Minuten zeigen wir dir, welche Prozesse in deinem Unternehmen das gr&ouml;&szlig;te Einsparpotenzial haben.</p>

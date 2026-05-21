@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark light">
 
   <title>Automatisierung f&uuml;r Agenturen &amp; Marketing | KI-Prozessnavigator</title>
   <meta name="description" content="Content, Reporting, Lead-Qualifizierung automatisieren. 30% mehr Kapazit&auml;t f&uuml;r kreative Arbeit.">
@@ -20,7 +20,8 @@
   <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 
-  <style>html{background:#0a0e1a}</style>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
+  <style>html{background:#0a0e1a}html[data-theme="light"]{background:#f8fafc}</style>
 
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
@@ -45,6 +46,35 @@
         "@type": "LocalBusiness",
         "name": "KI-Prozessnavigator",
         "description": "KI-Automatisierung für Agenturen und Marketing-Teams"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Funktioniert das auch mit unseren bestehenden Tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Wir integrieren Google Ads, Meta Business Suite, HubSpot, Salesforce, Asana, Monday, Slack, Google Workspace und über 50 weitere Systeme. Kein Tool-Wechsel nötig."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie lange dauert die Einrichtung für eine Agentur?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Typisch 8-12 Wochen für ein Komplettpaket. Einzelne Prozesse wie automatisiertes Reporting können in 4 Wochen live sein. Euer Tagesgeschäft läuft währenddessen normal weiter."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Können die KI-Agenten auch Content erstellen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, aber als Entwurf. Der KI-Recherche-Agent sammelt Daten, erstellt Wettbewerbsanalysen und liefert Content-Entwürfe. Euer kreatives Team prüft, verfeinert und gibt frei. Die KI ersetzt keine Kreativität — sie beseitigt die Vorarbeit."
+            }
+          }
+        ]
       }
     ]
   }
@@ -141,6 +171,14 @@
             <p class="card__text">Stundennachweise werden automatisch in Rechnungen umgewandelt und versendet. Kein manuelles Zusammenrechnen am Monatsende.</p>
           </div>
 
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="12" cy="15" r="2"/></svg>
+            </div>
+            <h3 class="card__title">KI-Recherche-Agent</h3>
+            <p class="card__text">Automatische Wettbewerbsanalysen, Marktrecherchen und Content-Entw&uuml;rfe. Euer KI-Agent sammelt die Daten &ndash; euer Team macht Strategie daraus.</p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -164,8 +202,54 @@
       </div>
     </section>
 
+    <!-- ═══ Typischer Tag ═══ -->
+    <section class="section" aria-labelledby="alltag-heading">
+      <div class="container container--narrow">
+        <h2 id="alltag-heading" class="gs-reveal">Montagmorgen in einer automatisierten Agentur</h2>
+        <p class="gs-reveal">9 Uhr, Wochenstart. Dein Team &ouml;ffnet die Dashboards: Alle Kampagnen-Reports der letzten Woche sind bereits zusammengefasst und als PDF an die Kunden versendet. Drei neue Leads sind &uuml;bers Wochenende eingegangen, bewertet und dem richtigen Account Manager zugewiesen. Die Erstantwort ging innerhalb von 4 Minuten raus.</p>
+        <p class="gs-reveal">Ein neuer Kunde hat den Vertrag unterschrieben. Sein Projektordner existiert bereits, die Briefing-Vorlage ist vorbef&uuml;llt, die Zug&auml;nge stehen bereit. Statt zwei Stunden Setup kann der Account Manager direkt ins Kick-off starten.</p>
+        <p class="gs-reveal">Und der KI-Recherche-Agent? Hat &uuml;ber Nacht eine Wettbewerbsanalyse f&uuml;r den Pitch am Mittwoch vorbereitet. Dein Strategie-Team pr&uuml;ft, erg&auml;nzt und hat in einer Stunde ein Deck &ndash; statt zwei Tagen Recherche.</p>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="container container--narrow">
+        <h2 id="faq-heading" class="gs-reveal">H&auml;ufige Fragen von Agenturen</h2>
+        <div class="accordion" role="list">
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-1">
+              <span>Funktioniert das auch mit unseren bestehenden Tools?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-1" role="region" hidden>
+              <p>Ja. Wir integrieren Google Ads, Meta Business Suite, HubSpot, Salesforce, Asana, Monday, Slack, Google Workspace und &uuml;ber 50 weitere Systeme. Kein Tool-Wechsel n&ouml;tig.</p>
+            </div>
+          </div>
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-2">
+              <span>Wie lange dauert die Einrichtung f&uuml;r eine Agentur?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-2" role="region" hidden>
+              <p>Typisch 8&ndash;12 Wochen f&uuml;r ein Komplettpaket. Einzelne Prozesse wie automatisiertes Reporting k&ouml;nnen in 4 Wochen live sein. Euer Tagesgesch&auml;ft l&auml;uft w&auml;hrenddessen normal weiter.</p>
+            </div>
+          </div>
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-3">
+              <span>K&ouml;nnen die KI-Agenten auch Content erstellen?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-3" role="region" hidden>
+              <p>Ja, aber als Entwurf. Der KI-Recherche-Agent sammelt Daten, erstellt Wettbewerbsanalysen und liefert Content-Entw&uuml;rfe. Euer kreatives Team pr&uuml;ft, verfeinert und gibt frei. Die KI ersetzt keine Kreativit&auml;t &ndash; sie beseitigt die Vorarbeit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ Final CTA ═══ -->
-    <section class="section">
+    <section class="section section--cta">
       <div class="container text-center">
         <h2 class="gs-reveal">Bereit, eurer Agentur mehr kreative Freiheit zu geben?</h2>
         <p class="section-header__lead gs-reveal">In 30 Minuten zeigen wir dir, welche Prozesse in eurer Agentur das gr&ouml;&szlig;te Einsparpotenzial haben.</p>

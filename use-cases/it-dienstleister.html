@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark light">
 
   <title>KI-Automatisierung f&uuml;r IT-Dienstleister | KI-Prozessnavigator</title>
   <meta name="description" content="Angebote, Ticket-Routing, Kunden-Onboarding automatisieren. Angebotszeit von 2 Tagen auf 30 Min.">
@@ -20,7 +20,8 @@
   <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 
-  <style>html{background:#0a0e1a}</style>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
+  <style>html{background:#0a0e1a}html[data-theme="light"]{background:#f8fafc}</style>
 
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
@@ -45,6 +46,35 @@
         "@type": "LocalBusiness",
         "name": "KI-Prozessnavigator",
         "description": "KI-Automatisierung für IT-Dienstleister und Systemhäuser"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Integriert ihr euch in unser bestehendes Ticketsystem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Wir arbeiten mit Jira Service Management, Freshdesk, Zendesk, OTRS, Zammad und weiteren Systemen. Die Automatisierung sitzt auf eurem bestehenden Stack — kein Tool-Wechsel nötig."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie wird die automatische Rechnungsstellung an DATEV angebunden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aus euren Projektdaten, Stundennachweisen und Verträgen werden automatisch Rechnungen generiert, versendet und direkt an DATEV oder euer Buchhaltungssystem exportiert. Der Steuerberater bekommt saubere Daten ohne Nacharbeit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet die Automatisierung für einen IT-Dienstleister?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Projekte liegen zwischen 2.000 und 8.000 Euro einmalig als Festpreis. Ein einzelner Prozess wie Ticket-Routing startet ab 2.000 Euro. Im Erstgespräch analysieren wir, welche Prozesse den größten ROI bringen."
+            }
+          }
+        ]
       }
     ]
   }
@@ -141,6 +171,14 @@
             <p class="card__text">Monatliche Service-Reports mit Ticket-Statistiken, SLA-Einhaltung und Empfehlungen &ndash; automatisch generiert und an eure Kunden versendet.</p>
           </div>
 
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="card__title">Rechnungsstellung &amp; DATEV-Export</h3>
+            <p class="card__text">Aus Projektdaten und Stundennachweisen werden automatisch Rechnungen erstellt, versendet und an DATEV exportiert. Kein manuelles Zusammenrechnen am Monatsende.</p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -168,8 +206,54 @@
       </div>
     </section>
 
+    <!-- ═══ Typischer Tag ═══ -->
+    <section class="section" aria-labelledby="alltag-heading">
+      <div class="container container--narrow">
+        <h2 id="alltag-heading" class="gs-reveal">Ein typischer Tag in einem automatisierten IT-Unternehmen</h2>
+        <p class="gs-reveal">8:30 Uhr, Tagesbeginn. Dein Service-Desk-Dashboard zeigt: 12 Tickets &uuml;ber Nacht eingegangen. Alle bereits kategorisiert, priorisiert und dem richtigen Techniker zugewiesen. Drei davon waren Standardprobleme &ndash; der KI-Agent hat L&ouml;sungsvorschl&auml;ge direkt an die Kunden gesendet. Die Erstreaktion lag bei unter 3 Minuten.</p>
+        <p class="gs-reveal">Ein Bestandskunde fragt ein neues Projekt an. Die Anforderungen werden automatisch erfasst, mit eurer Preisdatenbank abgeglichen und in 30 Minuten liegt ein fertiges Angebot vor &ndash; statt nach zwei Tagen. W&auml;hrenddessen l&auml;uft das SLA-Monitoring im Hintergrund und eskaliert ein Ticket, das sich der Frist n&auml;hert.</p>
+        <p class="gs-reveal">Am Monatsende? Die Rechnungen f&uuml;r alle laufenden Vertr&auml;ge wurden automatisch erstellt und an DATEV &uuml;bertragen. Eure Techniker haben die ganze Woche an echten Problemen gearbeitet &ndash; nicht an Papierkram.</p>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="container container--narrow">
+        <h2 id="faq-heading" class="gs-reveal">H&auml;ufige Fragen von IT-Dienstleistern</h2>
+        <div class="accordion" role="list">
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-1">
+              <span>Integriert ihr euch in unser bestehendes Ticketsystem?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-1" role="region" hidden>
+              <p>Ja. Wir arbeiten mit Jira Service Management, Freshdesk, Zendesk, OTRS, Zammad und weiteren Systemen. Die Automatisierung sitzt auf eurem bestehenden Stack &ndash; kein Tool-Wechsel n&ouml;tig.</p>
+            </div>
+          </div>
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-2">
+              <span>Wie wird die automatische Rechnungsstellung an DATEV angebunden?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-2" role="region" hidden>
+              <p>Aus euren Projektdaten, Stundennachweisen und Vertr&auml;gen werden automatisch Rechnungen generiert, versendet und direkt an DATEV oder euer Buchhaltungssystem exportiert. Der Steuerberater bekommt saubere Daten ohne Nacharbeit.</p>
+            </div>
+          </div>
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="uc-faq-3">
+              <span>Was kostet die Automatisierung f&uuml;r einen IT-Dienstleister?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="uc-faq-3" role="region" hidden>
+              <p>Projekte liegen zwischen 2.000 und 8.000 Euro einmalig als Festpreis. Ein einzelner Prozess wie Ticket-Routing startet ab 2.000 Euro. Im Erstgespr&auml;ch analysieren wir, welche Prozesse den gr&ouml;&szlig;ten ROI bringen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ Final CTA ═══ -->
-    <section class="section">
+    <section class="section section--cta">
       <div class="container text-center">
         <h2 class="gs-reveal">Bereit, euer IT-Team von Admin zu befreien?</h2>
         <p class="section-header__lead gs-reveal">In 30 Minuten zeigen wir dir, welche Prozesse in eurem Unternehmen das gr&ouml;&szlig;te Einsparpotenzial haben.</p>
