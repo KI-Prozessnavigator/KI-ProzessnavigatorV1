@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark light">
   <title>Vielen Dank &mdash; KI-Prozessnavigator</title>
   <meta name="description" content="Deine Anfrage ist da. Wir melden uns innerhalb von 24 Stunden.">
+  <meta name="robots" content="noindex">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-  <style>html{background:#0a0e1a}</style>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
+  <style>html{background:#0a0e1a}html[data-theme="light"]{background:#f8fafc}</style>
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
   <noscript><style>.gs-reveal{opacity:1!important;transform:none!important}</style></noscript>
@@ -25,40 +27,39 @@
 
   <main id="main">
 
-    <!-- ═══ Thank You Hero ═══ -->
-    <section class="subpage-hero section">
+    <!-- ═══ Thank You ═══ -->
+    <section class="subpage-hero section" aria-labelledby="thanks-title">
       <div class="container container--narrow">
 
-        <div class="gs-reveal" style="margin-bottom: var(--space-6);">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true" style="margin-inline: auto;">
-            <circle cx="24" cy="24" r="22" stroke="#34D399" stroke-width="2.5" fill="none"/>
-            <polyline points="15,25 22,32 34,18" stroke="#34D399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <div class="thanks__icon gs-reveal" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+            <circle cx="28" cy="28" r="26" stroke="var(--color-accent)" stroke-width="2.5" fill="none"/>
+            <polyline points="17,29 25,37 39,21" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           </svg>
         </div>
 
-        <h1 class="gs-reveal">Vielen Dank f&uuml;r deine Anfrage!</h1>
+        <h1 id="thanks-title" class="gs-reveal">Vielen Dank für deine Anfrage!</h1>
         <p class="section-header__lead gs-reveal">Wir haben deine Nachricht erhalten und melden uns innerhalb von 24&nbsp;Stunden bei dir &mdash; meistens sogar schneller.</p>
 
-        <!-- What happens next -->
-        <div class="card gs-reveal" style="margin-top: var(--space-10); margin-bottom: var(--space-10); text-align: left; padding: var(--space-8);">
-          <h2 style="font-size: var(--text-xl); font-weight: 600; margin-bottom: var(--space-6); color: var(--color-text);">So geht es weiter:</h2>
-          <ol style="counter-reset: step; list-style: none; padding: 0;">
-            <li style="display: flex; gap: var(--space-4); align-items: baseline; margin-bottom: var(--space-5);">
-              <span class="eyebrow" style="font-size: var(--text-sm); flex-shrink: 0;">01</span>
-              <span>Wir pr&uuml;fen deine Angaben</span>
+        <div class="card thanks__card gs-reveal">
+          <h2 class="thanks__card-title">So geht es weiter:</h2>
+          <ol class="thanks__steps">
+            <li>
+              <span class="thanks__step-num">01</span>
+              <span>Wir prüfen deine Angaben</span>
             </li>
-            <li style="display: flex; gap: var(--space-4); align-items: baseline; margin-bottom: var(--space-5);">
-              <span class="eyebrow" style="font-size: var(--text-sm); flex-shrink: 0;">02</span>
-              <span>Du bekommst innerhalb von 24h eine R&uuml;ckmeldung</span>
+            <li>
+              <span class="thanks__step-num">02</span>
+              <span>Du bekommst innerhalb von 24h eine Rückmeldung</span>
             </li>
-            <li style="display: flex; gap: var(--space-4); align-items: baseline;">
-              <span class="eyebrow" style="font-size: var(--text-sm); flex-shrink: 0;">03</span>
-              <span>Wir vereinbaren einen Termin f&uuml;r dein kostenloses Erstgespr&auml;ch</span>
+            <li>
+              <span class="thanks__step-num">03</span>
+              <span>Wir vereinbaren einen Termin für dein kostenloses Erstgespräch</span>
             </li>
           </ol>
         </div>
 
-        <a href="/" class="btn btn-primary btn-lg btn--glow-pulse gs-reveal">Zur&uuml;ck zur Startseite</a>
+        <a href="/" class="btn btn-primary btn-lg btn--glow-pulse gs-reveal">Zurück zur Startseite</a>
       </div>
     </section>
 

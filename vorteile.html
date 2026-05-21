@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark light">
 
   <title>6 Vorteile von KI-Automatisierung für KMU | KI-Prozessnavigator</title>
   <meta name="description" content="Mehr Marge, weniger Verwaltung, zufriedenere Mitarbeiter. Warum über 30 Unternehmen auf Prozessautomatisierung setzen.">
@@ -20,7 +20,8 @@
   <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 
-  <style>html{background:#0a0e1a}</style>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
+  <style>html{background:#0a0e1a}html[data-theme="light"]{background:#f8fafc}</style>
 
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
@@ -66,7 +67,7 @@
       <div class="container">
         <header class="section-header gs-reveal">
           <span class="eyebrow">Deine Vorteile</span>
-          <h1 id="vorteile-title">6 Grunde, warum KMU auf KI-Automatisierung setzen</h1>
+          <h1 id="vorteile-title">6 Gründe, warum KMU auf KI-Automatisierung setzen</h1>
           <p class="section-header__lead">Mehr Marge, weniger Verwaltung, zufriedenere Mitarbeiter. Automatisierung ist kein Luxus mehr &ndash; sie ist der entscheidende Hebel für Wachstum im Mittelstand.</p>
         </header>
       </div>

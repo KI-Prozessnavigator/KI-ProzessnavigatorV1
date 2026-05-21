@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark light">
 
   <title>FAQ: KI-Automatisierung — Kosten, DSGVO, Ablauf | KI-Prozessnavigator</title>
   <meta name="description" content="Antworten auf haufige Fragen: Was kostet es? Ist es DSGVO-konform? Muss ich Software wechseln?">
@@ -20,7 +20,8 @@
   <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 
-  <style>html{background:#0a0e1a}</style>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
+  <style>html{background:#0a0e1a}html[data-theme="light"]{background:#f8fafc}</style>
 
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
@@ -82,15 +83,15 @@
       },
       {
         "@type": "Question",
-        "name": "Wird das mein Tagesgeschaft storen?",
+        "name": "Wird das mein Tagesgeschäft stören?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nein. Wir bauen alles parallel zu deinem normalen Betrieb auf. Dein Team merkt von der Umsetzung kaum etwas — erst vom Ergebnis. Dein Aufwand beschrankt sich auf gelegentliches Feedback (ca. 30 Min. pro Woche)."
+          "text": "Nein. Wir bauen alles parallel zu deinem normalen Betrieb auf. Dein Team merkt von der Umsetzung kaum etwas — erst vom Ergebnis. Dein Aufwand beschränkt sich auf gelegentliches Feedback (ca. 30 Min. pro Woche)."
         }
       },
       {
         "@type": "Question",
-        "name": "Fur welche Branchen eignet sich das?",
+        "name": "Für welche Branchen eignet sich das?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Wir arbeiten mit Handwerksbetrieben, Agenturen, Dienstleistern, IT-Unternehmen und KMU aus verschiedensten Branchen. Entscheidend ist nicht die Branche, sondern ob du Routineprozesse hast, die sich wiederholen — und das hat fast jedes Unternehmen mit 5-50 Mitarbeitern."
@@ -203,17 +204,17 @@
 
           <div class="accordion__item gs-reveal">
             <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-7">
-              <span>Wird das mein Tagesgeschaft storen?</span>
+              <span>Wird das mein Tagesgeschäft stören?</span>
               <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="accordion__content" id="faq-7" hidden>
-              <p>Nein. Wir bauen alles parallel zu deinem normalen Betrieb auf. Dein Team merkt von der Umsetzung kaum etwas — erst vom Ergebnis. Dein Aufwand beschrankt sich auf gelegentliches Feedback (ca. 30 Min. pro Woche).</p>
+              <p>Nein. Wir bauen alles parallel zu deinem normalen Betrieb auf. Dein Team merkt von der Umsetzung kaum etwas — erst vom Ergebnis. Dein Aufwand beschränkt sich auf gelegentliches Feedback (ca. 30 Min. pro Woche).</p>
             </div>
           </div>
 
           <div class="accordion__item gs-reveal">
             <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-8">
-              <span>Fur welche Branchen eignet sich das?</span>
+              <span>Für welche Branchen eignet sich das?</span>
               <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="accordion__content" id="faq-8" hidden>

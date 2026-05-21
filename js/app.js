@@ -6,12 +6,38 @@
 (function () {
   'use strict';
 
+  /* ── Theme Toggle ── */
+  function getPreferredTheme() {
+    var stored = localStorage.getItem('theme');
+    if (stored) return stored;
+    return 'dark';
+  }
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+
+  setTheme(getPreferredTheme());
+
+  function initThemeToggle() {
+    var toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') || 'dark';
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+
+  initThemeToggle();
+
   /* ── Header Scroll State ── */
   var header = document.getElementById('header');
   var lastScroll = 0;
   var scrollThreshold = 50;
 
   function onScroll() {
+    if (!header) return;
     var y = window.scrollY;
     if (y > scrollThreshold) {
       header.classList.add('scrolled');
@@ -178,6 +204,7 @@
                 document.body.style.overflow = isOpen ? 'hidden' : '';
               });
             }
+            initThemeToggle();
           }
 
           if (html.indexOf('scroll-to-top') !== -1) {

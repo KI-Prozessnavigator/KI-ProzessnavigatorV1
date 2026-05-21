@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
-  <title>Seite nicht gefunden &mdash; KI-Prozessnavigator</title>
-  <meta name="description" content="Diese Seite gibt es nicht. Finde unsere KI-Automatisierungsl&ouml;sungen f&uuml;r KMU und Handwerk.">
+  <meta name="color-scheme" content="dark light">
+  <title>404 – Seite nicht gefunden | KI-Prozessnavigator</title>
+  <meta name="description" content="Diese Seite gibt es nicht. Finde unsere KI-Automatisierungslösungen für KMU und Handwerk.">
+  <meta name="robots" content="noindex">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-  <style>html{background:#0a0e1a}</style>
+
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
+  <style>html{background:#0a0e1a}html[data-theme="light"]{background:#f8fafc}</style>
+
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
-  <noscript><style>.gs-reveal{opacity:1!important;transform:none!important}</style></noscript>
+
+  <noscript><style>.gs-reveal{opacity:1!important;transform:none!important}.error-code{animation:none!important}</style></noscript>
 </head>
 <body>
   <a href="#main" class="skip-link">Zum Inhalt springen</a>
@@ -25,29 +30,63 @@
 
   <main id="main">
 
-    <!-- ═══ 404 Hero ═══ -->
-    <section class="subpage-hero section">
-      <div class="container container--narrow">
-        <span class="eyebrow" style="font-size: var(--text-5xl)">404</span>
-        <h1 class="gs-reveal">Diese Seite gibt es leider nicht</h1>
-        <p class="section-header__lead gs-reveal">Die Seite, die du suchst, existiert nicht mehr oder wurde verschoben. Aber keine Sorge &mdash; hier findest du, was du brauchst:</p>
+    <section class="error-page" aria-labelledby="error-title">
+      <div class="container error-page__container">
 
-        <ul class="error-links gs-reveal" role="list" style="margin-top: var(--space-8); margin-bottom: var(--space-10);">
-          <li style="margin-bottom: var(--space-4);">
-            <a href="/" class="link--accent"><strong>Zur Startseite</strong></a> &mdash; Alle Informationen auf einen Blick
-          </li>
-          <li style="margin-bottom: var(--space-4);">
-            <a href="/vorteile" class="link--accent"><strong>Vorteile</strong></a> &mdash; 6 Gr&uuml;nde f&uuml;r KI-Automatisierung
-          </li>
-          <li style="margin-bottom: var(--space-4);">
-            <a href="/use-cases" class="link--accent"><strong>Use Cases</strong></a> &mdash; Branchenspezifische L&ouml;sungen
-          </li>
-          <li>
-            <a href="/faq" class="link--accent"><strong>FAQ</strong></a> &mdash; H&auml;ufige Fragen und Antworten
-          </li>
-        </ul>
+        <!-- Animated 404 display -->
+        <div class="error-page__visual" aria-hidden="true">
+          <div class="error-code">
+            <span class="error-code__digit error-code__digit--1">4</span>
+            <span class="error-code__digit error-code__digit--0">
+              <svg class="error-code__gear" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 30a20 20 0 1 0 0 40 20 20 0 0 0 0-40zm0 32a12 12 0 1 1 0-24 12 12 0 0 1 0 24z" fill="var(--color-primary)"/>
+                <path d="M97 44h-8.1a39.5 39.5 0 0 0-4.8-11.5l5.7-5.7a3 3 0 0 0 0-4.2l-4.2-4.2a3 3 0 0 0-4.2 0l-5.7 5.7A39.5 39.5 0 0 0 64.2 19.3V11.2a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3v8.1a39.5 39.5 0 0 0-11.5 4.8l-5.7-5.7a3 3 0 0 0-4.2 0l-4.2 4.2a3 3 0 0 0 0 4.2l5.7 5.7A39.5 39.5 0 0 0 27.5 44H19.4a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h8.1a39.5 39.5 0 0 0 4.8 11.5l-5.7 5.7a3 3 0 0 0 0 4.2l4.2 4.2a3 3 0 0 0 4.2 0l5.7-5.7a39.5 39.5 0 0 0 11.5 4.8v8.1a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-8.1a39.5 39.5 0 0 0 11.5-4.8l5.7 5.7a3 3 0 0 0 4.2 0l4.2-4.2a3 3 0 0 0 0-4.2l-5.7-5.7A39.5 39.5 0 0 0 89 56h8.1a3 3 0 0 0 3-3v-6a3 3 0 0 0-3.1-3z" fill="var(--color-primary)" opacity="0.25"/>
+              </svg>
+            </span>
+            <span class="error-code__digit error-code__digit--2">4</span>
+          </div>
+          <div class="error-page__scan-line" aria-hidden="true"></div>
+        </div>
 
-        <a href="/" class="btn btn-primary btn-lg btn--glow-pulse gs-reveal">Zur Startseite</a>
+        <!-- Content -->
+        <div class="error-page__content">
+          <h1 id="error-title" class="error-page__title">Diesen Prozess konnten wir nicht finden</h1>
+          <p class="error-page__text">Die Seite existiert nicht oder wurde verschoben. Aber keine Sorge: anders als bei verlorenen Geschäftsprozessen finden wir hier schnell eine Lösung.</p>
+
+          <nav class="error-page__nav" aria-label="Hilfreiche Seiten">
+            <a href="/" class="error-page__link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <div>
+                <strong>Startseite</strong>
+                <span>Alle Informationen auf einen Blick</span>
+              </div>
+            </a>
+            <a href="/use-cases" class="error-page__link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <div>
+                <strong>Use Cases</strong>
+                <span>Branchenspezifische Lösungen</span>
+              </div>
+            </a>
+            <a href="/faq" class="error-page__link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div>
+                <strong>FAQ</strong>
+                <span>Häufige Fragen und Antworten</span>
+              </div>
+            </a>
+            <a href="/kontakt" class="error-page__link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div>
+                <strong>Kontakt</strong>
+                <span>Sprich direkt mit uns</span>
+              </div>
+            </a>
+          </nav>
+
+          <a href="/" class="btn btn-primary btn-lg btn--glow-pulse error-page__cta">Zur Startseite</a>
+        </div>
+
       </div>
     </section>
 
