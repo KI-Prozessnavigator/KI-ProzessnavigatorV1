@@ -24,14 +24,62 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "KI-Automatisierung in 4 Schritten",
-    "description": "Von der Analyse bis zum Go-Live in 8-12 Wochen",
-    "step": [
-      {"@type": "HowToStep", "name": "Prozess-Analyse & Konzept", "text": "Wir analysieren deine Ablaeufe und erstellen eine priorisierte Roadmap."},
-      {"@type": "HowToStep", "name": "Aufbau & Integration", "text": "Wir bauen die Automatisierungen und binden deine bestehende Software an."},
-      {"@type": "HowToStep", "name": "Praxistest & Feinschliff", "text": "Test unter realen Bedingungen, Nachjustierung bis alles stabil laeuft."},
-      {"@type": "HowToStep", "name": "Uebergabe & Begleitung", "text": "Team-Schulung, Dokumentation und 4 Wochen Support nach Go-Live."}
+    "@graph": [
+      {
+        "@type": "HowTo",
+        "name": "KI-Automatisierung in 4 Schritten",
+        "description": "Von der Analyse bis zum Go-Live in 8-12 Wochen",
+        "step": [
+          {"@type": "HowToStep", "name": "Prozess-Analyse & Konzept", "text": "Wir analysieren deine Ablaeufe und erstellen eine priorisierte Roadmap."},
+          {"@type": "HowToStep", "name": "Aufbau & Integration", "text": "Wir bauen die Automatisierungen und binden deine bestehende Software an."},
+          {"@type": "HowToStep", "name": "Praxistest & Feinschliff", "text": "Test unter realen Bedingungen, Nachjustierung bis alles stabil laeuft."},
+          {"@type": "HowToStep", "name": "Uebergabe & Begleitung", "text": "Team-Schulung, Dokumentation und 4 Wochen Support nach Go-Live."}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wird das mein Tagesgeschaeft stoeren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Wir bauen alles parallel zu deinem Tagesgeschaeft auf. Dein Team merkt von der Umsetzung kaum etwas, erst vom Ergebnis."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was passiert, wenn etwas nicht funktioniert?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Genau dafuer gibt es Phase 3: Praxistest und Feinschliff. Jede Automatisierung wird im echten Betrieb getestet und so lange nachjustiert, bis sie stabil laeuft. Nach Go-Live bekommst du zusaetzlich 4 Wochen persoenlichen Support."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Muss ich meine bestehende Software wechseln?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Wir arbeiten mit deiner bestehenden Software: DATEV, Lexware, Salesforce, HubSpot, Personio und ueber 50 weiteren Systemen. Kein Systemwechsel, keine Umgewoehnung fuer dein Team."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie viel meiner Zeit braucht das wirklich?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Insgesamt etwa 10 Stunden ueber den gesamten Projektzeitraum. In den meisten Wochen sind es nur 30 Minuten fuer ein kurzes Update. Wir machen 90 Prozent der Arbeit."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://ki-prozessnavigator.de/" },
+          { "@type": "ListItem", "position": 2, "name": "Ablauf", "item": "https://ki-prozessnavigator.de/ablauf" }
+        ]
+      }
     ]
   }
   </script>

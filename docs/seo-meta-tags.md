@@ -53,6 +53,23 @@
 | /blog/angebote-automatisch-erstellen | Angebote automatisch erstellen: Vom Kundenwunsch zum PDF | Angebote automatisch erstellen lassen, vom Kundenwunsch zum PDF in unter einer Minute. |
 | /blog/dsgvo-ki-mittelstand | DSGVO und KI: Was Mittelständler 2026 wissen müssen | DSGVO und KI einfach erklärt. Was du als Geschäftsführer wissen musst. KI rechtssicher einsetzen. |
 
+| /blog/n8n-vs-make-vs-zapier | n8n vs. Make vs. Zapier: Welches Tool passt zu deinem KMU? | Der große Vergleich der drei beliebtesten Automatisierungs-Tools. Preis, DSGVO, Funktionen, KMU-Eignung. |
+| /blog/dsgvo-checkliste-ki-tools | DSGVO-Checkliste für KI-Tools: 10 Punkte die du prüfen musst | 10-Punkte-Checkliste für den DSGVO-konformen Einsatz von KI-Tools. Serverstandort, AVV, Löschkonzept. |
+| /blog/ki-fuer-kleine-unternehmen | KI für kleine Unternehmen: Der Einstieg ohne Technik-Wissen | 5 sofort umsetzbare KI-Anwendungen für kleine Unternehmen. Kein Programmierwissen nötig, ab 2.000 EUR. |
+
+## Preise
+
+| Seite | Title (max 60 Z.) | Description (max 155 Z.) |
+|-------|-------------------|--------------------------|
+| /preise | Preise: KI-Automatisierung ab 2.000 EUR | Transparente Preise für KI-Automatisierung. Starter, Professional, Enterprise. Festpreis, keine versteckten Kosten. |
+
+## Case Studies
+
+| Seite | Title (max 60 Z.) | Description (max 155 Z.) |
+|-------|-------------------|--------------------------|
+| /use-cases/case-study-leadrecherche | Case Study: Lead-Recherche von 5h auf 30 Min. | Wie eine Agentur ihre Lead-Recherche mit KI automatisiert hat. 90% Zeitersparnis, 3x mehr Leads. |
+| /use-cases/case-study-rechnungen | Case Study: Rechnungsverarbeitung automatisiert | Handwerksbetrieb automatisiert Eingangsrechnungen. 90% weniger Aufwand, 0% Fehlerquote. |
+
 ## Spezialseiten
 
 | Seite | Title (max 60 Z.) | Description (max 155 Z.) |

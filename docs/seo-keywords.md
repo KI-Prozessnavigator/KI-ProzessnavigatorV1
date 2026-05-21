@@ -39,6 +39,17 @@
 | /blog/rechnungen-automatisch-verarbeiten | Rechnungen automatisch verarbeiten | Eingangsrechnungen, OCR, DATEV |
 | /blog/angebote-automatisch-erstellen | Angebote automatisch erstellen | Angebotserstellung, PDF, Kalkulation |
 | /blog/dsgvo-ki-mittelstand | DSGVO KI Mittelstand | Datenschutz, AVV, deutsche Server |
+| /blog/n8n-vs-make-vs-zapier | n8n vs Make vs Zapier | Automatisierungstool Vergleich, KMU, DSGVO |
+| /blog/dsgvo-checkliste-ki-tools | DSGVO Checkliste KI Tools | Serverstandort, AVV, Löschkonzept, TOMs |
+| /blog/ki-fuer-kleine-unternehmen | KI kleine Unternehmen Einstieg | KI ohne Programmierwissen, KI Kosten KMU |
+
+## Neue Seiten Keywords
+
+| Seite | Primär | Sekundär |
+|-------|--------|----------|
+| /preise | KI Automatisierung Preise Kosten | Festpreis, Starter, Professional, Enterprise |
+| /use-cases/case-study-leadrecherche | Lead Recherche automatisieren | Agentur, n8n, HubSpot, Zeitersparnis |
+| /use-cases/case-study-rechnungen | Rechnungsverarbeitung automatisieren | Handwerk, OCR, DATEV, Fehlerquote |
 
 ## Long-Tail Keywords (für Blog-Artikel)
 - "Was kostet KI Automatisierung für KMU"

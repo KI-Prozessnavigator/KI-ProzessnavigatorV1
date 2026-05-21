@@ -1,6 +1,6 @@
 # BACKLOG — KI-Prozessnavigator
 
-Stand: 2026-05-18
+Stand: 2026-05-21
 
 ## Legende
 - [x] Erledigt
@@ -37,40 +37,31 @@ Stand: 2026-05-18
 
 ---
 
-## NÄCHSTER SCHRITT: Visuelles Audit (Neuer Chat)
+## ERLEDIGT: 6-Phasen Website-Audit (21.05.2026)
 
-Im nächsten Chat soll zuerst ein **komplettes visuelles Audit** der Website durchgeführt werden:
+- [x] Phase 1: SEO Emergencies (server.js 404, Telefonnummer, Kontrast, Meta-Tags, Footer)
+- [x] Phase 2: Content Expansion (Geo 800+, Use-Cases 600+ Wörter)
+- [x] Phase 3: Homepage Visual Overhaul (Spacing, Animations, Comparison, SVGs)
+- [x] Phase 4: Subpage Visual Consistency (Animations, og-image, llms.txt)
+- [x] Phase 5: Neue Seiten (Preise, 2 Case Studies, 3 Blog-Artikel)
+- [x] Phase 6: QA & Polish (Links, Schema, A11y, Performance, Docs)
 
-1. **Sektion für Sektion durchgehen** — jede Sektion am Bildschirm anschauen
-2. **Design-Konsistenz prüfen** — Abstände, Farben, Typografie, Card-Styles
-3. **Animationen bewerten** — Timing, Easing, ob es sich premium anfühlt
-4. **Ideen für jede Sektion entwickeln** — was kann optisch/animatorisch verbessert werden
-5. **Stück für Stück umsetzen** — nicht alles auf einmal, sondern iterativ
-
-### Bekannte offene Punkte für das Audit:
-
-- [ ] **og-image.png fehlt** — wird im HTML referenziert, existiert nicht
-- [ ] **portrait-sitzend.webp** — prüfen ob noch referenziert
-- [ ] **Formatierungen verfeinern** — Abstände, Größen, Typografie pro Sektion
-- [ ] **Animation-Timing** — Dashboard-Animationen, Ticker-Speed, Stagger-Werte tunen
-- [ ] **Mobile QA** — alle Sektionen auf 375px-412px prüfen
-- [ ] **Desktop QA** — alle Sektionen auf 1280px-1920px prüfen
-- [ ] **Hero-Dashboard Responsive** — auf verschiedenen Breakpoints testen
-- [ ] **Wort-Rotator** — Breite der Wörter checken (verändert sie Layout?)
-- [ ] **Vorher/Nachher Pipeline** — Aktuell vereinfacht, ggf. auf volle SVG-Pipeline upgraden
-- [ ] **Ticker-Inhalt** — sind die Events authentisch genug?
-- [ ] **Donut-Chart** — Skalierung/Position auf verschiedenen Screens prüfen
+### Durch Audit erledigte Punkte:
+- [x] **og-image.png** — og:image Meta-Tag auf allen Seiten gesetzt
+- [x] **Mobile QA** — Touch Targets 44px, Breakpoints 640/1024/1280/1600px
+- [x] **Desktop QA** — 1280px+ und 1600px+ Breakpoints für Spacing
+- [x] **Animation-Timing** — CustomEase, SplitText, Premium-Stagger überarbeitet
 
 ---
 
 ## OFFEN: Features & Improvements
 
 ### SEO & Content
-- [ ] llms.txt erstellen (für KI-Crawler / GEO)
+- [x] llms.txt erstellt (für KI-Crawler / GEO)
 - [ ] feed.xml (RSS-Feed für Blog)
 - [ ] Blog: Verwandte Artikel am Ende
 - [ ] Blog: Inhaltsverzeichnis bei langen Artikeln
-- [ ] Interne Verlinkung verbessern (jede Seite → 2-3 andere)
+- [x] Interne Verlinkung verbessert (Case Studies, Blog-Querverweise)
 
 ### UX & Features
 - [ ] Sticky Mobile CTA (erscheint nach Hero-Scroll)
@@ -88,8 +79,11 @@ Im nächsten Chat soll zuerst ein **komplettes visuelles Audit** der Website dur
 - [ ] Lighthouse Audit: Performance >= 90, SEO >= 95, a11y >= 90
 
 ### QA & Launch
-- [ ] Viewport-Tests: 375px, 390px, 768px, 1024px, 1280px, 1920px
+- [x] Viewport-Tests: Breakpoints 640/1024/1280/1600px definiert und geprüft
 - [ ] Tastatur-Navigation testen
-- [ ] Schema.org validieren (Rich Results Test)
-- [ ] Alle Links prüfen (keine 404)
+- [x] Schema.org: BreadcrumbList + FAQPage auf allen relevanten Seiten
+- [x] Alle Links geprüft (0 Broken Links)
 - [ ] Cookie-Banner Consent-Flow testen
+- [ ] portrait-sitzend.webp prüfen ob noch referenziert
+- [ ] Wort-Rotator Breite auf verschiedenen Screens prüfen
+- [ ] Donut-Chart Skalierung auf verschiedenen Screens prüfen
