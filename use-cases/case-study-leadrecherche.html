@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+
+  <title>Case Study: Lead-Recherche von 5 Stunden auf 30 Minuten automatisiert | KI-Prozessnavigator</title>
+  <meta name="description" content="Wie eine Marketingagentur ihre Lead-Recherche von 5 Stunden auf 30 Minuten reduziert hat. 90% Zeitersparnis, 3x mehr Leads, ROI in 6 Wochen.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ki-prozessnavigator.de/use-cases/case-study-leadrecherche">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ki-prozessnavigator.de/use-cases/case-study-leadrecherche">
+  <meta property="og:title" content="Case Study: Lead-Recherche von 5 Stunden auf 30 Minuten automatisiert">
+  <meta property="og:description" content="Wie eine Marketingagentur ihre Lead-Recherche von 5 Stunden auf 30 Minuten reduziert hat. 90% Zeitersparnis, 3x mehr Leads, ROI in 6 Wochen.">
+  <meta property="og:image" content="https://ki-prozessnavigator.de/assets/images/og-image.png">
+  <meta property="og:locale" content="de_DE">
+
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
+  <style>html{background:#0a0e1a}html[data-theme="light"]{background:#f8fafc}</style>
+
+  <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <noscript><style>.gs-reveal{opacity:1!important;transform:none!important}</style></noscript>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Case Study: Lead-Recherche von 5 Stunden auf 30 Minuten automatisiert",
+        "description": "Wie eine Marketingagentur ihre Lead-Recherche mit n8n und OpenAI API von 5 Stunden auf 30 Minuten reduziert hat.",
+        "author": {
+          "@type": "Person",
+          "name": "Dominik Buchele"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "KI-Prozessnavigator",
+          "url": "https://ki-prozessnavigator.de"
+        },
+        "url": "https://ki-prozessnavigator.de/use-cases/case-study-leadrecherche",
+        "datePublished": "2026-05-01",
+        "dateModified": "2026-05-21"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Start",
+            "item": "https://ki-prozessnavigator.de/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Use Cases",
+            "item": "https://ki-prozessnavigator.de/use-cases"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Case Study: Lead-Recherche",
+            "item": "https://ki-prozessnavigator.de/use-cases/case-study-leadrecherche"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+  <div class="bg-glow bg-glow--primary" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--accent" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--secondary" aria-hidden="true"></div>
+
+  <!--#include virtual="/includes/header.html" -->
+
+  <main id="main">
+
+    <!-- ═══ Breadcrumb ═══ -->
+    <nav class="breadcrumb container" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li><a href="/">Start</a></li>
+        <li class="breadcrumb__sep" aria-hidden="true">/</li>
+        <li><a href="/use-cases">Use Cases</a></li>
+        <li class="breadcrumb__sep" aria-hidden="true">/</li>
+        <li class="breadcrumb__current" aria-current="page">Case Study: Lead-Recherche</li>
+      </ol>
+    </nav>
+
+    <!-- ═══ Subpage Hero ═══ -->
+    <section class="subpage-hero section" aria-labelledby="leadrecherche-title">
+      <div class="container">
+        <header class="section-header gs-reveal">
+          <span class="eyebrow">Fallbeispiel</span>
+          <h1 id="leadrecherche-title">Case Study: Lead-Recherche von 5 Stunden auf 30 Minuten</h1>
+          <p class="section-header__lead">Eine Marketingagentur verbrachte jeden Tag f&uuml;nf Stunden mit manueller Lead-Recherche. Nach drei Wochen Automatisierung: 30 Minuten, dreimal mehr Leads, null manuelle Dateneingabe.</p>
+        </header>
+      </div>
+    </section>
+
+    <!-- ═══ Schnellzahlen ═══ -->
+    <section class="section" aria-labelledby="stats-heading">
+      <div class="container">
+        <h2 id="stats-heading" class="visually-hidden">Ergebnisse auf einen Blick</h2>
+        <div class="hero__stats gs-reveal">
+          <div class="hero__stat">
+            <span class="hero__stat-value" data-scroll-count="90">90%</span>
+            <span class="hero__stat-label">Zeitersparnis bei der Lead-Recherche</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value" data-scroll-count="3">3x</span>
+            <span class="hero__stat-label">mehr qualifizierte Leads pro Tag</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value">6 Wo.</span>
+            <span class="hero__stat-label">bis zur vollst&auml;ndigen ROI-Erreichung</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Ausgangssituation ═══ -->
+    <section class="section" aria-labelledby="ausgangssituation-heading">
+      <div class="container container--narrow">
+        <h2 id="ausgangssituation-heading" class="gs-reveal">Ausgangssituation: F&uuml;nf Stunden t&auml;gliche Handarbeit</h2>
+        <p class="gs-reveal">Das Sales-Team der Agentur startete jeden Morgen mit demselben Ritual: LinkedIn &ouml;ffnen, Unternehmenswebsites durchsuchen, Kontaktdaten in drei verschiedene Datenbanken pr&uuml;fen, Ergebnisse per Hand ins CRM eintippen. Ein Vorgang, der sich f&uuml;r jeden Lead zwischen 15 und 25 Minuten hinzog.</p>
+        <p class="gs-reveal">Zwei Mitarbeiter waren t&auml;glich zusammen rund f&uuml;nf Stunden damit besch&auml;ftigt. Das klingt nach einem &uuml;berschaubaren Problem, ist es aber nicht: Bei einem Team-Stundenpreis von 60 Euro entstanden allein durch diese eine Aufgabe monatlich &uuml;ber 5.000 Euro an internen Kosten. Hinzu kamen verlorene Auftr&auml;ge, weil potenzielle Kunden schlicht nicht systematisch erfasst wurden.</p>
+        <p class="gs-reveal">Die Qualit&auml;t der Daten war zus&auml;tzlich inkonsistent. Je nachdem, wer an dem Tag die Recherche &uuml;bernahm, fehlten E-Mail-Adressen, Entscheider-Namen oder die korrekte Unternehmensgr&ouml;&szlig;e. Das CRM f&uuml;llte sich mit l&uuml;ckenhaften Eintr&auml;gen, was das Vertriebs-Reporting unzuverl&auml;ssig machte.</p>
+      </div>
+    </section>
+
+    <!-- ═══ Herausforderung ═══ -->
+    <section class="section" aria-labelledby="herausforderung-heading">
+      <div class="container">
+        <div class="section-header gs-reveal">
+          <h2 id="herausforderung-heading">Die vier gr&ouml;&szlig;ten Schmerzpunkte</h2>
+        </div>
+        <div class="grid grid--2">
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="card__title">Zeitverlust durch Doppelarbeit</h3>
+            <p class="card__text">Dieselben Unternehmen wurden mehrfach recherchiert, weil keine zentrale Quelle zeigte, was bereits erfasst war. Jede Woche gingen so mehrere Stunden verloren.</p>
+          </div>
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h3 class="card__title">Inkonsistente Datenqualit&auml;t</h3>
+            <p class="card__text">Fehlende Felder, veraltete Telefonnummern, falsche Ansprechpartner. Die Datenlage im CRM war zu l&uuml;ckenhaft f&uuml;r zuverl&auml;ssiges Outreach.</p>
+          </div>
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="card__title">Frustriertes Team</h3>
+            <p class="card__text">Talentierte Mitarbeiter verbrachten ihre kreativste Zeit des Tages mit Copy-Paste. Motivation und Qualit&auml;t litten merklich, die Fluktuation stieg.</p>
+          </div>
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h3 class="card__title">Verpasste Marktchancen</h3>
+            <p class="card__text">Weil die Kapazit&auml;t begrenzt war, wurden t&auml;glich nur 15 bis 20 Leads recherchiert. Der Markt bot deutlich mehr Potenzial, das liegen blieb.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Loesung ═══ -->
+    <section class="section" aria-labelledby="loesung-heading">
+      <div class="container container--narrow">
+        <h2 id="loesung-heading" class="gs-reveal">Die L&ouml;sung: n8n-Workflow mit KI-Anreicherung</h2>
+        <p class="gs-reveal">In der Analyse-Phase haben wir den gesamten Recherche-Prozess aufgezeichnet und in vier klar trennbare Schritte zerlegt: Quellen durchsuchen, Kontaktdaten erfassen, Daten anreichern und ins CRM &uuml;bertragen. Genau diese vier Schritte haben wir automatisiert.</p>
+        <p class="gs-reveal">Der n8n-Workflow startet t&auml;glich um 7 Uhr morgens und l&auml;uft vollst&auml;ndig im Hintergrund. Er durchsucht automatisch drei Quellen gleichzeitig: LinkedIn Sales Navigator, das Unternehmensregister und eine branchen-spezifische Datenbank. Gefundene Unternehmen werden sofort auf Duplikate gepr&uuml;ft.</p>
+        <p class="gs-reveal">Der zweite Schritt ist die KI-Anreicherung &uuml;ber die OpenAI API. Jeder neue Datensatz wird mit dem Unternehmens-Profil, der gesch&auml;tzten Mitarbeiterzahl und dem relevantesten Entscheider erg&auml;nzt. Die KI bewertet au&szlig;erdem, wie gut der Lead zur Zielgruppe der Agentur passt, und vergibt einen Score von 1 bis 10.</p>
+        <p class="gs-reveal">Nur Leads mit einem Score von 7 oder h&ouml;her werden automatisch ins CRM &uuml;bertragen, vollst&auml;ndig ausgef&uuml;llt, ohne einen manuellen Klick. Leads mit niedrigerem Score landen in einer separaten &Uuml;berpr&uuml;fungsliste f&uuml;r den Fall, dass das Team sie manuell bewerten m&ouml;chte. Das Team bekommt jeden Morgen eine kompakte Zusammenfassung: wie viele Leads gefunden wurden, wie viele direkt verwertbar sind und welche besonderen Chancen hervorstechen.</p>
+      </div>
+    </section>
+
+    <!-- ═══ Technologie ═══ -->
+    <section class="section" aria-labelledby="tech-heading">
+      <div class="container">
+        <div class="section-header gs-reveal">
+          <h2 id="tech-heading">Eingesetzte Technologie</h2>
+          <p class="section-header__lead">Kein neues Softwareabo. Kein Plattformwechsel. Alles auf bestehenden Systemen aufgebaut.</p>
+        </div>
+        <div class="grid grid--2">
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="card__title">n8n Workflow-Automatisierung</h3>
+            <p class="card__text">Der zentrale Orchestrator. Verbindet alle Datenquellen, steuert den Ablauf und sorgt f&uuml;r zuverl&auml;ssige Fehlerbehandlung, falls eine Quelle nicht erreichbar ist.</p>
+          </div>
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="12" cy="15" r="2"/></svg>
+            </div>
+            <h3 class="card__title">OpenAI API f&uuml;r Datenanreicherung</h3>
+            <p class="card__text">Analysiert Unternehmensprofile, identifiziert Entscheider und bewertet die Lead-Qualit&auml;t anhand von 8 definierten Kriterien der Agentur.</p>
+          </div>
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3 class="card__title">CRM-Integration (HubSpot)</h3>
+            <p class="card__text">Vollst&auml;ndig ausgef&uuml;llte Kontakte, zugewiesen an den richtigen Sales-Mitarbeiter, mit Quelle und Score. Kein manueller Schritt mehr zwischen Recherche und CRM-Eintrag.</p>
+          </div>
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="card__title">T&auml;gliche Slack-Zusammenfassung</h3>
+            <p class="card__text">Jeder Morgen startet mit einer automatischen Nachricht im Team-Channel: Anzahl neuer Leads, Top-3-Chancen und Hinweise auf besonders interessante Unternehmen.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Ergebnis ═══ -->
+    <section class="section" aria-labelledby="ergebnis-heading">
+      <div class="container container--narrow">
+        <h2 id="ergebnis-heading" class="gs-reveal">Ergebnis: Zahlen, die f&uuml;r sich sprechen</h2>
+        <p class="gs-reveal">Sechs Wochen nach Go-Live haben wir gemeinsam mit der Agentur eine erste Bilanz gezogen. Die Ergebnisse lagen &uuml;ber dem, was wir bei der Projektplanung prognostiziert hatten.</p>
+
+        <div class="hero__stats gs-reveal">
+          <div class="hero__stat">
+            <span class="hero__stat-value" data-scroll-count="90">90%</span>
+            <span class="hero__stat-label">Zeitersparnis: 5h auf 30 Min. t&auml;glich</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value" data-scroll-count="3">3x</span>
+            <span class="hero__stat-label">mehr Leads pro Tag als vorher</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value" data-scroll-count="0">0</span>
+            <span class="hero__stat-label">manuelle Dateneingaben im CRM</span>
+          </div>
+        </div>
+
+        <p class="gs-reveal">Der gr&ouml;&szlig;te unerwartete Gewinn war die Qualit&auml;t der Daten. Weil die KI jeden Lead nach denselben Kriterien bewertet, ist das CRM jetzt eine zuverl&auml;ssige Quelle. Das Reporting dauert jetzt Minuten statt halbe Stunden. Der Sales-Manager sieht auf einen Blick, welche Pipeline-Stufe gerade Aufmerksamkeit braucht.</p>
+        <p class="gs-reveal">Die freigewordenen Stunden haben die beiden Mitarbeiter in die direkte Kundenakquise investiert: mehr Gespr&auml;che, mehr Angebote, mehr Abschl&uuml;sse. Die Investition von rund 2.000 Euro f&uuml;r das Starter-Paket hatte sich nach sechs Wochen vollst&auml;ndig amortisiert.</p>
+      </div>
+    </section>
+
+    <!-- ═══ Timeline ═══ -->
+    <section class="section" aria-labelledby="timeline-heading">
+      <div class="container">
+        <div class="section-header gs-reveal">
+          <h2 id="timeline-heading">Projektverlauf: 3 Wochen von Null bis Go-Live</h2>
+          <p class="section-header__lead">Von der ersten Analyse bis zum laufenden Workflow vergingen genau drei Wochen.</p>
+        </div>
+        <div class="grid grid--2">
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3 class="card__title">Woche 1: Analyse</h3>
+            <p class="card__text">Gemeinsame Dokumentation des bestehenden Prozesses. Welche Quellen werden genutzt, welche Kriterien gelten f&uuml;r einen qualifizierten Lead, welche Felder m&uuml;ssen ins CRM? Zeitaufwand f&uuml;r die Agentur: ca. 3 Stunden.</p>
+          </div>
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="card__title">Woche 2: Aufbau und Test</h3>
+            <p class="card__text">Entwicklung des n8n-Workflows, Integration der Datenquellen, Konfiguration des KI-Scoring-Modells. Drei Testl&auml;ufe mit echten Daten, bis die Qualit&auml;t stimmte. Zeitaufwand f&uuml;r die Agentur: ca. 2 Stunden Feedback.</p>
+          </div>
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 class="card__title">Woche 3: Go-Live und &Uuml;bergabe</h3>
+            <p class="card__text">Produktiver Betrieb mit t&auml;glicher Begleitung in der ersten Woche. Anpassung des Scorings auf Basis echter Ergebnisse. &Uuml;bergabe aller Dokumentationen und Zugangsdaten.</p>
+          </div>
+
+          <div class="card gs-reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h3 class="card__title">Laufender Betrieb</h3>
+            <p class="card__text">Der Workflow l&auml;uft vollst&auml;ndig selbst&auml;ndig. Bei &Auml;nderungen in den Quell-APIs oder neuen Anforderungen steht das Team von KI-Prozessnavigator direkt zur Verf&uuml;gung.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Investition ═══ -->
+    <section class="section" aria-labelledby="investition-heading">
+      <div class="container container--narrow">
+        <h2 id="investition-heading" class="gs-reveal">Investition und ROI</h2>
+        <p class="gs-reveal">Das Projekt wurde als Starter-Paket umgesetzt. Einmalige Investition: rund 2.000 Euro als Festpreis. Keine monatlichen Lizenzgeb&uuml;hren f&uuml;r die Automatisierung selbst, lediglich die normalen Kosten f&uuml;r die genutzten APIs (ca. 30 bis 50 Euro pro Monat bei dieser Nutzungsintensit&auml;t).</p>
+        <p class="gs-reveal">Die monatliche Ersparnis durch wegfallende manuelle Arbeit: rund 5.200 Euro (basierend auf dem internen Stundensatz). Hinzu kommt der zus&auml;tzliche Umsatz durch mehr und besser qualifizierte Leads. ROI-Berechnung der Agentur nach sechs Wochen: vollst&auml;ndig amortisiert, laufend positiv.</p>
+        <p class="gs-reveal">F&uuml;r Agenturen und Dienstleister mit &auml;hnlichen Anforderungen ist ein solches Projekt eine der schnellsten und direktesten Investitionen in Wachstum, die wir kennen. Kein langer Implementierungszeitraum, keine technischen Voraussetzungen, keine Schulungswochen f&uuml;r das Team.</p>
+      </div>
+    </section>
+
+    <!-- ═══ Interne Links ═══ -->
+    <section class="section" aria-labelledby="weiterlesen-heading">
+      <div class="container">
+        <div class="section-header gs-reveal">
+          <h2 id="weiterlesen-heading">Verwandte Themen</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="card gs-reveal">
+            <h3 class="card__title"><a href="/use-cases/agenturen">Automatisierung f&uuml;r Agenturen</a></h3>
+            <p class="card__text">Alle relevanten Prozesse f&uuml;r Marketing-Agenturen: Content, Reporting, Lead-Qualifizierung und Projekt-Onboarding auf einen Blick.</p>
+            <a href="/use-cases/agenturen" class="btn btn-primary">Mehr erfahren</a>
+          </div>
+          <div class="card gs-reveal">
+            <h3 class="card__title"><a href="/ablauf">Unser Vorgehen</a></h3>
+            <p class="card__text">Wie ein Automatisierungsprojekt bei uns abl&auml;uft: von der kostenlosen Analyse bis zum go-Live. Transparent, in vier Phasen, mit Festpreis.</p>
+            <a href="/ablauf" class="btn btn-primary">Ablauf ansehen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Final CTA ═══ -->
+    <section class="section section--cta">
+      <div class="container text-center">
+        <h2 class="gs-reveal">Auch deine Lead-Recherche l&auml;sst sich automatisieren</h2>
+        <p class="section-header__lead gs-reveal">In einem kostenlosen 30-Minuten-Gespr&auml;ch analysieren wir deinen aktuellen Prozess und zeigen dir, wie viel Zeit und Geld du einsparen kannst.</p>
+        <a href="/kontakt" class="btn btn-primary btn-lg btn--glow-pulse gs-reveal">Kostenloses Erstgespr&auml;ch buchen</a>
+        <p class="hero__trust-line gs-reveal">30 Min. &middot; Unverbindlich &middot; Kein Verkaufsdruck</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!--#include virtual="/includes/footer.html" -->
+  <!--#include virtual="/includes/cookie-banner.html" -->
+
+  <script src="/assets/vendor/gsap.min.js" defer></script>
+  <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/js/app.js" defer></script>
+  <script src="/js/animations.js" defer></script>
+  <script src="/js/cookie-banner.js" defer></script>
+</body>
+</html>

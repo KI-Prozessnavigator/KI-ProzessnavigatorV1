@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <title>n8n vs. Make vs. Zapier: Welches Automatisierungs-Tool passt zu deinem KMU? | KI-Prozessnavigator</title>
+  <meta name="description" content="n8n, Make oder Zapier: Wir vergleichen die drei beliebtesten Automatisierungs-Tools f&uuml;r KMU. Preise, DSGVO, Integrationen und unsere ehrliche Empfehlung.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ki-prozessnavigator.de/blog/n8n-vs-make-vs-zapier">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ki-prozessnavigator.de/blog/n8n-vs-make-vs-zapier">
+  <meta property="og:title" content="n8n vs. Make vs. Zapier: Welches Automatisierungs-Tool passt zu deinem KMU?">
+  <meta property="og:description" content="n8n, Make oder Zapier: Wir vergleichen die drei beliebtesten Automatisierungs-Tools f&uuml;r KMU. Preise, DSGVO, Integrationen und unsere ehrliche Empfehlung.">
+  <meta property="og:image" content="https://ki-prozessnavigator.de/assets/images/og-image.png">
+  <meta property="og:locale" content="de_DE">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/icons/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
+  <style>html{background:#0a0e1a}html[data-theme="light"]{background:#f8fafc}</style>
+  <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <noscript><style>.gs-reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "n8n vs. Make vs. Zapier: Welches Automatisierungs-Tool passt zu deinem KMU?",
+        "description": "n8n, Make oder Zapier: Wir vergleichen die drei beliebtesten Automatisierungs-Tools für KMU. Preise, DSGVO, Integrationen und unsere ehrliche Empfehlung.",
+        "author": {
+          "@type": "Person",
+          "name": "Dominik Buchele",
+          "url": "https://ki-prozessnavigator.de/ueber-uns"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "KI-Prozessnavigator",
+          "url": "https://ki-prozessnavigator.de/"
+        },
+        "datePublished": "2026-05-15",
+        "dateModified": "2026-05-15",
+        "mainEntityOfPage": "https://ki-prozessnavigator.de/blog/n8n-vs-make-vs-zapier",
+        "keywords": "n8n vs Make, Zapier Alternative, Automatisierung KMU, n8n Make Zapier Vergleich, Workflow Automatisierung"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://ki-prozessnavigator.de/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://ki-prozessnavigator.de/blog" },
+          { "@type": "ListItem", "position": 3, "name": "n8n vs. Make vs. Zapier", "item": "https://ki-prozessnavigator.de/blog/n8n-vs-make-vs-zapier" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Ist n8n wirklich kostenlos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "n8n ist als Open-Source-Software kostenlos, wenn du es selbst hostest. Du trägst dann nur die Serverkosten, die bei einem deutschen Anbieter wie Hetzner ab etwa 5 Euro pro Monat liegen. Die Cloud-Version von n8n ist kostenpflichtig, bietet aber ebenfalls eine großzügige Free-Tier-Option für kleine Workflows."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welches Tool empfehlt ihr kleinen Unternehmen ohne IT-Abteilung?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Für Unternehmen ohne eigene IT empfehlen wir Make als Einstieg. Der visuelle Canvas-Builder ist sehr intuitiv und benötigt kein technisches Vorwissen. Sobald Datenschutz oder Skalierung eine Rolle spielen, wechseln wir mit unseren Kunden oft zu n8n mit Managed Hosting auf deutschen Servern."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich später von Zapier zu n8n wechseln?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, ein Wechsel ist möglich, aber bedeutet etwas Aufwand. Zapier-Workflows müssen manuell in n8n nachgebaut werden. In der Praxis nutzen wir solche Wechsel, um Prozesse gleichzeitig zu optimieren. Wir begleiten diesen Schritt für unsere Kunden vollständig, sodass du keine Ausfallzeit erlebst."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Zum Inhalt springen</a>
+  <div class="bg-glow bg-glow--primary" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--accent" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--secondary" aria-hidden="true"></div>
+  <div class="blog-article__progress" id="progress-bar"></div>
+  <!--#include virtual="/includes/header.html" -->
+  <main id="main" class="container">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Start</a> &middot; <a href="/blog">Blog</a> &middot; <span>Tools &amp; Vergleiche</span>
+    </nav>
+
+    <header class="blog-article__header">
+      <span class="blog-article__badge">Tools &amp; Vergleiche</span>
+      <h1 class="blog-article__title">n8n vs. Make vs. Zapier: Welches Automatisierungs-Tool passt zu deinem KMU?</h1>
+      <div class="blog-article__meta">
+        <span>15.05.2026</span>
+        <span>9 Min. Lesezeit</span>
+        <span>Focus: n8n vs Make, Zapier Alternative</span>
+      </div>
+    </header>
+
+    <div class="blog-article__layout">
+      <article class="blog-article__body" id="article-body">
+
+        <p><strong>Kurz zusammengefasst:</strong> n8n, Make und Zapier sind die drei f&uuml;hrenden Automatisierungs-Plattformen f&uuml;r kleine und mittlere Unternehmen. Sie alle verbinden deine Anwendungen miteinander und automatisieren wiederkehrende Aufgaben. Der Unterschied liegt im Detail.</p>
+
+        <p>Die Wahl des richtigen Automatisierungs-Tools ist eine der wichtigsten Entscheidungen, die du f&uuml;r die digitale Effizienz deines Unternehmens treffen kannst. Eine falsche Wahl kostet nicht nur Geld, sondern auch wertvolle Zeit beim Wechsel. Als KI-Automatisierungsberater f&uuml;r den deutschen Mittelstand begleiten wir regelm&auml;&szlig;ig Unternehmen bei genau dieser Frage. Dieser Artikel fasst unsere Erfahrung aus &uuml;ber 50 Projekten zusammen.</p>
+
+        <p>Wir schauen uns im Detail an, was jedes Tool kann, wo die Grenzen liegen und f&uuml;r wen welche L&ouml;sung sinnvoll ist. Am Ende gibt es eine klare Empfehlung f&uuml;r typische KMU-Szenarien. Wenn du erstmal verstehen willst, warum &uuml;berhaupt automatisieren, lies unseren Einstiegsartikel &uuml;ber <a href="/blog/email-automatisierung-kmu">E-Mail-Automatisierung f&uuml;r KMU</a>.</p>
+
+        <h2>Warum die Tool-Wahl f&uuml;r KMU besonders wichtig ist</h2>
+
+        <p>Gro&szlig;konzerne k&ouml;nnen es sich leisten, ein Tool auszuprobieren, zu wechseln und wieder zu wechseln. F&uuml;r ein Unternehmen mit 10 bis 50 Mitarbeitern sieht das anders aus. Jede Automatisierung, die du aufbaust, soll m&ouml;glichst lange laufen, ohne dass du jedes Jahr neu anfangen musst.</p>
+
+        <p>Hinzu kommen drei KMU-spezifische Anforderungen, die in vielen Online-Vergleichen zu kurz kommen:</p>
+        <ul>
+          <li><strong>DSGVO-Konformit&auml;t:</strong> Wo liegen die Daten? Werden sie f&uuml;r KI-Training genutzt? Gibt es einen Auftragsverarbeitungsvertrag?</li>
+          <li><strong>Verst&auml;ndliche Preisstruktur:</strong> Was kostet das Ganze wirklich, wenn das Unternehmen w&auml;chst?</li>
+          <li><strong>Selbst&auml;ndiger Betrieb:</strong> Kann das Team kleinere Anpassungen selbst vornehmen, oder ist bei jeder &Auml;nderung ein Entwickler n&ouml;tig?</li>
+        </ul>
+
+        <h2>n8n: Das Open-Source-Kraftpaket f&uuml;r technisch versierte Teams</h2>
+
+        <p>n8n (gesprochen: "nodemation") ist eine quelloffene Automatisierungsplattform, die du entweder selbst betreiben oder in der Cloud nutzen kannst. Das Alleinstellungsmerkmal gegen&uuml;ber Make und Zapier: <strong>Du beh&auml;ltst die volle Kontrolle &uuml;ber deine Daten.</strong></p>
+
+        <h3>Was n8n kann</h3>
+        <ul>
+          <li>Unbegrenzte Workflows und Ausf&uuml;hrungen im Self-Hosted-Betrieb</li>
+          <li>Native Unterst&uuml;tzung f&uuml;r JavaScript- und Python-Code in Workflows</li>
+          <li>&uuml;ber 400 Integrationen, darunter alle g&auml;ngigen Business-Tools</li>
+          <li>Komplexe Logik: Schleifen, Verzweigungen, Fehlerbehandlung</li>
+          <li>KI-Nodes f&uuml;r OpenAI, Anthropic und lokale Sprachmodelle</li>
+          <li>Hosting in Deutschland m&ouml;glich: Hetzner, IONOS, Strato</li>
+        </ul>
+
+        <h3>F&uuml;r wen eignet sich n8n?</h3>
+        <p>n8n ist die beste Wahl, wenn DSGVO-Compliance nicht verhandelbar ist, wenn du komplexe mehrstufige Prozesse automatisieren willst und wenn du bereit bist, einmalig etwas Aufwand in das Setup zu investieren. Technische Vorkenntnisse sind hilfreich, aber nicht zwingend, wenn ihr mit einem erfahrenen Partner arbeitet.</p>
+
+        <h3>Nachteile von n8n</h3>
+        <p>Der gr&ouml;&szlig;te Nachteil: Das Setup erfordert technisches Wissen oder einen erfahrenen Dienstleister. Wer n8n selbst hosten m&ouml;chte, muss Serveradministration verstehen oder delegieren. Die Community ist gro&szlig; und aktiv, aber die offizielle Dokumentation richtet sich eher an Entwickler.</p>
+
+        <h2>Make: Der visuelle Baukasten f&uuml;r schnelle Ergebnisse</h2>
+
+        <p>Make (fr&uuml;her Integromat) ist eine cloudbasierte Automatisierungsplattform mit einem sehr intuitiven Drag-and-Drop-Interface. Der Canvas-Ansatz, bei dem Workflows als visuelle Diagramme dargestellt werden, macht Make zum zug&auml;nglichsten der drei Tools.</p>
+
+        <h3>Was Make kann</h3>
+        <ul>
+          <li>&uuml;ber 1.000 vorgefertigte Integrationen mit einfacher Konfiguration</li>
+          <li>Visueller Builder: Workflows als Flussdiagramme auf einer unendlichen Leinwand</li>
+          <li>Flexibles Daten-Mapping zwischen verschiedenen Datenformaten</li>
+          <li>Preisg&uuml;nstiger Einstieg: Free-Tier mit 1.000 Operationen pro Monat</li>
+          <li>EU-Rechenzentren verf&uuml;gbar, AVV kann abgeschlossen werden</li>
+          <li>Gute Fehlerdiagnose durch visuelle Darstellung des Datenflusses</li>
+        </ul>
+
+        <h3>F&uuml;r wen eignet sich Make?</h3>
+        <p>Make ist ideal f&uuml;r Teams, die schnell starten wollen, ohne tief in technische Details einzutauchen. Der visuelle Ansatz macht es auch f&uuml;r nicht-technische Mitarbeiter verst&auml;ndlich, sodass dein Team &Auml;nderungen sp&auml;ter selbst vornehmen kann. Besonders stark ist Make bei Integrationen mit Marketing-Tools, E-Commerce-Systemen und CRM-Plattformen.</p>
+
+        <h3>Nachteile von Make</h3>
+        <p>Das Preismodell basiert auf "Operationen" pro Monat. Das klingt zun&auml;chst g&uuml;nstig, kann aber bei datenintensiven Prozessen schnell teurer werden als erwartet. Zudem ist Make als Cloud-Dienst abh&auml;ngig von der Verf&uuml;gbarkeit des Anbieters. Self-Hosting ist nicht m&ouml;glich.</p>
+
+        <h2>Zapier: Der Marktf&uuml;hrer mit den meisten Integrationen</h2>
+
+        <p>Zapier ist das &auml;lteste und bekannteste der drei Tools und bietet mit &uuml;ber 5.000 App-Integrationen die gr&ouml;&szlig;te Auswahl. "Wenn du eine App nutzt, hat Zapier wahrscheinlich eine Integration daf&uuml;r" ist kein Klischee, sondern trifft es gut.</p>
+
+        <h3>Was Zapier kann</h3>
+        <ul>
+          <li>&uuml;ber 5.000 App-Integrationen, darunter viele Nischen-Tools</li>
+          <li>Einsteigerfreundlichste Oberfl&auml;che der drei Plattformen</li>
+          <li>"Zaps" lassen sich in wenigen Minuten erstellen</li>
+          <li>Gro&szlig;e Wissensdatenbank und Community</li>
+          <li>KI-gest&uuml;tzte Vorschl&auml;ge f&uuml;r neue Automatisierungen</li>
+          <li>Zuverl&auml;ssige Infrastruktur mit hoher Verf&uuml;gbarkeit</li>
+        </ul>
+
+        <h3>F&uuml;r wen eignet sich Zapier?</h3>
+        <p>Zapier ist perfekt f&uuml;r unkomplizierte Eins-zu-eins-Verbindungen zwischen zwei Apps: "Wenn in App A etwas passiert, tue in App B etwas." F&uuml;r Solounternehmer und sehr kleine Teams ohne komplexe Anforderungen ist Zapier eine solide Wahl.</p>
+
+        <h3>Nachteile von Zapier</h3>
+        <p>Zapier ist bei Weitem das teuerste der drei Tools, wenn das Volumen steigt. Die Free-Tier ist mit 100 Aufgaben pro Monat sehr begrenzt. F&uuml;r ein KMU mit ernsthaften Automatisierungsanforderungen liegen die monatlichen Kosten schnell bei 100 bis 400 Euro und mehr. Zudem l&auml;uft Zapier ausschlie&szlig;lich auf US-Servern, was die DSGVO-Compliance verkompliziert.</p>
+
+        <h2>Vergleichstabelle: n8n vs. Make vs. Zapier</h2>
+
+        <p>Hier die wichtigsten Kriterien auf einen Blick:</p>
+
+        <div class="blog-article__table-wrapper">
+          <table class="blog-article__table">
+            <thead>
+              <tr>
+                <th>Kriterium</th>
+                <th>n8n</th>
+                <th>Make</th>
+                <th>Zapier</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Preis (Einstieg)</strong></td>
+                <td>Kostenlos (self-hosted)</td>
+                <td>Kostenlos bis 1.000 Ops/Monat</td>
+                <td>Kostenlos bis 100 Tasks/Monat</td>
+              </tr>
+              <tr>
+                <td><strong>Preis (KMU-Scale)</strong></td>
+                <td>Ca. 5-20 EUR/Monat (Server)</td>
+                <td>9-29 EUR/Monat</td>
+                <td>69-399 EUR/Monat</td>
+              </tr>
+              <tr>
+                <td><strong>Integrationen</strong></td>
+                <td>400+</td>
+                <td>1.000+</td>
+                <td>5.000+</td>
+              </tr>
+              <tr>
+                <td><strong>Bedienbarkeit</strong></td>
+                <td>Mittel (technisch)</td>
+                <td>Hoch (visuell)</td>
+                <td>Sehr hoch (einfach)</td>
+              </tr>
+              <tr>
+                <td><strong>Self-Hosting</strong></td>
+                <td>Ja (Docker, Server)</td>
+                <td>Nein</td>
+                <td>Nein</td>
+              </tr>
+              <tr>
+                <td><strong>DSGVO-Eignung</strong></td>
+                <td>Sehr gut (DE-Hosting)</td>
+                <td>Gut (EU-Server m&ouml;glich)</td>
+                <td>Eingeschr&auml;nkt (US-Server)</td>
+              </tr>
+              <tr>
+                <td><strong>KMU-Empfehlung</strong></td>
+                <td>Sehr hoch</td>
+                <td>Hoch</td>
+                <td>Mittel</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Unsere Empfehlung f&uuml;r deutsche KMU</h2>
+
+        <p>Nach &uuml;ber 50 Projekten im deutschen Mittelstand lautet unsere klare Einsch&auml;tzung:</p>
+
+        <p><strong>F&uuml;r DSGVO-sensible Prozesse: n8n auf deutschen Servern.</strong> Wenn Kundendaten, personenbezogene Informationen oder interne Gesch&auml;ftsprozesse automatisiert werden sollen, ist n8n auf einem deutschen Managed-Server die sicherste und langfristig g&uuml;nstigste L&ouml;sung. Wir hosten n8n f&uuml;r unsere Kunden auf Hetzner-Servern in N&uuml;rnberg oder Falkenstein. Das kostet einen Bruchteil von Zapier und l&auml;sst sich vollst&auml;ndig DSGVO-konform betreiben. Mehr zum Thema DSGVO findest du in unserem Use-Case f&uuml;r <a href="/use-cases/it-dienstleister">IT-Dienstleister</a>.</p>
+
+        <p><strong>F&uuml;r schnelle erste Automatisierungen: Make.</strong> Wenn du in einer Woche erste Ergebnisse sehen willst und dein Team selbst Hand anlegen soll, ist Make ein hervorragender Einstieg. Die visuelle Oberfl&auml;che ist intuitiv, die Kosten &uuml;berschaubar und der Wechsel zu n8n sp&auml;ter immer noch m&ouml;glich.</p>
+
+        <p><strong>Zapier nur in Ausnahmef&auml;llen.</strong> Wenn eine sehr spezifische App ausschlie&szlig;lich &uuml;ber Zapier integrierbar ist und keine Alternative existiert, kann Zapier sinnvoll sein. F&uuml;r die meisten deutschen KMU mit Wachstumsambitionen ist es mittel- bis langfristig aber die teuerste und datenschutzrechtlich aufwendigste L&ouml;sung.</p>
+
+        <p>Du willst wissen, welches Tool f&uuml;r deinen konkreten Anwendungsfall am besten passt? Im <a href="/kontakt">kostenlosen Erstgespr&auml;ch</a> analysieren wir deine Prozesse und geben eine ehrliche Empfehlung.</p>
+
+        <h2>H&auml;ufige Fragen zu n8n, Make und Zapier</h2>
+
+        <div class="accordion faq-accordion" role="list">
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-n8n-1">
+              <span>Ist n8n wirklich kostenlos?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="faq-n8n-1" hidden>
+              <p>n8n ist als Open-Source-Software kostenlos, wenn du es selbst hostest. Du tr&auml;gst dann nur die Serverkosten, die bei einem deutschen Anbieter wie Hetzner ab etwa 5 Euro pro Monat liegen. Die Cloud-Version von n8n ist kostenpflichtig, bietet aber ebenfalls eine gro&szlig;z&uuml;gige Free-Tier-Option f&uuml;r kleine Workflows.</p>
+            </div>
+          </div>
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-n8n-2">
+              <span>Welches Tool empfehlt ihr kleinen Unternehmen ohne IT-Abteilung?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="faq-n8n-2" hidden>
+              <p>F&uuml;r Unternehmen ohne eigene IT empfehlen wir Make als Einstieg. Der visuelle Canvas-Builder ist sehr intuitiv und ben&ouml;tigt kein technisches Vorwissen. Sobald Datenschutz oder Skalierung eine Rolle spielen, wechseln wir mit unseren Kunden oft zu n8n mit Managed Hosting auf deutschen Servern.</p>
+            </div>
+          </div>
+          <div class="accordion__item gs-reveal" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-n8n-3">
+              <span>Kann ich sp&auml;ter von Zapier zu n8n wechseln?</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion__content" id="faq-n8n-3" hidden>
+              <p>Ja, ein Wechsel ist m&ouml;glich, aber bedeutet etwas Aufwand. Zapier-Workflows m&uuml;ssen manuell in n8n nachgebaut werden. In der Praxis nutzen wir solche Wechsel, um Prozesse gleichzeitig zu optimieren. Wir begleiten diesen Schritt f&uuml;r unsere Kunden vollst&auml;ndig, sodass du keine Ausfallzeit erlebst.</p>
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+      <aside class="blog-article__sidebar">
+        <div class="blog-article__sidebar-card blog-article__author">
+          <div class="blog-article__author-photo">Foto</div>
+          <div>
+            <strong>Dominik Buchele</strong>
+            <p>Inhaber von KI-Prozessnavigator. Unterst&uuml;tzt KMU bei der Wahl und Einrichtung von Automatisierungs-Tools.</p>
+          </div>
+        </div>
+        <div class="blog-article__sidebar-card">
+          <strong>Inhaltsverzeichnis</strong>
+          <nav class="blog-article__toc" id="toc"></nav>
+        </div>
+        <div class="blog-article__sidebar-card blog-article__cta-box">
+          <strong>Tool-Empfehlung gew&uuml;nscht?</strong>
+          <p>Wir analysieren deine Prozesse und empfehlen das passende Tool.</p>
+          <a class="blog-article__cta-btn" href="/kontakt">Kostenloses Erstgespr&auml;ch sichern</a>
+        </div>
+      </aside>
+    </div>
+
+    <section class="blog-article__related">
+      <h2>Verwandte Artikel</h2>
+      <div class="blog-article__related-grid">
+        <article class="blog__card">
+          <span class="blog__card-badge">Produktivit&auml;t</span>
+          <a href="/blog/email-automatisierung-kmu" class="blog__card-title">E-Mail-Automatisierung f&uuml;r KMU</a>
+          <p class="blog__card-excerpt">Sortieren, antworten, nachfassen, automatisch.</p>
+        </article>
+        <article class="blog__card">
+          <span class="blog__card-badge">DSGVO</span>
+          <a href="/blog/dsgvo-ki-mittelstand" class="blog__card-title">DSGVO und KI im Mittelstand</a>
+          <p class="blog__card-excerpt">Rechtssicher starten ohne Fachchinesisch.</p>
+        </article>
+        <article class="blog__card">
+          <span class="blog__card-badge">Finanzen</span>
+          <a href="/blog/buchhaltung-automatisieren-kmu" class="blog__card-title">Buchhaltung automatisieren</a>
+          <p class="blog__card-excerpt">Belege, Rechnungen und DATEV ohne Zeitverlust.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--cta">
+      <div class="container container--narrow text-center">
+        <h2 class="gs-reveal">Welches Tool ist das richtige f&uuml;r dein Unternehmen?</h2>
+        <p class="section-header__lead gs-reveal">Im kostenlosen Erstgespr&auml;ch schauen wir gemeinsam auf deine Prozesse und empfehlen die optimale L&ouml;sung.</p>
+        <a href="/kontakt" class="btn btn-primary btn-lg btn--glow-pulse gs-reveal">Kostenloses Erstgespr&auml;ch buchen</a>
+        <span class="hero__trust-line">30 Min. &middot; Unverbindlich &middot; Kein Verkaufsdruck</span>
+      </div>
+    </section>
+
+  </main>
+  <!--#include virtual="/includes/footer.html" -->
+  <!--#include virtual="/includes/cookie-banner.html" -->
+  <script src="/assets/vendor/gsap.min.js" defer></script>
+  <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/js/app.js" defer></script>
+  <script src="/js/animations.js" defer></script>
+  <script src="/js/cookie-banner.js" defer></script>
+  <script>
+    const articleBody = document.getElementById('article-body');
+    const toc = document.getElementById('toc');
+    const progressBar = document.getElementById('progress-bar');
+    if (articleBody && toc) {
+      const headings = articleBody.querySelectorAll('h2');
+      headings.forEach((heading, index) => {
+        const id = 'section-' + (index + 1);
+        heading.id = id;
+        const link = document.createElement('a');
+        link.href = '#' + id;
+        link.textContent = heading.textContent;
+        toc.appendChild(link);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = total > 0 ? (window.scrollY / total) * 100 : 0;
+      if (progressBar) progressBar.style.width = progress + '%';
+    });
+    document.querySelectorAll('.accordion__trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.accordion__item');
+        const content = document.getElementById(trigger.getAttribute('aria-controls'));
+        const isOpen = item.classList.contains('is-open');
+        item.classList.toggle('is-open', !isOpen);
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+        if (isOpen) {
+          content.hidden = true;
+        } else {
+          content.hidden = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

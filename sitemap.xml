@@ -127,6 +127,42 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://ki-prozessnavigator.de/preise</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ki-prozessnavigator.de/use-cases/case-study-leadrecherche</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ki-prozessnavigator.de/use-cases/case-study-rechnungen</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ki-prozessnavigator.de/blog/n8n-vs-make-vs-zapier</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ki-prozessnavigator.de/blog/dsgvo-checkliste-ki-tools</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ki-prozessnavigator.de/blog/ki-fuer-kleine-unternehmen</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ki-prozessnavigator.de/geo/augsburg</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>

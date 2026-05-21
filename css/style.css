@@ -708,6 +708,53 @@
     color: var(--color-accent);
   }
 
+  .card--featured {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 24px rgba(0, 119, 255, 0.12);
+  }
+
+  .card__badge {
+    margin-bottom: var(--space-4);
+  }
+
+  .card__price {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+  }
+
+  .card__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-5) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .card__list li {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    padding-left: var(--space-5);
+    position: relative;
+  }
+
+  .card__list li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .card__example {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-5);
+    line-height: 1.6;
+  }
+
   /* ═══ COMPONENT: Header ═══ */
   .header {
     position: fixed;
