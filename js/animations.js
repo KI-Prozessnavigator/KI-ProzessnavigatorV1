@@ -173,6 +173,47 @@
     }
   }
 
+  /* ── Subpage Hero (SplitText on H1) ── */
+  function initSubpageHero() {
+    var heroes = gsap.utils.toArray('.subpage-hero');
+    heroes.forEach(function (hero) {
+      var header = hero.querySelector('.section-header');
+      if (header) gsap.set(header, { opacity: 1 });
+
+      var h1 = hero.querySelector('h1');
+      if (h1 && hasSplitText) {
+        var split = SplitText.create(h1, {
+          type: 'words',
+          aria: 'auto'
+        });
+        gsap.from(split.words, {
+          opacity: 0, y: 20, stagger: 0.035, duration: 0.55, ease: EASE_ENTER
+        });
+      } else if (h1) {
+        gsap.fromTo(h1,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6, ease: EASE_ENTER }
+        );
+      }
+
+      var eyebrow = hero.querySelector('.eyebrow');
+      if (eyebrow) {
+        gsap.fromTo(eyebrow,
+          { opacity: 0, y: 10 },
+          { opacity: 1, y: 0, duration: 0.4, ease: EASE_ENTER }
+        );
+      }
+
+      var lead = hero.querySelector('.section-header__lead');
+      if (lead) {
+        gsap.fromTo(lead,
+          { opacity: 0, y: 14 },
+          { opacity: 1, y: 0, duration: 0.5, delay: 0.15, ease: EASE_ENTER }
+        );
+      }
+    });
+  }
+
   /* ── 3D Card Tilt (mouse-follow) ── */
   function initCardTilt() {
     var cards = document.querySelectorAll('.card--module, .card--consequence');
@@ -203,6 +244,7 @@
   /* ── Section Headers with SplitText ── */
   function initSectionHeaders() {
     gsap.utils.toArray('.section-header.gs-reveal').forEach(function (header) {
+      if (header.closest('.subpage-hero')) return;
       gsap.set(header, { opacity: 1 });
 
       var eyebrow = header.querySelector('.eyebrow');
@@ -909,6 +951,7 @@
   /* ── Init ── */
   function init() {
     initHero();
+    initSubpageHero();
     initCounters();
     initWordRotator();
     initSectionHeaders();

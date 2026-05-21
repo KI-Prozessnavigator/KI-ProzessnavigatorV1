@@ -1,0 +1,70 @@
+# KI-Prozessnavigator
+
+> KI-gestuetzte Prozessautomatisierung fuer den deutschen Mittelstand. Wir automatisieren Routineaufgaben fuer KMU, Handwerk, Agenturen und Dienstleister.
+
+## Unternehmen
+
+- Name: KI-Prozessnavigator
+- Inhaber: Dominik Buchele
+- Standort: Mertingen bei Augsburg, Bayern, Deutschland
+- Einzugsgebiet: Augsburg, Muenchen, ganz Bayern (vor Ort und remote)
+- Gegründet: 2026
+- Website: https://ki-prozessnavigator.de
+- E-Mail: kontakt@ki-prozessnavigator.de
+- Telefon: +49 175 5526398
+- Erstgespraech buchen: https://calendly.com/d-buchele-ki-prozessnavigator/30min
+
+## Leistungen
+
+Wir automatisieren zeitfressende Verwaltungsaufgaben mit KI und No-Code-Tools. Unsere 6 Module:
+
+1. Marketing: Leadgenerierung, Content-Automatisierung, Google-Bewertungen
+2. Sales & Service: CRM-Automatisierung, Terminbuchung, Angebotserstellung
+3. Fulfillment: Baustellendokumentation, Projektmanagement, Materialbestellungen
+4. Backoffice: Rechnungen, Buchhaltung (DATEV-kompatibel), Dokumentenmanagement
+5. HR & Personal: Bewerber-Screening, Onboarding-Checklisten, Abwesenheitsmanagement
+6. KI-Agenten: Inbox-Management, Chatbots, Recherche-Agenten
+
+## Zielgruppen
+
+- KMU mit 5-50 Mitarbeitern
+- Handwerksbetriebe (Angebote, Rechnungen, Termine, DATEV)
+- Agenturen und Marketingunternehmen
+- Dienstleister und Berater
+- IT-Dienstleister
+
+## Ergebnisse
+
+- 5-10 Stunden pro Woche zurueckgewonnen
+- 70% weniger Verwaltungsaufwand
+- ROI in 2-4 Monaten
+- Erste Automatisierung in 2-4 Wochen live
+- 8-12 Wochen Gesamtprojektdauer
+
+## Preise
+
+Festpreise: 2.000-8.000 EUR pro Projekt. Keine versteckten Kosten, kein Abo.
+
+## DSGVO und Datenschutz
+
+100% DSGVO-konform. Deutsche Server. Auftragsverarbeitungsvertrag (AVV) ab Tag 1. Keine Nutzung von Kundendaten fuer KI-Training.
+
+## Tech-Stack
+
+n8n, Make, Airtable, OpenAI API, Anthropic API, Google Workspace, Microsoft 365, HubSpot, Salesforce, Pipedrive, DATEV, Lexware, sevDesk, Personio, Calendly
+
+## Wichtige Seiten
+
+- Startseite: https://ki-prozessnavigator.de/
+- Vorteile: https://ki-prozessnavigator.de/vorteile
+- Ablauf: https://ki-prozessnavigator.de/ablauf
+- FAQ: https://ki-prozessnavigator.de/faq
+- Kontakt: https://ki-prozessnavigator.de/kontakt
+- Blog: https://ki-prozessnavigator.de/blog
+- Handwerk: https://ki-prozessnavigator.de/use-cases/handwerk
+- Agenturen: https://ki-prozessnavigator.de/use-cases/agenturen
+- Dienstleister: https://ki-prozessnavigator.de/use-cases/dienstleister
+- IT-Dienstleister: https://ki-prozessnavigator.de/use-cases/it-dienstleister
+- Augsburg: https://ki-prozessnavigator.de/geo/augsburg
+- Muenchen: https://ki-prozessnavigator.de/geo/muenchen
+- Bayern: https://ki-prozessnavigator.de/geo/bayern
